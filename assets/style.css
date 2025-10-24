@@ -1,9 +1,11 @@
 :root {
-  --bg:#0b0c10;
-  --fg:#f5f7fa;
-  --muted:#aab3c5;
-  --brand:#4fd1c5;
-  --card:#151820;
+  --bg:#0b0c10;          /* near-black background */
+  --fg:#f5f7fa;          /* light foreground */
+  --muted:#aab3c5;       /* muted text */
+  --brand:#4fd1c5;       /* accent color */
+  --card:#151820;        /* card background */
+  /* Replace with your own Seoul image after uploading:
+     e.g., url('assets/hero-seoul.jpg') */
   --hero-image:url('https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=2400&auto=format&fit=crop');
 }
 *{box-sizing:border-box}
@@ -20,11 +22,12 @@ a{color:inherit;text-decoration:none}
 .menu a{opacity:.95}
 .menu a:hover{opacity:1}
 
-/* Dropdown (click-to-open) */
+/* Dropdowns (click-to-open only) */
 .dropdown{position:relative}
 .dropbtn{background:none;border:0;color:var(--fg);font:inherit;cursor:pointer}
+
+/* Panel is hidden by [hidden] attribute until opened via JS */
 .dropdown-menu{
-  display:none;
   position:absolute;
   top:120%; left:0;
   background:#0f1220;
@@ -34,12 +37,15 @@ a{color:inherit;text-decoration:none}
   box-shadow:0 10px 30px rgba(0,0,0,.35);
   padding:0; margin:0;
 }
+.dropdown-menu[hidden]{display:none !important;} /* ← ensures initial hidden */
+
+/* Items */
 .dropdown-menu li{list-style:none}
 .dropdown-menu a{display:block;padding:10px 14px;border-bottom:1px solid #1c2030}
 .dropdown-menu a:last-child{border-bottom:0}
 
-/* open state toggled by JS */
-.dropdown.open .dropdown-menu{display:block}
+/* IMPORTANT: make sure there is NO hover-to-open rule like:
+   .dropdown:hover .dropdown-menu { display:block } */
 
 /* Mobile nav */
 .nav-toggle{display:none;background:none;border:1px solid #2a2f43;border-radius:8px;padding:6px 10px;color:var(--fg)}
@@ -52,7 +58,6 @@ a{color:inherit;text-decoration:none}
     border:1px solid #222; border-radius:12px
   }
   .menu ul{flex-direction:column;align-items:stretch;gap:6px}
-  /* dropdown panel position inside stacked menu */
   .dropdown .dropdown-menu{position:relative; top:auto; left:auto; margin-top:6px}
 }
 
