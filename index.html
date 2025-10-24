@@ -9,27 +9,38 @@
   <meta name="description" content="Urban AI Institute — research at the intersection of cities and AI" />
 </head>
 <body>
+  <!-- Header / Navbar -->
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="/">
         <img src="assets/logo.png" alt="Urban AI Institute" class="logo" onerror="this.style.display='none'" />
         <span>Urban AI Institute</span>
       </a>
+
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+
       <nav class="menu" role="navigation">
         <ul>
           <li><a href="/">Home</a></li>
+
+          <!-- Projects -->
           <li class="dropdown">
-            <button class="dropbtn" aria-haspopup="true" aria-expanded="false">Projects ▾</button>
-            <ul class="dropdown-menu">
+            <button type="button" class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="projects-menu">
+              Projects ▾
+            </button>
+            <ul id="projects-menu" class="dropdown-menu" hidden>
               <li><a href="https://caus.kaist.ac.kr" target="_blank" rel="noopener">CAUS</a></li>
               <li><a href="https://urban.kaist.ac.kr" target="_blank" rel="noopener">Urban@KAIST</a></li>
               <li><a href="https://c3.kaist.ac.kr" target="_blank" rel="noopener">C3</a></li>
             </ul>
           </li>
+
+          <!-- Events -->
           <li class="dropdown">
-            <button class="dropbtn" aria-haspopup="true" aria-expanded="false">Events ▾</button>
-            <ul class="dropdown-menu">
+            <button type="button" class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="events-menu">
+              Events ▾
+            </button>
+            <ul id="events-menu" class="dropdown-menu" hidden>
               <li><a href="urbanx-berkeley.html">Urban X Workshop @ Berkeley</a></li>
               <li><a href="https://c3.kaist.ac.kr/workshop" target="_blank" rel="noopener">C3 Workshop</a></li>
             </ul>
@@ -39,29 +50,35 @@
     </div>
   </header>
 
+  <!-- Hero (city image at half height) -->
   <section class="hero" role="banner" aria-label="Urban AI Institute">
+    <!-- Change the hero image in assets/style.css (variable: --hero-image) -->
     <div class="hero-overlay">
       <h1>Urban AI Institute</h1>
       <p>AI × Cities — Research, Projects, and Events</p>
     </div>
   </section>
 
+  <!-- Feature cards -->
   <main class="container cards">
     <article class="card">
       <h3>Urban X Workshop @ Berkeley</h3>
       <p>A workshop series at the intersection of cities and AI, featuring talks, panels, and networking.</p>
       <a class="btn" href="urbanx-berkeley.html">Learn more</a>
     </article>
+
     <article class="card">
       <h3>CAUS</h3>
       <p>A KAIST research group leading urban–AI convergence, exploring data-driven decision making and urban service innovation.</p>
       <a class="btn" href="https://caus.kaist.ac.kr" target="_blank" rel="noopener">Visit site</a>
     </article>
+
     <article class="card">
       <h3>Urban@KAIST</h3>
       <p>An interdisciplinary hub tackling urban challenges, connecting projects and seminars across campus.</p>
       <a class="btn" href="https://urban.kaist.ac.kr" target="_blank" rel="noopener">Visit site</a>
     </article>
+
     <article class="card">
       <h3>C3</h3>
       <p>Building and scaling platforms for urban computing, community, and civic participation.</p>
