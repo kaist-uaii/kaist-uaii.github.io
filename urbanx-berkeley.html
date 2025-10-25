@@ -3,10 +3,23 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Urban X Workshop @ Berkeley — Urban AI Institute</title>
+  <title>Urban X Workshop 2025 @ Berkeley — Urban AI Institute</title>
   <link rel="stylesheet" href="assets/style.css" />
   <link rel="icon" href="assets/logo.png" />
-  <meta name="description" content="Urban X Workshop @ Berkeley — details, agenda, and speakers." />
+  <meta name="description" content="Urban X Workshop 2025 @ Berkeley — agenda, speakers, and logistics for Day 1 and Day 2." />
+  <style>
+    /* Page-local micro styles to format the agenda neatly (keeps global CSS unchanged) */
+    .subnav { display:flex; gap:10px; flex-wrap:wrap; margin:12px 0 24px; }
+    .subnav a { padding:8px 12px; border:1px solid #222; border-radius:10px; background:#0f1220; }
+    .agenda { margin:16px 0 28px; }
+    .slot { padding:10px 12px; border:1px solid #222; border-radius:12px; background:#111522; margin-bottom:10px; }
+    .slot time { font-weight:700; display:inline-block; min-width:170px; }
+    .slot .title { font-weight:600; }
+    .slot .meta { color:var(--muted); }
+    .note { color:var(--muted); font-size:0.95em; }
+    .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    @media (max-width:820px){ .grid2 { grid-template-columns:1fr; } .slot time { min-width:auto; display:block; margin-bottom:6px; } }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -20,34 +33,204 @@
   </header>
 
   <main class="container page">
-    <h1>Urban X Workshop @ Berkeley</h1>
-    <p class="meta">Date: <strong>YYYY-MM-DD</strong> · Location: <strong>UC Berkeley</strong> · Host: <strong>Urban AI Institute</strong></p>
+    <h1>Urban X Workshop 2025 @ Berkeley</h1>
+    <p class="meta">Dates: <strong>Nov 24–25, 2025</strong> · Location: <strong>Berkeley, CA, United States</strong></p>
 
     <section class="content">
       <h2>Overview</h2>
-      <p>Urban X explores research and practice at the nexus of cities and AI. Through talks, panels, and networking, it fosters collaboration across academia, industry, and the public sector.</p>
+      <p>Urban X explores research and practice at the nexus of cities and AI. The 2025 Berkeley edition spans two themed days:
+        <em>Advanced Air Mobility (AAM)</em> and <em>Agentic City</em>, featuring talks, Q&amp;A, and discussions.</p>
 
-      <h2>Agenda (sample)</h2>
-      <ul class="list">
-        <li>09:30 – Registration & networking</li>
-        <li>10:00 – Keynote: AI for Urban Resilience</li>
-        <li>11:00 – Session 1: Urban data infrastructure</li>
-        <li>13:00 – Lunch</li>
-        <li>14:00 – Session 2: Mobility & safety</li>
-        <li>16:00 – Panel discussion & Q/A</li>
-      </ul>
+      <div class="grid2">
+        <div class="slot">
+          <div class="title">Venue</div>
+          <div>Lania Room, Claremont Resort &amp; Club, Berkeley</div>
+          <div class="note">Zoom Link: <strong>TBA</strong></div>
+        </div>
+        <div class="slot">
+          <div class="title">Logistics</div>
+          <div>Catering service during lunch. Evening group dinner on Day 1.</div>
+        </div>
+      </div>
 
-      <h2>Speakers (sample)</h2>
-      <ul class="list">
-        <li>Prof. A — Urban Computing</li>
-        <li>Dr. B — Computer Vision for Cities</li>
-        <li>Ms. C — Civic Tech & Governance</li>
-      </ul>
+      <nav class="subnav" aria-label="Agenda day navigation">
+        <a href="#day1">Day 1 — AAM (Nov 24, Mon)</a>
+        <a href="#day2">Day 2 — Agentic City (Nov 25, Tue)</a>
+      </nav>
 
-      <h2>Contact</h2>
-      <p>For inquiries, please email <a href="mailto:contact@example.org">contact@example.org</a>.</p>
+      <!-- ===================== Day 1 ===================== -->
+      <h2 id="day1">Day 1 (Nov 24, Mon): Advanced Air Mobility (AAM)</h2>
+      <p class="meta">Venue: <strong>Lania Room, Claremont Resort &amp; Club, Berkeley</strong> · Zoom Link: <strong>TBA</strong></p>
+
+      <div class="agenda">
+        <div class="slot">
+          <time>09:00–09:50 am</time>
+          <span class="title">Reception</span>
+        </div>
+
+        <div class="slot">
+          <time>09:50–10:00 am</time>
+          <span class="title">Welcome Remarks</span>
+        </div>
+
+        <div class="slot">
+          <time>10:00–10:40 am</time>
+          <span class="title">Yoonjin Yoon, Professor, KAIST — with Scott Moura</span>
+          <div class="meta">30 min presentation, 10 min Q&amp;A</div>
+        </div>
+
+        <div class="slot">
+          <time>—</time>
+          <span class="title">10-minute break after session</span>
+        </div>
+
+        <div class="slot">
+          <time>10:50–11:30 am</time>
+          <span class="title">Amy Kim</span>
+        </div>
+
+        <div class="slot">
+          <time>—</time>
+          <span class="title">10-minute break after session</span>
+        </div>
+
+        <div class="slot">
+          <time>11:40 am–12:20 pm</time>
+          <span class="title">Bo Zou</span>
+        </div>
+
+        <div class="slot">
+          <time>12:20–1:30 pm</time>
+          <span class="title">Lunch</span>
+          <div class="meta">Catering service</div>
+        </div>
+
+        <div class="slot">
+          <time>1:30–2:10 pm</time>
+          <span class="title">Mark Hansen</span>
+        </div>
+
+        <div class="slot">
+          <time>—</time>
+          <span class="title">10-minute break after session</span>
+        </div>
+
+        <div class="slot">
+          <time>2:20–3:00 pm</time>
+          <span class="title">Sungmin Son</span>
+        </div>
+
+        <div class="slot">
+          <time>—</time>
+          <span class="title">10-minute break after session</span>
+        </div>
+
+        <div class="slot">
+          <time>3:10–3:50 pm</time>
+          <span class="title">Open Discussion</span>
+        </div>
+
+        <div class="slot">
+          <time>3:50–6:00 pm</time>
+          <span class="title">Break</span>
+        </div>
+
+        <div class="slot">
+          <time>6:00–8:00 pm</time>
+          <span class="title">Group Dinner</span>
+        </div>
+      </div>
+
+      <!-- ===================== Day 2 ===================== -->
+      <h2 id="day2">Day 2 (Nov 25, Tue): Agentic City</h2>
+      <p class="meta">Venue: <strong>Lania Room, Claremont Resort &amp; Club, Berkeley</strong> · Zoom Link: <strong>TBA</strong></p>
+
+      <div class="agenda">
+        <div class="slot">
+          <time>09:00–09:50 am</time>
+          <span class="title">Reception</span>
+        </div>
+
+        <div class="slot">
+          <time>10:00–10:40 am</time>
+          <span class="title">Welcome Remarks</span>
+        </div>
+
+        <div class="slot">
+          <time>10:00–10:40 am</time>
+          <span class="title">Yoonjin Yoon, Professor, KAIST — with Alex Bayen</span>
+          <div class="meta">30 min presentation, 10 min Q&amp;A</div>
+        </div>
+
+        <div class="slot">
+          <time>—</time>
+          <span class="title">10-minute break after session</span>
+        </div>
+
+        <div class="slot">
+          <time>10:50–11:30 am</time>
+          <span class="title">Ganghoon Lee</span>
+        </div>
+
+        <div class="slot">
+          <time>—</time>
+          <span class="title">10-minute break after session</span>
+        </div>
+
+        <div class="slot">
+          <time>11:40 am–12:20 pm</time>
+          <span class="title">Namwoo Kim</span>
+        </div>
+
+        <div class="slot">
+          <time>12:20–1:30 pm</time>
+          <span class="title">Lunch</span>
+          <div class="meta">Catering service</div>
+        </div>
+
+        <div class="slot">
+          <time>1:30–2:10 pm</time>
+          <span class="title">Shushman Cloudhury</span>
+        </div>
+
+        <div class="slot">
+          <time>—</time>
+          <span class="title">10-minute break after session</span>
+        </div>
+
+        <div class="slot">
+          <time>2:20–3:00 pm</time>
+          <span class="title">Minjoon Seo</span>
+        </div>
+
+        <div class="slot">
+          <time>—</time>
+          <span class="title">10-minute break after session</span>
+        </div>
+
+        <div class="slot">
+          <time>3:10–3:50 pm</time>
+          <span class="title">Hyunwoo Kim</span>
+        </div>
+
+        <div class="slot">
+          <time>—</time>
+          <span class="title">10-minute break after session</span>
+        </div>
+
+        <div class="slot">
+          <time>4:00–4:40 pm</time>
+          <span class="title">Jeeyun Chang</span>
+        </div>
+
+        <div class="slot">
+          <time>4:40–5:00 pm</time>
+          <span class="title">Closing</span>
+        </div>
+      </div>
 
       <p><a class="btn" href="/">← Back</a></p>
+      <p class="note">* Times are local (Pacific Time). Program may be adjusted slightly; the Zoom link will be provided when available.</p>
     </section>
   </main>
 
