@@ -18,7 +18,8 @@ a{color:inherit;text-decoration:none}
 .nav{display:flex;align-items:center;justify-content:space-between;min-height:64px}
 .brand{display:flex;align-items:center;gap:10px;font-weight:700}
 .logo{width:28px;height:28px}
-.menu ul{list-style:none;margin:0;padding:0;display:flex;gap:22px;align-items:center}
+/* only the TOP-LEVEL menu should be a horizontal flex row */
+.menu > ul{list-style:none;margin:0;padding:0;display:flex;gap:22px;align-items:center;}
 .menu a{opacity:.95}
 .menu a:hover{opacity:1}
 
@@ -46,6 +47,17 @@ a{color:inherit;text-decoration:none}
 
 /* IMPORTANT: make sure there is NO hover-to-open rule like:
    .dropdown:hover .dropdown-menu { display:block } */
+/* make dropdown menus vertical stacks */
+.dropdown-menu{
+  display:block;           /* not flex */
+}
+.dropdown-menu li{
+  display:block;
+}
+.dropdown-menu a{
+  display:block;           /* full row is clickable */
+  white-space:nowrap;      /* prevent awkward wrapping if you prefer */
+}
 
 /* Mobile nav */
 .nav-toggle{display:none;background:none;border:1px solid #2a2f43;border-radius:8px;padding:6px 10px;color:var(--fg)}
@@ -57,7 +69,7 @@ a{color:inherit;text-decoration:none}
     background:#0f1220; padding:12px;
     border:1px solid #222; border-radius:12px
   }
-  .menu ul{flex-direction:column;align-items:stretch;gap:6px}
+  .menu > ul{flex-direction:column;align-items:stretch;gap:6px}
   .dropdown .dropdown-menu{position:relative; top:auto; left:auto; margin-top:6px}
 }
 
