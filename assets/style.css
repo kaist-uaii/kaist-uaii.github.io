@@ -6,7 +6,8 @@
   --card:#151820;        /* card background */
   /* Replace with your own Seoul image after uploading:
      e.g., url('assets/hero-seoul.jpg') */
-  --hero-image:url('https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=2400&auto=format&fit=crop');
+  /* --hero-image:url('https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=2400&auto=format&fit=crop'); */
+  --hero-image:url('assets/background image.png');
 }
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
@@ -79,7 +80,7 @@ a{color:inherit;text-decoration:none}
 }
 
 /* Hero */
-.hero{height:50vh;min-height:360px;background-image:var(--hero-image);background-size:cover;background-position:center;position:relative}
+.hero{height:80vh;min-height:480px;background-image:var(--hero-image);background-size:cover;background-position:center;position:relative}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.55));display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 16px}
 .hero h1{font-size:clamp(28px,5vw,56px);margin:0 0 8px}
 .hero p{color:var(--muted);margin:0}
