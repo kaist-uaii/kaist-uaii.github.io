@@ -95,15 +95,123 @@ a{color:inherit;text-decoration:none}
 .btn.small{padding:6px 10px;border-radius:8px;font-size:14px}
 .btn:hover{filter:brightness(1.05)}
 
-/* ===== UAII press ===== */
-.uaii-press { border-top:1px solid #eee; margin-top:2rem; padding-top:1rem; }
-.uaii-press h2 { margin:0 0 .6rem 0; font-size:1.25rem; }
-.uaii-press ul { list-style:none; margin:0; padding:0; }
-.uaii-press li { display:flex; justify-content:space-between; align-items:center;
-  padding:.75rem 0; border-bottom:1px solid #f0f0f0; gap:1rem; }
-.uaii-press a { text-decoration:none; }
-.uaii-press a:hover { text-decoration:underline; }
-.uaii-press .meta { font-size:.9rem; color:#555; white-space:nowrap; }
+/* ===== UAII in the Press ===== */
+.press {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1.2rem;
+}
+
+    .press h2 {
+        margin: 0 0 1rem 0;
+        font-size: clamp(20px, 2.6vw, 28px);
+        text-align:center;
+    }
+
+.press-item {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 1rem;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 14px;
+    padding: 0.8rem;
+    background: rgba(255,255,255,0.06); /* 다크테마에서 살짝 카드 느낌 */
+    backdrop-filter: saturate(120%);
+}
+
+.press-media {
+    position: relative;
+    display: block;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.press-media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.press-overlay-title {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: .8rem 1rem;
+    color: #fff;
+    font-weight: 700;
+    background: linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0));
+    text-shadow: 0 1px 2px rgba(0,0,0,.4);
+}
+
+/* 오른쪽 텍스트 영역 */
+.press-body {
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+}
+
+.press-summary {
+    margin: 0;
+    line-height: 1.55;
+    /* 길면 … 처리 (2~4줄로 조절) */
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.press-meta {
+    margin: 0;
+    color: rgba(127,127,127,.95);
+    font-size: .95rem;
+}
+
+.press-sep {
+    margin: 0 .35rem;
+    opacity: .7;
+}
+
+.press-links {
+    margin: .2rem 0 0 0;
+    display: flex;
+    gap: .5rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: .5rem .8rem;
+    border-radius: 10px;
+    border: 1px solid rgba(127,127,127,.35);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+    .btn:hover {
+        background: rgba(127,127,127,.12);
+    }
+
+.btn-ghost {
+    background: transparent;
+}
+
+/* 반응형 */
+@media (max-width: 900px) {
+    .press-item {
+        grid-template-columns: 1fr;
+    }
+
+    .press-overlay-title {
+        font-size: 1rem;
+    }
+
+    .press-summary {
+        -webkit-line-clamp: 5;
+    }
+}
+
 
 
 @media (max-width:1100px){.cards{grid-template-columns:repeat(2,1fr)}}
