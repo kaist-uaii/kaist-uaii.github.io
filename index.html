@@ -81,6 +81,28 @@
       <h3>KAIST-NYU C3</h3>
       <a class="btn" href="https://c3.kaist.ac.kr" target="_blank" rel="noopener">Visit site</a>
     </article>
+
+    <!-- ===== UAII in the Press (data-driven) ===== -->
+    <section class="uaii-press" id="press">
+      <h2>UAII in the Press</h2>
+      <ul>
+        {% for item in site.data.press %}
+          <li>
+            <div>
+              <a href="{{ item.links[0].url }}" target="_blank" rel="noopener">{{ item.title }}</a>
+              {% if item.date %}<span class="meta">{{ item.date | date: "%Y-%m-%d" }}</span>{% endif %}
+            </div>
+            <div class="meta">
+              {{ item.outlet }} ·
+              {% for link in item.links %}
+                <a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.lang }}</a>{% if forloop.last == false %} / {% endif %}
+              {% endfor %}
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+
   </main>
 
   <footer class="site-footer">
