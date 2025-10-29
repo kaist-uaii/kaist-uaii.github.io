@@ -1,0 +1,6 @@
+title: Urban AI Institute
+description: Urban AI Institute (UAII)
+baseurl: ""                 # 프로젝트 사이트면 "/<repo-name>"
+url: "https://kaist-uaii.github.io"
+markdown: kramdown
+plugins: []
