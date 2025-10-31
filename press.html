@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Press | Urban AI Institute</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="icon" href="assets/logo.png" />
+  <meta name="description" content="Press coverage and media mentions of UAII" />
+</head>
+<body>
+    <!-- Header (기존 페이지와 동일한 네비) -->
+    <header class="site-header">
+        <div class="container nav">
+            <a class="brand" href="index.html">
+                <img src="assets/logo.png" alt="UAII logo" class="logo" onerror="this.style.display='none'">
+                <span>Urban AI Institute</span>
+            </a>
+
+            <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+
+            <nav class="menu" role="navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+
+                    <li class="dropdown">
+                        <button type="button" class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="projects-menu">
+                            Projects ▾
+                        </button>
+                        <ul id="projects-menu" class="dropdown-menu" hidden>
+                            <li><a href="https://caus.kaist.ac.kr" target="_blank" rel="noopener">CAUS</a></li>
+                            <li><a href="https://hcfm.kaist.ac.kr" target="_blank" rel="noopener">HcFM</a></li>
+                            <li><a href="https://urban.kaist.ac.kr" target="_blank" rel="noopener">Urban@KAIST</a></li>
+                            <li><a href="https://c3.kaist.ac.kr" target="_blank" rel="noopener">KAIST-NYU C3</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button type="button" class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="events-menu">
+                            Events ▾
+                        </button>
+                        <ul id="events-menu" class="dropdown-menu" hidden>
+                            <li><a href="urbanx-berkeley.html">Urban X Workshop @ Berkeley</a></li>
+                            <li><a href="https://urban.kaist.ac.kr/urbanX" target="_blank" rel="noopener">KAIST Urban X Seminar</a></li>
+                            <li><a href="https://c3.kaist.ac.kr/1st-workshop" target="_blank" rel="noopener">KN-C3 1st-Workshop</a></li>
+                            <li><a href="https://c3.kaist.ac.kr/2nd-workshop" target="_blank" rel="noopener">KN-C3 2nd-Workshop</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="people.html">People</a></li>
+                    <li><a href="press.html" aria-current="page">Press</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="press-page">
+        <h1><strong>UAII in the Press</strong></h1>
+
+        <div class="press-toolbar">
+            <input id="press-search" type="search" placeholder="Search by title, outlet…" aria-label="Search press">
+            <button id="view-card" class="view-toggle" aria-pressed="true">Card</button>
+            <button id="view-compact" class="view-toggle" aria-pressed="false">Compact</button>
+        </div>
+
+        <section id="press-list" class="press-list" aria-live="polite"></section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <small>© <span id="year"></span> Urban AI Institute</small>
+        </div>
+    </footer>
+
+    <script src="assets/script.js"></script>
+    <script>
+        // Footer year
+        (function () { var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear(); })();
+
+        // Robust path helper (handles /user/repo/press.html → /user/repo/assets/press.json)
+        function urlFromPage(relativePath) {
+            const base = window.location.pathname.replace(/[^/]*$/, ''); // drop filename
+            return base + relativePath.replace(/^\.\//, '');
+        }
+
+        (async function () {
+            const listEl = document.getElementById('press-list');
+            const searchEl = document.getElementById('press-search');
+            const viewCardBtn = document.getElementById('view-card');
+            const viewCompactBtn = document.getElementById('view-compact');
+
+            let items = [];
+            const candidates = [
+                urlFromPage('assets/press.json'),
+                'assets/press.json',                 // fallback
+                './assets/press.json'                // fallback
+            ];
+
+            let lastErr = null;
+            for (const u of candidates) {
+                try {
+                    const res = await fetch(u, { cache: 'no-store' });
+                    if (!res.ok) throw new Error('HTTP ' + res.status + ' at ' + u);
+                    items = await res.json();
+                    break;
+                } catch (e) {
+                    lastErr = e;
+                }
+            }
+
+            if (!Array.isArray(items) || items.length === 0) {
+                console.error('Press JSON load error:', lastErr);
+                listEl.innerHTML = '<p>Failed to load press data.</p>';
+                return;
+            }
+
+            // sort by date desc
+            items.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+
+            function match(q, s) { return (s || '').toLowerCase().includes(q); }
+
+            function render(data) {
+                listEl.innerHTML = data.map(item => {
+                    const img = item.thumb ? `<img src="${item.thumb}" alt="${item.title}">` : '';
+                    const overlay = `<span class="press-overlay-title">${item.title}</span>`;
+                    const outlet = item.outlet ? `<span class="press-outlet">${item.outlet}</span>` : '';
+                    const date = item.date ? `<time datetime="${item.date}">${item.date}</time>` : '';
+                    const summary = item.summary ? `<p class="press-summary">${item.summary}</p>` : '';
+                    const links = (item.links || []).map(l => `
+              <a class="btn" href="${l.url}" target="_blank" rel="noopener">Read (${l.lang}) →</a>
+            `).join('');
+                    const firstLink = (item.links && item.links[0]) ? item.links[0].url : '#';
+
+                    return `
+              <article class="press-item">
+                <a class="press-media" href="${firstLink}" target="_blank" rel="noopener">
+                  ${img}${overlay}
+                </a>
+                <div class="press-body">
+                  <p class="press-title">${item.title}</p>
+                  ${summary}
+                  <p class="press-meta">${outlet}${outlet && date ? ' · ' : ''}${date}</p>
+                  <p class="press-links">${links}</p>
+                </div>
+              </article>
+            `;
+                }).join('');
+            }
+
+            function applySearch() {
+                const q = (searchEl.value || '').toLowerCase().trim();
+                const filtered = q
+                    ? items.filter(it => match(q, it.title) || match(q, it.outlet) || match(q, it.summary))
+                    : items;
+                render(filtered);
+            }
+
+            function setView(compact) {
+                viewCardBtn.setAttribute('aria-pressed', String(!compact));
+                viewCompactBtn.setAttribute('aria-pressed', String(compact));
+                document.getElementById('press-list').classList.toggle('compact', compact);
+            }
+
+            searchEl.addEventListener('input', applySearch);
+            viewCardBtn.addEventListener('click', () => setView(false));
+            viewCompactBtn.addEventListener('click', () => setView(true));
+
+            setView(false);
+            applySearch();
+        })();
+    </script>
+</body>
+</html>

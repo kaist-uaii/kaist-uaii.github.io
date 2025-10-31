@@ -1,0 +1,20 @@
+[
+  {
+    "title": "AI Finds Urban Commercial Districts Resilient to Climate RiskAI Finds Urban Commercial Districts Resilient to Climate Risk",
+    "outlet": "KAIST News",
+    "date": "2025-10-29",
+    "thumb": "assets/press/kaist-53650.jpg",
+    "links": [
+      {
+        "lang": "KOR",
+        "url": "https://news.kaist.ac.kr/news/html/news/?mode=V&mng_no=53650"
+      },
+      {
+        "lang": "ENG",
+        "url": "https://news.kaist.ac.kr/newsen/html/news/?mode=V&mng_no=53670"
+      }
+    ],
+    "summary": "KAIST announced on October 29th that its Urban AI Research Institute (Director, Distinguished Professor Yoonjin Yoon of Civil and Environmental Engineering conducted joint research in the field of 'Urban AI' with MIT's Senseable City Lab (Director, Professor Carlo Ratti) and disclosed the results at the 'Smart Life Week 2025' exhibition held at COEX, Seoul, in late September. KAIST and MIT have been pursuing the 'Urban AI Joint Research Program' to interpret major urban problems using artificial intelligence. At this exhibition, the research results were presented in a form that citizens could directly experience, focusing on three themes:▲Urban Climate Change, ▲Green Environment, and ▲Data Inclusivity."
+  }
+  // 새 기사 추가 시 중괄호 블록을 복제해서 이어 붙이세요(쉼표 주의).
+]
