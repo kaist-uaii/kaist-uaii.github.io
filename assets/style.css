@@ -144,11 +144,11 @@ a{color:inherit;text-decoration:none}
     padding: 0 1.2rem;
 }
 
-    .press h2 {
-        margin: 0 0 1rem 0;
-        font-size: clamp(20px, 2.6vw, 28px);
-        text-align:center;
-    }
+.press h2 {
+    margin: 0 0 1rem 0;
+    font-size: clamp(20px, 2.6vw, 28px);
+    text-align:center;
+}
 
 .press-item {
     display: grid;
@@ -475,6 +475,100 @@ a{color:inherit;text-decoration:none}
 p {
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", "Helvetica Neue", Arial, sans-serif;
 }
+
+/* ===== People Page Simplified ===== */
+.people-hero {
+  background: linear-gradient(180deg, #111827 0%, #1b2b44 100%);
+  color: #f5f7fa;
+  text-align: center;
+  padding: 4rem 1rem 3rem;
+}
+.people-hero h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(32px, 5vw, 48px);
+  margin: 0 0 0.6rem;
+}
+.people-hero .people-sub {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #cdd6e8;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* 구분 섹션 */
+.people-section {
+  background: linear-gradient(180deg, #1b2b44 0%, #223b5e 100%);
+  color: #f5f7fa;
+  padding: 3rem 1rem;
+}
+.people-section.alt {
+  background: linear-gradient(180deg, #223b5e 0%, #2f4e74 100%);
+}
+.people-section h2 {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: #4fd1c5;
+  margin-bottom: 2rem;
+}
+
+/* 카드 그리드 */
+.people-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.person-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+  text-align: center;
+  padding: 16px;
+  color: #f5f7fa;
+}
+.person-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.person-card h3 {
+  margin: 0.8rem 0 0.3rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.person-card .role {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #cbd3e2;
+}
+.person-card .links {
+  margin-top: 0.8rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+}
+.person-card .links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  text-decoration: none;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: #f5f7fa;
+  font-size: 18px;
+}
+.person-card .links a:hover {
+  background: #4fd1c5;
+  color: #0b0c10;
+  border-color: #4fd1c5;
+}
+
 
 
 

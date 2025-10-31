@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>People | Urban AI Institute</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="icon" href="assets/logo.png" />
+  <meta name="description" content="UAII People — Professors, Researchers, and Students" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.png" alt="Urban AI Institute" class="logo" onerror="this.style.display='none'"/>
+        <span>Urban AI Institute</span>
+      </a>
+      <nav class="menu" role="navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="press.html">Press</a></li>
+          <li><a href="people.html" aria-current="page">People</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="people-hero">
+    <div class="container">
+      <h1>People</h1>
+      <p class="people-sub">
+        Meet the members of Urban AI Institute — Professors, Researchers, and Students leading the future of urban intelligence.
+      </p>
+    </div>
+  </section>
+
+  <!-- Professors -->
+  <section class="people-section">
+    <div class="container">
+      <h2>Professors</h2>
+      <div class="people-grid">
+        <article class="person-card">
+          <img src="assets/people/prof1.jpg" alt="Prof. Yoonjin Yoon" />
+          <h3>Prof. Yoonjin Yoon</h3>
+          <p class="role">Director / Civil & Environmental Engineering</p>
+          <div class="links">
+            <a href="mailto:yoonjin@kaist.ac.kr">✉️</a>
+            <a href="#">🧑‍🎓</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Researchers -->
+  <section class="people-section alt">
+    <div class="container">
+      <h2>Researchers</h2>
+      <div class="people-grid">
+        <article class="person-card">
+          <img src="assets/people/researcher1.jpg" alt="Researcher Name" />
+          <h3>Researcher Name</h3>
+          <p class="role">Research Scientist</p>
+          <div class="links">
+            <a href="mailto:researcher@kaist.ac.kr">✉️</a>
+            <a href="#">🐙</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Students -->
+  <section class="people-section">
+    <div class="container">
+      <h2>Students</h2>
+      <div class="people-grid">
+        <article class="person-card">
+          <img src="assets/people/student1.jpg" alt="Student Name" />
+          <h3>Student Name</h3>
+          <p class="role">Graduate Student</p>
+          <div class="links">
+            <a href="mailto:student@kaist.ac.kr">✉️</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Urban AI Institute</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
