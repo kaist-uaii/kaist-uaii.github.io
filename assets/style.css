@@ -4,6 +4,9 @@
   --muted:#aab3c5;       /* muted text */
   --brand:#4fd1c5;       /* accent color */
   --card:#151820;        /* card background */
+  --card-h-lg: 180px;   /* 데스크톱 */
+  --card-h-md: 180px;   /* 태블릿 */
+  --card-h-sm: 160px;   /* 모바일 */
   /* Replace with your own Seoul image after uploading:
      e.g., url('assets/hero-seoul.jpg') */
   /* --hero-image:url('https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=2400&auto=format&fit=crop'); */
@@ -80,15 +83,54 @@ a{color:inherit;text-decoration:none}
 }
 
 /* Hero */
-.hero{height:80vh;min-height:480px;background-image:var(--hero-image);background-size:cover;background-position:center;position:relative}
+.hero{height:90vh;min-height:480px;background-image:var(--hero-image);background-size:cover;background-position:center;position:relative}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.55));display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 16px}
-.hero h1{font-size:clamp(28px,5vw,56px);margin:0 0 8px}
+.hero h1 {
+    font-family: "Montserrat", "Noto Sans KR", sans-serif;
+    font-weight: 700;
+    font-size: clamp(36px, 6vw, 68px);
+    color: #ffffff;
+    text-shadow: 0 4px 16px rgba(0,0,0,0.4);
+    letter-spacing: 0.5px;
+}
+.hero-sub {
+    font-family: "Inter", "Noto Sans KR", sans-serif;
+    font-size: clamp(15px, 1.2vw, 18px);
+    line-height: 1.7;
+    color: #f0f2f6;
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
 .hero p{color:var(--muted);margin:0}
 
-/* Cards */
-.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:34px auto}
-.card{background:var(--card);border:1px solid #222;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:10px}
+/* ===== Projects & Events Title ===== */
+.projects-section {
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+}
 
+.projects-title {
+    font-family: "Poppins", "Noto Sans KR", sans-serif;
+    font-size: clamp(28px, 3.5vw, 40px);
+    font-weight: 700;
+    color: #f5f7fa;
+    letter-spacing: 0.5px;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Cards */
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:34px auto; align-items:stretch;}
+.card{background:var(--card);border:1px solid #222;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:10px; justify-content:space-between; min-height: var(--card-h-lg);}
+
+.card .btn{
+  margin-top: auto;                   /* 남는 공간을 위로 밀어 버튼을 바닥으로 */
+  align-self: flex-start;             /* 왼쪽 정렬 (오른쪽 원하면 flex-end) */
+}
 .card h3{margin:0}
 .card p{color:var(--muted);line-height:1.5}
 .btn{display:inline-block;background:var(--brand);color:#0b0c10;padding:10px 14px;border-radius:10px;font-weight:600}

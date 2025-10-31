@@ -1,19 +1,19 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Press | Urban AI Institute</title>
-  <link rel="stylesheet" href="assets/style.css" />
-  <link rel="icon" href="assets/logo.png" />
-  <meta name="description" content="Press coverage and media mentions of UAII" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Press | Urban AI Institute</title>
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="icon" href="assets/logo.png" />
+    <meta name="description" content="Press coverage and media mentions of UAII" />
 </head>
 <body>
-    <!-- Header (기존 페이지와 동일한 네비) -->
+    <!-- Header (다른 페이지와 동일) -->
     <header class="site-header">
         <div class="container nav">
             <a class="brand" href="index.html">
-                <img src="assets/logo.png" alt="UAII logo" class="logo" onerror="this.style.display='none'">
+                <img class="logo" src="assets/logo.png" alt="UAII logo" onerror="this.style.display='none'">
                 <span>Urban AI Institute</span>
             </a>
 
@@ -22,7 +22,6 @@
             <nav class="menu" role="navigation">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-
                     <li class="dropdown">
                         <button type="button" class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="projects-menu">
                             Projects ▾
@@ -34,7 +33,6 @@
                             <li><a href="https://c3.kaist.ac.kr" target="_blank" rel="noopener">KAIST-NYU C3</a></li>
                         </ul>
                     </li>
-
                     <li class="dropdown">
                         <button type="button" class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="events-menu">
                             Events ▾
@@ -46,24 +44,58 @@
                             <li><a href="https://c3.kaist.ac.kr/2nd-workshop" target="_blank" rel="noopener">KN-C3 2nd-Workshop</a></li>
                         </ul>
                     </li>
-
-                    <li><a href="people.html">People</a></li>
                     <li><a href="press.html" aria-current="page">Press</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
+    <!-- 본문: 순수 HTML 리스트업 -->
     <main class="press-page">
         <h1><strong>UAII in the Press</strong></h1>
 
-        <div class="press-toolbar">
-            <input id="press-search" type="search" placeholder="Search by title, outlet…" aria-label="Search press">
-            <button id="view-card" class="view-toggle" aria-pressed="true">Card</button>
-            <button id="view-compact" class="view-toggle" aria-pressed="false">Compact</button>
-        </div>
+        <section class="press-list" id="press-list">
+            <!-- 항목 1: KOR/ENG 쌍을 한 카드로 -->
+            <article class="press-item">
+                <a class="press-media" href="https://news.kaist.ac.kr/news/html/news/?mode=V&mng_no=53650" target="_blank" rel="noopener">
+                    <img src="assets/press/kaist-53650.jpg" alt="AI Finds Urban Commercial Districts Resilient to Climate RiskAI Finds Urban Commercial Districts Resilient to Climate Risk">
+                    <!-- <span class="press-overlay-title">AI Finds Urban Commercial Districts Resilient to Climate RiskAI Finds Urban Commercial Districts Resilient to Climate Risk</span> -->
+                </a>
+                <div class="press-body">
+                    <p class="press-title">AI Finds Urban Commercial Districts Resilient to Climate RiskAI Finds Urban Commercial Districts Resilient to Climate Risk</p>
+                    <p class="press-summary">
+                        KAIST announced on October 29th that its Urban AI Research Institute (Director, Distinguished Professor Yoonjin Yoon of Civil and Environmental Engineering conducted joint research in the field of 'Urban AI'
+                        with MIT's Senseable City Lab (Director, Professor Carlo Ratti) and disclosed the results at the 'Smart Life Week 2025' exhibition held at COEX, Seoul, in late September.
+                        KAIST and MIT have been pursuing the 'Urban AI Joint Research Program' to interpret major urban problems using artificial intelligence.
+                        At this exhibition, the research results were presented in a form that citizens could directly experience, focusing on three themes:▲Urban Climate Change, ▲Green Environment, and ▲Data Inclusivity.
+                    </p>
+                    <p class="press-meta">KAIST News · <time datetime="2025-10-29">2025-10-29</time></p>
+                    <p class="press-links">
+                        <a class="btn btn-ghost" href="https://news.kaist.ac.kr/news/html/news/?mode=V&mng_no=53650" target="_blank" rel="noopener">Read (KOR) →</a>
+                        <a class="btn btn-ghost" href="https://news.kaist.ac.kr/newsen/html/news/?mode=V&mng_no=53670" target="_blank" rel="noopener">Read (ENG) →</a>
+                    </p>
+                </div>
+            </article>
 
-        <section id="press-list" class="press-list" aria-live="polite"></section>
+            <!-- 새 기사 추가 시 아래 블록을 복제해 제목/요약/날짜/링크만 교체 -->
+            <!--
+            <article class="press-item">
+              <a class="press-media" href="기사-대표-링크" target="_blank" rel="noopener">
+                <img src="assets/press/sample.jpg" alt="기사/매체명">
+                <span class="press-overlay-title">기사 제목</span>
+              </a>
+              <div class="press-body">
+                <p class="press-title">기사 제목</p>
+                <p class="press-summary">요약… 최대 8줄까지 표시되며 그 이상은 … 처리됩니다.</p>
+                <p class="press-meta">매체명 · <time datetime="YYYY-MM-DD">YYYY-MM-DD</time></p>
+                <p class="press-links">
+                  <a class="btn" href="KOR_URL" target="_blank" rel="noopener">Read (KOR) →</a>
+                  <a class="btn btn-ghost" href="ENG_URL" target="_blank" rel="noopener">Read (ENG) →</a>
+                </p>
+              </div>
+            </article>
+            -->
+        </section>
     </main>
 
     <footer class="site-footer">
@@ -72,102 +104,8 @@
         </div>
     </footer>
 
+    <!-- 공용 스크립트(모바일 메뉴/드롭다운만). JSON 로딩 없음 -->
     <script src="assets/script.js"></script>
-    <script>
-        // Footer year
-        (function () { var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear(); })();
-
-        // Robust path helper (handles /user/repo/press.html → /user/repo/assets/press.json)
-        function urlFromPage(relativePath) {
-            const base = window.location.pathname.replace(/[^/]*$/, ''); // drop filename
-            return base + relativePath.replace(/^\.\//, '');
-        }
-
-        (async function () {
-            const listEl = document.getElementById('press-list');
-            const searchEl = document.getElementById('press-search');
-            const viewCardBtn = document.getElementById('view-card');
-            const viewCompactBtn = document.getElementById('view-compact');
-
-            let items = [];
-            const candidates = [
-                urlFromPage('assets/press.json'),
-                'assets/press.json',                 // fallback
-                './assets/press.json'                // fallback
-            ];
-
-            let lastErr = null;
-            for (const u of candidates) {
-                try {
-                    const res = await fetch(u, { cache: 'no-store' });
-                    if (!res.ok) throw new Error('HTTP ' + res.status + ' at ' + u);
-                    items = await res.json();
-                    break;
-                } catch (e) {
-                    lastErr = e;
-                }
-            }
-
-            if (!Array.isArray(items) || items.length === 0) {
-                console.error('Press JSON load error:', lastErr);
-                listEl.innerHTML = '<p>Failed to load press data.</p>';
-                return;
-            }
-
-            // sort by date desc
-            items.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
-
-            function match(q, s) { return (s || '').toLowerCase().includes(q); }
-
-            function render(data) {
-                listEl.innerHTML = data.map(item => {
-                    const img = item.thumb ? `<img src="${item.thumb}" alt="${item.title}">` : '';
-                    const overlay = `<span class="press-overlay-title">${item.title}</span>`;
-                    const outlet = item.outlet ? `<span class="press-outlet">${item.outlet}</span>` : '';
-                    const date = item.date ? `<time datetime="${item.date}">${item.date}</time>` : '';
-                    const summary = item.summary ? `<p class="press-summary">${item.summary}</p>` : '';
-                    const links = (item.links || []).map(l => `
-              <a class="btn" href="${l.url}" target="_blank" rel="noopener">Read (${l.lang}) →</a>
-            `).join('');
-                    const firstLink = (item.links && item.links[0]) ? item.links[0].url : '#';
-
-                    return `
-              <article class="press-item">
-                <a class="press-media" href="${firstLink}" target="_blank" rel="noopener">
-                  ${img}${overlay}
-                </a>
-                <div class="press-body">
-                  <p class="press-title">${item.title}</p>
-                  ${summary}
-                  <p class="press-meta">${outlet}${outlet && date ? ' · ' : ''}${date}</p>
-                  <p class="press-links">${links}</p>
-                </div>
-              </article>
-            `;
-                }).join('');
-            }
-
-            function applySearch() {
-                const q = (searchEl.value || '').toLowerCase().trim();
-                const filtered = q
-                    ? items.filter(it => match(q, it.title) || match(q, it.outlet) || match(q, it.summary))
-                    : items;
-                render(filtered);
-            }
-
-            function setView(compact) {
-                viewCardBtn.setAttribute('aria-pressed', String(!compact));
-                viewCompactBtn.setAttribute('aria-pressed', String(compact));
-                document.getElementById('press-list').classList.toggle('compact', compact);
-            }
-
-            searchEl.addEventListener('input', applySearch);
-            viewCardBtn.addEventListener('click', () => setView(false));
-            viewCompactBtn.addEventListener('click', () => setView(true));
-
-            setView(false);
-            applySearch();
-        })();
-    </script>
+    <script>(function () { var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear(); })();</script>
 </body>
 </html>
