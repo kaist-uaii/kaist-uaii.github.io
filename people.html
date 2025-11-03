@@ -10,28 +10,55 @@
   <meta name="description" content="UAII People — Professors, Researchers, and Students" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="index.html">
-        <img src="assets/logo.png" alt="Urban AI Institute" class="logo" onerror="this.style.display='none'"/>
-        <span>Urban AI Institute</span>
-      </a>
-      <nav class="menu" role="navigation">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="press.html">Press</a></li>
-          <li><a href="people.html" aria-current="page">People</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <header class="site-header">
+        <div class="container nav">
+            <a class="brand" href="index.html">
+                <img src="assets/logo.png" alt="Urban AI Institute" class="logo" onerror="this.style.display='none'" />
+                <span>Urban AI Institute</span>
+            </a>
+
+            <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+
+            <nav class="menu" role="navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+
+                    <li class="dropdown">
+                        <button type="button" class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="projects-menu">
+                            Projects ▾
+                        </button>
+                        <ul id="projects-menu" class="dropdown-menu" hidden>
+                            <li><a href="https://caus.kaist.ac.kr" target="_blank" rel="noopener">CAUS</a></li>
+                            <li><a href="https://hcfm.kaist.ac.kr" target="_blank" rel="noopener">HcFM</a></li>
+                            <li><a href="https://urban.kaist.ac.kr" target="_blank" rel="noopener">Urban@KAIST</a></li>
+                            <li><a href="https://c3.kaist.ac.kr" target="_blank" rel="noopener">KAIST-NYU C3</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <button type="button" class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="events-menu">
+                            Events ▾
+                        </button>
+                        <ul id="events-menu" class="dropdown-menu" hidden>
+                            <li><a href="urbanx-berkeley.html">Urban X Workshop @ Berkeley</a></li>
+                            <li><a href="https://urban.kaist.ac.kr/urbanX" target="_blank" rel="noopener">KAIST Urban X Seminar</a></li>
+                            <li><a href="https://c3.kaist.ac.kr/1st-workshop" target="_blank" rel="noopener">KN-C3 1st-Workshop</a></li>
+                            <li><a href="https://c3.kaist.ac.kr/2nd-workshop" target="_blank" rel="noopener">KN-C3 2nd-Workshop</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="press.html">Press</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
 
   <!-- Hero Section -->
   <section class="people-hero">
     <div class="container">
       <h1>People</h1>
       <p class="people-sub">
-        Meet the members of Urban AI Institute — Professors, Researchers, and Students leading the future of urban intelligence.
+        Meet the members of Urban AI Institute.
       </p>
     </div>
   </section>
@@ -41,15 +68,39 @@
     <div class="container">
       <h2>Professors</h2>
       <div class="people-grid">
-        <article class="person-card">
-          <img src="assets/people/prof1.jpg" alt="Prof. Yoonjin Yoon" />
-          <h3>Prof. Yoonjin Yoon</h3>
-          <p class="role">Director / Civil & Environmental Engineering</p>
-          <div class="links">
-            <a href="mailto:yoonjin@kaist.ac.kr">✉️</a>
-            <a href="#">🧑‍🎓</a>
-          </div>
-        </article>
+          <article class="person-card">
+              <img src="assets/people/profile_yoon.jpg" alt="Yoonjin Yoon" />
+              <h3>Yoonjin Yoon</h3>
+              <div class="links">
+                  <a href="mailto:yoonjin@spacetime.kaist.ac.kr">✉️</a>
+                  <a href="https://spacetime.kaist.ac.kr">🎓</a>
+              </div>
+          </article>
+          <article class="person-card">
+              <img src="assets/people/.jpg" alt="professor" />
+              <h3>professor</h3>
+              <!-- <p class="role">Director / Civil & Environmental Engineering</p> -->
+              <div class="links">
+                  <a href="mailto:yoonjin@spacetime.kaist.ac.kr">✉️</a>
+                  <a href="https://spacetime.kaist.ac.kr">🎓</a>
+              </div>
+          </article>
+          <article class="person-card">
+              <img src="assets/people/.jpg" alt="professor" />
+              <h3>professor</h3>
+              <div class="links">
+                  <a href="mailto:yoonjin@spacetime.kaist.ac.kr">✉️</a>
+                  <a href="https://spacetime.kaist.ac.kr">🎓</a>
+              </div>
+          </article>
+          <article class="person-card">
+              <img src="assets/people/.jpg" alt="professor" />
+              <h3>professor</h3>
+              <div class="links">
+                  <a href="mailto:yoonjin@spacetime.kaist.ac.kr">✉️</a>
+                  <a href="https://spacetime.kaist.ac.kr">🎓</a>
+              </div>
+          </article>
       </div>
     </div>
   </section>
