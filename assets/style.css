@@ -569,6 +569,71 @@ p {
   border-color: #4fd1c5;
 }
 
+/* ===== CONTACT SECTION ===== */
+.contact-section{
+  /* 더 어두운 딥블루 그라데이션 */
+  background: linear-gradient(180deg, #0e1522 0%, #0b0f17 100%);
+  color:#f5f7fa;
+  padding: 3.2rem 0 3.6rem;
+}
+
+.contact-title{
+  font-family:"Poppins",sans-serif;
+  font-weight:700;
+  font-size: clamp(26px,3vw,36px);
+  color:#4fd1c5;            /* 브랜드 포인트 */
+  margin: 0 0 1.6rem 0;
+  text-align:left;          /* 좌측 정렬 */
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns: 1.05fr 1.4fr; /* 왼쪽 정보 : 오른쪽 지도 */
+  gap: 24px;
+  align-items: start;
+}
+
+.contact-info{
+  font-family:"Inter",sans-serif;
+  line-height:1.75;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 14px;
+  padding: 18px 20px;
+}
+
+.contact-info .org{ margin:0 0 .4rem }
+.contact-info .addr{ margin:.1rem 0 1rem; color:#cfd6e6 }
+.contact-info .item{ margin:.35rem 0 }
+.contact-info a{ color:#4fd1c5; text-decoration:none }
+.contact-info a:hover{ color:#6be5dc }
+
+/* 지도 박스(우측) */
+.contact-map{
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 14px;
+  overflow:hidden;
+}
+
+/* 반응형 비율 유지: 16:9 */
+.contact-map iframe{
+  display:block; width:100%;
+  aspect-ratio: 16 / 9;     /* 최신 브라우저 */
+  border:0;
+}
+
+/* 구형 브라우저 fallback (optional) */
+@supports not (aspect-ratio: 16 / 9){
+  .contact-map{ position:relative; padding-top:56.25% }
+  .contact-map iframe{ position:absolute; inset:0; width:100%; height:100% }
+}
+
+/* Mobile: 1열로 쌓기 */
+@media (max-width: 900px){
+  .contact-grid{ grid-template-columns: 1fr; }
+  .contact-title{ text-align:center }
+}
 
 
 
