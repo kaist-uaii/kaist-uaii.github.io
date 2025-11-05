@@ -1,87 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Workshop Meals | Urban X Workshop @ Berkeley</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css" />
-  <link rel="icon" href="assets/logo.png" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Workshop Meals | Urban X Workshop @ Berkeley</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="icon" href="assets/logo.png" />
+    <style>
+        body {
+            background: #ffffff;
+            color: #111;
+            font-family: "Inter", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2, h3 {
+            font-family: "Poppins", sans-serif;
+            color: #0b0c10;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        h2 {
+            margin-top: 2.5rem;
+            color: #1b1b1b;
+            border-bottom: 2px solid #4fd1c5;
+            padding-bottom: 0.4rem;
+        }
+
+        h3 {
+            margin-top: 1.8rem;
+            color: #333;
+        }
+
+        small {
+            color: #666;
+            font-weight: 500;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background: #f7f8fa;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) td {
+            background: #fafafa;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1.5rem;
+        }
+
+        .hero-sub {
+            text-align: center;
+            color: #444;
+            margin-bottom: 2rem;
+        }
+
+        .back-btn {
+            display: block;
+            width: fit-content;
+            margin: 2rem auto;
+            background: #4fd1c5;
+            color: #0b0c10;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 10px;
+            transition: all 0.2s ease;
+        }
+
+            .back-btn:hover {
+                background: #3fc0b4;
+            }
+
+        footer {
+            text-align: center;
+            padding: 1.2rem;
+            color: #666;
+            border-top: 1px solid #ddd;
+            margin-top: 2rem;
+        }
+    </style>
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="index.html">
-        <img src="assets/logo.png" alt="Urban AI Institute" class="logo" onerror="this.style.display='none'" />
-        <span>Urban AI Institute</span>
-      </a>
-      <nav class="menu">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="urbanx-berkeley.html">Berkeley Workshop</a></li>
-          <li><a href="workshop-meals.html" aria-current="page">Meals</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <header class="site-header" style="background:#fff; border-bottom:1px solid #ddd;">
+        <div class="container nav" style="display:flex;justify-content:space-between;align-items:center;">
+            <a class="brand" href="index.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#000;">
+                <img src="assets/logo.png" alt="Urban AI Institute" class="logo" style="width:30px;height:30px;" />
+                <span style="font-weight:700;">Urban AI Institute</span>
+            </a>
+            <nav>
+                <ul style="list-style:none;display:flex;gap:18px;margin:0;padding:0;">
+                    <li><a href="index.html" style="text-decoration:none;color:#333;">Home</a></li>
+                    <li><a href="urbanx-berkeley.html" style="text-decoration:none;color:#333;">Berkeley Workshop</a></li>
+                    <li><a href="workshop-meals.html" style="text-decoration:none;color:#4fd1c5;font-weight:600;">Meals</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
+    <main class="container">
+        <h1>Workshop Meals</h1>
+        <p class="hero-sub">Lunch and Dinner Menu for Urban X Workshop @ Berkeley</p>
 
+        <h2>Dinner Menu</h2>
 
-  <main class="container" style="padding:2rem 1rem;max-width:900px;">
-    <h1>Workshop Meals</h1>
+        <h3>First Course <small>(Individual — Choose One)</small></h3>
+        <table>
+            <thead><tr><th>Dish</th><th>Description</th><th>Extra</th></tr></thead>
+            <tbody>
+                <tr><td>Petite Steak Sliders</td><td>Prime rib, black garlic aioli, mushroom escabeche, cheddar</td><td>+ $10</td></tr>
+                <tr><td>Broccolini</td><td>Caper, lemon, garlic, olive oil dust</td><td>-</td></tr>
+                <tr><td>Maitake Mushrooms</td><td>Togarashi glaze</td><td>-</td></tr>
+                <tr><td>Gem Salad</td><td>Croutons, cheddar, creamy caper dressing (vegan option available)</td><td>-</td></tr>
+                <tr><td>Crispy Rockfish</td><td>Hot sauce, buttermilk, pickled onion</td><td>-</td></tr>
+            </tbody>
+        </table>
 
-    <h2>Dinner Menu</h2>
+        <h3>Second Course <small>(Choose up to 3 for the table)</small></h3>
+        <table>
+            <thead><tr><th>Dish</th><th>Description</th><th>Extra</th></tr></thead>
+            <tbody>
+                <tr><td>Cobia Filet</td><td>Mushroom–leek ragout, crispy leeks</td><td>-</td></tr>
+                <tr><td>Romanesco</td><td>Quinoa rice, smoked onion, celery root purée</td><td>-</td></tr>
+                <tr><td>Pappardelle</td><td>Hazelnut red pesto, tomato, ricotta salata</td><td>-</td></tr>
+                <tr><td>½ Fried Chicken</td><td>Roasted root vegetables, chili honey</td><td>-</td></tr>
+                <tr><td>Filet</td><td>Harris Ranch prime filet, potato purée, demi-glace</td><td>+ $15</td></tr>
+            </tbody>
+        </table>
 
-    <h3>First Course <small>(Individual — Choose One)</small></h3>
-    <table border="1" cellspacing="0" cellpadding="8" width="100%">
-      <thead><tr><th align="left">Dish</th><th align="left">Description</th><th align="left">Extra</th></tr></thead>
-      <tbody>
-        <tr><td>Petite Steak Sliders</td><td>Prime rib, black garlic aioli, mushroom escabeche, cheddar</td><td>+ $10</td></tr>
-        <tr><td>Broccolini</td><td>Caper, lemon, garlic, olive oil dust</td><td>-</td></tr>
-        <tr><td>Maitake Mushrooms</td><td>Togarashi glaze</td><td>-</td></tr>
-        <tr><td>Gem Salad</td><td>Croutons, cheddar, creamy caper dressing (vegan option available)</td><td>-</td></tr>
-        <tr><td>Crispy Rockfish</td><td>Hot sauce, buttermilk, pickled onion</td><td>-</td></tr>
-      </tbody>
-    </table>
+        <h3>Dessert <small>(Choose One)</small></h3>
+        <table>
+            <thead><tr><th>Dessert</th></tr></thead>
+            <tbody>
+                <tr><td>Citrus Cheesecake</td></tr>
+                <tr><td>Seasonal Butter Cake</td></tr>
+                <tr><td>Flourless Chocolate Cake</td></tr>
+            </tbody>
+        </table>
 
-    <br>
+        <p><strong>Beverages:</strong> Coffee &amp; Tea included ☕🍵</p>
 
-    <h3>Second Course <small>(Choose up to 3 for the table)</small></h3>
-    <table border="1" cellspacing="0" cellpadding="8" width="100%">
-      <thead><tr><th align="left">Dish</th><th align="left">Description</th><th align="left">Extra</th></tr></thead>
-      <tbody>
-        <tr><td>Cobia Filet</td><td>Mushroom–leek ragout, crispy leeks</td><td>-</td></tr>
-        <tr><td>Romanesco</td><td>Quinoa rice, smoked onion, celery root purée</td><td>-</td></tr>
-        <tr><td>Pappardelle</td><td>Hazelnut red pesto, tomato, ricotta salata</td><td>-</td></tr>
-        <tr><td>½ Fried Chicken</td><td>Roasted root vegetables, chili honey</td><td>-</td></tr>
-        <tr><td>Filet</td><td>Harris Ranch prime filet, potato purée, demi-glace</td><td>+ $15</td></tr>
-      </tbody>
-    </table>
+        <a href="urbanx-berkeley.html" class="back-btn">← Back to Workshop Page</a>
+    </main>
 
-    <br>
+    <footer>
+        © <span id="year"></span> Urban AI Institute • Built with GitHub Pages
+    </footer>
 
-    <h3>Dessert <small>(Choose One)</small></h3>
-    <table border="1" cellspacing="0" cellpadding="8" width="100%">
-      <thead><tr><th align="left">Dessert</th></tr></thead>
-      <tbody>
-        <tr><td>Citrus Cheesecake</td></tr>
-        <tr><td>Seasonal Butter Cake</td></tr>
-        <tr><td>Flourless Chocolate Cake</td></tr>
-      </tbody>
-    </table>
-
-    <p><strong>Beverages:</strong> Coffee &amp; Tea included ☕🍵</p>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <small>© <span id="year"></span> Urban AI Institute • Built with GitHub Pages</small>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
