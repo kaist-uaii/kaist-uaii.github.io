@@ -1,364 +1,213 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Apply | Urban AI Institute</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="icon" href="assets/logo.png" />
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply / Recruitment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        :root {
-            --brand: #4fd1c5;
-            --ink: #111;
-            --muted: #555;
-            --line: #ddd;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            background: #fff;
-            color: var(--ink);
-            font-family: "Inter",system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-        }
-
-        a {
-            color: var(--brand);
-            text-decoration: none;
-        }
-
-        header {
-            border-bottom: 1px solid var(--line);
-            background: #fff;
-        }
-
-        .nav {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 14px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 12px;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: #000;
-            text-decoration: none;
-            font-weight: 700;
-        }
-
-            .brand img {
-                width: 28px;
-                height: 28px;
-            }
-
-        .menu ul {
-            display: flex;
-            gap: 18px;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .menu a {
-            color: #333;
-        }
-
-            .menu a[aria-current="page"] {
-                color: var(--brand);
-                font-weight: 600;
-            }
-
-        .hero {
-            text-align: center;
-            padding: 3rem 1rem 2rem;
-            border-bottom: 1px solid var(--line);
-        }
-
-            .hero h1 {
-                font-family: "Poppins",sans-serif;
-                font-size: 34px;
-                margin-bottom: 10px;
-            }
-
-            .hero p {
-                color: var(--muted);
-            }
-
-        main {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 2rem 20px;
-        }
-
-        section {
-            margin-bottom: 2.5rem;
-        }
-
-        h2 {
-            font-family: "Poppins",sans-serif;
-            font-size: 22px;
-            margin-bottom: 0.8rem;
-        }
-
-        h3 {
-            font-family: "Poppins",sans-serif;
-            font-size: 18px;
-            margin-top: 1.4rem;
-        }
-
-        ul, ol {
-            line-height: 1.7;
-            margin: 0.5rem 0 1rem 1.5rem;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        th, td {
-            border: 1px solid var(--line);
-            padding: 10px 12px;
-            text-align: left;
-            vertical-align: top;
-        }
-
-        th {
-            background: #f7f8fa;
-        }
-
-        tr:nth-child(even) td {
-            background: #fafafa;
-        }
-
-        .note {
-            color: var(--muted);
-            font-size: 0.9rem;
-        }
-
-        .cta {
-            margin-top: 1rem;
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
+        /* Custom styles for arrow icons */
+        .arrow-icon {
             display: inline-block;
-            padding: .6rem 1rem;
-            border-radius: 10px;
-            border: 1px solid var(--brand);
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-            .btn.primary {
-                background: var(--brand);
-                color: #0b0c10;
-            }
-
-        footer {
-            border-top: 1px solid var(--line);
-            text-align: center;
-            padding: 1.5rem;
-            color: #777;
+            width: 1em;
+            height: 1em;
+            vertical-align: middle;
         }
     </style>
 </head>
-
 <body>
-    <header>
-        <div class="nav">
-            <a class="brand" href="index.html">
-                <img src="assets/logo.png" alt="Urban AI Institute" />
-                <span>Urban AI Institute</span>
+    <nav class="border-b border-slate-100 bg-white/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-6 flex justify-between items-center">
+            <a href="index.html">
+                <div class="text-xl font-black tracking-tighter text-blue-900">
+                    UAII <span class="text-slate-400 font-light">Apply / Recruitment</span>
+                </div>
             </a>
-            <nav class="menu">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="press.html">Press</a></li>
-                    <li><a href="people.html">People</a></li>
-                    <li><a href="apply.html" aria-current="page">Apply</a></li>
-                </ul>
-            </nav>
+
+            <div class="flex gap-6 text-xs font-bold uppercase tracking-widest text-slate-500">
+                <a href="index.html" class="hover:text-blue-600">Home</a>
+                <a href="people.html" class="hover:text-blue-600">People</a>
+                <a href="projects.html" class="hover:text-blue-600">Projects</a>
+                <a href="apply.html" class="hover:text-blue-600">Apply</a>
+                <a href="press.html" class="hover:text-blue-600">Press</a>
+            </div>
         </div>
-    </header>
-
-    <div class="hero">
-        <h1>Apply</h1>
-        <p>Join the Urban AI Institute to shape the future of cities with AI research and innovation.</p>
-    </div>
-
-    <main>
-        <!-- Positions -->
-        <section>
-            <h2>Open Positions</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Position</th>
-                        <th>Headcount</th>
-                        <th>Salary (Monthly)</th>
-                        <th>Recruitment Period</th>
-                        <th>Remarks</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Research Assistant Professor</strong></td>
-                        <td>2</td>
-                        <td>₩4,000,000+</td>
-                        <td>Until filled</td>
-                        <td>Negotiable based on experience</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Postdoctoral Researcher</strong></td>
-                        <td>2</td>
-                        <td>₩3,500,000+</td>
-                        <td>Until filled</td>
-                        <td>Negotiable based on experience</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Research Associate</strong></td>
-                        <td>2</td>
-                        <td>₩2,800,000</td>
-                        <td>Until filled</td>
-                        <td>Negotiable</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p class="note">* Salary may vary depending on qualifications, experience, and project participation.</p>
-        </section>
-
-
-        <!-- ===== Responsibilities ===== -->
-        <section id="responsibilities">
-            <h2>Responsibilities</h2>
-            <ul>
-                <li>Lead and participate in Urban AI Institute–led research projects.</li>
-                <li>Plan, win, and manage collaborative grants and industry partnerships (domestic & international).</li>
-                <li>Support institute operations and general administrative tasks as needed.</li>
-                <li>Develop core Urban AI technologies for sustainable, human-centered city systems.</li>
-            </ul>
-            <hr />
-        </section>
-
-        <!-- ===== Research Assistant Professor ===== -->
-        <section id="rap">
-            <h2>Research Assistant Professor</h2>
-
-            <h3>Qualifications</h3>
-            <ul>
-                <li>Ph.D. in a relevant field (e.g., AI/ML, Computer Vision, Data Science, Transportation/Urban Systems, GIS).</li>
-                <li>Strong publication record and clear research vision aligned with Urban AI.</li>
-                <li>Ability to mentor students and collaborate across disciplines.</li>
-                <li>Excellent written and oral communication (English; Korean a plus).</li>
-            </ul>
-
-            <h3>Preferred Qualifications</h3>
-            <ul>
-                <li>Experience as PI/Co-PI or key personnel on funded projects, proposal writing, and project management.</li>
-                <li>Top-tier journal/conference publications and invited talks.</li>
-                <li>Hands-on skills in Python and modern ML stacks (e.g., PyTorch/JAX), data engineering, and MLOps.</li>
-                <li>Active international collaboration network and leadership experience.</li>
-            </ul>
-            <hr />
-        </section>
-
-        <!-- ===== Postdoctoral Researcher ===== -->
-        <section id="postdoc">
-            <h2>Postdoctoral Researcher</h2>
-
-            <h3>Qualifications</h3>
-            <ul>
-                <li>Ph.D. in AI/ML, CV, Data Science, Transportation/Urban Engineering, GIS, or related areas.</li>
-                <li>Demonstrated ability to publish in reputable venues and to drive independent research.</li>
-                <li>Proficiency in Python and end-to-end research workflows (experiments, reproducibility, documentation).</li>
-                <li>Strong collaboration and communication skills.</li>
-            </ul>
-
-            <h3>Preferred Qualifications</h3>
-            <ul>
-                <li>Experience with geospatial intelligence, mobility systems, or foundation models for urban data.</li>
-                <li>Background in large-scale datasets, cloud computing, or high-performance training pipelines.</li>
-                <li>Prior involvement in multi-institution or industry-sponsored projects.</li>
-            </ul>
-            <hr />
-        </section>
-
-        <!-- ===== Research Associate (Contract) ===== -->
-        <section id="research-associate">
-            <h2>Research Associate</h2>
-
-            <h3>Qualifications</h3>
-            <ul>
-                <li>Bachelor’s or Master’s degree (or equivalent experience) in CS/AI, Data/Geo-Informatics, Transportation/Urban, or related fields.</li>
-                <li>Solid coding skills in Python; familiarity with data analysis and ML basics.</li>
-                <li>Clear written/oral communication; ability to organize experiments and datasets.</li>
-            </ul>
-
-            <h3>Preferred Qualifications</h3>
-            <ul>
-                <li>Experience with GIS tools (e.g., QGIS, GeoPandas), visualization, and data pipelines.</li>
-                <li>Hands-on model prototyping (PyTorch) and experiment tracking (e.g., Weights & Biases).</li>
-                <li>Experience coordinating academic–industry collaborations.</li>
-            </ul>
-            <hr />
-        </section>
-
-        <!-- ===== Application ===== -->
-        <section id="application">
-            <h2>Application</h2>
-            <p>Please submit the following documents (single PDF preferred):</p>
-            <ul>
-                <li>Curriculum Vitae (CV) with contact information</li>
-                <li>Publication list (highlight 1–3 representative works)</li>
-                <li>Portfolio/GitHub/project links (optional)</li>
-                <li>Preferred starting date</li>
-            </ul>
-            <p>
-                <strong>Submission:</strong>
-                <a href="mailto:urban@kaist.ac.kr">urban@kaist.ac.kr</a>
+    </nav>
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-4">
+                Apply / Recruitment
+            </h2>
+            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">
+                Our Institute welcomes passionate individuals who seek to advance
+                research in intelligent urban systems and AI-driven civil engineering.
+                We recruit graduate students, interns, and postdoctoral researchers
+                regularly.
             </p>
-            <hr />
-        </section>
 
-        <!-- ===== Recruitment Process ===== -->
-        <section id="process">
-            <h2>Recruitment Process</h2>
-            <ol>
-                <li>Application submission</li>
-                <li>Screening &amp; Interview</li>
-                <li>Final offer and onboarding</li>
-            </ol>
-            <p class="note">* The process/schedule may vary depending on internal circumstances.</p>
-            <hr />
-        </section>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Graduate Students -->
+                <div class="rounded-2xl shadow-sm bg-white">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">
+                            M.S. / Ph.D. Students
+                        </h3>
+                        <p class="text-gray-600 mb-4 text-sm">
+                            Applicants with B.S. or M.S. degrees in related fields.
+                        </p>
+                        <ul class="text-sm text-gray-500 mb-4 space-y-1">
+                            <li>
+                                <strong>Application:</strong> Spring 2026 / Fall 2026
+                            </li>
+                            <li>
+                                <strong>Departments:</strong> Civil & Environmental
+                                Engineering, Urban Engineering, AI & Smart Cities
+                            </li>
+                        </ul>
+                        <a href="/apply/graduates" class="inline-flex my-6 px-3 py-2 bg-slate-700 text-white rounded-md text-sm font-semibold hover:bg-gray-500 hover:text-grey-300">
+                            <div class="flex flex-row justify-center items-center">
+                                <div class="mx-1">See in Detail</div>
+                                <div>
+                                    <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
 
-        <!-- ===== Contact ===== -->
-        <section id="contact-apply">
-            <h2>Contact</h2>
-            <p>For questions about the application, please contact:</p>
-            <p>Email: <a href="mailto:urban@kaist.ac.kr">urban@kaist.ac.kr</a></p>
-        </section>
+                <!-- Internship -->
+                <div class="rounded-2xl shadow-sm bg-white">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">
+                            Winter / Summer Internships
+                        </h3>
+                        <p class="text-gray-600 mb-4 text-sm">
+                            For undergraduate students interested in AI, simulation, or
+                            urban systems.
+                        </p>
+                        <ul class="text-sm text-gray-500 mb-4 space-y-1">
+                            <li>
+                                <strong>Period:</strong> Every Winter & Summer Vacation
+                            </li>
+                            <li>
+                                <strong>Fields:</strong> All relevant disciplines
+                            </li>
+                        </ul>
+                        <a href="/apply/undergraduates" class="inline-flex my-6 px-3 py-2 bg-slate-700 text-white rounded-md text-sm font-semibold hover:bg-gray-500 hover:text-grey-300">
+                            <div class="flex flex-row justify-center items-center">
+                                <div class="mx-1">See in Detail</div>
+                                <div>
+                                    <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
 
-    </main>
+                <!-- Research / Postdoc -->
+                <div class="rounded-2xl shadow-sm bg-white">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">
+                            Research Professors / Postdoctoral Fellows
+                        </h3>
+                        <p class="text-gray-600 mb-4 text-sm">
+                            For Ph.D. holders with strong publication or project experience.
+                        </p>
+                        <ul class="text-sm text-gray-500 mb-4 space-y-1">
+                            <li>
+                                <strong>Application:</strong> Rolling basis
+                            </li>
+                            <li>
+                                <strong>Focus:</strong> Urban AI & Urban Representation
+                            </li>
+                        </ul>
+                        <a href="/apply/post" class="inline-flex my-6 px-3 py-2 bg-slate-700 text-white rounded-md text-sm font-semibold hover:bg-gray-500 hover:text-grey-300">
+                            <div class="flex flex-row justify-center items-center">
+                                <div class="mx-1">See in Detail</div>
+                                <div>
+                                    <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-    <footer>
-        © <span id="year"></span> Urban AI Institute
-    </footer>
+            <!-- Application Instructions -->
+            <div class="mt-16 bg-white rounded-2xl shadow-sm p-8 max-w-4xl mx-auto">
+                <h4 class="text-2xl font-semibold mb-4">
+                    Application Process
+                </h4>
+                <ol class="list-decimal list-inside text-gray-600 space-y-2 mb-6">
+                    <li>Prepare CV, transcript, and a 1-page statement of purpose.</li>
+                    <li>
+                        Email your documents to
+                        <span onclick="copyEmail('smsohn1997@kaist.ac.kr')" class="font-medium text-blue-600 hover:underline cursor-pointer">smsohn1997@kaist.ac.kr</span>
+                        with the title:
+                        <span class="italic">
+                            [Application] Position_Name - Your_Name
+                        </span>
+                    </li>
+                    <li>Shortlisted candidates will be contacted for an interview.</li>
+                </ol>
+
+                <div class="flex items-center justify-between text-gray-500 text-sm">
+                    <span class="flex items-center gap-2">
+                        <div></div> Early inquiries are encouraged.
+                    </span>
+                    <span class="flex items-center gap-2">
+                        <div></div> Contact at least one month before internship
+                        start.
+                    </span>
+                </div>
+            </div>
+
+            <!-- FAQ -->
+            <a href="/apply">
+                <div class="mt-5 bg-white rounded-2xl shadow-sm p-8 max-w-4xl mx-auto flex justify-start items-center text-center hover:bg-gray-100 cursor-pointer">
+                    <h4 class="text-2xl font-semibold mb-4">FAQ</h4>
+                    <svg class="arrow-icon ml-2" style="width: 24px; height: 24px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </div>
+            </a>
+        </div>
+    </section>
 
     <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
+        async function copyEmail(email) {
+            try {
+                await navigator.clipboard.writeText(email);
+                alert("이메일 복사에 성공했습니다");
+            } catch (err) {
+                // Fallback for older browsers
+                const textArea = document.createElement("textarea");
+                textArea.value = email;
+                textArea.style.position = "fixed";
+                textArea.style.left = "-999999px";
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    alert("이메일 복사에 성공했습니다");
+                } catch (err) {
+                    alert("이메일 복사에 실패했습니다");
+                }
+                document.body.removeChild(textArea);
+            }
+        }
     </script>
 </body>
 </html>
+
+
+
+
+

@@ -54,3 +54,98 @@ document.addEventListener('click', (e) => {
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeAll();
 });
+
+// press slider (auto-advance)
+const pressSlider = document.querySelector('.press-slider');
+if (pressSlider) {
+    const track = pressSlider.querySelector('.press-track');
+    const slides = Array.from(pressSlider.querySelectorAll('.press-item'));
+    const prevButton = document.querySelector('.press-control.prev');
+    const nextButton = document.querySelector('.press-control.next');
+
+    if (!track || slides.length === 0) {
+        // 트랙/슬라이드 없으면 아무것도 안 함
+    } else {
+        let current = slides.findIndex((slide) => slide.classList.contains('is-active'));
+        if (current === -1) current = 0;
+
+        const showSlide = (index, { focus = false } = {}) => {
+            slides.forEach((slide, idx) => {
+                const isActive = idx === index;
+                slide.classList.toggle('is-active', isActive);
+                slide.setAttribute('aria-hidden', String(!isActive));
+            });
+
+            // 트랙 이동 (CSS transition으로 자연스럽게)
+            track.style.transform = `translateX(-${index * 100}%)`;
+
+            // (선택) 키보드 사용자가 버튼으로 조작할 때 슬라이더 영역에 포커스 주고 싶으면:
+            if (focus) pressSlider.focus?.();
+        };
+
+        const moveTo = (index) => {
+            current = (index + slides.length) % slides.length;
+            showSlide(current);
+        };
+
+        const nextMove = () => moveTo(current + 1);
+        const prevMove = () => moveTo(current - 1);
+
+        // 초기 렌더
+        showSlide(current);
+
+        // 자동재생 (슬라이드 2개 이상일 때만)
+        const loopIntervalMs = 5000;
+        let loopInterval = null;
+
+        const startLoop = () => {
+            if (slides.length <= 1) return;
+            stopLoop();
+            loopInterval = setInterval(nextMove, loopIntervalMs);
+        };
+
+        const stopLoop = () => {
+            if (loopInterval) clearInterval(loopInterval);
+            loopInterval = null;
+        };
+
+        const resetLoop = () => {
+            startLoop();
+        };
+
+        startLoop();
+
+        // 버튼 이벤트
+        prevButton?.addEventListener('click', () => {
+            prevMove();
+            resetLoop();
+        });
+
+        nextButton?.addEventListener('click', () => {
+            nextMove();
+            resetLoop();
+        });
+
+        // hover 시 자동재생 멈춤 / 벗어나면 재시작
+        pressSlider.addEventListener('mouseenter', stopLoop);
+        pressSlider.addEventListener('mouseleave', startLoop);
+
+        // 포커스 들어오면 멈춤(키보드/스크린리더), 나가면 재시작
+        pressSlider.addEventListener('focusin', stopLoop);
+        pressSlider.addEventListener('focusout', startLoop);
+
+        // 키보드 좌/우 이동 (슬라이더 영역에 포커스가 있을 때)
+        // tabindex가 없으면 focus가 안 될 수 있으니 HTML에 press-slider에 tabindex="0" 추가해도 됨.
+        pressSlider.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                prevMove();
+                resetLoop();
+            } else if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                nextMove();
+                resetLoop();
+            }
+        });
+    }
+}

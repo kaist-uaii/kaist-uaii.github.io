@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Urban AI Institute (UAII)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .pagetitle {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .divider {
+            height: 2px;
+            background-color: #e5e7eb;
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+        .sectiontitle {
+            font-size: 1.875rem;
+            font-weight: 600;
+            border-bottom: 2px solid #374151;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <nav class="border-b border-slate-100 bg-white/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-6 flex justify-between items-center">
+            <a href="index.html"><div class="text-xl font-black tracking-tighter text-blue-900">UAII <span class="text-slate-400 font-light">Projects</span></div></a>
+            <div class="flex gap-6 text-xs font-bold uppercase tracking-widest text-slate-500">
+                <a href="index.html" class="hover:text-blue-600">Home</a>
+                <a href="people.html" class="hover:text-blue-600">People</a>
+                <a href="projects.html" class="hover:text-blue-600">Projects</a>
+                <a href="apply.html" class="hover:text-blue-600">Apply</a>
+                <a href="press.html" class="hover:text-blue-600">Press</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="pt-10">
+        <div class="container mx-auto px-6">
+            <h1 class="pagetitle">Projects</h1>
+            <div class="divider"></div>
+        </div>
+    </header>
+
+    <main class="py-16">
+        <!-- Main Projects Grid -->
+        <section class="container mx-auto px-6">
+            <div id="featured-projects-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- ProjectCard items will be injected here -->
+            </div>
+        </section>
+
+        <!-- Other Projects Section -->
+        <section class="container mx-auto px-6 mt-32">
+            <h2 class="sectiontitle mb-10">Other Projects</h2>
+            <div id="other-projects-list" class="flex flex-col gap-6">
+                <!-- OtherProjectCard items will be injected here -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white border-t border-gray-200 py-8 text-center mt-20">
+        <p class="text-gray-500 text-sm">&copy; 2026 Urban AI Institute. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Sample data from projectsData.json
+        const projectsData = [
+            {
+                "id": 1,
+                "title": "GS E&C (UAM)",
+                "image": "https://raw.githubusercontent.com/STIL-KAIST/spacetime-kaist/main/public/projectsImg/1.png",
+                "desc": "Research on Urban Air Mobility (UAM) integration and infrastructure planning with GS E&C.",
+                "link": "/gs-ec-uam",
+                "type": "internal"
+            },
+            {
+                "id": 2,
+                "title": "KAIST-NYU C³",
+                "image": "https://raw.githubusercontent.com/STIL-KAIST/spacetime-kaist/main/public/projectsImg/2.png",
+                "desc": "Collaboration between KAIST and NYU for Climate-Smart, Creative, and Connected Cities.",
+                "link": "https://c3.kaist.ac.kr/home",
+                "type": "external"
+            },
+            {
+                "id": 4,
+                "title": "Urban@KAIST",
+                "image": "https://raw.githubusercontent.com/STIL-KAIST/spacetime-kaist/main/public/projectsImg/4.png",
+                "desc": "Interdisciplinary research platform for future urban systems at KAIST.",
+                "link": "https://urban.kaist.ac.kr/",
+                "type": "external"
+            },
+            {
+                "id": 7,
+                "pagetitle": "NARAE",
+                "title": "Air Traffic Management Master Plan - NARAE",
+                "desc": "Strategic roadmap for next-generation air traffic management systems.",
+                "link": "/narae",
+                "type": "internal"
+            },
+            {
+                "id": 8,
+                "pagetitle": "ATFM",
+                "title": "Probabilistic Air Traffic Flow Management (ATFM)",
+                "desc": "Advanced modeling and optimization for air traffic flow under uncertainty.",
+                "link": "/atfm",
+                "type": "internal"
+            },
+        ];
+
+        function createProjectCard(p) {
+            const card = document.createElement('div');
+            const linkHref = p.type === 'internal' ? `/projects${p.link}` : p.link;
+            const target = p.type === 'external' ? 'target="_blank" rel="noopener noreferrer"' : '';
+
+            card.innerHTML = `
+                    <a href="${linkHref}" ${target} class="block h-full">
+                        <article class="flex flex-col justify-between p-5 h-full bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-xl transition">
+                            <div>
+                                ${p.image ? `<img src="${p.image}" alt="${p.title}" class="w-full h-48 object-cover rounded-md mb-4">` : ''}
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-2xl">${p.title}</h3>
+                                <p class="mt-2 text-sm text-gray-600">${p.desc || ''}</p>
+                                <p class="mt-4 inline-block text-sm font-medium text-blue-600 hover:underline">See more →</p>
+                            </div>
+                        </article>
+                    </a>
+                `;
+            return card;
+        }
+
+        function createOtherProjectCard(p) {
+            const card = document.createElement('div');
+            const hasLink = !!p.link;
+            const linkHref = hasLink ? (p.type === 'internal' ? `/projects${p.link}` : p.link) : '#';
+
+            if (hasLink) {
+                card.innerHTML = `
+                        <a href="${linkHref}" class="block">
+                            <article class="flex flex-col justify-between p-6 h-full bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-xl transition">
+                                <div>
+                                    <h3 class="font-semibold text-2xl">${p.title}</h3>
+                                    <p class="mt-2 text-sm text-gray-600">${p.desc || ''}</p>
+                                    <p class="mt-4 inline-block text-sm font-medium text-blue-600 hover:underline">See more →</p>
+                                </div>
+                            </article>
+                        </a>
+                    `;
+            } else {
+                card.innerHTML = `
+                        <article class="flex flex-col justify-between p-6 h-full bg-white rounded-lg border border-gray-200 shadow-sm transition">
+                            <div>
+                                <h3 class="font-semibold text-2xl text-gray-400">${p.title}</h3>
+                                <p class="mt-2 text-sm text-gray-500">${p.desc || ''}</p>
+                            </div>
+                        </article>
+                    `;
+            }
+            return card;
+        }
+
+        function renderProjects() {
+            const featuredGrid = document.getElementById('featured-projects-grid');
+            const otherList = document.getElementById('other-projects-list');
+
+            // Logic matches Projects.jsx filters
+            const featuredProjects = projectsData.filter(p => p.link && !p.pagetitle);
+            const otherProjects = projectsData.filter(p => (p.link && p.pagetitle) || !p.link);
+
+            featuredProjects.forEach(p => {
+                featuredGrid.appendChild(createProjectCard(p));
+            });
+
+            otherProjects.forEach(p => {
+                otherList.appendChild(createOtherProjectCard(p));
+            });
+        }
+
+        // Initialize rendering
+        renderProjects();
+    </script>
+</body>
+</html>
+

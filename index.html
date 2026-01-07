@@ -1,58 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Urban AI Institute</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css" />
-  <link rel="icon" href="assets/logo.png" />
-  <meta name="description" content="Urban AI Institute — research at the intersection of cities and AI" />
+    <meta charset="utf-8" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Urban AI Institute</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="icon" href="assets/K-UAII_logo.jpg" />
+    <meta name="description" content="Urban AI Institute — research at the intersection of cities and AI" />
 </head>
 <body>
-    <header class="site-header">
-        <div class="container nav">
-            <a class="brand" href="index.html">
-                <img src="assets/logo.png" alt="Urban AI Institute" class="logo" onerror="this.style.display='none'" />
-                <span>Urban AI Institute</span>
+    <nav class="border-b border-slate-100 bg-white/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-6 flex justify-between items-center">
+            <a href="index.html">
+                <div class="text-xl font-black tracking-tighter text-blue-900">
+                    UAII <span class="text-slate-400 font-light">Urban AI Institute</span>
+                </div>
             </a>
 
-            <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
-
-            <nav class="menu" role="navigation">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-
-                    <li class="dropdown">
-                        <button type="button" class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="projects-menu">
-                            Projects ▾
-                        </button>
-                        <ul id="projects-menu" class="dropdown-menu" hidden>
-                            <li><a href="https://caus.kaist.ac.kr" target="_blank" rel="noopener">CAUS</a></li>
-                            <li><a href="https://hcfm.kaist.ac.kr" target="_blank" rel="noopener">HcFM</a></li>
-                            <li><a href="https://urban.kaist.ac.kr" target="_blank" rel="noopener">Urban@KAIST</a></li>
-                            <li><a href="https://c3.kaist.ac.kr" target="_blank" rel="noopener">KAIST-NYU C3</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="dropdown">
-                        <button type="button" class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="events-menu">
-                            Events ▾
-                        </button>
-                        <ul id="events-menu" class="dropdown-menu" hidden>
-                            <li><a href="urbanx-berkeley.html">Urban X Workshop @ Berkeley</a></li>
-                            <li><a href="https://urban.kaist.ac.kr/urbanX" target="_blank" rel="noopener">KAIST Urban X Seminar</a></li>
-                            <li><a href="https://c3.kaist.ac.kr/1st-workshop" target="_blank" rel="noopener">KN-C3 1st-Workshop</a></li>
-                            <li><a href="https://c3.kaist.ac.kr/2nd-workshop" target="_blank" rel="noopener">KN-C3 2nd-Workshop</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="press.html">Press</a></li>
-                </ul>
-            </nav>
+            <div class="flex gap-6 text-xs font-bold uppercase tracking-widest text-slate-500">
+                <a href="index.html#about" class="hover:text-blue-600">About</a>
+                <a href="people.html" class="hover:text-blue-600">People</a>
+                <a href="projects.html" class="hover:text-blue-600">Projects</a>
+                <a href="apply.html" class="hover:text-blue-600">Apply</a>
+                <a href="press.html" class="hover:text-blue-600">Press</a>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <section class="hero" role="banner" aria-label="Urban AI Institute">
+    <section id="about" class="hero" role="banner" aria-label="Urban AI Institute">
         <div class="hero-overlay">
             <h1>Urban AI Institute</h1>
             <br />
@@ -70,86 +47,134 @@
 
 
         <main class="container cards">
-            <article class="card">
+            <a class="card card-link" href="urbanx-berkeley.html">
                 <h3>Urban X Workshop @ Berkeley</h3>
-                <a class="btn" href="urbanx-berkeley.html">Visit site</a>
-            </article>
+                <span class="card-cta">Visit site</span>
+            </a>
 
-            <article class="card">
+            <a class="card card-link" href="https://hcfm.kaist.ac.kr" target="_blank" rel="noopener">
                 <h3>HcFM</h3>
-                <a class="btn" href="https://hcfm.kaist.ac.kr" target="_blank" rel="noopener">Visit site</a>
-            </article>
+                <span class="card-cta">Visit site</span>
+            </a>
 
-            <article class="card">
+            <a class="card card-link" href="https://caus.kaist.ac.kr" target="_blank" rel="noopener">
                 <h3>CAUS</h3>
-                <a class="btn" href="https://caus.kaist.ac.kr" target="_blank" rel="noopener">Visit site</a>
-            </article>
+                <span class="card-cta">Visit site</span>
+            </a>
 
-            <article class="card">
+            <a class="card card-link" href="https://c3.kaist.ac.kr" target="_blank" rel="noopener">
                 <h3>KAIST-NYU C3</h3>
-                <a class="btn" href="https://c3.kaist.ac.kr" target="_blank" rel="noopener">Visit site</a>
-            </article>
+                <span class="card-cta">Visit site</span>
+            </a>
         </main>
         <br />
     </section>
 
     <!-- ===== UAII in the Press ===== -->
-    <section id="press" class="press">
-        <h2><strong>UAII in the Press</strong></h2>
+    <section class="press" id="press" aria-labelledby="press-title">
+        <div class="container">
+            <h2 id="press-title">UAII in the Press</h2>
 
-        <!-- 기사 아이템 1: KOR/ENG 두 링크를 한 줄에 제공 (예시) -->
-        <article class="press-item">
-            <a class="press-media" href="https://news.kaist.ac.kr/news/html/news/?mode=V&mng_no=53650" target="_blank" rel="noopener" aria-label="Open article">
-                <img src="assets/press/kaist-53650.jpg" alt="AI Finds Urban Commercial Districts Resilient to Climate Risk​" />
-                <span class="press-overlay-title">
-                    AI Finds Urban Commercial Districts Resilient to Climate Risk
-                </span>
-            </a>
+            <div class="press-slider" tabindex="0" role="region"
+                 aria-roledescription="carousel" aria-label="Press articles">
+                <div class="press-track">
+                    <!-- Slide 1 -->
+                    <article class="press-item is-active" aria-hidden="false">
+                        <a class="press-media"
+                           href="https://news.kaist.ac.kr/news/html/news/?mode=V&mng_no=53650"
+                           target="_blank" rel="noopener"
+                           aria-label="Open article: AI Finds Urban Commercial Districts Resilient to Climate Risk">
+                            <img src="assets/press/kaist-53650.jpg"
+                                 alt="AI Finds Urban Commercial Districts Resilient to Climate Risk" />
+                            <span class="press-overlay-title">
+                                AI Finds Urban Commercial Districts Resilient to Climate Risk
+                            </span>
+                        </a>
 
-            <div class="press-body">
-                <p class="press-summary">
-                    KAIST announced on October 29th that its Urban AI Research Institute
-                    (Director, Distinguished Professor Yoonjin Yoon of Civil and Environmental Engineering conducted joint research in the field of 'Urban AI' with MIT's Senseable City Lab (Director, Professor Carlo Ratti)
-                    and disclosed the results at the 'Smart Life Week 2025' exhibition held at COEX, Seoul, in late September.
-                    KAIST and MIT have been pursuing the 'Urban AI Joint Research Program' to interpret major urban problems using artificial intelligence.
-                    At this exhibition, the research results were presented in a form that citizens could directly experience, focusing on three themes:
-                    ▲Urban Climate Change, ▲Green Environment, and ▲Data Inclusivity.
-                </p>
+                        <div class="press-body">
+                            <p class="press-summary">
+                                KAIST announced on October 29th that its Urban AI Institute
+                                (Director, Distinguished Professor Yoonjin Yoon of Civil and Environmental Engineering conducted joint research in the field of 'Urban AI' with MIT's Senseable City Lab (Director, Professor Carlo Ratti)
+                                and disclosed the results at the 'Smart Life Week 2025' exhibition held at COEX, Seoul, in late September.
+                                KAIST and MIT have been pursuing the 'Urban AI Joint Research Program' to interpret major urban problems using artificial intelligence.
+                                At this exhibition, the research results were presented in a form that citizens could directly experience, focusing on three themes:
+                                ▲Urban Climate Change, ▲Green Environment, and ▲Data Inclusivity.
+                            </p>
 
-                <p class="press-meta">
-                    <span class="press-outlet">KAIST News</span>
-                    <span class="press-sep">·</span>
-                    <time datetime="2025-10-29">2025-10-29</time>
-                </p>
+                            <p class="press-meta">
+                                <span class="press-outlet">KAIST News</span>
+                                <span class="press-sep">·</span>
+                                <time datetime="2025-10-29">2025-10-29</time>
+                            </p>
 
-                <p class="press-links">
-                    <a class="btn" href="https://news.kaist.ac.kr/news/html/news/?mode=V&mng_no=53650" target="_blank" rel="noopener">KR</a>
-                    <a class="btn btn-ghost" href="https://news.kaist.ac.kr/newsen/html/news/?mode=V&mng_no=53670" target="_blank" rel="noopener">EN</a>
-                </p>
+                            <p class="press-links">
+                                <a class="btn" href="https://news.kaist.ac.kr/news/html/news/?mode=V&mng_no=53650" target="_blank" rel="noopener">KR</a>
+                                <a class="btn btn-ghost" href="https://news.kaist.ac.kr/newsen/html/news/?mode=V&mng_no=53670" target="_blank" rel="noopener">EN</a>
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Slide 2 (예시) -->
+                    <article class="press-item" aria-hidden="true">
+                        <a class="press-media" href="https://library.krihs.re.kr/library/10120/contents/5869852?checkinId=3726529&articleId=1882436" target="_blank" rel="noopener" aria-label="Open article: [KRIHS가 만난 사람 98] 윤윤진 KAIST 도시AI연구소장 도시의 새로운 진화 AI 시티가 그리는 도시의 미래">
+                            <img src="assets/press/press2.jpg" alt="[KRIHS가 만난 사람 98] 윤윤진 KAIST 도시AI연구소장 도시의 새로운 진화 AI 시티가 그리는 도시의 미래" />
+                            <span class="press-overlay-title">[KRIHS가 만난 사람 98] 윤윤진 KAIST 도시AI연구소장 "도시의 새로운 진화 AI 시티가 그리는 도시의 미래"</span>
+                        </a>
+                        <div class="press-body">
+                            <p class="press-summary">
+                                As artificial intelligence technologies rapidly proliferate, the ways in which cities are operated and managed are also reaching a fundamental turning point. The Korean government is promoting the “K-AI City Development and Future Mobility Initiative” as a national policy agenda, seeking to advance from data-driven cities to AI-centered intelligent cities.
+                                However, current technologies and policies remain largely confined to the smart city paradigm. To evolve toward an AI city ecosystem—where cities can autonomously learn, adapt, and respond—new approaches are required.
+                                In this interview, we engage in an in-depth discussion with Director Yoon Yoon-jin of the KAIST Urban AI Institute, exploring the concept and technological foundations of AI cities, as well as the policy implications of transitioning toward an AI city framework.
+                            </p>
+                            <p class="press-meta">
+                                <span class="press-outlet">KRIHS LIBRARY</span>
+                                <span class="press-sep">·</span>
+                                <time datetime="2025-11-30">2025-11-30</time>
+                            </p>
+                            <p class="press-links">
+                                <a class="btn" href="https://library.krihs.re.kr/library/10120/contents/5869852?checkinId=3726529&articleId=1882436" target="_blank" rel="noopener">KR</a>
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Slide 더 추가 가능 -->
+                </div>
             </div>
-        </article>
 
-        <!-- 기사 아이템 2 (예시) — 새 보도 추가 시 아래 블록을 복제해서 링크/이미지/요약만 교체 -->
-        <!--
-        <article class="press-item">
-          <a class="press-media" href="기사URL" target="_blank" rel="noopener">
-            <img src="assets/press/sample.jpg" alt="기사 제목 또는 매체명" />
-            <span class="press-overlay-title">기사 제목</span>
-          </a>
-          <div class="press-body">
-            <p class="press-summary">요약 내용… 길면 자동으로 … 처리됩니다.</p>
-            <p class="press-meta"><span class="press-outlet">매체명</span> <span class="press-sep">·</span> <time datetime="YYYY-MM-DD">YYYY-MM-DD</time></p>
-            <p class="press-links"><a class="btn" href="기사URL" target="_blank" rel="noopener">Read →</a></p>
-          </div>
-        </article>
-        -->
-        <!-- "View more" 버튼 -->
-        <div class="press-more">
-            <a class="btn view-more" href="press.html">View more</a>
-            <!-- 또는 문구를 See more → 로 바꾸셔도 됩니다 -->
+            <div class="press-controls" aria-label="Press slider controls">
+                <button type="button" class="press-control prev" aria-label="Previous press article">←</button>
+                <button type="button" class="press-control next" aria-label="Next press article">→</button>
+            </div>
+
+            <div class="press-more">
+                <a class="btn view-more" href="press.html">View more</a>
+            </div>
         </div>
     </section>
 
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <div class="contact-grid">
+                <div>
+                    <p class="contact-label">Institute</p>
+                    <p class="contact-value">Urban AI Institute</p>
+                </div>
+                <div>
+                    <p class="contact-label">Director</p>
+                    <p class="contact-value">Prof. Yoonjin Yoon</p>
+                </div>
+                <div>
+                    <p class="contact-label">Email</p>
+                    <p class="contact-value"><a href="mailto:urban@kaist.ac.kr">urban@kaist.ac.kr</a></p>
+                </div>
+                <div>
+                    <p class="contact-label">Location</p>
+                    <p class="contact-value">KAIST, Daejeon, Republic of Korea</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer class="site-footer">
         <div class="container">
