@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Press | Urban AI Institute (UAII)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fcfcfc;
+        }
+        .serif-title {
+            font-family: 'Playfair Display', serif;
+        }
+        .markdown p { margin-bottom: 1.25rem; line-height: 1.8; color: #374151; }
+        .markdown strong { color: #1e3a8a; font-weight: 700; }
+        .newspaper-border {
+            border-top: 4px solid #000;
+            border-bottom: 1px solid #000;
+        }
+        .sticky-sidebar {
+            position: sticky;
+            top: 2rem;
+        }
+        #expandable-mentions {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.5s ease-out, opacity 0.3s ease-out;
+            opacity: 0;
+        }
+        #mentions-box:hover #expandable-mentions {
+            grid-template-rows: 1fr;
+            opacity: 1;
+        }
+        #expandable-inner {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="text-slate-900">
+
+    <!-- Simple Nav -->
+    <nav class="border-b border-slate-100 bg-white/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-6 flex justify-between items-center">
+            <a href="index.html"><div class="text-xl font-black tracking-tighter text-blue-900">UAII <span class="text-slate-400 font-light">PRESS</span></div></a>
+            <div class="flex gap-6 text-xs font-bold uppercase tracking-widest text-slate-500">
+                <a href="index.html" class="hover:text-blue-600">Home</a>
+                <a href="people.html" class="hover:text-blue-600">People</a>
+                <a href="projects.html" class="hover:text-blue-600">Projects</a>
+                <a href="apply.html" class="hover:text-blue-600">Apply</a>
+                <a href="press.html" class="hover:text-blue-600">Press</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-6 max-w-6xl py-12">
+        <!-- Newspaper Header Style -->
+        <header class="text-center mb-16">
+            <div class="newspaper-border py-4 mb-4">
+                <h1 class="serif-title text-5xl md:text-7xl font-black tracking-tight">UAII in the PRESS</h1>
+            </div>
+            <div class="flex justify-between items-center text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400 px-2">
+                <span>Daejeon, South Korea</span>
+                <span>URBAN ARTIFICIAL INTELLIGENCE INSTITUTE</span>
+                <span id="current-date">January 2026</span>
+            </div>
+        </header>
+
+        <article class="grid grid-cols-1 lg:grid-cols-12 gap-16 py-16">
+            <!-- Main Content Area -->
+            <div class="lg:col-span-8">
+                <div class="mb-10">
+                    <img id="main-image" src="" alt="Press Image" class="w-full aspect-[16/9] object-cover rounded-sm shadow-2xl mb-8">
+                    
+                    <div class="flex items-center gap-4 mb-6">
+                        <span id="article-writer" class="bg-blue-900 text-white text-[10px] font-bold px-3 py-1 uppercase tracking-widest rounded-full"></span>
+                        <span id="article-date" class="text-slate-400 text-xs font-medium"></span>
+                    </div>
+
+                    <h2 id="article-title" class="serif-title text-4xl md:text-5xl font-bold leading-[1.1] mb-8 text-slate-900"></h2>
+                    
+                    <div id="article-desc" class="markdown text-lg text-slate-700 first-letter:text-7xl first-letter:font-bold first-letter:mr-3 first-letter:float-left first-letter:text-blue-900">
+                    </div>
+                </div>
+
+                <!-- Language Links -->
+                <div class="flex gap-4 border-t border-slate-100 pt-8 mb-12">
+                    <a id="link-kr" href="" target="_blank" class="px-8 py-3 bg-slate-900 text-white text-xs font-bold uppercase tracking-widest hover:bg-blue-900 transition rounded-sm">Read in Korean</a>
+                    <a id="link-en" href="" target="_blank" class="px-8 py-3 bg-white border border-slate-200 text-slate-900 text-xs font-bold uppercase tracking-widest hover:border-blue-900 transition rounded-sm">English Version</a>
+                </div>
+
+
+                <!-- More News Archive -->
+                <section id="archive" class="mt-52">
+                    <div class="flex items-center gap-8 mb-12">
+                        <h2 class="serif-title text-3xl font-bold whitespace-nowrap">Archive</h2>
+                        <div class="h-px bg-slate-200 w-full"></div>
+                    </div>
+
+                    <div class="flex flex-col gap-8 text-slate-700" id="archive-list">
+                        <!-- Archive cards will be injected here -->
+                    </div>
+                </section>
+            </div>
+
+            <!-- Sidebar Area -->
+            <aside class="lg:col-span-4">
+                <div class="sticky-sidebar">
+                    <div id="mentions-box" class="bg-slate-50 p-8 border-l-4 border-blue-900 transition-all duration-300 cursor-default">
+                        <h3 class="serif-title text-xl font-bold mb-6">Media Mentions</h3>
+                        <div id="visible-mentions" class="space-y-6">
+                            <!-- Injected Links -->
+                        </div>
+                        <div id="expandable-mentions">
+                            <div id="expandable-inner" class="space-y-6 pt-6">
+                                <!-- Extra Injected Links -->
+                            </div>
+                        </div>
+                        <div id="toggle-hint" class="mt-8 flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-slate-400 transition-all duration-300">
+                            <span id="toggle-text">Hover to see all</span>
+                            <svg id="toggle-icon" class="w-3 h-3 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 p-8 border border-slate-100">
+                        <h4 class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-4">Keywords</h4>
+                        <div id="keywords-container" class="flex flex-wrap gap-2">
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+        </article>
+
+  
+    </main>
+
+    
+
+    <footer class="bg-white border-t border-slate-100 py-12 mt-24">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-[10px] font-bold uppercase tracking-widest text-slate-400">© 2026 URBAN AI INSTITUTE (UAII) - KAIST</p>
+        </div>
+    </footer>
+
+    <script>
+        // Load data from pressData.json
+        async function loadPressData() {
+            const basePath = location.pathname.replace(/\/[^\/]*$/, "");
+            const url = `${basePath}/data/pressData.json`;
+            try {
+                const res = await fetch(url, { cache: "no-store" });
+                if (!res.ok) {
+                    throw new Error(`Failed to load data: ${res.status} ${res.statusText}`);
+                }
+                const data = await res.json();
+                return data;
+            } catch (error) {
+                console.error('Error loading pressData.json:', error);
+                throw error;
+            }
+        }
+
+        let pressData = [];
+
+        function renderMain(article) {
+            // Main
+            document.getElementById('main-image').src = article.image;
+            document.getElementById('main-image').alt = article.title;
+
+            document.getElementById('article-title').innerText = article.title;
+            document.getElementById('article-writer').innerText = article.writer;
+            document.getElementById('article-date').innerText = article.date;
+            document.getElementById('article-desc').innerHTML = marked.parse(article.desc);
+
+            // Links
+            const krBtn = document.getElementById('link-kr');
+            krBtn.href = article.link_kr;
+
+            const enBtn = document.getElementById('link-en');
+            if (!article.link_en || article.link_en.trim() === "") {
+                enBtn.style.display = "none";
+            } else {
+                enBtn.style.display = "inline-block";
+                enBtn.href = article.link_en;
+            }
+
+            // Keywords (reset + render)
+            const kwContainer = document.getElementById('keywords-container');
+            kwContainer.innerHTML = "";
+            (article.keyword || []).forEach(kw => {
+                const span = document.createElement('span');
+                span.className = "text-[9px] bg-slate-100 text-slate-500 px-2 py-1 rounded-sm uppercase font-bold";
+                span.innerText = kw;
+                kwContainer.appendChild(span);
+            });
+
+            // Mentions (reset + render)
+            const mentionsBox = document.getElementById('mentions-box');
+            const visibleContainer = document.getElementById('visible-mentions');
+            const expandableInner = document.getElementById('expandable-inner');
+            const toggleHint = document.getElementById('toggle-hint');
+            const toggleIcon = document.getElementById('toggle-icon');
+
+            const INITIAL_COUNT = 3;
+            const links = article.link_others || [];
+
+            visibleContainer.innerHTML = "";
+            expandableInner.innerHTML = "";
+
+            links.forEach((link, index) => {
+                const div = document.createElement('div');
+                div.className = "group cursor-pointer";
+                div.innerHTML = `
+      <a href="${link.href}" target="_blank" rel="noopener">
+        <p class="text-[10px] font-bold text-blue-600 uppercase tracking-widest mb-1">${link.source}</p>
+        <h4 class="text-sm font-semibold text-slate-800 group-hover:text-blue-900 group-hover:underline leading-tight">${link.title}</h4>
+      </a>
+    `;
+                if (index < INITIAL_COUNT) visibleContainer.appendChild(div);
+                else expandableInner.appendChild(div);
+            });
+
+            // Toggle hint show/hide
+            toggleHint.style.display = (links.length <= INITIAL_COUNT) ? "none" : "";
+
+            // Hover effects (중복 등록 방지)
+            mentionsBox.onmouseenter = () => {
+                if (links.length > INITIAL_COUNT) {
+                    toggleIcon.style.transform = "rotate(180deg)";
+                    toggleHint.classList.add('text-blue-900');
+                    toggleHint.classList.remove('text-slate-400');
+                }
+            };
+            mentionsBox.onmouseleave = () => {
+                if (links.length > INITIAL_COUNT) {
+                    toggleIcon.style.transform = "rotate(0deg)";
+                    toggleHint.classList.remove('text-blue-900');
+                    toggleHint.classList.add('text-slate-400');
+                }
+            };
+
+            // (선택) 클릭 후 상단으로 부드럽게 이동
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+        async function init() {
+            try {
+                pressData = await loadPressData();
+                // 기본: 최신 날짜 1개를 메인으로
+                const latest = [...pressData].sort((a, b) => (b.date || "").localeCompare(a.date || ""))[0];
+                renderMain(latest);
+                renderArchive();
+            } catch (error) {
+                console.error('Error initializing page:', error);
+                document.getElementById('article-title').innerText = 'Error loading press data';
+                document.getElementById('article-desc').innerHTML = '<p>Please check the console for details.</p>';
+            }
+        }
+
+        function renderArchive() {
+            const archiveList = document.getElementById('archive-list');
+            archiveList.innerHTML = "";
+
+            // 최신순 정렬
+            const sorted = [...pressData].sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+
+            sorted.forEach(article => {
+                const btn = document.createElement('button');
+                btn.type = "button";
+                btn.className = "text-left my-2 border-b border-slate-100 pb-6 last:border-0 hover:bg-slate-50 transition px-2 py-3 rounded-sm";
+
+                const otherLinksHtml = (article.link_others && article.link_others.length)
+                    ? 
+                    article.link_others.slice(0, 6).map((link, index) =>
+                        `<a href="${link.href}" target="_blank" rel="noopener" class="text-sm hover:underline" onclick="event.stopPropagation()">${link.source}</a>${index < Math.min(article.link_others.length, 6) - 1 ? ', ' : ''}`
+                    ).join('') + (article.link_others.length > 6 ? ', ...' : '')
+                    : '';
+
+                btn.innerHTML = `
+                  <div class="mb-1">
+                    <strong>(${article.date}) ${article.title}</strong>
+                  </div>
+                  <div class="pt-2 text-slate-500">
+                    ${article.link_en ? `<a href="${article.link_en}" target="_blank" rel="noopener" class="text-sm text-blue-800/70 hover:underline hover:text-blue-600">KAIST NEWS (EN)</a>` : ''}
+                    ${article.link_kr ? `<a href="${article.link_kr}" target="_blank" rel="noopener" class="text-sm text-blue-800/70 hover:underline hover:text-blue-600">${article.link_en ? ' / (KR), ' : '(KR), '}</a>` : ''}
+                    ${otherLinksHtml ? otherLinksHtml : ''}
+                  </div>
+                `;
+
+                // Archive 클릭 → 메인 기사 교체
+                btn.addEventListener('click', () => renderMain(article));
+
+                archiveList.appendChild(btn);
+            });
+        }
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+            init();
+        });
+    </script>
+</body>
+</html>
