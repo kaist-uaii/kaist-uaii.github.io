@@ -348,10 +348,10 @@ p{
   transition:transform .25s ease, box-shadow .25s ease;
 }
 
-.press .press-track .press-item:hover{
+/*.press .press-track .press-item:hover{
   transform:translateY(-2px);
   box-shadow:var(--press-shadow-hover);
-}
+}*/
 
 .press .press-media{
   position:relative;
@@ -621,35 +621,72 @@ p{
 /* =========================================================
    7) Contact (index.html 현재 구조 기준: 밝은 버전)
 ========================================================= */
-.contact{
-  background:#f3f4f6;
-  padding:3rem 0 4rem;
+.contact {
+    background: #f3f4f6;
+    padding: 4rem 0 4.5rem;
 }
 
-.contact h2{
-  text-align:center;
-  margin-bottom:2rem;
-  font-size:clamp(24px,3vw,34px);
+    .contact h2 {
+        text-align: center;
+        margin-bottom: 2.5rem;
+        font-size: clamp(24px, 3vw, 34px);
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+    }
+
+.contact-card {
+    max-width: 640px;
+    margin: 0 auto;
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 16px;
+    padding: 2rem 2.2rem;
+    box-shadow: 0 14px 40px rgba(0,0,0,0.08);
 }
 
-.contact-grid{
-  display:grid;
-  grid-template-columns:repeat(4, minmax(0,1fr));
-  gap:1.5rem;
+.contact-org {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
 }
 
-.contact-label{
-  margin:0 0 .4rem;
-  color:var(--muted);
-  font-size:.95rem;
-  text-transform:uppercase;
-  letter-spacing:.08em;
+.contact-director {
+    margin: 0.4rem 0 1.4rem;
+    color: #555;
 }
 
-.contact-value{
-  margin:0;
-  font-size:1.05rem;
+.contact-divider {
+    height: 1px;
+    background: rgba(0,0,0,0.08);
+    margin: 1.4rem 0;
 }
+
+.contact-item {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 0.6rem 0;
+    font-size: 0.95rem;
+}
+
+.contact-label {
+    min-width: 70px;
+    font-weight: 600;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.75rem;
+}
+
+.contact-email {
+    font-weight: 600;
+    color: #1e3a8a;
+    text-decoration: none;
+}
+
+    .contact-email:hover {
+        text-decoration: underline;
+    }
 
 @media (max-width:900px){
   .contact-grid{ grid-template-columns:repeat(2, minmax(0,1fr)); }

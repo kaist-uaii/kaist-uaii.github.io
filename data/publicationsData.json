@@ -1,0 +1,282 @@
+[
+  {
+    "id": "10.1109/ACCESS.2025.3577202",
+    "title": "Effective Urban Region Representation Learning Using Heterogeneous Urban Graph Attention Network (HUGAT)",
+    "authors": "N. Kim, Y. Yoon",
+    "date": "2025",
+    "journal": "IEEE Access, vol. 13, pp. 102602-102612.",
+    "href": "https://ieeexplore.ieee.org/abstract/document/11027114/"
+  },
+  {
+    "id": "10.1109/TITS.2024.3382680",
+    "title": "Design, Field Evaluation, and Traffic Analysis of a Competitive Autonomous Driving Model in a Congested Environment",
+    "authors": "D Lee, H Seong, G Kang, S Han, DH Shim, Y Yoon",
+    "date": "2024",
+    "journal": "IEEE Transactions on Intelligent Transportation Systems 25 (8), 9482-9497.",
+    "href": "https://ieeexplore.ieee.org/abstract/document/10496360"
+  },
+  {
+    "id": 1,
+    "title": "Urban drone operations: A data-centric and comprehensive assessment of urban airspace with a Pareto-based approach",
+    "authors": "S. Oh, Y. Yoon",
+    "date": "2024",
+    "journal": "Transportation Research Part A: Policy and Practice, 182, 104034.",
+    "href": "https://www.sciencedirect.com/science/article/pii/S096585642400082X"
+  },
+  {
+    "id": 2,
+    "title": "Deep learning framework for vessel trajectory prediction using auxiliary tasks and convolutional networks",
+    "authors": "Y. Shin, N. Kim, H. Lee, S. In, M. Hansen, Y. Yoon",
+    "date": "2024",
+    "journal": "Engineering Applications of Artificial Intelligence, 132, 107936",
+    "href": "https://www.sciencedirect.com/science/article/pii/S0952197624000940"
+  },
+  {
+    "id": 3,
+    "title": "PGCN: Progressive graph convolutional networks for spatial-temporal traffic forecasting",
+    "authors": "Y. Shin, Y. Yoon.",
+    "date": "2024",
+    "journal": "IEEE Transactions on Intelligent Transportation Systems",
+    "href": "https://ieeexplore.ieee.org/abstract/document/10400973"
+  },
+  {
+    "id": 4,
+    "title": "Performance Evaluation of Building Blocks of Spatial-Temporal Deep Learning Models for Traffic Forecasting",
+    "authors": "Y. Shin, Y. Yoon",
+    "date": "2023",
+    "journal": "IEEE Access, 11, 136478-136495",
+    "href": "https://ieeexplore.ieee.org/document/10336800"
+  },
+  {
+    "id": 5,
+    "title": "Detecting socioeconomic changes of Chicago regions between 2013 and 2020 using urban region representation learning.",
+    "authors": "Lee, H., Kim, N., Kim, S., & Yoon, Y.",
+    "date": "2023",
+    "journal": "Procedia Computer Science, 220, 259-266.",
+    "href": "https://doi.org/10.1016/j.procs.2023.03.034"
+  },
+  {
+    "id": 6,
+    "title": "Multi-modal Based Region Representation Learning Considering Mobility Data in Seoul.",
+    "authors": "Seong, G., Kim, N., Kim, S., & Yoon, Y.",
+    "date": "2023",
+    "journal": "Procedia Computer Science, 220, 251-258.",
+    "href": "https://doi.org/10.1016/j.procs.2023.03.153"
+  },
+  {
+    "id": 7,
+    "title": "Data-driven risk analysis of unmanned aircraft system operations considering spatiotemporal characteristics of population distribution.",
+    "authors": "Oh, S., & Yoon, Y.",
+    "date": "2022",
+    "journal": "Transportation Research Interdisciplinary Perspectives, 16, 100732.",
+    "href": "https://doi.org/10.1016/j.trip.2022.100732"
+  },
+  {
+    "id": 8,
+    "title": "Regionalization for urban air mobility application with analyses of 3D urban space and geodemography in San Francisco and New York",
+    "authors": "Kim, N., & Yoon, Y.",
+    "date": "2021",
+    "journal": "Procedia Computer Science, 184, 388-395.",
+    "href": "https://doi.org/10.1016/j.procs.2021.03.049"
+  },
+  {
+    "id": 9,
+    "title": "Extracting the topology of urban airspace through graph abstraction.",
+    "authors": "Cho, J., & Yoon, Y.",
+    "date": "2021",
+    "journal": "Transportation Research Part C: Emerging Technologies, 127, 103116.",
+    "href": "https://doi.org/10.1016/j.trc.2021.103116"
+  },
+  {
+    "id": 10,
+    "title": "Short-term traffic prediction with deep neural networks: A survey",
+    "authors": "Lee, K., Eo, M., Jung, E., Yoon, Y., & Rhee, W.",
+    "date": "2021",
+    "journal": "IEEE Access, 9, 54739-54756.",
+    "href": "https://ieeexplore.ieee.org/abstract/document/9395529"
+  },
+  {
+    "id": 11,
+    "title": "Modeling individual differences in driver workload inference using physiological data.",
+    "authors": "Noh, Y., Kim, S., Jang, Y. J., & Yoon, Y.",
+    "date": "2021",
+    "journal": "International journal of automotive technology, 22, 201-212.",
+    "href": "https://link.springer.com/article/10.1007/s12239-021-0020-8"
+  },
+  {
+    "id": 12,
+    "title": "Incorporating dynamicity of transportation network with multi-weight traffic graph convolutional network for traffic forecasting.",
+    "authors": "Shin, Y., & Yoon, Y.",
+    "date": "2020",
+    "journal": "IEEE Transactions on Intelligent Transportation Systems, 23(3), 2082-2092.",
+    "href": "https://ieeexplore.ieee.org/document/9239873"
+  },
+  {
+    "id": 13,
+    "title": "An Analysis of Runway Accident Precursors Based on Latent Class Model",
+    "authors": "Oh, S., Kim, S., & Yoon, Y.",
+    "date": "2020",
+    "journal": "KSCE Journal of Civil Engineering, 24(9), 2784-2793.",
+    "href": "https://link.springer.com/article/10.1007/s12205-020-2395-x"
+  },
+  {
+    "id": 14,
+    "title": "Comparative risk factor analyses on bi-level injury severity of taxi and private car crashes in Seoul",
+    "authors": "Noh, Y., Kwon, O. H., & Yoon, Y.",
+    "date": "2020",
+    "journal": ", South Korea. Traffic injury prevention, 21(3), 188-194.",
+    "href": "https://doi.org/10.1080/15389588.2019.1710834"
+  },
+  {
+    "id": 15,
+    "title": "Unmanned aerial vehicle impacts on heat-strengthened glass.",
+    "authors": "Lee, S. E., Jung, J. W., Choi, Y., Yoon, Y. J., & Hong, J. W.",
+    "date": "2019",
+    "journal": "IEEE Access, 7, 104269-104278.",
+    "href": "https://ieeexplore.ieee.org/abstract/document/8768301"
+  },
+  {
+    "id": 16,
+    "title": "Cooperative sUAV collision avoidance based on satisficing theory",
+    "authors": "Kim, N., & Yoon, Y.",
+    "date": "2019",
+    "journal": "International Journal of Aeronautical and Space Sciences, 20(4), 978-986.",
+    "href": "https://link.springer.com/article/10.1007/s42405-019-00183-4"
+  },
+  {
+    "id": 17,
+    "title": "On node criticality of the Northeast Asian air route network.",
+    "authors": "Kim, S., & Yoon, Y.",
+    "date": "2019",
+    "journal": "Journal of Air Transport Management, 80, 101693.",
+    "href": "https://doi.org/10.1016/j.jairtraman.2019.101693"
+  },
+  {
+    "id": 18,
+    "title": "Assessment of the volcanic hazard of Mt. Paektu explosion to international air traffic using South Korean airspace.",
+    "authors": "Kim, S., Lee, J., Oh, S., & Yoon, Y.",
+    "date": "2019",
+    "journal": "Natural Hazards, 96, 647-667.",
+    "href": "https://link.springer.com/article/10.1007/s11069-018-3562-y"
+  },
+  {
+    "id": 19,
+    "title": "Elderly pedestrian safety in a rapidly aging society—Commonality and diversity between the younger-old and older-old.",
+    "authors": "Noh, Y., Kim, M., & Yoon, Y.",
+    "date": "2018",
+    "journal": "Traffic injury prevention, 19(8), 874-879.",
+    "href": "https://doi.org/10.1080/15389588.2018.1509209"
+  },
+  {
+    "id": 20,
+    "title": "Assuring explainability on demand response targeting via credit scoring.",
+    "authors": "Lee, K., Lee, H., Lee, H., Yoon, Y., Lee, E., & Rhee, W.",
+    "date": "2018",
+    "journal": "Energy, 161, 670-679.",
+    "href": "https://doi.org/10.1016/j.energy.2018.07.179"
+  },
+  {
+    "id": 21,
+    "title": "Characterizing driver stress using physiological and operational data from real-world electric vehicle driving experiment.",
+    "authors": "Kim, S., Rhee, W., Choi, D., Jang, Y. J., & Yoon, Y.",
+    "date": "2018",
+    "journal": "International Journal of Automotive Technology, 19, 895-906.",
+    "href": "https://link.springer.com/article/10.1007/s12239-018-0086-0"
+  },
+  {
+    "id": 22,
+    "title": "Improving the energy saving process with high-resolution data: A case study in a university building",
+    "authors": "Han, J., Lee, E., Cho, H., Yoon, Y., Lee, H., & Rhee, W.",
+    "date": "2018",
+    "journal": "Sensors, 18(5), 1606.",
+    "href": "https://doi.org/10.3390/s18051606"
+  },
+  {
+    "id": 23,
+    "title": "How to assess the capacity of urban airspace: A topological approach using keep-in and keep-out geofence.",
+    "authors": "Cho, J., & Yoon, Y.",
+    "date": "2018",
+    "journal": "Transportation Research Part C: Emerging Technologies, 92, 137-149.",
+    "href": "https://doi.org/10.1016/j.trc.2018.05.001"
+  },
+  {
+    "id": 24,
+    "title": "Analysis of loss of control parameters for aircraft maneuvering in general aviation.",
+    "authors": "Ud-Din, S., & Yoon, Y.",
+    "date": "2018",
+    "journal": "Journal of Advanced Transportation, 2018, 1-19.",
+    "href": "https://doi.org/10.1155/2018/7865362"
+  },
+  {
+    "id": 25,
+    "title": "Elderly road collision injury outcomes associated with seat positions and seatbelt use in a rapidly aging society—A case study in South Korea",
+    "authors": "Noh, Y., & Yoon, Y.",
+    "date": "2017",
+    "journal": "PLoS one, 12(8), e0183043.",
+    "href": "https://doi.org/10.1371/journal.pone.0183043"
+  },
+  {
+    "id": 26,
+    "title": "Characterizing the influence of transportation infrastructure on Emergency Medical Services (EMS) in urban area—A case study of Seoul, South Korea.",
+    "authors": "Cho, J., You, M., & Yoon, Y.",
+    "date": "2017",
+    "journal": "PloS one, 12(8), e0183241.",
+    "href": "https://doi.org/10.1371/journal.pone.0183241"
+  },
+  {
+    "id": 27,
+    "title": "Application of classification algorithms for analysis of road safety risk factor dependencies.",
+    "authors": "Kwon, O. H., Rhee, W., & Yoon, Y.",
+    "date": "2015",
+    "journal": "Accident Analysis & Prevention, 75, 1-15.",
+    "href": "https://doi.org/10.1016/j.aap.2014.11.005"
+  },
+  {
+    "id": 28,
+    "title": "Evaluating the effectiveness of the law banning handheld cellphone use while driving",
+    "authors": "Kwon, O. H., Yoon, Y., & Jang, K.",
+    "date": "2014",
+    "journal": "Safety science, 70, 50-57.",
+    "href": "https://doi.org/10.1016/j.ssci.2014.04.014"
+  },
+  {
+    "id": 29,
+    "title": "Contributing factors to vehicle to vehicle crash frequency and severity under rainfall",
+    "authors": "Jung, S., Jang, K., Yoon, Y., & Kang, S.",
+    "date": "2014",
+    "journal": "Journal of safety research, 50, 1-10.",
+    "href": "https://doi.org/10.1016/j.jsr.2014.01.001"
+  },
+  {
+    "id": 30,
+    "title": "Optimization of building window system in Asian regions by analyzing solar heat gain and daylighting elements.",
+    "authors": "Lee, J. W., Jung, H. J., Park, J. Y., Lee, J. B., & Yoon, Y.",
+    "date": "2013",
+    "journal": "Renewable energy, 50, 522-531.",
+    "href": "https://doi.org/10.1016/j.renene.2012.07.029"
+  },
+  {
+    "id": 31,
+    "title": "Algorithms for bottom-up maintenance optimisation for heterogeneous infrastructure systems.",
+    "authors": "Yeo, H., Yoon, Y., & Madanat, S.",
+    "date": "2013",
+    "journal": "Structure and Infrastructure Engineering, 9(4), 317-328.",
+    "href": "https://doi.org/10.1080/15732479.2012.657649"
+  },
+  {
+    "id": 32,
+    "title": "Evaluation of motorcycle safety strategies using the severity of injuries.",
+    "authors": "Jung, S., Xiao, Q., & Yoon, Y.",
+    "date": "2013",
+    "journal": "Accident Analysis & Prevention, 59, 357-364.",
+    "href": "https://doi.org/10.1016/j.aap.2013.06.030"
+  },
+  {
+    "id": 33,
+    "title": "Optimal route decision with a geometric ground-airborne hybrid model under weather uncertainty.",
+    "authors": "Yoon, Y., Hansen, M., & Ball, M. O.",
+    "date": "2012",
+    "journal": "Transportation research part E: logistics and transportation review, 48(1), 34-49.",
+    "href": "https://doi.org/10.1016/j.tre.2011.05.005"
+  }
+]

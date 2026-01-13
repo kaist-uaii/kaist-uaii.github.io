@@ -13,6 +13,40 @@
             height: 1em;
             vertical-align: middle;
         }
+
+        .card-ended {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .card-ended:hover {
+            transform: none !important;
+            box-shadow: none !important;
+        }
+        /* Card hover effects matching People_sidebar */
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-hover:hover:not(.card-ended) {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        /* Button hover improvements */
+        .btn-hover {
+            transition: all 0.2s ease;
+        }
+
+        .btn-hover:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .divider-gradient {
+            height: 4px;
+            background: linear-gradient(to right, #1e3a8a, #3b82f6, transparent);
+            border-radius: 2px;
+        }
     </style>
 </head>
 <body>
@@ -47,8 +81,8 @@
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Graduate Students -->
-                <div class="rounded-2xl shadow-sm bg-white">
-                    <div class="p-6">
+                <div class="rounded-[2rem] shadow-sm bg-white card-hover border border-slate-100">
+                    <div class="p-8">
                         <h3 class="text-xl font-semibold mb-2">
                             M.S. / Ph.D. Students
                         </h3>
@@ -64,7 +98,7 @@
                                 Engineering, Urban Engineering, AI & Smart Cities
                             </li>
                         </ul>
-                        <a href="/apply/graduates" class="inline-flex my-6 px-3 py-2 bg-slate-700 text-white rounded-md text-sm font-semibold hover:bg-gray-500 hover:text-grey-300">
+                        <a href="/apply/graduates" class="inline-flex my-6 px-3 py-2 bg-slate-700 text-white rounded-md text-sm font-semibold hover:bg-gray-600 btn-hover">
                             <div class="flex flex-row justify-center items-center">
                                 <div class="mx-1">See in Detail</div>
                                 <div>
@@ -77,40 +111,45 @@
                     </div>
                 </div>
 
-                <!-- Internship -->
-                <div class="rounded-2xl shadow-sm bg-white">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">
+                <!-- Internship - ENDED STATE -->
+                <div class="rounded-[2rem] shadow-sm bg-white card-ended card-hover relative border border-slate-200">
+                    <div class="absolute top-4 right-4">
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-200 text-slate-600 border border-slate-300">
+                            Application Ended
+                        </span>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-400">
                             Winter / Summer Internships
                         </h3>
-                        <p class="text-gray-600 mb-4 text-sm">
+                        <p class="text-gray-500 mb-4 text-sm">
                             For undergraduate students interested in AI, simulation, or
                             urban systems.
                         </p>
-                        <ul class="text-sm text-gray-500 mb-4 space-y-1">
+                        <ul class="text-sm text-gray-400 mb-4 space-y-1">
                             <li>
-                                <strong>Period:</strong> Every Winter & Summer Vacation
+                                <strong class="text-gray-500">Period:</strong> Every Winter & Summer Vacation
                             </li>
                             <li>
-                                <strong>Fields:</strong> All relevant disciplines
+                                <strong class="text-gray-500">Fields:</strong> All relevant disciplines
                             </li>
                         </ul>
-                        <a href="/apply/undergraduates" class="inline-flex my-6 px-3 py-2 bg-slate-700 text-white rounded-md text-sm font-semibold hover:bg-gray-500 hover:text-grey-300">
+                        <div class="inline-flex my-6 px-3 py-2 bg-slate-200 text-slate-500 rounded-md text-sm font-semibold cursor-not-allowed">
                             <div class="flex flex-row justify-center items-center">
-                                <div class="mx-1">See in Detail</div>
+                                <div class="mx-1">Application Ended</div>
                                 <div>
                                     <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                                     </svg>
                                 </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Research / Postdoc -->
-                <div class="rounded-2xl shadow-sm bg-white">
-                    <div class="p-6">
+                <div class="rounded-[2rem] shadow-sm bg-white card-hover border border-slate-100">
+                    <div class="p-8">
                         <h3 class="text-xl font-semibold mb-2">
                             Research Professors / Postdoctoral Fellows
                         </h3>
@@ -125,7 +164,7 @@
                                 <strong>Focus:</strong> Urban AI & Urban Representation
                             </li>
                         </ul>
-                        <a href="/apply/post" class="inline-flex my-6 px-3 py-2 bg-slate-700 text-white rounded-md text-sm font-semibold hover:bg-gray-500 hover:text-grey-300">
+                        <a href="/apply/post" class="inline-flex my-6 px-3 py-2 bg-slate-700 text-white rounded-md text-sm font-semibold hover:bg-gray-600 btn-hover">
                             <div class="flex flex-row justify-center items-center">
                                 <div class="mx-1">See in Detail</div>
                                 <div>
@@ -140,7 +179,7 @@
             </div>
 
             <!-- Application Instructions -->
-            <div class="mt-16 bg-white rounded-2xl shadow-sm p-8 max-w-4xl mx-auto">
+            <div class="mt-16 bg-white rounded-2xl shadow-sm p-8 max-w-4xl mx-auto border border-gray-100">
                 <h4 class="text-2xl font-semibold mb-4">
                     Application Process
                 </h4>
@@ -170,15 +209,19 @@
 
             <!-- FAQ -->
             <a href="/apply">
-                <div class="mt-5 bg-white rounded-2xl shadow-sm p-8 max-w-4xl mx-auto flex justify-start items-center text-center hover:bg-gray-100 cursor-pointer">
-                    <h4 class="text-2xl font-semibold mb-4">FAQ</h4>
-                    <svg class="arrow-icon ml-2" style="width: 24px; height: 24px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="mt-5 bg-white rounded-2xl shadow-sm p-8 max-w-4xl mx-auto flex justify-between items-center hover:bg-gray-50 cursor-pointer transition-colors border border-gray-100">
+                    <h4 class="text-2xl font-semibold">FAQ</h4>
+                    <svg class="arrow-icon" style="width: 24px; height: 24px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                     </svg>
                 </div>
             </a>
         </div>
     </section>
+
+    <footer class="bg-white border-t border-gray-200 py-8 text-center mt-20">
+        <p class="text-gray-500 text-sm">&copy; 2026 Urban AI Institute. All rights reserved.</p>
+    </footer>
 
     <script>
         async function copyEmail(email) {
@@ -206,8 +249,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-

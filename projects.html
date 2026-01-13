@@ -5,27 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects | Urban AI Institute (UAII)</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <style>
-        .pagetitle {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
         }
-        .divider {
-            height: 2px;
-            background-color: #e5e7eb;
-            width: 100%;
-            margin-bottom: 2rem;
+
+        .serif-title {
+            font-family: 'Playfair Display', serif;
         }
-        .sectiontitle {
-            font-size: 1.875rem;
-            font-weight: 600;
-            border-bottom: 2px solid #374151;
-            display: inline-block;
+
+        .gradient-text {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+            .card-hover:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+
+        .divider-gradient {
+            height: 4px;
+            background: linear-gradient(to right, #1e3a8a, #3b82f6, transparent);
+            border-radius: 2px;
+        }
+
+        img {
+            transition: transform 0.3s ease;
+        }
+
+        .card-hover:hover img {
+            transform: scale(1.05);
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- Header / Navigation -->
     <nav class="border-b border-slate-100 bg-white/80 backdrop-blur-md sticky top-0 z-50">
         <div class="container mx-auto px-6 py-6 flex justify-between items-center">
             <a href="index.html"><div class="text-xl font-black tracking-tighter text-blue-900">UAII <span class="text-slate-400 font-light">Projects</span></div></a>
@@ -39,26 +63,34 @@
         </div>
     </nav>
 
-    <header class="pt-10">
-        <div class="container mx-auto px-6">
-            <h1 class="pagetitle">Projects</h1>
-            <div class="divider"></div>
-        </div>
-    </header>
+    <main class="container mx-auto px-6 max-w-7xl">
+        <!-- Hero Section -->
+        <section class="pt-24 pb-20">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div>
+                    <h1 class="serif-title text-5xl md:text-6xl font-bold mb-4">Projects</h1>
+                    <p class="text-slate-500 text-lg">Exploring the future of urban intelligence and sustainable mobility.</p>
+                </div>
+                <div class="divider-gradient w-48 hidden md:block"></div>
+            </div>
 
-    <main class="py-16">
-        <!-- Main Projects Grid -->
-        <section class="container mx-auto px-6">
-            <div id="featured-projects-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- ProjectCard items will be injected here -->
+            <!-- Featured Projects Grid -->
+            <div id="featured-projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-32">
+                <!-- Project cards will be injected here -->
             </div>
         </section>
 
         <!-- Other Projects Section -->
-        <section class="container mx-auto px-6 mt-32">
-            <h2 class="sectiontitle mb-10">Other Projects</h2>
-            <div id="other-projects-list" class="flex flex-col gap-6">
-                <!-- OtherProjectCard items will be injected here -->
+        <section class="py-20 border-t border-slate-200">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div>
+                    <h2 class="serif-title text-4xl font-bold mb-4">Sub-Projects</h2>
+                    <p class="text-slate-500 text-lg">Ongoing research initiatives and collaborations.</p>
+                </div>
+                <div class="divider-gradient w-48 hidden md:block"></div>
+            </div>
+            <div id="other-projects-list" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Other project cards will be injected here -->
             </div>
         </section>
     </main>
@@ -68,67 +100,47 @@
     </footer>
 
     <script>
-        // Sample data from projectsData.json
-        const projectsData = [
-            {
-                "id": 1,
-                "title": "GS E&C (UAM)",
-                "image": "https://raw.githubusercontent.com/STIL-KAIST/spacetime-kaist/main/public/projectsImg/1.png",
-                "desc": "Research on Urban Air Mobility (UAM) integration and infrastructure planning with GS E&C.",
-                "link": "/gs-ec-uam",
-                "type": "internal"
-            },
-            {
-                "id": 2,
-                "title": "KAIST-NYU C³",
-                "image": "https://raw.githubusercontent.com/STIL-KAIST/spacetime-kaist/main/public/projectsImg/2.png",
-                "desc": "Collaboration between KAIST and NYU for Climate-Smart, Creative, and Connected Cities.",
-                "link": "https://c3.kaist.ac.kr/home",
-                "type": "external"
-            },
-            {
-                "id": 4,
-                "title": "Urban@KAIST",
-                "image": "https://raw.githubusercontent.com/STIL-KAIST/spacetime-kaist/main/public/projectsImg/4.png",
-                "desc": "Interdisciplinary research platform for future urban systems at KAIST.",
-                "link": "https://urban.kaist.ac.kr/",
-                "type": "external"
-            },
-            {
-                "id": 7,
-                "pagetitle": "NARAE",
-                "title": "Air Traffic Management Master Plan - NARAE",
-                "desc": "Strategic roadmap for next-generation air traffic management systems.",
-                "link": "/narae",
-                "type": "internal"
-            },
-            {
-                "id": 8,
-                "pagetitle": "ATFM",
-                "title": "Probabilistic Air Traffic Flow Management (ATFM)",
-                "desc": "Advanced modeling and optimization for air traffic flow under uncertainty.",
-                "link": "/atfm",
-                "type": "internal"
-            },
-        ];
+        // Load data from projectsData.json
+        async function loadProjectsData() {
+            const basePath = location.pathname.replace(/\/[^\/]*$/, "");
+            const url = `${basePath}/data/projectsData.json`;
+            try {
+                const res = await fetch(url, { cache: "no-store" });
+                if (!res.ok) {
+                    throw new Error(`Failed to load data: ${res.status} ${res.statusText}`);
+                }
+                const data = await res.json();
+                return data;
+            } catch (error) {
+                console.error('Error loading projectsData.json:', error);
+                throw error;
+            }
+        }
 
         function createProjectCard(p) {
             const card = document.createElement('div');
             const linkHref = p.type === 'internal' ? `/projects${p.link}` : p.link;
             const target = p.type === 'external' ? 'target="_blank" rel="noopener noreferrer"' : '';
 
+            card.className = "card-hover bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100";
             card.innerHTML = `
                     <a href="${linkHref}" ${target} class="block h-full">
-                        <article class="flex flex-col justify-between p-5 h-full bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-xl transition">
-                            <div>
-                                ${p.image ? `<img src="${p.image}" alt="${p.title}" class="w-full h-48 object-cover rounded-md mb-4">` : ''}
+                        ${p.image ? `
+                        <div class="relative overflow-hidden bg-slate-100 aspect-video">
+                            <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        </div>
+                        ` : ''}
+                        <div class="p-6">
+                            <h3 class="serif-title text-2xl font-bold text-slate-900 mb-3">${p.title}</h3>
+                            ${p.desc ? `<p class="text-sm text-slate-600 leading-relaxed mb-4">${p.desc}</p>` : ''}
+                            <div class="flex items-center gap-2 text-sm font-medium text-blue-600 group-hover:text-blue-700">
+                                <span>Learn more</span>
+                                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
                             </div>
-                            <div>
-                                <h3 class="font-semibold text-2xl">${p.title}</h3>
-                                <p class="mt-2 text-sm text-gray-600">${p.desc || ''}</p>
-                                <p class="mt-4 inline-block text-sm font-medium text-blue-600 hover:underline">See more →</p>
-                            </div>
-                        </article>
+                        </div>
                     </a>
                 `;
             return card;
@@ -138,47 +150,69 @@
             const card = document.createElement('div');
             const hasLink = !!p.link;
             const linkHref = hasLink ? (p.type === 'internal' ? `/projects${p.link}` : p.link) : '#';
+            const target = p.type === 'external' ? 'target="_blank" rel="noopener noreferrer"' : '';
+
+            card.className = "card-hover bg-white rounded-2xl p-6 shadow-sm border border-slate-100";
 
             if (hasLink) {
                 card.innerHTML = `
-                        <a href="${linkHref}" class="block">
-                            <article class="flex flex-col justify-between p-6 h-full bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-xl transition">
-                                <div>
-                                    <h3 class="font-semibold text-2xl">${p.title}</h3>
-                                    <p class="mt-2 text-sm text-gray-600">${p.desc || ''}</p>
-                                    <p class="mt-4 inline-block text-sm font-medium text-blue-600 hover:underline">See more →</p>
+                        <a href="${linkHref}" ${target} class="block h-full">
+                            <div class="flex items-start justify-between gap-4">
+                                <div class="flex-1">
+                                    <h3 class="serif-title text-xl font-bold text-slate-900 mb-2">${p.title}</h3>
+                                    ${p.desc ? `<p class="text-sm text-slate-600 leading-relaxed mb-4">${p.desc}</p>` : ''}
+                                    <div class="flex items-center gap-2 text-sm font-medium text-blue-600">
+                                        <span>View project</span>
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                    </div>
                                 </div>
-                            </article>
+                                ${p.researchSectionID ? `
+                                <span class="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-blue-50 text-blue-700 border border-blue-200 shrink-0">
+                                    ${p.researchSectionID}
+                                </span>
+                                ` : ''}
+                            </div>
                         </a>
                     `;
             } else {
                 card.innerHTML = `
-                        <article class="flex flex-col justify-between p-6 h-full bg-white rounded-lg border border-gray-200 shadow-sm transition">
-                            <div>
-                                <h3 class="font-semibold text-2xl text-gray-400">${p.title}</h3>
-                                <p class="mt-2 text-sm text-gray-500">${p.desc || ''}</p>
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="flex-1">
+                                <h3 class="serif-title text-xl font-bold text-slate-400 mb-2">${p.title}</h3>
+                                ${p.desc ? `<p class="text-sm text-slate-500 leading-relaxed">${p.desc}</p>` : ''}
                             </div>
-                        </article>
+                        </div>
                     `;
             }
             return card;
         }
 
-        function renderProjects() {
-            const featuredGrid = document.getElementById('featured-projects-grid');
-            const otherList = document.getElementById('other-projects-list');
+        async function renderProjects() {
+            try {
+                const projectsData = await loadProjectsData();
+                const featuredGrid = document.getElementById('featured-projects-grid');
+                const otherList = document.getElementById('other-projects-list');
 
-            // Logic matches Projects.jsx filters
-            const featuredProjects = projectsData.filter(p => p.link && !p.pagetitle);
-            const otherProjects = projectsData.filter(p => (p.link && p.pagetitle) || !p.link);
+                // Featured projects: have image and link, no pagetitle
+                const featuredProjects = projectsData.filter(p => p.image && p.link && !p.pagetitle);
 
-            featuredProjects.forEach(p => {
-                featuredGrid.appendChild(createProjectCard(p));
-            });
+                // Other projects: have pagetitle or no image
+                const otherProjects = projectsData.filter(p => p.pagetitle || !p.image);
 
-            otherProjects.forEach(p => {
-                otherList.appendChild(createOtherProjectCard(p));
-            });
+                featuredProjects.forEach(p => {
+                    featuredGrid.appendChild(createProjectCard(p));
+                });
+
+                otherProjects.forEach(p => {
+                    otherList.appendChild(createOtherProjectCard(p));
+                });
+            } catch (error) {
+                console.error('Error rendering projects:', error);
+                document.getElementById('featured-projects-grid').innerHTML =
+                    '<div class="col-span-full text-center py-12"><p class="text-slate-500">Failed to load projects. Please check the console for details.</p></div>';
+            }
         }
 
         // Initialize rendering
@@ -186,4 +220,3 @@
     </script>
 </body>
 </html>
-

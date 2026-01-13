@@ -1,0 +1,102 @@
+/* ------------- Sidebar Navigation ------------- */
+/* 스크롤 추적 */
+.sidebar-link {
+    transition: all 0.3s ease;
+}
+.sidebar-link.active {
+    color: #2563eb;
+    font-weight: 600;
+}
+.sidebar-link.active::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 24px;
+    background: #2563eb;
+    border-radius: 2px 0 0 2px;
+}
+/* 스크롤 호버 바 */
+.sidebar-trigger {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 160px;
+    background: rgba(167, 173, 184, 0.6);
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    border-right: none;
+    border-radius: 12px 0 0 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 50;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+}
+.sidebar-trigger:hover {
+    background: rgba(96, 100, 133, 0.95);
+    width: 36px;
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.15);
+}
+.sidebar-trigger svg {
+    width: 20px;
+    height: 20px;
+    color: #556479;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+.sidebar-trigger:hover svg {
+    transform: translateX(-2px);
+    color: #bcd0fd;
+}
+/* 스크롤 호버 바 보이기: md 이하(max-width: 1023px)에서 호버, lg+(min-width: 1024px)에서 숨김 */
+.sidebar-trigger {
+    display: block;
+}
+@media (min-width: 1024px) {
+    .sidebar-trigger {
+        display: none;
+    }
+}
+/* 사이드바 컨테이너 */
+.sidebar-container {
+    position: relative;
+}
+/* 사이드바 동작: md 이하(max-width: 1023px)에서 호버, lg+(min-width: 1024px)에서 항상 보임 */
+.sidebar {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+@media (max-width: 1023px) {
+    .sidebar {
+        position: absolute;
+        right: 20px;
+        top: 0;
+        opacity: 0;
+        transform: translateX(20px) translateY(-50%);
+        pointer-events: none;
+        min-width: 180px;
+    }
+    .sidebar-container:hover .sidebar {
+        opacity: 0.95;
+        transform: translateX(0) translateY(-50%);
+        pointer-events: all;
+    }
+}
+@media (min-width: 1024px) {
+    .sidebar-container {
+        right: 2rem;
+    }
+    .sidebar {
+        position: relative;
+        top: 0;
+        right: 40px;
+        opacity: 0.95 ;
+        transform: none ;
+        pointer-events: all ;
+    }
+}

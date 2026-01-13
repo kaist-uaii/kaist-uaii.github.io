@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People | Urban AI Institute (UAII)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <!-- Sidebar Navigation Import CSS and JS -->
+    <link rel="stylesheet" href="partials/scroll-sidebar.css">
+    <script src="partials/scroll-sidebar.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .serif-title {
+            font-family: 'Playfair Display', serif;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .member-photo-mask {
+            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+        }
+        .divider-gradient {
+            height: 4px;
+            background: linear-gradient(to right, #1e3a8a, #3b82f6, transparent);
+            border-radius: 2px;
+        }
+        .markdown p { margin-bottom: 1rem; }
+        .markdown strong { color: #1e3a8a; }
+        /* Image optimization */
+        img {
+            max-width: 100%;
+            height: auto;
+            /* Prevent layout shift */
+            display: block;
+        }
+        /* Smooth image loading for lazy-loaded images */
+        img[loading="lazy"] {
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        img[loading="lazy"].loaded,
+        img[loading="eager"] {
+            opacity: 1;
+        }
+        /* Projects tags styling */
+        .projects-container {
+            position: relative;
+        }
+        .projects-all {
+            animation: fadeIn 0.2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-5px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .projects-tags span {
+            transition: all 0.2s ease;
+        }
+        .projects-tags span:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- Header / Navigation -->
+    <nav class="border-b border-slate-100 bg-white/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-6 flex justify-between items-center">
+            <a href="index.html"><div class="text-xl font-black tracking-tighter text-blue-900">UAII <span class="text-slate-400 font-light">Projects</span></div></a>
+            <div class="flex gap-6 text-xs font-bold uppercase tracking-widest text-slate-500">
+                <a href="index.html" class="hover:text-blue-600">Home</a>
+                <a href="people.html" class="hover:text-blue-600">People</a>
+                <a href="projects.html" class="hover:text-blue-600">Projects</a>
+                <a href="apply.html" class="hover:text-blue-600">Apply</a>
+                <a href="press.html" class="hover:text-blue-600">Press</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar Navigation with Trigger -->
+    <div class="sidebar-container fixed right-0 top-1/2 -translate-y-1/2 z-40">
+        <!-- Trigger Bar (visible on md and below, sticks to right edge) -->
+        <div class="sidebar-trigger pt-2">
+            <!-- Arrow Icon -->
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+        </div>
+        
+        <!-- Sidebar (always visible on lg+, hover on md and below) -->
+        <aside class="sidebar">
+            <nav class="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-slate-200 p-4">
+                <ul class="space-y-2">
+                    <li>
+                        <a href="#professor" class="sidebar-link relative block px-4 py-2 text-sm text-slate-600 hover:text-blue-600 rounded-lg hover:bg-blue-50" data-section="professor">
+                            Professor
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#labmembers" class="sidebar-link relative block px-4 py-2 text-sm text-slate-600 hover:text-blue-600 rounded-lg hover:bg-blue-50" data-section="labmembers">
+                            Lab Members
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#alumni" class="sidebar-link relative block px-4 py-2 text-sm text-slate-600 hover:text-blue-600 rounded-lg hover:bg-blue-50" data-section="alumni">
+                            Alumni
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+    </div>
+
+    <main class="container mx-auto px-6 max-w-7xl">
+        <!-- Professor Hero Section -->
+        <section id="professor" class="pt-24 pb-20">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                <div class="lg:col-span-5 relative">
+                    <div class="absolute -top-10 -left-10 w-40 h-40 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse"></div>
+                    <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-purple-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse delay-700"></div>
+                    
+                    <div class="relative rounded-[2.5rem] overflow-hidden shadow-2xl bg-white border-8 border-white group">
+                        <img id="prof-photo" src="" alt="Professor" class="w-full aspect-[4/5] object-cover transition duration-700 group-hover:scale-105" loading="eager" fetchpriority="high" decoding="async">
+                        <div class="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 via-black/20 to-transparent">
+                            <p class="text-white/80 text-sm font-medium tracking-widest uppercase">Lead Researcher</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <h2 class="serif-title text-6xl font-bold mb-6 text-slate-900" id="prof-name"></h2>
+                    <p class="text-2xl text-slate-600 font-medium leading-relaxed mb-8" id="prof-greeting"></p>
+                    
+                    <div class="flex flex-wrap gap-4 mb-12">
+                        <button onclick="copyEmail(professorData.email)" class="px-6 py-3 bg-white border border-slate-200 rounded-2xl shadow-sm hover:border-blue-500 hover:text-blue-600 transition flex items-center gap-2 group">
+                            <svg class="w-5 h-5 text-slate-400 group-hover:text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            <span id="prof-email"></span>
+                        </button>
+                        <a id="prof-link" href="" target="_blank" class="px-6 py-3 bg-blue-600 text-white rounded-2xl shadow-lg shadow-blue-200 hover:bg-blue-700 transition flex items-center gap-2">
+                            <span>Personal Website</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-widest text-blue-600 mb-4">Education</h4>
+                            <ul class="space-y-4" id="prof-edu"></ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-widest text-blue-600 mb-4">Research Focus</h4>
+                            <div class="markdown text-slate-600 text-sm leading-relaxed" id="prof-research"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lab Members Section -->
+        <section id="labmembers" class="py-20 border-t border-slate-200">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div>
+                    <h2 class="serif-title text-5xl font-bold mb-4">Lab Members</h2>
+                    <p class="text-slate-500 text-lg">Meet the brilliant minds driving our research forward.</p>
+                </div>
+                <div class="divider-gradient w-48 hidden md:block"></div>
+            </div>
+
+            <div id="members-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-10">
+                <!-- Members will be injected here -->
+            </div>
+        </section>
+
+        <!-- Alumni Section -->
+        <section id="alumni" class="py-20 border-t border-slate-200">
+            <div class="text-center mb-20">
+                <h2 class="serif-title text-5xl font-bold mb-6">Alumni</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto">Our former members who have moved on to prestigious roles in academia and industry.</p>
+            </div>
+
+            <div class="space-y-24">
+                <div>
+                    <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-blue-600 mb-10 border-l-4 border-blue-600 pl-4">Ph.D. Graduates</h3>
+                    <div id="alumni-phd-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"></div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-blue-600 mb-10 border-l-4 border-blue-600 pl-4">M.S. Graduates</h3>
+                    <div id="alumni-ms-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-20 mt-20">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+                <div class="col-span-2">
+                    <h3 class="text-2xl font-extrabold tracking-tighter text-white mb-6">Urban AI Institute (UAII)</h3>
+                    <p class="max-w-md mb-8">KAIST Department of Civil and Environmental Engineering. Focused on Urban Intelligence, Future Mobility, and Sustainable Cities.</p>
+                </div>
+                <div class="text-right">
+                    <p class="text-sm">Developed by UAII &copy; 2025</p>
+                    <p class="text-xs mt-2 text-slate-500">KAIST, Daejeon, South Korea</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Global function for onclick handlers
+        async function copyEmail(email) {
+            try {
+                await navigator.clipboard.writeText(email);
+                alert("Email copied to clipboard!");
+            } catch (err) {
+                console.error('Copy failed', err);
+            }
+        }
+
+        // Data usually comes from peopleData.json
+        async function loadConfig() { // GitHub Pages 배포 경로가 /<repo>/... 인 경우를 대비해 basePath 처리
+            const basePath = location.pathname.replace(/\/[^\/]*$/, "");
+            const url = `${basePath}/data/peopleData.json`;
+            try {
+                const res = await fetch(url, { cache: "no-store" });
+                if (!res.ok) {
+                    throw new Error(`Failed to load data: ${res.status} ${res.statusText}`);
+                }
+                const data = await res.json();
+                return data;
+            } catch (error) {
+                console.error('Error loading peopleData.json:', error);
+                throw error;
+            }
+        }
+        
+        // Wrap async initialization in an async function
+        (async function() {
+            try {
+                const peopleData = await loadConfig();
+                // Make data globally accessible for onclick handlers
+                window.professorData = peopleData.professorData;
+                window.labMembersData = peopleData.labMembersData;
+                window.aluminiData = peopleData.aluminiData;
+                
+                const professorData = window.professorData;
+                const labMembersData = window.labMembersData;
+                const aluminiData = window.aluminiData;
+        // const professorData = {
+        //     "id": 1,
+        //     "name": "Prof. Yoonjin Yoon",
+        //     "greeting": "Associate Professor in Department of Civil and Environmental Engineering at KAIST with joint appointment in Graduate School of Artificial Intelligence and Data Science.",
+        //     "link": "https://sites.google.com/view/yoonjintrue",
+        //     "email": "yoonjin@kaist.ac.kr",
+        //     "edu": [
+        //         "B.S. Mathematics, SNU",
+        //         "M.S. Computer Science, Stanford",
+        //         "M.S. Management Science and Engineering, Stanford",
+        //         "Ph.D. Civil and Environmental Engineering, UC Berkeley"
+        //     ],
+        //     "research": "**Urban Intelligence**: Region Representation Learning; SDG Data Science; AI for Social Good.\n\n**Transportation Science**: Future Mobility; Graph Neural Nets; Safety Risk Management.",
+        //     "photo": "assets/peopleImg/profile_yoon.jpg"
+        // };
+
+        // const labMembersData = [
+        //     {
+        //         "id": 2,
+        //         "name": "Namwoo Kim",
+        //         "role": "Postdoctoral Researcher",
+        //         "from": "2023.09~",
+        //         "email": "ih736x@kaist.ac.kr",
+        //         "edu": [
+        //             "Ph.D., M.S. in Civil and Environment Engineering, KAIST",
+        //             "B.S.: Mathematical Sciences, KAIST"
+        //         ],
+        //         "research": "My research focuses on deep learning applications in urban systems and large-scale traffic simulation.",
+        //         "photo": "https://raw.githubusercontent.com/STIL-KAIST/spacetime-kaist/main/public/img/peopleImg/2.jpg"
+        //     },
+        //     {
+        //         "id": 3,
+        //         "name": "Sungmin Sohn",
+        //         "role": "Ph.D. Candidate",
+        //         "from": "2023.09~",
+        //         "email": "smsohn1997@kaist.ac.kr",
+        //         "edu": [
+        //             "M.S. in Transportation Engineering, UC Berkeley",
+        //             "B.S. in Civil Engineering, NYUAD"
+        //         ],
+        //         "research": "Investigating the intersection of behavioral economics and urban mobility patterns using machine learning.",
+        //         "photo": "https://raw.githubusercontent.com/STIL-KAIST/spacetime-kaist/main/public/img/peopleImg/3.jpg"
+        //     },
+        //     {
+        //         "id": 4,
+        //         "name": "Donghyun Yoon",
+        //         "role": "Ph.D. Candidate",
+        //         "from": "2024.03~",
+        //         "email": "tloveu49@kaist.ac.kr",
+        //         "edu": [
+        //             "M.S. in Information Security, SKKU",
+        //             "B.S. in Computer Engineering, KAFA"
+        //         ],
+        //         "research": "Securing smart city infrastructure and developing resilient urban data protocols.",
+        //         "photo": "https://raw.githubusercontent.com/STIL-KAIST/spacetime-kaist/main/public/img/peopleImg/4.jpg"
+        //     }
+        // ];
+
+        // const aluminiData = [
+        //     { "id": 11, "name": "Ohhoon Kwon", "degree": "Ph.D.", "date": "2010.03~2015.02" },
+        //     { "id": 12, "name": "Sammer Ud Din", "degree": "Ph.D.", "date": "2014.03~2018.02" },
+        //     { "id": 21, "name": "Kyowon Song", "degree": "M.S.", "date": "2010.09~2012.08" }
+        // ];
+
+        async function copyEmail(email) {
+            try {
+                await navigator.clipboard.writeText(email);
+                alert("Email copied to clipboard!");
+            } catch (err) {
+                console.error('Copy failed', err);
+            }
+        }
+
+            // Helper function to load image with error handling
+            function loadImage(imgElement, src, alt = '') {
+                return new Promise((resolve, reject) => {
+                    const img = new Image();
+                    img.onload = () => {
+                        imgElement.src = src;
+                        imgElement.alt = alt;
+                        imgElement.classList.add('loaded');
+                        resolve();
+                    };
+                    img.onerror = () => {
+                        console.error(`Failed to load image: ${src}`);
+                        // Fallback placeholder
+                        imgElement.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="500"%3E%3Crect fill="%23e5e7eb" width="400" height="500"/%3E%3Ctext x="50%25" y="50%25" text-anchor="middle" dy=".3em" fill="%239ca3af" font-family="sans-serif" font-size="18"%3EImage not available%3C/text%3E%3C/svg%3E';
+                        imgElement.alt = alt || 'Image not available';
+                        imgElement.classList.add('loaded');
+                        resolve(); // Resolve anyway to not break the page
+                    };
+                    img.src = src;
+                });
+            }
+
+            function init() {
+                // Preload professor photo (critical, above-the-fold)
+                const profPhoto = document.getElementById('prof-photo');
+                if (professorData.photo) {
+                    // Preload link for faster loading
+                    const link = document.createElement('link');
+                    link.rel = 'preload';
+                    link.as = 'image';
+                    link.href = professorData.photo;
+                    link.fetchPriority = 'high';
+                    document.head.appendChild(link);
+                    
+                    loadImage(profPhoto, professorData.photo, professorData.name);
+                }
+                document.getElementById('prof-name').innerText = professorData.name;
+                document.getElementById('prof-greeting').innerText = professorData.greeting;
+                document.getElementById('prof-email').innerText = professorData.email;
+                document.getElementById('prof-link').href = professorData.link;
+                document.getElementById('prof-research').innerHTML = marked.parse(professorData.research);
+                document.getElementById('prof-edu').innerHTML = professorData.edu.map(e => `<li class="flex items-start gap-3"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mt-1.5 shrink-0"></span><span class="text-slate-600 text-sm">${e}</span></li>`).join('');
+
+                // Members
+                const membersGrid = document.getElementById('members-grid');
+                labMembersData.forEach((member, index) => {
+                    const card = document.createElement('div');
+                    card.className = "bg-white rounded-[2rem] p-8 shadow-sm border border-slate-100 card-hover flex flex-col lg:flex-row gap-8 items-start";
+                    const imgId = `member-img-${member.id || index}`;
+                    card.innerHTML = `
+                        <div class="w-full lg:w-44 shrink-0">
+                            <div class="relative group">
+                                <img id="${imgId}" src="" alt="${member.name}" class="w-full aspect-square object-cover rounded-2xl shadow-lg border-4 border-white" loading="lazy" decoding="async">
+                                <div class="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition rounded-2xl flex items-center justify-center">
+                                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <div class="mb-4"> 
+
+                                <div class="flex items-start justify-between gap-2 mb-1.5">
+                                    <div class="flex-1">
+                                        <button onclick="copyEmail('${member.email}')" class="inline-flex items-center gap-1.5 pl-1  pr-2 py-1 mb-2 text-left text-xs font-medium text-slate-600 hover:text-blue-600 hover:bg-blue-50 transition-colors rounded-lg border border-slate-200 bg-white/50">
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                    </svg>
+                                    <span>${member.email}</span>
+                                    </button>
+                                        <h3 class="text-2xl font-bold text-slate-900 mb-1.5">${member.name}</h3>
+                                        <p class="text-blue-600 font-semibold text-sm">${member.role}</p>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-2">Background</h4>
+                                    <ul class="space-y-2 pl-1">
+                                        ${member.edu.map(e => `<li class="text-xs text-slate-500 leading-relaxed flex items-start gap-2"><span class="w-1 h-1 bg-blue-400 rounded-full mt-1.5 shrink-0"></span><span>${e}</span></li>`).join('')}
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-2">Research Focus</h4>
+                                    ${member.research && member.projects.length > 0 ?`<p class="text-xs text-slate-600 leading-relaxed italic mb-2">"${member.research}"</p>`:''}
+                                    ${member.projects && member.projects.length > 0 ? `
+                                    <div class="relative pl-3 border-l-2 border-blue-400/40 projects-container" data-member-id="${member.id || index}">
+                                        <div class="projects-tags flex flex-wrap gap-1.5">
+                                        ${member.projects.slice(0, 4).map(project => `
+                                            <span class="inline-flex items-center px-2 py-1 text-[10px] font-medium bg-slate-100 text-slate-700 border border-slate-300">${project}</span>
+                                        `).join('')}
+                                        ${member.projects.length > 2 ? `
+                                            <span class="projects-more inline-flex items-center px-2.5 py-1 text-[10px] font-medium bg-slate-200 text-slate-700 border border-slate-300 cursor-pointer hover:bg-slate-300 transition">+${member.projects.length - 2} more</span>
+                                        ` : ''}
+                                        </div>
+                                        ${member.projects.length > 2 ? `
+                                        <div class="projects-all hidden absolute left-3 top-full mt-2 z-20 bg-white rounded-lg shadow-xl border border-slate-200 p-3 min-w-[200px] max-w-[280px] max-h-[300px] overflow-y-auto">
+                                            <div class="flex flex-wrap gap-1.5">
+                                                ${member.projects.map(project => `
+                                                    <span class="inline-flex items-center px-2.5 py-1 text-[10px] font-medium bg-slate-100 text-slate-700 border border-slate-300 whitespace-nowrap">${project}</span>
+                                                `).join('')}
+                                            </div>
+                                        </div>` : ''}
+                                    </div>` : ''}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    membersGrid.appendChild(card);
+                    // Load image after DOM insertion
+                    const memberImg = document.getElementById(imgId);
+                    if (memberImg && member.photo) {
+                        loadImage(memberImg, member.photo, member.name);
+                    }
+                    
+                    // Setup projects hover/click functionality
+                    if (member.projects && member.projects.length > 2) {
+                        const projectsContainer = card.querySelector('.projects-container');
+                        const projectsMore = card.querySelector('.projects-more');
+                        const projectsAll = card.querySelector('.projects-all');
+                        
+                        if (projectsContainer && projectsMore && projectsAll) {
+                            // Hover to show
+                            projectsContainer.addEventListener('mouseenter', () => {
+                                projectsAll.classList.remove('hidden');
+                            });
+                            projectsContainer.addEventListener('mouseleave', () => {
+                                projectsAll.classList.add('hidden');
+                            });
+                            
+                            // Click to toggle (for mobile/touch)
+                            projectsMore.addEventListener('click', (e) => {
+                                e.stopPropagation();
+                                projectsAll.classList.toggle('hidden');
+                            });
+                        }
+                    }
+                });
+
+                // Alumni
+                const phdGrid = document.getElementById('alumni-phd-grid');
+                const msGrid = document.getElementById('alumni-ms-grid');
+                aluminiData.forEach(a => {
+                    const card = document.createElement('div');
+                    card.className = "bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:border-blue-200 transition text-center";
+                    card.innerHTML = `
+                        <h4 class="font-bold text-slate-900 mb-1">${a.name}</h4>
+                        <p class="text-xs text-slate-400">${a.date}</p>
+                        <div class="mt-4 pt-4 border-t border-slate-50">
+                            <span class="inline-block px-3 py-1 bg-blue-50 text-blue-600 text-[10px] font-bold rounded-full">${a.degree}</span>
+                        </div>
+                    `;
+                    if (a.degree === 'Ph.D.') phdGrid.appendChild(card);
+                    else msGrid.appendChild(card);
+                });
+            }
+
+            init();
+        } catch (error) {
+            console.error('Error initializing page:', error);
+            // Show error message to user
+            document.body.innerHTML = '<div style="padding: 2rem; text-align: center;"><h1>Error loading page data</h1><p>Please check the console for details.</p></div>';
+        }
+    })();
+        // Sidebar navigation functionality
+        (async () => {
+        const base = location.pathname.replace(/\/[^\/]*$/, "");
+        const res = await fetch(`${base}/partials/scroll-sidebar.html`, { cache: "no-store" });
+        document.getElementById("scroll-sidebar-slot").innerHTML = await res.text();
+        })();
+    </script>
+</body>
+</html>

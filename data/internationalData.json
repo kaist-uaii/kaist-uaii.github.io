@@ -1,0 +1,590 @@
+[
+  {
+    "id": "10.1145/3764921.3770151",
+    "title": "Speak to Simulate: An LLM-Guided Agentic Framework for Traffic Simulation in SUMO",
+    "authors": "M. Jeong, J. Chang, Y. Yoon",
+    "conference": "GeoSIM '25: 8th ACM SIGSPATIAL International Workshop on Geospatial Simulation",
+    "date": "2025",
+    "href": "https://dl.acm.org/doi/abs/10.1145/3764921.3770151"
+  },
+  {
+    "id": "i75",
+    "title": "Integrating Urban Air Mobility with Highway Infrastructure: A Strategic Approach for Vertiport Location Selection in the Seoul Metropolitan Area",
+    "authors": "D. Yoon, M. Jeong, J. Lee, S. Kim, Y. Yoon",
+    "conference": "TRB",
+    "date": "2025",
+    "href": "https://arxiv.org/abs/2502.00399"
+  },
+  {
+    "id": "i74",
+    "title": "How Well Do Vision-Language Models Understand Cities? A Comparative Study on Spatial Reasoning from Street-View Images",
+    "authors": "J. Ro, N. Kim, Y. Yoon",
+    "conference": "IEEE/CVF International Conference on Computer Vision (ICCV) Workshops",
+    "date": "2025",
+    "href": "https://openaccess.thecvf.com/content/ICCV2025W/MARS2/html/Ro_How_Well_Do_Vision-Language_Models_Understand_Cities__A_Comparative_ICCVW_2025_paper.html"
+  },
+  {
+    "id": "i73",
+    "title": "Unveiling Latent Factors of the Urban Dynamics for Vertiport Placement",
+    "authors": "S. Sohn, N. Kim, M. Hansen, Y. Yoon",
+    "conference": "104th TRB Annual Meeting",
+    "date": "2025",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/327191"
+  },
+  {
+    "id": "i72",
+    "title": "Fill in the Gap: Two-Stage Prediction Modeling Framework for Understanding Human Biosensor Data",
+    "authors": "J Ro, Y Yoon",
+    "conference": "15th International Conference on Information and Communication Technology Convergence (ICTC)",
+    "date": "2025",
+    "href": "https://ieeexplore.ieee.org/abstract/document/10826871"
+  },
+  {
+    "id": 3,
+    "title": "A Heterogeneous Attention Network Model for Longitudinal Analysis of Socioeconomic and Racial Inequalities in Urban Regions: Evidence from Chicago, IL",
+    "authors": "N. Kim, H. Lee, Y. Yoon",
+    "conference": "ACM SIGSPATIAL",
+    "date": "2023",
+    "href": "https://dl.acm.org/doi/abs/10.1145/3589132.3625650?casa_token=vf_NEaenPUEAAAAA:mVghIh0_JHkZUKM8Rm3Id-6TFwbfzWneZxfA0kWL-1dVd7xOc2_GS3hmQ5XcRK9YdVzlrWAi1HFs6Q"
+  },
+  {
+    "id": 4,
+    "title": "Understanding Urban Economic Status through GNN-based Urban Representation Learning Using Mobility Data",
+    "authors": "Y. Shin, G. Seong, N. Kim, S. Kim, Y. Yoon",
+    "conference": "UrbanAI 2023 : The 1st ACM SIGSPATIAL International Workshop on Advances in Urban AI",
+    "date": "2023",
+    "href": "https://dl.acm.org/doi/abs/10.1145/3615900.3628786?casa_token=6pwgE4jJIbAAAAAA:bN2omkGt5Id5v9sn8yz6w9HyfIxxslGIHmiKX6a3ygvFQHxhHkKQtpgih0vZ2iL7308wFVol-TDxow"
+  },
+  {
+    "id": 5,
+    "title": "Detecting socioeconomic changes of Chicago regions between 2013 and 2020 using urban region representation learning",
+    "authors": "H. Lee, N. Kim, S. Kim, Y. Yoon",
+    "conference": "The 14th International Conference on Ambient Systems, Networks and Technologies (ANT)",
+    "date": "2023",
+    "href": "https://www.sciencedirect.com/science/article/pii/S1877050923005690"
+  },
+  {
+    "id": 6,
+    "title": "Multi-modal Based Region Representation Learning Considering Mobility Data in Seoul",
+    "authors": "G. Seong, N. Kim, S. Kim, Y. Yoon",
+    "conference": "The 14th International Conference on Ambient Systems, Networks and Technologies (ANT)",
+    "date": "2023",
+    "href": "https://www.sciencedirect.com/science/article/pii/S1877050923006889"
+  },
+  {
+    "id": 7,
+    "title": "Risk analysis of unmanned aerial system operations in urban airspace considering spatiotemporal population dynamics",
+    "authors": "S. Oh, Y. Yoon, S. Kim",
+    "conference": "2022 IEEE 25th International Conference on Intelligent Transportation Systems (ITSC)",
+    "date": "2022",
+    "href": "https://ieeexplore.ieee.org/abstract/document/9922030"
+  },
+  {
+    "id": 8,
+    "title": "A Comparative Study on Basic Elements of Deep Learning Models for Spatial-Temporal Traffic Forecasting",
+    "authors": "Y. Shin, Y. Yoon",
+    "conference": "AAAI 2021 Workshop: AI for Transportation",
+    "date": "2021",
+    "href": "https://arxiv.org/abs/2111.07513"
+  },
+  {
+    "id": 9,
+    "title": "Vertiport Location Selection for Urban Air Mobility Based on Urban Taxi Mobility Data",
+    "authors": "S. Kim, Y. Yoon",
+    "conference": "INFORMS (Institute for Operation Research and the Management Sciences)",
+    "date": "2022",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/302988"
+  },
+  {
+    "id": 10,
+    "title": "Graph Neural Network Applications for UAM Commute Flow Prediction",
+    "authors": "N. Kim, Y. Yoon",
+    "conference": "INFORMS (Institute for Operation Research and the Management Sciences)",
+    "date": "2022",
+    "href": "https://www.abstractsonline.com/pp8/#!/10693/presentation/6251"
+  },
+  {
+    "id": 11,
+    "title": "Data-driven Approach for Comprehensive Airspace Assessment of Small Unmanned Aircraft System Operations in Urban Environments",
+    "authors": "S. Oh, Y. Yoon",
+    "conference": "INFORMS (Institute for Operation Research and the Management Sciences)",
+    "date": "2022",
+    "href": "https://www.abstractsonline.com/pp8/#!/10693/presentation/4671"
+  },
+  {
+    "id": 12,
+    "title": "Risk Analysis of Unmanned Aerial System Operations in Urban Airspace Considering Spatiotemporal Population Dynamics",
+    "authors": "S. Oh, Y. Yoon, S. Kim",
+    "conference": "2022 IEEE 25th International Conference on Intelligent Transportation Systems (ITSC)",
+    "date": "2022",
+    "href": "https://ieeexplore.ieee.org/abstract/document/9922030"
+  },
+  {
+    "id": 13,
+    "title": "Can Urban Air Mobility Become a Public Transportation Option?: Understanding Sociodemographic Characteristics and Urban Air Mobility Adoption Readiness in Seoul, South Korea",
+    "authors": "J. Cho, H. Cho, S. Oh, S. Kim, Y. Yoon",
+    "conference": "Transportation Research Board: 101st Annual Meeting",
+    "date": "2022",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/301921"
+  },
+  {
+    "id": 14,
+    "title": "Segmentation of Low-altitude Airspace in Highly Constrained Environments",
+    "authors": "J. Cho, Y. Yoon",
+    "conference": "ICRAT(International Conference on Research in Air Transportation)",
+    "date": "2020",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/279309"
+  },
+  {
+    "id": 15,
+    "title": "How to assess the feasibility of sUAS applications in urban environment: geodemographic analysis of 3D urban space",
+    "authors": "N. Kim, Y. Yoon",
+    "conference": "ICRAT(International Conference on Research in Air Transportation) Doctoral Symposium",
+    "date": "2020",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/279307"
+  },
+  {
+    "id": 16,
+    "title": "Topological Data Analysis on the Northeast Asian Air Route Network",
+    "authors": "S. Kim, Y. Shin, Y. Yoon",
+    "conference": "ICRAT(International Conference on Research in Air Transportation) Doctoral Symposium",
+    "date": "2020",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/279308"
+  },
+  {
+    "id": 17,
+    "title": "Preliminary Impact Assessment of Restricting Airspace Over Populated Areas for sUAS Operation",
+    "authors": "S. Oh, J. Cho, N. Kim, Y. Yoon",
+    "conference": "Transportation Research Board 99th Annual Meeting",
+    "date": "2020",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/276236"
+  },
+  {
+    "id": 18,
+    "title": "Assessing the impact of restricting airspace in populated areas on airspace availability for UAV Operation\"",
+    "authors": "S. Oh, Y. Yoon",
+    "conference": "The 32nd KKHTCNN Symposium",
+    "date": "2019",
+    "href": "https://kkhtcnn.wixsite.com/kkhtcnn2019/schedule"
+  },
+  {
+    "id": 19,
+    "title": "A study on the urban airspace for sUAV operation",
+    "authors": "N. Kim, Y. Yoon",
+    "conference": "The 32nd KKHTCNN Symposium",
+    "date": "2019",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/269036"
+  },
+  {
+    "id": 20,
+    "title": "Reflecting Structural Dynamicity of Traffic Networks to Graph Convolution Modules: A Deep Learning Approach to Traffic Forecasting",
+    "authors": "Y. Shin, Y. Yoon",
+    "conference": "The 32nd KKHTCNN Symposium",
+    "date": "2019",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/269034"
+  },
+  {
+    "id": 21,
+    "title": "Weighted Complex Network Analysis of the Northeast Asian Air Route Network",
+    "authors": "S. Kim, Y. Yoon",
+    "conference": "The 32nd KKHTCNN Symposium",
+    "date": "2019",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/269037"
+  },
+  {
+    "id": 22,
+    "title": "Evaluation on Diversity of Drivers' Cognitive Stress Response using EEG and ECG Signals during Real-Traffic Experiment with an Electric Vehicle",
+    "authors": "Y. Noh, S. Kim, Y. Yoon",
+    "conference": "2019 IEEE INTELLIGENT TRANSPORTATION SYSTEMS CONFERENCE (ITSC)",
+    "date": "2019",
+    "href": "https://ieeexplore.ieee.org/abstract/document/8916844"
+  },
+  {
+    "id": 23,
+    "title": "A Study on Airspace Availability of Urban Areas",
+    "authors": "N. Kim, Y. Yoon",
+    "conference": "The 23rd ATRS(Aviation Transport Research Society) World Conference",
+    "date": "2019",
+    "href": "https://www.atrs2019amsterdam.nl/program"
+  },
+  {
+    "id": 24,
+    "title": "Robustness Analysis of the Northeast Asian Air Transport Network as a Complex Network",
+    "authors": "S. Kim, Y. Yoon",
+    "conference": "The 23rd ATRS(Aviation Transport Research Society) World Conference",
+    "date": "2019",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/270453"
+  },
+  {
+    "id": 25,
+    "title": "Extraction and Interpretation of Geometrical and Topological Properties of Urban Airspace for UAS Operations",
+    "authors": "J. Cho, Y. Yoon",
+    "conference": "13th ATM R&D Seminar",
+    "date": "2019",
+    "href": "https://www.researchgate.net/profile/Jungwoo-Cho/publication/334882861_Extraction_and_Interpretation_of_Geometrical_and_Topological_Properties_of_Urban_Airspace_for_UAS_Operations/links/5d43dff9a6fdcc370a74473a/Extraction-and-Interpretation-of-Geometrical-and-Topological-Properties-of-Urban-Airspace-for-UAS-Operations.pdf"
+  },
+  {
+    "id": 26,
+    "title": "sUAV Collision Avoidance Strategies Based On Satisficing Game Theory",
+    "authors": "N. Kim, Y. Yoon",
+    "conference": "The 31st KKHTCNN Symposium",
+    "date": "2018",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/247757"
+  },
+  {
+    "id": 27,
+    "title": "Topological Properties of the Northeast Asian Air Transport Network as a Complex Network",
+    "authors": "S. Kim, Y. Yoon",
+    "conference": "The 31st KKHTCNN Symposium",
+    "date": "2018",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/247756"
+  },
+  {
+    "id": 28,
+    "title": "Preliminary Study on Routing Strategies for sUAS Operations in Urban Environments",
+    "authors": "J. Cho, Y. Yoon",
+    "conference": "The 31st KKHTCNN Symposium",
+    "date": "2018",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/247753"
+  },
+  {
+    "id": 29,
+    "title": "Data-Driven Approach to Urban Transportation Road Network Analysis Using Topological Data Analysis – Case Study on Gangnam District, Seoul",
+    "authors": "Y. Shin, Y. Yoon",
+    "conference": "The 31st KKHTCNN Symposium",
+    "date": "2018",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/247754"
+  },
+  {
+    "id": 30,
+    "title": "Characterizing the influence of elderly taxi drivers to road safety in ageing society – a case study of Seoul, South Korea",
+    "authors": "S. Oh, Y. Noh, Y. Yoon",
+    "conference": "The 31st KKHTCNN Symposium",
+    "date": "2018",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/247755"
+  },
+  {
+    "id": 31,
+    "title": "Data-Driven Approach to Aviation Safety Management - a Case Study on Association between Runway Incidents and Turnaround Time in South Korean Airports",
+    "authors": "Y. Yoon",
+    "conference": "Transportation Research Board",
+    "date": "2018",
+    "href": "https://trid.trb.org/View/1496035"
+  },
+  {
+    "id": 32,
+    "title": "Assessing the impact of introducing high-speed rail on demand of railway in Korea",
+    "authors": "J. Lee, Y. Noh, S. Kim, S. Oh, Y. Yoon",
+    "conference": "The 2nd Asian Conference on Railway Engineering and Transportation",
+    "date": "2018",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/247866"
+  },
+  {
+    "id": 33,
+    "title": "Predicting Seoul Subway Hourly Passenger Demand Using Neural Network Models",
+    "authors": "Y. Shin, J. Cho, NW. Kim, Y. Yoon",
+    "conference": "The 2nd Asian Conference on Railway Engineering and Transportation",
+    "date": "2018",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/247867"
+  },
+  {
+    "id": 34,
+    "title": "Conflict Resolution Policy for Small UAV Based on Satisficing Theory",
+    "authors": "N. Kim, Y. Yoon",
+    "conference": "The 22nd ATRS(Aviation Transport Research Society) World Conference",
+    "date": "2018",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/248000"
+  },
+  {
+    "id": 35,
+    "title": "Investigating the effect of alternative geofencing on the availability of low-altitude urban airspace",
+    "authors": "J. Cho, Y. Shin, Y. Yoon",
+    "conference": "The 22nd ATRS(Aviation Transport Research Society) World Conference",
+    "date": "2018",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/248001"
+  },
+  {
+    "id": 36,
+    "title": "Assessing the airspace availability for sUAV operations in urban environments: A topological approach using keep-in and keep-out geofence",
+    "authors": "J. Cho, Y. Yoon",
+    "conference": "ICRAT(International Conference on Research in Air Transportation) Doctoral Symposium, 2018 ",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/248008"
+  },
+  {
+    "id": 37,
+    "title": "Investigation of Patient Concentration Phenomenon in Emergency Departments Considering Transportation Costs",
+    "authors": "M. Kim. J. Cho. Y. Yoon",
+    "conference": "International Federation of Operational Research Societies(IFORS)",
+    "date": "2017",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/225543"
+  },
+  {
+    "id": 38,
+    "title": "Simulation-based Assessment of Unmanned Aerial Vehicles Traffic Congestion in Metropolitan Area",
+    "authors": "S. Kim. J. Cho. Y. Yoon",
+    "conference": "International Federation of Operational Research Societies(IFORS)",
+    "date": "2017",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/225544"
+  },
+  {
+    "id": 39,
+    "title": "A study on the Railway Demand for Seoul to Major City of Gyeongbu Line in the Past 12 Years Using Outlier Detection",
+    "authors": "J. Lee. Y. oon",
+    "conference": "The 29th KKHTCNN Symposium",
+    "date": "2016",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/222531"
+  },
+  {
+    "id": 40,
+    "title": "A study on the Mitigation of Airspace Delay in Hong Kong International Airport",
+    "authors": "S. Oh. Y. Yoon",
+    "conference": "The 29th KKHTCNN Symposium",
+    "date": "2016",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/222530"
+  },
+  {
+    "id": 41,
+    "title": "Effectiveness of school zone improvement program in Dongdaemun-gu",
+    "authors": "M. Kim, Y. Yoon",
+    "conference": "The 29th KKHTCNN Symposium",
+    "date": "2016",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/222529"
+  },
+  {
+    "id": 42,
+    "title": "“UAV traffic in urban airspace: A simple measure of conflict”",
+    "authors": "J. Cho, Y. Yoon",
+    "conference": "The 29th KKHTCNN Symposium",
+    "date": "2016",
+    "href": ""
+  },
+  {
+    "id": 43,
+    "title": "Tactical Traffic Control for Multiple AGV Systems based on Three Dimensional Space",
+    "authors": "Y. Noh, Y. Yoon",
+    "conference": "AIP Conference Proceedings",
+    "date": "2016",
+    "href": "https://pubs.aip.org/aip/acp/article-abstract/1790/1/150027/577261"
+  },
+  {
+    "id": 44,
+    "title": "Identifying Range Anxiety of Electric Vehicle Drivers using Psychophysiological Measures",
+    "authors": "D. Jin, S. Kim, Y. Yoon",
+    "conference": "INFORMS 2016",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/220656"
+  },
+  {
+    "id": 45,
+    "title": "Tactical Traffic Control for Multiple AGV Systems Based on Three Dimensional Space",
+    "authors": "Y. Noh, Y. Yoon",
+    "conference": "INFORMS 2016",
+    "href": "https://pubs.aip.org/aip/acp/article-abstract/1790/1/150027/577261"
+  },
+  {
+    "id": 46,
+    "title": "Comparative Analysis of Various Population Groups in Car Collision Based on Collision Risk Factors Using Data Mining Technique",
+    "authors": "Y. Woo, Y. Yoon",
+    "conference": "INFORMS 2016",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/213840"
+  },
+  {
+    "id": 47,
+    "title": "A Quantitative Approach to Assessing the Impact of the Mt. Baekdu Explosion on South Korea’s Air Traffic Flow in a Volcanic Ash Dispersal Scenario",
+    "authors": "J. Lee, Y. Yoon",
+    "conference": "International Conference on Research in Air Transportation",
+    "date": "2016",
+    "href": "https://www.researchgate.net/publication/309819071_A_Quantitative_Approach_to_the_influence_on_the_South_Korean_Air_Transportation_System_in_the_Event_of_Volcanic_Ash_Dispersal"
+  },
+  {
+    "id": 48,
+    "title": "GIS-based Analysis on Vulnerability of Ambulance Response Coverage to Traffic Condition",
+    "authors": "J. Cho, Y. Yoon",
+    "conference": "IEEE ITSC (Intelligent Transportation Systems Conference)",
+    "date": "2015",
+    "href": "https://ieeexplore.ieee.org/abstract/document/7313322/"
+  },
+  {
+    "id": 49,
+    "title": "Impact of the Mt. Baegdu explosion to South Korea’s air traffic flow",
+    "authors": "J. Lee, Y. Yoon",
+    "conference": "Transport Research Board",
+    "date": "2015",
+    "href": "https://trid.trb.org/View/1337419"
+  },
+  {
+    "id": 50,
+    "title": "Analysis of Risk Factor Dependency Applying Data Mining Techniques to Traffic Accident Data",
+    "authors": "O. Kwon. Y. Yoon. W. Rhee",
+    "conference": "International Conference on Computational & Experimental Engineering and Sciences 2014",
+    "date": "2014",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/194905"
+  },
+  {
+    "id": 51,
+    "title": "Adaptive Risk Modeling Method using Hazard Matrix for Proactive Transportation Safety Management",
+    "authors": "Y. Yoon",
+    "conference": "International Conference on Computational & Experimental Engineering and Sciences 2014",
+    "date": "2014",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/194906"
+  },
+  {
+    "id": 52,
+    "title": "Analysis of risk factor dependency using traffic accident data",
+    "authors": "O. Kwon, Y. Yoon",
+    "conference": "The 8th AOTULE meeting and conference",
+    "date": "2013",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/194907"
+  },
+  {
+    "id": 53,
+    "title": "Impacts of influential factors on vehicle to vehicle crash frequency and severity in rainy weather",
+    "authors": "Y. Yoon, S. Jung, K. Jang, S. Kang",
+    "conference": "Transport Research Board",
+    "date": "2013",
+    "href": "https://trid.trb.org/View/1241963"
+  },
+  {
+    "id": 54,
+    "title": "Evaluation of motorcycle safety strategies using the severity of injuries",
+    "authors": "S. Jung, X. Qin, Y. Yoon",
+    "conference": "Transportation Research Board",
+    "date": "2013",
+    "href": "https://www.sciencedirect.com/science/article/pii/S0001457513002583"
+  },
+  {
+    "id": 55,
+    "title": "Link criticality based on most probable network states for predisaster investment",
+    "authors": "K. Kim, Y. Yoon",
+    "conference": "ASCE workshop on computing in civil engineering",
+    "date": "2013",
+    "href": "https://ascelibrary.org/doi/abs/10.1061/9780784413029.020"
+  },
+  {
+    "id": 56,
+    "title": "A perspective on occurrence in aviation safety management of South Korea through survey on various occurrence categories",
+    "authors": "Y. Noh, Y. Yoon",
+    "conference": "Air Transport Research Society",
+    "date": "2013",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/175763"
+  },
+  {
+    "id": 57,
+    "title": "Study on occurrence categories and accident-related events based on the accident reports of the Republic of Korea",
+    "authors": "S. Tak, D. Lee, Y. Yoon",
+    "conference": "Air Transport Research Society",
+    "date": "2013",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/226110"
+  },
+  {
+    "id": 58,
+    "title": "A framework to determine critical links of an intercity rail network for pre-disaster infrastructure",
+    "authors": "​K. Kim, J. Lee, Y. Yoon",
+    "conference": "INFORMS 2013",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/257158"
+  },
+  {
+    "id": 59,
+    "title": "Hazard risk assessment in aviation: methodology and case study based on NTSB accident/incident data",
+    "authors": "E. Kim, Y. Yoon",
+    "conference": "INFORMS 2013",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/257159"
+  },
+  {
+    "id": 60,
+    "title": "Application of Bayesian network for hazard-based risk modeling in aviation safety management system",
+    "authors": "O. Kwon, Y. Yoon",
+    "conference": "INFORMS 2013",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/257161"
+  },
+  {
+    "id": 61,
+    "title": "Occurrence in aviation safety management of South Korea: survey on various occurrence categories",
+    "authors": "Y. Noh, Y. Yoon",
+    "conference": "INFORMS 2013",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/257160"
+  },
+  {
+    "id": 62,
+    "title": "Aviation system reliability during natural disaster",
+    "authors": "J. Lee, Y. Yoon",
+    "conference": "INFORMS 2013",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/194908"
+  },
+  {
+    "id": 63,
+    "title": "Value of perfect weather information in the probabilistic air traffic flow management: an application of the geometric recourse model",
+    "authors": "Y. Yoon, M. Hansen",
+    "conference": "International Conference on Research in Air Transportation",
+    "date": "2012",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/171350"
+  },
+  {
+    "id": 64,
+    "title": "Optimal route decision with a geometric ground-airborne hybrid model under weather uncertainty",
+    "authors": "Y. Yoon, M. Hansen, M. O. Ball",
+    "conference": "International Symposium on Transportation and Traffic Theory",
+    "date": "2012",
+    "href": "https://www.sciencedirect.com/science/article/pii/S1366554511000640"
+  },
+  {
+    "id": 65,
+    "title": "Optimal route generation with geometric recourse model under weather uncertainty",
+    "authors": "Y. Yoon, M. Hansen, M. O. Ball",
+    "conference": "International Conference on Research in Air Transportation",
+    "date": "2010",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/187616"
+  },
+  {
+    "id": 66,
+    "title": "A framework to evaluate system-wide vulnerability of a transportation network under disaster events",
+    "authors": "S. Tak, Y. Yoon",
+    "conference": "INFORMS 2012",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/171351"
+  },
+  {
+    "id": 67,
+    "title": "Understanding the human behavior in the traffic accident using data mining framework",
+    "authors": "O. Kwon, Y. Yoon",
+    "conference": "INFORMS 2012",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/171352"
+  },
+  {
+    "id": 68,
+    "title": "Value of perfect weather information in the probabilistic air traffic management",
+    "authors": "Y. Yoon, M. Hansen",
+    "conference": "INFORMS 2012",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/171350"
+  },
+  {
+    "id": 69,
+    "title": "Geometric recourse model for optimal route generation",
+    "authors": "Y. Yoon, M. Hansen, M. O. Ball",
+    "conference": "INFORMS 2009",
+    "date": "2008",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/260349"
+  },
+  {
+    "id": 70,
+    "title": "Optimal reroute strategy under weather uncertainty",
+    "authors": "Y. Yoon, M. Hansen",
+    "conference": "INFORMS 2008",
+    "date": "2007",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/260388"
+  },
+  {
+    "id": 2,
+    "title": "Modeling stochastic evolution of runway capacity using data mining concepts",
+    "authors": "Y. Yoon, M. Hansen",
+    "conference": "INFORMS 2007",
+    "date": "2006",
+    "href": "https://koasas.kaist.ac.kr/handle/10203/260410"
+  },
+  {
+    "id": 1,
+    "title": "The impact of advanced technology on Next Generation Air Transportation: A  case study of Required Navigation Performance (RNP)",
+    "authors": "Y. Yoon, M. Hansen",
+    "conference": "AIAA Modeling and Simulations Technology Conference",
+    "date": "2007",
+    "href": "https://arc.aiaa.org/doi/pdf/10.2514/6.2007-6697"
+  }
+]
