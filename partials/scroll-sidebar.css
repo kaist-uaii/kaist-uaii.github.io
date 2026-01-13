@@ -58,7 +58,7 @@
 .sidebar-trigger {
     display: block;
 }
-@media (min-width: 1024px) {
+@media (min-width: 1440px) {
     .sidebar-trigger {
         display: none;
     }
@@ -71,7 +71,7 @@
 .sidebar {
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
-@media (max-width: 1023px) {
+@media (max-width: 1439px) {
     .sidebar {
         position: absolute;
         right: 20px;
@@ -87,7 +87,7 @@
         pointer-events: all;
     }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1440px) {
     .sidebar-container {
         right: 2rem;
     }
