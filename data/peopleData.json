@@ -2,7 +2,7 @@
   "professorData": {
     "id": 1,
     "name": "Prof. Yoonjin Yoon",
-    "greeting": "I'm an associate Professor in Department of Civil and Environmental Engineering at KAIST with joint appointment in Graduate School of Artificial Intelligence and Graduate School of Data Science",
+    "greeting": "Associate Professor in Department of Civil and Environmental Engineering at KAIST with joint appointment in Graduate School of Artificial Intelligence and Graduate School of Data Science",
     "link": "https://sites.google.com/view/yoonjintrue",
     "email": "yoonjin@kaist.ac.kr",
     "edu": [
@@ -11,7 +11,8 @@
       "M.S. Management Science and Engineering, Stanford",
       "Ph.D. Civil and Environmental Engineering, UC Berkeley"
     ],
-    "research": "Coming from Mathematics, Computer Science, Management Science, and Civil engineering background, my research focus is system-of-systems, which includes transportation system, city, logistics system, and public health system. My recent research interests include the following areas.\n\n**Urban Intelligence**: Urban Region Representation Learning; SDG Data Science; AI and Cities; AI for Social Good    \n\n**Computational Transportation Science**: Future Mobility and AI; Graph Neural Net and Traffic Forecasting; Transportation Network Science; Safety Risk Management\n\n**Sustainable Urban Mobility**: Urban Mobility Decarbonization; Mobility Accessibility and Inequality; Urban Air Mobility (UAM);",
+    "research": "Coming from Mathematics, Computer Science, Management Science, and Civil engineering background, my research focus is system-of-systems, which includes transportation system, city, logistics system, and public health system.",
+    "recent": "**Urban Intelligence**: Urban Region Representation Learning; SDG Data Science; AI and Cities; AI for Social Good    \n\n**Computational Transportation Science**: Future Mobility and AI; Graph Neural Net and Traffic Forecasting; Transportation Network Science; Safety Risk Management\n\n**Sustainable Urban Mobility**: Urban Mobility Decarbonization; Mobility Accessibility and Inequality; Urban Air Mobility (UAM);",
     "photo": "/assets/images/peopleImg/profile_yoon.jpg"
   },
   "labMembersData": [
