@@ -39,7 +39,7 @@
             border-radius: 2px;
         }
         .markdown p { margin-bottom: 1rem; }
-        .markdown strong { color: #1e3a8a; }
+        .markdown strong { color: #2f478a; }
         /* Image optimization */
         img {
             max-width: 100%;
@@ -163,7 +163,7 @@
                         </a>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
                         <div>
                             <h4 class="text-xs font-bold uppercase tracking-widest text-blue-600 mb-4">Education</h4>
                             <ul class="space-y-4" id="prof-edu"></ul>
@@ -172,6 +172,10 @@
                             <h4 class="text-xs font-bold uppercase tracking-widest text-blue-600 mb-4">Research Focus</h4>
                             <div class="markdown text-slate-600 text-sm leading-relaxed" id="prof-research"></div>
                         </div>
+                    </div>
+                    <div id="prof-recent-container" class="pt-8 border-t border-slate-200">
+                        <h4 class="text-xs font-bold uppercase tracking-widest text-blue-600 mb-4">Recent Research Interests</h4>
+                        <div class="markdown text-slate-600 text-sm leading-relaxed" id="prof-recent"></div>
                     </div>
                 </div>
             </div>
@@ -268,69 +272,6 @@
                 const professorData = window.professorData;
                 const labMembersData = window.labMembersData;
                 const aluminiData = window.aluminiData;
-        // const professorData = {
-        //     "id": 1,
-        //     "name": "Prof. Yoonjin Yoon",
-        //     "greeting": "Associate Professor in Department of Civil and Environmental Engineering at KAIST with joint appointment in Graduate School of Artificial Intelligence and Data Science.",
-        //     "link": "https://sites.google.com/view/yoonjintrue",
-        //     "email": "yoonjin@kaist.ac.kr",
-        //     "edu": [
-        //         "B.S. Mathematics, SNU",
-        //         "M.S. Computer Science, Stanford",
-        //         "M.S. Management Science and Engineering, Stanford",
-        //         "Ph.D. Civil and Environmental Engineering, UC Berkeley"
-        //     ],
-        //     "research": "**Urban Intelligence**: Region Representation Learning; SDG Data Science; AI for Social Good.\n\n**Transportation Science**: Future Mobility; Graph Neural Nets; Safety Risk Management.",
-        //     "photo": "assets/peopleImg/profile_yoon.jpg"
-        // };
-
-        // const labMembersData = [
-        //     {
-        //         "id": 2,
-        //         "name": "Namwoo Kim",
-        //         "role": "Postdoctoral Researcher",
-        //         "from": "2023.09~",
-        //         "email": "ih736x@kaist.ac.kr",
-        //         "edu": [
-        //             "Ph.D., M.S. in Civil and Environment Engineering, KAIST",
-        //             "B.S.: Mathematical Sciences, KAIST"
-        //         ],
-        //         "research": "My research focuses on deep learning applications in urban systems and large-scale traffic simulation.",
-        //         "photo": "https://raw.githubusercontent.com/STIL-KAIST/spacetime-kaist/main/public/img/peopleImg/2.jpg"
-        //     },
-        //     {
-        //         "id": 3,
-        //         "name": "Sungmin Sohn",
-        //         "role": "Ph.D. Candidate",
-        //         "from": "2023.09~",
-        //         "email": "smsohn1997@kaist.ac.kr",
-        //         "edu": [
-        //             "M.S. in Transportation Engineering, UC Berkeley",
-        //             "B.S. in Civil Engineering, NYUAD"
-        //         ],
-        //         "research": "Investigating the intersection of behavioral economics and urban mobility patterns using machine learning.",
-        //         "photo": "https://raw.githubusercontent.com/STIL-KAIST/spacetime-kaist/main/public/img/peopleImg/3.jpg"
-        //     },
-        //     {
-        //         "id": 4,
-        //         "name": "Donghyun Yoon",
-        //         "role": "Ph.D. Candidate",
-        //         "from": "2024.03~",
-        //         "email": "tloveu49@kaist.ac.kr",
-        //         "edu": [
-        //             "M.S. in Information Security, SKKU",
-        //             "B.S. in Computer Engineering, KAFA"
-        //         ],
-        //         "research": "Securing smart city infrastructure and developing resilient urban data protocols.",
-        //         "photo": "https://raw.githubusercontent.com/STIL-KAIST/spacetime-kaist/main/public/img/peopleImg/4.jpg"
-        //     }
-        // ];
-
-        // const aluminiData = [
-        //     { "id": 11, "name": "Ohhoon Kwon", "degree": "Ph.D.", "date": "2010.03~2015.02" },
-        //     { "id": 12, "name": "Sammer Ud Din", "degree": "Ph.D.", "date": "2014.03~2018.02" },
-        //     { "id": 21, "name": "Kyowon Song", "degree": "M.S.", "date": "2010.09~2012.08" }
-        // ];
 
         async function copyEmail(email) {
             try {
@@ -364,7 +305,7 @@
             }
 
             function init() {
-                // Preload professor photo (critical, above-the-fold)
+                 // Preload professor photo (critical, above-the-fold)
                 const profPhoto = document.getElementById('prof-photo');
                 if (professorData.photo) {
                     // Preload link for faster loading
@@ -382,6 +323,12 @@
                 document.getElementById('prof-email').innerText = professorData.email;
                 document.getElementById('prof-link').href = professorData.link;
                 document.getElementById('prof-research').innerHTML = marked.parse(professorData.research);
+                const recentContainer = document.getElementById('prof-recent-container');
+                if (professorData.recent && professorData.recent.trim()) {
+                    document.getElementById('prof-recent').innerHTML = marked.parse(professorData.recent);
+                } else {
+                    recentContainer.style.display = 'none';
+                }
                 document.getElementById('prof-edu').innerHTML = professorData.edu.map(e => `<li class="flex items-start gap-3"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mt-1.5 shrink-0"></span><span class="text-slate-600 text-sm">${e}</span></li>`).join('');
 
                 // Members
