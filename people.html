@@ -119,27 +119,27 @@
         <aside class="sidebar">
             <nav class="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-slate-200 p-4">
                 <ul class="space-y-2 mb-6">
-                    <li>
+                    <li id="professor-link">
                         <a href="#professor" class="sidebar-link relative block px-4 py-2 text-sm text-slate-600 hover:text-blue-600 rounded-lg hover:bg-blue-50" data-section="professor">
                             Professors
                         </a>
                     </li>
-                    <li>
+                    <li id="global-scholars-link">
                         <a href="#global-scholars" class="sidebar-link relative block px-4 py-2 text-sm text-slate-600 hover:text-blue-600 rounded-lg hover:bg-blue-50" data-section="global-scholars">
                             Global Scholars
                         </a>
                     </li>
-                    <li>
+                    <li id="students-link">
                         <a href="#students" class="sidebar-link relative block px-4 py-2 text-sm text-slate-600 hover:text-blue-600 rounded-lg hover:bg-blue-50" data-section="students">
                             Students
                         </a>
                     </li>
-                    <li>
+                    <li id="staffs-link">
                         <a href="#staffs" class="sidebar-link relative block px-4 py-2 text-sm text-slate-600 hover:text-blue-600 rounded-lg hover:bg-blue-50" data-section="staffs">
                             Research Staffs
                         </a>
                     </li>
-                    <li>
+                    <li id="alumni-link">
                         <a href="#alumni" class="sidebar-link relative block px-4 py-2 text-sm text-slate-600 hover:text-blue-600 rounded-lg hover:bg-blue-50" data-section="alumni">
                             Alumni
                         </a>
@@ -562,7 +562,7 @@
                     allButton.setAttribute('data-project', 'all');
                     filterButtonsContainer.appendChild(allButton);
                     
-                    // Project buttons - only for projects with 5+ collaborators
+                    // Project buttons - only for projects with 3+ collaborators
                     allProjects.sort().forEach(project => {
                         const btn = document.createElement('button');
                         btn.className = 'project-filter-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold transition-colors bg-slate-100 text-slate-700 hover:bg-slate-200';
@@ -593,18 +593,60 @@
                                 const activeFilter = btn.getAttribute('data-project');
                                 console.log('Active filter:', activeFilter);
                                 
-                                // Filter cards
+                                // Filter cards and track visible cards per section
+                                const sectionVisibility = {
+                                    'collab-profs': false, 'professor-link': false,
+                                    'global-scholars': false, 'global-scholars-link': false,
+                                    'students': false, 'students-link': false,
+                                    'staffs': false, 'staffs-link': false,
+                                };
+                                
                                 let visibleCount = 0;
                                 personCards.forEach(card => {
                                     const cardProjects = card.getAttribute('data-projects') || '';
-                                    if (activeFilter === 'all' || cardProjects.includes(activeFilter)) {
+                                    const isVisible = activeFilter === 'all' || cardProjects.includes(activeFilter);
+                                    
+                                    if (isVisible) {
                                         card.style.display = '';
                                         visibleCount++;
+                                        
+                                        // Determine which section this card belongs to
+                                        const grid = card.closest('[id$="-grid"]');
+                                        if (grid) {
+                                            const gridId = grid.id;
+                                            if (gridId === 'collab-profs-grid') {
+                                                sectionVisibility['collab-profs'] = true;
+                                                sectionVisibility['professor-link'] = true;
+                                            } else if (gridId === 'global-scholars-grid') {
+                                                sectionVisibility['global-scholars'] = true;
+                                                sectionVisibility['global-scholars-link'] = true;
+                                            } else if (gridId === 'members-grid') {
+                                                sectionVisibility['students'] = true;
+                                                sectionVisibility['students-link'] = true;
+                                            } else if (gridId === 'staffs-grid') {
+                                                sectionVisibility['staffs'] = true;
+                                                sectionVisibility['staffs-link'] = true;
+                                            }
+                                        }
                                     } else {
                                         card.style.display = 'none';
                                     }
                                 });
+                                
+                                // Show/hide sections based on visibility
+                                Object.keys(sectionVisibility).forEach(sectionId => {
+                                    const section = document.getElementById(sectionId);
+                                    if (section) {
+                                        if (sectionVisibility[sectionId]) {
+                                            section.style.display = '';
+                                        } else {
+                                            section.style.display = 'none';
+                                        }
+                                    }
+                                });
+                                
                                 console.log('Visible cards:', visibleCount);
+                                console.log('Section visibility:', sectionVisibility);
                             });
                         });
                     };
