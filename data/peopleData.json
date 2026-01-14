@@ -1,0 +1,300 @@
+{
+  "professorData": {
+    "id": 1,
+    "name": "Prof. Yoonjin Yoon",
+    "greeting": "Associate Professor in Department of Civil and Environmental Engineering at KAIST with joint appointment in Graduate School of Artificial Intelligence and Graduate School of Data Science",
+    "link": "https://sites.google.com/view/yoonjintrue",
+    "email": "yoonjin@kaist.ac.kr",
+    "edu": [
+      "B.S. Mathematics, SNU",
+      "M.S. Computer Science, Stanford",
+      "M.S. Management Science and Engineering, Stanford",
+      "Ph.D. Civil and Environmental Engineering, UC Berkeley"
+    ],
+    "research": "Coming from Mathematics, Computer Science, Management Science, and Civil engineering background, my research focus is system-of-systems, which includes transportation system, city, logistics system, and public health system.",
+    "recent": "**Urban Intelligence**: Urban Region Representation Learning; SDG Data Science; AI and Cities; AI for Social Good    \n\n**Computational Transportation Science**: Future Mobility and AI; Graph Neural Net and Traffic Forecasting; Transportation Network Science; Safety Risk Management\n\n**Sustainable Urban Mobility**: Urban Mobility Decarbonization; Mobility Accessibility and Inequality; Urban Air Mobility (UAM);",
+    "photo": "assets/images/people/profile_yoon.jpg"
+  },
+  "labMembersData": [
+    {
+      "id": 2,
+      "name": "Namwoo Kim",
+      "link": "https://sites.google.com/view/namwookim",
+      "role": "Postdoctoral Researcher",
+      "from": "2023.09~",
+      "email": "ih736x@kaist.ac.kr",
+      "edu": [
+        "Ph.D., M.S. in Civil and Environment Engineering, KAIST",
+        "B.S.: Mathematical Sciences, KAIST"
+      ],
+      "photo": "assets/images/people/2.jpg",
+      "research": "",
+      "projects": ["CAUS","PrismX"]
+    },
+    {
+      "id": 3,
+      "name": "Sungmin Sohn",
+      "link": "https://sites.google.com/view/sungmin-sohn",
+      "role": "Ph.D. Candidate",
+      "from": "2023.09~",
+      "email": "smsohn1997@kaist.ac.kr",
+      "edu": [
+        "M.S. in Civil and Environmental Engineering, Transportation Engineering, UC Berkeley",
+        "B.S. in Civil Engineering, NYUAD"
+      ],
+      "photo": "assets/images/people/3.jpg",
+      "research": "UAM",
+      "projects": ["BP"]
+    },
+    {
+      "id": 4,
+      "name": "Donghyun Yoon",
+      "link": "https://sites.google.com/view/donghyun-yoon",
+      "role": "Ph.D. Candidate",
+      "from": "2024.03~",
+      "email": "tloveu49@kaist.ac.kr",
+      "edu": [
+        "M.S. in Information Security, Sungkyunkwan University",
+        "B.S. in Computer Engineering and Military Science, Korea Air Force Academy"
+      ],
+      "projects": ["CAUS"],
+      "photo": "assets/images/people/4.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Minwoo Jeong",
+      "link": "https://sites.google.com/view/minwoo-jeong",
+      "role": "M.S. Candidate",
+      "from": "2024.03~",
+      "email": "minwoo5003@kaist.ac.kr",
+      "edu": [
+        "B.S. in Economics and Data Science, University of Seoul"
+      ],
+      "projects": ["CAUS", "AgentSUMO","PrismX"],
+      "photo": "assets/images/people/5.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Juneyoung Ro",
+      "link": "https://sites.google.com/view/juneyoungro",
+      "role": "M.S. Candidate",
+      "from": "2024.03~",
+      "email": "juneyoung.ro@kaist.ac.kr",
+      "edu": [
+        "B.S. in Quantitative Sciences and Biology, Emory University"
+      ],
+      "projects": ["Urban All"],
+      "photo": "assets/images/people/6.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Seungro Lee",
+      "role": "M.S. Candidate",
+      "from": "2024.09~",
+      "email": "roy.seungro.lee@kaist.ac.kr",
+      "edu": [
+        "B.S. in Business Administration, University of Southern California"
+      ],
+      "projects": ["CAUS", "Vigilant"],
+      "photo": "assets/images/people/7.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Keonhee Jang",
+      "role": "Integrated M.S.-Ph.D Candidate",
+      "from": "2024.09~",
+      "email": "keoniverse@kaist.ac.kr",
+      "edu": [
+        "B.S. in Psychology, University of Utah"
+      ],
+      "projects": ["CAUS", "PrismX"],
+      "photo": "assets/images/people/8.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Jeeyun Chang",
+      "role": "M.S. Candidate",
+      "from": "2025.03~",
+      "email": "jyc021@kaist.ac.kr",
+      "edu": [
+        "B.A. in Data Science, UC Berkeley"
+      ],
+      "projects": ["CAUS", "PrismX"],
+      "photo": "assets/images/people/9.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Jihyeon Ohk",
+      "role": "M.S. Candidate",
+      "from": "2025.09~",
+      "email": "jh.ohk@kaist.ac.kr",
+      "edu": [
+        "B.S. in Civil Engineering, Kyoto University"
+      ],
+      "photo": "assets/images/people/10.jpg"
+    }
+  ],
+  "aluminiData": [
+    {
+      "id": 11,
+      "name": "Ohhoon Kwon",
+      "degree": "Ph.D.",
+      "date": "2010.03~2015.02",
+      "photo": "assets/images/people/11.jpg"
+    },
+    {
+      "id": 12,
+      "name": "Sammer Ud Din",
+      "degree": "Ph.D.",
+      "date": "2014.03~2018.02",
+      "photo": "assets/images/people/12.jpg"
+    },
+    {
+      "id": 13,
+      "name": "Yuna Noh",
+      "degree": "Ph.D.",
+      "date": "2012.09~2018.02",
+      "photo": "assets/images/people/13.jpg"
+    },
+    {
+      "id": 14,
+      "name": "Jungwoo Cho",
+      "degree": "Ph.D.",
+      "date": "2015.09~2020.02",
+      "photo": "assets/images/people/14.jpg"
+    },
+    {
+      "id": 15,
+      "name": "Jiseon Lee",
+      "degree": "Ph.D.",
+      "date": "2013.09~2022.08",
+      "photo": "assets/images/people/15.jpg"
+    },
+    {
+      "id": 16,
+      "name": "Yuyol Shin",
+      "degree": "Ph.D.",
+      "date": "2016.09~2022.08",
+      "photo": "assets/images/people/16.jpg"
+    },
+    {
+      "id": 17,
+      "name": "Soohwan Oh",
+      "degree": "Ph.D.",
+      "date": "2016.09~2023.02",
+      "photo": "assets/images/people/17.jpg"
+    },
+    {
+      "id": 18,
+      "name": "Namwoo Kim",
+      "degree": "Ph.D.",
+      "date": "2017.09~2023.08",
+      "photo": "assets/images/people/18.jpg"
+    },
+    {
+      "id": 19,
+      "name": "Seyun Kim",
+      "degree": "Ph.D.",
+      "date": "2016.03~2021.02",
+      "photo": "assets/images/people/19.jpg",
+      "desc": "2021.03~2025.07\n\n  (Research Assistant Professor)"
+    },
+    {
+      "id": 20,
+      "name": "Seyun Kim",
+      "degree": "",
+      "date": "2021.03~2025.07",
+      "photo": "assets/images/people/20.jpg"
+    },
+    {
+      "id": 21,
+      "name": "Kyowon Song",
+      "degree": "M.S.",
+      "date": "2010.09~2012.08"
+    },
+    {
+      "id": 22,
+      "name": "Yingping Zhao",
+      "degree": "M.S.",
+      "date": "2010.09~2012.08"
+    },
+    {
+      "id": 23,
+      "name": "Eunhye Kim",
+      "degree": "M.S.",
+      "date": "2012.03~2014.02"
+    },
+    {
+      "id": 24,
+      "name": "Donghun Lee",
+      "degree": "M.S.",
+      "date": "2012.03~2014.02"
+    },
+    {
+      "id": 25,
+      "name": "Eunseok Kim",
+      "degree": "M.S.",
+      "date": "2012.09~2014.08"
+    },
+    {
+      "id": 26,
+      "name": "Qundeel Hussain",
+      "degree": "M.S.",
+      "date": "2013.03~2015.02"
+    },
+    {
+      "id": 27,
+      "name": "Jungwoo Cho",
+      "degree": "M.S.",
+      "date": "2014.03~2015.08"
+    },
+    {
+      "id": 28,
+      "name": "Yoonjung Kang",
+      "degree": "M.S.",
+      "date": "2013.09~2016.08"
+    },
+    {
+      "id": 29,
+      "name": "Yeonghwa Woo",
+      "degree": "M.S.",
+      "date": "2014.03~2016.02"
+    },
+    {
+      "id": 30,
+      "name": "Seyun Kim",
+      "degree": "M.S.",
+      "date": "2014.03~2016.02"
+    },
+    {
+      "id": 31,
+      "name": "Namwoo Kim",
+      "degree": "M.S.",
+      "date": "2015.09~2017.08"
+    },
+    {
+      "id": 32,
+      "name": "Minjae Kim",
+      "degree": "M.S.",
+      "date": "2016.03~2018.02"
+    },
+    {
+      "id": 33,
+      "name": "Hyeyeong Lee",
+      "degree": "M.S.",
+      "date": "2021.03~2023.02"
+    },
+    {
+      "id": 34,
+      "name": "Gwanghwan Seong",
+      "degree": "M.S.",
+      "date": "2021.03~2023.02"
+    },
+    {
+      "id": 35,
+      "name": "Junghee Kim",
+      "degree": "M.S.",
+      "date": "2022.09~2024.07"
+    }
+  ]
+}
