@@ -21,22 +21,128 @@
             border-top: 4px solid #000;
             border-bottom: 1px solid #000;
         }
-        .sticky-sidebar {
-            position: sticky;
-            top: 2rem;
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
-        #expandable-mentions {
-            display: grid;
-            grid-template-rows: 0fr;
-            transition: grid-template-rows 0.5s ease-out, opacity 0.3s ease-out;
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
             opacity: 0;
         }
-        #mentions-box:hover #expandable-mentions {
-            grid-template-rows: 1fr;
-            opacity: 1;
+        
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
         }
-        #expandable-inner {
-            overflow: hidden;
+        
+        .animate-slide-in-right {
+            animation: slideInRight 0.6s ease-out forwards;
+            opacity: 0;
+        }
+        
+        .animate-scale-in {
+            animation: scaleIn 0.5s ease-out forwards;
+            opacity: 0;
+        }
+        
+        .featured-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .featured-card:hover {
+            transform: translateY(-8px);
+        }
+        
+        .archive-item {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .archive-item:hover {
+            transform: translateX(8px);
+            border-color: #3b82f6;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+        }
+        
+        /* Image overlay effect */
+        .featured-card img {
+            transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* Glow effect on hover */
+        .featured-card:hover {
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+        }
+        
+        /* Smooth transitions for all interactive elements */
+        a, button {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* Archive section fade in */
+        #archive {
+            opacity: 0;
+            animation: fadeIn 1s ease-out 0.5s forwards;
+        }
+        
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Navbar animation */
+        nav {
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        /* Header animation */
+        header {
+            animation: fadeInUp 0.8s ease-out;
         }
     </style>
 </head>
@@ -69,74 +175,22 @@
             </div>
         </header>
 
-        <article class="grid grid-cols-1 lg:grid-cols-12 gap-16 py-16">
-            <!-- Main Content Area -->
-            <div class="lg:col-span-8">
-                <div class="mb-10">
-                    <img id="main-image" src="" alt="Press Image" class="w-full aspect-[16/9] object-cover rounded-sm shadow-2xl mb-8">
-                    
-                    <div class="flex items-center gap-4 mb-6">
-                        <span id="article-writer" class="bg-blue-900 text-white text-[10px] font-bold px-3 py-1 uppercase tracking-widest rounded-full"></span>
-                        <span id="article-date" class="text-slate-400 text-xs font-medium"></span>
-                    </div>
+        <!-- Featured Top 3 Section -->
+        <section id="featured-news" class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-24 py-8">
+            <!-- Featured cards will be injected here -->
+        </section>
 
-                    <h2 id="article-title" class="serif-title text-4xl md:text-5xl font-bold leading-[1.1] mb-8 text-slate-900"></h2>
-                    
-                    <div id="article-desc" class="markdown text-lg text-slate-700 first-letter:text-7xl first-letter:font-bold first-letter:mr-3 first-letter:float-left first-letter:text-blue-900">
-                    </div>
-                </div>
-
-                <!-- Language Links -->
-                <div class="flex gap-4 border-t border-slate-100 pt-8 mb-12">
-                    <a id="link-kr" href="" target="_blank" class="px-8 py-3 bg-slate-900 text-white text-xs font-bold uppercase tracking-widest hover:bg-blue-900 transition rounded-sm">Read in Korean</a>
-                    <a id="link-en" href="" target="_blank" class="px-8 py-3 bg-white border border-slate-200 text-slate-900 text-xs font-bold uppercase tracking-widest hover:border-blue-900 transition rounded-sm">English Version</a>
-                </div>
-
-
-                <!-- More News Archive -->
-                <section id="archive" class="mt-52">
-                    <div class="flex items-center gap-8 mb-12">
-                        <h2 class="serif-title text-3xl font-bold whitespace-nowrap">Archive</h2>
-                        <div class="h-px bg-slate-200 w-full"></div>
-                    </div>
-
-                    <div class="flex flex-col gap-8 text-slate-700" id="archive-list">
-                        <!-- Archive cards will be injected here -->
-                    </div>
-                </section>
+        <!-- More News Archive -->
+        <section id="archive" class="mt-52">
+            <div class="flex items-center gap-8 mb-12 animate-fade-in-up" style="animation-delay: 0.6s; opacity: 0;">
+                <h2 class="serif-title text-3xl font-bold whitespace-nowrap">Archive</h2>
+                <div class="h-px bg-gradient-to-r from-slate-200 via-slate-300 to-slate-200 w-full"></div>
             </div>
 
-            <!-- Sidebar Area -->
-            <aside class="lg:col-span-4">
-                <div class="sticky-sidebar">
-                    <div id="mentions-box" class="bg-slate-50 p-8 border-l-4 border-blue-900 transition-all duration-300 cursor-default">
-                        <h3 class="serif-title text-xl font-bold mb-6">Media Mentions</h3>
-                        <div id="visible-mentions" class="space-y-6">
-                            <!-- Injected Links -->
-                        </div>
-                        <div id="expandable-mentions">
-                            <div id="expandable-inner" class="space-y-6 pt-6">
-                                <!-- Extra Injected Links -->
-                            </div>
-                        </div>
-                        <div id="toggle-hint" class="mt-8 flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-slate-400 transition-all duration-300">
-                            <span id="toggle-text">Hover to see all</span>
-                            <svg id="toggle-icon" class="w-3 h-3 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </div>
-                    </div>
-
-                    <div class="mt-12 p-8 border border-slate-100">
-                        <h4 class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-4">Keywords</h4>
-                        <div id="keywords-container" class="flex flex-wrap gap-2">
-                        </div>
-                    </div>
-                </div>
-            </aside>
-
-
-         
-        </article>
-
+            <div class="flex flex-col gap-8 text-slate-700" id="archive-list">
+                <!-- Archive cards will be injected here -->
+            </div>
+        </section>
        
     </main>
 
@@ -149,301 +203,195 @@
     </footer>
 
     <script>
-        // Data from pressData.json (Latest article)
-        const pressData = [
-  {
-    "id": "press20251029",
-    "title": "AI Finds Urban Commercial Districts Resilient to Climate Risk​",
-    "keyword": [
-      "Urban AI",
-      "Climate Resilience",
-      "KAIST-MIT Collaboration"
-    ],
-    "date": "2025-10-29",
-    "writer": "KAIST News",
-    "link_kr": "https://news.kaist.ac.kr/news/html/news/?mode=V&mng_no=53650",
-    "link_en": "https://news.kaist.ac.kr/newsen/html/news/?mode=V&mng_no=53670",
-    "image": "assets/press/kaist-53650.jpg",
-    "desc": "KAIST’s Urban AI Research Institute and MIT’s Senseable City Lab showcased their joint ‘Urban AI’ research at Smart Life Week 2025.\n\nThe collaboration highlights how artificial intelligence can reinterpret urban challenges through data-driven insights on climate, environment, and inclusivity to build empathic, human-centered cities of the future.",
-    "link_others": [
-      {
-        "id": 1,
-        "title": "기후 위기에 강한 상권 AI로 찾는다…KAIST·MIT 공동 연구",
-        "source": "연합뉴스",
-        "href": "https://n.news.naver.com/article/001/0015707668?sid=105"
-      },
-      {
-        "id": 6,
-        "title": "도시 기후 변화, 상권 매출에 영향…KAIST·MIT AI 연구 공개",
-        "source": "뉴스1",
-        "href": "https://n.news.naver.com/article/421/0008569409?sid=102"
-      },
-      {
-        "id": 9,
-        "title": "KAIST, AI로 기후리스크에 강한 도시 상권 찾아낸다",
-        "source": "E동아",
-        "href": "https://edu.donga.com/news/articleView.html?idxno=97402"
-      },
-      {
-        "id": 12,
-        "title": "KAIST, 기후리스크 강한 도시상권 ‘AI’로 찾아낸다",
-        "source": "헤럴드경제",
-        "href": "https://n.news.naver.com/article/016/0002548976?sid=105"
-      },
-      {
-        "id": 15,
-        "title": "KAIST, AI로 기후리스크에 강한 도시 상권 찾아낸다",
-        "source": "BBS NEWS",
-        "href": "https://news.bbsi.co.kr/news/articleView.html?idxno=4052532"
-      },
-      {
-        "id": 18,
-        "title": "KAIST, AI 활용해 ‘기후리스크에 강한 상권’ 찾아낸다",
-        "source": "헬로티",
-        "href": "https://www.hellot.net/mobile/article.html?no=106639"
-      },
-      {
-        "id": 21,
-        "title": "KAIST, AI로 기후리스크에 강한 도시 상권 찾아낸다",
-        "source": "이뉴스투데이",
-        "href": "http://www.enewstoday.co.kr/news/articleView.html?idxno=2346517"
-      },
-      {
-        "id": 24,
-        "title": "KAIST 'AI로 기후 리스크에 강한 도시 상권 찾아낸다'",
-        "source": "TJB대전방송",
-        "href": "http://www.tjb.co.kr/sub0301/bodo/view/id/87232"
-      },
-      {
-        "id": 27,
-        "title": "KAIST, AI로 기후리스크에 강한 도시 상권 찾아낸다",
-        "source": "충남일보",
-        "href": "http://www.chungnamilbo.co.kr/news/articleView.html?idxno=855933"
-      },
-      {
-        "id": 30,
-        "title": "KAIST, AI로 기후리스크에 강한 도시 상권 찾아낸다",
-        "source": "베리타스알파",
-        "href": "http://www.veritas-a.com/news/articleView.html?idxno=579006"
-      },
-      {
-        "id": 33,
-        "title": "KAIST, AI로 기후리스크에 강한 도시 상권 찾아낸다",
-        "source": "충청뉴스",
-        "href": "http://www.ccnnews.co.kr/news/articleView.html?idxno=389667"
-      },
-      {
-        "id": 36,
-        "title": "KAIST·MIT, 'Urban AI'로 도시를 다시 읽다…도시와 인공지능의 새로운 만남",
-        "source": "충청일보",
-        "href": "https://www.ccdailynews.com/news/articleView.html?idxno=2375652"
-      },
-      {
-        "id": 39,
-        "title": "'도시 기후로 업종별 매출 예측' KAIST, '스마트라이프위크 2025' 진행",
-        "source": "이코노미사이언스",
-        "href": "https://www.e-science.co.kr/news/articleView.html?idxno=114582"
-      },
-      {
-        "id": 42,
-        "title": "기후리스크 도시상권 ‘AI’로 찾아낸다",
-        "source": "헤럴드경제",
-        "href": "https://n.news.naver.com/article/016/0002549266?sid=105"
-      },
-      {
-        "id": 45,
-        "title": "'기후 리스크' 도시 상권별 매출에도 영향…\"AI로 예측 가능\"",
-        "source": "아시아경제",
-        "href": "https://n.news.naver.com/article/277/0005670957?sid=102"
-      },
-      {
-        "id": 46,
-        "title": "'기후위기 시대' 도시의 열과 매출, 어떤 관계 있나 [지금은 기후위기]",
-        "source": "아이뉴스24",
-        "href": "https://n.news.naver.com/article/031/0000975897?sid=105"
-      },
-      {
-        "id": 47,
-        "title": "KAIST, AI로 기후리스크에 강한 도시 상권 찾아내... '도시, 이해하고 공감하는 지능' 의 새로운 가능성 제시",
-        "source": "인공지능신문",
-        "href": "https://www.aitimes.kr/news/articleView.html?idxno=36962"
-      },
-      {
-        "id": 48,
-        "title": "카이스트, MIT와 함께 도시 인공지능 연구",
-        "source": "녹색경제신문",
-        "href": "https://www.greened.kr/news/articleView.html?idxno=332536"
-      },
-      {
-        "id": 49,
-        "title": "AI로 기후변화에 강한 도시상권 찾아준다",
-        "source": "뉴스트리코리아",
-        "href": "https://www.newstree.kr/newsView/ntr202510290005"
-      }
-    ]
-  },
-      {
-        "id": "press20251130",
-        "title": "[KRIHS가 만난 사람 98] 윤윤진 KAIST 도시AI연구소장",
-        "keyword": [
-          "AI City",
-          "Urban AI",
-          "Policy"
-        ],
-        "date": "2025-11-30",
-        "writer": "KRIHS LIBRARY",
-        "link_kr": "https://library.krihs.re.kr/library/10120/contents/5869852?checkinId=3726529&articleId=1882436",
-        "link_en": "",
-        "image": "assets/press/press2.jpg",
-        "desc": "As artificial intelligence technologies rapidly proliferate, the ways in which cities are operated and managed are also reaching a fundamental turning point. The Korean government is promoting the “K-AI City Development and Future Mobility Initiative” as a national policy agenda, seeking to advance from data-driven cities to AI-centered intelligent cities.\n\nHowever, current technologies and policies remain largely confined to the smart city paradigm. To evolve toward an AI city ecosystem—where cities can autonomously learn, adapt, and respond—new approaches are required.\n\nIn this interview, we engage in an in-depth discussion with Director Yoon Yoon-jin of the KAIST Urban AI Institute, exploring the concept and technological foundations of AI cities, as well as the policy implications of transitioning toward an AI city framework.",
-        "link_others": [
-            {
-                id: 1,
-                title: "[KRIHS가 만난 사람 98] 윤윤진 KAIST 도시AI연구소장",
-                source: "KRIHS LIBRARY",
-                href: "https://library.krihs.re.kr/library/10120/contents/5869852?checkinId=3726529&articleId=1882436"
-            },
-            {
-                id: 2,
-                title: "AI 시티의 미래를 말하다: 윤윤진 교수 월간 국토 인터뷰",
-                source: "CEE KAIST",
-                href: "https://cee.kaist.ac.kr/boards/view/department_news/1242"
-            }
-        ]
-      }
-]
-        
-
-        function renderMain(article) {
-            // Main
-            document.getElementById('main-image').src = article.image;
-            document.getElementById('main-image').alt = article.title;
-
-            document.getElementById('article-title').innerText = article.title;
-            document.getElementById('article-writer').innerText = article.writer;
-            document.getElementById('article-date').innerText = article.date;
-            document.getElementById('article-desc').innerHTML = marked.parse(article.desc);
-
-            // Links
-            const krBtn = document.getElementById('link-kr');
-            krBtn.href = article.link_kr;
-
-            const enBtn = document.getElementById('link-en');
-            if (!article.link_en || article.link_en.trim() === "") {
-                enBtn.style.display = "none";
-            } else {
-                enBtn.style.display = "inline-block";
-                enBtn.href = article.link_en;
-            }
-
-            // Keywords (reset + render)
-            const kwContainer = document.getElementById('keywords-container');
-            kwContainer.innerHTML = "";
-            (article.keyword || []).forEach(kw => {
-                const span = document.createElement('span');
-                span.className = "text-[9px] bg-slate-100 text-slate-500 px-2 py-1 rounded-sm uppercase font-bold";
-                span.innerText = kw;
-                kwContainer.appendChild(span);
-            });
-
-            // Mentions (reset + render)
-            const mentionsBox = document.getElementById('mentions-box');
-            const visibleContainer = document.getElementById('visible-mentions');
-            const expandableInner = document.getElementById('expandable-inner');
-            const toggleHint = document.getElementById('toggle-hint');
-            const toggleIcon = document.getElementById('toggle-icon');
-
-            const INITIAL_COUNT = 3;
-            const links = article.link_others || [];
-
-            visibleContainer.innerHTML = "";
-            expandableInner.innerHTML = "";
-
-            links.forEach((link, index) => {
-                const div = document.createElement('div');
-                div.className = "group cursor-pointer";
-                div.innerHTML = `
-      <a href="${link.href}" target="_blank" rel="noopener">
-        <p class="text-[10px] font-bold text-blue-600 uppercase tracking-widest mb-1">${link.source}</p>
-        <h4 class="text-sm font-semibold text-slate-800 group-hover:text-blue-900 group-hover:underline leading-tight">${link.title}</h4>
-      </a>
-    `;
-                if (index < INITIAL_COUNT) visibleContainer.appendChild(div);
-                else expandableInner.appendChild(div);
-            });
-
-            // Toggle hint show/hide
-            toggleHint.style.display = (links.length <= INITIAL_COUNT) ? "none" : "";
-
-            // Hover effects (중복 등록 방지)
-            mentionsBox.onmouseenter = () => {
-                if (links.length > INITIAL_COUNT) {
-                    toggleIcon.style.transform = "rotate(180deg)";
-                    toggleHint.classList.add('text-blue-900');
-                    toggleHint.classList.remove('text-slate-400');
+        // Load data from pressData.json
+        async function loadPressData() {
+            const basePath = location.pathname.replace(/\/[^\/]*$/, "");
+            const url = `${basePath}/data/pressData.json`;
+            try {
+                const res = await fetch(url, { cache: "no-store" });
+                if (!res.ok) {
+                    throw new Error(`Failed to load data: ${res.status} ${res.statusText}`);
                 }
-            };
-            mentionsBox.onmouseleave = () => {
-                if (links.length > INITIAL_COUNT) {
-                    toggleIcon.style.transform = "rotate(0deg)";
-                    toggleHint.classList.remove('text-blue-900');
-                    toggleHint.classList.add('text-slate-400');
-                }
-            };
-
-            // (선택) 클릭 후 상단으로 부드럽게 이동
-            window.scrollTo({ top: 0, behavior: "smooth" });
+                const data = await res.json();
+                return data;
+            } catch (error) {
+                console.error('Error loading pressData.json:', error);
+                throw error;
+            }
         }
 
-        function init() {
-            // 기본: 최신 날짜 1개를 메인으로
-            const latest = [...pressData].sort((a, b) => (b.date || "").localeCompare(a.date || ""))[0];
-            renderMain(latest);
+        let pressData = [];
+
+        function formatDateLong(dateString) {
+            if (!dateString) return '';
+            try {
+                const date = new Date(dateString);
+                const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                return date.toLocaleDateString('en-US', options);
+            } catch (error) {
+                return dateString; // Return original if parsing fails
+            }
         }
 
+        function renderFeatured() {
+            const featuredSection = document.getElementById('featured-news');
+            if (!pressData || pressData.length === 0) return;
 
-        const archiveData = [
-            { source: "연합뉴스", date: "Oct 29", title: "기후 위기에 강한 상권 AI로 찾는다…KAIST·MIT 공동 연구", link: "#" },
-            { source: "뉴스1", date: "Oct 29", title: "도시 기후 변화, 상권 매출에 영향…KAIST·MIT AI 연구 공개", link: "#" },
-            { source: "헤럴드경제", date: "Oct 29", title: "KAIST, 기후리스크 강한 도시상권 ‘AI’로 찾아낸다", link: "#" },
-            { source: "KAIST News", date: "Sept 30", title: "Smart Life Week 2025: Feeling Nature through Urban AI", link: "#" },
-            { source: "E동아", date: "Oct 29", title: "KAIST, AI로 기후리스크에 강한 도시 상권 찾아낸다", link: "#" },
-            { source: "BBS NEWS", date: "Oct 29", title: "AI로 예측하는 도시의 지속가능성", link: "#" },
-            { source: "헬로티", date: "Oct 29", title: "KAIST 활용해 기후리스크 상권 분석", link: "#" },
-            { source: "이뉴스투데이", date: "Oct 29", title: "Urban AI: Reinterpreting Urban Challenges", link: "#" }
-        ];
+            // Sort by date, get latest 3
+            const sorted = [...pressData].sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+            const latest = sorted[0];
+            const second = sorted[1] || null;
+            const third = sorted[2] || null;
+
+            // Clear existing content
+            featuredSection.innerHTML = "";
+
+            // Featured Card 1 (Large)
+            if (latest) {
+                const card1 = document.createElement('a');
+                card1.href = `press-detail.html?id=${latest.id}`;
+                card1.className = "lg:col-span-2 group cursor-pointer featured-card block animate-fade-in-up";
+                card1.style.animationDelay = "0.1s";
+                const desc = latest.desc ? latest.desc.split('\n')[0] : '';
+                card1.innerHTML = `
+                    <div class="relative h-[500px] overflow-hidden rounded-3xl shadow-2xl group-hover:shadow-3xl transition-all duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-transparent z-10 group-hover:from-blue-900/30 transition duration-500"></div>
+                        <img src="${latest.image}" alt="${latest.title}" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 ease-out">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-12 flex flex-col justify-end z-20">
+                            <div class="mb-4 transform group-hover:translate-y-0 translate-y-2 transition duration-500">
+                                <span class="bg-blue-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest inline-block group-hover:bg-blue-500 transition duration-300">Featured ${latest.category || 'Press'}</span>
+                            </div>
+                            <h2 class="serif-title text-white text-4xl md:text-5xl font-bold leading-tight mb-4 transform group-hover:translate-y-0 translate-y-2 transition duration-500 delay-75">${latest.title}</h2>
+                            <p class="text-white/70 text-lg line-clamp-2 max-w-2xl mb-6 transform group-hover:translate-y-0 translate-y-2 transition duration-500 delay-100">${desc}</p>
+                            <div class="flex items-center gap-6 text-white/50 text-sm font-medium transform group-hover:translate-y-0 translate-y-2 transition duration-500 delay-150">
+                                <span>${latest.writer || 'Press'}</span>
+                                <span>${formatDateLong(latest.date)}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                featuredSection.appendChild(card1);
+            }
+
+            // Side column for cards 2 & 3
+            const sideColumn = document.createElement('div');
+            sideColumn.className = "grid grid-cols-1 gap-8";
+
+            // Featured Card 2
+            if (second) {
+                const card2 = document.createElement('a');
+                card2.href = `press-detail.html?id=${second.id}`;
+                card2.className = "bg-white rounded-sm p-8 shadow-sm border border-slate-100 featured-card group cursor-pointer hover:border-blue-500/30 hover:shadow-lg block animate-scale-in";
+                card2.style.animationDelay = "0.3s";
+                const desc2 = second.desc ? `"${second.desc.split('\n')[0]}..."` : '';
+                card2.innerHTML = `
+                    <span class="text-blue-600 text-[9px] font-black uppercase tracking-widest mb-4 block transform group-hover:translate-x-1 transition duration-300 inline-block">New ${second.category || 'Press'}</span>
+                    <h3 class="serif-title text-2xl font-bold mb-4 group-hover:text-blue-600 transition duration-300">${second.title}</h3>
+                    <p class="text-slate-500 text-sm mb-6 line-clamp-3 italic">${desc2}</p>
+                    <div class="flex items-center justify-between mt-auto">
+                        <div class="flex items-center gap-2">
+                        <span class="text-slate-400 text-[10px] font-bold uppercase">${second.writer || ''}</span>
+                        <span class="text-slate-400 text-[10px] font-bold uppercase">${formatDateLong(second.date) || ''}</span>
+                        </div>
+                        <svg class="w-5 h-5 text-slate-300 group-hover:text-blue-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </div>
+                `;
+                sideColumn.appendChild(card2);
+            }
+
+            // Featured Card 3
+            if (third) {
+                const card3 = document.createElement('a');
+                card3.href = `press-detail.html?id=${third.id}`;
+                card3.className = "bg-slate-900 rounded-3xl p-8 shadow-2xl featured-card group cursor-pointer hover:bg-slate-800 block animate-scale-in";
+                card3.style.animationDelay = "0.5s";
+                const desc3 = third.desc ? `"${third.desc.split('\n')[0]}..."` : '';
+                card3.innerHTML = `
+                    <span class="text-blue-400 text-[9px] font-black uppercase tracking-widest mb-4 block transform group-hover:translate-x-1 transition duration-300 inline-block">${third.category || 'Press'}</span>
+                    <h3 class="serif-title text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition duration-300">${third.title}</h3>
+                    <p class="text-white/50 text-sm mb-6 line-clamp-3 italic">${desc3}</p>
+                    <div class="flex items-center justify-between mt-auto">
+                        <span class="text-white/30 text-[10px] font-bold uppercase">${third.writer || ''}</span>
+                        <svg class="w-5 h-5 text-white/30 group-hover:text-blue-400 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </div>
+                `;
+                sideColumn.appendChild(card3);
+            }
+
+            if (sideColumn.children.length > 0) {
+                featuredSection.appendChild(sideColumn);
+            }
+        }
+
+        // Intersection Observer for scroll animations
+        function setupScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe archive items
+            document.querySelectorAll('.archive-item').forEach(item => {
+                observer.observe(item);
+            });
+        }
+
+        async function init() {
+            try {
+                pressData = await loadPressData();
+                renderFeatured();
+                renderArchive();
+                // Setup scroll animations after a short delay
+                setTimeout(setupScrollAnimations, 100);
+            } catch (error) {
+                console.error('Error initializing page:', error);
+            }
+        }
 
         function renderArchive() {
             const archiveList = document.getElementById('archive-list');
             archiveList.innerHTML = "";
 
-            // 최신순 정렬
+            // Sort by date (newest first)
             const sorted = [...pressData].sort((a, b) => (b.date || "").localeCompare(a.date || ""));
 
-            sorted.forEach(article => {
+            sorted.forEach((article, index) => {
                 const btn = document.createElement('button');
                 btn.type = "button";
-                btn.className = "text-left my-2 border-b border-slate-100 pb-6 last:border-0 hover:bg-slate-50 transition px-2 py-3 rounded-sm";
+                btn.className = `archive-item text-left my-2 border-b border-slate-100 pb-6 last:border-0 hover:bg-slate-50 transition-all duration-300 px-2 py-3 rounded-sm w-full animate-fade-in-up`;
+                btn.style.animationDelay = `${0.7 + (index * 0.1)}s`;
 
                 const otherLinksHtml = (article.link_others && article.link_others.length)
-                    ? article.link_others.slice(0, 6).map((link, index) =>
-                        `<a href="${link.href}" target="_blank" rel="noopener" class="text-sm hover:underline">${link.source}</a>${index < Math.min(article.link_others.length, 6) - 1 ? ', ' : ''}`
-                    ).join('')
+                    ? 
+                    article.link_others.slice(0, 6).map((link, index) =>
+                        `<a href="${link.href}" target="_blank" rel="noopener" class="text-sm hover:underline" onclick="event.stopPropagation()">${link.source}</a>${index < Math.min(article.link_others.length, 6) - 1 ? ', ' : ''}`
+                    ).join('') + (article.link_others.length > 6 ? ', ...' : '')
                     : '';
 
                 btn.innerHTML = `
-      <div class="mb-1">
-        <strong>(${article.date}) ${article.title}</strong>
-      </div>
-      <div class="pt-2 text-slate-500">
-        ${article.link_en ? `<a href="${article.link_en}" target="_blank" rel="noopener" class="text-sm text-blue-800/70 hover:underline hover:text-blue-600">KAIST NEWS (EN)</a>` : ''}
-        ${article.link_kr ? `<a href="${article.link_kr}" target="_blank" rel="noopener" class="text-sm text-blue-800/70 hover:underline hover:text-blue-600">${article.link_en ? ' / (KR), ' : '(KR), '}</a>` : ''}
-        ${otherLinksHtml ? otherLinksHtml : ''}
-      </div>
-    `;
+                    <div class="mb-1">
+                        <strong>(${formatDateLong(article.date)}) ${article.title}</strong>
+                    </div>
+                    <div class="pt-2 text-slate-500">
+                        ${article.link_en ? `<a href="${article.link_en}" target="_blank" rel="noopener" class="text-sm text-blue-800/70 hover:underline hover:text-blue-600" onclick="event.stopPropagation()">KAIST NEWS (EN)</a>` : ''}
+                        ${article.link_kr ? `<a href="${article.link_kr}" target="_blank" rel="noopener" class="text-sm text-blue-800/70 hover:underline hover:text-blue-600" onclick="event.stopPropagation()">${article.link_en ? ' / (KR), ' : '(KR), '}</a>` : ''}
+                        ${otherLinksHtml ? otherLinksHtml : ''}
+                    </div>
+                `;
 
-                // Archive 클릭 → 메인 기사 교체
-                btn.addEventListener('click', () => renderMain(article));
+                // Navigate to detail page on click
+                btn.addEventListener('click', () => {
+                    window.location.href = `press-detail.html?id=${article.id}`;
+                });
 
                 archiveList.appendChild(btn);
             });
@@ -452,9 +400,7 @@
 
         document.addEventListener("DOMContentLoaded", () => {
             init();
-            renderArchive();
         });
     </script>
 </body>
 </html>
-

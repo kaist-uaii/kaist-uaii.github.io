@@ -2,7 +2,7 @@
   "professorData": {
     "id": 1,
     "name": "Prof. Yoonjin Yoon",
-    "greeting": "I'm an associate Professor in Department of Civil and Environmental Engineering at KAIST with joint appointment in Graduate School of Artificial Intelligence and Graduate School of Data Science",
+    "greeting": "Associate Professor in Department of Civil and Environmental Engineering at KAIST with joint appointment in Graduate School of Artificial Intelligence and Graduate School of Data Science",
     "link": "https://sites.google.com/view/yoonjintrue",
     "email": "yoonjin@kaist.ac.kr",
     "edu": [
@@ -11,8 +11,9 @@
       "M.S. Management Science and Engineering, Stanford",
       "Ph.D. Civil and Environmental Engineering, UC Berkeley"
     ],
-    "research": "Coming from Mathematics, Computer Science, Management Science, and Civil engineering background, my research focus is system-of-systems, which includes transportation system, city, logistics system, and public health system. My recent research interests include the following areas.\n\n**Urban Intelligence**: Urban Region Representation Learning; SDG Data Science; AI and Cities; AI for Social Good    \n\n**Computational Transportation Science**: Future Mobility and AI; Graph Neural Net and Traffic Forecasting; Transportation Network Science; Safety Risk Management\n\n**Sustainable Urban Mobility**: Urban Mobility Decarbonization; Mobility Accessibility and Inequality; Urban Air Mobility (UAM);",
-    "photo": "/assets/images/peopleImg/profile_yoon.jpg"
+    "research": "Coming from Mathematics, Computer Science, Management Science, and Civil engineering background, my research focus is system-of-systems, which includes transportation system, city, logistics system, and public health system.",
+    "recent": "**Urban Intelligence**: Urban Region Representation Learning; SDG Data Science; AI and Cities; AI for Social Good    \n\n**Computational Transportation Science**: Future Mobility and AI; Graph Neural Net and Traffic Forecasting; Transportation Network Science; Safety Risk Management\n\n**Sustainable Urban Mobility**: Urban Mobility Decarbonization; Mobility Accessibility and Inequality; Urban Air Mobility (UAM);",
+    "photo": "assets/images/people/profile_yoon.jpg"
   },
   "labMembersData": [
     {
@@ -26,9 +27,9 @@
         "Ph.D., M.S. in Civil and Environment Engineering, KAIST",
         "B.S.: Mathematical Sciences, KAIST"
       ],
-      "photo": "/assets/images/peopleImg/2.jpg",
+      "photo": "assets/images/people/2.jpg",
       "research": "",
-      "projects": ["PrismX"]
+      "projects": ["CAUS","PrismX"]
     },
     {
       "id": 3,
@@ -41,7 +42,7 @@
         "M.S. in Civil and Environmental Engineering, Transportation Engineering, UC Berkeley",
         "B.S. in Civil Engineering, NYUAD"
       ],
-      "photo": "/assets/images/peopleImg/3.jpg",
+      "photo": "assets/images/people/3.jpg",
       "research": "UAM",
       "projects": ["BP"]
     },
@@ -56,7 +57,8 @@
         "M.S. in Information Security, Sungkyunkwan University",
         "B.S. in Computer Engineering and Military Science, Korea Air Force Academy"
       ],
-      "photo": "/assets/images/peopleImg/4.jpg"
+      "projects": ["CAUS"],
+      "photo": "assets/images/people/4.jpg"
     },
     {
       "id": 5,
@@ -68,8 +70,8 @@
       "edu": [
         "B.S. in Economics and Data Science, University of Seoul"
       ],
-      "projects": ["AgentSUMO","PrismX"],
-      "photo": "/assets/images/peopleImg/5.jpg"
+      "projects": ["CAUS", "PrismX"],
+      "photo": "assets/images/people/5.jpg"
     },
     {
       "id": 6,
@@ -82,7 +84,7 @@
         "B.S. in Quantitative Sciences and Biology, Emory University"
       ],
       "projects": ["Urban All"],
-      "photo": "/assets/images/peopleImg/6.jpg"
+      "photo": "assets/images/people/6.jpg"
     },
     {
       "id": 7,
@@ -93,8 +95,8 @@
       "edu": [
         "B.S. in Business Administration, University of Southern California"
       ],
-      "projects": ["Vigilant"],
-      "photo": "/assets/images/peopleImg/7.jpg"
+      "projects": ["CAUS", "VIGILANT"],
+      "photo": "assets/images/people/7.jpg"
     },
     {
       "id": 8,
@@ -105,8 +107,8 @@
       "edu": [
         "B.S. in Psychology, University of Utah"
       ],
-      "projects": ["PrismX"],
-      "photo": "/assets/images/peopleImg/8.jpg"
+      "projects": ["CAUS", "PrismX"],
+      "photo": "assets/images/people/8.jpg"
     },
     {
       "id": 9,
@@ -117,8 +119,8 @@
       "edu": [
         "B.A. in Data Science, UC Berkeley"
       ],
-      "projects": ["PrismX"],
-      "photo": "/assets/images/peopleImg/9.jpg"
+      "projects": ["CAUS", "PrismX"],
+      "photo": "assets/images/people/9.jpg"
     },
     {
       "id": 10,
@@ -129,7 +131,7 @@
       "edu": [
         "B.S. in Civil Engineering, Kyoto University"
       ],
-      "photo": "/assets/images/peopleImg/10.jpg"
+      "photo": "assets/images/people/10.jpg"
     }
   ],
   "aluminiData": [
@@ -138,72 +140,66 @@
       "name": "Ohhoon Kwon",
       "degree": "Ph.D.",
       "date": "2010.03~2015.02",
-      "photo": "/assets/images/peopleImg/11.jpg"
+      "photo": "assets/images/people/11.jpg"
     },
     {
       "id": 12,
       "name": "Sammer Ud Din",
       "degree": "Ph.D.",
       "date": "2014.03~2018.02",
-      "photo": "/assets/images/peopleImg/12.jpg"
+      "photo": "assets/images/people/12.jpg"
     },
     {
       "id": 13,
       "name": "Yuna Noh",
       "degree": "Ph.D.",
       "date": "2012.09~2018.02",
-      "photo": "/assets/images/peopleImg/13.jpg"
+      "photo": "assets/images/people/13.jpg"
     },
     {
       "id": 14,
       "name": "Jungwoo Cho",
       "degree": "Ph.D.",
       "date": "2015.09~2020.02",
-      "photo": "/assets/images/peopleImg/14.jpg"
+      "photo": "assets/images/people/14.jpg"
     },
     {
       "id": 15,
       "name": "Jiseon Lee",
       "degree": "Ph.D.",
       "date": "2013.09~2022.08",
-      "photo": "/assets/images/peopleImg/15.jpg"
+      "photo": "assets/images/people/15.jpg"
     },
     {
       "id": 16,
       "name": "Yuyol Shin",
       "degree": "Ph.D.",
       "date": "2016.09~2022.08",
-      "photo": "/assets/images/peopleImg/16.jpg"
+      "photo": "assets/images/people/16.jpg"
     },
     {
       "id": 17,
       "name": "Soohwan Oh",
       "degree": "Ph.D.",
       "date": "2016.09~2023.02",
-      "photo": "/assets/images/peopleImg/17.jpg"
+      "photo": "assets/images/people/17.jpg"
     },
     {
       "id": 18,
       "name": "Namwoo Kim",
       "degree": "Ph.D.",
       "date": "2017.09~2023.08",
-      "photo": "/assets/images/peopleImg/18.jpg"
+      "photo": "assets/images/people/18.jpg"
     },
     {
       "id": 19,
       "name": "Seyun Kim",
       "degree": "Ph.D.",
       "date": "2016.03~2021.02",
-      "photo": "/assets/images/peopleImg/19.jpg",
+      "photo": "assets/images/people/19.jpg",
       "desc": "2021.03~2025.07\n\n  (Research Assistant Professor)"
     },
-    {
-      "id": 20,
-      "name": "Seyun Kim",
-      "degree": "",
-      "date": "2021.03~2025.07",
-      "photo": "/assets/images/peopleImg/20.jpg"
-    },
+    
     {
       "id": 21,
       "name": "Kyowon Song",

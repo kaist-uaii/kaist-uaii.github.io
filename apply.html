@@ -79,35 +79,45 @@
                 regularly.
             </p>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-3 gap-6 items-stretch">
                 <!-- Graduate Students -->
-                <div class="rounded-[2rem] shadow-sm bg-white card-hover border border-slate-100">
+                <div class="rounded-[2rem] shadow-sm bg-white card-ended card-hover relative border border-slate-200">
+                    <div class="absolute top-4 right-4">
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-200 text-slate-600 border border-slate-300">
+                            Application Closed
+                        </span>
+                    </div>
+
                     <div class="p-8">
-                        <h3 class="text-xl font-semibold mb-2">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-400">
                             M.S. / Ph.D. Students
                         </h3>
-                        <p class="text-gray-600 mb-4 text-sm">
+
+                        <p class="text-gray-500 mb-4 text-sm">
                             Applicants with B.S. or M.S. degrees in related fields.
                         </p>
-                        <ul class="text-sm text-gray-500 mb-4 space-y-1">
+
+                        <ul class="text-sm text-gray-400 mb-4 space-y-1">
                             <li>
-                                <strong>Application:</strong> Spring 2026 / Fall 2026
+                                <strong class="text-gray-500">Application:</strong> Spring / Fall Admission
                             </li>
                             <li>
-                                <strong>Departments:</strong> Civil & Environmental
-                                Engineering, Urban Engineering, AI & Smart Cities
+                                <strong class="text-gray-500">Departments:</strong>
+                                Civil & Environmental Engineering, Urban Engineering, AI & Smart Cities
                             </li>
                         </ul>
-                        <a href="/apply/graduates" class="inline-flex my-6 px-3 py-2 bg-slate-700 text-white rounded-md text-sm font-semibold hover:bg-gray-600 btn-hover">
+
+                        <div class="inline-flex my-6 px-3 py-2 bg-slate-200 text-slate-500 rounded-md text-sm font-semibold cursor-not-allowed">
                             <div class="flex flex-row justify-center items-center">
-                                <div class="mx-1">See in Detail</div>
+                                <div class="mx-1">Application Closed</div>
                                 <div>
                                     <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M6 18L18 6M6 6l12 12"></path>
                                     </svg>
                                 </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
 
@@ -148,34 +158,72 @@
                 </div>
 
                 <!-- Research / Postdoc -->
-                <div class="rounded-[2rem] shadow-sm bg-white card-hover border border-slate-100">
+                <div class="rounded-[2rem] shadow-sm bg-white card-ended card-hover relative border border-slate-200 h-full">
+                    <div class="absolute top-4 right-4">
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-200 text-slate-600 border border-slate-300">
+                            Application Closed
+                        </span>
+                    </div>
+
                     <div class="p-8">
-                        <h3 class="text-xl font-semibold mb-2">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-400">
                             Research Professors / Postdoctoral Fellows
                         </h3>
-                        <p class="text-gray-600 mb-4 text-sm">
+
+                        <p class="text-gray-500 mb-4 text-sm">
                             For Ph.D. holders with strong publication or project experience.
                         </p>
-                        <ul class="text-sm text-gray-500 mb-4 space-y-1">
+
+                        <ul class="text-sm text-gray-400 mb-4 space-y-1">
                             <li>
-                                <strong>Application:</strong> Rolling basis
+                                <strong class="text-gray-500">Application:</strong> Rolling basis
                             </li>
                             <li>
-                                <strong>Focus:</strong> Urban AI & Urban Representation
+                                <strong class="text-gray-500">Focus:</strong> Urban AI & Urban Representation
                             </li>
                         </ul>
-                        <a href="/apply/post" class="inline-flex my-6 px-3 py-2 bg-slate-700 text-white rounded-md text-sm font-semibold hover:bg-gray-600 btn-hover">
+
+                        <div class="inline-flex my-6 px-3 py-2 bg-slate-200 text-slate-500 rounded-md text-sm font-semibold cursor-not-allowed">
                             <div class="flex flex-row justify-center items-center">
-                                <div class="mx-1">See in Detail</div>
+                                <div class="mx-1">Application Closed</div>
                                 <div>
                                     <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M6 18L18 6M6 6l12 12"></path>
                                     </svg>
                                 </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
+                <!--<div class="rounded-[2rem] shadow-sm bg-white card-hover border border-slate-100">
+        <div class="p-8">
+            <h3 class="text-xl font-semibold mb-2">
+                Research Professors / Postdoctoral Fellows
+            </h3>
+            <p class="text-gray-600 mb-4 text-sm">
+                For Ph.D. holders with strong publication or project experience.
+            </p>
+            <ul class="text-sm text-gray-500 mb-4 space-y-1">
+                <li>
+                    <strong>Application:</strong> Rolling basis
+                </li>
+                <li>
+                    <strong>Focus:</strong> Urban AI & Urban Representation
+                </li>
+            </ul>
+            <a href="/apply/post" class="inline-flex my-6 px-3 py-2 bg-slate-700 text-white rounded-md text-sm font-semibold hover:bg-gray-600 btn-hover">
+                <div class="flex flex-row justify-center items-center">
+                    <div class="mx-1">See in Detail</div>
+                    <div>
+                        <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>-->
             </div>
 
             <!-- Application Instructions -->
@@ -187,7 +235,7 @@
                     <li>Prepare CV, transcript, and a 1-page statement of purpose.</li>
                     <li>
                         Email your documents to
-                        <span onclick="copyEmail('smsohn1997@kaist.ac.kr')" class="font-medium text-blue-600 hover:underline cursor-pointer">smsohn1997@kaist.ac.kr</span>
+                        <span onclick="copyEmail('urban@kaist.ac.kr')" class="font-medium text-blue-600 hover:underline cursor-pointer">urban@kaist.ac.kr</span>
                         with the title:
                         <span class="italic">
                             [Application] Position_Name - Your_Name

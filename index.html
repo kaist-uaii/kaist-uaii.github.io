@@ -43,26 +43,26 @@
     </section>
     <br />
     <section class="projects-section">
-        <h2 class="projects-title">Projects & Events</h2>
+        <h2 class="projects-title">Projects</h2>
 
 
         <main class="container cards">
-            <a class="card card-link" href="urbanx-berkeley.html">
-                <h3>Urban X Workshop @ Berkeley</h3>
+            <a class="card card-link card-hover" href="https://urban.kaist.ac.kr" target="_blank" rel="noopener">
+                <h3>Urban@KAIST</h3>
                 <span class="card-cta">Visit site</span>
             </a>
 
-            <a class="card card-link" href="https://hcfm.kaist.ac.kr" target="_blank" rel="noopener">
+            <a class="card card-link card-hover" href="https://hcfm.kaist.ac.kr" target="_blank" rel="noopener">
                 <h3>HcFM</h3>
                 <span class="card-cta">Visit site</span>
             </a>
 
-            <a class="card card-link" href="https://caus.kaist.ac.kr" target="_blank" rel="noopener">
+            <a class="card card-link card-hover" href="https://caus.kaist.ac.kr" target="_blank" rel="noopener">
                 <h3>CAUS</h3>
                 <span class="card-cta">Visit site</span>
             </a>
 
-            <a class="card card-link" href="https://c3.kaist.ac.kr" target="_blank" rel="noopener">
+            <a class="card card-link card-hover" href="https://c3.kaist.ac.kr" target="_blank" rel="noopener">
                 <h3>KAIST-NYU C3</h3>
                 <span class="card-cta">Visit site</span>
             </a>
@@ -79,11 +79,16 @@
                  aria-roledescription="carousel" aria-label="Press articles">
                 <div class="press-track">
                     <!-- Slide 1 -->
-                    <article class="press-item is-active" aria-hidden="false">
+                    <div class="press-item is-active"
+                         aria-hidden="false"
+                         aria-label="UAII press article">
+
+                        <!-- IMAGE → 외부 기사 -->
                         <a class="press-media"
                            href="https://news.kaist.ac.kr/news/html/news/?mode=V&mng_no=53650"
-                           target="_blank" rel="noopener"
-                           aria-label="Open article: AI Finds Urban Commercial Districts Resilient to Climate Risk">
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="Read full article on KAIST News (opens in new tab)">
                             <img src="assets/press/kaist-53650.jpg"
                                  alt="AI Finds Urban Commercial Districts Resilient to Climate Risk" />
                             <span class="press-overlay-title">
@@ -91,7 +96,11 @@
                             </span>
                         </a>
 
-                        <div class="press-body">
+                        <!-- TEXT → 내부 press.html -->
+                        <a class="press-body press-card-link"
+                           href="press.html"
+                           aria-label="View article summary on UAII press page">
+
                             <p class="press-summary">
                                 KAIST announced on October 29th that its Urban AI Institute
                                 (Director, Distinguished Professor Yoonjin Yoon of Civil and Environmental Engineering conducted joint research in the field of 'Urban AI' with MIT's Senseable City Lab (Director, Professor Carlo Ratti)
@@ -107,48 +116,87 @@
                                 <time datetime="2025-10-29">2025-10-29</time>
                             </p>
 
-                            <p class="press-links">
-                                <a class="btn" href="https://news.kaist.ac.kr/news/html/news/?mode=V&mng_no=53650" target="_blank" rel="noopener">KR</a>
-                                <a class="btn btn-ghost" href="https://news.kaist.ac.kr/newsen/html/news/?mode=V&mng_no=53670" target="_blank" rel="noopener">EN</a>
-                            </p>
-                        </div>
-                    </article>
+                            <div class="press-cta">
+                                <span>View on press page</span>
+                                <svg class="press-cta-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M9 5l7 7-7 7"
+                                          fill="none"
+                                          stroke="currentColor"
+                                          stroke-width="2"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"></path>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
 
                     <!-- Slide 2 (예시) -->
-                    <article class="press-item" aria-hidden="true">
-                        <a class="press-media" href="https://library.krihs.re.kr/library/10120/contents/5869852?checkinId=3726529&articleId=1882436" target="_blank" rel="noopener" aria-label="Open article: [KRIHS가 만난 사람 98] 윤윤진 KAIST 도시AI연구소장 도시의 새로운 진화 AI 시티가 그리는 도시의 미래">
-                            <img src="assets/press/press2.jpg" alt="[KRIHS가 만난 사람 98] 윤윤진 KAIST 도시AI연구소장 도시의 새로운 진화 AI 시티가 그리는 도시의 미래" />
-                            <span class="press-overlay-title">[KRIHS가 만난 사람 98] 윤윤진 KAIST 도시AI연구소장 "도시의 새로운 진화 AI 시티가 그리는 도시의 미래"</span>
+                    <div class="press-item" aria-hidden="true" aria-label="UAII press article">
+
+                        <!-- IMAGE → 외부 기사 원문 -->
+                        <a class="press-media"
+                           href="https://library.krihs.re.kr/library/10120/contents/5869852?checkinId=3726529&articleId=1882436"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="Read full article on KRIHS Library (opens in new tab)">
+                            <img src="assets/press/press2.jpg"
+                                 alt="[KRIHS가 만난 사람 98] 윤윤진 KAIST 도시AI연구소장 도시의 새로운 진화 AI 시티가 그리는 도시의 미래" />
+                            <span class="press-overlay-title">
+                                [KRIHS가 만난 사람 98] 윤윤진 KAIST 도시AI연구소장 "도시의 새로운 진화 AI 시티가 그리는 도시의 미래"
+                            </span>
                         </a>
-                        <div class="press-body">
+
+                        <!-- TEXT → 내부 press.html -->
+                        <a class="press-body press-card-link"
+                           href="press.html"
+                           aria-label="View article summary on UAII press page">
+
                             <p class="press-summary">
                                 As artificial intelligence technologies rapidly proliferate, the ways in which cities are operated and managed are also reaching a fundamental turning point. The Korean government is promoting the “K-AI City Development and Future Mobility Initiative” as a national policy agenda, seeking to advance from data-driven cities to AI-centered intelligent cities.
                                 However, current technologies and policies remain largely confined to the smart city paradigm. To evolve toward an AI city ecosystem—where cities can autonomously learn, adapt, and respond—new approaches are required.
                                 In this interview, we engage in an in-depth discussion with Director Yoon Yoon-jin of the KAIST Urban AI Institute, exploring the concept and technological foundations of AI cities, as well as the policy implications of transitioning toward an AI city framework.
                             </p>
+
                             <p class="press-meta">
                                 <span class="press-outlet">KRIHS LIBRARY</span>
                                 <span class="press-sep">·</span>
                                 <time datetime="2025-11-30">2025-11-30</time>
                             </p>
-                            <p class="press-links">
-                                <a class="btn" href="https://library.krihs.re.kr/library/10120/contents/5869852?checkinId=3726529&articleId=1882436" target="_blank" rel="noopener">KR</a>
-                            </p>
-                        </div>
-                    </article>
+
+                            <div class="press-cta">
+                                <span>View on press page</span>
+                                <svg class="press-cta-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M9 5l7 7-7 7"
+                                          fill="none"
+                                          stroke="currentColor"
+                                          stroke-width="2"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"></path>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
 
                     <!-- Slide 더 추가 가능 -->
                 </div>
             </div>
 
             <div class="press-controls" aria-label="Press slider controls">
-                <button type="button" class="press-control prev" aria-label="Previous press article">←</button>
-                <button type="button" class="press-control next" aria-label="Next press article">→</button>
+                <button type="button" class="press-control prev" aria-label="Previous press article">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </button>
+                <button type="button" class="press-control next" aria-label="Next press article">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </button>
             </div>
 
-            <div class="press-more">
+            <!--<div class="press-more">
                 <a class="btn view-more" href="press.html">View more</a>
-            </div>
+            </div>-->
         </div>
     </section>
 
@@ -166,14 +214,14 @@
 
                 <p class="contact-item">
                     <span class="contact-label">Email</span>
-                    <a href="mailto:urban@kaist.ac.kr" class="contact-email">
-                        urban@kaist.ac.kr
+                    <a href="mailto:yoonjin@spacetime.kaist.ac.kr" class="contact-email">
+                        yoonjin@spacetime.kaist.ac.kr
                     </a>
                 </p>
 
                 <p class="contact-item">
                     <span class="contact-label">Location</span>
-                    <span>KAIST, Daejeon, Republic of Korea</span>
+                    <span>KAIST W16, 291, Daehak-ro, Yuseong-gu, Daejeon, Republic of Korea</span>
                 </p>
             </div>
         </div>

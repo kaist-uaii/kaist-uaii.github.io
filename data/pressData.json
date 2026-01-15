@@ -1,5 +1,35 @@
 [
   {
+    "id": "press20251130",
+    "title": "[KRIHS가 만난 사람 98] 윤윤진 KAIST 도시AI연구소장",
+    "keyword": [
+      "AI City",
+      "Urban AI",
+      "Policy"
+    ],
+    "category": "interview",
+    "date": "2025-11-30",
+    "writer": "KRIHS LIBRARY",
+    "link_kr": "https://library.krihs.re.kr/library/10120/contents/5869852?checkinId=3726529&articleId=1882436",
+    "link_en": "",
+    "image": "assets/images/press/press2.jpg",
+    "desc": "As artificial intelligence technologies rapidly proliferate, the ways in which cities are operated and managed are also reaching a fundamental turning point. The Korean government is promoting the “K-AI City Development and Future Mobility Initiative” as a national policy agenda, seeking to advance from data-driven cities to AI-centered intelligent cities.\n\nHowever, current technologies and policies remain largely confined to the smart city paradigm. To evolve toward an AI city ecosystem—where cities can autonomously learn, adapt, and respond—new approaches are required.\n\nIn this interview, we engage in an in-depth discussion with Director Yoon Yoon-jin of the KAIST Urban AI Institute, exploring the concept and technological foundations of AI cities, as well as the policy implications of transitioning toward an AI city framework.",
+    "link_others": [
+        {
+            "id": 1,
+            "title": "[KRIHS가 만난 사람 98] 윤윤진 KAIST 도시AI연구소장",
+            "source": "KRIHS LIBRARY",
+            "href": "https://library.krihs.re.kr/library/10120/contents/5869852?checkinId=3726529&articleId=1882436"
+        },
+        {
+            "id": 2,
+            "title": "AI 시티의 미래를 말하다: 윤윤진 교수 월간 국토 인터뷰",
+            "source": "CEE KAIST",
+            "href": "https://cee.kaist.ac.kr/boards/view/department_news/1242"
+        }
+    ]
+  },
+  {
     "id": "press20251029",
     "title": "AI Finds Urban Commercial Districts Resilient to Climate Risk​",
     "keyword": [
@@ -7,12 +37,14 @@
       "Climate Resilience",
       "KAIST-MIT Collaboration"
     ],
+    "category": "research",
     "date": "2025-10-29",
     "writer": "KAIST News",
     "link_kr": "https://news.kaist.ac.kr/news/html/news/?mode=V&mng_no=53650",
     "link_en": "https://news.kaist.ac.kr/newsen/html/news/?mode=V&mng_no=53670",
-    "image": "/img/pressImg/images_20251029.jpg",
-    "desc": "KAIST’s Urban AI Research Institute and MIT’s Senseable City Lab showcased their joint ‘Urban AI’ research at Smart Life Week 2025.\n\nThe collaboration highlights how artificial intelligence can reinterpret urban challenges through data-driven insights on climate, environment, and inclusivity to build empathic, human-centered cities of the future.",
+    "image": "assets/images/press/images_20251029.jpg",
+    "summary": "KAIST’s Urban AI Research Institute and MIT’s Senseable City Lab showcased their joint ‘Urban AI’ research at Smart Life Week 2025.\n\nThe collaboration highlights how artificial intelligence can reinterpret urban challenges through data-driven insights on climate, environment, and inclusivity to build empathic, human-centered cities of the future.",
+    "desc": "KAIST announced on October 29th that its Urban AI Institute (Director, Distinguished Professor Yoonjin Yoon of Civil and Environmental Engineering conducted joint research in the field of 'Urban AI' with MIT's Senseable City Lab (Director, Professor Carlo Ratti) and disclosed the results at the 'Smart Life Week 2025' exhibition held at COEX, Seoul, in late September. \n\nKAIST and MIT have been pursuing the 'Urban AI Joint Research Program' to interpret major urban problems using artificial intelligence. At this exhibition, the research results were presented in a form that citizens could directly experience, focusing on three themes: ▲Urban Climate Change, ▲Green Environment, and ▲Data Inclusivity.",
     "link_others": [
       {
         "id": 1,
