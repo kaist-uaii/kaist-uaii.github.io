@@ -13,6 +13,40 @@ if (toggle && menu){
   });
 }
 
+function copyEmail(email) {
+    // 최신 브라우저
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(email)
+            .then(() => {
+                alert('Email copied to clipboard');
+            })
+            .catch(() => {
+                fallbackCopy(email);
+            });
+    } else {
+        fallbackCopy(email);
+    }
+}
+
+function fallbackCopy(text) {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.style.position = 'fixed';
+    textarea.style.left = '-9999px';
+    document.body.appendChild(textarea);
+    textarea.focus();
+    textarea.select();
+
+    try {
+        document.execCommand('copy');
+        alert('Email copied to clipboard');
+    } catch (e) {
+        alert('Copy failed');
+    }
+
+    document.body.removeChild(textarea);
+}
+
 // dropdowns: open ONLY on click (desktop + mobile)
 const dropdowns = document.querySelectorAll('.dropdown');
 
@@ -54,6 +88,14 @@ document.addEventListener('click', (e) => {
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeAll();
 });
+
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+
+menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+});
+
 
 // press slider (auto-advance)
 const pressSlider = document.querySelector('.press-slider');
@@ -149,3 +191,41 @@ if (pressSlider) {
         });
     }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+
+    if (!btn || !menu) return;
+
+    const openMenu = () => {
+        btn.setAttribute('aria-expanded', 'true');
+        menu.classList.remove('opacity-0');
+        menu.classList.add('opacity-100');
+        menu.style.maxHeight = menu.scrollHeight + 'px';
+    };
+
+    const closeMenu = () => {
+        btn.setAttribute('aria-expanded', 'false');
+        menu.style.maxHeight = '0px';
+        menu.classList.remove('opacity-100');
+        menu.classList.add('opacity-0');
+    };
+
+    btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        expanded ? closeMenu() : openMenu();
+    });
+
+    // 메뉴 항목 클릭 시 자동 닫힘(모바일 UX)
+    menu.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => closeMenu());
+    });
+
+    // 데스크탑으로 넘어가면 상태 초기화
+    window.addEventListener('resize', () => {
+        if (window.matchMedia('(min-width: 768px)').matches) {
+            closeMenu();
+        }
+    });
+});

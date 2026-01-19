@@ -209,6 +209,14 @@ p{
   text-shadow:0 3px 10px rgba(0,0,0,0.3);
 }
 
+/* Projects 카드 제목 – Inter 적용 */
+.projects-section .card h3 {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+
 /* Cards grid */
 .cards{
   display:grid;
@@ -254,6 +262,7 @@ p{
   font-weight:600;
   color:var(--brand);
 }
+
 .card-cta::after{ content:"→"; font-size:1rem; }
 .card h3{ margin:0; }
 .card p{ color:var(--muted); line-height:1.5; }

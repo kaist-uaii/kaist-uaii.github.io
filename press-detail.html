@@ -74,14 +74,14 @@
             <div class="lg:col-span-8">
                 <div class="mb-10">
                     <img id="main-image" src="" alt="Press Image" class="w-full aspect-[16/9] object-cover rounded-sm shadow-2xl mb-8">
-                    
+
                     <div class="flex items-center gap-4 mb-6">
                         <span id="article-writer" class="bg-blue-900 text-white text-[10px] font-bold px-3 py-1 uppercase tracking-widest rounded-full"></span>
                         <span id="article-date" class="text-slate-400 text-xs font-medium"></span>
                     </div>
 
                     <h2 id="article-title" class="serif-title text-4xl md:text-5xl font-bold leading-[1.1] mb-8 text-slate-900"></h2>
-                    
+
                     <div id="article-desc" class="markdown text-lg text-slate-700 first-letter:text-7xl first-letter:font-bold first-letter:mr-3 first-letter:float-left first-letter:text-blue-900">
                     </div>
                 </div>
@@ -135,15 +135,18 @@
 
         </article>
 
-  
+
     </main>
 
-    
 
-    <footer class="bg-white border-t border-slate-100 py-12 mt-24">
+
+    <!--<footer class="bg-white border-t border-slate-100 py-12 mt-24">
         <div class="container mx-auto px-6 text-center">
             <p class="text-[10px] font-bold uppercase tracking-widest text-slate-400">© 2026 URBAN AI INSTITUTE (UAII) - KAIST</p>
         </div>
+    </footer>-->
+    <footer class="bg-white border-t border-gray-200 py-8 text-center mt-20">
+        <p class="text-gray-500 text-sm">&copy; 2026 Urban AI Institute. All rights reserved.</p>
     </footer>
 
     <script>
@@ -215,11 +218,11 @@
                 const div = document.createElement('div');
                 div.className = "group cursor-pointer";
                 div.innerHTML = `
-      <a href="${link.href}" target="_blank" rel="noopener">
-        <p class="text-[10px] font-bold text-blue-600 uppercase tracking-widest mb-1">${link.source}</p>
-        <h4 class="text-sm font-semibold text-slate-800 group-hover:text-blue-900 group-hover:underline leading-tight">${link.title}</h4>
-      </a>
-    `;
+          <a href="${link.href}" target="_blank" rel="noopener">
+            <p class="text-[10px] font-bold text-blue-600 uppercase tracking-widest mb-1">${link.source}</p>
+            <h4 class="text-sm font-semibold text-slate-800 group-hover:text-blue-900 group-hover:underline leading-tight">${link.title}</h4>
+          </a>
+        `;
                 if (index < INITIAL_COUNT) visibleContainer.appendChild(div);
                 else expandableInner.appendChild(div);
             });
@@ -274,22 +277,22 @@
                 btn.className = "text-left my-2 border-b border-slate-100 pb-6 last:border-0 hover:bg-slate-50 transition px-2 py-3 rounded-sm";
 
                 const otherLinksHtml = (article.link_others && article.link_others.length)
-                    ? 
+                    ?
                     article.link_others.slice(0, 6).map((link, index) =>
                         `<a href="${link.href}" target="_blank" rel="noopener" class="text-sm hover:underline" onclick="event.stopPropagation()">${link.source}</a>${index < Math.min(article.link_others.length, 6) - 1 ? ', ' : ''}`
                     ).join('') + (article.link_others.length > 6 ? ', ...' : '')
                     : '';
 
                 btn.innerHTML = `
-                  <div class="mb-1">
-                    <strong>(${article.date}) ${article.title}</strong>
-                  </div>
-                  <div class="pt-2 text-slate-500">
-                    ${article.link_en ? `<a href="${article.link_en}" target="_blank" rel="noopener" class="text-sm text-blue-800/70 hover:underline hover:text-blue-600">KAIST NEWS (EN)</a>` : ''}
-                    ${article.link_kr ? `<a href="${article.link_kr}" target="_blank" rel="noopener" class="text-sm text-blue-800/70 hover:underline hover:text-blue-600">${article.link_en ? ' / (KR), ' : '(KR), '}</a>` : ''}
-                    ${otherLinksHtml ? otherLinksHtml : ''}
-                  </div>
-                `;
+                      <div class="mb-1">
+                        <strong>(${article.date}) ${article.title}</strong>
+                      </div>
+                      <div class="pt-2 text-slate-500">
+                        ${article.link_en ? `<a href="${article.link_en}" target="_blank" rel="noopener" class="text-sm text-blue-800/70 hover:underline hover:text-blue-600">KAIST NEWS (EN)</a>` : ''}
+                        ${article.link_kr ? `<a href="${article.link_kr}" target="_blank" rel="noopener" class="text-sm text-blue-800/70 hover:underline hover:text-blue-600">${article.link_en ? ' / (KR), ' : '(KR), '}</a>` : ''}
+                        ${otherLinksHtml ? otherLinksHtml : ''}
+                      </div>
+                    `;
 
                 // Archive 클릭 → 메인 기사 교체
                 btn.addEventListener('click', () => renderMain(article));

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Urban AI Institute</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css" />
     <link rel="icon" href="assets/K-UAII_logo.jpg" />
     <meta name="description" content="Urban AI Institute — research at the intersection of cities and AI" />
@@ -13,18 +14,38 @@
 <body>
     <nav class="border-b border-slate-100 bg-white/80 backdrop-blur-md sticky top-0 z-50">
         <div class="container mx-auto px-6 py-6 flex justify-between items-center">
-            <a href="index.html">
-                <div class="text-xl font-black tracking-tighter text-blue-900">
-                    UAII <span class="text-slate-400 font-light">Urban AI Institute</span>
-                </div>
+
+            <!-- Logo -->
+            <a href="index.html" class="text-xl font-black tracking-tighter text-blue-900">
+                UAII <span class="text-slate-400 font-light">Urban AI Institute</span>
             </a>
 
-            <div class="flex gap-6 text-xs font-bold uppercase tracking-widest text-slate-500">
-                <a href="index.html#about" class="hover:text-blue-600">About</a>
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex gap-6 text-xs font-bold uppercase tracking-widest text-slate-500">
+                <a href="#about" class="hover:text-blue-600">About</a>
                 <a href="people.html" class="hover:text-blue-600">People</a>
                 <a href="projects.html" class="hover:text-blue-600">Projects</a>
                 <a href="apply.html" class="hover:text-blue-600">Apply</a>
                 <a href="press.html" class="hover:text-blue-600">Press</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menuBtn"
+                    class="md:hidden text-slate-700 focus:outline-none"
+                    aria-label="Open menu">
+                ☰
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu"
+             class="hidden md:hidden bg-white border-t border-slate-100">
+            <div class="flex flex-col px-6 py-4 gap-4 text-sm font-semibold text-slate-700">
+                <a href="#about">About</a>
+                <a href="people.html">People</a>
+                <a href="projects.html">Projects</a>
+                <a href="apply.html">Apply</a>
+                <a href="press.html">Press</a>
             </div>
         </div>
     </nav>
@@ -49,22 +70,30 @@
         <main class="container cards">
             <a class="card card-link card-hover" href="https://urban.kaist.ac.kr" target="_blank" rel="noopener">
                 <h3>Urban@KAIST</h3>
-                <span class="card-cta">Visit site</span>
+                <p class="card-desc">
+                    A school-wide initiative integrating data, AI, and engineering expertise to diagnose and solve complex urban challenges.
+                </p>
             </a>
 
             <a class="card card-link card-hover" href="https://hcfm.kaist.ac.kr" target="_blank" rel="noopener">
                 <h3>HcFM</h3>
-                <span class="card-cta">Visit site</span>
+                <p class="card-desc">
+                    A collaborative research platform advancing future mobility through vertiports, route networks, and autonomous systems.
+                </p>
             </a>
 
             <a class="card card-link card-hover" href="https://caus.kaist.ac.kr" target="_blank" rel="noopener">
                 <h3>CAUS</h3>
-                <span class="card-cta">Visit site</span>
+                <p class="card-desc">
+                    Korea’s first Urban AI research center developing data-driven solutions for sustainable and equitable cities.
+                </p>
             </a>
 
             <a class="card card-link card-hover" href="https://c3.kaist.ac.kr" target="_blank" rel="noopener">
                 <h3>KAIST-NYU C3</h3>
-                <span class="card-cta">Visit site</span>
+                <p class="card-desc">
+                    An international research center addressing cities and climate challenges through KAIST–NYU collaboration.
+                </p>
             </a>
         </main>
         <br />
@@ -212,12 +241,16 @@
 
                 <div class="contact-divider"></div>
 
-                <p class="contact-item">
-                    <span class="contact-label">Email</span>
-                    <a href="mailto:yoonjin@spacetime.kaist.ac.kr" class="contact-email">
-                        yoonjin@spacetime.kaist.ac.kr
-                    </a>
-                </p>
+                <span class="contact-label">Email</span>
+                <span class="contact-email cursor-pointer text-blue-600 hover:underline"
+                      onclick="copyEmail('yoonjin@spacetime.kaist.ac.kr')"
+                      role="button"
+                      aria-label="Copy email address">
+                    yoonjin@spacetime.kaist.ac.kr
+                </span>
+
+
+                <div class="contact-divider"></div>
 
                 <p class="contact-item">
                     <span class="contact-label">Location</span>
@@ -227,10 +260,13 @@
         </div>
     </section>
 
-    <footer class="site-footer">
+    <!--<footer class="site-footer">
         <div class="container">
             <small>© <span id="year"></span> Urban AI Institute • Built with GitHub Pages</small>
         </div>
+    </footer>-->
+    <footer class="bg-white border-t border-gray-200 py-8 text-center mt-20">
+        <p class="text-gray-500 text-sm">&copy; 2026 Urban AI Institute. All rights reserved.</p>
     </footer>
 
     <script src="assets/script.js"></script>
