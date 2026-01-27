@@ -521,6 +521,55 @@ p{
   .press .press-summary{ -webkit-line-clamp:5; }
 }
 
+.press-media {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+    .press-media img {
+        transition: transform 0.5s ease;
+    }
+
+    .press-media::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0);
+        transition: background 0.3s ease;
+        z-index: 1;
+    }
+
+    .press-media:hover::before {
+        background: rgba(0, 0, 0, 0.45);
+    }
+
+    .press-media:hover img {
+        transform: scale(1.05);
+    }
+
+/* Hover CTA */
+.press-hover-cta {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, calc(-50% + 8px));
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    opacity: 0;
+    z-index: 2;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+}
+
+.press-media:hover .press-hover-cta {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
 /* =========================================================
    6) Press Page (press.html) — scoped to .press-page only
    (홈 슬라이더와 절대 충돌하지 않게 분리)

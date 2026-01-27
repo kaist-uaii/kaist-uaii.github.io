@@ -144,8 +144,8 @@
                 <a href="index.html">Home</a>
                 <a href="people.html" class="text-blue-600">People</a>
                 <a href="projects.html">Projects</a>
+                <a href="press.html">Events</a>
                 <a href="apply.html">Apply</a>
-                <a href="press.html">Press</a>
             </div>
         </div>
     </nav>
@@ -163,33 +163,7 @@
         <!-- Sidebar (always visible on lg+, hover on md and below) -->
         <aside class="sidebar">
             <nav class="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-slate-200 p-4">
-                <ul class="space-y-2 mb-6">
-                    <li>
-                        <a href="#professor" class="sidebar-link relative block px-4 py-2 text-sm text-slate-600 hover:text-blue-600 rounded-lg hover:bg-blue-50" data-section="professor">
-                            Professors
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#global-scholars" class="sidebar-link relative block px-4 py-2 text-sm text-slate-600 hover:text-blue-600 rounded-lg hover:bg-blue-50" data-section="global-scholars">
-                            Global Scholars
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#students" class="sidebar-link relative block px-4 py-2 text-sm text-slate-600 hover:text-blue-600 rounded-lg hover:bg-blue-50" data-section="students">
-                            Students
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#staffs" class="sidebar-link relative block px-4 py-2 text-sm text-slate-600 hover:text-blue-600 rounded-lg hover:bg-blue-50" data-section="staffs">
-                            Research Staffs
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#alumni" class="sidebar-link relative block px-4 py-2 text-sm text-slate-600 hover:text-blue-600 rounded-lg hover:bg-blue-50" data-section="alumni">
-                            Alumni
-                        </a>
-                    </li>
-                </ul>
+                
 
                 <!-- Project Filter -->
                 <div class="pt-4 border-t border-slate-200">
@@ -223,10 +197,6 @@
                     <p class="text-lg md:text-2xl text-slate-600 font-medium leading-relaxed mb-6 md:mb-8"id="prof-greeting"></p>
 
                     <div class="flex flex-wrap gap-4 mb-12">
-                        <button onclick="copyEmail(professorData.email)" class="px-6 py-3 bg-white border border-slate-200 rounded-2xl shadow-sm hover:border-blue-500 hover:text-blue-600 transition flex items-center gap-2 group">
-                            <svg class="w-5 h-5 text-slate-400 group-hover:text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                            <span id="prof-email"></span>
-                        </button>
                         <a id="prof-link" href="" target="_blank" class="px-6 py-3 bg-blue-600 text-white rounded-2xl shadow-lg shadow-blue-200 hover:bg-blue-700 transition flex items-center gap-2">
                             <span>Personal Website</span>
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
@@ -251,107 +221,28 @@
             </div>
         </section>
 
-        <!-- Collborating Professors Section -->
-        <section id="collab-profs" class="py-20 border-t border-slate-200">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-                <div>
-                    <h2 class="serif-title text-5xl font-bold mb-4">Professors</h2>
-                </div>
-                <div class="divider-gradient w-48 hidden md:block"></div>
-            </div>
-
-            <div id="collab-profs-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-10">
-                <!-- Professors will be injected here -->
-            </div>
-        </section>
-
-        <!-- Global Scholars Section -->
-        <section id="global-scholars" class="py-20 border-t border-slate-200">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-                <div>
-                    <h2 class="serif-title text-5xl font-bold mb-4">Global Scholars</h2>
-                </div>
-                <div class="divider-gradient w-48 hidden md:block"></div>
-            </div>
-
-            <div id="global-scholars-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-10">
-                <!-- Global Scholars will be injected here -->
-            </div>
-        </section>
-
-        <!-- Students Section -->
-        <section id="students" class="py-20 border-t border-slate-200">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-                <div>
-                    <h2 class="serif-title text-5xl font-bold mb-4">Students</h2>
-                </div>
-                <div class="divider-gradient w-48 hidden md:block"></div>
-            </div>
-
-            <div id="members-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-10">
-                <!-- Members will be injected here -->
-            </div>
-        </section>
-
-        <!-- Staffs Section -->
-        <section id="staffs" class="py-20 border-t border-slate-200">
-            <div class="text-center mb-20">
-                <h2 class="serif-title text-5xl font-bold mb-6">Research Staffs</h2>
-            </div>
-
-            <div id="staffs-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Staffs will be injected here -->
-            </div>
-        </section>
-
-        <!-- Alumni Section -->
-        <section id="alumni" class="py-20 border-t border-slate-200">
-            <div class="text-center mb-20">
-                <h2 class="serif-title text-5xl font-bold mb-6">Alumni</h2>
-            </div>
-
-            <div class="space-y-24">
-                <div>
-                    <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-blue-600 mb-10 border-l-4 border-blue-600 pl-4">Ph.D. Graduates</h3>
-                    <div id="alumni-phd-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"></div>
+        <!-- Participants Professors Section -->
+        <main class="container mx-auto px-6 max-w-7xl">
+            <section id="participants" class="pt-24 pb-20">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                    <div>
+                        <h2 class="serif-title text-5xl font-bold mb-4">Participants</h2>
+                    </div>
+                    <div class="divider-gradient w-48 hidden md:block"></div>
                 </div>
 
-                <div>
-                    <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-blue-600 mb-10 border-l-4 border-blue-600 pl-4">M.S. Graduates</h3>
-                    <div id="alumni-ms-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"></div>
+                <div id="participants-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-10">
+                    <!-- Participants will be injected here -->
                 </div>
-            </div>
-        </section>
+            </section>
+        </main>
     </main>
 
-    <!--<footer class="bg-slate-900 text-slate-400 py-20 mt-20">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
-                <div class="col-span-2">
-                    <h3 class="text-2xl font-extrabold tracking-tighter text-white mb-6">Urban AI Institute (UAII)</h3>
-                    <p class="max-w-md mb-8">KAIST Department of Civil and Environmental Engineering. Focused on Urban Intelligence, Future Mobility, and Sustainable Cities.</p>
-                </div>
-                <div class="text-right">
-                    <p class="text-sm">Developed by UAII &copy; 2025</p>
-                    <p class="text-xs mt-2 text-slate-500">KAIST, Daejeon, South Korea</p>
-                </div>
-            </div>
-        </div>
-    </footer>-->
     <footer class="bg-white border-t border-gray-200 py-8 text-center mt-20">
         <p class="text-gray-500 text-sm">&copy; 2026 Urban AI Institute. All rights reserved.</p>
     </footer>
 
     <script>
-        // Global function for onclick handlers
-        async function copyEmail(email) {
-            try {
-                await navigator.clipboard.writeText(email);
-                alert("Email copied to clipboard!");
-            } catch (err) {
-                console.error('Copy failed', err);
-            }
-        }
 
         // Data usually comes from peopleData.json
         async function loadConfig() { // GitHub Pages 배포 경로가 /<repo>/... 인 경우를 대비해 basePath 처리
@@ -395,14 +286,6 @@
                 const collabScholarsData = window.collabScholarsData;
                 const staffsData = window.staffsData;
 
-                async function copyEmail(email) {
-                    try {
-                        await navigator.clipboard.writeText(email);
-                        alert("Email copied to clipboard!");
-                    } catch (err) {
-                        console.error('Copy failed', err);
-                    }
-                }
 
                 // Helper function to load image with error handling
                 function loadImage(imgElement, src, alt = '') {
@@ -470,12 +353,6 @@
                                 <div class="mb-4">
                                     <div class="flex items-start justify-between gap-2 mb-1.5">
                                         <div class="flex-1">
-                                            ${person.email ? `<button onclick="copyEmail('${person.email}')" class="inline-flex items-center gap-1.5 pl-1 pr-2 py-1 mb-2 text-left text-xs font-medium text-slate-600 hover:text-blue-600 hover:bg-blue-50 transition-colors rounded-lg border border-slate-200 bg-white/50">
-                                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                                                </svg>
-                                                <span>${person.email}</span>
-                                            </button>` : ''}
                                             <h3 class="text-2xl font-bold text-slate-900 mb-1.5">${person.name}</h3>
                                             <p class="text-blue-600 font-semibold text-sm">${person.role || ''}</p>
                                         </div>
@@ -542,6 +419,31 @@
                 }
 
                 function init() {
+
+                    function normalizeName(name = "") {
+                        return name.trim().replace(/\s+/g, " ");
+                    }
+
+                    function getLastNameKey(name = "") {
+                        const n = normalizeName(name);
+                        if (!n) return "";
+                        const parts = n.split(" ");
+                        return (parts[parts.length - 1] || "").toLowerCase();
+                    }
+
+                    function sortByLastName(a, b) {
+                        const aLast = getLastNameKey(a.name);
+                        const bLast = getLastNameKey(b.name);
+                        if (aLast < bLast) return -1;
+                        if (aLast > bLast) return 1;
+
+                        const aFull = normalizeName(a.name).toLowerCase();
+                        const bFull = normalizeName(b.name).toLowerCase();
+                        if (aFull < bFull) return -1;
+                        if (aFull > bFull) return 1;
+                        return 0;
+                    }
+
                     // Preload professor photo (critical, above-the-fold)
                     const profPhoto = document.getElementById('prof-photo');
                     if (professorData.photo) {
@@ -557,7 +459,6 @@
                     }
                     document.getElementById('prof-name').innerText = professorData.name;
                     document.getElementById('prof-greeting').innerText = professorData.greeting;
-                    document.getElementById('prof-email').innerText = professorData.email;
                     document.getElementById('prof-link').href = professorData.link;
                     document.getElementById('prof-research').innerHTML = marked.parse(professorData.research);
                     const recentContainer = document.getElementById('prof-recent-container');
@@ -653,93 +554,143 @@
                         };
                     }
 
-                    // Collaborators Professors
-                    const collabProfsGrid = document.getElementById('collab-profs-grid');
-                    if (collabProfsGrid && collabProfsData) {
-                        collabProfsData.forEach((collabProf) => {
-                            const card = createPersonCard(collabProf, {
-                                imgIdPrefix: 'collab-professor',
-                                backgroundField: 'position',
-                                projectsThreshold: 4,
-                                showLink: true
-                            });
-                            collabProfsGrid.appendChild(card);
-                        });
-                    }
+                    //// Collaborators Professors
+                    //const collabProfsGrid = document.getElementById('collab-profs-grid');
+                    //if (collabProfsGrid && collabProfsData) {
+                    //    collabProfsData.forEach((collabProf) => {
+                    //        const card = createPersonCard(collabProf, {
+                    //            imgIdPrefix: 'collab-professor',
+                    //            backgroundField: 'position',
+                    //            projectsThreshold: 4,
+                    //            showLink: true
+                    //        });
+                    //        collabProfsGrid.appendChild(card);
+                    //    });
+                    //}
 
-                    // Members
-                    const membersGrid = document.getElementById('members-grid');
-                    if (membersGrid && labMembersData) {
-                        labMembersData.forEach((member) => {
-                            const card = createPersonCard(member, {
-                                imgIdPrefix: 'member',
-                                backgroundField: 'edu',
-                                projectsThreshold: 2,
-                                showLink: false
-                            });
-                            membersGrid.appendChild(card);
-                        });
-                    }
+                    //// Members
+                    //const membersGrid = document.getElementById('members-grid');
+                    //if (membersGrid && labMembersData) {
+                    //    labMembersData.forEach((member) => {
+                    //        const card = createPersonCard(member, {
+                    //            imgIdPrefix: 'member',
+                    //            backgroundField: 'edu',
+                    //            projectsThreshold: 2,
+                    //            showLink: false
+                    //        });
+                    //        membersGrid.appendChild(card);
+                    //    });
+                    //}
 
-                    // Global Scholars
-                    const globalScholarsGrid = document.getElementById('global-scholars-grid');
-                    if (globalScholarsGrid && collabScholarsData) {
-                        collabScholarsData.forEach((scholar) => {
-                            const card = createPersonCard(scholar, {
-                                imgIdPrefix: 'global-scholar',
-                                backgroundField: 'position',
-                                projectsThreshold: 4,
-                                showLink: true
-                            });
-                            globalScholarsGrid.appendChild(card);
-                        });
-                    }
+                    //// Global Scholars
+                    //const globalScholarsGrid = document.getElementById('global-scholars-grid');
+                    //if (globalScholarsGrid && collabScholarsData) {
+                    //    collabScholarsData.forEach((scholar) => {
+                    //        const card = createPersonCard(scholar, {
+                    //            imgIdPrefix: 'global-scholar',
+                    //            backgroundField: 'position',
+                    //            projectsThreshold: 4,
+                    //            showLink: true
+                    //        });
+                    //        globalScholarsGrid.appendChild(card);
+                    //    });
+                    //}
 
-                    // Staffs
-                    const staffsGrid = document.getElementById('staffs-grid');
-                    if (staffsGrid && staffsData) {
-                        staffsData.forEach((staff) => {
-                            const card = document.createElement('div');
-                            // Add data attributes for filtering by projects
-                            const projectsAttr = staff.projects && staff.projects.length > 0
-                                ? staff.projects.map(p => p.toLowerCase()).join(' ')
-                                : '';
-                            card.setAttribute('data-projects', projectsAttr);
-                            card.className = "bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:border-blue-200 transition text-center person-card";
-                            card.innerHTML = `
-                                    <h4 class="font-bold text-slate-900 mb-1">${staff.name}</h4>
-                                    ${staff.projects && staff.projects.length > 0 ? `
-                                    <div class="mt-4 pt-4 border-t border-slate-50">
-                                        <div class="flex flex-wrap gap-1.5 justify-center">
-                                            ${staff.projects.map(project => `
-                                                <span class="inline-block px-3 py-1 bg-blue-50 text-blue-600 text-[10px] font-bold rounded-full">${project}</span>
-                                            `).join('')}
-                                        </div>
-                                    </div>
-                                    ` : ''}
-                                `;
-                            staffsGrid.appendChild(card);
-                        });
-                    }
+                    //// Staffs
+                    //const staffsGrid = document.getElementById('staffs-grid');
+                    //if (staffsGrid && staffsData) {
+                    //    staffsData.forEach((staff) => {
+                    //        const card = document.createElement('div');
+                    //        // Add data attributes for filtering by projects
+                    //        const projectsAttr = staff.projects && staff.projects.length > 0
+                    //            ? staff.projects.map(p => p.toLowerCase()).join(' ')
+                    //            : '';
+                    //        card.setAttribute('data-projects', projectsAttr);
+                    //        card.className = "bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:border-blue-200 transition text-center person-card";
+                    //        card.innerHTML = `
+                    //                <h4 class="font-bold text-slate-900 mb-1">${staff.name}</h4>
+                    //                ${staff.projects && staff.projects.length > 0 ? `
+                    //                <div class="mt-4 pt-4 border-t border-slate-50">
+                    //                    <div class="flex flex-wrap gap-1.5 justify-center">
+                    //                        ${staff.projects.map(project => `
+                    //                            <span class="inline-block px-3 py-1 bg-blue-50 text-blue-600 text-[10px] font-bold rounded-full">${project}</span>
+                    //                        `).join('')}
+                    //                    </div>
+                    //                </div>
+                    //                ` : ''}
+                    //            `;
+                    //        staffsGrid.appendChild(card);
+                    //    });
+                    //}
 
-                    // Alumni
-                    const phdGrid = document.getElementById('alumni-phd-grid');
-                    const msGrid = document.getElementById('alumni-ms-grid');
-                    aluminiData.forEach(a => {
-                        const card = document.createElement('div');
-                        card.className = "bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:border-blue-200 transition text-center";
-                        card.innerHTML = `
-                                <h4 class="font-bold text-slate-900 mb-1">${a.name}</h4>
-                                <p class="text-xs text-slate-400">${a.date}</p>
-                                <div class="mt-4 pt-4 border-t border-slate-50">
-                                    <span class="inline-block px-3 py-1 bg-blue-50 text-blue-600 text-[10px] font-bold rounded-full">${a.degree}</span>
-                                </div>
-                            `;
-                        if (a.degree === 'Ph.D.') phdGrid.appendChild(card);
-                        else msGrid.appendChild(card);
-                    });
+                    //// Alumni
+                    //const phdGrid = document.getElementById('alumni-phd-grid');
+                    //const msGrid = document.getElementById('alumni-ms-grid');
+                    //aluminiData.forEach(a => {
+                    //    const card = document.createElement('div');
+                    //    card.className = "bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:border-blue-200 transition text-center";
+                    //    card.innerHTML = `
+                    //            <h4 class="font-bold text-slate-900 mb-1">${a.name}</h4>
+                    //            <p class="text-xs text-slate-400">${a.date}</p>
+                    //            <div class="mt-4 pt-4 border-t border-slate-50">
+                    //                <span class="inline-block px-3 py-1 bg-blue-50 text-blue-600 text-[10px] font-bold rounded-full">${a.degree}</span>
+                    //            </div>
+                    //        `;
+                    //    if (a.degree === 'Ph.D.') phdGrid.appendChild(card);
+                    //    else msGrid.appendChild(card);
+                    //});
 
                     // Setup filter functionality after all cards are created
+
+                    // ===== Participants (merged & sorted) =====
+                    const participantsGrid = document.getElementById('participants-grid');
+                    const participants = [];
+
+                    function pushPeople(arr, sourceLabel) {
+                        if (!Array.isArray(arr)) return;
+                        arr.forEach(p => participants.push({ ...p, sourceLabel }));
+                    }
+
+                    pushPeople(collabProfsData, "Professor");
+                    pushPeople(collabScholarsData, "Global Scholar");
+                    pushPeople(labMembersData, "Student");
+
+                    // Staffs: createPersonCard 포맷에 맞춰 보정
+                    pushPeople((staffsData || []).map(s => ({
+                        ...s,
+                        role: s.role || "Research Staff",
+                        edu: s.edu || [],
+                        position: s.position || [],
+                        research: s.research || "",
+                        projects: s.projects || [],
+                        photo: s.photo || ""
+                    })), "Research Staff");
+
+                    // Alumni: createPersonCard 포맷에 맞춰 보정
+                    pushPeople((aluminiData || []).map(a => ({
+                        ...a,
+                        role: a.degree ? `Alumni (${a.degree})` : "Alumni",
+                        edu: a.date ? [a.date] : [],
+                        research: a.research || "",
+                        projects: a.projects || [],
+                        photo: a.photo || ""
+                    })), "Alumni");
+
+                    participants.sort(sortByLastName);
+
+                    if (participantsGrid) {
+                        participantsGrid.innerHTML = "";
+                        participants.forEach(p => {
+                            const card = createPersonCard(p, {
+                                imgIdPrefix: "participant",
+                                backgroundField: (p.position && p.position.length > 0) ? "position" : "edu",
+                                projectsThreshold: 4,
+                                showLink: Boolean(p.link)
+                            });
+                            participantsGrid.appendChild(card);
+                        });
+                    }
+
                     if (window.setupProjectFilter) {
                         window.setupProjectFilter();
                     }

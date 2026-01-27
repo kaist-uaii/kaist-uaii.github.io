@@ -3,146 +3,582 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Press | Urban AI Institute (UAII)</title>
+    <title>Events | Urban AI Institute (UAII)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <!-- FullCalendar v6 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.20/index.global.min.css" rel="stylesheet" />
+    <!-- FullCalendar v6 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.20/index.global.min.js"></script>
     <style>
+        :root {
+            /* Category Colors - Single source of truth */
+            --category-color-press: #1e3a8a;
+            --category-color-presentation: #16a34a;
+            --category-color-conference: #9333ea;
+            --category-color-workshop: #ea580c;
+            --category-color-seminar: #0d9488;
+            --category-color-meeting: #4f46e5;
+            --category-color-exhibition: #475569;
+            --category-color-award: #475569;
+            --category-color-hackathon: #475569;
+            --category-color-others: #475569;
+        }
+
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
             background-color: #fcfcfc;
         }
+
         .serif-title {
             font-family: 'Playfair Display', serif;
         }
-        .markdown p { margin-bottom: 1.25rem; line-height: 1.8; color: #374151; }
-        .markdown strong { color: #1e3a8a; font-weight: 700; }
+
+        .markdown p {
+            margin-bottom: 1.25rem;
+            line-height: 1.8;
+            color: #374151;
+        }
+
+        .markdown strong {
+            color: #1e3a8a;
+            font-weight: 700;
+        }
+
         .newspaper-border {
             border-top: 4px solid #000;
             border-bottom: 1px solid #000;
         }
+
         .line-clamp-2 {
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
-        
+
         /* Animations */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-        
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
             }
+
             to {
                 opacity: 1;
             }
         }
-        
+
         @keyframes slideInRight {
             from {
                 opacity: 0;
                 transform: translateX(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
             }
         }
-        
+
         @keyframes scaleIn {
             from {
                 opacity: 0;
                 transform: scale(0.95);
             }
+
             to {
                 opacity: 1;
                 transform: scale(1);
             }
         }
-        
+
         .animate-fade-in-up {
             animation: fadeInUp 0.6s ease-out forwards;
             opacity: 0;
         }
-        
+
         .animate-fade-in {
             animation: fadeIn 0.8s ease-out forwards;
             opacity: 0;
         }
-        
+
         .animate-slide-in-right {
             animation: slideInRight 0.6s ease-out forwards;
             opacity: 0;
         }
-        
+
         .animate-scale-in {
             animation: scaleIn 0.5s ease-out forwards;
             opacity: 0;
         }
-        
+
         .featured-card {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
-        .featured-card:hover {
-            transform: translateY(-8px);
-        }
-        
+
+            .featured-card:hover {
+                transform: translateY(-8px);
+            }
+
         .archive-item {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
-        .archive-item:hover {
-            transform: translateX(8px);
-            border-color: #3b82f6;
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
-        }
-        
+
+            .archive-item:hover {
+                transform: translateX(8px);
+                border-color: #3b82f6;
+                box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+            }
+
         /* Image overlay effect */
         .featured-card img {
             transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
         /* Glow effect on hover */
         .featured-card:hover {
             filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
         }
-        
+
         /* Smooth transitions for all interactive elements */
         a, button {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
         /* Archive section fade in */
         #archive {
             opacity: 0;
             animation: fadeIn 1s ease-out 0.5s forwards;
         }
-        
+
         /* Smooth scroll */
         html {
             scroll-behavior: smooth;
         }
-        
+
         /* Navbar animation */
         nav {
             animation: fadeIn 0.5s ease-out;
         }
-        
+
         /* Header animation */
         header {
             animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* FullCalendar Custom Styling */
+        .fc {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .fc-toolbar {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: #fff;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .fc-button {
+            background-color: #1e3a8a !important;
+            border-color: #1e3a8a !important;
+            color: #fff !important;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+        }
+
+            .fc-button:hover {
+                background-color: #1e40af !important;
+                border-color: #1e40af !important;
+            }
+
+        .fc-button-primary:not(:disabled):active,
+        .fc-button-primary:not(:disabled).fc-button-active {
+            background-color: #1e3a8a !important;
+            border-color: #1e3a8a !important;
+        }
+
+        .fc-today-button {
+            background-color: #3b82f6 !important;
+            border-color: #3b82f6 !important;
+        }
+
+            .fc-today-button:hover {
+                background-color: #2563eb !important;
+                border-color: #2563eb !important;
+            }
+
+        .fc-daygrid-day {
+            border-color: #e9ecef;
+        }
+
+        .fc-day-today {
+            background-color: #fff !important;
+        }
+
+        .fc-col-header-cell {
+            background-color: #f4f6f7;
+            border-color: #dee2e6;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.75rem;
+        }
+
+        .fc-daygrid-day-number {
+            color: #2c3e50;
+            font-weight: normal;
+        }
+
+        /* Event Styling */
+        .fc-event {
+            border-radius: 0.25rem;
+            padding: 2px 6px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+        }
+
+        .fc-event-press {
+            background-color: #1e3a8a;
+            color: #fff;
+        }
+
+        /* Category-specific event colors - using CSS variables */
+        .fc-event-press {
+            background-color: var(--category-color-press);
+            color: #fff;
+        }
+
+        .fc-event-presentation {
+            background-color: var(--category-color-presentation);
+            color: #fff;
+        }
+
+        .fc-event-conference {
+            background-color: var(--category-color-conference);
+            color: #fff;
+        }
+
+        .fc-event-workshop {
+            background-color: var(--category-color-workshop);
+            color: #fff;
+        }
+
+        .fc-event-seminar {
+            background-color: var(--category-color-seminar);
+            color: #fff;
+        }
+
+        .fc-event-meeting {
+            background-color: var(--category-color-meeting);
+            color: #fff;
+        }
+
+        .fc-event-exhibition {
+            background-color: var(--category-color-exhibition);
+            color: #fff;
+        }
+
+        .fc-event-award {
+            background-color: var(--category-color-award);
+            color: #fff;
+        }
+
+        .fc-event-hackathon {
+            background-color: var(--category-color-hackathon);
+            color: #fff;
+        }
+
+        .fc-event-others {
+            background-color: var(--category-color-others);
+            color: #fff;
+        }
+
+        .fc-event:hover {
+            opacity: 0.9;
+        }
+
+        .fc-multimonth-month {
+            background-color: #fff;
+            border: 1px solid #dee2e6;
+            border-radius: 0.5rem;
+            padding: 1.25rem;
+            box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,.075);
+            transition: all 0.3s ease;
+        }
+
+            .fc-multimonth-month:hover {
+                box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
+                transform: translateY(-2px);
+            }
+
+        .fc-multimonth-title {
+            font-weight: 500;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: #2c3e50;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .fc-multimonth .fc-col-header-cell {
+            text-align: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #6c757d;
+            padding: 0.5rem 0.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: none !important;
+            border-bottom: 2px solid #e9ecef !important;
+            background-color: transparent !important;
+        }
+
+        .fc-multimonth .fc-daygrid-day {
+            background-color: #fff;
+            padding: 0.5rem 0.25rem;
+            font-size: 0.75rem;
+            text-align: center;
+            position: relative;
+            cursor: pointer;
+            border: 1px solid #f4f6f7;
+            transition: all 0.2s ease;
+        }
+
+        .fc-multimonth .fc-daygrid-day-frame {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            min-height: 2.5rem;
+        }
+
+        .fc-multimonth .fc-daygrid-day:hover {
+            background-color: #f4f6f7;
+        }
+
+        .fc-multimonth .fc-daygrid-day-number {
+            margin-bottom: 2px;
+            color: #2c3e50;
+            font-weight: normal;
+            flex-shrink: 0;
+        }
+
+        .fc-multimonth .fc-day-other,
+        .fc-multimonth .fc-day-disabled {
+            background-color: #f4f6f7 !important;
+        }
+
+            .fc-multimonth .fc-day-other .fc-daygrid-day-number,
+            .fc-multimonth .fc-day-disabled .fc-daygrid-day-number {
+                color: #adb5bd !important;
+                font-weight: normal;
+            }
+
+        .fc-multimonth .fc-daygrid-day.fc-day-has-events .fc-daygrid-day-number {
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        .fc-multimonth .fc-daygrid-day.fc-day-has-events:hover {
+            transform: scale(1.05);
+            z-index: 10;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        /* Event bars styling for yearly view */
+        .fc-multimonth .fc-daygrid-day-events {
+            margin-top: 1.5rem;
+            width: 100%;
+            flex-shrink: 0;
+        }
+
+        .fc-multimonth .fc-event {
+            height: 3px;
+            margin: 0;
+            padding: 0;
+            border-radius: 5px;
+            font-size: 0;
+            line-height: 0;
+            overflow: hidden;
+        }
+
+        /* Ensure events don't show text */
+        .fc-multimonth .fc-event-title {
+            display: none;
+        }
+
+        .fc-multimonth .fc-multimonth-daygrid-table {
+            border-spacing: 2px;
+            border-collapse: separate;
+        }
+
+        .fc-multimonth .fc-day-today {
+            border: 2px solid #FF5A24 !important;
+            background-color: #f7dede !important;
+        }
+
+            .fc-multimonth .fc-day-today .fc-daygrid-day-number {
+                font-weight: 700 !important;
+                color: #2c3e50 !important;
+            }
+
+            .fc-multimonth .fc-day-today.fc-day-has-events .fc-daygrid-day-number {
+                font-weight: 700 !important;
+                color: #2c3e50 !important;
+            }
+
+        /* Event Tooltip */
+        .event-tooltip {
+            position: fixed;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            z-index: 10000;
+            max-width: 300px;
+            display: none;
+        }
+
+            .event-tooltip.show {
+                display: block;
+            }
+
+        .event-tooltip-title {
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: #1e3a8a;
+        }
+
+        .event-tooltip-type {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+            /* Event tooltip type colors - using CSS variables */
+            .event-tooltip-type.press {
+                background-color: var(--category-color-press);
+                color: #fff;
+            }
+
+            .event-tooltip-type.presentation {
+                background-color: var(--category-color-presentation);
+                color: #fff;
+            }
+
+            .event-tooltip-type.conference {
+                background-color: var(--category-color-conference);
+                color: #fff;
+            }
+
+            .event-tooltip-type.workshop {
+                background-color: var(--category-color-workshop);
+                color: #fff;
+            }
+
+            .event-tooltip-type.seminar {
+                background-color: var(--category-color-seminar);
+                color: #fff;
+            }
+
+            .event-tooltip-type.meeting {
+                background-color: var(--category-color-meeting);
+                color: #fff;
+            }
+
+            .event-tooltip-type.exhibition,
+            .event-tooltip-type.award,
+            .event-tooltip-type.hackathon,
+            .event-tooltip-type.others {
+                background-color: var(--category-color-others);
+                color: #fff;
+            }
+
+        .event-tooltip-desc {
+            font-size: 0.875rem;
+            color: #4b5563;
+            line-height: 1.5;
+        }
+
+        /* Month Summary Expanded State */
+        .month-summary-item.expanded {
+            background-color: #f8fafc;
+            border-left: 3px solid #3b82f6;
+            padding-left: 0.75rem;
+            margin-left: -0.75rem;
+            border-radius: 0.25rem;
+            transition: all 0.2s ease;
+        }
+
+            .month-summary-item.expanded .month-header h4 {
+                color: #1e40af;
+            }
+
+            .month-summary-item.expanded .category-summary {
+                color: #475569;
+                font-weight: 500;
+            }
+
+        .month-summary-item:hover {
+            background-color: #f8fafc;
+        }
+
+        .month-summary-item.expanded .month-header {
+            background-color: #e0e7ff;
+            border-radius: 0.375rem;
+            padding: 0.25rem 0.5rem;
+            margin: -0.25rem -0.5rem;
+        }
+
+        .month-summary-item.expanded:hover .month-header {
+            background-color: #c7d2fe;
+        }
+
+        /* Responsive - Simplified breakpoints */
+        @media (max-width: 1024px) {
+            .fc-multimonth {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .fc-multimonth {
+                grid-template-columns: 1fr !important;
+            }
+
+            .fc-toolbar {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .fc-toolbar-chunk {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -154,7 +590,7 @@
 
             <!-- Logo -->
             <a href="index.html" class="text-xl font-black tracking-tighter text-blue-900">
-                UAII <span class="text-slate-400 font-light">Press</span>
+                UAII <span class="text-slate-400 font-light">Events</span>
             </a>
 
             <!-- Desktop Menu -->
@@ -162,8 +598,8 @@
                 <a href="index.html" class="hover:text-blue-600">Home</a>
                 <a href="people.html" class="hover:text-blue-600">People</a>
                 <a href="projects.html" class="hover:text-blue-600">Projects</a>
+                <a href="events.html" class="text-blue-600">Events</a>
                 <a href="apply.html" class="hover:text-blue-600">Apply</a>
-                <a href="press.html" class="text-blue-600">Press</a>
             </div>
 
             <!-- Mobile Menu Button -->
@@ -181,8 +617,8 @@
                 <a href="index.html">Home</a>
                 <a href="people.html">People</a>
                 <a href="projects.html">Projects</a>
+                <a href="press.html" class="text-blue-600">Events</a>
                 <a href="apply.html">Apply</a>
-                <a href="press.html" class="text-blue-600">Press</a>
             </div>
         </div>
     </nav>
@@ -191,7 +627,7 @@
         <!-- Newspaper Header Style -->
         <header class="text-center mb-16">
             <div class="newspaper-border py-4 mb-4">
-                <h1 class="serif-title text-5xl md:text-7xl font-black tracking-tight">UAII in the PRESS</h1>
+                <h1 class="serif-title text-5xl md:text-7xl font-black tracking-tight">E V E N T S</h1>
             </div>
             <div class="flex justify-between items-center text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400 px-2">
                 <span>Daejeon, South Korea</span>
@@ -204,6 +640,97 @@
         <section id="featured-news" class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-24 py-8">
             <!-- Featured cards will be injected here -->
         </section>
+
+        <!-- Calendar Section -->
+        <section id="calendar-section" class="mb-24 py-8">
+            <div class="flex items-center gap-8 mb-12 animate-fade-in-up" style="animation-delay: 0.4s; opacity: 0;">
+                <h2 class="serif-title text-3xl font-bold whitespace-nowrap">Calendar</h2>
+                <div class="h-px bg-gradient-to-r from-slate-200 via-slate-300 to-slate-200 w-full"></div>
+            </div>
+
+            <!-- Events Summary Sections -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                <!-- Left: Recent Events/Press -->
+                <div class="bg-white rounded-lg shadow-sm p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-bold text-slate-900">Events</h3>
+                        <a href="#archive" class="text-sm text-blue-600 hover:text-blue-800 font-medium">See all</a>
+                    </div>
+                    <div id="recent-events-list" class="space-y-3">
+                        <!-- Recent events will be injected here -->
+                    </div>
+                </div>
+
+                <!-- Right: 3-Month Summary -->
+                <div class="bg-white rounded-lg shadow-sm p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-bold text-slate-900">Summary</h3>
+                        <span class="text-xs text-slate-500">Last 3 months</span>
+                    </div>
+                    <div id="monthly-summary" class="space-y-4">
+                        <!-- Monthly summary will be injected here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category Filter -->
+            <div class="mb-4 bg-white rounded-lg shadow-sm p-6 pl-12">
+                <div class="flex flex-wrap items-center gap-2">
+                    <button class="category-filter active px-3 py-1.5 rounded text-xs font-semibold transition-colors border border-blue-900 bg-blue-900 text-white hover:bg-blue-800" data-category="all">
+                        All
+                    </button>
+                    <button class="category-filter px-3 py-1.5 rounded text-xs font-medium transition-colors border border-slate-300 bg-white text-slate-700 hover:bg-slate-50 hover:border-slate-400" data-category="press">
+                        Press Articles
+                    </button>
+                    <button class="category-filter px-3 py-1.5 rounded text-xs font-medium transition-colors border border-green-500 bg-white text-green-700 hover:bg-green-50 hover:border-green-600" data-category="presentation">
+                        Presentation
+                    </button>
+                    <button class="category-filter px-3 py-1.5 rounded text-xs font-medium transition-colors border border-purple-500 bg-white text-purple-700 hover:bg-purple-50 hover:border-purple-600" data-category="conference">
+                        Conference
+                    </button>
+                    <button class="category-filter px-3 py-1.5 rounded text-xs font-medium transition-colors border border-orange-500 bg-white text-orange-700 hover:bg-orange-50 hover:border-orange-600" data-category="workshop">
+                        Workshop
+                    </button>
+                    <button class="category-filter px-3 py-1.5 rounded text-xs font-medium transition-colors border border-teal-500 bg-white text-teal-700 hover:bg-teal-50 hover:border-teal-600" data-category="seminar">
+                        Seminar
+                    </button>
+                    <button class="category-filter px-3 py-1.5 rounded text-xs font-medium transition-colors border border-indigo-500 bg-white text-indigo-700 hover:bg-indigo-50 hover:border-indigo-600" data-category="meeting">
+                        Meeting
+                    </button>
+                    <button class="category-filter px-3 py-1.5 rounded text-xs font-medium transition-colors border border-slate-400 bg-white text-slate-600 hover:bg-slate-50 hover:border-slate-500" data-category="others">
+                        Others
+                    </button>
+                </div>
+            </div>
+
+            <!-- Calendar with Viewport Summary -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+                <!-- Calendar Container -->
+                <div class="lg:col-span-2">
+                    <div id="calendar" class="bg-white rounded-lg shadow-sm p-6"></div>
+                </div>
+
+                <!-- Right: Viewport Summary -->
+                <div class="lg:col-span-1">
+                    <div class="bg-white rounded-lg shadow-sm p-6 sticky top-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-lg font-bold text-slate-900">View Summary</h3>
+                            <span id="viewport-date-range" class="text-xs text-slate-500"></span>
+                        </div>
+                        <button id="expand-all-btn" class="mb-4 text-xs font-medium text-blue-600 hover:text-blue-800 transition-colors">
+                            Expand All
+                        </button>
+                        <div id="viewport-summary" class="space-y-4">
+                            <!-- Viewport events will be injected here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
 
         <!-- More News Archive -->
         <section id="archive" class="mt-52">
@@ -229,6 +756,9 @@
     <footer class="bg-white border-t border-gray-200 py-8 text-center mt-20">
         <p class="text-gray-500 text-sm">&copy; 2026 Urban AI Institute. All rights reserved.</p>
     </footer>
+
+    <!-- Event Tooltip -->
+    <div id="event-tooltip" class="event-tooltip"></div>
 
     <script>
         // Load data from pressData.json
@@ -282,22 +812,22 @@
                 card1.style.animationDelay = "0.1s";
                 const desc = latest.desc ? latest.desc.split('\n')[0] : '';
                 card1.innerHTML = `
-                            <div class="relative h-[500px] overflow-hidden rounded-3xl shadow-2xl group-hover:shadow-3xl transition-all duration-500">
-                                <div class="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-transparent z-10 group-hover:from-blue-900/30 transition duration-500"></div>
-                                <img src="${latest.image}" alt="${latest.title}" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 ease-out">
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-12 flex flex-col justify-end z-20">
-                                    <div class="mb-4 transform group-hover:translate-y-0 translate-y-2 transition duration-500">
-                                        <span class="bg-blue-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest inline-block group-hover:bg-blue-500 transition duration-300">Featured ${latest.category || 'Press'}</span>
-                                    </div>
-                                    <h2 class="serif-title text-white text-4xl md:text-5xl font-bold leading-tight mb-4 transform group-hover:translate-y-0 translate-y-2 transition duration-500 delay-75">${latest.title}</h2>
-                                    <p class="text-white/70 text-lg line-clamp-2 max-w-2xl mb-6 transform group-hover:translate-y-0 translate-y-2 transition duration-500 delay-100">${desc}</p>
-                                    <div class="flex items-center gap-6 text-white/50 text-sm font-medium transform group-hover:translate-y-0 translate-y-2 transition duration-500 delay-150">
-                                        <span>${latest.writer || 'Press'}</span>
-                                        <span>${formatDateLong(latest.date)}</span>
+                                <div class="relative h-[500px] overflow-hidden rounded-3xl shadow-2xl group-hover:shadow-3xl transition-all duration-500">
+                                    <div class="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-transparent z-10 group-hover:from-blue-900/30 transition duration-500"></div>
+                                    <img src="${latest.image}" alt="${latest.title}" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 ease-out">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-12 flex flex-col justify-end z-20">
+                                        <div class="mb-4 transform group-hover:translate-y-0 translate-y-2 transition duration-500">
+                                            <span class="bg-blue-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest inline-block group-hover:bg-blue-500 transition duration-300">Featured ${latest.category || 'Press'}</span>
+                                        </div>
+                                        <h2 class="serif-title text-white text-4xl md:text-5xl font-bold leading-tight mb-4 transform group-hover:translate-y-0 translate-y-2 transition duration-500 delay-75">${latest.title}</h2>
+                                        <p class="text-white/70 text-lg line-clamp-2 max-w-2xl mb-6 transform group-hover:translate-y-0 translate-y-2 transition duration-500 delay-100">${desc}</p>
+                                        <div class="flex items-center gap-6 text-white/50 text-sm font-medium transform group-hover:translate-y-0 translate-y-2 transition duration-500 delay-150">
+                                            <span>${latest.writer || 'Press'}</span>
+                                            <span>${formatDateLong(latest.date)}</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        `;
+                            `;
                 featuredSection.appendChild(card1);
             }
 
@@ -313,17 +843,17 @@
                 card2.style.animationDelay = "0.3s";
                 const desc2 = second.desc ? `"${second.desc.split('\n')[0]}..."` : '';
                 card2.innerHTML = `
-                            <span class="text-blue-600 text-[9px] font-black uppercase tracking-widest mb-4 block transform group-hover:translate-x-1 transition duration-300 inline-block">New ${second.category || 'Press'}</span>
-                            <h3 class="serif-title text-2xl font-bold mb-4 group-hover:text-blue-600 transition duration-300">${second.title}</h3>
-                            <p class="text-slate-500 text-sm mb-6 line-clamp-3 italic">${desc2}</p>
-                            <div class="flex items-center justify-between mt-auto">
-                                <div class="flex items-center gap-2">
-                                <span class="text-slate-400 text-[10px] font-bold uppercase">${second.writer || ''}</span>
-                                <span class="text-slate-400 text-[10px] font-bold uppercase">${formatDateLong(second.date) || ''}</span>
+                                <span class="text-blue-600 text-[9px] font-black uppercase tracking-widest mb-4 block transform group-hover:translate-x-1 transition duration-300 inline-block">New ${second.category || 'Press'}</span>
+                                <h3 class="serif-title text-2xl font-bold mb-4 group-hover:text-blue-600 transition duration-300">${second.title}</h3>
+                                <p class="text-slate-500 text-sm mb-6 line-clamp-3 italic">${desc2}</p>
+                                <div class="flex items-center justify-between mt-auto">
+                                    <div class="flex items-center gap-2">
+                                    <span class="text-slate-400 text-[10px] font-bold uppercase">${second.writer || ''}</span>
+                                    <span class="text-slate-400 text-[10px] font-bold uppercase">${formatDateLong(second.date) || ''}</span>
+                                    </div>
+                                    <svg class="w-5 h-5 text-slate-300 group-hover:text-blue-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                                 </div>
-                                <svg class="w-5 h-5 text-slate-300 group-hover:text-blue-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                            </div>
-                        `;
+                            `;
                 sideColumn.appendChild(card2);
             }
 
@@ -335,14 +865,14 @@
                 card3.style.animationDelay = "0.5s";
                 const desc3 = third.desc ? `"${third.desc.split('\n')[0]}..."` : '';
                 card3.innerHTML = `
-                            <span class="text-blue-400 text-[9px] font-black uppercase tracking-widest mb-4 block transform group-hover:translate-x-1 transition duration-300 inline-block">${third.category || 'Press'}</span>
-                            <h3 class="serif-title text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition duration-300">${third.title}</h3>
-                            <p class="text-white/50 text-sm mb-6 line-clamp-3 italic">${desc3}</p>
-                            <div class="flex items-center justify-between mt-auto">
-                                <span class="text-white/30 text-[10px] font-bold uppercase">${third.writer || ''}</span>
-                                <svg class="w-5 h-5 text-white/30 group-hover:text-blue-400 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                            </div>
-                        `;
+                                <span class="text-blue-400 text-[9px] font-black uppercase tracking-widest mb-4 block transform group-hover:translate-x-1 transition duration-300 inline-block">${third.category || 'Press'}</span>
+                                <h3 class="serif-title text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition duration-300">${third.title}</h3>
+                                <p class="text-white/50 text-sm mb-6 line-clamp-3 italic">${desc3}</p>
+                                <div class="flex items-center justify-between mt-auto">
+                                    <span class="text-white/30 text-[10px] font-bold uppercase">${third.writer || ''}</span>
+                                    <svg class="w-5 h-5 text-white/30 group-hover:text-blue-400 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                                </div>
+                            `;
                 sideColumn.appendChild(card3);
             }
 
@@ -406,15 +936,15 @@
                     : '';
 
                 btn.innerHTML = `
-                            <div class="mb-1">
-                                <strong>(${formatDateLong(article.date)}) ${article.title}</strong>
-                            </div>
-                            <div class="pt-2 text-slate-500">
-                                ${article.link_en ? `<a href="${article.link_en}" target="_blank" rel="noopener" class="text-sm text-blue-800/70 hover:underline hover:text-blue-600" onclick="event.stopPropagation()">KAIST NEWS (EN)</a>` : ''}
-                                ${article.link_kr ? `<a href="${article.link_kr}" target="_blank" rel="noopener" class="text-sm text-blue-800/70 hover:underline hover:text-blue-600" onclick="event.stopPropagation()">${article.link_en ? ' / (KR), ' : '(KR), '}</a>` : ''}
-                                ${otherLinksHtml ? otherLinksHtml : ''}
-                            </div>
-                        `;
+                                <div class="mb-1">
+                                    <strong>(${formatDateLong(article.date)}) ${article.title}</strong>
+                                </div>
+                                <div class="pt-2 text-slate-500">
+                                    ${article.link_en ? `<a href="${article.link_en}" target="_blank" rel="noopener" class="text-sm text-blue-800/70 hover:underline hover:text-blue-600" onclick="event.stopPropagation()">KAIST NEWS (EN)</a>` : ''}
+                                    ${article.link_kr ? `<a href="${article.link_kr}" target="_blank" rel="noopener" class="text-sm text-blue-800/70 hover:underline hover:text-blue-600" onclick="event.stopPropagation()">${article.link_en ? ' / (KR), ' : '(KR), '}</a>` : ''}
+                                    ${otherLinksHtml ? otherLinksHtml : ''}
+                                </div>
+                            `;
 
                 // Navigate to detail page on click
                 btn.addEventListener('click', () => {
@@ -425,6 +955,944 @@
             });
         }
 
+
+        // Calendar functionality
+        let eventsData = [];
+        let calendar;
+        let allCalendarEvents = [];
+        let activeCategory = 'all';
+
+        // Load events data
+        async function loadEventsData() {
+            const basePath = location.pathname.replace(/\/[^\/]*$/, "");
+            const url = `${basePath}/data/eventsData.json`;
+            try {
+                const res = await fetch(url, { cache: "no-store" });
+                if (!res.ok) throw new Error(`Failed to load: ${res.status}`);
+                const data = await res.json();
+                return data.eventsData || [];
+            } catch (error) {
+                console.error('Error loading eventsData.json:', error);
+                return [];
+            }
+        }
+
+        // Convert events to FullCalendar format
+        function convertEventsToCalendar() {
+            const calendarEvents = [];
+
+            // Add press articles
+            pressData.forEach(article => {
+                if (article.date) {
+                    calendarEvents.push({
+                        title: article.title || 'Untitled',
+                        start: article.date,
+                        allDay: true,
+                        extendedProps: {
+                            type: 'press',
+                            id: article.id,
+                            category: article.category,
+                            writer: article.writer,
+                            desc: article.desc,
+                            link_kr: article.link_kr,
+                            link_en: article.link_en,
+                            image: article.image,
+                            keywords: article.keyword || []
+                        },
+                        className: 'fc-event-press',
+                        url: article.link_kr || article.link_en || null
+                    });
+                }
+            });
+
+            // Add events
+            eventsData.forEach(event => {
+                if (event.start) {
+                    // Determine className based on category
+                    let eventClassName = 'fc-event-event'; // default fallback
+                    if (event.category) {
+                        eventClassName = `fc-event-${event.category}`;
+                    }
+
+                    const eventObj = {
+                        title: event.title || 'Event',
+                        start: event.start,
+                        allDay: true,
+                        extendedProps: {
+                            type: 'event',
+                            id: event.id,
+                            category: event.category,
+                            place: event.place,
+                            participants: event.participants,
+                            keywords: event.keywords,
+                            desc: event.desc,
+                            photos: event.photos || [],
+                            speaker: event.speaker,
+                            award: event.award,
+                            links: event.links || []
+                        },
+                        className: eventClassName,
+                    };
+
+                    // Add end date if it exists and is different from start
+                    if (event.end && event.end !== event.start) {
+                        eventObj.end = event.end;
+                    }
+
+                    calendarEvents.push(eventObj);
+                }
+            });
+
+            return calendarEvents;
+        }
+
+        // Show event tooltip
+        function showEventTooltip(event, mouseX, mouseY) {
+            const tooltip = document.getElementById('event-tooltip');
+            const props = event.extendedProps;
+
+            let content = '';
+            content += `<div class="event-tooltip-title">${event.title}</div>`;
+            if (props.type === 'press') {
+                content += `<span class="event-tooltip-type press">Press Article</span>`;
+            } else {
+                const category = props.category || 'others';
+                const categoryLabel = category.charAt(0).toUpperCase() + category.slice(1);
+                content += `<span class="event-tooltip-type ${category}">${categoryLabel}</span>`;
+            }
+
+            if (props.type === 'press') {
+                if (props.writer) content += `<div class="text-xs text-slate-500 mb-2">By ${props.writer}</div>`;
+                if (props.category) content += `<div class="text-xs text-slate-500 mb-2">Category: ${props.category}</div>`;
+                if (props.desc) {
+                    const shortDesc = props.desc.split('\n')[0].substring(0, 150);
+                    content += `<div class="event-tooltip-desc">${shortDesc}${props.desc.length > 150 ? '...' : ''}</div>`;
+                }
+            } else {
+                if (props.category) content += `<div class="text-xs text-slate-500 mb-2">📁 ${props.category.charAt(0).toUpperCase() + props.category.slice(1)}</div>`;
+                if (props.place) content += `<div class="text-xs text-slate-500 mb-2">📍 ${props.place}</div>`;
+                if (props.speaker) content += `<div class="text-xs text-slate-500 mb-2">🎤 Speaker: ${props.speaker}</div>`;
+                if (props.participants) content += `<div class="text-xs text-slate-500 mb-2">👥 ${props.participants}</div>`;
+                if (props.award) content += `<div class="text-xs font-semibold text-blue-600 mb-2">🏆 ${props.award}</div>`;
+                if (props.desc) {
+                    const shortDesc = props.desc.split('\n')[0].substring(0, 150);
+                    content += `<div class="event-tooltip-desc">${shortDesc}${props.desc.length > 150 ? '...' : ''}</div>`;
+                }
+                if (props.links && props.links.length > 0) {
+                    content += `<div class="mt-2 pt-2 border-t border-slate-200">`;
+                    props.links.forEach(link => {
+                        content += `<a href="${link.url}" target="_blank" rel="noopener" class="text-xs text-blue-600 hover:underline block mb-1">🔗 ${link.label}</a>`;
+                    });
+                    content += `</div>`;
+                }
+            }
+
+            tooltip.innerHTML = content;
+            tooltip.classList.add('show');
+
+            // Position tooltip
+            const tooltipRect = tooltip.getBoundingClientRect();
+            let left = mouseX + 10;
+            let top = mouseY + 10;
+
+            if (left + tooltipRect.width > window.innerWidth) {
+                left = mouseX - tooltipRect.width - 10;
+            }
+            if (top + tooltipRect.height > window.innerHeight) {
+                top = mouseY - tooltipRect.height - 10;
+            }
+
+            tooltip.style.left = left + 'px';
+            tooltip.style.top = top + 'px';
+        }
+
+        function hideEventTooltip() {
+            const tooltip = document.getElementById('event-tooltip');
+            tooltip.classList.remove('show');
+        }
+
+        // Filter events by category
+        function filterEventsByCategory(category) {
+            if (category === 'all') {
+                return allCalendarEvents;
+            }
+
+            return allCalendarEvents.filter(event => {
+                const props = event.extendedProps;
+                if (category === 'press') {
+                    return props.type === 'press';
+                } else if (category === 'others') {
+                    // Group exhibition, award, hackathon as "others"
+                    return props.type === 'event' &&
+                        (props.category === 'exhibition' ||
+                            props.category === 'award' ||
+                            props.category === 'hackathon');
+                } else {
+                    return props.type === 'event' && props.category === category;
+                }
+            });
+        }
+
+        // Update calendar with filtered events
+        function updateCalendarEvents() {
+            const filteredEvents = filterEventsByCategory(activeCategory);
+            calendar.removeAllEvents();
+            calendar.addEventSource(filteredEvents);
+        }
+
+        // Initialize calendar
+        async function initCalendar() {
+            // Load events data
+            eventsData = await loadEventsData();
+
+            // Convert to calendar events and store all
+            allCalendarEvents = convertEventsToCalendar();
+
+            // Initialize FullCalendar
+            const calendarEl = document.getElementById('calendar');
+            if (!calendarEl) return;
+
+            calendar = new FullCalendar.Calendar(calendarEl, {
+                timeZone: 'UTC',
+                initialView: 'dayGridMonth',
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'multiMonthYear,dayGridMonth'
+                },
+                views: {
+                    multiMonthYear: {
+                        buttonText: 'year',
+                        type: 'multiMonth',
+                        multiMonthMaxColumns: 3,
+                        multiMonthMinWidth: 250,
+                        eventDisplay: 'block', // Show as bars/blocks
+                        duration: { months: 6 }
+                    }
+                },
+                initialDate: new Date(),
+                navLinks: true,
+                editable: false,
+                dayMaxEvents: 3,
+                moreLinkClick: 'popover',
+                events: allCalendarEvents,
+                eventContent: function (arg) {
+                    // For yearly view, return empty to show bars without text
+                    if (arg.view.type === 'multiMonthYear') {
+                        return { html: '' };
+                    }
+                    // For other views, show normal event title
+                    return {
+                        html: `<div class="fc-event-title">${arg.event.title}</div>`
+                    };
+                },
+                eventDidMount: function (arg) {
+                    // Add hover tooltip
+                    arg.el.addEventListener('mouseenter', (e) => {
+                        const rect = arg.el.getBoundingClientRect();
+                        showEventTooltip(arg.event, rect.left, rect.top);
+                    });
+
+                    arg.el.addEventListener('mouseleave', () => {
+                        hideEventTooltip();
+                    });
+                },
+                eventClick: function (arg) {
+                    arg.jsEvent.preventDefault();
+                    const props = arg.event.extendedProps;
+
+                    if (props.type === 'press') {
+                        // Navigate to press detail page
+                        if (props.id) {
+                            window.location.href = `press-detail.html?id=${props.id}`;
+                        }
+                    } else {
+                        // Build detailed event info with new fields
+                        let info = `Event: ${arg.event.title}\n\n`;
+                        if (props.category) info += `Category: ${props.category.charAt(0).toUpperCase() + props.category.slice(1)}\n`;
+                        if (props.place) info += `Place: ${props.place}\n`;
+                        if (props.speaker) info += `Speaker: ${props.speaker}\n`;
+                        if (props.participants) info += `Participants: ${props.participants}\n`;
+                        if (props.award) info += `Award: ${props.award}\n`;
+                        if (props.desc) info += `\n${props.desc}\n`;
+                        if (props.links && props.links.length > 0) {
+                            info += `\nLinks:\n`;
+                            props.links.forEach(link => {
+                                info += `- ${link.label}: ${link.url}\n`;
+                            });
+                        }
+                        alert(info);
+                    }
+                },
+                datesSet: function (arg) {
+                    // Update viewport summary when calendar view changes
+                    updateViewportSummary(arg);
+                }
+            });
+
+            calendar.render();
+
+            // Setup category filter buttons
+            setupCategoryFilters();
+
+            // Initial viewport summary
+            setTimeout(() => {
+                const view = calendar.view;
+                updateViewportSummary({
+                    start: view.activeStart,
+                    end: view.activeEnd,
+                    view: view
+                });
+            }, 100);
+
+            // Setup expand all button
+            setupExpandAllButton();
+        }
+
+        // Setup expand all button functionality
+        function setupExpandAllButton() {
+            const expandAllBtn = document.getElementById('expand-all-btn');
+            if (!expandAllBtn) return;
+
+            expandAllBtn.addEventListener('click', () => {
+                const allMonthItems = document.querySelectorAll('.month-summary-item');
+                const allExpanded = Array.from(allMonthItems).every(item => item.classList.contains('expanded'));
+
+                allMonthItems.forEach(monthEl => {
+                    const detailsEl = monthEl.querySelector('.event-details');
+
+                    if (allExpanded) {
+                        // Collapse all
+                        monthEl.classList.remove('expanded');
+                        if (detailsEl) detailsEl.classList.add('hidden');
+                    } else {
+                        // Expand all
+                        monthEl.classList.add('expanded');
+                        if (detailsEl) detailsEl.classList.remove('hidden');
+                    }
+                });
+
+                updateExpandAllButton();
+            });
+        }
+
+        // Update expand all button text
+        function updateExpandAllButton() {
+            const expandAllBtn = document.getElementById('expand-all-btn');
+            if (!expandAllBtn) return;
+
+            const allMonthItems = document.querySelectorAll('.month-summary-item');
+            if (allMonthItems.length === 0) return;
+
+            const allExpanded = Array.from(allMonthItems).every(item => item.classList.contains('expanded'));
+            expandAllBtn.textContent = allExpanded ? 'Collapse All' : 'Expand All';
+        }
+
+        // Update viewport summary based on current calendar view
+        function updateViewportSummary(arg) {
+            const summaryContainer = document.getElementById('viewport-summary');
+            const dateRangeEl = document.getElementById('viewport-date-range');
+            if (!summaryContainer || !dateRangeEl) return;
+
+            const start = arg.start;
+            const end = arg.end;
+            const view = arg.view;
+
+            // Update date range display
+            const startDate = new Date(start);
+            const endDate = new Date(end);
+
+            let dateRangeText = '';
+            if (view.type === 'dayGridMonth' || view.type === 'multiMonth') {
+                dateRangeText = startDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+            } else if (view.type === 'multiMonthYear') {
+                dateRangeText = `${startDate.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })} - ${endDate.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}`;
+            } else {
+                dateRangeText = `${startDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })} - ${endDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}`;
+            }
+            dateRangeEl.textContent = dateRangeText;
+
+            // Get events in the current viewport
+            const viewportEvents = calendar.getEvents().filter(event => {
+                const eventStart = event.start;
+                return eventStart >= start && eventStart < end;
+            });
+
+            // Sort by date
+            viewportEvents.sort((a, b) => {
+                const aStart = a.start || new Date(0);
+                const bStart = b.start || new Date(0);
+                return aStart - bStart;
+            });
+
+            summaryContainer.innerHTML = '';
+
+            if (viewportEvents.length === 0) {
+                summaryContainer.innerHTML = '<p class="text-sm text-slate-500">No events in this view</p>';
+                return;
+            }
+
+            // Check if yearly view - group by month
+            const isYearlyView = view.type === 'multiMonthYear';
+
+            if (isYearlyView) {
+                // Group by month for yearly view
+                const eventsByMonth = {};
+                viewportEvents.forEach(event => {
+                    const eventDate = event.start;
+                    if (!eventDate) return;
+
+                    const date = new Date(eventDate);
+                    const monthKey = `${date.getFullYear()}-${date.getMonth()}`;
+                    if (!eventsByMonth[monthKey]) {
+                        eventsByMonth[monthKey] = {
+                            month: date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' }),
+                            items: [],
+                            categories: {}
+                        };
+                    }
+                    eventsByMonth[monthKey].items.push(event);
+                    const cat = event.extendedProps.category || (event.extendedProps.type === 'press' ? 'Press' : 'Event');
+                    eventsByMonth[monthKey].categories[cat] = (eventsByMonth[monthKey].categories[cat] || 0) + 1;
+                });
+
+                // Sort months (newest first)
+                const sortedMonths = Object.entries(eventsByMonth).sort((a, b) => b[0].localeCompare(a[0]));
+
+                sortedMonths.forEach(([key, monthData]) => {
+                    const monthEl = document.createElement('div');
+                    monthEl.className = 'pb-3 border-b border-slate-200 last:border-0 last:pb-0 mb-3 last:mb-0 month-summary-item';
+                    monthEl.dataset.monthKey = key;
+
+                    // Sort items within month by date (newest first)
+                    const sortedItems = [...monthData.items].sort((a, b) => {
+                        const aStart = a.start || new Date(0);
+                        const bStart = b.start || new Date(0);
+                        return bStart - aStart;
+                    });
+
+                    // Category breakdown - simple format
+                    const categoryList = Object.entries(monthData.categories)
+                        .map(([cat, count]) => {
+                            const catLabel = cat.charAt(0).toUpperCase() + cat.slice(1);
+                            return `<span class="text-xs text-slate-600">${catLabel}: ${count}</span>`;
+                        })
+                        .join(', ');
+
+                    // Event list (hidden by default)
+                    const eventList = sortedItems.map(event => {
+                        const props = event.extendedProps;
+                        const date = new Date(event.start);
+                        const day = date.getDate();
+                        const dayName = date.toLocaleDateString('en-US', { weekday: 'short' });
+
+                        // Category color
+                        let categoryColor = 'bg-slate-500';
+                        if (props.type === 'press') {
+                            categoryColor = 'bg-blue-900';
+                        } else if (props.category === 'presentation') {
+                            categoryColor = 'bg-green-600';
+                        } else if (props.category === 'conference') {
+                            categoryColor = 'bg-purple-600';
+                        } else if (props.category === 'workshop') {
+                            categoryColor = 'bg-orange-600';
+                        } else if (props.category === 'seminar') {
+                            categoryColor = 'bg-teal-600';
+                        } else if (props.category === 'meeting') {
+                            categoryColor = 'bg-indigo-600';
+                        } else if (props.category === 'exhibition' || props.category === 'award' || props.category === 'hackathon') {
+                            categoryColor = 'bg-slate-600';
+                        }
+
+                        const categoryLabel = props.category ? props.category.charAt(0).toUpperCase() + props.category.slice(1) : (props.type === 'press' ? 'Press' : 'Event');
+
+                        const clickHandler = props.type === 'press'
+                            ? `window.location.href='press-detail.html?id=${props.id}'`
+                            : `document.getElementById('calendar')?.scrollIntoView({ behavior: 'smooth' })`;
+
+                        return `
+                                <div onclick="${clickHandler}" class="flex items-start gap-2 py-1.5 hover:bg-slate-50 rounded px-1 -mx-1 transition-colors cursor-pointer group">
+                                    <div class="flex items-center gap-2 min-w-[60px]">
+                                        <span class="text-xs font-bold text-slate-600">${day}</span>
+                                        <span class="text-xs text-slate-400">${dayName}</span>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <div class="flex items-center gap-1.5 mb-0.5">
+                                            <span class="w-1.5 h-1.5 rounded-full ${categoryColor}"></span>
+                                            <span class="text-xs font-medium text-slate-500">${categoryLabel}</span>
+                                        </div>
+                                        <div class="text-xs font-medium text-slate-900 group-hover:text-blue-600 transition-colors line-clamp-1">${event.title}</div>
+                                        ${props.place ? `<div class="text-xs text-slate-400 mt-0.5 line-clamp-1">${props.place}</div>` : ''}
+                                    </div>
+                                </div>
+                            `;
+                    }).join('');
+
+                    monthEl.innerHTML = `
+                            <div class="flex items-center justify-between mb-2 month-header">
+                                <h4 class="text-sm font-bold text-slate-900">${monthData.month}</h4>
+                                <span class="text-sm font-bold text-blue-600">${monthData.items.length} ${monthData.items.length === 1 ? 'event' : 'events'}</span>
+                            </div>
+                            <div class="category-summary text-xs text-slate-600 mb-2">
+                                ${categoryList || '<span class="text-slate-400">No categories</span>'}
+                            </div>
+                            <div class="event-details hidden space-y-1 max-h-64 overflow-y-auto mt-2">
+                                ${eventList || '<p class="text-xs text-slate-400">No events</p>'}
+                            </div>
+                        `;
+
+                    // Add hover handlers only (no click handlers)
+                    const detailsEl = monthEl.querySelector('.event-details');
+
+                    monthEl.addEventListener('mouseenter', () => {
+                        if (detailsEl && !monthEl.classList.contains('expanded')) {
+                            detailsEl.classList.remove('hidden');
+                        }
+                    });
+
+                    monthEl.addEventListener('mouseleave', () => {
+                        if (detailsEl && !monthEl.classList.contains('expanded')) {
+                            detailsEl.classList.add('hidden');
+                        }
+                    });
+
+                    summaryContainer.appendChild(monthEl);
+                });
+            } else {
+                // Group by date for monthly view
+                const eventsByDate = {};
+                viewportEvents.forEach(event => {
+                    const eventDate = event.start;
+                    if (!eventDate) return;
+
+                    const dateKey = eventDate.toISOString().split('T')[0];
+                    if (!eventsByDate[dateKey]) {
+                        eventsByDate[dateKey] = [];
+                    }
+                    eventsByDate[dateKey].push(event);
+                });
+
+                // Sort dates
+                const sortedDates = Object.keys(eventsByDate).sort();
+
+                sortedDates.forEach(dateKey => {
+                    const date = new Date(dateKey);
+                    const events = eventsByDate[dateKey];
+
+                    const dateEl = document.createElement('div');
+                    dateEl.className = 'pb-3 border-b border-slate-200 last:border-0 last:pb-0 mb-3 last:mb-0';
+
+                    const day = date.getDate();
+                    const dayName = date.toLocaleDateString('en-US', { weekday: 'short' });
+                    const monthName = date.toLocaleDateString('en-US', { month: 'short' });
+
+                    const eventList = events.map(event => {
+                        const props = event.extendedProps;
+
+                        // Category color
+                        let categoryColor = 'bg-slate-500';
+                        if (props.type === 'press') {
+                            categoryColor = 'bg-blue-900';
+                        } else if (props.category === 'presentation') {
+                            categoryColor = 'bg-green-600';
+                        } else if (props.category === 'conference') {
+                            categoryColor = 'bg-purple-600';
+                        } else if (props.category === 'workshop') {
+                            categoryColor = 'bg-orange-600';
+                        } else if (props.category === 'seminar') {
+                            categoryColor = 'bg-teal-600';
+                        } else if (props.category === 'meeting') {
+                            categoryColor = 'bg-indigo-600';
+                        } else if (props.category === 'exhibition' || props.category === 'award' || props.category === 'hackathon') {
+                            categoryColor = 'bg-slate-600';
+                        }
+
+                        const categoryLabel = props.category ? props.category.charAt(0).toUpperCase() + props.category.slice(1) : (props.type === 'press' ? 'Press' : 'Event');
+
+                        const clickHandler = props.type === 'press'
+                            ? `window.location.href='press-detail.html?id=${props.id}'`
+                            : `document.getElementById('calendar')?.scrollIntoView({ behavior: 'smooth' })`;
+
+                        return `
+                                <div onclick="${clickHandler}" class="flex items-start gap-2 py-1.5 hover:bg-slate-50 rounded px-1 -mx-1 transition-colors cursor-pointer group">
+                                    <div class="flex-1 min-w-0">
+                                        <div class="flex items-center gap-1.5 mb-0.5">
+                                            <span class="w-1.5 h-1.5 rounded-full ${categoryColor}"></span>
+                                            <span class="text-xs font-medium text-slate-500">${categoryLabel}</span>
+                                        </div>
+                                        <div class="text-xs font-medium text-slate-900 group-hover:text-blue-600 transition-colors line-clamp-1">${event.title}</div>
+                                        ${props.place ? `<div class="text-xs text-slate-400 mt-0.5 line-clamp-1">${props.place}</div>` : ''}
+                                    </div>
+                                </div>
+                            `;
+                    }).join('');
+
+                    dateEl.innerHTML = `
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-sm font-bold text-slate-900">${day}</span>
+                                    <span class="text-xs text-slate-500">${dayName}</span>
+                                    <span class="text-xs text-slate-400">${monthName}</span>
+                                </div>
+                                <span class="text-xs font-semibold text-blue-600">${events.length}</span>
+                            </div>
+                            <div class="space-y-1">
+                                ${eventList}
+                            </div>
+                        `;
+
+                    summaryContainer.appendChild(dateEl);
+                });
+            }
+        }
+
+        // Setup category filter event listeners
+        function setupCategoryFilters() {
+            const filterButtons = document.querySelectorAll('.category-filter');
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Update active state
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                        const cat = btn.dataset.category;
+                        // Reset to inactive styles
+                        if (cat === 'all') {
+                            btn.className = 'category-filter px-3 py-1.5 rounded text-xs font-medium transition-colors border border-slate-300 bg-white text-slate-700 hover:bg-slate-50 hover:border-slate-400';
+                        } else if (cat === 'press') {
+                            btn.className = 'category-filter px-3 py-1.5 rounded text-xs font-medium transition-colors border border-slate-300 bg-white text-slate-700 hover:bg-slate-50 hover:border-slate-400';
+                        } else if (cat === 'presentation') {
+                            btn.className = 'category-filter px-3 py-1.5 rounded text-xs font-medium transition-colors border border-green-500 bg-white text-green-700 hover:bg-green-50 hover:border-green-600';
+                        } else if (cat === 'conference') {
+                            btn.className = 'category-filter px-3 py-1.5 rounded text-xs font-medium transition-colors border border-purple-500 bg-white text-purple-700 hover:bg-purple-50 hover:border-purple-600';
+                        } else if (cat === 'workshop') {
+                            btn.className = 'category-filter px-3 py-1.5 rounded text-xs font-medium transition-colors border border-orange-500 bg-white text-orange-700 hover:bg-orange-50 hover:border-orange-600';
+                        } else if (cat === 'seminar') {
+                            btn.className = 'category-filter px-3 py-1.5 rounded text-xs font-medium transition-colors border border-teal-500 bg-white text-teal-700 hover:bg-teal-50 hover:border-teal-600';
+                        } else if (cat === 'meeting') {
+                            btn.className = 'category-filter px-3 py-1.5 rounded text-xs font-medium transition-colors border border-indigo-500 bg-white text-indigo-700 hover:bg-indigo-50 hover:border-indigo-600';
+                        } else if (cat === 'others') {
+                            btn.className = 'category-filter px-3 py-1.5 rounded text-xs font-medium transition-colors border border-slate-400 bg-white text-slate-600 hover:bg-slate-50 hover:border-slate-500';
+                        }
+                    });
+
+                    button.classList.add('active');
+                    const category = button.dataset.category;
+
+                    // Update button styles based on category (active state)
+                    if (category === 'all') {
+                        button.className = 'category-filter active px-3 py-1.5 rounded text-xs font-semibold transition-colors border border-blue-900 bg-blue-900 text-white hover:bg-blue-800';
+                    } else if (category === 'press') {
+                        button.className = 'category-filter active px-3 py-1.5 rounded text-xs font-semibold transition-colors border border-blue-900 bg-blue-900 text-white hover:bg-blue-800';
+                    } else if (category === 'presentation') {
+                        button.className = 'category-filter active px-3 py-1.5 rounded text-xs font-semibold transition-colors border border-green-600 bg-green-600 text-white hover:bg-green-700';
+                    } else if (category === 'conference') {
+                        button.className = 'category-filter active px-3 py-1.5 rounded text-xs font-semibold transition-colors border border-purple-600 bg-purple-600 text-white hover:bg-purple-700';
+                    } else if (category === 'workshop') {
+                        button.className = 'category-filter active px-3 py-1.5 rounded text-xs font-semibold transition-colors border border-orange-600 bg-orange-600 text-white hover:bg-orange-700';
+                    } else if (category === 'seminar') {
+                        button.className = 'category-filter active px-3 py-1.5 rounded text-xs font-semibold transition-colors border border-teal-600 bg-teal-600 text-white hover:bg-teal-700';
+                    } else if (category === 'meeting') {
+                        button.className = 'category-filter active px-3 py-1.5 rounded text-xs font-semibold transition-colors border border-indigo-600 bg-indigo-600 text-white hover:bg-indigo-700';
+                    } else if (category === 'others') {
+                        button.className = 'category-filter active px-3 py-1.5 rounded text-xs font-semibold transition-colors border border-slate-600 bg-slate-600 text-white hover:bg-slate-700';
+                    }
+
+                    // Update active category and filter events
+                    activeCategory = category;
+                    updateCalendarEvents();
+                });
+            });
+        }
+
+        // Render recent events list (left section)
+        function renderRecentEvents() {
+            const recentList = document.getElementById('recent-events-list');
+            if (!recentList) return;
+
+            // Combine press and events, sort by date (newest first)
+            const allItems = [];
+
+            // Add press articles
+            pressData.forEach(article => {
+                if (article.date) {
+                    allItems.push({
+                        date: article.date,
+                        title: article.title,
+                        type: 'press',
+                        id: article.id,
+                        category: article.category || 'Press'
+                    });
+                }
+            });
+
+            // Add events
+            eventsData.forEach(event => {
+                if (event.start) {
+                    allItems.push({
+                        date: event.start,
+                        title: event.title,
+                        type: 'event',
+                        id: event.id,
+                        category: event.category || 'Event'
+                    });
+                }
+            });
+
+            // Sort by date (newest first) and take top 5
+            const sorted = allItems.sort((a, b) => b.date.localeCompare(a.date)).slice(0, 5);
+
+            recentList.innerHTML = '';
+
+            if (sorted.length === 0) {
+                recentList.innerHTML = '<p class="text-sm text-slate-500">No recent events</p>';
+                return;
+            }
+
+            sorted.forEach(item => {
+                const date = new Date(item.date);
+                const month = date.toLocaleDateString('en-US', { month: 'short' }).toUpperCase();
+                const day = date.getDate();
+                const dayName = date.toLocaleDateString('en-US', { weekday: 'short' });
+
+                const itemEl = document.createElement('div');
+                itemEl.className = 'flex items-start gap-3 py-2 border-b border-slate-100 last:border-0 hover:bg-slate-50 rounded px-2 -mx-2 transition-colors cursor-pointer';
+
+                // Determine category color
+                let categoryColor = 'bg-slate-500';
+                if (item.type === 'press') {
+                    categoryColor = 'bg-blue-900';
+                } else if (item.category === 'presentation') {
+                    categoryColor = 'bg-green-600';
+                } else if (item.category === 'conference') {
+                    categoryColor = 'bg-purple-600';
+                } else if (item.category === 'workshop') {
+                    categoryColor = 'bg-orange-600';
+                } else if (item.category === 'seminar') {
+                    categoryColor = 'bg-teal-600';
+                } else if (item.category === 'meeting') {
+                    categoryColor = 'bg-indigo-600';
+                }
+
+                itemEl.innerHTML = `
+                        <div class="flex flex-col items-center min-w-[50px]">
+                            <span class="text-xs font-bold text-slate-600">${month}</span>
+                            <span class="text-lg font-bold text-slate-900">${day}</span>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="text-xs font-medium text-slate-500">${dayName}</span>
+                                <span class="w-1.5 h-1.5 rounded-full ${categoryColor}"></span>
+                            </div>
+                            <div class="text-sm font-medium text-slate-900 truncate">${item.title}</div>
+                        </div>
+                    `;
+
+                // Add click handler
+                itemEl.addEventListener('click', () => {
+                    if (item.type === 'press') {
+                        window.location.href = `press-detail.html?id=${item.id}`;
+                    } else {
+                        // Scroll to calendar or show event details
+                        document.getElementById('calendar')?.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+
+                recentList.appendChild(itemEl);
+            });
+        }
+
+        // Render detailed monthly summary (right section)
+        function renderMonthlySummary() {
+            const summaryContainer = document.getElementById('monthly-summary');
+            if (!summaryContainer) return;
+
+            const now = new Date();
+            const currentMonthStart = new Date(now.getFullYear(), now.getMonth(), 1);
+            const currentMonthEnd = new Date(now.getFullYear(), now.getMonth() + 1, 0);
+
+            // Get all events and press with full details
+            const allItems = [];
+
+            // Add press articles
+            pressData.forEach(article => {
+                if (article.date) {
+                    const articleDate = new Date(article.date);
+                    allItems.push({
+                        date: article.date,
+                        dateObj: articleDate,
+                        title: article.title,
+                        type: 'press',
+                        category: 'Press',
+                        id: article.id
+                    });
+                }
+            });
+
+            // Add events
+            eventsData.forEach(event => {
+                if (event.start) {
+                    const eventDate = new Date(event.start);
+                    allItems.push({
+                        date: event.start,
+                        dateObj: eventDate,
+                        title: event.title,
+                        type: 'event',
+                        category: event.category || 'Event',
+                        id: event.id,
+                        place: event.place
+                    });
+                }
+            });
+
+            // Group by month with full details
+            const monthlyData = {};
+            allItems.forEach(item => {
+                const date = item.dateObj;
+                const monthKey = `${date.getFullYear()}-${date.getMonth()}`;
+                if (!monthlyData[monthKey]) {
+                    monthlyData[monthKey] = {
+                        month: date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' }),
+                        monthKey: monthKey,
+                        items: [],
+                        count: 0,
+                        categories: {}
+                    };
+                }
+                monthlyData[monthKey].items.push(item);
+                monthlyData[monthKey].count++;
+                const cat = item.category || 'Other';
+                monthlyData[monthKey].categories[cat] = (monthlyData[monthKey].categories[cat] || 0) + 1;
+            });
+
+            // Get current month key
+            const currentMonthKey = `${now.getFullYear()}-${now.getMonth()}`;
+
+            // Find months with events, sorted by date (newest first)
+            const monthsWithEvents = Object.entries(monthlyData)
+                .filter(([key, data]) => data.count > 0)
+                .sort((a, b) => b[0].localeCompare(a[0]));
+
+            // Get: current month (if has events) + 2 most recent months with events
+            const monthsToShow = [];
+
+            // Always include current month if it has events
+            const currentMonthData = monthlyData[currentMonthKey];
+            if (currentMonthData && currentMonthData.count > 0) {
+                monthsToShow.push([currentMonthKey, currentMonthData]);
+            }
+
+            // Add up to 2 most recent months with events (excluding current if already added)
+            let addedCount = 0;
+            for (const [key, data] of monthsWithEvents) {
+                if (key !== currentMonthKey && addedCount < 2) {
+                    monthsToShow.push([key, data]);
+                    addedCount++;
+                }
+            }
+
+            // Sort by date (newest first)
+            monthsToShow.sort((a, b) => b[0].localeCompare(a[0]));
+
+            summaryContainer.innerHTML = '';
+
+            if (monthsToShow.length === 0) {
+                summaryContainer.innerHTML = '<p class="text-sm text-slate-500">No events in recent months</p>';
+                return;
+            }
+
+            monthsToShow.forEach(([key, data]) => {
+                const monthEl = document.createElement('div');
+                monthEl.className = 'pb-4 border-b border-slate-200 last:border-0 last:pb-0 mb-4 last:mb-0';
+
+                // Sort items within month by date (newest first)
+                const sortedItems = [...data.items].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 5);
+
+                // Category breakdown
+                const categoryList = Object.entries(data.categories)
+                    .map(([cat, count]) => {
+                        const catLabel = cat.charAt(0).toUpperCase() + cat.slice(1);
+                        return `<span class="inline-block px-2 py-0.5 rounded text-xs font-medium bg-slate-100 text-slate-700 mr-1 mb-1">${catLabel}: ${count}</span>`;
+                    })
+                    .join('');
+
+                // Event list
+                const eventList = sortedItems.map(item => {
+                    const date = item.dateObj;
+                    const day = date.getDate();
+                    const dayName = date.toLocaleDateString('en-US', { weekday: 'short' });
+
+                    // Category color
+                    let categoryColor = 'bg-slate-500';
+                    if (item.type === 'press') {
+                        categoryColor = 'bg-blue-900';
+                    } else if (item.category === 'presentation') {
+                        categoryColor = 'bg-green-600';
+                    } else if (item.category === 'conference') {
+                        categoryColor = 'bg-purple-600';
+                    } else if (item.category === 'workshop') {
+                        categoryColor = 'bg-orange-600';
+                    } else if (item.category === 'seminar') {
+                        categoryColor = 'bg-teal-600';
+                    } else if (item.category === 'meeting') {
+                        categoryColor = 'bg-indigo-600';
+                    }
+
+                    const clickHandler = item.type === 'press'
+                        ? `window.location.href='press-detail.html?id=${item.id}'`
+                        : `document.getElementById('calendar')?.scrollIntoView({ behavior: 'smooth' })`;
+
+                    return `
+                            <div onclick="${clickHandler}" class="flex items-start gap-2 py-1.5 hover:bg-slate-50 rounded px-1 -mx-1 transition-colors cursor-pointer group">
+                                <div class="flex items-center gap-2 min-w-[60px]">
+                                    <span class="text-xs font-bold text-slate-600">${day}</span>
+                                    <span class="text-xs text-slate-400">${dayName}</span>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-center gap-1.5 mb-0.5">
+                                        <span class="w-1.5 h-1.5 rounded-full ${categoryColor}"></span>
+                                        <span class="text-xs font-medium text-slate-500">${item.category}</span>
+                                    </div>
+                                    <div class="text-xs font-medium text-slate-900 group-hover:text-blue-600 transition-colors line-clamp-1">${item.title}</div>
+                                    ${item.place ? `<div class="text-xs text-slate-400 mt-0.5 line-clamp-1">${item.place}</div>` : ''}
+                                </div>
+                            </div>
+                        `;
+                }).join('');
+
+                const isCurrentMonth = key === currentMonthKey;
+
+                monthEl.innerHTML = `
+                        <div class="flex items-center justify-between mb-3">
+                            <h4 class="text-sm font-bold text-slate-900">${data.month}${isCurrentMonth ? ' <span class="text-xs font-normal text-blue-600">(Current)</span>' : ''}</h4>
+                            <span class="text-sm font-bold text-blue-600">${data.count} ${data.count === 1 ? 'event' : 'events'}</span>
+                        </div>
+                        <div class="mb-3 flex flex-wrap gap-1">
+                            ${categoryList || '<span class="text-xs text-slate-400">No categories</span>'}
+                        </div>
+                        <div class="space-y-1 max-h-64 overflow-y-auto">
+                            ${eventList || '<p class="text-xs text-slate-400">No events</p>'}
+                            ${data.count > 5 ? `<p class="text-xs text-slate-400 pt-1">+ ${data.count - 5} more events</p>` : ''}
+                        </div>
+                    `;
+
+                summaryContainer.appendChild(monthEl);
+            });
+        }
+
+        async function init() {
+            try {
+                pressData = await loadPressData();
+                renderFeatured();
+                renderArchive();
+                await initCalendar();
+                renderRecentEvents();
+                renderMonthlySummary();
+                // Setup scroll animations after a short delay
+                setTimeout(setupScrollAnimations, 100);
+            } catch (error) {
+                console.error('Error initializing page:', error);
+            }
+        }
 
         document.addEventListener("DOMContentLoaded", () => {
             init();

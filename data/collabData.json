@@ -157,6 +157,7 @@
     },
     {
       "id": "fabio-duarte",
+      "role": "Professor",
       "name": "Fabio Duarte",
       "email": "fabio@mit.edu",
       "position": [
@@ -172,13 +173,14 @@
     },
     {
       "id": "kincho-law",
+      "role": "Professor",
       "name": "Kincho Law",
       "email": "kvonner@stanford.edu",
       "position": [
         "Professor, Civil and Environmental Engineering, Stanford",
         "Member of International Scientific Committee, Georg Nemetschek Institute (GNI), Technical University of Munich"
       ],
-      "projects": ["CAUS"],
+      "projects": [ "CAUS" ],
       "research": "Application of computational and information science in engineering",
       "link": "https://profiles.stanford.edu/kincho-law",
       "photo": "assets/images/collab/profile_kincho_h_law.jpg"
@@ -188,22 +190,20 @@
     {
       "id": "youngjun-park",
       "name": "Youngjun Park",
-      "projects": ["CAUS"]
+      "projects": [ "CAUS" ],
+      "photo": "assets/images/people/36.jpg"
     },
     {
       "id": "jiwon-park",
       "name": "Jiwon Park",
-      "projects": ["CAUS", "BP"]
-    },
-    {
-      "id": "hyemin-park",
-      "name": "Hyemin Park",
-      "projects": ["CAUS"]
+      "projects": [ "CAUS", "BP" ],
+      "photo": "assets/images/people/35.jpg"
     },
     {
       "id": "seyun-kim",
       "name": "Seyun Kim",
-      "projects": ["CAUS"]
+      "projects": [ "CAUS" ],
+      "photo": "assets/images/people/19.png"
     }
   ]
 }

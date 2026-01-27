@@ -14,19 +14,15 @@
             vertical-align: middle;
         }
 
-        .card-ended {
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
-
-        .card-ended:hover {
-            transform: none !important;
-            box-shadow: none !important;
-        }
-        /* Card hover effects matching People_sidebar */
         .card-hover {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
 
         .card-hover:hover:not(.card-ended) {
             transform: translateY(-8px);
@@ -63,8 +59,8 @@
                 <a href="index.html" class="hover:text-blue-600">Home</a>
                 <a href="people.html" class="hover:text-blue-600">People</a>
                 <a href="projects.html" class="hover:text-blue-600">Projects</a>
+                <a href="press.html" class="hover:text-blue-600">Events</a>
                 <a href="apply.html" class="text-blue-600">Apply</a>
-                <a href="press.html" class="hover:text-blue-600">Press</a>
             </div>
 
             <!-- Mobile Menu Button -->
@@ -82,8 +78,8 @@
                 <a href="index.html">Home</a>
                 <a href="people.html">People</a>
                 <a href="projects.html">Projects</a>
+                <a href="press.html">Events</a>
                 <a href="apply.html" class="text-blue-600">Apply</a>
-                <a href="press.html">Press</a>
             </div>
         </div>
     </nav>
@@ -101,23 +97,14 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
                 <!-- Graduate Students -->
-                <div class="rounded-[2rem] shadow-sm bg-white card-ended card-hover relative border border-slate-200">
-                    <div class="absolute top-4 right-4">
-                        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-200 text-slate-600 border border-slate-300">
-                            Application Closed
-                        </span>
-                    </div>
+                <div class="rounded-[2rem] shadow-sm bg-white card-hover relative border border-slate-200">
 
                     <div class="p-8">
-                        <h3 class="text-xl font-semibold mb-2 text-gray-400">
-                            M.S. / Ph.D. Students
-                        </h3>
+                        <h3 class="text-xl font-semibold mb-2">M.S. / Ph.D. Students</h3>
 
-                        <p class="text-gray-500 mb-4 text-sm">
-                            Applicants with B.S. or M.S. degrees in related fields.
-                        </p>
+                        <p class="text-gray-600 mb-4 text-sm">Applicants with B.S. or M.S. degrees in related fields.</p>
 
-                        <ul class="text-sm text-gray-400 mb-4 space-y-1">
+                        <ul class="text-sm text-gray-500 mb-4 space-y-1">
                             <li>
                                 <strong class="text-gray-500">Application:</strong> Spring / Fall Admission
                             </li>
@@ -127,36 +114,31 @@
                             </li>
                         </ul>
 
-                        <div class="inline-flex my-6 px-3 py-2 bg-slate-200 text-slate-500 rounded-md text-sm font-semibold cursor-not-allowed">
+                        <a href="apply-students.html"
+                           class="inline-flex my-6 px-3 py-2 bg-slate-700 text-white rounded-md text-sm font-semibold hover:bg-gray-600 btn-hover">
                             <div class="flex flex-row justify-center items-center">
-                                <div class="mx-1">Application Closed</div>
+                                <div class="mx-1">See in Detail</div>
                                 <div>
                                     <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                              d="M6 18L18 6M6 6l12 12"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                                     </svg>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Internship - ENDED STATE -->
-                <div class="rounded-[2rem] shadow-sm bg-white card-ended card-hover relative border border-slate-200">
-                    <div class="absolute top-4 right-4">
-                        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-200 text-slate-600 border border-slate-300">
-                            Application Closed
-                        </span>
-                    </div>
+                <div class="rounded-[2rem] shadow-sm bg-white card-hover relative border border-slate-200">
                     <div class="p-8">
-                        <h3 class="text-xl font-semibold mb-2 text-gray-400">
+                        <h3 class="text-xl font-semibold mb-2">
                             Winter / Summer Internships
                         </h3>
-                        <p class="text-gray-500 mb-4 text-sm">
+                        <p class="text-gray-600 mb-4 text-sm">
                             For undergraduate students interested in AI, simulation, or
                             urban systems.
                         </p>
-                        <ul class="text-sm text-gray-400 mb-4 space-y-1">
+                        <ul class="text-sm text-gray-500 mb-4 space-y-1">
                             <li>
                                 <strong class="text-gray-500">Period:</strong> Every Winter & Summer Vacation
                             </li>
@@ -164,37 +146,33 @@
                                 <strong class="text-gray-500">Fields:</strong> All relevant disciplines
                             </li>
                         </ul>
-                        <div class="inline-flex my-6 px-3 py-2 bg-slate-200 text-slate-500 rounded-md text-sm font-semibold cursor-not-allowed">
+                        <a href="apply-internships.html"
+                           class="inline-flex my-6 px-3 py-2 bg-slate-700 text-white rounded-md text-sm font-semibold hover:bg-gray-600 btn-hover">
                             <div class="flex flex-row justify-center items-center">
-                                <div class="mx-1">Application Closed</div>
+                                <div class="mx-1">See in Detail</div>
                                 <div>
                                     <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                                     </svg>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Research / Postdoc -->
-                <div class="rounded-[2rem] shadow-sm bg-white card-ended card-hover relative border border-slate-200 h-full">
-                    <div class="absolute top-4 right-4">
-                        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-200 text-slate-600 border border-slate-300">
-                            Application Closed
-                        </span>
-                    </div>
+                <div class="rounded-[2rem] shadow-sm bg-white card-hover relative border border-slate-200">
 
                     <div class="p-8">
-                        <h3 class="text-xl font-semibold mb-2 text-gray-400">
+                        <h3 class="text-xl font-semibold mb-2">
                             Research Professors / Postdoctoral Fellows
                         </h3>
 
-                        <p class="text-gray-500 mb-4 text-sm">
+                        <p class="text-gray-600 mb-4 text-sm">
                             For Ph.D. holders with strong publication or project experience.
                         </p>
 
-                        <ul class="text-sm text-gray-400 mb-4 space-y-1">
+                        <ul class="text-sm text-gray-500 mb-4 space-y-1">
                             <li>
                                 <strong class="text-gray-500">Application:</strong> Rolling basis
                             </li>
@@ -203,17 +181,17 @@
                             </li>
                         </ul>
 
-                        <div class="inline-flex my-6 px-3 py-2 bg-slate-200 text-slate-500 rounded-md text-sm font-semibold cursor-not-allowed">
+                        <a href="apply-postdoc.html"
+                           class="inline-flex my-6 px-3 py-2 bg-slate-700 text-white rounded-md text-sm font-semibold hover:bg-gray-600 btn-hover">
                             <div class="flex flex-row justify-center items-center">
-                                <div class="mx-1">Application Closed</div>
+                                <div class="mx-1">See in Detail</div>
                                 <div>
                                     <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                              d="M6 18L18 6M6 6l12 12"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                                     </svg>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 <!--<div class="rounded-[2rem] shadow-sm bg-white card-hover border border-slate-100">
@@ -252,7 +230,7 @@
                     Application Process
                 </h4>
                 <ol class="list-decimal list-inside text-gray-600 space-y-2 mb-6">
-                    <li>Prepare CV, transcript, and a 1-page statement of purpose.</li>
+                    <li>Prepare CV(Curriculum Vitae)</li>
                     <li>
                         Email your documents to
                         <span onclick="copyEmail('urban@kaist.ac.kr')" class="font-medium text-blue-600 hover:underline cursor-pointer">urban@kaist.ac.kr</span>
@@ -264,26 +242,18 @@
                     <li>Shortlisted candidates will be contacted for an interview.</li>
                 </ol>
 
-                <div class="flex items-center justify-between text-gray-500 text-sm">
-                    <span class="flex items-center gap-2">
-                        <div></div> Early inquiries are encouraged.
-                    </span>
-                    <span class="flex items-center gap-2">
-                        <div></div> Contact at least one month before internship
-                        start.
-                    </span>
-                </div>
+                
             </div>
 
             <!-- FAQ -->
-            <a href="/apply">
+            <!--<a href="/apply">
                 <div class="mt-5 bg-white rounded-2xl shadow-sm p-8 max-w-4xl mx-auto flex justify-between items-center hover:bg-gray-50 cursor-pointer transition-colors border border-gray-100">
                     <h4 class="text-2xl font-semibold">FAQ</h4>
                     <svg class="arrow-icon" style="width: 24px; height: 24px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                     </svg>
                 </div>
-            </a>
+            </a>-->
         </div>
     </section>
 

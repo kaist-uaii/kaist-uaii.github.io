@@ -13,30 +13,69 @@
   ],
   "eventsData": [
     {
+      "id": 20251124,
+      "title": "2025 Urban X HcFM Workshop @ Berkeley",
+      "category": "Workshop",
+      "start": "2025-11-24",
+      "end": "2025-11-26",
+      "place": "November 24th-25th, 2025, Berkeley, San Francisco",
+      "participants": "Professor Yoonjin Yoon",
+      "keywords": "#Urban X #HcFM #Workshop #Berkeley",
+      "desc": "2025 Urban X HcFM Workshop at Berkeley",
+      "photos": [ "/img/img/eventsImg/IMG_6734.jpg", "/img/img/eventsImg/IMG_6793.jpg" ],
+      "links": [
+        {
+          "label": "Workshop Time Table",
+          "url": ""
+        }
+      ]
+    },
+    {
       "id": 20251103,
       "title": "Presentation at ACM SIGSPATIAL",
+      "category": "presentation",
+      "start": "2025-11-03",
+      "end": "2025-11-06",
       "place": "November 3rd-6th, 2025, Minneapolis, Minnesota",
       "participants": "Minwoo Jeong (M.S. candidate)",
       "keywords": "#SIGSPATIAL #LLM #Agent #SUMO",
-      "desc":"M.S. candidate Minwoo presented the work “Speak to Simulate: An LLM-Guided Agentic Framework for Traffic Simulation in SUMO,” conducted with M.S. candidate Jeeyun, at the ACM SIGSPATIAL International Workshop on GeoSpatial Simulation (GeoSIM'25). The work has also been selected for the Association for Computing Machinery (ACM) Showcase on Kudos.\n\n[[LINK]](https://www.growkudos.com/publications/10.1145%25252F3764921.3770151/reader)\n\n[[LINK]](https://www.growkudos.com/publications/10.1145%25252F3764921.3770151/reader)",
-      "photos": ["/img/img/eventsImg/IMG_6734.jpg", "/img/img/eventsImg/IMG_6793.jpg"]
+      "desc": "M.S. candidate Minwoo presented the work \"Speak to Simulate: An LLM-Guided Agentic Framework for Traffic Simulation in SUMO,\" conducted with M.S. candidate Jeeyun, at the ACM SIGSPATIAL International Workshop on GeoSpatial Simulation (GeoSIM'25). The work has also been selected for the Association for Computing Machinery (ACM) Showcase on Kudos.\n\n[[LINK]](https://www.growkudos.com/publications/10.1145%25252F3764921.3770151/reader)\n\n[[LINK]](https://www.growkudos.com/publications/10.1145%25252F3764921.3770151/reader)",
+      "photos": [ "/img/img/eventsImg/IMG_6734.jpg", "/img/img/eventsImg/IMG_6793.jpg" ],
+      "links": [
+        {
+          "label": "ACM Kudos",
+          "url": "https://www.growkudos.com/publications/10.1145%25252F3764921.3770151/reader"
+        }
+      ]
     },
-      {
-      "id":  20251019,
+    {
+      "id": 20251019,
       "title": "Presentation at ICCV 2025",
+      "category": "presentation",
+      "start": "2025-10-10",
+      "end": "2025-10-23",
       "place": "October 10th-23rd, 2025, Honolulu, Hawaii",
       "participants": "Juneyoung Ro (M.S. candidate)",
       "keywords": "#ICCV #Vision",
-      "desc":"M.S. student Juneyoung attended ICCV 2025 and presented the work “How Weel do Vision-Language Models Understand Cities? A Comparative Study on Spatial Reasoning from Street-View Images” (conducted with Postdoc researcher Namwoo) at the ICCV Workshop on Multimodal Reasoning and Slow Thinking in Large Model Era: Towards System 2 and Beyond (MARS2). The work investigated how spatially complex urban scenes can be understood through general-purpose VLMs and whether domain-specific fine-tuning can close the gap.\n\n[[Link]](https://openaccess.thecvf.com/content/ICCV2025W/MARS2/papers/Ro_How_Well_Do_Vision-Language_Models_Understand_Cities__A_Comparative_ICCVW_2025_paper.pdf)",
-      "photos": ["/img/img/eventsImg/IMG_0749.jpeg","/img/img/eventsImg/IMG_3152.JPG", "/img/img/eventsImg/IMG_3168.JPG"]
+      "desc": "M.S. student Juneyoung attended ICCV 2025 and presented the work \"How Weel do Vision-Language Models Understand Cities? A Comparative Study on Spatial Reasoning from Street-View Images\" (conducted with Postdoc researcher Namwoo) at the ICCV Workshop on Multimodal Reasoning and Slow Thinking in Large Model Era: Towards System 2 and Beyond (MARS2). The work investigated how spatially complex urban scenes can be understood through general-purpose VLMs and whether domain-specific fine-tuning can close the gap.\n\n[[Link]](https://openaccess.thecvf.com/content/ICCV2025W/MARS2/papers/Ro_How_Well_Do_Vision-Language_Models_Understand_Cities__A_Comparative_ICCVW_2025_paper.pdf)",
+      "photos": [ "/img/img/eventsImg/IMG_0749.jpeg", "/img/img/eventsImg/IMG_3152.JPG", "/img/img/eventsImg/IMG_3168.JPG" ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://openaccess.thecvf.com/content/ICCV2025W/MARS2/papers/Ro_How_Well_Do_Vision-Language_Models_Understand_Cities__A_Comparative_ICCVW_2025_paper.pdf"
+        }
+      ]
     },
     {
       "id": 20250930,
       "title": "COEX Exhibition: Smart Life Week 2025",
+      "category": "exhibition",
+      "start": "2025-09-30",
+      "end": "2025-10-02",
       "place": "September 30th - October 2nd, 2025, Convention and Exhibition Center (COEX)",
       "participants": "Professor Yoonjin Yoon, Namwoo Kim (Postdoc Researcher), YoungJoun Park, Juneyoung Ro (M.S. candidate), Keonhee Jang (Integrated M.S.-Ph.D candidate), Seokwoo Yun",
       "keywords": "#K-DS",
-      "desc": "Our laboratory collaborated with the *MIT Senseable City Lab* at **Smart Life Week 2025**, presenting two exhibitions — “Urban Heat, Urban Sales” and “Feeling Nature” — centered on urban climate, citizens’ daily lives, and climate resilience.\n\nBased on credit card transaction data from 426 administrative districts in Seoul, covering 96 business sectors over 365 days, we quantitatively analyzed how climate factors such as temperature and humidity affect small business owners’ sales and sustainability. Using artificial intelligence, we modeled sales patterns by region and industry under climate stress conditions such as heatwaves and heavy rainfall, and visualized the results as an “Urban Resilience” index.",
+      "desc": "Our laboratory collaborated with the *MIT Senseable City Lab* at **Smart Life Week 2025**, presenting two exhibitions — \"Urban Heat, Urban Sales\" and \"Feeling Nature\" — centered on urban climate, citizens' daily lives, and climate resilience.\n\nBased on credit card transaction data from 426 administrative districts in Seoul, covering 96 business sectors over 365 days, we quantitatively analyzed how climate factors such as temperature and humidity affect small business owners' sales and sustainability. Using artificial intelligence, we modeled sales patterns by region and industry under climate stress conditions such as heatwaves and heavy rainfall, and visualized the results as an \"Urban Resilience\" index.",
       "photos": [
         "/img/img/eventsImg/IMG_0227.jpg",
         "/img/img/eventsImg/IMG_0299.jpg",
@@ -46,6 +85,9 @@
     {
       "id": 20250905,
       "title": "K-DS Conference",
+      "category": "conference",
+      "start": "2025-09-05",
+      "end": "2025-09-05",
       "place": "September 5th, 2025, Daegu",
       "participants": "Minwoo Jeong (M.S. candidate)",
       "keywords": "#K-DS",
@@ -53,11 +95,15 @@
       "photos": [
         "/img/img/eventsImg/IMG_5532.jpg",
         "/img/img/eventsImg/IMG_5540.jpg"
-      ]
+      ],
+      "award": "Best Paper Award"
     },
     {
       "id": 20250617,
       "title": "CAUS Workshop",
+      "category": "workshop",
+      "start": "2025-07-17",
+      "end": "2025-07-17",
       "place": "July 17th, 2025, KAIST",
       "participants": "Professors, leaders, students participating in CAUS",
       "keywords": "#CAUS",
@@ -69,6 +115,9 @@
     {
       "id": 20250616,
       "title": "CAUS Monthly Meeting",
+      "category": "meeting",
+      "start": "2025-06-16",
+      "end": "2025-06-16",
       "place": "June 16, 2025, KAIST",
       "participants": "Professor Yoonjin Yoon, Professor Uichin Lee, students",
       "keywords": "#CAUS #Monthly Seminar",
@@ -80,6 +129,9 @@
     {
       "id": 20250519,
       "title": "INFORMS TSL Workshop",
+      "category": "workshop",
+      "start": "2025-05-19",
+      "end": "2025-05-21",
       "place": "May 19th-21st, 2025, GLAD Hotel (Yeouido)",
       "participants": "Namwoo Kim (Postdoc Researcher), Sungmin Sohn (Ph.D. candidate), Minwoo Jeong (M.S. candidate)",
       "keywords": "#INFORMS #TSL",
@@ -91,6 +143,9 @@
     {
       "id": 20250513,
       "title": "CAUS Monthly Meeting",
+      "category": "meeting",
+      "start": "2025-05-13",
+      "end": "2025-05-13",
       "place": "May 13, 2025, KAIST",
       "participants": "Professor Yoonjin Yoon, Professor Ilchul Moon, Professor Taesik Lee, Professor Minjoon Seo, Professor Changhyun Kwon, Professor Dongman Lee, students",
       "keywords": "#CAUS #Monthly Seminar",
@@ -102,17 +157,24 @@
     {
       "id": 20250318,
       "title": "Professor Amy Kim's Visit for CEE seminar",
+      "category": "seminar",
+      "start": "2025-03-18",
+      "end": "2025-03-18",
       "place": "March 18, 2025, KAIST",
       "participants": "Professor Yoonjin Yoon, Professor Amy Kim, CEE students",
       "keywords": "#CEE Seminar",
       "desc": "*Amy M. Kim* is a Professor of Civil Engineering at the University of British Columbia in Vancouver, \non the traditional territories of the Musqueam people. \nWith the members of her lab, **UBC Multimodal Mobility Systems**, she investigates how long-distance transportation systems perform in connecting people across large geographies, particularly amid disruptions \ncaused by natural hazards and other climate change-induced events.\n\nHer work aims to support infrastructure and operational decision-making for climate change adaptation and emergency planning, and to train values-driven, community-minded practitioners and researchers.  \n\n*- BASc in Civil Engineering, University of Waterloo*\n\n*- MS and PhD, University of California, Berkeley*\n\n*- Professional experience in transportation consulting in California and BC*\n",
       "photos": [
         "/img/img/eventsImg/unnamed(6).png"
-      ]
+      ],
+      "speaker": "Professor Amy M. Kim"
     },
     {
       "id": 20250308,
       "title": "Seoul AI Festa",
+      "category": "exhibition",
+      "start": "2025-03-08",
+      "end": "2025-03-09",
       "place": "March 8~9, 2025, Dongdaemun Design Plaza (DDP)",
       "participants": "Professor Yoonjin Yoon, Professor Carlo Ratti (Director of MIT Senseable City Lab), Professor Song Chong (Dean of KAIST Graduate School of AI), Mangi Kim (President of Seoul AI Foundation), Seyun Kim (Research Professor), Minwoo Jeong (M.S. candidate), Juneyoung Ro (M.S. candidate)",
       "keywords": "#AI Festa",
@@ -127,6 +189,9 @@
     {
       "id": 20250113,
       "title": "CAUS US Workshop",
+      "category": "workshop",
+      "start": "2025-01-13",
+      "end": "2025-01-14",
       "place": "January 13~14, 2025, Stanford University",
       "participants": "Professors, leaders, students participating in CAUS",
       "keywords": "#CAUS",
@@ -141,6 +206,9 @@
     {
       "id": 20250105,
       "title": "Presentation at TRB Annual Meeting",
+      "category": "presentation",
+      "start": "2025-01-05",
+      "end": "2025-01-09",
       "place": "January 5~9, 2025, Washington D.C.",
       "participants": "Seyun Kim (Research Professor), Sungmin Sohn (Ph.D. candidate), Donghyun Yoon (Ph.D. candidate), Minwoo Jeong (M.S. candidate)",
       "keywords": "#TRB",
@@ -155,30 +223,45 @@
     {
       "id": 20241212,
       "title": "CAUS Regular Meeting - Prof. Changhyun Kwon",
+      "category": "meeting",
+      "start": "2024-12-12",
+      "end": "2024-12-12",
       "place": "December 12, 2024, 12:00 pm KST",
       "participants": "Prof. Changhyun Kwon, Prof. Yoonjin Yoon, students",
       "keywords": "#CAUS",
       "photos": [
         "/img/img/eventsImg/unnamed(22).jpg"
-      ]
+      ],
+      "speaker": "Prof. Changhyun Kwon"
     },
     {
       "id": 20241127,
       "title": "CAUS Regular Meeting - Prof. Minjoon Seo",
+      "category": "meeting",
+      "start": "2024-11-27",
+      "end": "2024-11-27",
       "place": "November 27, 2024, 11:00 am KST",
       "participants": "Prof. Minjoon Seo, Prof. Yoonjin Yoon, students",
-      "keywords": "#CAUS"
+      "keywords": "#CAUS",
+      "speaker": "Prof. Minjoon Seo"
     },
     {
       "id": 20241126,
       "title": "CAUS Regular Meeting - Prof. Taesik Lee",
+      "category": "meeting",
+      "start": "2024-11-26",
+      "end": "2024-11-26",
       "place": "November 26, 2024, 17:00 pm KST",
       "participants": "Prof. Taesik Lee, Prof. Yoonjin Yoon, students",
-      "keywords": "#CAUS"
+      "keywords": "#CAUS",
+      "speaker": "Prof. Taesik Lee"
     },
     {
       "id": 20241115,
       "title": "CAUS 전체미팅",
+      "category": "meeting",
+      "start": "2024-11-15",
+      "end": "2024-11-15",
       "place": "November 15, 2024, 10:30 am KST",
       "participants": "Prof. Yoonjin Yoon, Prof. Dongman Lee, Prof. Jinkyoo Park, Prof. Changhyun Kwon, Prof. Taesik Lee, Dr. Seonghoon Kim (CTO at Motov), students",
       "keywords": "#CAUS",
@@ -191,6 +274,9 @@
     {
       "id": 20241111,
       "title": "K-DS Hackathon: 2nd Prize!",
+      "category": "hackathon",
+      "start": "2024-11-11",
+      "end": "2024-11-13",
       "place": "November 11-13, 2024, Seoul National University Samsung Convention Center",
       "participants": "Donghyun Yoon (Ph.D. candidate), Sungmin Sohn (Ph.D. candidate), Juneyoung Ro (M.S. candidate), Seungro Lee (M.S. candidate)",
       "keywords": "#K-DS #Hackathon",
@@ -198,11 +284,15 @@
         "/img/img/eventsImg/unnamed(26).jpg",
         "/img/img/eventsImg/unnamed(27).jpg",
         "/img/img/eventsImg/unnamed(28).jpg"
-      ]
+      ],
+      "award": "2nd Prize"
     },
     {
       "id": 20241108,
       "title": "한국경영과학회 추계학술대회",
+      "category": "conference",
+      "start": "2024-11-08",
+      "end": "2024-11-08",
       "place": "November 8, 2024, 16:00 pm KST, Korea Aerospace University",
       "participants": "Prof. Yoonjin Yoon, Seyun Kim (Research Professor), Namwoo Kim (PostDoc Researcher), Sungmin Sohn (Ph.D. candidate), Donghyun Yoon (Ph.D. candidate)",
       "keywords": "#한국경영과학회",
@@ -217,26 +307,37 @@
     {
       "id": 20241104,
       "title": "CAUS Regular Meeting - Prof. Jinkyoo Park",
+      "category": "meeting",
+      "start": "2024-11-04",
+      "end": "2024-11-04",
       "place": "November 4, 2024, 14:00 pm KST",
       "participants": "Prof. Changhyun Kwon, Prof. Seyun Kim, students",
       "keywords": "#CAUS",
       "photos": [
         "/img/img/eventsImg/unnamed(34).jpg"
-      ]
+      ],
+      "speaker": "Prof. Jinkyoo Park"
     },
     {
       "id": 20241029,
       "title": "CAUS Regular Meeting - Prof. Yoonjin Yoon",
+      "category": "meeting",
+      "start": "2024-10-29",
+      "end": "2024-10-29",
       "place": "October 29, 2024, 18:00 pm KST",
       "participants": "Prof. Yoonjin Yoon, Prof. Changhyun Kwon, students",
       "keywords": "#CAUS",
       "photos": [
         "/img/img/eventsImg/unnamed(35).jpg"
-      ]
+      ],
+      "speaker": "Prof. Yoonjin Yoon"
     },
     {
       "id": 20241016,
       "title": "ICTC Workshop on ETRI Human Understanding AI Paper Challenge (IWETRIAI)",
+      "category": "workshop",
+      "start": "2024-10-16",
+      "end": "2024-10-16",
       "place": "October 16, 2024, 13:00 pm KST, Ramada Plaza Hotel, Jeju Island",
       "participants": "Juneyoung Ro (M.S. Candidate)",
       "keywords": "#ICTC",
@@ -250,13 +351,20 @@
     {
       "id": 20241002,
       "title": "CAUS Regular Meeting - Prof. Dongman Lee",
+      "category": "meeting",
+      "start": "2024-10-02",
+      "end": "2024-10-02",
       "place": "October 2, 2024, 14:00 pm KST",
       "participants": "Prof. Dongman Lee, students",
-      "keywords": "#CAUS"
+      "keywords": "#CAUS",
+      "speaker": "Prof. Dongman Lee"
     },
     {
       "id": 20240925,
       "title": "CAUS Kick-Off Meeting (KAIST and GS E&C)",
+      "category": "meeting",
+      "start": "2024-09-25",
+      "end": "2024-09-25",
       "place": "September 25, 2024, 15:00 pm KST",
       "participants": "Prof. Yoonjin Yoon, Prof. Changhyun Kwon, Prof. Seyun Kim, Prof. Dongman Lee, Prof. Minjoon Seo",
       "keywords": "#CAUS",
@@ -267,27 +375,38 @@
     {
       "id": 20240911,
       "title": "CAUS Regular Meeting - Prof. Taesik Lee",
+      "category": "meeting",
+      "start": "2024-09-11",
+      "end": "2024-09-11",
       "place": "September 11, 2024, 14:00 pm KST",
       "participants": "Prof. Yoonjin Yoon, Prof. Taesik Lee, students",
       "keywords": "#CAUS",
       "photos": [
         "/img/img/eventsImg/unnamed(41).jpg"
-      ]
+      ],
+      "speaker": "Prof. Taesik Lee"
     },
     {
       "id": 20240906,
       "title": "고속도로 비전 캠퍼스 논문 공모전 장려상 시상식",
+      "category": "award",
+      "start": "2024-09-06",
+      "end": "2024-09-06",
       "place": "September 6, 2024, 10:00 am KST, 한국도로공사 (Korea Expressway Corporation)",
       "participants": "Donghyun Yoon (Ph.D. candidate), Minwoo Jeong (M.S. candidate)",
       "keywords": "#한국도로공사",
       "photos": [
         "/img/img/eventsImg/unnamed(42).jpg",
         "/img/img/eventsImg/unnamed(43).jpg"
-      ]
+      ],
+      "award": "장려상 (Encouragement Award)"
     },
     {
       "id": 20240904,
       "title": "CAUS Internal Kick-Off Meeting",
+      "category": "meeting",
+      "start": "2024-09-04",
+      "end": "2024-09-04",
       "place": "September 4, 2024, 13:00 pm KST",
       "participants": "Prof. Yoonjin Yoon, Prof. Changhyun Kwon, Prof. Taesik Lee, Prof. Dongman Lee, Prof. Jinkyoo Park, Prof. Minjoon Seo",
       "keywords": "#CAUS",
@@ -299,6 +418,9 @@
     {
       "id": 20240822,
       "title": "CAUS MoU Signing Ceremony",
+      "category": "meeting",
+      "start": "2024-08-22",
+      "end": "2024-08-22",
       "place": "August 22, 2024, 14:30 pm KST",
       "keywords": "#CAUS",
       "photos": [
@@ -310,34 +432,53 @@
     {
       "id": 20240731,
       "title": "CAUS Regular Meeting - Prof. Changhyun Kwon",
+      "category": "meeting",
+      "start": "2024-07-31",
+      "end": "2024-07-31",
       "place": "July 31, 2024, 13:00 pm KST (zoom)",
       "participants": "Prof. Changhyun Kwon, students",
-      "keywords": "#CAUS"
+      "keywords": "#CAUS",
+      "speaker": "Prof. Changhyun Kwon"
     },
     {
       "id": 20240723,
       "title": "CAUS Regular Meeting - Prof. Dongman Lee",
+      "category": "meeting",
+      "start": "2024-07-23",
+      "end": "2024-07-23",
       "place": "July 23, 2024, 10:00 am KST",
       "participants": "Prof. Dongman Lee, students",
-      "keywords": "#CAUS"
+      "keywords": "#CAUS",
+      "speaker": "Prof. Dongman Lee"
     },
     {
       "id": 20240719,
       "title": "CAUS Regular Meeting - Prof. Minjoon Seo",
+      "category": "meeting",
+      "start": "2024-07-19",
+      "end": "2024-07-19",
       "place": "July 19, 2024, 14:00 pm KST (zoom)",
       "participants": "Prof. Minjoon Seo, students",
-      "keywords": "#CAUS"
+      "keywords": "#CAUS",
+      "speaker": "Prof. Minjoon Seo"
     },
     {
       "id": 20240710,
       "title": "CAUS Regular Meeting - Prof. Taesik Lee",
+      "category": "meeting",
+      "start": "2024-07-10",
+      "end": "2024-07-10",
       "place": "July 10, 2024, 13:00 pm KST",
       "participants": "Prof. Taesik Lee, students",
-      "keywords": "#CAUS"
+      "keywords": "#CAUS",
+      "speaker": "Prof. Taesik Lee"
     },
     {
       "id": 20240621,
       "title": "CAUS Meeting",
+      "category": "meeting",
+      "start": "2024-06-21",
+      "end": "2024-06-21",
       "place": "June 21, 2024, 09:00 am KST",
       "participants": "Prof. Yoonjin Yoon, Prof. Changhyun Kwon, GS, students",
       "keywords": "#CAUS",
@@ -348,16 +489,23 @@
     {
       "id": 20240422,
       "title": "Study group meeting with professors",
+      "category": "meeting",
+      "start": "2024-04-22",
+      "end": "2024-04-22",
       "place": "April 22, 2024, 19:00 pm KST",
       "participants": "Prof. Jinkyoo Park, Prof. Minjoon Seo, Speaker: Yuyol Shin (Ph.D, Postdoctoral Researcher, KAIST)",
       "keywords": "#traffic forecasting",
       "photos": [
         "/img/img/eventsImg/unnamed(50).jpg"
-      ]
+      ],
+      "speaker": "Yuyol Shin (Ph.D, Postdoctoral Researcher, KAIST)"
     },
     {
       "id": 20240321,
       "title": "Professor Kincho Law's Visit",
+      "category": "seminar",
+      "start": "2024-03-21",
+      "end": "2024-03-21",
       "place": "March 21, 2024, 16:00 pm KST",
       "participants": "Speaker: Prof. Kincho Law, Professor of Civil and Environmental Engineering, Stanford University",
       "keywords": "#civil infrastructures",
@@ -367,56 +515,78 @@
         "/img/img/eventsImg/unnamed(52).jpg",
         "/img/img/eventsImg/unnamed(53).jpg",
         "/img/img/eventsImg/unnamed(54).jpg"
-      ]
+      ],
+      "speaker": "Prof. Kincho Law"
     },
     {
       "id": 20231208,
       "title": "Urban@KAIST Urban-X Seminar",
+      "category": "seminar",
+      "start": "2023-12-08",
+      "end": "2023-12-08",
       "place": "Dec. 8, 2023, 10:00 am KST",
       "participants": "Speaker: Prof. Dongman Lee, Provost and Executive Vice President, KAIST; Professor, School of Computing, KAIST",
       "keywords": "#Human flows #Urban space",
       "desc": "Understanding Urban State Changes via Human Flow Analysis",
       "photos": [
         "/img/img/eventsImg/unnamed(55).png"
-      ]
+      ],
+      "speaker": "Prof. Dongman Lee",
+      "youtube": null
     },
     {
       "id": 20231201,
       "title": "Urban@KAIST Urban-X Seminar",
+      "category": "seminar",
+      "start": "2023-12-01",
+      "end": "2023-12-01",
       "place": "Dec. 1, 2023, 10:00 am KST",
       "participants": "Speaker: Prof. Daniel Vignon, Assistant Professor, Civil and Urban Engineering, NYU",
       "keywords": "#mobility #policy #economics",
       "desc": "Safety, Liability, and Insurance Markets in the Age of Automated Driving",
-      "youtube": "https://www.youtube-nocookie.com/embed/D18TnNnS3J0?si=UrcX5zxZD-tLeENU"
+      "youtube": "https://www.youtube-nocookie.com/embed/D18TnNnS3J0?si=UrcX5zxZD-tLeENU",
+      "speaker": "Prof. Daniel Vignon"
     },
     {
       "id": 20231124,
       "title": "Urban@KAIST Urban-X Seminar",
+      "category": "seminar",
+      "start": "2023-11-24",
+      "end": "2023-11-24",
       "place": "Nov. 24, 2023, 10:00 am KST",
       "participants": "Speaker: Prof. Lisa Lim, Assistant Professor, Civil and Environmental Engineering, KAIST",
       "keywords": "#design #health",
       "desc": "Improving Health through Design of Cities and Buildings",
-      "youtube": "https://www.youtube-nocookie.com/embed/kHNgVpuIa7A?si=NUBGw3hZEnLuhkyY"
+      "youtube": "https://www.youtube-nocookie.com/embed/kHNgVpuIa7A?si=NUBGw3hZEnLuhkyY",
+      "speaker": "Prof. Lisa Lim"
     },
     {
       "id": 20231117,
       "title": "Urban@KAIST Urban-X Seminar",
+      "category": "seminar",
+      "start": "2023-11-17",
+      "end": "2023-11-17",
       "place": "Nov. 17, 2023, 10:00 am KST",
       "participants": "Speaker: Dr. Boyeong Hong, Associate Research Scholar, NYU Marron Institute of Urban Management; Adjunct Professor, Columbia University",
       "keywords": "#mobility #climatechange #health #policy #inequality",
       "desc": "Responsible and Responsive City - The Next Phase of Urban Planning",
       "photos": [
         "/img/img/eventsImg/unnamed(56).png"
-      ]
+      ],
+      "speaker": "Dr. Boyeong Hong"
     },
     {
       "id": 20231110,
       "title": "Urban@KAIST Urban-X Seminar",
+      "category": "seminar",
+      "start": "2023-11-10",
+      "end": "2023-11-10",
       "place": "Nov. 10, 2023, 10:00 am KST",
       "participants": "Speaker: Prof. Jihee Kim, Associate Professor, School of Business and Technology Management, KAIST",
       "keywords": "#economic development",
       "desc": "A Human-machine Collaborative Approach Measures Economic Development Using Satellite Imagery",
-      "youtube": "https://www.youtube-nocookie.com/embed/CZH92bvJwcc?si=S_MLoFMdZHeAwd1A"
+      "youtube": "https://www.youtube-nocookie.com/embed/CZH92bvJwcc?si=S_MLoFMdZHeAwd1A",
+      "speaker": "Prof. Jihee Kim"
     }
   ]
 }
