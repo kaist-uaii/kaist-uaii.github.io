@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -44,6 +44,10 @@
 
         .card-hover:hover img {
             transform: scale(1.05);
+        }
+
+        .research-update {
+            scroll-margin-top: 100px;
         }
     </style>
 </head>
@@ -95,7 +99,7 @@
             <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                 <div>
                     <h1 class="serif-title text-5xl md:text-6xl font-bold mb-4">Projects</h1>
-                    <p class="text-slate-500 text-lg">Exploring the future of urban intelligence and sustainable mobility.</p>
+
                 </div>
                 <div class="divider-gradient w-48 hidden md:block"></div>
             </div>
@@ -106,17 +110,18 @@
             </div>
         </section>
 
-        <!-- Other Projects Section -->
-        <section class="py-20 border-t border-slate-200">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-                <div>
-                    <h2 class="serif-title text-4xl font-bold mb-4">Events</h2>
-                    <p class="text-slate-500 text-lg">Ongoing Events and collaborations.</p>
+        <!-- Research Update -->
+        <section id="research-update" class="py-16">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-3xl font-extrabold">Research Update</h2>
                 </div>
-                <div class="divider-gradient w-48 hidden md:block"></div>
-            </div>
-            <div id="other-projects-list" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Other project cards will be injected here -->
+
+                <!-- ✅ 리스트가 들어갈 곳 -->
+                <div id="research-update-list" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+
+                <!-- ✅ 상세가 들어갈 곳 (옵션) -->
+                <div id="research-update-detail" class="mt-10 hidden"></div>
             </div>
         </section>
     </main>
@@ -128,24 +133,19 @@
     <script>
         // Load data from projectsData.json
         async function loadProjectsData() {
-            const basePath = location.pathname.replace(/\/[^\/]*$/, "");
-            const url = `${basePath}/data/projectsData.json`;
-            try {
-                const res = await fetch(url, { cache: "no-store" });
-                if (!res.ok) {
-                    throw new Error(`Failed to load data: ${res.status} ${res.statusText}`);
-                }
-                const data = await res.json();
-                return data;
-            } catch (error) {
-                console.error('Error loading projectsData.json:', error);
-                throw error;
-            }
+            const url = "data/projectsData.json";  // ✅ 항상 projects.html 기준 상대경로
+            console.log("[Projects] fetching:", url);
+
+            const res = await fetch(url, { cache: "no-store" });
+            if (!res.ok) throw new Error(`Failed to load: ${res.status} ${res.statusText}`);
+
+            return await res.json();
         }
+
 
         function createProjectCard(p) {
             const card = document.createElement('div');
-            const linkHref = p.type === 'internal' ? `/projects${p.link}` : p.link;
+            const linkHref = p.link;
             const target = p.type === 'external' ? 'target="_blank" rel="noopener noreferrer"' : '';
 
             card.className = "card-hover bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100";
@@ -219,27 +219,240 @@
             try {
                 const projectsData = await loadProjectsData();
                 const featuredGrid = document.getElementById('featured-projects-grid');
-                const otherList = document.getElementById('other-projects-list');
 
-                // Featured projects: have image and link, no pagetitle
-                const featuredProjects = projectsData.filter(p => p.image && p.link && !p.pagetitle);
+                if (!featuredGrid) {
+                    throw new Error("featured-projects-grid not found");
+                }
 
-                // Other projects: have pagetitle or no image
-                const otherProjects = projectsData.filter(p => p.pagetitle || !p.image);
+                featuredGrid.innerHTML = "";
 
-                featuredProjects.forEach(p => {
-                    featuredGrid.appendChild(createProjectCard(p));
-                });
+                const featuredProjects = projectsData.filter(
+                    p => p.image && p.link && !p.pagetitle
+                );
 
-                otherProjects.forEach(p => {
-                    otherList.appendChild(createOtherProjectCard(p));
-                });
+                featuredProjects.forEach(p =>
+                    featuredGrid.appendChild(createProjectCard(p))
+                );
+
             } catch (error) {
-                console.error('Error rendering projects:', error);
-                document.getElementById('featured-projects-grid').innerHTML =
-                    '<div class="col-span-full text-center py-12"><p class="text-slate-500">Failed to load projects. Please check the console for details.</p></div>';
+                console.error("❌ Error rendering projects:", error);
             }
         }
+
+
+        /* =========================
+   Research Update (SAFE)
+   ========================= */
+
+        (async function RU_init() {
+            try {
+                const listEl = document.getElementById("research-update-list");
+                if (!listEl) return;
+
+                const url = "data/researchData.json"; // ✅ projects.html 기준 상대경로 (가장 안정적)
+                const res = await fetch(url, { cache: "no-store" });
+                if (!res.ok) throw new Error(`Research data load failed: ${res.status}`);
+
+                const buf = await res.arrayBuffer();
+                const text = new TextDecoder("utf-8").decode(buf).replace(/^\uFEFF/, "");
+                const raw = JSON.parse(text);
+
+                const list = Array.isArray(raw) ? raw : [raw];
+
+                RU_renderList(list);
+
+                // ✅ 로드/렌더 완료 뒤 스크롤 & 상세 오픈 처리
+                window.addEventListener("load", () => {
+                    requestAnimationFrame(() => {
+                        requestAnimationFrame(() => {
+                            RU_applyRouting(list);
+                        });
+                    });
+                });
+
+            } catch (e) {
+                console.warn("[ResearchUpdate] init failed:", e);
+            }
+        })();
+
+        function RU_applyRouting(list) {
+            const params = new URL(location.href).searchParams;
+
+            // 1) view=research면 섹션으로 강제 스크롤
+            if (params.get("view") === "research") {
+                const sec = document.getElementById("research-update");
+                if (sec) sec.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+
+            // 2) research=<id>면 해당 아이템 상세 자동 오픈
+            const id = params.get("research");
+            if (id) {
+                const found = list.find(x => String(x.id) === String(id));
+                if (found) RU_openDetail(found);
+            }
+        }
+
+        /* ---------- render list ---------- */
+        function RU_renderList(list) {
+            const el = document.getElementById("research-update-list");
+            el.innerHTML = "";
+
+            list.forEach(item => {
+                const title = item.menuTitle || item.title || "Untitled";
+                const desc = item.desc || "";
+                const thumb = item.thumbnail || "";
+
+                const card = document.createElement("article");
+                card.className =
+                    "group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm hover:shadow-md cursor-pointer";
+
+                card.innerHTML = `
+      <div class="flex gap-4">
+        <div class="flex-1 min-w-0">
+          <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-700">
+            ${title}
+          </h3>
+          <p class="mt-2 text-sm text-slate-600 line-clamp-2">
+            ${desc}
+          </p>
+          <div class="mt-3 text-sm font-semibold text-blue-700">
+            View details →
+          </div>
+        </div>
+        ${thumb ? `
+          <div class="hidden md:block w-[120px] h-[80px] rounded-xl overflow-hidden border shrink-0">
+            <img src="${thumb}" class="w-full h-full object-cover" />
+          </div>` : ""}
+      </div>
+    `;
+
+                card.addEventListener("click", () => {
+                    // ✅ 클릭 시 URL도 맞춰줌(새로고침해도 유지)
+                    const next = new URL(location.href);
+                    next.searchParams.set("view", "research");
+                    next.searchParams.set("research", item.id);
+                    history.replaceState({}, "", next.toString());
+
+                    RU_openDetail(item);
+                    document.getElementById("research-update")?.scrollIntoView({ behavior: "smooth", block: "start" });
+                });
+
+                el.appendChild(card);
+            });
+        }
+
+        /* ---------- open detail ---------- */
+        function RU_openDetail(item) {
+            const el = document.getElementById("research-update-detail");
+            if (!el) return;
+
+            const main = item.research?.[0];
+
+            el.classList.remove("hidden");
+            el.innerHTML = `
+    <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+      <div class="flex justify-between items-start gap-4">
+        <div class="min-w-0">
+          <h3 class="text-2xl font-extrabold break-words">
+            ${item.title || ""}
+          </h3>
+          ${item.desc ? `<p class="mt-2 text-slate-600">${item.desc}</p>` : ""}
+        </div>
+        <button id="ru-close"
+          class="px-3 py-2 text-sm border rounded-lg hover:bg-slate-50 shrink-0">
+          Close
+        </button>
+      </div>
+
+      ${main ? `
+        <div class="mt-8">
+          <h4 class="text-xl font-bold break-words">
+            ${main.title || ""}
+          </h4>
+          ${main.date ? `
+            <p class="mt-1 text-sm text-slate-500">${main.date}</p>` : ""}
+
+          ${main.desc ? `
+            <div class="mt-4 text-slate-700 whitespace-pre-line">
+              ${main.desc}
+            </div>` : ""}
+
+          ${Array.isArray(main.images) && main.images.length > 0 ? `
+            <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              ${main.images.map(src => `
+                <div class="rounded-xl overflow-hidden border bg-slate-100">
+                  <img src="${src}"
+                       alt="Research image"
+                       class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+                </div>
+              `).join("")}
+            </div>
+          ` : ""}
+
+          ${main.hyperlink ? `
+            <a href="${main.hyperlink}" target="_blank" rel="noopener noreferrer"
+               class="inline-block mt-6 text-blue-700 font-semibold">
+              Open external →
+            </a>` : ""}
+        </div>
+      ` : ""}
+    </div>
+  `;
+
+            document.getElementById("ru-close").onclick = () => {
+                el.classList.add("hidden");
+                el.innerHTML = "";
+
+                // URL 정리(선택)
+                const next = new URL(location.href);
+                next.searchParams.delete("research");
+                history.replaceState({}, "", next.toString());
+            };
+        }
+
+        /* ---------- deep link ---------- */
+        function RU_handleDeepLink(list) {
+            const id = new URL(location.href).searchParams.get("research");
+            if (!id) return;
+
+            const found = list.find(x => x.id === id);
+            if (found) {
+                RU_openDetail(found);
+                document.getElementById("research-update")?.scrollIntoView({ behavior: "smooth" });
+            }
+        }
+
+        (function handleResearchView() {
+            const view = new URL(location.href).searchParams.get("view");
+            if (view === "research") {
+                window.addEventListener("load", () => {
+                    document
+                        .getElementById("research-update")
+                        ?.scrollIntoView({ behavior: "smooth" });
+                });
+            }
+        })();
+
+        // ===== Force scroll to Research Update (See all 대응) =====
+        (function forceScrollToResearch() {
+            const params = new URL(location.href).searchParams;
+            if (params.get("view") !== "research") return;
+
+            // 모든 렌더링이 끝난 뒤 스크롤 보장
+            window.addEventListener("load", () => {
+                // 한 프레임 더 기다림 (DOM 안정화)
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        const target = document.getElementById("research-update");
+                        if (target) {
+                            target.scrollIntoView({ behavior: "smooth", block: "start" });
+                        }
+                    });
+                });
+            });
+        })();
+
+
 
         // Initialize rendering
         renderProjects();

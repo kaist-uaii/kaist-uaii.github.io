@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "id": 1,
     "title": "CAUS",
@@ -26,13 +26,5 @@
     "image": "/assets/images/projects/5.png",
     "link": "https://hcfm.kaist.ac.kr/",
     "type": "external"
-  },
-  {
-    "id": 7,
-    "pagetitle": "Urban X Berkeley Workshop",
-    "title": "2025 Urban X HcFM Berkeley Workshop",
-    "researchSectionID": "workshop",
-    "link": "/urbanx-berkeley.html",
-    "type": "internal"
   }
 ]

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -10,7 +10,20 @@
     <link rel="stylesheet" href="assets/style.css" />
     <link rel="icon" href="assets/K-UAII_logo.jpg" />
     <meta name="description" content="Urban AI Institute — research at the intersection of cities and AI" />
+
+    <style>
+        body.page-transition {
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        body.page-loaded {
+            opacity: 1;
+            transition: opacity 0.4s ease;
+        }
+    </style>
 </head>
+
 <body>
     <nav class="border-b border-slate-100 bg-white/80 backdrop-blur-md sticky top-0 z-50">
         <div class="container mx-auto px-6 py-6 flex justify-between items-center">
@@ -63,10 +76,10 @@
         </div>
     </section>
     <br />
+
+    <!-- ===== Projects ===== -->
     <section class="projects-section">
         <h2 class="projects-title">Projects</h2>
-
-
         <main class="container cards">
             <a class="card card-link card-hover" href="https://urban.kaist.ac.kr" target="_blank" rel="noopener">
                 <h3>Urban@KAIST</h3>
@@ -99,122 +112,47 @@
         <br />
     </section>
 
+    <!-- ===== Research Update & Events ===== -->
+    <section class="update-section" id="update-section" aria-labelledby="research-update-title">
+        <div class="container cards-2">
+            <div>
+                <h2 class="projects-title">Research Update</h2>
+                <div class="card card-link card-hover">
+                    <!-- Left: Recent Research -->
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-bold text-slate-900">Research</h3>
+                        <a href="projects.html?view=research#research-update" class="text-sm text-blue-600 hover:text-blue-800 font-medium">See all</a>
+                    </div>
+                    <div id="recent-research-list" class="space-y-3">
+                        <!-- Recent events will be injected here -->
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2 class="projects-title">Events Update</h2>
+                <div class="card card-link card-hover">
+                    <!-- Right: Recent Events -->
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-bold text-slate-900">Events</h3>
+                        <a href="press.html" class="text-sm text-blue-600 hover:text-blue-800 font-medium">See all</a>
+                    </div>
+                    <div id="recent-events-list" class="space-y-3">
+                        <!-- Recent events will be injected here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ===== UAII in the Press ===== -->
     <section class="press" id="press" aria-labelledby="press-title">
         <div class="container">
-            <h2 id="press-title">Events</h2>
+            <h2 id="press-title">UAII in the Press</h2>
 
             <div class="press-slider" tabindex="0" role="region"
                  aria-roledescription="carousel" aria-label="Press articles">
                 <div class="press-track">
-                    <!-- Slide 1 -->
-                    <div class="press-item is-active"
-                         aria-hidden="false"
-                         aria-label="UAII press article">
-
-                        <!-- IMAGE → 외부 기사 -->
-                        <a class="press-media"
-                           href="https://news.kaist.ac.kr/news/html/news/?mode=V&mng_no=53650"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           aria-label="Read full article on KAIST News (opens in new tab)">
-                            <img src="assets/press/kaist-53650.jpg"
-                                 alt="AI Finds Urban Commercial Districts Resilient to Climate Risk" />
-                            <span class="press-overlay-title">
-                                AI Finds Urban Commercial Districts Resilient to Climate Risk
-                            </span>
-
-                            <span class="press-hover-cta">
-                                ↗
-                            </span>
-                        </a>
-
-                        <!-- TEXT → 내부 press.html -->
-                        <a class="press-body press-card-link"
-                           href="press.html"
-                           aria-label="View article summary on UAII press page">
-
-                            <p class="press-summary">
-                                KAIST announced on October 29th that its Urban AI Institute
-                                (Director, Distinguished Professor Yoonjin Yoon of Civil and Environmental Engineering conducted joint research in the field of 'Urban AI' with MIT's Senseable City Lab (Director, Professor Carlo Ratti)
-                                and disclosed the results at the 'Smart Life Week 2025' exhibition held at COEX, Seoul, in late September.
-                                KAIST and MIT have been pursuing the 'Urban AI Joint Research Program' to interpret major urban problems using artificial intelligence.
-                                At this exhibition, the research results were presented in a form that citizens could directly experience, focusing on three themes:
-                                ▲Urban Climate Change, ▲Green Environment, and ▲Data Inclusivity.
-                            </p>
-
-                            <p class="press-meta">
-                                <span class="press-outlet">KAIST News</span>
-                                <span class="press-sep">·</span>
-                                <time datetime="2025-10-29">2025-10-29</time>
-                            </p>
-
-                            <div class="press-cta">
-                                <span>View on press page</span>
-                                <svg class="press-cta-icon" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path d="M9 5l7 7-7 7"
-                                          fill="none"
-                                          stroke="currentColor"
-                                          stroke-width="2"
-                                          stroke-linecap="round"
-                                          stroke-linejoin="round"></path>
-                                </svg>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- Slide 2 (예시) -->
-                    <div class="press-item" aria-hidden="true" aria-label="UAII press article">
-
-                        <!-- IMAGE → 외부 기사 원문 -->
-                        <a class="press-media"
-                           href="https://library.krihs.re.kr/library/10120/contents/5869852?checkinId=3726529&articleId=1882436"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           aria-label="Read full article on KRIHS Library (opens in new tab)">
-                            <img src="assets/press/press2.jpg"
-                                 alt="[KRIHS가 만난 사람 98] 윤윤진 KAIST 도시AI연구소장 도시의 새로운 진화 AI 시티가 그리는 도시의 미래" />
-                            <span class="press-overlay-title">
-                                [KRIHS가 만난 사람 98] 윤윤진 KAIST 도시AI연구소장 "도시의 새로운 진화 AI 시티가 그리는 도시의 미래"
-                            </span>
-
-                            <span class="press-hover-cta">
-                                ↗
-                            </span>
-                        </a>
-
-                        <!-- TEXT → 내부 press.html -->
-                        <a class="press-body press-card-link"
-                           href="press.html"
-                           aria-label="View article summary on UAII press page">
-
-                            <p class="press-summary">
-                                As artificial intelligence technologies rapidly proliferate, the ways in which cities are operated and managed are also reaching a fundamental turning point. The Korean government is promoting the “K-AI City Development and Future Mobility Initiative” as a national policy agenda, seeking to advance from data-driven cities to AI-centered intelligent cities.
-                                However, current technologies and policies remain largely confined to the smart city paradigm. To evolve toward an AI city ecosystem—where cities can autonomously learn, adapt, and respond—new approaches are required.
-                                In this interview, we engage in an in-depth discussion with Director Yoon Yoon-jin of the KAIST Urban AI Institute, exploring the concept and technological foundations of AI cities, as well as the policy implications of transitioning toward an AI city framework.
-                            </p>
-
-                            <p class="press-meta">
-                                <span class="press-outlet">KRIHS LIBRARY</span>
-                                <span class="press-sep">·</span>
-                                <time datetime="2025-11-30">2025-11-30</time>
-                            </p>
-
-                            <div class="press-cta">
-                                <span>View on press page</span>
-                                <svg class="press-cta-icon" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path d="M9 5l7 7-7 7"
-                                          fill="none"
-                                          stroke="currentColor"
-                                          stroke-width="2"
-                                          stroke-linecap="round"
-                                          stroke-linejoin="round"></path>
-                                </svg>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- Slide 더 추가 가능 -->
+                    <!-- Press items will be dynamically injected here from pressData.json -->
                 </div>
             </div>
 

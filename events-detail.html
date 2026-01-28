@@ -1,0 +1,651 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events | Urban AI Institute (UAII)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fcfcfc;
+        }
+            body.page-transition {
+                opacity: 0;
+                transition: opacity 0.4s ease;
+            }
+
+            body.page-loaded {
+                opacity: 1;
+                transition: opacity 0.4s ease;
+            }
+
+        .serif-title {
+            font-family: 'Playfair Display', serif;
+        }
+        .markdown p { margin-bottom: 1.25rem; line-height: 1.8; color: #374151; }
+        .markdown strong { color: #1e3a8a; font-weight: 700; }
+        .newspaper-border {
+            border-top: 4px solid #000;
+            border-bottom: 1px solid #000;
+        }
+    </style>
+</head>
+<body class="text-slate-900">
+
+    <!-- Simple Nav -->
+    <nav class="border-b border-slate-100 bg-white/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-6 flex justify-between items-center">
+            <a href="index.html"><div class="text-xl font-black tracking-tighter text-blue-900">UAII <span class="text-slate-400 font-light">EVENTS</span></div></a>
+            <div class="flex gap-6 text-xs font-bold uppercase tracking-widest text-slate-500">
+                <a href="index.html" class="hover:text-blue-600">Home</a>
+                <a href="people.html" class="hover:text-blue-600">People</a>
+                <a href="projects.html" class="hover:text-blue-600">Projects</a>
+                <a href="press.html" class="hover:text-blue-600">Events</a>
+                <a href="apply.html" class="hover:text-blue-600">Apply</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-6 max-w-6xl py-12">
+        <!-- Newspaper Header Style -->
+        <header class="text-center mb-16">
+            <div class="newspaper-border py-4 mb-4">
+                <h1 class="serif-title text-5xl md:text-7xl font-black tracking-tight">EVENTS in Detail</h1>
+            </div>
+            <div class="flex justify-between items-center text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400 px-2">
+                <span>Daejeon, South Korea</span>
+                <span>URBAN ARTIFICIAL INTELLIGENCE INSTITUTE</span>
+                <span id="current-date">January 2026</span>
+            </div>
+        </header>
+
+        <article class="py-16">
+            <!-- Main Content Area -->
+            <div class="max-w-5xl mx-auto">
+                <div class="mb-10">
+                    <!-- Container for image and content - side by side for portrait images -->
+                    <div id="main-content-wrapper" class="flex flex-col md:flex-row gap-8 mb-8">
+                        <!-- Image Container -->
+                        <div id="main-image-container" class="flex-shrink-0 rounded-sm shadow-2xl overflow-hidden bg-slate-50" style="display: none;">
+                            <img id="main-image" src="" alt="Events Image" class="w-full h-full object-cover">
+                        </div>
+
+                        <!-- Content Section -->
+                        <div class="flex-1 min-w-0">
+                            <div class="flex items-center gap-4 mb-6">
+                                <span id="article-category" class="bg-blue-900 text-white text-[10px] font-bold px-3 py-1 uppercase tracking-widest rounded-full"></span>
+                                <span id="article-date" class="text-slate-400 text-xs font-medium"></span>
+                            </div>
+
+                            <h2 id="article-title" class="serif-title text-4xl md:text-5xl font-bold leading-[1.1] mb-8 text-slate-900"></h2>
+
+                            <!-- Event Details Info Box -->
+                            <div id="event-details" class="bg-slate-50 border-l-4 border-blue-900 p-6 mb-8 rounded-sm">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                                    <!-- Place -->
+                                    <div id="detail-place" class="flex items-start gap-3" style="display: none;">
+                                        <span class="text-slate-400 mt-0.5">📍</span>
+                                        <div>
+                                            <div class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Location</div>
+                                            <div class="text-slate-700 font-medium" id="article-place"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Time -->
+                                    <div id="detail-time" class="flex items-start gap-3" style="display: none;">
+                                        <span class="text-slate-400 mt-0.5">🕐</span>
+                                        <div>
+                                            <div class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Time</div>
+                                            <div class="text-slate-700 font-medium" id="article-time"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Participants -->
+                                    <div id="detail-participants" class="flex items-start gap-3" style="display: none;">
+                                        <span class="text-slate-400 mt-0.5">👥</span>
+                                        <div>
+                                            <div class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Participants</div>
+                                            <div class="text-slate-700 font-medium" id="article-participants"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Speaker -->
+                                    <div id="detail-speaker" class="flex items-start gap-3" style="display: none;">
+                                        <span class="text-slate-400 mt-0.5">🎤</span>
+                                        <div>
+                                            <div class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Speaker</div>
+                                            <div class="text-slate-700 font-medium" id="article-speaker"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Award -->
+                                    <div id="detail-award" class="flex items-start gap-3" style="display: none;">
+                                        <span class="text-slate-400 mt-0.5">🏆</span>
+                                        <div>
+                                            <div class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Award</div>
+                                            <div class="text-slate-700 font-semibold text-blue-600" id="article-award"></div>
+                                        </div>
+                                    </div>  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="article-desc" class="markdown text-lg text-slate-700 first-letter:text-7xl first-letter:font-bold first-letter:mr-3 first-letter:float-left first-letter:text-blue-900 m-8">
+                    </div>
+
+                    <!-- Photo Gallery -->
+                    <div id="photo-gallery-section" class="mt-20 mb-8" style="display: none;">
+                        <h3 class="text-sm font-bold uppercase tracking-widest text-slate-400 mb-6">All Photos</h3>
+                        <div id="photo-gallery" class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <!-- All photos will be injected here -->
+                        </div>
+                    </div>
+
+                    <!-- YouTube Video (if available) -->
+                    <div id="youtube-section" class="mt-8 mb-8" style="display: none;">
+                        <h3 class="text-sm font-bold uppercase tracking-widest text-slate-400 mb-4">Video</h3>
+                        <div class="aspect-video rounded-sm overflow-hidden shadow-lg">
+                            <iframe id="youtube-iframe" class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- External Links -->
+                <div id="external-links-section" class="border-t border-slate-100 pt-8 mb-8" style="display: none;">
+                    <h3 class="text-sm font-bold uppercase tracking-widest text-slate-400 mb-4">Related Links</h3>
+                    <div id="external-links" class="flex flex-wrap gap-3">
+                        <!-- Links will be injected here -->
+                    </div>
+                </div>
+
+                <!-- Keywords -->
+                <div id="keywords-section" class="border-t border-slate-100 pt-8 mb-12">
+                    <h4 class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-4">Keywords</h4>
+                    <div id="keywords-container" class="flex flex-wrap gap-2">
+                    </div>
+                </div>
+
+                <!-- Events Gallery -->
+                <section id="events-gallery" class="mt-52">
+                    <div class="flex items-center gap-8 mb-12">
+                        <h2 class="serif-title text-3xl font-bold whitespace-nowrap">Events Gallery</h2>
+                        <div class="h-px bg-slate-200 w-full"></div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8" id="events-gallery-list">
+                        <!-- Events gallery will be injected here -->
+                    </div>
+
+                    <!-- Pagination -->
+                    <div id="pagination" class="flex items-center justify-center gap-2 mt-8 mb-8">
+                        <!-- Pagination buttons will be injected here -->
+                    </div>
+                </section>
+            </div>
+
+        </article>
+
+
+    </main>
+
+
+
+    <!--<footer class="bg-white border-t border-slate-100 py-12 mt-24">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-[10px] font-bold uppercase tracking-widest text-slate-400">© 2026 URBAN AI INSTITUTE (UAII) - KAIST</p>
+        </div>
+    </footer>-->
+    <footer class="bg-white border-t border-gray-200 py-8 text-center mt-20">
+        <p class="text-gray-500 text-sm">&copy; 2026 Urban AI Institute. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Load data from eventsData.json
+        async function loadEventsData() {
+            const basePath = location.pathname.replace(/\/[^\/]*$/, "");
+            const url = `${basePath}/data/eventsData.json`;
+            try {
+                const res = await fetch(url, { cache: "no-store" });
+                if (!res.ok) {
+                    throw new Error(`Failed to load data: ${res.status} ${res.statusText}`);
+                }
+                const data = await res.json();
+                return data;
+            } catch (error) {
+                console.error('Error loading eventsData.json:', error);
+                throw error;
+            }
+        }
+
+        let eventsData = [];
+
+        function formatDate(start, end) {
+            const daySuffix = (day) => {
+                if (day > 3 && day < 21) {
+                    return 'th';
+                }
+                switch (day % 10) {
+                    case 1:
+                    return 'st';
+                    case 2:
+                    return 'nd';
+                    case 3: 
+                    return 'rd';
+                    default:
+                    return 'th';
+                }
+            }
+            const startDate = new Date(start);
+            const startDay = startDate.getDate();
+            const startDaySuffix = daySuffix(startDay);
+            const startMonth = startDate.toLocaleDateString('en-US', { month: 'long' });
+            const startYear = startDate.getFullYear();
+
+            const endDate = new Date(end);
+            const endDay = endDate.getDate();
+            const endDaySuffix = daySuffix(endDay);
+            const endMonth = endDate.toLocaleDateString('en-US', { month: 'long' });
+            const endYear = endDate.getFullYear();
+
+            if (startYear !== endYear){
+                return `${startMonth} ${startDay}${startDaySuffix}, ${startYear}-${endMonth} ${endDay}${endDaySuffix}, ${endYear}`;
+            }else if (startMonth !== endMonth){
+                return `${startMonth} ${startDay}${startDaySuffix}-${endMonth} ${endDay}${endDaySuffix}, ${startYear}`;
+            }else if (startDay !== endDay){
+                return `${startMonth} ${startDay}${startDaySuffix}-${endDay}${endDaySuffix}, ${startYear}`;
+            }else{
+                return `${startMonth} ${startDay}${startDaySuffix}, ${startYear}`;
+            }
+            return `${startMonth} ${startDay} ${startDaySuffix}, ${startYear}`
+            
+        }
+
+        function renderMain(article) {
+            // Main Image
+            const mainContentWrapper = document.getElementById('main-content-wrapper');
+            const mainImageContainer = document.getElementById('main-image-container');
+            const mainImage = document.getElementById('main-image');
+            
+            if (article.photos && article.photos.length > 0) {
+                mainImage.src = article.photos[0];
+                mainImage.alt = article.title;
+                mainImageContainer.style.display = "block";
+                
+                // Load image to get natural dimensions and adjust layout
+                mainImage.onload = function() {
+                    const naturalWidth = this.naturalWidth;
+                    const naturalHeight = this.naturalHeight;
+                    const aspectRatio = naturalWidth / naturalHeight;
+                    
+                    if (aspectRatio < 1) {
+                        // Portrait images - side by side layout on desktop
+                        mainImageContainer.style.width = '350px';
+                        mainImageContainer.style.maxWidth = '100%';
+                        mainImageContainer.style.borderRadius = '10px';
+                        mainImageContainer.style.flexShrink = '0';
+                        mainImageContainer.style.aspectRatio = '3/4';
+                        mainImage.style.objectPosition = 'center top';
+                        // Keep flex-row on desktop, stack on mobile (handled by CSS)
+                        mainContentWrapper.className = 'flex flex-col md:flex-row gap-8 mb-8';
+                    } else if (aspectRatio > 1.5) {
+                        // Very wide landscape - full width above content
+                        mainImageContainer.style.width = '80%';
+                        mainImageContainer.style.borderRadius = '15px';
+                        mainImageContainer.style.aspectRatio = '16/9';
+                        mainImage.style.objectPosition = 'center center';
+                        mainContentWrapper.className = 'flex flex-col gap-8 mb-8';
+                    } else {
+                        // Standard landscape - full width above content
+                        mainImageContainer.style.width = '80%';
+                        mainImageContainer.style.borderRadius = '15px';
+                        mainImageContainer.style.aspectRatio = '4/3';
+                        mainImage.style.objectPosition = 'center top';
+                        mainContentWrapper.className = 'flex flex-col gap-8 mb-8';
+                    }
+                };
+            } else {
+                mainImageContainer.style.display = "none";
+                mainContentWrapper.className = 'flex flex-col gap-8 mb-8';
+            }
+
+            // Photo Gallery (remaining photos after the first one)
+            const photoGallerySection = document.getElementById('photo-gallery-section');
+            const photoGallery = document.getElementById('photo-gallery');
+            photoGallery.innerHTML = '';
+
+            if (article.photos && article.photos.length > 1) {
+                // Show all photos except the first one (which is already the main image)
+                const photos = article.photos;
+                photos.forEach((photoSrc, index) => {
+                    const photoDiv = document.createElement('div');
+                    photoDiv.className = 'group relative overflow-hidden rounded-sm shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer';
+                    photoDiv.innerHTML = `
+                        <img src="${photoSrc}" alt="${article.title} - Photo ${index + 2}" 
+                             class="w-full h-full object-cover aspect-square group-hover:scale-110 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+                    `;
+                    // Optional: Add click to view full size
+                    photoDiv.addEventListener('click', () => {
+                        window.open(photoSrc, '_blank');
+                    });
+                    photoGallery.appendChild(photoDiv);
+                });
+                photoGallerySection.style.display = 'block';
+            } else {
+                photoGallerySection.style.display = 'none';
+            }
+
+            const date = formatDate(article.start, article.end);
+            document.getElementById('article-title').innerText = article.title;
+            document.getElementById('article-category').innerText = article.category;
+            document.getElementById('article-date').innerText = date;
+            document.getElementById('article-desc').innerHTML = marked.parse(article.desc || '');
+
+            // Event Details - Show/hide based on availability
+            const detailPlace = document.getElementById('detail-place');
+            const detailTime = document.getElementById('detail-time');
+            const detailParticipants = document.getElementById('detail-participants');
+            const detailSpeaker = document.getElementById('detail-speaker');
+            const detailAward = document.getElementById('detail-award');
+
+            // Place
+            if (article.place && article.place.trim() !== '') {
+                document.getElementById('article-place').innerText = article.place;
+                detailPlace.style.display = 'flex';
+            } else {
+                detailPlace.style.display = 'none';
+            }
+
+            // Time
+            if (article.time && article.time.trim() !== '') {
+                document.getElementById('article-time').innerText = article.time;
+                detailTime.style.display = 'flex';
+            } else {
+                detailTime.style.display = 'none';
+            }
+
+            // Participants
+            if (article.participants && article.participants.trim() !== '') {
+                document.getElementById('article-participants').innerText = article.participants;
+                detailParticipants.style.display = 'flex';
+            } else {
+                detailParticipants.style.display = 'none';
+            }
+
+            // Speaker
+            if (article.speaker && article.speaker.trim() !== '') {
+                document.getElementById('article-speaker').innerText = article.speaker;
+                detailSpeaker.style.display = 'flex';
+            } else {
+                detailSpeaker.style.display = 'none';
+            }
+
+            // Award
+            if (article.award && article.award.trim() !== '') {
+                document.getElementById('article-award').innerText = article.award;
+                detailAward.style.display = 'flex';
+            } else {
+                detailAward.style.display = 'none';
+            }
+
+            // Hide event-details box if no details to show
+            const eventDetails = document.getElementById('event-details');
+            const hasDetails = article.place || article.time || article.participants || article.speaker || article.award;
+            if (!hasDetails) {
+                eventDetails.style.display = 'none';
+            } else {
+                eventDetails.style.display = 'block';
+            }
+
+            // YouTube Video
+            const youtubeSection = document.getElementById('youtube-section');
+            const youtubeIframe = document.getElementById('youtube-iframe');
+            if (article.youtube && article.youtube.trim() !== '') {
+                youtubeIframe.src = article.youtube;
+                youtubeSection.style.display = 'block';
+            } else {
+                youtubeSection.style.display = 'none';
+            }
+
+            // External Links (from links array)
+            const externalLinksSection = document.getElementById('external-links-section');
+            const externalLinksContainer = document.getElementById('external-links');
+            externalLinksContainer.innerHTML = '';
+
+            if (article.links && article.links.length > 0) {
+                article.links.forEach(link => {
+                    const linkEl = document.createElement('a');
+                    linkEl.href = link.href || link.url || '#';
+                    linkEl.target = '_blank';
+                    linkEl.rel = 'noopener noreferrer';
+                    linkEl.className = 'px-6 py-2.5 bg-slate-900 text-white text-xs font-bold uppercase tracking-widest hover:bg-blue-900 transition rounded-sm inline-flex items-center gap-2';
+                    linkEl.innerHTML = `
+                        <span>${link.source || link.label || 'View Link'}</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                    `;
+                    externalLinksContainer.appendChild(linkEl);
+                });
+                externalLinksSection.style.display = 'block';
+            } else {
+                externalLinksSection.style.display = 'none';
+            }
+
+            // Keywords (reset + render)
+            const kwContainer = document.getElementById('keywords-container');
+            kwContainer.innerHTML = "";
+            (article.keyword || []).forEach(kw => {
+                const span = document.createElement('span');
+                span.className = "text-[9px] bg-slate-100 text-slate-500 px-2 py-1 rounded-sm uppercase font-bold";
+                span.innerText = kw;
+                kwContainer.appendChild(span);
+            });
+        }
+
+        async function init() {
+            try {
+                eventsData = await loadEventsData();
+                // id를 받아와서 eventsData에서 해당 id의 데이터를 찾아서 메인으로 렌더링
+                const id = new URLSearchParams(window.location.search).get('id');
+                if (!id) {
+                    renderMain(eventsData[0]);
+                } else {
+                    let event = eventsData.find(events => events.id === id);
+                    if (!event) {
+                        event = eventsData.find(events => events.id === parseInt(id));
+                        return;
+                    }
+                    renderMain(event);
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                }
+                renderEventsGallery();
+            } catch (error) {
+                console.error('Error initializing page:', error);
+                document.getElementById('article-title').innerText = 'Error loading events data';
+                document.getElementById('article-desc').innerHTML = '<p>Please check the console for details.</p>';
+            }
+        }
+
+        
+
+        let currentPage = 1;
+        const eventsPerPage = 9;
+
+        function renderEventsGallery(page = 1) {
+            const galleryList = document.getElementById('events-gallery-list');
+            const pagination = document.getElementById('pagination');
+            if (!galleryList || !eventsData || eventsData.length === 0) return;
+
+            // Sort events by date (newest first)
+            const sortedEvents = [...eventsData].sort((a, b) => (b.start || '').localeCompare(a.start || ''));
+
+            // Calculate pagination
+            const totalPages = Math.ceil(sortedEvents.length / eventsPerPage);
+            currentPage = Math.max(1, Math.min(page, totalPages));
+
+            // Get events for current page
+            const startIndex = (currentPage - 1) * eventsPerPage;
+            const endIndex = startIndex + eventsPerPage;
+            const pageEvents = sortedEvents.slice(startIndex, endIndex);
+
+            // Clear existing content
+            galleryList.innerHTML = '';
+
+            // Render events
+            pageEvents.forEach((event, index) => {
+                const card = document.createElement('a');
+                card.href = `events-detail.html?id=${event.id}`;
+                card.className = "group cursor-pointer block animate-fade-in-up";
+                card.style.animationDelay = `${index * 0.05}s`;
+
+                const eventDate = event.end ? `${formatDate(event.start, event.end)}` : formatDate(event.start);
+                const categoryLabel = event.category ? event.category.charAt(0).toUpperCase() + event.category.slice(1) : 'Event';
+                const photo = event.photos && event.photos.length > 0 ? event.photos[0] : '';
+                const shortDesc = event.desc ? event.desc.split('\n')[0].substring(0, 120) + '...' : '';
+
+                card.innerHTML = `
+                    <div class="bg-white rounded-lg shadow-sm border border-slate-100 overflow-hidden group-hover:shadow-lg group-hover:border-blue-500/30 transition-all duration-300 h-full">
+                        ${photo ? `
+                            <div class="relative h-48 overflow-hidden">
+                                <img src="${photo}" alt="${event.title}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                                <div class="absolute top-3 left-3">
+                                    <span class="bg-blue-900 text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-widest">${categoryLabel}</span>
+                                </div>
+                            </div>
+                        ` : `
+                            <div class="h-48 bg-gradient-to-br from-blue-50 to-slate-100 flex items-center justify-center">
+                                <span class="bg-blue-900 text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-widest">${categoryLabel}</span>
+                            </div>
+                        `}
+                        <div class="p-6">
+                            <div class="text-xs text-slate-400 mb-2">${eventDate}</div>
+                            <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-900 transition-colors line-clamp-2">${event.title}</h3>
+                            ${shortDesc ? `<p class="text-sm text-slate-600 line-clamp-2 mb-3">${shortDesc}</p>` : ''}
+                            ${event.place ? `<div class="text-xs text-slate-500 flex items-center gap-1">
+                                <span>📍</span>
+                                <span class="line-clamp-1">${event.place}</span>
+                            </div>` : ''}
+                        </div>
+                    </div>
+                `;
+
+                galleryList.appendChild(card);
+            });
+
+            // Render pagination
+            pagination.innerHTML = '';
+
+            if (totalPages <= 1) {
+                return; // No pagination needed
+            }
+
+            // Previous button
+            const prevBtn = document.createElement('button');
+            prevBtn.className = `px-4 py-2 rounded-md border border-slate-300 text-sm font-medium transition-colors ${
+                currentPage === 1 
+                    ? 'bg-slate-100 text-slate-400 cursor-not-allowed' 
+                    : 'bg-white text-slate-700 hover:bg-slate-50 hover:border-blue-500'
+            }`;
+            prevBtn.textContent = 'Previous';
+            prevBtn.disabled = currentPage === 1;
+            prevBtn.addEventListener('click', () => {
+                if (currentPage > 1) {
+                    renderEventsGallery(currentPage - 1);
+                    window.scrollTo({ top: document.getElementById('events-gallery').offsetTop - 100, behavior: 'smooth' });
+                }
+            });
+            pagination.appendChild(prevBtn);
+
+            // Page numbers
+            const maxVisiblePages = 5;
+            let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+            let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+
+            if (endPage - startPage < maxVisiblePages - 1) {
+                startPage = Math.max(1, endPage - maxVisiblePages + 1);
+            }
+
+            // First page
+            if (startPage > 1) {
+                const firstBtn = document.createElement('button');
+                firstBtn.className = 'px-3 py-2 rounded-md border border-slate-300 bg-white text-sm font-medium text-slate-700 hover:bg-slate-50 hover:border-blue-500 transition-colors';
+                firstBtn.textContent = '1';
+                firstBtn.addEventListener('click', () => {
+                    renderEventsGallery(1);
+                    window.scrollTo({ top: document.getElementById('events-gallery').offsetTop - 100, behavior: 'smooth' });
+                });
+                pagination.appendChild(firstBtn);
+
+                if (startPage > 2) {
+                    const ellipsis = document.createElement('span');
+                    ellipsis.className = 'px-2 text-slate-500';
+                    ellipsis.textContent = '...';
+                    pagination.appendChild(ellipsis);
+                }
+            }
+
+            // Page number buttons
+            for (let i = startPage; i <= endPage; i++) {
+                const pageBtn = document.createElement('button');
+                pageBtn.className = `px-3 py-2 rounded-md border text-sm font-medium transition-colors ${
+                    i === currentPage
+                        ? 'bg-blue-900 text-white border-blue-900'
+                        : 'bg-white text-slate-700 border-slate-300 hover:bg-slate-50 hover:border-blue-500'
+                }`;
+                pageBtn.textContent = i;
+                pageBtn.addEventListener('click', () => {
+                    renderEventsGallery(i);
+                    window.scrollTo({ top: document.getElementById('events-gallery').offsetTop - 100, behavior: 'smooth' });
+                });
+                pagination.appendChild(pageBtn);
+            }
+
+            // Last page
+            if (endPage < totalPages) {
+                if (endPage < totalPages - 1) {
+                    const ellipsis = document.createElement('span');
+                    ellipsis.className = 'px-2 text-slate-500';
+                    ellipsis.textContent = '...';
+                    pagination.appendChild(ellipsis);
+                }
+
+                const lastBtn = document.createElement('button');
+                lastBtn.className = 'px-3 py-2 rounded-md border border-slate-300 bg-white text-sm font-medium text-slate-700 hover:bg-slate-50 hover:border-blue-500 transition-colors';
+                lastBtn.textContent = totalPages;
+                lastBtn.addEventListener('click', () => {
+                    renderEventsGallery(totalPages);
+                    window.scrollTo({ top: document.getElementById('events-gallery').offsetTop - 100, behavior: 'smooth' });
+                });
+                pagination.appendChild(lastBtn);
+            }
+
+            // Next button
+            const nextBtn = document.createElement('button');
+            nextBtn.className = `px-4 py-2 rounded-md border border-slate-300 text-sm font-medium transition-colors ${
+                currentPage === totalPages 
+                    ? 'bg-slate-100 text-slate-400 cursor-not-allowed' 
+                    : 'bg-white text-slate-700 hover:bg-slate-50 hover:border-blue-500'
+            }`;
+            nextBtn.textContent = 'Next';
+            nextBtn.disabled = currentPage === totalPages;
+            nextBtn.addEventListener('click', () => {
+                if (currentPage < totalPages) {
+                    renderEventsGallery(currentPage + 1);
+                    window.scrollTo({ top: document.getElementById('events-gallery').offsetTop - 100, behavior: 'smooth' });
+                }
+            });
+            pagination.appendChild(nextBtn);
+        }
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+            document.body.classList.add("page-loaded");
+            init();
+        });
+    </script>
+</body>
+</html>

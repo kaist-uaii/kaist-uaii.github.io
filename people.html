@@ -125,8 +125,8 @@
                 <a href="index.html" class="hover:text-blue-600">Home</a>
                 <a href="people.html" class="text-blue-600">People</a>
                 <a href="projects.html" class="hover:text-blue-600">Projects</a>
+                <a href="press.html" class="hover:text-blue-600">Events</a>
                 <a href="apply.html" class="hover:text-blue-600">Apply</a>
-                <a href="press.html" class="hover:text-blue-600">Press</a>
             </div>
 
             <!-- Mobile Menu Button -->
@@ -226,7 +226,7 @@
             <section id="participants" class="pt-24 pb-20">
                 <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                     <div>
-                        <h2 class="serif-title text-5xl font-bold mb-4">Participants</h2>
+                        <h2 class="serif-title text-5xl font-bold mb-4">People</h2>
                     </div>
                     <div class="divider-gradient w-48 hidden md:block"></div>
                 </div>
@@ -298,7 +298,10 @@
                             resolve();
                         };
                         img.onerror = () => {
-                            console.error(`Failed to load image: ${src}`);
+                            console.error('[IMG 404]', '${person.name}', '->', this.src);
+                            this.dataset.failedSrc = this.src;
+                            this.src = 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22500%22%3E%3Crect fill=%22%23e5e7eb%22 width=%22400%22 height=%22500%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%239ca3af%22 font-family=%22sans-serif%22 font-size=%2218%22%3EImage not found%3C/text%3E%3C/svg%3E';
+                            this.classList.add('loaded');
                             // Fallback placeholder
                             imgElement.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="500"%3E%3Crect fill="%23e5e7eb" width="400" height="500"/%3E%3Ctext x="50%25" y="50%25" text-anchor="middle" dy=".3em" fill="%239ca3af" font-family="sans-serif" font-size="18"%3EImage not available%3C/text%3E%3C/svg%3E';
                             imgElement.alt = alt || 'Image not available';
@@ -341,7 +344,10 @@
                                 <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                             </div>`;
 
-                    const photoPath = person.photo || '';
+                    const basePath = location.pathname.replace(/\/[^\/]*$/, "");
+                    const rawPhoto = (person.photo || "").trim();
+                    const safePhoto = rawPhoto.startsWith("/") ? rawPhoto.slice(1) : rawPhoto;
+                    const photoPath = safePhoto ? `${basePath}/${safePhoto}` : "";
                     card.innerHTML = `
                             <div class="w-full lg:w-44 shrink-0">
                                 <div class="relative group">
