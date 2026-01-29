@@ -77,11 +77,11 @@ async function initUpdates() {
         eventsData = eventsDataRaw.eventsData || eventsDataRaw;
         pressData = pressDataRaw;
 
-        const latestResearch = researchData.slice(0, Math.min(3, researchData.length));
+        //const latestResearch = researchData.slice(0, Math.min(5, researchData.length));
         const latestEvents = eventsData.slice(0, Math.min(5, eventsData.length));
         const latestPress = pressData.slice(0, Math.min(5, pressData.length));
 
-        renderRecentList(latestResearch, latestEvents);
+        renderRecentList([], latestEvents);
         renderPressSlider(latestPress);
         initPressSlider();
     } catch (error) {
@@ -98,48 +98,9 @@ function renderRecentList(latestResearch, latestEvents) {
     if (!recentResearchList || !recentEventsList) return;
 
     // Clear
-    recentResearchList.innerHTML = '';
+    
     recentEventsList.innerHTML = '';
-
-    // ✅ Research 렌더
-    if (!latestResearch || latestResearch.length === 0) {
-        recentResearchList.innerHTML = '<p class="text-sm text-slate-500">No recent research</p>';
-    } else {
-        latestResearch.forEach((item) => {
-            const dateStr =
-                item.date ||
-                item.research?.[0]?.dateISO ||
-                item.research?.[0]?.date || "";
-
-            // date 파싱이 안되면 month/day는 —로 표시
-            const d = new Date(dateStr);
-            const month = isNaN(d.getTime()) ? "—" : d.toLocaleDateString('en-US', { month: 'short' }).toUpperCase();
-            const day = isNaN(d.getTime()) ? "—" : String(d.getDate()).padStart(2, "0");
-
-            const title = item.menuTitle || item.title || "Untitled research";
-
-            const row = document.createElement('div');
-            row.className = 'flex items-start gap-3 py-2 border-b border-slate-100 last:border-0 hover:bg-slate-50 rounded px-2 -mx-2 transition-colors cursor-pointer';
-            row.innerHTML = `
-        <div class="flex flex-col items-center min-w-[50px]">
-          <span class="text-xs font-bold text-slate-600">${month}</span>
-          <span class="text-lg font-bold text-slate-900">${day}</span>
-        </div>
-        <div class="flex-1 min-w-0">
-          <div class="flex items-center gap-2 mb-1">
-            <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
-            <span class="text-xs font-medium text-slate-500">research</span>
-          </div>
-          <div class="text-sm font-medium text-slate-900 break-words">${title}</div>
-        </div>
-      `;
-            row.addEventListener('click', () => {
-                const id = encodeURIComponent(item.id);
-                window.location.href = `projects.html?view=research&research=${id}`;
-            });
-            recentResearchList.appendChild(row);
-        });
-    }
+    
 
     // Events 렌더는 네 기존 코드 그대로 유지
     if (!latestEvents || latestEvents.length === 0) {
@@ -217,9 +178,9 @@ function renderPressSlider(pressData) {
         slide.setAttribute('aria-hidden', String(!isActive));
         slide.setAttribute('aria-label', 'UAII press article');
 
-        // Use summary if available, otherwise use desc, otherwise use first 300 chars of desc
+        // Use summary if available, otherwise use desc, otherwise use first 400 chars of desc
         const summary = item.summary || item.desc || '';
-        const displaySummary = summary.length > 300 ? summary.substring(0, 300) + '...' : summary;
+        const displaySummary = summary.length > 400 ? summary.substring(0, 400) + '...' : summary;
 
         // Determine which link to use (prefer link_kr, fallback to first link_others)
         const externalLink = item.link_kr || (item.link_others && item.link_others[0]?.href) || '#';
@@ -506,14 +467,31 @@ function renderIndexResearchRecent(researchList, limit = 3) {
         return;
     }
 
-    const items = researchList.slice(0, limit);
+    // ✅ dateISO 최신순 정렬 후 limit 적용
+    const sorted = [...researchList].sort((a, b) => {
+        // 정렬용 timestamp: 상위 dateISO > 상위 date > 첫 subtitle dateISO > 첫 subtitle date
+        const ta =
+            Date.parse(a.dateISO || a.date || "") ||
+            Date.parse(a.research?.[0]?.dateISO || a.research?.[0]?.date || "") ||
+            0;
+
+        const tb =
+            Date.parse(b.dateISO || b.date || "") ||
+            Date.parse(b.research?.[0]?.dateISO || b.research?.[0]?.date || "") ||
+            0;
+
+        return tb - ta; // 최신 먼저
+    });
+
+    const items = sorted.slice(0, limit);
 
     items.forEach((item) => {
         // ✅ Month/Day를 위한 날짜 소스 우선순위
         const dateStr =
-            item.date ||
-            item.research?.[0]?.dateISO ||   // <- 이 필드 추가하면 베스트
-            item.research?.[0]?.date ||      // "~ October 2025"면 파싱 실패 가능
+            item.dateISO ||                 // ✅ 가장 정확
+            item.date ||                    // 사람이 읽는 용도(있으면 사용)
+            item.research?.[0]?.dateISO ||  // subtitle dateISO
+            item.research?.[0]?.date ||     // subtitle date
             "";
 
         const { month, day } = getMonthDay(dateStr);
@@ -540,20 +518,14 @@ function renderIndexResearchRecent(researchList, limit = 3) {
 
         // ✅ projects.html의 research update로 이동 (id 전달)
         row.addEventListener("click", () => {
-            goToEventDetail(item.id);
+            const id = encodeURIComponent(item.id);
+            window.location.href = `projects.html?view=research&research=${encodeURIComponent(item.id)}#research-update`;
         });
 
         el.appendChild(row);
     });
 }
-(async function initIndexResearchRecent() {
-    try {
-        const research = await loadResearchDataIndex();
-        renderIndexResearchRecent(research, 3);
-    } catch (e) {
-        console.error("Index research init failed:", e);
-    }
-})();
+
 
 // Old press slider initialization - now handled by initPressSlider() after dynamic content is loaded
 /*

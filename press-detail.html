@@ -60,13 +60,39 @@
     <!-- Simple Nav -->
     <nav class="border-b border-slate-100 bg-white/80 backdrop-blur-md sticky top-0 z-50">
         <div class="container mx-auto px-6 py-6 flex justify-between items-center">
-            <a href="index.html"><div class="text-xl font-black tracking-tighter text-blue-900">UAII <span class="text-slate-400 font-light">PRESS</span></div></a>
-            <div class="flex gap-6 text-xs font-bold uppercase tracking-widest text-slate-500">
+            <a href="index.html">
+                <div class="text-xl font-black tracking-tighter text-blue-900">
+                    UAII <span class="text-slate-400 font-light">PRESS</span>
+                </div>
+            </a>
+
+            <!-- Desktop menu -->
+            <div class="hidden md:flex gap-6 text-xs font-bold uppercase tracking-widest text-slate-500">
                 <a href="index.html" class="hover:text-blue-600">Home</a>
                 <a href="people.html" class="hover:text-blue-600">People</a>
                 <a href="projects.html" class="hover:text-blue-600">Projects</a>
+                <a href="press.html" class="text-blue-600">Events</a>
                 <a href="apply.html" class="hover:text-blue-600">Apply</a>
-                <a href="press.html" class="hover:text-blue-600">Events</a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="menuBtn"
+                    class="md:hidden text-slate-700 text-2xl leading-none"
+                    aria-label="Open menu"
+                    aria-expanded="false"
+                    aria-controls="mobileMenu">
+                ☰
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-slate-100">
+            <div class="flex flex-col px-6 py-4 gap-4 text-sm font-semibold text-slate-700">
+                <a href="index.html">Home</a>
+                <a href="people.html">People</a>
+                <a href="projects.html">Projects</a>
+                <a href="press.html" class="text-blue-600">Events</a>
+                <a href="apply.html">Apply</a>
             </div>
         </div>
     </nav>
@@ -318,6 +344,31 @@
 
         document.addEventListener("DOMContentLoaded", () => {
             init();
+
+            const menuBtn = document.getElementById("menuBtn");
+            const mobileMenu = document.getElementById("mobileMenu");
+
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener("click", () => {
+                    const isHidden = mobileMenu.classList.contains("hidden");
+                    mobileMenu.classList.toggle("hidden");
+
+                    // 접근성 상태 업데이트
+                    menuBtn.setAttribute("aria-expanded", String(isHidden));
+
+                    // 아이콘 토글(선택)
+                    menuBtn.textContent = isHidden ? "✕" : "☰";
+                });
+
+                // 메뉴 클릭하면 자동 닫힘(선택)
+                mobileMenu.querySelectorAll("a").forEach(a => {
+                    a.addEventListener("click", () => {
+                        mobileMenu.classList.add("hidden");
+                        menuBtn.setAttribute("aria-expanded", "false");
+                        menuBtn.textContent = "☰";
+                    });
+                });
+            }
         });
     </script>
 </body>

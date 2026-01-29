@@ -87,8 +87,8 @@
                 <a href="index.html">Home</a>
                 <a href="people.html">People</a>
                 <a href="projects.html" class="text-blue-600">Projects</a>
+                <a href="press.html">Events</a>
                 <a href="apply.html">Apply</a>
-                <a href="press.html">Press</a>
             </div>
         </div>
     </nav>
@@ -259,7 +259,16 @@
 
                 const list = Array.isArray(raw) ? raw : [raw];
 
+                // ✅ Research Update 카드 자체 최신순(dateISO) 정렬
+                list.sort((a, b) => {
+                    const ta = Date.parse(a.dateISO || a.date || "") || 0;
+                    const tb = Date.parse(b.dateISO || b.date || "") || 0;
+                    return tb - ta; // 최신 먼저
+                });
+
                 RU_renderList(list);
+
+                RU_handleDeepLink(list);
 
                 // ✅ 로드/렌더 완료 뒤 스크롤 & 상세 오픈 처리
                 window.addEventListener("load", () => {
@@ -346,7 +355,7 @@
             const el = document.getElementById("research-update-detail");
             if (!el) return;
 
-            const main = item.research?.[0];
+            const researchList = Array.isArray(item.research) ? item.research : [];
 
             el.classList.remove("hidden");
             el.innerHTML = `
@@ -364,36 +373,19 @@
         </button>
       </div>
 
-      ${main ? `
-        <div class="mt-8">
-          <h4 class="text-xl font-bold break-words">
-            ${main.title || ""}
-          </h4>
-          ${main.date ? `
-            <p class="mt-1 text-sm text-slate-500">${main.date}</p>` : ""}
+      ${researchList.length ? `
+        <div class="mt-8 space-y-12">
+          ${researchList.map(r => `
+            <section>
+              <h4 class="text-xl font-bold">${r.title || ""}</h4>
+              ${r.date ? `<p class="mt-1 text-sm text-slate-500">${r.date}</p>` : ""}
 
-          ${main.desc ? `
-            <div class="mt-4 text-slate-700 whitespace-pre-line">
-              ${main.desc}
-            </div>` : ""}
-
-          ${Array.isArray(main.images) && main.images.length > 0 ? `
-            <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-              ${main.images.map(src => `
-                <div class="rounded-xl overflow-hidden border bg-slate-100">
-                  <img src="${src}"
-                       alt="Research image"
-                       class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
-                </div>
-              `).join("")}
-            </div>
-          ` : ""}
-
-          ${main.hyperlink ? `
-            <a href="${main.hyperlink}" target="_blank" rel="noopener noreferrer"
-               class="inline-block mt-6 text-blue-700 font-semibold">
-              Open external →
-            </a>` : ""}
+              ${r.desc ? `
+                <div class="mt-4 text-slate-700 whitespace-pre-line">
+                  ${r.desc}
+                </div>` : ""}
+            </section>
+          `).join("")}
         </div>
       ` : ""}
     </div>
@@ -402,24 +394,36 @@
             document.getElementById("ru-close").onclick = () => {
                 el.classList.add("hidden");
                 el.innerHTML = "";
-
-                // URL 정리(선택)
                 const next = new URL(location.href);
                 next.searchParams.delete("research");
                 history.replaceState({}, "", next.toString());
             };
         }
 
+        function normalizeId(v) {
+            return String(v ?? "")
+                .trim()
+                .toLowerCase()
+                .replace(/\s+/g, " "); // 연속 공백 정리
+        }
+
         /* ---------- deep link ---------- */
         function RU_handleDeepLink(list) {
-            const id = new URL(location.href).searchParams.get("research");
-            if (!id) return;
+            const params = new URL(location.href).searchParams;
 
-            const found = list.find(x => x.id === id);
-            if (found) {
-                RU_openDetail(found);
-                document.getElementById("research-update")?.scrollIntoView({ behavior: "smooth" });
+            if (params.get("view") === "research") {
+                document.getElementById("research-update")
+                    ?.scrollIntoView({ behavior: "smooth", block: "start" });
             }
+
+            const rawId = params.get("research");
+            if (!rawId) return;
+
+            const id = normalizeId(decodeURIComponent(rawId));
+
+            const found = list.find(x => normalizeId(x.id) === id);
+            if (found) RU_openDetail(found);
+            else console.warn("[ResearchUpdate] id not found:", rawId, "normalized:", id);
         }
 
         (function handleResearchView() {

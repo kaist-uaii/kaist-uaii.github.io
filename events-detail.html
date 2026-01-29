@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events | Urban AI Institute (UAII)</title>
+    <link rel="stylesheet" href="assets/style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
@@ -12,6 +13,7 @@
             font-family: 'Inter', sans-serif;
             background-color: #fcfcfc;
         }
+
             body.page-transition {
                 opacity: 0;
                 transition: opacity 0.4s ease;
@@ -25,8 +27,18 @@
         .serif-title {
             font-family: 'Playfair Display', serif;
         }
-        .markdown p { margin-bottom: 1.25rem; line-height: 1.8; color: #374151; }
-        .markdown strong { color: #1e3a8a; font-weight: 700; }
+
+        .markdown p {
+            margin-bottom: 1.25rem;
+            line-height: 1.8;
+            color: #374151;
+        }
+
+        .markdown strong {
+            color: #1e3a8a;
+            font-weight: 700;
+        }
+
         .newspaper-border {
             border-top: 4px solid #000;
             border-bottom: 1px solid #000;
@@ -38,13 +50,39 @@
     <!-- Simple Nav -->
     <nav class="border-b border-slate-100 bg-white/80 backdrop-blur-md sticky top-0 z-50">
         <div class="container mx-auto px-6 py-6 flex justify-between items-center">
-            <a href="index.html"><div class="text-xl font-black tracking-tighter text-blue-900">UAII <span class="text-slate-400 font-light">EVENTS</span></div></a>
-            <div class="flex gap-6 text-xs font-bold uppercase tracking-widest text-slate-500">
+            <a href="index.html">
+                <div class="text-xl font-black tracking-tighter text-blue-900">
+                    UAII <span class="text-slate-400 font-light">PRESS</span>
+                </div>
+            </a>
+
+            <!-- Desktop menu -->
+            <div class="hidden md:flex gap-6 text-xs font-bold uppercase tracking-widest text-slate-500">
                 <a href="index.html" class="hover:text-blue-600">Home</a>
                 <a href="people.html" class="hover:text-blue-600">People</a>
                 <a href="projects.html" class="hover:text-blue-600">Projects</a>
-                <a href="press.html" class="hover:text-blue-600">Events</a>
+                <a href="press.html" class="text-blue-600">Events</a>
                 <a href="apply.html" class="hover:text-blue-600">Apply</a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="menuBtn"
+                    class="md:hidden text-slate-700 text-2xl leading-none"
+                    aria-label="Open menu"
+                    aria-expanded="false"
+                    aria-controls="mobileMenu">
+                ☰
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-slate-100">
+            <div class="flex flex-col px-6 py-4 gap-4 text-sm font-semibold text-slate-700">
+                <a href="index.html">Home</a>
+                <a href="people.html">People</a>
+                <a href="projects.html">Projects</a>
+                <a href="press.html" class="text-blue-600">Events</a>
+                <a href="apply.html">Apply</a>
             </div>
         </div>
     </nav>
@@ -645,6 +683,31 @@
         document.addEventListener("DOMContentLoaded", () => {
             document.body.classList.add("page-loaded");
             init();
+
+            const menuBtn = document.getElementById("menuBtn");
+            const mobileMenu = document.getElementById("mobileMenu");
+
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener("click", () => {
+                    const isHidden = mobileMenu.classList.contains("hidden");
+                    mobileMenu.classList.toggle("hidden");
+
+                    // 접근성 상태 업데이트
+                    menuBtn.setAttribute("aria-expanded", String(isHidden));
+
+                    // 아이콘 토글(선택)
+                    menuBtn.textContent = isHidden ? "✕" : "☰";
+                });
+
+                // 메뉴 클릭하면 자동 닫힘(선택)
+                mobileMenu.querySelectorAll("a").forEach(a => {
+                    a.addEventListener("click", () => {
+                        mobileMenu.classList.add("hidden");
+                        menuBtn.setAttribute("aria-expanded", "false");
+                        menuBtn.textContent = "☰";
+                    });
+                });
+            }
         });
     </script>
 </body>

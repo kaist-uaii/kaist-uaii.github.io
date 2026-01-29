@@ -1,4 +1,4 @@
-{
+﻿{
   "collabProfsData": [
     {
       "id": "changhyun-kwon",
@@ -197,7 +197,7 @@
       "id": "jiwon-park",
       "name": "Jiwon Park",
       "projects": [ "CAUS", "BP" ],
-      "photo": "assets/images/people/35.jpg"
+      "photo": "assets/images/people/35.JPG"
     },
     {
       "id": "seyun-kim",
