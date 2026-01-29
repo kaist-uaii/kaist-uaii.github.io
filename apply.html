@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -43,6 +43,33 @@
             background: linear-gradient(to right, #1e3a8a, #3b82f6, transparent);
             border-radius: 2px;
         }
+
+        /* TBA state */
+  .card-tba {
+    opacity: 0.6;
+    filter: grayscale(0.2);
+    position: relative;
+  }
+
+  .card-tba::after {
+    content: "TBA";
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    background: rgba(30, 41, 59, 0.85); /* slate-800 */
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 9999px;
+    letter-spacing: 0.05em;
+  }
+
+  .card-tba a {
+    pointer-events: none; /* 클릭 비활성 */
+    background-color: #94a3b8 !important; /* slate-400 */
+    cursor: not-allowed;
+  }
     </style>
 </head>
 <body>
@@ -97,7 +124,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
                 <!-- Graduate Students -->
-                <div class="rounded-[2rem] shadow-sm bg-white card-hover relative border border-slate-200">
+                <div class="rounded-[2rem] shadow-sm bg-white card-hover relative border border-slate-200 card-tba">
 
                     <div class="p-8">
                         <h3 class="text-xl font-semibold mb-2">M.S. / Ph.D. Students</h3>
@@ -125,7 +152,7 @@
                 </div>
 
                 <!-- Internship - ENDED STATE -->
-                <div class="rounded-[2rem] shadow-sm bg-white card-hover relative border border-slate-200">
+                <div class="rounded-[2rem] shadow-sm bg-white card-hover relative border border-slate-200 card-tba">
                     <div class="p-8">
                         <h3 class="text-xl font-semibold mb-2">
                             Winter / Summer Internships
@@ -157,8 +184,7 @@
                 </div>
 
                 <!-- Research / Postdoc -->
-                <div class="rounded-[2rem] shadow-sm bg-white card-hover relative border border-slate-200">
-
+                <div class="rounded-[2rem] shadow-sm bg-white card-hover relative border border-slate-200 card-tba">
                     <div class="p-8">
                         <h3 class="text-xl font-semibold mb-2">
                             Research Professors / Postdoctoral Fellows

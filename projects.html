@@ -355,6 +355,12 @@
             const el = document.getElementById("research-update-detail");
             if (!el) return;
 
+            function RU_assetUrl(p) {
+                const basePath = location.pathname.replace(/\/[^\/]*$/, "");
+                const clean = String(p || "").trim().replace(/^\//, "");
+                return clean ? `${basePath}/${clean}` : "";
+            }
+
             const researchList = Array.isArray(item.research) ? item.research : [];
 
             el.classList.remove("hidden");
@@ -384,6 +390,22 @@
                 <div class="mt-4 text-slate-700 whitespace-pre-line">
                   ${r.desc}
                 </div>` : ""}
+
+              ${Array.isArray(r.images) && r.images.length > 0 ? `
+      <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        ${r.images.map(src => `
+          <div class="rounded-xl overflow-hidden border bg-slate-100">
+            <img src="${RU_assetUrl(src)}"
+                 alt="Research image"
+                 class="w-full h-full object-cover"
+                 loading="lazy"
+                 onerror="console.error('[RU IMG 404]', this.src);" />
+          </div>
+        `).join("")}
+      </div>
+    ` : ""}
+
+
             </section>
           `).join("")}
         </div>

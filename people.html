@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -512,10 +512,19 @@
                         allButton.setAttribute('data-project', 'all');
                         filterButtonsContainer.appendChild(allButton);
 
-                        // Project buttons - only for projects with 5+ collaborators
-                        allProjects.sort().forEach(project => {
+                        // ✅ 여기만 남기고 싶은 프로젝트(표시명 기준)
+                        const ALLOWED_PROJECTS = ["BP", "CAUS"];
+
+                        // allProjects = Array.from(projectCounts...) 로 만든 뒤에
+                        const filteredProjects = allProjects
+                            .filter(p => ALLOWED_PROJECTS.includes(p))
+                            .sort();
+
+                        // Project buttons
+                        filteredProjects.forEach(project => {
                             const btn = document.createElement('button');
-                            btn.className = 'project-filter-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold transition-colors bg-slate-100 text-slate-700 hover:bg-slate-200';
+                            btn.className =
+                                'project-filter-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold transition-colors bg-slate-100 text-slate-700 hover:bg-slate-200';
                             btn.textContent = project;
                             btn.setAttribute('data-project', project.toLowerCase());
                             filterButtonsContainer.appendChild(btn);
