@@ -20,6 +20,11 @@
             font-family: 'Playfair Display', serif;
         }
 
+        .serif-subtitle {
+            font-family: 'Prata', serif;
+            font-style: italic;
+        }
+
         .gradient-text {
             background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
             -webkit-background-clip: text;
@@ -163,7 +168,7 @@
         <!-- Sidebar (always visible on lg+, hover on md and below) -->
         <aside class="sidebar">
             <nav class="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-slate-200 p-4">
-                
+
 
                 <!-- Project Filter -->
                 <div class="pt-4 border-t border-slate-200">
@@ -176,558 +181,494 @@
         </aside>
     </div>
 
-    <main class="container mx-auto px-6 max-w-7xl">
-        <!-- Professor Hero Section -->
-        <section id="professor" class="pt-24 pb-20">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-                <div class="lg:col-span-5 relative">
-                    <div class="absolute -top-10 -left-10 w-40 h-40 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse"></div>
-                    <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-purple-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse delay-700"></div>
-
-                    <div class="relative rounded-[2.5rem] overflow-hidden shadow-2xl bg-white border-8 border-white group">
-                        <img id="prof-photo" src="" alt="Professor" class="w-full aspect-[4/5] object-cover transition duration-700 group-hover:scale-105" loading="eager" fetchpriority="high" decoding="async">
-                        <div class="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 via-black/20 to-transparent">
-                            <p class="text-white/80 text-sm font-medium tracking-widest uppercase">Lead Researcher</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-7">
-                    <h2 class="serif-title text-4xl md:text-6xl font-bold mb-4 md:mb-6 text-slate-900" id="prof-name"></h2>
-                    <p class="text-lg md:text-2xl text-slate-600 font-medium leading-relaxed mb-6 md:mb-8"id="prof-greeting"></p>
-
-                    <div class="flex flex-wrap gap-4 mb-12">
-                        <a id="prof-link" href="" target="_blank" class="px-6 py-3 bg-blue-600 text-white rounded-2xl shadow-lg shadow-blue-200 hover:bg-blue-700 transition flex items-center gap-2">
-                            <span>Personal Website</span>
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                        </a>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
-                        <div>
-                            <h4 class="text-xs font-bold uppercase tracking-widest text-blue-600 mb-4">Education</h4>
-                            <ul class="space-y-4" id="prof-edu"></ul>
-                        </div>
-                        <div>
-                            <h4 class="text-xs font-bold uppercase tracking-widest text-blue-600 mb-4">Research Focus</h4>
-                            <div class="markdown text-slate-600 text-sm leading-relaxed" id="prof-research"></div>
-                        </div>
-                    </div>
-                    <div id="prof-recent-container" class="pt-8 border-t border-slate-200">
-                        <h4 class="text-xs font-bold uppercase tracking-widest text-blue-600 mb-4">Recent Research Interests</h4>
-                        <div class="markdown text-slate-600 text-sm leading-relaxed" id="prof-recent"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <main class="container mx-auto sm:px-6 max-w-7xl">
 
         <!-- Participants Professors Section -->
-        <main class="container mx-auto px-6 max-w-7xl">
+        <main class="mx-auto px-3 sm:px-6 max-w-7xl">
             <section id="participants" class="pt-24 pb-20">
-                <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-2 sm:gap-6">
+                    <!-- <div class="hidden md:block"></div> -->
                     <div>
-                        <h2 class="serif-title text-5xl font-bold mb-4">People</h2>
+                        <h2 class="serif-title text-5xl md:text-6xl font-bold mb-4 text-center">People</h2>
+                        <!-- <p class="text-slate-600 text-xl serif-subtitle italic">Meet our members driving our research forward</p> -->
                     </div>
-                    <div class="divider-gradient w-48 hidden md:block"></div>
+                    <div class="divider-gradient w-48  md:block"></div>
                 </div>
 
-                <div id="participants-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-10">
+                <div id="participants-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-4 sm:gap-10">
                     <!-- Participants will be injected here -->
                 </div>
             </section>
+
+            <!-- Alumni Section -->
+            <section id="alumni" class="py-20 border-t border-slate-200">
+                <div class="text-center mb-20">
+                    <h2 class="serif-title text-4xl sm:text-5xl font-bold mb-6">Alumni</h2>
+                    <!--<p class="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base">Our former members who have moved on to prestigious roles in academia and industry.</p>-->
+                </div>
+
+                <div class="space-y-24">
+                    <div>
+                        <!--<h3 class="text-xs font-bold uppercase tracking-[0.2em] text-blue-600 mb-10 border-l-4 border-blue-600 pl-4">Ph.D. Graduates</h3>-->
+                        <div id="alumni-phd-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+                    </div>
+
+                    <div>
+                        <!--<h3 class="text-xs font-bold uppercase tracking-[0.2em] text-blue-600 mb-10 border-l-4 border-blue-600 pl-4">M.S. Graduates</h3>-->
+                        <div id="alumni-ms-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Email Toast Section -->
+            <div id="toast"
+                 class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50
+                    bg-slate-900 text-white text-sm px-4 py-2 rounded-lg shadow
+                    opacity-0 pointer-events-none transition-opacity duration-200">
+                Email copied to clipboard!
+            </div>
+
         </main>
-    </main>
 
-    <footer class="bg-white border-t border-gray-200 py-8 text-center mt-20">
-        <p class="text-gray-500 text-sm">&copy; 2026 Urban AI Institute. All rights reserved.</p>
-    </footer>
+        <footer class="bg-white border-t border-gray-200 py-8 text-center mt-20">
+            <p class="text-gray-500 text-sm">&copy; 2026 Urban AI Institute. All rights reserved.</p>
+        </footer>
 
-    <script>
-
-        // Data usually comes from peopleData.json
-        async function loadConfig() { // GitHub Pages 배포 경로가 /<repo>/... 인 경우를 대비해 basePath 처리
-            const basePath = location.pathname.replace(/\/[^\/]*$/, "");
-            const url = `${basePath}/data/peopleData.json`;
-            const collabUrl = `${basePath}/data/collabData.json`;
-            try {
-                const res = await fetch(url, { cache: "no-store" });
-                const collabRes = await fetch(collabUrl, { cache: "no-store" });
-                if (!res.ok) {
-                    throw new Error(`Failed to load data: ${res.status} ${res.statusText}`);
+        <script>
+            // Data usually comes from peopleData.json
+            async function loadConfig() { // GitHub Pages 배포 경로가 /<repo>/... 인 경우를 대비해 basePath 처리
+                const basePath = location.pathname.replace(/\/[^\/]*$/, "");
+                const url = `${basePath}/data/peopleData.json`;
+                const collabUrl = `${basePath}/data/collabData.json`;
+                try {
+                    const res = await fetch(url, { cache: "no-store" });
+                    const collabRes = await fetch(collabUrl, { cache: "no-store" });
+                    if (!res.ok) {
+                        throw new Error(`Failed to load data: ${res.status} ${res.statusText}`);
+                    }
+                    if (!collabRes.ok) {
+                        throw new Error(`Failed to load data: ${collabRes.status} ${collabRes.statusText}`);
+                    }
+                    const data = await res.json();
+                    const collabData = await collabRes.json();
+                    return { data, collabData };
+                } catch (error) {
+                    console.error('Error loading peopleData.json:', error);
+                    throw error;
                 }
-                if (!collabRes.ok) {
-                    throw new Error(`Failed to load data: ${collabRes.status} ${collabRes.statusText}`);
-                }
-                const data = await res.json();
-                const collabData = await collabRes.json();
-                return { data, collabData };
-            } catch (error) {
-                console.error('Error loading peopleData.json:', error);
-                throw error;
             }
-        }
 
-        // Wrap async initialization in an async function
-        (async function () {
-            try {
-                const { data: peopleData, collabData } = await loadConfig();
-                // Make data globally accessible for onclick handlers
-                window.professorData = peopleData.professorData;
-                window.labMembersData = peopleData.labMembersData;
-                window.aluminiData = peopleData.aluminiData;
-                window.collabProfsData = collabData.collabProfsData;
-                window.collabScholarsData = collabData.collabScholarsData;
-                window.staffsData = collabData.staffsData;
+            // Wrap async initialization in an async function
+            (async function () {
+                try {
+                    const { data: peopleData, collabData } = await loadConfig();
+                    // Make data globally accessible for onclick handlers
+                    window.professorData = peopleData.professorData;
+                    window.labMembersData = peopleData.labMembersData;
+                    window.aluminiData = peopleData.aluminiData;
+                    window.collabProfsData = collabData.collabProfsData;
+                    window.collabScholarsData = collabData.collabScholarsData;
+                    window.staffsData = collabData.staffsData;
 
-                const professorData = window.professorData;
-                const labMembersData = window.labMembersData;
-                const aluminiData = window.aluminiData;
-                const collabProfsData = window.collabProfsData;
-                const collabScholarsData = window.collabScholarsData;
-                const staffsData = window.staffsData;
+                    const professorData = window.professorData;
+                    const labMembersData = window.labMembersData;
+                    const aluminiData = window.aluminiData;
+                    const collabProfsData = window.collabProfsData;
+                    const collabScholarsData = window.collabScholarsData;
+                    const staffsData = window.staffsData;
 
 
-                // Helper function to load image with error handling
-                function loadImage(imgElement, src, alt = '') {
-                    return new Promise((resolve, reject) => {
-                        const img = new Image();
-                        img.onload = () => {
-                            imgElement.src = src;
-                            imgElement.alt = alt;
-                            imgElement.classList.add('loaded');
-                            resolve();
-                        };
-                        img.onerror = () => {
-                            console.error('[IMG 404]', '${person.name}', '->', this.src);
-                            this.dataset.failedSrc = this.src;
-                            this.src = 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22500%22%3E%3Crect fill=%22%23e5e7eb%22 width=%22400%22 height=%22500%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%239ca3af%22 font-family=%22sans-serif%22 font-size=%2218%22%3EImage not found%3C/text%3E%3C/svg%3E';
-                            this.classList.add('loaded');
-                            // Fallback placeholder
-                            imgElement.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="500"%3E%3Crect fill="%23e5e7eb" width="400" height="500"/%3E%3Ctext x="50%25" y="50%25" text-anchor="middle" dy=".3em" fill="%239ca3af" font-family="sans-serif" font-size="18"%3EImage not available%3C/text%3E%3C/svg%3E';
-                            imgElement.alt = alt || 'Image not available';
-                            imgElement.classList.add('loaded');
-                            resolve(); // Resolve anyway to not break the page
-                        };
-                        img.src = src;
-                    });
-                }
+                    // Helper function to load image with error handling
+                    function loadImage(imgElement, src, alt = '') {
+                        return new Promise((resolve, reject) => {
+                            const img = new Image();
+                            img.onload = () => {
+                                imgElement.src = src;
+                                imgElement.alt = alt;
+                                imgElement.classList.add('loaded');
+                                resolve();
+                            };
+                            img.onerror = () => {
+                                console.error('[IMG 404]', '${person.name}', '->', this.src);
+                                this.dataset.failedSrc = this.src;
+                                this.src = 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22500%22%3E%3Crect fill=%22%23e5e7eb%22 width=%22400%22 height=%22500%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%239ca3af%22 font-family=%22sans-serif%22 font-size=%2218%22%3EImage not found%3C/text%3E%3C/svg%3E';
+                                this.classList.add('loaded');
+                                // Fallback placeholder
+                                imgElement.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="500"%3E%3Crect fill="%23e5e7eb" width="400" height="500"/%3E%3Ctext x="50%25" y="50%25" text-anchor="middle" dy=".3em" fill="%239ca3af" font-family="sans-serif" font-size="18"%3EImage not available%3C/text%3E%3C/svg%3E';
+                                imgElement.alt = alt || 'Image not available';
+                                imgElement.classList.add('loaded');
+                                resolve(); // Resolve anyway to not break the page
+                            };
+                            img.src = src;
+                        });
+                    }
 
-                // Reusable function to create person cards
-                function createPersonCard(person, options = {}) {
-                    const {
-                        imgIdPrefix = 'person',
-                        backgroundField = 'edu', // 'edu' or 'position'
-                        projectsThreshold = 4, // Number of projects to show before "+X more"
-                        showLink = false // Whether to show external link icon on hover
-                    } = options;
+                    // Reusable function to create person cards
+                    function createPersonCard(person, options = {}) {
+                        const {
+                            imgIdPrefix = 'person',
+                            // researchField = 'research', // 'edu' or 'position'
+                            projectsThreshold = 4, // Number of projects to show before "+X more"
+                            showLink = false // Whether to show external link icon on hover
+                        } = options;
 
-                    const index = person.id || Math.random().toString(36).substr(2, 9);
-                    const imgId = `${imgIdPrefix}-img-${index}`;
-                    const backgroundData = person[backgroundField] || [];
-                    const hasProjects = person.projects && person.projects.length > 0;
-                    const showMoreProjects = hasProjects && person.projects.length > projectsThreshold;
+                        const index = person.id || Math.random().toString(36).substr(2, 9);
+                        const imgId = `${imgIdPrefix}-img-${index}`;
+                        // const backgroundData = person[backgroundField] || [];
+                        const hasProjects = person.projects && person.projects.length > 0;
+                        const showMoreProjects = hasProjects && person.projects.length > projectsThreshold;
 
-                    const card = document.createElement('div');
-                    // Add data attributes for filtering by projects
-                    const projectsAttr = person.projects && person.projects.length > 0
-                        ? person.projects.map(p => p.toLowerCase()).join(' ')
-                        : '';
-                    card.setAttribute('data-projects', projectsAttr);
-                    card.className = "bg-white rounded-[2rem] p-8 shadow-sm border border-slate-100 card-hover flex flex-col lg:flex-row gap-8 items-start person-card";
+                        const card = document.createElement('div');
+                        // Add data attributes for filtering by projects
+                        const projectsAttr = person.projects && person.projects.length > 0
+                            ? person.projects.map(p => p.toLowerCase()).join(' ')
+                            : '';
+                        card.setAttribute('data-projects', projectsAttr);
+                        card.className = "sm:bg-white rounded-[2rem] py-2 px-4 sm:p-8 sm:shadow-sm border border-slate-100 card-hover flex flex-row gap-4 sm:gap-8 items-start person-card";
 
-                    // Image hover overlay
-                    const hoverOverlay = showLink && person.link
-                        ? `<a href="${person.link}" target="_blank" rel="noopener" class="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition rounded-2xl flex items-center justify-center">
-                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                            </a>`
-                        : `<div class="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition rounded-2xl flex items-center justify-center">
-                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                            </div>`;
+                        // Image hover overlay
+                        const hoverOverlay = showLink && person.link
+                            ? `<a href="${person.link}" target="_blank" rel="noopener" class="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition rounded-2xl flex items-center justify-center">
+                                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>`
+                            : `<div class="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition rounded-2xl flex items-center justify-center">
+                                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                    </div>`;
 
-                    const basePath = location.pathname.replace(/\/[^\/]*$/, "");
-                    const rawPhoto = (person.photo || "").trim();
-                    const safePhoto = rawPhoto.startsWith("/") ? rawPhoto.slice(1) : rawPhoto;
-                    const photoPath = safePhoto ? `${basePath}/${safePhoto}` : "";
-                    card.innerHTML = `
-                            <div class="w-full lg:w-44 shrink-0">
-                                <div class="relative group">
-                                    <img id="${imgId}" src="${photoPath}" alt="${person.name}" class="w-full aspect-square object-cover rounded-2xl shadow-lg border-4 border-white" loading="lazy" decoding="async" onload="this.classList.add('loaded')" onerror="console.error('Failed to load image for ${person.name}:', this.src); this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22500%22%3E%3Crect fill=%22%23e5e7eb%22 width=%22400%22 height=%22500%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%239ca3af%22 font-family=%22sans-serif%22 font-size=%2218%22%3EImage not found%3C/text%3E%3C/svg%3E'; this.classList.add('loaded');">
-                                    ${hoverOverlay}
-                                </div>
-                            </div>
-                            <div class="flex-1">
-                                <div class="mb-4">
-                                    <div class="flex items-start justify-between gap-2 mb-1.5">
-                                        <div class="flex-1">
-                                            <h3 class="text-2xl font-bold text-slate-900 mb-1.5">${person.name}</h3>
-                                            <p class="text-blue-600 font-semibold text-sm">${person.role || ''}</p>
+                        const basePath = location.pathname.replace(/\/[^\/]*$/, "");
+                        const rawPhoto = (person.photo || "").trim();
+                        const safePhoto = rawPhoto.startsWith("/") ? rawPhoto.slice(1) : rawPhoto;
+                        const photoPath = safePhoto ? `${basePath}/${safePhoto}` : "";
+                        const profilePlaceholderSvg = `<svg class="w-1/2 h-1/2 max-w-[3rem] max-h-[3rem] text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>`;
+                        const profileIconSvg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect fill="#e2e8f0"  width="24" height="24"/><path fill="none" stroke="#94a3b8" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>';
+                        const profileIconDataUrl = 'data:image/svg+xml,' + encodeURIComponent(profileIconSvg);
+                        const imgSrc = safePhoto ? photoPath : profileIconDataUrl;
+                        card.innerHTML = `
+                                    <div class="w-20 lg:w-28 shrink-0">
+                                        <div class="relative group">
+                                            <img id="${imgId}" src="${imgSrc}" alt="${person.name}" class="w-full aspect-square object-cover rounded-2xl shadow-lg border-4 border-white" loading="lazy" decoding="async" data-fallback="${profileIconDataUrl.replace(/"/g, '&quot;')}" onload="this.classList.add('loaded')" onerror="this.src=this.getAttribute('data-fallback');this.classList.add('loaded');">
+                                            ${hoverOverlay}
+                                        </div>
+                                        <div class="grid grid-cols-2 px-1 mt-2 border-y border-slate-200 lg:border-none">
+                                            ${person.email ? `<button onclick="copyEmail('${person.email}')" class="inline-flex justify-center items-center p-1 text-center text-xs font-medium text-slate-400 hover:text-blue-600 hover:bg-blue-50 transition-colors ">
+                                                    <svg class="block lg:hidden w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                                    <span class="hidden lg:block border-b border-slate-200 hover:border-blue-600 transition-colors"> email</span>
+                                            </button>` : ''}
+                                            ${person.link ? `<a href="${person.link}" target="_blank" rel="noopener" class="inline-flex justify-center items-center p-1 text-center text-xs font-medium text-slate-400 hover:text-blue-600 hover:bg-blue-50 transition-colors">
+                                                    <svg class="block lg:hidden w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                                                    <span class="hidden lg:block border-b border-slate-200 hover:border-blue-600 transition-colors"> profile</span>
+                                            </a>` : ''}
                                         </div>
                                     </div>
-                                </div>
-
-                                <div class="space-y-4">
-                                    ${backgroundData.length > 0 ? `
-                                    <div>
-                                        <h4 class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-2">Background</h4>
-                                        <ul class="space-y-2 pl-1">
-                                            ${backgroundData.map(item => `<li class="text-xs text-slate-500 leading-relaxed flex items-start gap-2"><span class="w-1 h-1 bg-blue-400 rounded-full mt-1.5 shrink-0"></span><span>${item}</span></li>`).join('')}
-                                        </ul>
-                                    </div>
-                                    ` : ''}
-                                    <div>
-                                        <h4 class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-2">Research Focus</h4>
-                                        ${person.research ? `<p class="text-xs text-slate-600 leading-relaxed italic mb-2">"${person.research}"</p>` : ''}
-                                        ${hasProjects ? `
-                                        <div class="relative pl-3 border-l-2 border-blue-400/40 projects-container" data-member-id="${index}">
-                                            <div class="projects-tags flex flex-wrap gap-1.5">
-                                            ${person.projects.slice(0, projectsThreshold).map(project => `
-                                                <span class="inline-flex items-center px-2 py-1 text-[10px] font-medium bg-slate-100 text-slate-700 border border-slate-300">${project}</span>
-                                            `).join('')}
-                                            ${showMoreProjects ? `
-                                                <span class="projects-more inline-flex items-center px-2.5 py-1 text-[10px] font-medium bg-slate-200 text-slate-700 border border-slate-300 cursor-pointer hover:bg-slate-300 transition">+${person.projects.length - projectsThreshold} more</span>
-                                            ` : ''}
-                                            </div>
-                                            ${showMoreProjects ? `
-                                            <div class="projects-all hidden absolute left-3 top-full mt-2 z-20 bg-white rounded-lg shadow-xl border border-slate-200 p-3 min-w-[200px] max-w-[280px] max-h-[300px] overflow-y-auto">
-                                                <div class="flex flex-wrap gap-1.5">
-                                                    ${person.projects.map(project => `
-                                                        <span class="inline-flex items-center px-2.5 py-1 text-[10px] font-medium bg-slate-100 text-slate-700 border border-slate-300 whitespace-nowrap">${project}</span>
-                                                    `).join('')}
+                                    <div class="flex-1">
+                                        <div class="sm:mb-4">
+                                            <div class="flex items-start justify-between gap-2 mb-1.5">
+                                                <div class="flex-1">
+                                                    <h3 class="text-lg sm:text-2xl font-bold text-slate-900 mb-1.5">${person.name}</h3>
+                                                    <p class="text-blue-600 font-semibold text-xs sm:text-sm">${person.role || ''}</p>
                                                 </div>
-                                            </div>` : ''}
-                                        </div>` : ''}
+                                            </div>
+                                        </div>
+
+                                        <div class="space-y-2 sm:space-y-4">
+                                            <div>
+                                                ${hasProjects ?
+                                `<h4 class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-2 hidden sm:block ">Projects</h4>
+                                                <div class="relative pl-3 border-l-2 border-blue-400/40 projects-container" data-member-id="${index}">
+                                                    <div class="projects-tags flex flex-wrap gap-1.5">
+                                                    ${person.projects.slice(0, projectsThreshold).map(project => `
+                                                        <span class="inline-flex items-center sm:px-2 sm:py-1 px-1.5 py-0.5 text-[10px] font-medium bg-slate-100 text-slate-700 border border-slate-300">${project}</span>
+                                                    `).join('')}
+                                                    ${showMoreProjects ? `
+                                                        <span class="projects-more inline-flex items-center sm:px-2.5 sm:py-1 px-2 py-0.5 text-[10px] font-medium bg-slate-200 text-slate-700 border border-slate-300 cursor-pointer hover:bg-slate-300 transition">+${person.projects.length - projectsThreshold} more</span>
+                                                    ` : ''}
+                                                    </div>
+                                                    ${showMoreProjects ? `
+                                                    <div class="projects-all hidden absolute left-3 top-full mt-2 z-20 bg-white rounded-lg shadow-xl border border-slate-200 p-3 min-w-[200px] max-w-[280px] max-h-[300px] overflow-y-auto">
+                                                        <div class="flex flex-wrap gap-1.5">
+                                                            ${person.projects.map(project => `
+                                                                <span class="inline-flex items-center px-2.5 py-1 text-[10px] font-medium bg-slate-100 text-slate-700 border border-slate-300 whitespace-nowrap">${project}</span>
+                                                            `).join('')}
+                                                        </div>
+                                                    </div>` : ''}
+                                                </div>` : ''}
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                        `;
+                                `;
 
-                    // Setup projects hover/click functionality
-                    if (showMoreProjects) {
-                        const projectsContainer = card.querySelector('.projects-container');
-                        const projectsMore = card.querySelector('.projects-more');
-                        const projectsAll = card.querySelector('.projects-all');
+                        // Setup projects hover/click functionality
+                        if (showMoreProjects) {
+                            const projectsContainer = card.querySelector('.projects-container');
+                            const projectsMore = card.querySelector('.projects-more');
+                            const projectsAll = card.querySelector('.projects-all');
 
-                        if (projectsContainer && projectsMore && projectsAll) {
-                            projectsContainer.addEventListener('mouseenter', () => {
-                                projectsAll.classList.remove('hidden');
+                            if (projectsContainer && projectsMore && projectsAll) {
+                                projectsContainer.addEventListener('mouseenter', () => {
+                                    projectsAll.classList.remove('hidden');
+                                });
+                                projectsContainer.addEventListener('mouseleave', () => {
+                                    projectsAll.classList.add('hidden');
+                                });
+                                projectsMore.addEventListener('click', (e) => {
+                                    e.stopPropagation();
+                                    projectsAll.classList.toggle('hidden');
+                                });
+                            }
+                        }
+
+                        return card;
+                    }
+
+                    function init() {
+
+                        function normalizeName(name = "") {
+                            return name.trim().replace(/\s+/g, " ");
+                        }
+
+                        function getLastNameKey(name = "") {
+                            const n = normalizeName(name);
+                            if (!n) return "";
+                            const parts = n.split(" ");
+                            return (parts[parts.length - 1] || "").toLowerCase();
+                        }
+
+                        function sortByLastName(a, b) {
+                            const aLast = getLastNameKey(a.name);
+                            const bLast = getLastNameKey(b.name);
+                            if (aLast < bLast) return -1;
+                            if (aLast > bLast) return 1;
+
+                            const aFull = normalizeName(a.name).toLowerCase();
+                            const bFull = normalizeName(b.name).toLowerCase();
+                            if (aFull < bFull) return -1;
+                            if (aFull > bFull) return 1;
+                            return 0;
+                        }
+
+                        // Collect all projects and count collaborators
+                        const projectCounts = new Map();
+
+                        // Helper function to count people in projects
+                        const countProjects = (peopleArray) => {
+                            if (!peopleArray) return;
+                            peopleArray.forEach(person => {
+                                if (person.projects) {
+                                    person.projects.forEach(proj => {
+                                        const count = projectCounts.get(proj) || 0;
+                                        projectCounts.set(proj, count + 1);
+                                    });
+                                }
                             });
-                            projectsContainer.addEventListener('mouseleave', () => {
-                                projectsAll.classList.add('hidden');
+                        };
+
+                        // Count projects from all data sources
+                        countProjects(collabProfsData);
+                        countProjects(collabScholarsData);
+                        countProjects(labMembersData);
+                        countProjects(staffsData);
+
+                        // Filter to only show projects with more than 3 collaborators
+                        const allProjects = Array.from(projectCounts.entries())
+                            .filter(([project, count]) => count > 3)
+                            .map(([project]) => project);
+
+                        // Create project filter buttons
+                        const filterButtonsContainer = document.getElementById('project-filter-buttons');
+                        if (filterButtonsContainer && allProjects.length > 0) {
+                            // "All" button
+                            const allButton = document.createElement('button');
+                            allButton.className = 'project-filter-btn active w-full text-left px-3 py-2 rounded-lg text-xs font-semibold transition-colors bg-blue-600 text-white hover:bg-blue-700';
+                            allButton.textContent = 'All';
+                            allButton.setAttribute('data-project', 'all');
+                            filterButtonsContainer.appendChild(allButton);
+
+                            // ✅ 여기만 남기고 싶은 프로젝트(표시명 기준)
+                            const ALLOWED_PROJECTS = ["BP", "CAUS"];
+
+                            // allProjects = Array.from(projectCounts...) 로 만든 뒤에
+                            const filteredProjects = allProjects
+                                .filter(p => ALLOWED_PROJECTS.includes(p))
+                                .sort();
+
+                            // Project buttons
+                            filteredProjects.forEach(project => {
+                                const btn = document.createElement('button');
+                                btn.className =
+                                    'project-filter-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold transition-colors bg-slate-100 text-slate-700 hover:bg-slate-200';
+                                btn.textContent = project;
+                                btn.setAttribute('data-project', project.toLowerCase());
+                                filterButtonsContainer.appendChild(btn);
                             });
-                            projectsMore.addEventListener('click', (e) => {
-                                e.stopPropagation();
-                                projectsAll.classList.toggle('hidden');
+
+                            // Filter functionality - will be set up after cards are created
+                            window.setupProjectFilter = function () {
+                                const filterButtons = document.querySelectorAll('.project-filter-btn');
+
+                                filterButtons.forEach(btn => {
+                                    btn.addEventListener('click', () => {
+                                        // Get fresh list of cards each time
+                                        const personCards = document.querySelectorAll('.person-card');
+                                        console.log('Filter clicked, found', personCards.length, 'cards');
+
+                                        // Update active button
+                                        filterButtons.forEach(b => {
+                                            b.classList.remove('active', 'bg-blue-600', 'text-white', 'hover:bg-blue-700');
+                                            b.classList.add('bg-slate-100', 'text-slate-700', 'hover:bg-slate-200');
+                                        });
+                                        btn.classList.add('active', 'bg-blue-600', 'text-white', 'hover:bg-blue-700');
+                                        btn.classList.remove('bg-slate-100', 'text-slate-700', 'hover:bg-slate-200');
+
+                                        // Update filter
+                                        const activeFilter = btn.getAttribute('data-project');
+                                        console.log('Active filter:', activeFilter);
+
+                                        // Filter cards
+                                        let visibleCount = 0;
+                                        personCards.forEach(card => {
+                                            const cardProjects = card.getAttribute('data-projects') || '';
+                                            if (activeFilter === 'all' || cardProjects.includes(activeFilter)) {
+                                                card.style.display = '';
+                                                visibleCount++;
+                                            } else {
+                                                card.style.display = 'none';
+                                            }
+                                        });
+                                        console.log('Visible cards:', visibleCount);
+                                    });
+                                });
+                            };
+                        }
+
+                        // ===== Participants (merged & sorted) =====
+                        const participantsGrid = document.getElementById('participants-grid');
+                        const participants = [];
+
+                        function pushPeople(arr, sourceLabel) {
+                            if (!Array.isArray(arr)) return;
+                            arr.forEach(p => participants.push({ ...p, sourceLabel }));
+                        }
+
+                        pushPeople(collabProfsData, "Professor");
+                        pushPeople(collabScholarsData, "Global Scholar");
+                        pushPeople(labMembersData, "Student");
+
+                        // Staffs: createPersonCard 포맷에 맞춰 보정
+                        pushPeople((staffsData || []).map(s => ({
+                            ...s,
+                            role: s.role || "Research Staff",
+                            edu: s.edu || [],
+                            position: s.position || [],
+                            research: s.research || "",
+                            projects: s.projects || [],
+                            photo: s.photo || ""
+                        })), "Research Staff");
+
+                        participants.sort(sortByLastName);
+
+                        if (participantsGrid) {
+                            participantsGrid.innerHTML = "";
+                            participants.forEach(p => {
+                                const card = createPersonCard(p, {
+                                    imgIdPrefix: "participant",
+                                    projectsThreshold: 4,
+                                    showLink: Boolean(p.link)
+                                });
+                                participantsGrid.appendChild(card);
                             });
+                        }
+
+                        // -- alumni grid --
+                        const phdGrid = document.getElementById('alumni-phd-grid');
+                        const msGrid = document.getElementById('alumni-ms-grid');
+
+                        const ms = [];
+                        const phd = [];
+
+                        function pushAlumni(arr, sourceLabel) {
+                            if (!Array.isArray(arr)) return;
+                            arr.forEach(p => {
+                                if (p.degree === 'M.S.') ms.push({ ...p, sourceLabel });
+                                else phd.push({ ...p, sourceLabel });
+                            });
+                        }
+
+                        // Alumni: createPersonCard 포맷에 맞춰 보정
+                        pushAlumni((aluminiData || []).map(a => ({
+                            ...a,
+                            // role: a.degree ? `Alumni (${a.degree})` : "Alumni",
+                            role: a.degree,
+                            research: a.research || "",
+                            projects: a.projects || [],
+                            photo: a.photo || ""
+                        })), "Alumni");
+
+                        ms.sort(sortByLastName);
+                        phd.sort(sortByLastName);
+
+                        if (msGrid) {
+                            msGrid.innerHTML = "";
+                            ms.forEach(p => {
+                                const card = createPersonCard(p, {
+                                    imgIdPrefix: "alumni-ms",
+                                    projectsThreshold: 4,
+                                    showLink: Boolean(p.link)
+                                });
+                                msGrid.appendChild(card);
+                            });
+                        }
+                        if (phdGrid) {
+                            phdGrid.innerHTML = "";
+                            phd.forEach(p => {
+                                const card = createPersonCard(p, {
+                                    imgIdPrefix: "alumni-phd",
+                                    projectsThreshold: 4,
+                                    showLink: Boolean(p.link)
+                                });
+                                phdGrid.appendChild(card);
+                            });
+                        }
+
+                        if (window.setupProjectFilter) {
+                            window.setupProjectFilter();
                         }
                     }
 
-                    return card;
+                    init();
+                } catch (error) {
+                    console.error('Error initializing page:', error);
+                    // Show error message to user
+                    document.body.innerHTML = '<div style="padding: 2rem; text-align: center;"><h1>Error loading page data</h1><p>Please check the console for details.</p></div>';
                 }
-
-                function init() {
-
-                    function normalizeName(name = "") {
-                        return name.trim().replace(/\s+/g, " ");
-                    }
-
-                    function getLastNameKey(name = "") {
-                        const n = normalizeName(name);
-                        if (!n) return "";
-                        const parts = n.split(" ");
-                        return (parts[parts.length - 1] || "").toLowerCase();
-                    }
-
-                    function sortByLastName(a, b) {
-                        const aLast = getLastNameKey(a.name);
-                        const bLast = getLastNameKey(b.name);
-                        if (aLast < bLast) return -1;
-                        if (aLast > bLast) return 1;
-
-                        const aFull = normalizeName(a.name).toLowerCase();
-                        const bFull = normalizeName(b.name).toLowerCase();
-                        if (aFull < bFull) return -1;
-                        if (aFull > bFull) return 1;
-                        return 0;
-                    }
-
-                    // Preload professor photo (critical, above-the-fold)
-                    const profPhoto = document.getElementById('prof-photo');
-                    if (professorData.photo) {
-                        // Preload link for faster loading
-                        const link = document.createElement('link');
-                        link.rel = 'preload';
-                        link.as = 'image';
-                        link.href = professorData.photo;
-                        link.fetchPriority = 'high';
-                        document.head.appendChild(link);
-
-                        loadImage(profPhoto, professorData.photo, professorData.name);
-                    }
-                    document.getElementById('prof-name').innerText = professorData.name;
-                    document.getElementById('prof-greeting').innerText = professorData.greeting;
-                    document.getElementById('prof-link').href = professorData.link;
-                    document.getElementById('prof-research').innerHTML = marked.parse(professorData.research);
-                    const recentContainer = document.getElementById('prof-recent-container');
-                    if (professorData.recent && professorData.recent.trim()) {
-                        document.getElementById('prof-recent').innerHTML = marked.parse(professorData.recent);
-                    } else {
-                        recentContainer.style.display = 'none';
-                    }
-                    document.getElementById('prof-edu').innerHTML = professorData.edu.map(e => `<li class="flex items-start gap-3"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mt-1.5 shrink-0"></span><span class="text-slate-600 text-sm">${e}</span></li>`).join('');
-
-                    // Collect all projects and count collaborators
-                    const projectCounts = new Map();
-
-                    // Helper function to count people in projects
-                    const countProjects = (peopleArray) => {
-                        if (!peopleArray) return;
-                        peopleArray.forEach(person => {
-                            if (person.projects) {
-                                person.projects.forEach(proj => {
-                                    const count = projectCounts.get(proj) || 0;
-                                    projectCounts.set(proj, count + 1);
-                                });
-                            }
-                        });
-                    };
-
-                    // Count projects from all data sources
-                    countProjects(collabProfsData);
-                    countProjects(collabScholarsData);
-                    countProjects(labMembersData);
-                    countProjects(staffsData);
-
-                    // Filter to only show projects with more than 3 collaborators
-                    const allProjects = Array.from(projectCounts.entries())
-                        .filter(([project, count]) => count > 3)
-                        .map(([project]) => project);
-
-                    // Create project filter buttons
-                    const filterButtonsContainer = document.getElementById('project-filter-buttons');
-                    if (filterButtonsContainer && allProjects.length > 0) {
-                        // "All" button
-                        const allButton = document.createElement('button');
-                        allButton.className = 'project-filter-btn active w-full text-left px-3 py-2 rounded-lg text-xs font-semibold transition-colors bg-blue-600 text-white hover:bg-blue-700';
-                        allButton.textContent = 'All';
-                        allButton.setAttribute('data-project', 'all');
-                        filterButtonsContainer.appendChild(allButton);
-
-                        // ✅ 여기만 남기고 싶은 프로젝트(표시명 기준)
-                        const ALLOWED_PROJECTS = ["BP", "CAUS"];
-
-                        // allProjects = Array.from(projectCounts...) 로 만든 뒤에
-                        const filteredProjects = allProjects
-                            .filter(p => ALLOWED_PROJECTS.includes(p))
-                            .sort();
-
-                        // Project buttons
-                        filteredProjects.forEach(project => {
-                            const btn = document.createElement('button');
-                            btn.className =
-                                'project-filter-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold transition-colors bg-slate-100 text-slate-700 hover:bg-slate-200';
-                            btn.textContent = project;
-                            btn.setAttribute('data-project', project.toLowerCase());
-                            filterButtonsContainer.appendChild(btn);
-                        });
-
-                        // Filter functionality - will be set up after cards are created
-                        window.setupProjectFilter = function () {
-                            const filterButtons = document.querySelectorAll('.project-filter-btn');
-
-                            filterButtons.forEach(btn => {
-                                btn.addEventListener('click', () => {
-                                    // Get fresh list of cards each time
-                                    const personCards = document.querySelectorAll('.person-card');
-                                    console.log('Filter clicked, found', personCards.length, 'cards');
-
-                                    // Update active button
-                                    filterButtons.forEach(b => {
-                                        b.classList.remove('active', 'bg-blue-600', 'text-white', 'hover:bg-blue-700');
-                                        b.classList.add('bg-slate-100', 'text-slate-700', 'hover:bg-slate-200');
-                                    });
-                                    btn.classList.add('active', 'bg-blue-600', 'text-white', 'hover:bg-blue-700');
-                                    btn.classList.remove('bg-slate-100', 'text-slate-700', 'hover:bg-slate-200');
-
-                                    // Update filter
-                                    const activeFilter = btn.getAttribute('data-project');
-                                    console.log('Active filter:', activeFilter);
-
-                                    // Filter cards
-                                    let visibleCount = 0;
-                                    personCards.forEach(card => {
-                                        const cardProjects = card.getAttribute('data-projects') || '';
-                                        if (activeFilter === 'all' || cardProjects.includes(activeFilter)) {
-                                            card.style.display = '';
-                                            visibleCount++;
-                                        } else {
-                                            card.style.display = 'none';
-                                        }
-                                    });
-                                    console.log('Visible cards:', visibleCount);
-                                });
-                            });
-                        };
-                    }
-
-                    //// Collaborators Professors
-                    //const collabProfsGrid = document.getElementById('collab-profs-grid');
-                    //if (collabProfsGrid && collabProfsData) {
-                    //    collabProfsData.forEach((collabProf) => {
-                    //        const card = createPersonCard(collabProf, {
-                    //            imgIdPrefix: 'collab-professor',
-                    //            backgroundField: 'position',
-                    //            projectsThreshold: 4,
-                    //            showLink: true
-                    //        });
-                    //        collabProfsGrid.appendChild(card);
-                    //    });
-                    //}
-
-                    //// Members
-                    //const membersGrid = document.getElementById('members-grid');
-                    //if (membersGrid && labMembersData) {
-                    //    labMembersData.forEach((member) => {
-                    //        const card = createPersonCard(member, {
-                    //            imgIdPrefix: 'member',
-                    //            backgroundField: 'edu',
-                    //            projectsThreshold: 2,
-                    //            showLink: false
-                    //        });
-                    //        membersGrid.appendChild(card);
-                    //    });
-                    //}
-
-                    //// Global Scholars
-                    //const globalScholarsGrid = document.getElementById('global-scholars-grid');
-                    //if (globalScholarsGrid && collabScholarsData) {
-                    //    collabScholarsData.forEach((scholar) => {
-                    //        const card = createPersonCard(scholar, {
-                    //            imgIdPrefix: 'global-scholar',
-                    //            backgroundField: 'position',
-                    //            projectsThreshold: 4,
-                    //            showLink: true
-                    //        });
-                    //        globalScholarsGrid.appendChild(card);
-                    //    });
-                    //}
-
-                    //// Staffs
-                    //const staffsGrid = document.getElementById('staffs-grid');
-                    //if (staffsGrid && staffsData) {
-                    //    staffsData.forEach((staff) => {
-                    //        const card = document.createElement('div');
-                    //        // Add data attributes for filtering by projects
-                    //        const projectsAttr = staff.projects && staff.projects.length > 0
-                    //            ? staff.projects.map(p => p.toLowerCase()).join(' ')
-                    //            : '';
-                    //        card.setAttribute('data-projects', projectsAttr);
-                    //        card.className = "bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:border-blue-200 transition text-center person-card";
-                    //        card.innerHTML = `
-                    //                <h4 class="font-bold text-slate-900 mb-1">${staff.name}</h4>
-                    //                ${staff.projects && staff.projects.length > 0 ? `
-                    //                <div class="mt-4 pt-4 border-t border-slate-50">
-                    //                    <div class="flex flex-wrap gap-1.5 justify-center">
-                    //                        ${staff.projects.map(project => `
-                    //                            <span class="inline-block px-3 py-1 bg-blue-50 text-blue-600 text-[10px] font-bold rounded-full">${project}</span>
-                    //                        `).join('')}
-                    //                    </div>
-                    //                </div>
-                    //                ` : ''}
-                    //            `;
-                    //        staffsGrid.appendChild(card);
-                    //    });
-                    //}
-
-                    //// Alumni
-                    //const phdGrid = document.getElementById('alumni-phd-grid');
-                    //const msGrid = document.getElementById('alumni-ms-grid');
-                    //aluminiData.forEach(a => {
-                    //    const card = document.createElement('div');
-                    //    card.className = "bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:border-blue-200 transition text-center";
-                    //    card.innerHTML = `
-                    //            <h4 class="font-bold text-slate-900 mb-1">${a.name}</h4>
-                    //            <p class="text-xs text-slate-400">${a.date}</p>
-                    //            <div class="mt-4 pt-4 border-t border-slate-50">
-                    //                <span class="inline-block px-3 py-1 bg-blue-50 text-blue-600 text-[10px] font-bold rounded-full">${a.degree}</span>
-                    //            </div>
-                    //        `;
-                    //    if (a.degree === 'Ph.D.') phdGrid.appendChild(card);
-                    //    else msGrid.appendChild(card);
-                    //});
-
-                    // Setup filter functionality after all cards are created
-
-                    // ===== Participants (merged & sorted) =====
-                    const participantsGrid = document.getElementById('participants-grid');
-                    const participants = [];
-
-                    function pushPeople(arr, sourceLabel) {
-                        if (!Array.isArray(arr)) return;
-                        arr.forEach(p => participants.push({ ...p, sourceLabel }));
-                    }
-
-                    pushPeople(collabProfsData, "Professor");
-                    pushPeople(collabScholarsData, "Global Scholar");
-                    pushPeople(labMembersData, "Student");
-
-                    // Staffs: createPersonCard 포맷에 맞춰 보정
-                    pushPeople((staffsData || []).map(s => ({
-                        ...s,
-                        role: s.role || "Research Staff",
-                        edu: s.edu || [],
-                        position: s.position || [],
-                        research: s.research || "",
-                        projects: s.projects || [],
-                        photo: s.photo || ""
-                    })), "Research Staff");
-
-                    // Alumni: createPersonCard 포맷에 맞춰 보정
-                    pushPeople((aluminiData || []).map(a => ({
-                        ...a,
-                        role: a.degree ? `Alumni (${a.degree})` : "Alumni",
-                        edu: a.date ? [a.date] : [],
-                        research: a.research || "",
-                        projects: a.projects || [],
-                        photo: a.photo || ""
-                    })), "Alumni");
-
-                    participants.sort(sortByLastName);
-
-                    if (participantsGrid) {
-                        participantsGrid.innerHTML = "";
-                        participants.forEach(p => {
-                            const card = createPersonCard(p, {
-                                imgIdPrefix: "participant",
-                                backgroundField: (p.position && p.position.length > 0) ? "position" : "edu",
-                                projectsThreshold: 4,
-                                showLink: Boolean(p.link)
-                            });
-                            participantsGrid.appendChild(card);
-                        });
-                    }
-
-                    if (window.setupProjectFilter) {
-                        window.setupProjectFilter();
-                    }
+            })();
+            // Sidebar navigation functionality
+            (async () => {
+                const sidebarSlot = document.getElementById("scroll-sidebar-slot");
+                if (sidebarSlot) {
+                    const base = location.pathname.replace(/\/[^\/]*$/, "");
+                    const res = await fetch(`${base}/partials/scroll-sidebar.html`, { cache: "no-store" });
+                    sidebarSlot.innerHTML = await res.text();
                 }
-
-                init();
-            } catch (error) {
-                console.error('Error initializing page:', error);
-                // Show error message to user
-                document.body.innerHTML = '<div style="padding: 2rem; text-align: center;"><h1>Error loading page data</h1><p>Please check the console for details.</p></div>';
+            })();
+            // Email Toast functionality
+            async function copyEmail(email) {
+                const toast = document.getElementById("toast");
+                try {
+                    await navigator.clipboard.writeText(email);
+                    toast.textContent = "Email copied to clipboard!";
+                    toast.classList.add("opacity-100", "pointer-events-auto");
+                    toast.classList.remove("opacity-0", "pointer-events-none");
+                } catch (err) {
+                    console.error("Copy failed", err);
+                    toast.textContent = "Copy failed";
+                }
+                setTimeout(() => {
+                    toast.classList.add("opacity-0", "pointer-events-none");
+                    toast.classList.remove("opacity-100", "pointer-events-auto");
+                }, 1600);
             }
-        })();
-        // Sidebar navigation functionality
-        (async () => {
-            const sidebarSlot = document.getElementById("scroll-sidebar-slot");
-            if (sidebarSlot) {
-                const base = location.pathname.replace(/\/[^\/]*$/, "");
-                const res = await fetch(`${base}/partials/scroll-sidebar.html`, { cache: "no-store" });
-                sidebarSlot.innerHTML = await res.text();
-            }
-        })();
-    </script>
-    <script src="assets/script.js"></script>
+        </script>
+        <!-- <script src="assets/script.js"></script> -->
+    </main>
 </body>
 </html>

@@ -1,4 +1,4 @@
-{
+﻿{
   "professorData": {
     "id": 1,
     "name": "Prof. Yoonjin Yoon",
@@ -17,6 +17,25 @@
   },
   "labMembersData": [
     {
+      "id": 1,
+      "name": "Yoonjin Yoon",
+      "link": "https://sites.google.com/view/yoonjintrue",
+      "role": "Kaist Professor",
+      "email": "yoonjin@kaist.ac.kr",
+      "edu": [
+        "B.S. Mathematics, SNU",
+        "M.S. Computer Science, Stanford",
+        "M.S. Management Science and Engineering, Stanford",
+        "Ph.D. Civil and Environmental Engineering, UC Berkeley"
+      ],
+      "position": [
+        "Associate Professor of Civil and Environmental Engineering, KAIST (Joint Appointments in the Graduate School of Artificial Intelligence and Graduate School of Data Science)"
+      ],
+      "photo": "assets/images/people/profile_yoon.jpg",
+      "research": "System-of-systems, which includes transportation system, city, logistics system, and public health system.",
+      "projects": [ "CAUS", "BP" ]
+    },
+    {
       "id": 2,
       "name": "Namwoo Kim",
       "link": "https://sites.google.com/view/namwookim",
@@ -29,7 +48,7 @@
       ],
       "photo": "assets/images/people/2.jpg",
       "research": "",
-      "projects": ["CAUS","PrismX"]
+      "projects": [ "CAUS", "PrismX", "중견" ]
     },
     {
       "id": 3,
@@ -43,8 +62,8 @@
         "B.S. in Civil Engineering, NYUAD"
       ],
       "photo": "assets/images/people/3.jpg",
-      "research": "UAM",
-      "projects": ["CAUS","BP"]
+      "research": "Urban Air Mobility (UAM), evaluation of vertiport locations, addressing the intricacies of their placement in the middle of large metropolitan environments",
+      "projects": [ "CAUS", "BP" ]
     },
     {
       "id": 4,
@@ -57,7 +76,7 @@
         "M.S. in Information Security, Sungkyunkwan University",
         "B.S. in Computer Engineering and Military Science, Korea Air Force Academy"
       ],
-      "projects": ["CAUS"],
+      "projects": [ "CAUS" ],
       "photo": "assets/images/people/4.jpg"
     },
     {
@@ -70,7 +89,7 @@
       "edu": [
         "B.S. in Economics and Data Science, University of Seoul"
       ],
-      "projects": ["CAUS", "PrismX"],
+      "projects": [ "CAUS", "PrismX" ],
       "photo": "assets/images/people/5.jpg"
     },
     {
@@ -83,7 +102,7 @@
       "edu": [
         "B.S. in Quantitative Sciences and Biology, Emory University"
       ],
-      "projects": ["Urban All"],
+      "projects": [ "Urban All" ],
       "photo": "assets/images/people/6.jpg"
     },
     {
@@ -95,7 +114,7 @@
       "edu": [
         "B.S. in Business Administration, University of Southern California"
       ],
-      "projects": ["CAUS", "VIGILANT"],
+      "projects": [ "CAUS", "VIGILANT" ],
       "photo": "assets/images/people/7.jpg"
     },
     {
@@ -107,7 +126,7 @@
       "edu": [
         "B.S. in Psychology, University of Utah"
       ],
-      "projects": ["CAUS", "PrismX"],
+      "projects": [ "CAUS", "PrismX" ],
       "photo": "assets/images/people/8.jpg"
     },
     {
@@ -119,7 +138,7 @@
       "edu": [
         "B.A. in Data Science, UC Berkeley"
       ],
-      "projects": ["CAUS", "PrismX"],
+      "projects": [ "CAUS", "PrismX", "중견" ],
       "photo": "assets/images/people/9.jpg"
     },
     {
@@ -131,10 +150,78 @@
       "edu": [
         "B.S. in Civil Engineering, Kyoto University"
       ],
+      "projects": [ "CAUS", "VIGILANT" ],
       "photo": "assets/images/people/10.jpg"
+    },
+    {
+      "id": 101,
+      "name": "Minseok Jeong",
+      "link": "https://dsa950115.github.io",
+      "role": "Ph.D. Candidate",
+      "from": "2025.09~",
+      "email": "dsa950115@kaist.ac.kr",
+      "edu": [
+        "Ph.D. in School of Electrical Engineering, KAIST (current, ACSS)",
+        "M.S. in School of Electrical Engineering and Computer Science, GIST",
+        "B.S. in Systems Management Engineering, SKKU"
+      ],
+      "projects": [ "BP" ],
+      "photo": "assets/images/people/jeongminseok.jpg"
+    },
+    {
+      "id": 102,
+      "name": "Kwangbin Lee",
+      "link": "https://www.linkedin.com/in/kwangbin417",
+      "role": "M.S. Candidate",
+      "from": "2025.09~",
+      "email": "lkb20015@kaist.ac.kr",
+      "edu": [
+        "B.S in School of Electrical Engineering, KAIST"
+      ],
+      "projects": [ "BP" ],
+      "photo": "assets/images/people/leekwangbin.jpg"
+    },
+    {
+      "id": 103,
+      "name": "Hayoon Song",
+      "role": "M.S. Candidate",
+      "from": "2025.09~",
+      "email": "hayoonsong00@kaist.ac.kr",
+      "edu": [
+        "B.S. in Climate & Energy Systems Engineering and Economics, Ewha Womans University"
+      ],
+      "projects": [ "BP" ],
+      "photo": "assets/images/people/songhayoon.jpg"
     }
   ],
   "aluminiData": [
-    
+    {
+      "id": 1502,
+      "name": "Youngjun Park",
+      "role": "Research Staff",
+      "degree": "Ph.D.",
+      "date": "",
+      "projects": [],
+      "photo": "assets/images/people/36.jpg"
+    },
+    {
+      "id": 16,
+      "name": "Yuyol Shin",
+      "role": "Research Staff",
+      "degree": "Ph.D.",
+      "date": "2016.09~2022.08",
+      "projects": [],
+      "photo": "assets/images/people/16.png"
+    },
+    {
+      "id": 19,
+      "name": "Seyun Kim",
+      "role": "Research Staff",
+      "degree": "Ph.D.",
+      "date": "2016.03~2021.02",
+      "photo": "assets/images/people/19.png",
+      "projects": [],
+      "desc": "2021.03~2025.07\n\n  (Research Assistant Professor)"
+    }
   ]
 }

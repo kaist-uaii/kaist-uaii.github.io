@@ -4,7 +4,7 @@
       "id": "changhyun-kwon",
       "name": "Changhyun Kwon",
       "link": "https://www.chkwon.net/",
-      "role": "Associate Professor",
+      "role": "Kaist Professor",
       "email": "chkwon@kaist.ac.kr",
       "position": [
         "Associate Professor in Industrial and Systems Engineering, KAIST",
@@ -13,13 +13,13 @@
       ],
       "photo": "assets/images/collab/profile_kwon.jpg",
       "research": "Aiming to advance computational optimization methods for efficient transportation and logistics systems",
-      "projects": ["CAUS"]
+      "projects": [ "CAUS" ]
     },
     {
       "id": "jinkyoo-park",
       "name": "Jinkyoo Park",
       "link": "http://silab.kaist.ac.kr/",
-      "role": "Associate Professor",
+      "role": "Kaist Professor",
       "email": "jinkyoo.park@kaist.ac.kr",
       "position": [
         "Associate Professor, Department of Industrial and Systems Engineering",
@@ -28,13 +28,13 @@
       ],
       "photo": "assets/images/collab/profile_jinkyoo_park.jpg",
       "research": "Aiming to develop a generalist agent that can solve complex and real-world decision-making problems",
-      "projects": ["CAUS"]
+      "projects": [ "CAUS" ]
     },
     {
       "id": "taesik-lee",
       "name": "Taesik Lee",
       "link": "https://csdlab.kaist.ac.kr/people/Professor",
-      "role": "Professor",
+      "role": "Kaist Professor",
       "email": "taesik.lee@kaist.edu",
       "position": [
         "Associate Vice President, Office of Academic Affairs, KAIST",
@@ -42,87 +42,87 @@
       ],
       "photo": "assets/images/collab/profile_taesik_lee.jpg",
       "research": "Healthcare analytics, Disaster response system, Modeling & simulation of large-scale systems, Systems engineering, Decision making under uncertainty",
-      "projects": ["CAUS"]
+      "projects": [ "CAUS" ]
     },
     {
       "id": "dongman-lee",
       "name": "Dongman Lee",
       "link": "https://cds.kaist.ac.kr/people/",
-      "role": "KEPCO Chair Professor",
+      "role": "Kaist Professor",
       "email": "dlee@kaist.ac.kr",
       "position": [
         "ICT Endowed Chair Professor at KAIST"
       ],
       "photo": "assets/images/collab/profile_dongman_lee.jpg",
       "research": "Systems-Networks, Social Computing, Interactive Computing, Edge Computing, Urban Computing, Ubiquitous Computing",
-      "projects": ["CAUS"]
+      "projects": [ "CAUS" ]
     },
     {
       "id": "kukjin-yoon",
       "name": "Kuk-Jin Yoon",
       "link": "https://vi.kaist.ac.kr/pages/faculty/",
-      "role": "Professor",
+      "role": "Kaist Professor",
       "email": "kjyoon@kaist.ac.kr",
       "position": [
         "Professor, Department of Mechanical Engineering, KAIST"
       ],
       "research": "Developing intelligent systems capable of understanding, reconstructing, and interacting with the complex real world",
-      "projects": ["CAUS"],
+      "projects": [ "CAUS" ],
       "photo": "assets/images/collab/profile_kukjin_yoon.jpg"
     },
     {
       "id": "minjoon-seo",
       "name": "Minjoon Seo",
       "link": "https://seominjoon.github.io/",
-      "role": "Associate Professor",
+      "role": "Kaist Professor",
       "email": "minjoon@kaist.ac.kr",
       "position": [
         "Co-Founder & CEO at Config Intelligence",
-        "Associate Professor, KAIST"
+        "Associate Professor, KAIST AI"
       ],
       "research": "Natural Language Processing, Knowledge Base, Large-Scale Machine Learning",
-      "projects": ["CAUS"],
+      "projects": [ "CAUS" ],
       "photo": "assets/images/collab/profile_minjoon_seo.jpg"
     },
     {
       "id": "uichin-lee",
       "name": "Uichin Lee",
       "link": "https://ic.kaist.ac.kr/",
-      "role": "Professor",
+      "role": "Kaist Professor",
       "email": "uclee@kaist.ac.kr",
       "position": [
         "Professor in School of Computing, KAIST"
       ],
       "research": "Human-Computer Interaction (HCI), Ubiquitous Computing (UbiComp)",
-      "projects": ["CAUS"],
+      "projects": [ "CAUS" ],
       "photo": "assets/images/collab/profile_uichin_lee.jpg"
     },
     {
       "id": "soh-young-in",
       "name": "Soh Young In",
       "link": "https://www.sohyoung-in.com/",
-      "role": "Assistant Professor",
+      "role": "Kaist Professor",
       "email": "si2131@kaist.ac.kr",
       "position": [
-        "Assistant Professor in the Department of Civil and Environmental Engineering",
+        "Assistant Professor in the Department of Civil and Environmental Engineering KAIST",
         "Affiliate Faculty of the Graduate School of Green Growth and Sustainability, KAIST"
       ],
       "research": "Demonstrating environmental, social, and economic incentives related to low-carbon transition and implementing sustainable and resilient infrastructure systems through behavior change of various stakeholders",
-      "projects": ["BP"],
+      "projects": [ "BP" ],
       "photo": "assets/images/collab/profile_soh_young_in.jpg"
     },
     {
       "id": "soojean-han",
       "name": "SooJean Han",
       "link": "http://acss.kaist.ac.kr/#team",
-      "role": "Assistant Professor",
+      "role": "Kaist Professor",
       "email": "si2131@kaist.ac.kr",
       "position": [
         "Assistant professor at School of Electrical Engineering, KAIST",
         "Director of the Autonomous Control for Stochastic Systems (ACSS) Lab"
       ],
       "research": "Broadly at the intersection of control theory and artificial intelligence: stochastic systems, distributed sensing, and decision-making networks",
-      "projects": ["BP"],
+      "projects": [ "BP" ],
       "photo": "assets/images/collab/profile_soojean_han.jpg"
     }
   ],
@@ -130,8 +130,9 @@
     {
       "id": "maurizio-porfiri",
       "name": "Maurizio Porfiri",
+      "role": "Global Scholar",
       "email": "mporfiri@nyu.edu",
-      "projects": ["CAUS"],
+      "projects": [ "CAUS" ],
       "position": [
         "Civil and Urban Engineering Department Interim Chair, NYU Tandon",
         "Institute Professor, School of Engineering, NYU Tandon",
@@ -145,19 +146,20 @@
     {
       "id": "takahiro-yabe",
       "name": "Takahiro Yabe",
+      "role": "Global Scholar",
       "email": "ty2520@nyu.edu",
       "position": [
         "Assistant Professor at Department of Technology Management and Innovation (TMI), NYU Tandon",
         "Assistant Professor of the Center for Urban Science + Progress (CUSP), NYU Tandon"
       ],
       "research": "Computational social science and network science approaches to model the resilience of cities to disasters, pandemics, and disruptive mobility technology",
-      "projects": ["CAUS"],
+      "projects": [ "CAUS" ],
       "link": "http://engineering.nyu.edu/faculty/takahiro-yabe",
       "photo": "assets/images/collab/profile_taka.jpg"
     },
     {
       "id": "fabio-duarte",
-      "role": "Professor",
+      "role": "Global Scholar",
       "name": "Fabio Duarte",
       "email": "fabio@mit.edu",
       "position": [
@@ -166,14 +168,14 @@
         "Lecturer, Department of Urban Studies and Planning (DUSP), MIT",
         "Affiliated Researcher, Sustainable Urbanization Lab, Center for Real Estate, MIT"
       ],
-      "projects": ["CAUS"],
+      "projects": [ "CAUS" ],
       "research": "Currently working on: City Scanner, Favelas 4D, Planning Ideas that Matter Podcast, The Impact of Police Surveillance on Racial Bias using Open Data",
       "link": "https://dusp.mit.edu/people/fabio-duarte",
       "photo": "assets/images/collab/profile_fabio_duarte.jpg"
     },
     {
       "id": "kincho-law",
-      "role": "Professor",
+      "role": "Global Scholar",
       "name": "Kincho Law",
       "email": "kvonner@stanford.edu",
       "position": [
@@ -184,26 +186,15 @@
       "research": "Application of computational and information science in engineering",
       "link": "https://profiles.stanford.edu/kincho-law",
       "photo": "assets/images/collab/profile_kincho_h_law.jpg"
-    }],
-    
-    "staffsData": [
-    {
-      "id": "youngjun-park",
-      "name": "Youngjun Park",
-      "projects": [ "CAUS" ],
-      "photo": "assets/images/people/36.jpg"
-    },
+    }
+  ],
+
+  "staffsData": [
     {
       "id": "jiwon-park",
       "name": "Jiwon Park",
       "projects": [ "CAUS", "BP" ],
       "photo": "assets/images/people/35.JPG"
-    },
-    {
-      "id": "seyun-kim",
-      "name": "Seyun Kim",
-      "projects": [ "CAUS" ],
-      "photo": "assets/images/people/19.png"
     }
   ]
 }
