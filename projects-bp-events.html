@@ -1,0 +1,705 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Events | BP@KAIST — Brain Pool Fellowship Program</title>
+
+    <style>
+      :root {
+        --bg: #f4f7fb;
+        --bg-soft: #f8fbff;
+        --surface: rgba(255, 255, 255, 0.82);
+        --surface-strong: rgba(255, 255, 255, 0.96);
+        --card: rgba(255, 255, 255, 0.94);
+
+        --text: #0f172a;
+        --text-strong: #020617;
+        --muted: rgba(15, 23, 42, 0.72);
+        --muted-2: rgba(15, 23, 42, 0.54);
+
+        --brand: #2563eb;
+        --brand-strong: #1d4ed8;
+        --brand-soft: rgba(37, 99, 235, 0.1);
+
+        --stroke: rgba(15, 23, 42, 0.09);
+        --stroke-soft: rgba(15, 23, 42, 0.06);
+        --divider: rgba(15, 23, 42, 0.08);
+
+        --shadow-xs: 0 4px 14px rgba(15, 23, 42, 0.04);
+        --shadow-sm: 0 14px 34px rgba(15, 23, 42, 0.06);
+        --shadow-md: 0 24px 70px rgba(15, 23, 42, 0.08);
+        --shadow-lg: 0 36px 100px rgba(2, 6, 23, 0.2);
+
+        --radius-sm: 16px;
+        --radius-md: 24px;
+        --radius-lg: 32px;
+        --radius-xl: 40px;
+        --radius-2xl: 48px;
+        --radius-pill: 999px;
+
+        --space-1: 4px;
+        --space-2: 8px;
+        --space-3: 12px;
+        --space-4: 16px;
+        --space-5: 20px;
+        --space-6: 24px;
+        --space-7: 32px;
+        --space-8: 40px;
+        --space-9: 48px;
+        --space-10: 64px;
+        --space-11: 80px;
+        --space-12: 104px;
+
+        --font-stack:
+          ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Roboto, Helvetica, Arial, "Apple SD Gothic Neo",
+          "Noto Sans KR", "Malgun Gothic", sans-serif;
+
+        --h1: clamp(36px, 4.4vw, 56px);
+        --h2: clamp(30px, 3.6vw, 46px);
+        --h3: clamp(20px, 2vw, 26px);
+
+        --lh-tight: 1.04;
+        --lh-title: 1.12;
+        --lh-body: 1.72;
+
+        --tracking-tight: -0.04em;
+        --tracking-mid: -0.03em;
+
+        --container: 1180px;
+        --nav-height: 80px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: var(--font-stack);
+        color: var(--text);
+        background:
+          radial-gradient(
+            circle at top,
+            rgba(37, 99, 235, 0.06),
+            transparent 28%
+          ),
+          linear-gradient(180deg, #f8fbff 0%, #f4f7fb 100%);
+        line-height: var(--lh-body);
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      a:focus-visible,
+      button:focus-visible {
+        outline: 3px solid rgba(37, 99, 235, 0.24);
+        outline-offset: 4px;
+        border-radius: 12px;
+      }
+
+      .container {
+        width: min(var(--container), calc(100% - 40px));
+        margin: 0 auto;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(248, 250, 252, 0.78);
+        backdrop-filter: blur(18px) saturate(145%);
+        border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+      }
+
+      .header-inner {
+        min-height: var(--nav-height);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-6);
+      }
+
+      .logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+        min-height: 44px;
+        white-space: nowrap;
+      }
+
+      .logo-mark {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--brand);
+        box-shadow: 0 0 0 8px rgba(37, 99, 235, 0.1);
+        flex: 0 0 auto;
+      }
+
+      .logo-text {
+        display: inline-flex;
+        align-items: baseline;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .logo-main {
+        font-size: 17px;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        color: var(--text-strong);
+      }
+
+      .logo-sub {
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        color: var(--muted);
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 40px;
+        padding: 0 14px;
+        border-radius: var(--radius-pill);
+        font-size: 14px;
+        font-weight: 650;
+        letter-spacing: -0.01em;
+        color: var(--muted);
+        transition:
+          color 0.18s ease,
+          background 0.18s ease,
+          transform 0.18s ease;
+      }
+
+      nav a:hover,
+      nav a.active {
+        color: var(--text-strong);
+        background: rgba(15, 23, 42, 0.05);
+      }
+
+      nav a:hover {
+        transform: translateY(-1px);
+      }
+
+      main {
+        position: relative;
+        z-index: 2;
+      }
+
+      .section {
+        padding: 88px 0 96px;
+      }
+
+      .section-shell {
+        background: var(--surface);
+        border: 1px solid var(--stroke-soft);
+        border-radius: var(--radius-2xl);
+        box-shadow: var(--shadow-md);
+        padding: clamp(28px, 4vw, 64px);
+      }
+
+      .section-header {
+        max-width: 780px;
+        margin: 0 auto 40px;
+        text-align: center;
+      }
+
+      .section-title {
+        margin: 0;
+        font-size: clamp(34px, 4vw, 52px);
+        line-height: 1.08;
+        letter-spacing: -0.04em;
+        color: var(--text-strong);
+        font-weight: 820;
+      }
+
+      .event-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .event-card {
+        display: grid;
+        grid-template-columns: 118px minmax(0, 1fr);
+        gap: 20px;
+        align-items: start;
+        padding: 24px;
+        border-radius: 30px;
+        background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+        border: 1px solid rgba(15, 23, 42, 0.08);
+        box-shadow: var(--shadow-sm);
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease,
+          border-color 0.2s ease;
+      }
+
+      .event-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 24px 56px rgba(15, 23, 42, 0.1);
+        border-color: rgba(37, 99, 235, 0.16);
+      }
+
+      .event-media {
+        width: 118px;
+        height: 118px;
+        border-radius: 20px;
+        overflow: hidden;
+        border: 1px solid rgba(15, 23, 42, 0.08);
+        background: #f2f4f8;
+      }
+
+      .event-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .event-date {
+        border-radius: 20px;
+        padding: 16px 12px;
+        background:
+          linear-gradient(
+            180deg,
+            rgba(37, 99, 235, 0.09),
+            rgba(37, 99, 235, 0.03)
+          ),
+          #fff;
+        border: 1px solid rgba(37, 99, 235, 0.14);
+        text-align: center;
+      }
+
+      .event-date .month {
+        display: block;
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--brand-strong);
+      }
+
+      .event-date .day {
+        display: block;
+        margin-top: 2px;
+        font-size: 32px;
+        line-height: 1;
+        font-weight: 900;
+        letter-spacing: -0.04em;
+        color: var(--text-strong);
+      }
+
+      .event-date .year {
+        display: block;
+        margin-top: 6px;
+        font-size: 13px;
+        color: var(--muted);
+        font-weight: 700;
+      }
+
+      .event-body {
+        display: grid;
+        gap: 10px;
+      }
+
+      .event-tag {
+        display: inline-flex;
+        align-items: center;
+        width: fit-content;
+        min-height: 28px;
+        padding: 0 10px;
+        border-radius: var(--radius-pill);
+        background: rgba(15, 23, 42, 0.05);
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: -0.01em;
+      }
+
+      .event-title {
+        margin: 0;
+        font-size: 22px;
+        line-height: 1.2;
+        letter-spacing: -0.025em;
+        font-weight: 820;
+        color: var(--text-strong);
+      }
+
+      .event-meta {
+        display: grid;
+        gap: 4px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.55;
+      }
+
+      .event-meta strong {
+        color: var(--text);
+      }
+
+      .event-desc {
+        margin: 2px 0 0;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.72;
+      }
+
+      .event-actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 6px;
+      }
+
+      .btn-line {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 40px;
+        padding: 0 14px;
+        border-radius: var(--radius-pill);
+        background: #fff;
+        border: 1px solid rgba(15, 23, 42, 0.1);
+        color: var(--text);
+        font-weight: 800;
+        font-size: 14px;
+        transition:
+          transform 0.18s ease,
+          border-color 0.18s ease,
+          background 0.18s ease;
+      }
+
+      .btn-line:hover {
+        transform: translateY(-1px);
+        border-color: rgba(37, 99, 235, 0.2);
+        background: rgba(37, 99, 235, 0.04);
+      }
+
+      footer {
+        padding: 8px 0 88px;
+      }
+
+      .footer-inner {
+        display: grid;
+        gap: 12px;
+        padding: 34px 24px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(15, 23, 42, 0.06);
+        border-radius: 30px;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .footer-title {
+        margin: 0;
+        font-size: 18px;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        font-weight: 780;
+        color: var(--text-strong);
+      }
+
+      .contact {
+        display: grid;
+        gap: 8px;
+        font-size: 14px;
+        line-height: 1.7;
+        color: var(--muted);
+      }
+
+      .contact span {
+        color: var(--text);
+        font-weight: 760;
+      }
+
+      .contact a {
+        color: var(--brand);
+        font-weight: 700;
+      }
+
+      .copyright {
+        font-size: 13px;
+        color: var(--muted-2);
+      }
+
+      @media (max-width: 960px) {
+        .event-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .container {
+          width: min(var(--container), calc(100% - 28px));
+        }
+
+        .header-inner {
+          min-height: auto;
+          padding: 14px 0 16px;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .logo-text {
+          gap: 8px;
+        }
+
+        nav ul {
+          flex-wrap: wrap;
+          gap: 8px 6px;
+        }
+
+        .section {
+          padding: 72px 0;
+        }
+
+        .section-shell {
+          border-radius: 30px;
+          padding: 24px 20px;
+        }
+
+        .section-header {
+          margin-bottom: 36px;
+        }
+
+        .event-card {
+          grid-template-columns: 1fr;
+          border-radius: 24px;
+        }
+
+        .event-date {
+          width: 100%;
+          max-width: 140px;
+        }
+      }
+
+      @media (max-width: 520px) {
+        .logo-main {
+          font-size: 16px;
+        }
+
+        .logo-sub {
+          display: block;
+          width: 100%;
+          margin-left: 24px;
+        }
+
+        nav a {
+          min-height: 38px;
+          padding: 0 12px;
+          font-size: 13px;
+        }
+
+        .section-title {
+          font-size: 34px;
+        }
+
+        .event-title {
+          font-size: 20px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-inner">
+          <a
+            class="logo"
+            href="projects-bp.html#top"
+            aria-label="BP@KAIST Home"
+          >
+            <span class="logo-mark" aria-hidden="true"></span>
+            <span class="logo-text">
+              <span class="logo-main">BP@KAIST</span>
+              <span class="logo-sub">Brain Pool Fellowship</span>
+            </span>
+          </a>
+
+          <nav aria-label="Primary Navigation">
+            <ul>
+              <li><a href="projects-bp.html#top">Home</a></li>
+              <li><a href="projects-bp.html#about">About</a></li>
+              <li><a href="projects-bp.html#research">Research</a></li>
+              <li><a href="projects-bp.html#people">People</a></li>
+              <li>
+                <a class="active" href="projects-bp-events.html">Events</a>
+              </li>
+              <li><a href="projects-bp-publications.html">Publications</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" id="events" aria-labelledby="events-title">
+        <div class="container">
+          <div class="section-shell">
+            <div class="section-header">
+              <h1 class="section-title" id="events-title">Events</h1>
+            </div>
+
+            <div class="event-grid">
+              <article class="event-card">
+                <div class="event-date">
+                  <span class="month">Feb</span>
+                  <span class="day">20</span>
+                  <span class="year">2026</span>
+                </div>
+                <div class="event-body">
+                  <div class="event-tag">Meeting</div>
+                  <h3 class="event-title">2026 Brain Pool Kick-off Meeting</h3>
+                  <div class="event-meta">
+                    <div><strong>Time:</strong> FEB 20, 12:00–14:00</div>
+                    <div><strong>Venue:</strong> Zoom Online</div>
+                  </div>
+                  <p class="event-desc">
+                    Introduction to the second-year operation plan and research
+                    outcomes, followed by an International Fellow Seminar by
+                    Esther Choi, Ph.D., titled
+                    <em
+                      >Constructing Climate Startup Ecosystems: Urban Conditions
+                      and Innovation Dynamics in Korea</em
+                    >.
+                  </p>
+                  <!-- <div class="event-actions">
+                    <a class="btn-line" href="#">View Details</a>
+                  </div> -->
+                </div>
+              </article>
+
+              <!-- <article class="event-card">
+                <div class="event-date">
+                  <span class="month">Apr</span>
+                  <span class="day">09</span>
+                  <span class="year">2026</span>
+                </div>
+                <div class="event-body">
+                  <div class="event-tag">Workshop</div>
+                  <h3 class="event-title">
+                    Workshop on Climate Risk, Mobility, and Urban Simulation
+                  </h3>
+                  <div class="event-meta">
+                    <div><strong>Time:</strong> 10:00–17:00</div>
+                    <div><strong>Venue:</strong> Urban AI Institute, KAIST</div>
+                  </div>
+                  <p class="event-desc">
+                    An intensive workshop examining simulation-based urban
+                    diagnosis, scenario design, and policy experimentation
+                    across climate and mobility domains.
+                  </p>
+                  <div class="event-actions">
+                    <a class="btn-line" href="#">View Details</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="event-card">
+                <div class="event-date">
+                  <span class="month">May</span>
+                  <span class="day">22</span>
+                  <span class="year">2026</span>
+                </div>
+                <div class="event-body">
+                  <div class="event-tag">Colloquium</div>
+                  <h3 class="event-title">
+                    International Colloquium on Urban Physical AI
+                  </h3>
+                  <div class="event-meta">
+                    <div><strong>Time:</strong> 15:00–18:00</div>
+                    <div><strong>Venue:</strong> Hybrid Event</div>
+                  </div>
+                  <p class="event-desc">
+                    A colloquium on the integration of distributed autonomous
+                    infrastructure, agent-based systems, and physical urban
+                    decision architectures.
+                  </p>
+                  <div class="event-actions">
+                    <a class="btn-line" href="#">View Details</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="event-card">
+                <div class="event-date">
+                  <span class="month">Jun</span>
+                  <span class="day">11</span>
+                  <span class="year">2026</span>
+                </div>
+                <div class="event-body">
+                  <div class="event-tag">Lecture</div>
+                  <h3 class="event-title">
+                    Distinguished Lecture on Urban AI Policy and Governance
+                  </h3>
+                  <div class="event-meta">
+                    <div><strong>Time:</strong> 13:30–15:00</div>
+                    <div><strong>Venue:</strong> Main Auditorium, KAIST</div>
+                  </div>
+                  <p class="event-desc">
+                    A featured lecture addressing the policy implications of
+                    data-driven urban intelligence, public infrastructure, and
+                    AI-enabled governance systems.
+                  </p>
+                  <div class="event-actions">
+                    <a class="btn-line" href="#">View Details</a>
+                  </div>
+                </div>
+              </article> -->
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-inner">
+          <h3 class="footer-title">Contact</h3>
+          <div class="contact">
+            <div>
+              <span>Location:</span> KAIST W16, 291, Daehak-ro, Yuseong-gu,
+              Daejeon, Republic of Korea
+            </div>
+            <div>
+              <span>Email:</span>
+              <a href="mailto:urban@kaist.ac.kr">urban@kaist.ac.kr</a>
+            </div>
+          </div>
+          <div class="copyright">
+            &copy; 2026 Urban AI Institute. All rights reserved.
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

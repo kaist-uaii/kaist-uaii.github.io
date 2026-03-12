@@ -1,0 +1,1421 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BP@KAIST — Brain Pool Fellowship Program</title>
+
+    <style>
+      :root {
+        --bg: #f4f7fb;
+        --bg-soft: #f8fbff;
+        --surface: rgba(255, 255, 255, 0.82);
+        --surface-strong: rgba(255, 255, 255, 0.96);
+        --card: rgba(255, 255, 255, 0.94);
+
+        --text: #0f172a;
+        --text-strong: #020617;
+        --muted: rgba(15, 23, 42, 0.72);
+        --muted-2: rgba(15, 23, 42, 0.54);
+
+        --on-hero: rgba(255, 255, 255, 0.98);
+        --on-hero-muted: rgba(255, 255, 255, 0.82);
+        --on-hero-soft: rgba(255, 255, 255, 0.66);
+
+        --brand: #2563eb;
+        --brand-strong: #1d4ed8;
+        --brand-soft: rgba(37, 99, 235, 0.1);
+        --brand-soft-2: rgba(37, 99, 235, 0.14);
+
+        --stroke: rgba(15, 23, 42, 0.09);
+        --stroke-soft: rgba(15, 23, 42, 0.06);
+        --divider: rgba(15, 23, 42, 0.08);
+
+        --shadow-xs: 0 4px 14px rgba(15, 23, 42, 0.04);
+        --shadow-sm: 0 14px 34px rgba(15, 23, 42, 0.06);
+        --shadow-md: 0 24px 70px rgba(15, 23, 42, 0.08);
+        --shadow-lg: 0 36px 100px rgba(2, 6, 23, 0.2);
+
+        --radius-sm: 16px;
+        --radius-md: 24px;
+        --radius-lg: 32px;
+        --radius-xl: 40px;
+        --radius-2xl: 48px;
+        --radius-pill: 999px;
+
+        --space-1: 4px;
+        --space-2: 8px;
+        --space-3: 12px;
+        --space-4: 16px;
+        --space-5: 20px;
+        --space-6: 24px;
+        --space-7: 32px;
+        --space-8: 40px;
+        --space-9: 48px;
+        --space-10: 64px;
+        --space-11: 80px;
+        --space-12: 104px;
+        --space-13: 128px;
+
+        --font-stack:
+          ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Roboto, Helvetica, Arial, "Apple SD Gothic Neo",
+          "Noto Sans KR", "Malgun Gothic", sans-serif;
+
+        --text-xs: 12px;
+        --text-sm: 14px;
+        --text-md: 16px;
+        --text-lg: 18px;
+        --text-xl: 20px;
+
+        --h1: clamp(42px, 5.8vw, 76px);
+        --h2: clamp(30px, 4vw, 48px);
+        --h3: clamp(22px, 2vw, 28px);
+
+        --lh-tight: 1.03;
+        --lh-title: 1.12;
+        --lh-body: 1.72;
+
+        --tracking-tight: -0.05em;
+        --tracking-mid: -0.028em;
+        --tracking-body: -0.012em;
+
+        --container: 1180px;
+        --nav-height: 80px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: var(--font-stack);
+        color: var(--text);
+        background:
+          radial-gradient(
+            circle at top,
+            rgba(37, 99, 235, 0.06),
+            transparent 28%
+          ),
+          linear-gradient(180deg, #f8fbff 0%, #f4f7fb 100%);
+        line-height: var(--lh-body);
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button,
+      input,
+      textarea,
+      select {
+        font: inherit;
+      }
+
+      a:focus-visible,
+      button:focus-visible {
+        outline: 3px solid rgba(37, 99, 235, 0.24);
+        outline-offset: 4px;
+        border-radius: 12px;
+      }
+
+      .container {
+        width: min(var(--container), calc(100% - 40px));
+        margin: 0 auto;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(248, 250, 252, 0.78);
+        backdrop-filter: blur(18px) saturate(145%);
+        border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+      }
+
+      .header-inner {
+        min-height: var(--nav-height);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-6);
+      }
+
+      .logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+        min-height: 44px;
+        white-space: nowrap;
+      }
+
+      .logo-mark {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--brand);
+        box-shadow: 0 0 0 8px rgba(37, 99, 235, 0.1);
+        flex: 0 0 auto;
+      }
+
+      .logo-text {
+        display: inline-flex;
+        align-items: baseline;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .logo-main {
+        font-size: 17px;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        color: var(--text-strong);
+      }
+
+      .logo-sub {
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        color: var(--muted);
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 40px;
+        padding: 0 14px;
+        border-radius: var(--radius-pill);
+        font-size: 14px;
+        font-weight: 650;
+        letter-spacing: -0.01em;
+        color: var(--muted);
+        transition:
+          color 0.18s ease,
+          background 0.18s ease,
+          transform 0.18s ease;
+      }
+
+      nav a:hover,
+      nav a.active {
+        color: var(--text-strong);
+        background: rgba(15, 23, 42, 0.05);
+      }
+
+      nav a:hover {
+        transform: translateY(-1px);
+      }
+
+      .hero {
+        position: relative;
+        min-height: 36svh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        background: #08111f;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url("./assets/background-bp.png");
+        background-size: cover;
+        background-position: center center;
+        filter: brightness(0.6) contrast(1.1) saturate(0.9) blur(1px);
+        transform: scale(1.04);
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            circle at 50% 20%,
+            rgba(37, 99, 235, 0.22),
+            transparent 36%
+          ),
+          linear-gradient(
+            180deg,
+            rgba(4, 9, 18, 0.28) 0%,
+            rgba(4, 9, 18, 0.58) 52%,
+            rgba(4, 9, 18, 0.86) 100%
+          );
+      }
+
+      .hero-inner {
+        position: relative;
+        z-index: 2;
+        width: min(1100px, calc(100% - 32px));
+        /* padding: calc(var(--nav-height) + 8px) 24px 28px; */
+        padding: 0 24px;
+        text-align: center;
+      }
+
+      .hero-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        min-height: 34px;
+        padding: 0 16px;
+        border-radius: var(--radius-pill);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(10px);
+        color: rgba(255, 255, 255, 0.88);
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+      }
+
+      .hero-title {
+        margin: 20px 0 0;
+        font-size: clamp(34px, 4.2vw, 60px);
+        line-height: 1.05;
+        letter-spacing: -0.035em;
+        font-weight: 820;
+        color: var(--on-hero);
+        animation: heroFade 0.9s ease forwards;
+
+        white-space: nowrap;
+      }
+
+      .hero-sub {
+        margin: 20px auto 0;
+        max-width: 720px;
+        font-size: clamp(17px, 1.8vw, 21px);
+        line-height: 1.58;
+        letter-spacing: -0.018em;
+        color: var(--on-hero-muted);
+      }
+      /* 
+      .hero-meta {
+        margin: 30px auto 0;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+        max-width: 860px;
+      }
+
+      .hero-meta-card {
+        padding: 18px 18px 16px;
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(12px);
+        text-align: left;
+      } */
+
+      /* .hero-meta-label {
+        display: block;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--on-hero-soft);
+      }
+
+      .hero-meta-value {
+        margin-top: 8px;
+        display: block;
+        font-size: 16px;
+        line-height: 1.45;
+        font-weight: 700;
+        color: var(--on-hero);
+        letter-spacing: -0.02em;
+      } */
+
+      /* .hero-actions {
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+      } */
+
+      /* .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 22px;
+        border-radius: var(--radius-pill);
+        border: 1px solid transparent;
+        font-size: 14px;
+        font-weight: 750;
+        letter-spacing: -0.012em;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease,
+          background 0.2s ease,
+          border-color 0.2s ease,
+          color 0.2s ease;
+      } */
+
+      /* .btn.primary {
+        color: #fff;
+        background: linear-gradient(180deg, #3b82f6 0%, #2563eb 100%);
+        border-color: rgba(59, 130, 246, 0.42);
+        box-shadow: 0 18px 44px rgba(37, 99, 235, 0.34);
+      } */
+
+      .btn.primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 24px 52px rgba(37, 99, 235, 0.38);
+      }
+
+      /* .btn.ghost {
+        color: rgba(255, 255, 255, 0.95);
+        background: rgba(255, 255, 255, 0.05);
+        border-color: rgba(255, 255, 255, 0.16);
+        backdrop-filter: blur(8px);
+      } */
+
+      .btn.ghost:hover {
+        transform: translateY(-2px);
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      @keyframes heroFade {
+        from {
+          opacity: 0;
+          transform: translateY(18px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      main {
+        position: relative;
+        z-index: 2;
+        margin-top: 0;
+      }
+
+      .section {
+        padding: 96px 0;
+      }
+
+      .section-shell {
+        background: var(--surface);
+        border: 1px solid var(--stroke-soft);
+        border-radius: var(--radius-2xl);
+        box-shadow: var(--shadow-md);
+        padding: clamp(28px, 4vw, 64px);
+      }
+
+      .section-header {
+        max-width: 780px;
+        margin: 0 auto 52px;
+        text-align: center;
+      }
+
+      .section-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 14px;
+        color: var(--brand-strong);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .section-kicker::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--brand);
+        box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.1);
+      }
+
+      .section-title {
+        margin: 0;
+        font-size: clamp(28px, 3.4vw, 42px);
+        line-height: var(--lh-title);
+        letter-spacing: var(--tracking-mid);
+        color: var(--text-strong);
+        font-weight: 820;
+      }
+
+      .section-sub {
+        margin: 18px auto 0;
+        max-width: 700px;
+        font-size: 18px;
+        line-height: 1.68;
+        letter-spacing: -0.016em;
+        color: var(--muted);
+      }
+
+      .about-single {
+        max-width: 860px;
+        margin: 0 auto;
+      }
+
+      .about-card {
+        padding: 38px;
+        border-radius: 30px;
+        background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+        border: 1px solid rgba(15, 23, 42, 0.08);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .about-card p {
+        margin: 0;
+        font-size: 17px;
+        line-height: 1.85;
+        letter-spacing: -0.012em;
+        color: var(--muted);
+        text-align: center;
+      }
+
+      .about-highlights {
+        margin-top: 28px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+      }
+
+      .highlight-chip {
+        display: inline-flex;
+        align-items: center;
+        min-height: 38px;
+        padding: 0 14px;
+        border-radius: var(--radius-pill);
+        background: var(--brand-soft);
+        color: var(--brand-strong);
+        border: 1px solid rgba(37, 99, 235, 0.12);
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+      }
+
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .research-item {
+        position: relative;
+        height: 100%;
+        padding: 28px 26px 24px;
+        border-radius: 30px;
+        background: var(--surface-strong);
+        border: 1px solid rgba(15, 23, 42, 0.08);
+        box-shadow: var(--shadow-sm);
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease,
+          border-color 0.2s ease;
+      }
+
+      .research-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 26px 68px rgba(15, 23, 42, 0.1);
+        border-color: rgba(37, 99, 235, 0.16);
+      }
+
+      .research-number {
+        width: 42px;
+        height: 42px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 14px;
+        background: var(--brand-soft);
+        color: var(--brand-strong);
+        font-size: 14px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+
+      .research-item h3 {
+        margin: 18px 0 0;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 24px;
+        line-height: 1.2;
+        letter-spacing: -0.03em;
+        font-weight: 780;
+        color: var(--text-strong);
+      }
+
+      .dot {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--brand);
+        box-shadow: 0 0 0 8px rgba(37, 99, 235, 0.1);
+        flex: 0 0 auto;
+      }
+
+      .research-tag {
+        margin-top: 10px;
+        display: inline-flex;
+        align-items: center;
+        min-height: 28px;
+        padding: 0 10px;
+        border-radius: var(--radius-pill);
+        background: rgba(15, 23, 42, 0.05);
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+      }
+
+      .research-item p {
+        margin: 16px 0 0;
+        font-size: 15px;
+        line-height: 1.8;
+        letter-spacing: -0.012em;
+        color: var(--muted);
+      }
+
+      .faculty {
+        margin-top: 24px;
+        padding-top: 18px;
+        border-top: 1px solid var(--divider);
+        font-size: 13px;
+        line-height: 1.65;
+        color: var(--muted-2);
+      }
+
+      .faculty strong {
+        color: var(--text);
+        font-weight: 760;
+      }
+
+      .people-grid {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .person {
+        position: relative;
+        height: 100%;
+        padding: 24px 16px 20px;
+        text-align: center;
+        border-radius: 26px;
+        background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+        border: 1px solid rgba(15, 23, 42, 0.08);
+        box-shadow: var(--shadow-xs);
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease,
+          border-color 0.2s ease;
+      }
+
+      .person:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 22px 54px rgba(15, 23, 42, 0.1);
+        border-color: rgba(37, 99, 235, 0.16);
+      }
+
+      .person-link {
+        display: block;
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .person-link:hover .person {
+        transform: translateY(-4px);
+        box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+      }
+
+      /* .person-role-badge {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        display: inline-flex;
+        align-items: center;
+        min-height: 24px;
+        padding: 0 8px;
+        border-radius: var(--radius-pill);
+        background: rgba(15, 23, 42, 0.05);
+        color: var(--muted-2);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+      } */
+
+      .avatar {
+        width: 100%;
+        max-width: 116px;
+        aspect-ratio: 1 / 1;
+        margin: 10px auto 18px;
+        border-radius: 50%;
+        overflow: hidden;
+        background: linear-gradient(180deg, #eef3f8, #e5ebf3);
+        border: 1px solid rgba(15, 23, 42, 0.08);
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+      }
+
+      .avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .person .name {
+        margin: 0;
+        font-size: 15px;
+        line-height: 1.36;
+        letter-spacing: -0.02em;
+        font-weight: 780;
+        color: var(--text-strong);
+      }
+
+      .person .title {
+        margin: 8px 0 0;
+        font-size: 13px;
+        line-height: 1.55;
+        letter-spacing: -0.01em;
+        color: var(--muted);
+      }
+
+      footer {
+        padding: 8px 0 88px;
+      }
+
+      .footer-inner {
+        display: grid;
+        gap: 12px;
+        padding: 34px 24px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(15, 23, 42, 0.06);
+        border-radius: 30px;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .footer-title {
+        margin: 0;
+        font-size: 18px;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        font-weight: 780;
+        color: var(--text-strong);
+      }
+
+      .contact {
+        display: grid;
+        gap: 8px;
+        font-size: 14px;
+        line-height: 1.7;
+        color: var(--muted);
+      }
+
+      .contact span {
+        color: var(--text);
+        font-weight: 760;
+      }
+
+      .contact a {
+        color: var(--brand);
+        font-weight: 700;
+      }
+
+      .copyright {
+        font-size: 13px;
+        color: var(--muted-2);
+      }
+
+      .empty-state {
+        grid-column: 1 / -1;
+        padding: 18px 20px;
+        border-radius: 18px;
+        background: #f8fafc;
+        border: 1px dashed rgba(15, 23, 42, 0.14);
+        color: var(--muted-2);
+        font-size: 14px;
+        text-align: center;
+      }
+
+      .error-box {
+        grid-column: 1 / -1;
+        padding: 18px 20px;
+        border-radius: 18px;
+        border: 1px solid rgba(15, 23, 42, 0.12);
+        background: rgba(255, 255, 255, 0.96);
+        color: rgba(15, 23, 42, 0.88);
+        box-shadow: var(--shadow-sm);
+        font-size: 14px;
+        line-height: 1.65;
+      }
+
+      .error-box strong {
+        display: block;
+        margin-bottom: 6px;
+        color: var(--text-strong);
+      }
+
+      @media (max-width: 1180px) {
+        .people-grid {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 1080px) {
+        .grid-3 {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .hero-meta {
+          grid-template-columns: 1fr;
+          max-width: 640px;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .container {
+          width: min(var(--container), calc(100% - 28px));
+        }
+
+        .header-inner {
+          min-height: auto;
+          padding: 14px 0 16px;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .logo-text {
+          gap: 8px;
+        }
+
+        nav ul {
+          flex-wrap: wrap;
+          gap: 8px 6px;
+        }
+
+        .hero {
+          min-height: 44svh;
+        }
+
+        .hero-inner {
+          width: min(100%, calc(100% - 28px));
+          padding: calc(var(--nav-height) + 6px) 0 32px;
+        }
+
+        .hero-sub {
+          font-size: 16px;
+        }
+
+        .section {
+          padding: 72px 0;
+        }
+
+        .section-shell {
+          border-radius: 30px;
+          padding: 24px 20px;
+        }
+
+        .section-header {
+          margin-bottom: 36px;
+        }
+
+        .grid-3,
+        .people-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .about-card,
+        .research-item,
+        .person {
+          border-radius: 24px;
+        }
+
+        .section[id] {
+          scroll-margin-top: calc(var(--nav-height) + 18px);
+        }
+
+        .hero[id] {
+          scroll-margin-top: 110px;
+        }
+      }
+
+      @media (max-width: 520px) {
+        .logo-main {
+          font-size: 16px;
+        }
+
+        .logo-sub {
+          display: block;
+          width: 100%;
+          margin-left: 24px;
+        }
+
+        nav a {
+          min-height: 38px;
+          padding: 0 12px;
+          font-size: 13px;
+        }
+
+        .hero-eyebrow {
+          font-size: 10px;
+          padding: 0 12px;
+        }
+
+        .btn {
+          width: 100%;
+          min-height: 44px;
+          padding: 0 18px;
+          font-size: 14px;
+        }
+
+        .hero-actions {
+          flex-direction: column;
+        }
+
+        .people-grid,
+        .grid-3 {
+          grid-template-columns: 1fr;
+        }
+
+        .avatar {
+          max-width: 124px;
+        }
+
+        .hero-meta-card {
+          text-align: center;
+        }
+
+        /* .person-role-badge {
+          position: static;
+          margin: 0 auto 10px;
+        } */
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="top"></div>
+
+    <header>
+      <div class="container">
+        <div class="header-inner">
+          <a class="logo" href="#top" aria-label="BP@KAIST Home">
+            <span class="logo-mark" aria-hidden="true"></span>
+            <span class="logo-text">
+              <span class="logo-main">BP@KAIST</span>
+              <span class="logo-sub">Brain Pool Fellowship</span>
+            </span>
+          </a>
+
+          <nav aria-label="Primary Navigation">
+            <ul>
+              <li><a data-nav="home" href="#home">Home</a></li>
+              <li><a data-nav="about" href="#about">About</a></li>
+              <li><a data-nav="research" href="#research">Research</a></li>
+              <li><a data-nav="people" href="#people">People</a></li>
+              <li>
+                <a data-page="events" href="projects-bp-events.html">Events</a>
+              </li>
+              <li>
+                <a
+                  data-page="publications"
+                  href="projects-bp-publications.html"
+                >
+                  Publications
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <div class="hero-eyebrow">Brain Pool Fellowship · KAIST</div>
+
+        <h1 class="hero-title" id="hero-title">
+          Global Talent. Urban AI. Future Cities.
+        </h1>
+
+        <!-- <p class="hero-sub">
+          An international research fellowship at the Urban AI Institute, KAIST,
+          advancing collaborative research on intelligent, resilient, and
+          data-driven urban futures.
+        </p> -->
+      </div>
+    </section>
+
+    <main>
+      <section class="section" id="about" aria-labelledby="about-title">
+        <div class="container">
+          <div class="section-shell">
+            <div class="section-header">
+              <!-- <div class="section-kicker">Program Overview</div> -->
+              <h2 class="section-title" id="about-title">
+                About BP Fellowship Program
+              </h2>
+              <!-- <p class="section-sub">
+                The program connects leading international researchers with Korean institutions
+                to build durable, high-impact academic collaboration.
+              </p> -->
+            </div>
+
+            <div class="about-single">
+              <article class="about-card">
+                <p>
+                  The Brain Pool Fellowship Program connects leading
+                  international scientists with Korean universities and research
+                  institutes to advance collaborative, high-impact research,
+                  strengthen global scientific networks, and foster long-term
+                  international partnerships in strategic research fields.
+                </p>
+
+                <div class="about-highlights" aria-label="Key Program Features">
+                  <span class="highlight-chip"
+                    >International collaboration</span
+                  >
+                  <span class="highlight-chip">High-impact research</span>
+                  <span class="highlight-chip">Long-term partnership</span>
+                  <span class="highlight-chip">Strategic research domains</span>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="research" aria-labelledby="research-title">
+        <div class="container">
+          <div class="section-shell">
+            <div class="section-header">
+              <!-- <div class="section-kicker">Research Portfolio</div> -->
+              <h2 class="section-title" id="research-title">
+                Research Focus Areas
+              </h2>
+              <!-- <p class="section-sub">
+                The fellowship contributes to interdisciplinary research at the intersection
+                of urban systems, AI, infrastructure, and resilience.
+              </p> -->
+            </div>
+
+            <div class="grid-3">
+              <article class="research-item">
+                <div class="research-number">01</div>
+                <h3>
+                  <span class="dot" aria-hidden="true"></span>
+                  Geospatial AI
+                </h3>
+                <!-- <div class="research-tag">Spatial intelligence</div> -->
+                <p>
+                  Develops Urban AI models for diagnosing social imbalance
+                  through synthetic population generation, LLM-based mobility
+                  forecasting, and urban air mobility site analysis, with a
+                  focus on spatial dynamics, accessibility, and uneven urban
+                  conditions.
+                </p>
+                <div class="faculty">
+                  <div><strong>Lead Faculty:</strong> Prof. Yoonjin Yoon</div>
+                </div>
+              </article>
+
+              <article class="research-item">
+                <div class="research-number">02</div>
+                <h3>
+                  <span class="dot" aria-hidden="true"></span>
+                  Climate AI
+                </h3>
+                <!-- <div class="research-tag">Urban resilience</div> -->
+                <p>
+                  Builds analytical frameworks for assessing disaster
+                  vulnerability in urban physical infrastructure, predicting
+                  spatially differentiated climate risks, and evaluating
+                  infrastructure investment and policy scenarios for resilient
+                  urban adaptation.
+                </p>
+                <div class="faculty">
+                  <div><strong>Lead Faculty:</strong> Prof. Soh Young In</div>
+                </div>
+              </article>
+
+              <article class="research-item">
+                <div class="research-number">03</div>
+                <h3>
+                  <span class="dot" aria-hidden="true"></span>
+                  Physical AI
+                </h3>
+                <!-- <div class="research-tag">Adaptive systems</div> -->
+                <p>
+                  Integrates distributed autonomous infrastructure control with
+                  large-scale agent-based modeling to connect physical urban
+                  systems with intelligent decision-making architectures for
+                  complex and adaptive urban environments.
+                </p>
+                <div class="faculty">
+                  <div><strong>Lead Faculty:</strong> Prof. Soojean Han</div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="people" aria-labelledby="people-title">
+        <div class="container">
+          <div class="section-shell">
+            <div class="section-header">
+              <!-- <div class="section-kicker">People & Collaboration</div> -->
+              <h2 class="section-title" id="people-title">People</h2>
+            </div>
+
+            <div
+              class="people-grid"
+              aria-live="polite"
+              aria-busy="true"
+              id="people-grid"
+            ></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-inner">
+          <h3 class="footer-title">Contact</h3>
+
+          <div class="contact">
+            <div>
+              <span>Location:</span> KAIST W16, 291, Daehak-ro, Yuseong-gu,
+              Daejeon, Republic of Korea
+            </div>
+            <div>
+              <span>Email:</span>
+              <a href="mailto:urban@kaist.ac.kr">urban@kaist.ac.kr</a>
+            </div>
+          </div>
+
+          <div class="copyright">
+            &copy; 2026 Urban AI Institute. All rights reserved.
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const isIndexPage =
+          /(?:^|\/)(index\.html)?$/.test(location.pathname) ||
+          location.pathname.endsWith("/");
+
+        const navLinks = document.querySelectorAll("a[data-nav]");
+
+        navLinks.forEach((link) => {
+          const target = link.getAttribute("data-nav");
+          if (!target) return;
+
+          if (target === "home") {
+            if (isIndexPage) {
+              link.setAttribute("href", "#top");
+            } else {
+              link.setAttribute("href", "projects-bp.html#top");
+            }
+            return;
+          }
+
+          if (isIndexPage) {
+            link.setAttribute("href", `#${target}`);
+          } else {
+            link.setAttribute("href", `projects-bp.html#${target}`);
+          }
+        });
+
+        const currentPage = location.pathname.split("/").pop() || "index.html";
+
+        document.querySelectorAll("a[data-page]").forEach((link) => {
+          const href = link.getAttribute("href");
+          if (!href) return;
+
+          if (href === currentPage) {
+            link.classList.add("active");
+          }
+        });
+
+        loadPeople();
+      });
+
+      const basePath = location.pathname.replace(/\/[^\/]*$/, "");
+
+      const peopleUrl = new URL(
+        "./data/peopleData.json",
+        document.baseURI,
+      ).toString();
+      const collabUrl = new URL(
+        "./data/collabData.json",
+        document.baseURI,
+      ).toString();
+
+      const PLACEHOLDER_DATAURL =
+        "data:image/svg+xml;charset=utf-8," +
+        encodeURIComponent(`
+          <svg xmlns="http://www.w3.org/2000/svg" width="420" height="420" viewBox="0 0 420 420">
+            <defs>
+              <linearGradient id="g" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0%" stop-color="#eef3f8"/>
+                <stop offset="100%" stop-color="#e3eaf3"/>
+              </linearGradient>
+            </defs>
+            <rect width="420" height="420" fill="url(#g)"/>
+            <circle cx="210" cy="160" r="64" fill="#cbd5e1"/>
+            <rect x="105" y="245" rx="55" ry="55" width="210" height="110" fill="#cbd5e1"/>
+            <text x="50%" y="91%" text-anchor="middle" fill="#64748b"
+              font-family="system-ui, sans-serif" font-size="18">Image not available</text>
+          </svg>
+        `);
+
+      function resolveAssetPath(photo) {
+        const raw = (photo || "").trim();
+        if (!raw) return "";
+        if (/^(https?:)?\/\//i.test(raw) || raw.startsWith("data:")) return raw;
+        const safe = raw.startsWith("/") ? raw.slice(1) : raw;
+        return `${basePath}/${safe}`;
+      }
+
+      function normalizeKey(value) {
+        return String(value || "")
+          .trim()
+          .toLowerCase()
+          .replace(/\s+/g, " ")
+          .replace(/_/g, "-");
+      }
+
+      function normalizePerson(p, fallbackTitle = "") {
+        return {
+          name: p.name || p.fullName || "",
+          title: p.title || p.role || fallbackTitle || "",
+          photo: p.photo || p.image || p.img || "",
+          alt: p.alt || p.name || "",
+          slug: p.slug || p.id || p.key || "",
+          link: p.link || "",
+        };
+      }
+
+      // function getRoleLabel(title = "") {
+      //   const t = normalizeKey(title);
+      //   if (t.includes("international fellow")) return "Fellow";
+      //   if (t.includes("professor")) return "Faculty";
+      //   if (t.includes("researcher")) return "Research";
+      //   if (t.includes("staff")) return "Staff";
+      //   return "Member";
+      // }
+
+      function createPersonCard(person) {
+        const article = document.createElement("article");
+        article.className = "person";
+
+        // const roleBadge = document.createElement("div");
+        // roleBadge.className = "person-role-badge";
+        // roleBadge.textContent = getRoleLabel(person.title);
+
+        const avatar = document.createElement("div");
+        avatar.className = "avatar";
+
+        const img = document.createElement("img");
+        img.alt = person.alt || person.name || "Profile photo";
+        img.loading = "lazy";
+        img.decoding = "async";
+
+        const src = resolveAssetPath(person.photo);
+        img.src = src || PLACEHOLDER_DATAURL;
+        img.onerror = function () {
+          this.onerror = null;
+          this.src = PLACEHOLDER_DATAURL;
+        };
+
+        avatar.appendChild(img);
+
+        const name = document.createElement("p");
+        name.className = "name";
+        name.textContent = person.name || "";
+
+        const title = document.createElement("p");
+        title.className = "title";
+        title.textContent = person.title || "";
+
+        // article.appendChild(roleBadge);
+        article.appendChild(avatar);
+        article.appendChild(name);
+        article.appendChild(title);
+
+        if (person.link) {
+          const a = document.createElement("a");
+          a.href = person.link;
+          a.target = "_blank";
+          a.rel = "noopener";
+          a.className = "person-link";
+          a.appendChild(article);
+          return a;
+        }
+
+        return article;
+      }
+
+      function renderPeople(people) {
+        const grid = document.getElementById("people-grid");
+        if (!grid) return;
+
+        grid.innerHTML = "";
+
+        if (!people.length) {
+          const empty = document.createElement("div");
+          empty.className = "empty-state";
+          empty.textContent = "No entries available.";
+          grid.appendChild(empty);
+          return;
+        }
+
+        people.forEach((person) => {
+          grid.appendChild(createPersonCard(person));
+        });
+      }
+
+      function orderPeople(source, orderedKeys) {
+        return orderedKeys
+          .map((target) => {
+            const key = normalizeKey(target);
+            return source.find((person) => {
+              const nameKey = normalizeKey(person.name);
+              const slugKey = normalizeKey(person.slug);
+              return nameKey === key || slugKey === key;
+            });
+          })
+          .filter(Boolean);
+      }
+
+      async function loadPeople() {
+        const grid = document.getElementById("people-grid");
+        if (!grid) return;
+
+        try {
+          const [resPeople, resCollab] = await Promise.all([
+            fetch(peopleUrl, { cache: "no-store" }),
+            fetch(collabUrl, { cache: "no-store" }),
+          ]);
+
+          if (!resPeople.ok) {
+            throw new Error(`peopleData.json HTTP ${resPeople.status}`);
+          }
+          if (!resCollab.ok) {
+            throw new Error(`collabData.json HTTP ${resCollab.status}`);
+          }
+
+          const peopleJson = await resPeople.json();
+          const collabJson = await resCollab.json();
+
+          const collabProfs = Array.isArray(collabJson.collabProfsData)
+            ? collabJson.collabProfsData
+            : [];
+
+          const labMembers = Array.isArray(peopleJson.labMembersData)
+            ? peopleJson.labMembersData
+            : [];
+
+          const internationalFellows = Array.isArray(
+            collabJson.internationalFellowsData,
+          )
+            ? collabJson.internationalFellowsData
+            : [];
+
+          const staffs = Array.isArray(collabJson.staffsData)
+            ? collabJson.staffsData
+            : [];
+
+          const facultyMerged = [
+            ...collabProfs.map((p) => normalizePerson(p, "KAIST Professor")),
+            ...labMembers.map((p) => normalizePerson(p, "Professor")),
+          ].filter((p) => p.name);
+
+          const fellowsMerged = internationalFellows
+            .map((p) => normalizePerson(p, "International Fellow"))
+            .filter((p) => p.name);
+
+          const researchersMerged = labMembers
+            .map((p) => normalizePerson(p, "Researcher"))
+            .filter((p) => p.name);
+
+          const staffMerged = staffs
+            .map((p) => normalizePerson(p, "Staff"))
+            .filter((p) => p.name);
+
+          const facultyOrder = ["Yoonjin Yoon", "soh-young-in", "soojean-han"];
+          const fellowsOrder = ["yu-zhang", "sekyoung-choi"];
+          const researcherOrder = [
+            "Sungmin Sohn",
+            "Hayoon Song",
+            "Minseok Jeong",
+            "Kwangbin Lee",
+          ];
+          const staffOrder = ["jiwon-park", "yiseo-yoon", "seyeon-jeong"];
+
+          const selectedFaculty = orderPeople(facultyMerged, facultyOrder);
+          const selectedFellows = orderPeople(fellowsMerged, fellowsOrder);
+          const selectedResearchers = orderPeople(
+            researchersMerged,
+            researcherOrder,
+          );
+          const selectedStaff = orderPeople(staffMerged, staffOrder);
+
+          const combinedPeople = [
+            ...selectedFaculty,
+            ...selectedFellows,
+            ...selectedResearchers,
+            ...selectedStaff,
+          ];
+
+          renderPeople(combinedPeople);
+        } catch (e) {
+          console.error(e);
+          grid.innerHTML = `
+            <div class="error-box">
+              <strong>People data load failed</strong>
+              <div><b>peopleUrl</b>: ${peopleUrl}</div>
+              <div><b>collabUrl</b>: ${collabUrl}</div>
+              <div style="margin-top:8px;"><b>Error</b>: ${String(e.message || e)}</div>
+            </div>
+          `;
+        } finally {
+          grid.setAttribute("aria-busy", "false");
+        }
+      }
+    </script>
+  </body>
+</html>
