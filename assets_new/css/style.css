@@ -705,7 +705,7 @@ body.home #landing,
 .theme-row-desc {
   font-size: 0.82rem;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.85);
+  color: #fff;
   margin-bottom: 12px;
 }
 
@@ -725,8 +725,8 @@ body.home #landing,
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.45);
-  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.09);
   border-radius: 4px;
   padding: 3px 8px;
@@ -810,7 +810,7 @@ body.home #landing,
 
 .theme-row-left,
 .theme-row-right {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.25);
   transition: background 0.2s, opacity 0.65s ease, transform 0.65s ease;
 }
 
@@ -868,7 +868,7 @@ body.home #landing,
 
 .theme-row-sub {
   font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.7);
   line-height: 1.4;
 }
 
@@ -1024,8 +1024,8 @@ body.home #landing,
   margin: 0.25rem;
   border-radius: 14px;
   width: auto;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   text-decoration: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
   display: inline-flex;
@@ -1051,7 +1051,7 @@ body.home #landing,
 .types-grid .types-cell .h4 {
   text-transform: uppercase;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.5);
+  color: #fff;
   font-size: 0.8rem;
   margin: 0;
   letter-spacing: 0.08em;

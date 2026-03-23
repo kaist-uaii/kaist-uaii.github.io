@@ -58,7 +58,7 @@
       padding: 32px;
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 12px;
-      background: rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.25);
       text-decoration: none;
       text-align: left;
       transition: all 0.3s ease;
@@ -143,6 +143,8 @@
       <li><a href="engagement.html">Engagement</a></li>
     </ul>
   </nav>
+
+  <div id="landingmap"></div>
 
   <!-- Scroll-snap container -->
   <div id="landing">
@@ -287,6 +289,19 @@
 
   </div>
 
+  <script>
+  (function() {
+    var scripts = ['https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js', 'assets_new/js/xray-bg.js'];
+    function loadNext(i) {
+      if (i >= scripts.length) return;
+      var s = document.createElement('script');
+      s.src = scripts[i];
+      s.onload = function() { loadNext(i + 1); };
+      document.body.appendChild(s);
+    }
+    loadNext(0);
+  })();
+  </script>
 
   <script>
   // Block animations

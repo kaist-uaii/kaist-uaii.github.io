@@ -22,25 +22,25 @@
         }
 
         /* ── Dark theme overrides ── */
-        .bg-white, .sm\:bg-white { background: rgba(255,255,255,0.12) !important; }
+        .bg-white, .sm\:bg-white { background: rgba(255,255,255,0.25) !important; }
         .bg-slate-50 { background: #03070f !important; }
         .bg-white\/80, .bg-white\/70 { background: rgba(255,255,255,0.12) !important; border-color: rgba(255,255,255,0.08) !important; }
         .backdrop-blur-md { backdrop-filter: blur(12px); }
         .border-slate-100, .border-slate-200, .border-gray-200, .border-t { border-color: rgba(255,255,255,0.08) !important; }
         .text-slate-900, .text-slate-800 { color: #fff !important; }
-        .text-slate-700 { color: rgba(255,255,255,0.7) !important; }
+        .text-slate-700 { color: rgba(255,255,255,0.85) !important; }
         .text-slate-600 { color: rgba(255,255,255,0.5) !important; }
         .text-slate-500 { color: rgba(255,255,255,0.4) !important; }
-        .text-slate-400 { color: rgba(255,255,255,0.3) !important; }
+        .text-slate-400 { color: rgba(255,255,255,0.7) !important; }
         .text-blue-600 { color: #93c5fd !important; }
         .text-blue-900 { color: #93c5fd !important; }
         .text-gray-500 { color: rgba(255,255,255,0.25) !important; }
         .bg-slate-100 { background: rgba(255,255,255,0.06) !important; }
         .proj-tag {
-            background: rgba(96,165,250,0.1);
-            color: #93c5fd;
-            border: 1px solid rgba(96,165,250,0.2);
-            box-shadow: 0 0 8px rgba(96,165,250,0.12);
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.15);
+            box-shadow: none;
         }
         .bg-slate-200 { background: rgba(255,255,255,0.1) !important; }
         .hover\:bg-slate-200:hover { background: rgba(255,255,255,0.12) !important; }
@@ -284,6 +284,8 @@
       </ul>
     </nav>
 
+    <div id="landingmap"></div>
+
     <!-- Sidebar Navigation with Trigger -->
     <div class="sidebar-container fixed right-0 top-1/2 -translate-y-1/2 z-40">
         <!-- Trigger Bar (visible on md and below, sticks to right edge) -->
@@ -310,7 +312,7 @@
         </aside>
     </div>
 
-    <main class="container mx-auto sm:px-6 max-w-7xl">
+    <main class="container mx-auto sm:px-6 max-w-7xl" style="position:relative;z-index:1;">
 
         <!-- Participants Professors Section -->
         <main class="mx-auto px-3 sm:px-6 max-w-7xl">
@@ -799,7 +801,20 @@
                 }, 1600);
             }
         </script>
-         <script src="assets/script.js"></script> 
+         <script src="assets/script.js"></script>
+         <script>
+         (function() {
+           var scripts = ['https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js', 'assets_new/js/xray-bg.js'];
+           function loadNext(i) {
+             if (i >= scripts.length) return;
+             var s = document.createElement('script');
+             s.src = scripts[i];
+             s.onload = function() { loadNext(i + 1); };
+             document.body.appendChild(s);
+           }
+           loadNext(0);
+         })();
+         </script> 
     </main>
 </body>
 </html>
