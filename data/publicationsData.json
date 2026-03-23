@@ -3,7 +3,7 @@
     "id": "10.1109/ACCESS.2025.3577202",
     "title": "Effective Urban Region Representation Learning Using Heterogeneous Urban Graph Attention Network (HUGAT)",
     "authors": "N. Kim, Y. Yoon",
-    "date": "2025",
+    "date": "2025-06-06",
     "journal": "IEEE Access, vol. 13, pp. 102602-102612.",
     "href": "https://ieeexplore.ieee.org/abstract/document/11027114/"
   },
@@ -11,7 +11,7 @@
     "id": "10.1109/TITS.2024.3382680",
     "title": "Design, Field Evaluation, and Traffic Analysis of a Competitive Autonomous Driving Model in a Congested Environment",
     "authors": "D Lee, H Seong, G Kang, S Han, DH Shim, Y Yoon",
-    "date": "2024",
+    "date": "2024-04-10",
     "journal": "IEEE Transactions on Intelligent Transportation Systems 25 (8), 9482-9497.",
     "href": "https://ieeexplore.ieee.org/abstract/document/10496360"
   },
@@ -19,7 +19,7 @@
     "id": 1,
     "title": "Urban drone operations: A data-centric and comprehensive assessment of urban airspace with a Pareto-based approach",
     "authors": "S. Oh, Y. Yoon",
-    "date": "2024",
+    "date": "2024-04-01",
     "journal": "Transportation Research Part A: Policy and Practice, 182, 104034.",
     "href": "https://www.sciencedirect.com/science/article/pii/S096585642400082X"
   },
@@ -27,7 +27,7 @@
     "id": 2,
     "title": "Deep learning framework for vessel trajectory prediction using auxiliary tasks and convolutional networks",
     "authors": "Y. Shin, N. Kim, H. Lee, S. In, M. Hansen, Y. Yoon",
-    "date": "2024",
+    "date": "2024-06-01",
     "journal": "Engineering Applications of Artificial Intelligence, 132, 107936",
     "href": "https://www.sciencedirect.com/science/article/pii/S0952197624000940"
   },
@@ -35,7 +35,7 @@
     "id": 3,
     "title": "PGCN: Progressive graph convolutional networks for spatial-temporal traffic forecasting",
     "authors": "Y. Shin, Y. Yoon.",
-    "date": "2024",
+    "date": "2024-01-16",
     "journal": "IEEE Transactions on Intelligent Transportation Systems",
     "href": "https://ieeexplore.ieee.org/abstract/document/10400973"
   },
@@ -43,7 +43,7 @@
     "id": 4,
     "title": "Performance Evaluation of Building Blocks of Spatial-Temporal Deep Learning Models for Traffic Forecasting",
     "authors": "Y. Shin, Y. Yoon",
-    "date": "2023",
+    "date": "2023-11-30",
     "journal": "IEEE Access, 11, 136478-136495",
     "href": "https://ieeexplore.ieee.org/document/10336800"
   },

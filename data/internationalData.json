@@ -4,7 +4,7 @@
     "title": "Speak to Simulate: An LLM-Guided Agentic Framework for Traffic Simulation in SUMO",
     "authors": "M. Jeong, J. Chang, Y. Yoon",
     "conference": "GeoSIM '25: 8th ACM SIGSPATIAL International Workshop on Geospatial Simulation",
-    "date": "2025",
+    "date": "2025-11-03",
     "href": "https://dl.acm.org/doi/abs/10.1145/3764921.3770151"
   },
   {
@@ -12,7 +12,7 @@
     "title": "Integrating Urban Air Mobility with Highway Infrastructure: A Strategic Approach for Vertiport Location Selection in the Seoul Metropolitan Area",
     "authors": "D. Yoon, M. Jeong, J. Lee, S. Kim, Y. Yoon",
     "conference": "TRB",
-    "date": "2025",
+    "date": "2025-02-01",
     "href": "https://arxiv.org/abs/2502.00399"
   },
   {
@@ -36,7 +36,7 @@
     "title": "Fill in the Gap: Two-Stage Prediction Modeling Framework for Understanding Human Biosensor Data",
     "authors": "J Ro, Y Yoon",
     "conference": "15th International Conference on Information and Communication Technology Convergence (ICTC)",
-    "date": "2025",
+    "date": "2024-10-16",
     "href": "https://ieeexplore.ieee.org/abstract/document/10826871"
   },
   {
@@ -44,7 +44,7 @@
     "title": "A Heterogeneous Attention Network Model for Longitudinal Analysis of Socioeconomic and Racial Inequalities in Urban Regions: Evidence from Chicago, IL",
     "authors": "N. Kim, H. Lee, Y. Yoon",
     "conference": "ACM SIGSPATIAL",
-    "date": "2023",
+    "date": "2023-11-13",
     "href": "https://dl.acm.org/doi/abs/10.1145/3589132.3625650?casa_token=vf_NEaenPUEAAAAA:mVghIh0_JHkZUKM8Rm3Id-6TFwbfzWneZxfA0kWL-1dVd7xOc2_GS3hmQ5XcRK9YdVzlrWAi1HFs6Q"
   },
   {
@@ -52,7 +52,7 @@
     "title": "Understanding Urban Economic Status through GNN-based Urban Representation Learning Using Mobility Data",
     "authors": "Y. Shin, G. Seong, N. Kim, S. Kim, Y. Yoon",
     "conference": "UrbanAI 2023 : The 1st ACM SIGSPATIAL International Workshop on Advances in Urban AI",
-    "date": "2023",
+    "date": "2023-11-13",
     "href": "https://dl.acm.org/doi/abs/10.1145/3615900.3628786?casa_token=6pwgE4jJIbAAAAAA:bN2omkGt5Id5v9sn8yz6w9HyfIxxslGIHmiKX6a3ygvFQHxhHkKQtpgih0vZ2iL7308wFVol-TDxow"
   },
   {
@@ -60,7 +60,7 @@
     "title": "Detecting socioeconomic changes of Chicago regions between 2013 and 2020 using urban region representation learning",
     "authors": "H. Lee, N. Kim, S. Kim, Y. Yoon",
     "conference": "The 14th International Conference on Ambient Systems, Networks and Technologies (ANT)",
-    "date": "2023",
+    "date": "2023-01-01",
     "href": "https://www.sciencedirect.com/science/article/pii/S1877050923005690"
   },
   {
@@ -68,7 +68,7 @@
     "title": "Multi-modal Based Region Representation Learning Considering Mobility Data in Seoul",
     "authors": "G. Seong, N. Kim, S. Kim, Y. Yoon",
     "conference": "The 14th International Conference on Ambient Systems, Networks and Technologies (ANT)",
-    "date": "2023",
+    "date": "2023-01-01",
     "href": "https://www.sciencedirect.com/science/article/pii/S1877050923006889"
   },
   {
@@ -76,7 +76,7 @@
     "title": "Risk analysis of unmanned aerial system operations in urban airspace considering spatiotemporal population dynamics",
     "authors": "S. Oh, Y. Yoon, S. Kim",
     "conference": "2022 IEEE 25th International Conference on Intelligent Transportation Systems (ITSC)",
-    "date": "2022",
+    "date": "2022-10-08",
     "href": "https://ieeexplore.ieee.org/abstract/document/9922030"
   },
   {
@@ -480,6 +480,7 @@
     "title": "A framework to determine critical links of an intercity rail network for pre-disaster infrastructure",
     "authors": "​K. Kim, J. Lee, Y. Yoon",
     "conference": "INFORMS 2013",
+    "date": "2012",
     "href": "https://koasas.kaist.ac.kr/handle/10203/257158"
   },
   {
@@ -487,6 +488,7 @@
     "title": "Hazard risk assessment in aviation: methodology and case study based on NTSB accident/incident data",
     "authors": "E. Kim, Y. Yoon",
     "conference": "INFORMS 2013",
+    "date": "2012",
     "href": "https://koasas.kaist.ac.kr/handle/10203/257159"
   },
   {
@@ -494,6 +496,7 @@
     "title": "Application of Bayesian network for hazard-based risk modeling in aviation safety management system",
     "authors": "O. Kwon, Y. Yoon",
     "conference": "INFORMS 2013",
+    "date": "2012",
     "href": "https://koasas.kaist.ac.kr/handle/10203/257161"
   },
   {
@@ -501,6 +504,7 @@
     "title": "Occurrence in aviation safety management of South Korea: survey on various occurrence categories",
     "authors": "Y. Noh, Y. Yoon",
     "conference": "INFORMS 2013",
+    "date": "2012",
     "href": "https://koasas.kaist.ac.kr/handle/10203/257160"
   },
   {
@@ -508,6 +512,7 @@
     "title": "Aviation system reliability during natural disaster",
     "authors": "J. Lee, Y. Yoon",
     "conference": "INFORMS 2013",
+    "date": "2012",
     "href": "https://koasas.kaist.ac.kr/handle/10203/194908"
   },
   {
@@ -539,6 +544,7 @@
     "title": "A framework to evaluate system-wide vulnerability of a transportation network under disaster events",
     "authors": "S. Tak, Y. Yoon",
     "conference": "INFORMS 2012",
+    "date": "2011",
     "href": "https://koasas.kaist.ac.kr/handle/10203/171351"
   },
   {
@@ -546,6 +552,7 @@
     "title": "Understanding the human behavior in the traffic accident using data mining framework",
     "authors": "O. Kwon, Y. Yoon",
     "conference": "INFORMS 2012",
+    "date": "2011",
     "href": "https://koasas.kaist.ac.kr/handle/10203/171352"
   },
   {
@@ -553,6 +560,7 @@
     "title": "Value of perfect weather information in the probabilistic air traffic management",
     "authors": "Y. Yoon, M. Hansen",
     "conference": "INFORMS 2012",
+    "date": "2011",
     "href": "https://koasas.kaist.ac.kr/handle/10203/171350"
   },
   {

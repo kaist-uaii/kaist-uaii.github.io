@@ -1,279 +1,112 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="utf-8" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Urban AI Institute</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css" />
-    <link rel="icon" href="assets/K-UAII_logo.jpg" />
-    <meta name="description" content="Urban AI Institute — research at the intersection of cities and AI" />
-
-    <style>
-        body.page-transition {
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        body.page-loaded {
-            opacity: 1;
-            transition: opacity 0.4s ease;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UAII - Urban AI Institute</title>
+  <link rel="stylesheet" href="assets_new/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
+<body class="home">
 
-<body>
-    <nav id="siteNav" class="border-b border-slate-100 bg-white/80 backdrop-blur-md sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-6 flex justify-between items-center">
+  <!-- Navigation -->
+  <nav class="submenu bg-secondary">
+    <a href="index.html" class="navbar-brand">UAII <span class="navbar-brand-sub">Urban AI Institute</span></a>
+    <ul class="navbar-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="people.html">People</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="engagement.html">Engagement</a></li>
+    </ul>
+  </nav>
 
-            <!-- Logo -->
-            <a href="index.html" class="text-xl font-black tracking-tighter text-blue-900">
-                UAII <span class="text-slate-400 font-light">Urban AI Institute</span>
-            </a>
+  <!-- Globe background -->
+  <div id="landingmap"></div>
 
-            <!-- Desktop Menu -->
-            <div class="hidden md:flex gap-6 text-xs font-bold uppercase tracking-widest text-slate-500">
-                <a href="index.html" class="text-blue-600">Home</a>
-                <a href="people.html" class="hover:text-blue-600">People</a>
-                <button id="projectsMegaBtn"
-                        type="button"
-                        class="text-xs font-bold uppercase tracking-widest text-slate-500 hover:text-blue-600"
-                        aria-expanded="false">
-                    Projects
-                </button>
-                <a href="press.html" class="hover:text-blue-600">Events</a>
-                <a href="apply.html" class="hover:text-blue-600">Apply</a>
-            </div>
+  <!-- Scroll-snap container -->
+  <div id="landing">
 
-            <!-- Mobile Menu Button -->
-            <button id="menuBtn"
-                    class="md:hidden text-slate-700 focus:outline-none"
-                    aria-label="Open menu">
-                ☰
-            </button>
+    <!-- Block 1: Hero -->
+    <div class="scroll-block" id="block-1">
+      <div class="hero-content">
+        <p class="hero-eyebrow">KAIST · Urban AI Institute</p>
+        <p class="hero-uaii">UAII</p>
+        <div class="hero-headline">
+          <p class="hero-line1"><span class="hero-from">From</span> <span class="hero-ui-word">Artificial Intelligence</span> <span class="hero-from">to</span> <span class="hero-ui-word">Urban Intelligence</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
         </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobileMenu"
-             class="hidden md:hidden bg-white border-t border-slate-100">
-            <div class="flex flex-col px-6 py-4 gap-4 text-sm font-semibold text-slate-700">
-                <a href="index.html" class="text-blue-600">Home</a>
-                <a href="people.html">People</a>
-                <a href="projects.html">Projects</a>
-                <a href="press.html">Events</a>
-                <a href="apply.html">Apply</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- ===== Projects Mega Menu (nav 아래 펼쳐짐) ===== -->
-    <div id="projectsMegaPanel" class="projects-mega-panel hidden">
-        <div class="projects-mega-inner">
-
-            <div class="projects-mega-header">
-                <div class="projects-mega-breadcrumb">
-                    <span class="projects-mega-title">Projects</span>
-                    <span class="projects-mega-sep">›</span>
-                    <a href="projects.html" class="projects-mega-overview">
-                        See overview
-                    </a>
-                </div>
-
-                <button id="projectsMegaClose"
-                        class="projects-mega-close"
-                        type="button">
-                    ×
-                </button>
-            </div>
-
-            <div class="projects-mega-grid">
-                <a class="projects-mega-item"
-                   href="https://sites.google.com/view/fuscc/home"
-                   target="_blank" rel="noopener">
-                    Urban@KAIST
-                </a>
-
-                <a class="projects-mega-item"
-                   href="https://hcfm.kaist.ac.kr"
-                   target="_blank" rel="noopener">
-                    HcFM
-                </a>
-
-                <a class="projects-mega-item"
-                   href="https://caus.kaist.ac.kr"
-                   target="_blank" rel="noopener">
-                    CAUS
-                </a>
-
-                <a class="projects-mega-item"
-                   href="https://c3.kaist.ac.kr"
-                   target="_blank" rel="noopener">
-                    KAIST-NYU C3
-                </a>
-            </div>
-
-        </div>
+        <p class="hero-mission">Reimagining cities as intelligent systems that learn, adapt, and create human and economic value</p>
+      </div>
     </div>
 
-
-    <section id="about" class="hero" role="banner" aria-label="Urban AI Institute">
-        <div class="hero-overlay">
-            <h1>Urban AI Institute</h1>
-            <br />
-            <!-- 소개글 추가 -->
-            <p class="hero-sub">
-                Urban AI Institute develops core technologies for advancing artificial intelligence in future cities.<br>
-                We focus on integrating AI into urban systems for sustainable, human-centered innovation.<br>
-                Our research drives the next generation of smart city intelligence and design.
-            </p>
+    <!-- Block 2: Urban Intelligence -->
+    <div class="scroll-block" id="block-2">
+      <div class="urban-intel-content">
+        <div class="b2f-layout">
+          <div class="b2f-left">
+            <span class="b2f-prep">from</span>
+            <span class="b2f-word">Artificial<br>Intelligence</span>
+            <span class="b2f-prep">to</span>
+            <span class="b2f-word b2f-glow">Urban<br>Intelligence</span>
+          </div>
+          <div class="b2f-right">
+            <p class="ui-line">Artificial Intelligence is transforming the world.<br>We focus on the next frontier — <span class="ui-accent">Urban Intelligence</span>.</p>
+            <p class="ui-line"><span class="ui-accent">Urban Intelligence</span> connects data, infrastructure, mobility, buildings, and human activity into an integrated system where cities can continuously learn and improve.</p>
+            <p class="ui-line">At <span class="ui-accent">Urban AI Institute</span>, we conduct research and real-world deployment of AI, integrating it into urban systems for sustainable, human-centered innovation.</p>
+          </div>
         </div>
-    </section>
-    <br />
+        <p class="b2f-bottom"><em>Reimagining cities as intelligent systems that learn, adapt, and create human and economic value.</em></p>
+      </div>
+    </div>
 
-    <!-- ===== Projects ===== -->
-    <section class="projects-section">
-        <h2 class="projects-title">Projects</h2>
-        <main class="container cards">
-            <a class="card card-link card-hover" href="https://sites.google.com/view/fuscc/home" target="_blank" rel="noopener">
-                <h3>Urban@KAIST</h3>
-                <p class="project-meta">Project · KAIST</p>
-                <p class="card-desc">
-                    An interdisciplinary initiative that advances urban problem-solving through data, AI, and engineering expertise.
-                </p>
+    <!-- Block 3: Stats -->
+    <div class="scroll-block" id="block-3">
+      <div class="stats-wrap">
+        <p class="block-label">UAII Research, at scale</p>
+        <div class="types-grid">
+          <div class="cell">
+            <a href="#publications" class="types-cell">
+              <h1 class="countup" data-number="87">0</h1>
+              <h4>Publications</h4>
             </a>
-
-            <a class="card card-link card-hover" href="https://hcfm.kaist.ac.kr" target="_blank" rel="noopener">
-                <h3>HcFM</h3>
-                <p class="project-meta">Project · KAIST</p>
-                <p class="card-desc">
-                    A research platform that advances future mobility through vertiports, route networks, and autonomous systems.
-                </p>
+          </div>
+          <div class="cell">
+            <a href="#projects" class="types-cell">
+              <h1 class="countup" data-number="24">0</h1>
+              <h4>Projects</h4>
             </a>
-
-            <a class="card card-link card-hover" href="https://caus.kaist.ac.kr" target="_blank" rel="noopener">
-                <h3>CAUS</h3>
-                <p class="project-meta">Center · KAIST</p>
-                <p class="card-desc">
-                    Korea’s first Urban AI research center that develops data-driven solutions for sustainable and equitable cities.
-                </p>
+          </div>
+          <div class="cell">
+            <a href="#events" class="types-cell">
+              <h1 class="countup" data-number="15">0</h1>
+              <h4>Events</h4>
             </a>
-
-            <a class="card card-link card-hover" href="https://c3.kaist.ac.kr" target="_blank" rel="noopener">
-                <h3>KAIST-NYU C3</h3>
-                <p class="project-meta">Project · KAIST</p>
-                <p class="card-desc">
-                    An international research center that addresses urban and climate challenges through KAIST–NYU collaboration.
-                </p>
-            </a>
-        </main>
-        <br />
-    </section>
-
-    <!-- ===== Research Update & Events ===== -->
-    <section class="update-section" id="update-section" aria-labelledby="research-update-title">
-        <div class="container cards-2">
-            <div>
-                <h2 class="projects-title">Research Update</h2>
-                <div class="card card-link card-hover">
-                    <!-- Left: Recent Research -->
-                    <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-lg font-bold text-slate-900">Research</h3>
-                        <a href="press.html?view=research#research-update" class="text-sm text-blue-600 hover:text-blue-800 font-medium">See all</a>
-                    </div>
-                    <div id="recent-research-list" class="space-y-3">
-                        <!-- Recent events will be injected here -->
-                    </div>
-                </div>
-            </div>
-            <div>
-                <h2 class="projects-title">Events Update</h2>
-                <div class="card card-link card-hover">
-                    <!-- Right: Recent Events -->
-                    <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-lg font-bold text-slate-900">Events</h3>
-                        <a href="press.html" class="text-sm text-blue-600 hover:text-blue-800 font-medium">See all</a>
-                    </div>
-                    <div id="recent-events-list" class="space-y-3">
-                        <!-- Recent events will be injected here -->
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
 
-    <!-- ===== UAII in the Press ===== -->
-    <section class="press" id="press" aria-labelledby="press-title">
-        <div class="container">
-            <h2 id="press-title">UAII in the Press</h2>
-
-            <div class="press-slider" tabindex="0" role="region"
-                 aria-roledescription="carousel" aria-label="Press articles">
-                <div class="press-track">
-                    <!-- Press items will be dynamically injected here from pressData.json -->
-                </div>
-            </div>
-
-            <div class="press-controls" aria-label="Press slider controls">
-                <button type="button" class="press-control prev" aria-label="Previous press article">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg>
-                </button>
-                <button type="button" class="press-control next" aria-label="Next press article">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg>
-                </button>
-            </div>
-
-            <!--<div class="press-more">
-                <a class="btn view-more" href="press.html">View more</a>
-            </div>-->
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Contact</h2>
-
-            <div class="contact-card">
-                <p class="contact-org">Urban AI Institute</p>
-                <p class="contact-director">
-                    Director <strong>Prof. Yoonjin Yoon</strong>
-                </p>
-
-                <div class="contact-divider"></div>
-
-                <span class="contact-label">Email</span>
-                <span class="contact-email cursor-pointer hover:underline"
-                      onclick="copyEmail('urban@kaist.ac.kr')"
-                      role="button"
-                      aria-label="Copy email address">
-                    urban@kaist.ac.kr
-                </span>
+  </div>
 
 
-                <div class="contact-divider"></div>
 
-                <p class="contact-item">
-                    <span class="contact-label">Location</span>
-                    <span>KAIST W16, 291, Daehak-ro, Yuseong-gu, Daejeon, Republic of Korea</span>
-                </p>
-            </div>
-        </div>
-    </section>
+  <script src="https://unpkg.com/countup.js@2.8.0/dist/countUp.umd.js"></script>
+  <script>
+  (function() {
+    var scripts = ['https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js', 'assets_new/js/xray-bg.js'];
+    function loadNext(i) {
+      if (i >= scripts.length) return;
+      var s = document.createElement('script');
+      s.src = scripts[i];
+      s.onload = function() { loadNext(i + 1); };
+      document.body.appendChild(s);
+    }
+    loadNext(0);
+  })();
+  </script>
+  <script src="assets_new/js/counter.js"></script>
+  <script src="assets_new/js/scroll-nav.js"></script>
+  <script src="assets_new/js/block-animations.js"></script>
 
-    <!--<footer class="site-footer">
-        <div class="container">
-            <small>© <span id="year"></span> Urban AI Institute • Built with GitHub Pages</small>
-        </div>
-    </footer>-->
-    <footer class="bg-white border-t border-gray-200 py-8 text-center mt-20">
-        <p class="text-gray-500 text-sm">&copy; 2026 Urban AI Institute. All rights reserved.</p>
-    </footer>
-
-    <script src="assets/script.js"></script>
 </body>
 </html>
