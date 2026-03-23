@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "id": "20251124",
     "title": "2025 Urban X HcFM Workshop @ Berkeley",
@@ -32,7 +32,7 @@
   {
     "id": "20251103",
     "title": "Presentation at ACM SIGSPATIAL",
-    "category": "presentation",
+    "category": "workshop",
     "start": "2025-11-03",
     "end": "2025-11-06",
     "place": "Minneapolis, Minnesota",
@@ -60,7 +60,7 @@
   {
     "id": "20251019",
     "title": "Presentation at ICCV 2025",
-    "category": "presentation",
+    "category": "workshop",
     "start": "2025-10-10",
     "end": "2025-10-23",
     "place": "Honolulu, Hawaii",
@@ -69,7 +69,7 @@
       "ICCV",
       "Vision"
     ],
-    "desc": "M.S. student Juneyoung attended ICCV 2025 and presented the work \"How Weel do Vision-Language Models Understand Cities? A Comparative Study on Spatial Reasoning from Street-View Images\" (conducted with Postdoc researcher Namwoo) at the ICCV Workshop on Multimodal Reasoning and Slow Thinking in Large Model Era: Towards System 2 and Beyond (MARS2). The work investigated how spatially complex urban scenes can be understood through general-purpose VLMs and whether domain-specific fine-tuning can close the gap.",
+    "desc": "M.S. student Juneyoung attended ICCV 2025 and presented the work \"How Well do Vision-Language Models Understand Cities? A Comparative Study on Spatial Reasoning from Street-View Images\" (conducted with Postdoc researcher Namwoo) at the ICCV Workshop on Multimodal Reasoning and Slow Thinking in Large Model Era: Towards System 2 and Beyond (MARS2). The work investigated how spatially complex urban scenes can be understood through general-purpose VLMs and whether domain-specific fine-tuning can close the gap.",
     "photos": [
       "assets/images/events/IMG_0749.jpeg",
       "assets/images/events/IMG_3152.JPG",
@@ -258,7 +258,7 @@
   {
     "id": "20250105",
     "title": "Presentation at TRB Annual Meeting",
-    "category": "presentation",
+    "category": "meeting",
     "start": "2025-01-05",
     "end": "2025-01-09",
     "place": "Washington D.C.",
@@ -341,7 +341,7 @@
   {
     "id": "20241111",
     "title": "K-DS Hackathon: 2nd Prize!",
-    "category": "hackathon",
+    "category": "honors",
     "start": "2024-11-11",
     "end": "2024-11-13",
     "place": "Seoul National University Samsung Convention Center",
@@ -481,7 +481,7 @@
   {
     "id": "20240906",
     "title": "고속도로 비전 캠퍼스 논문 공모전 장려상 시상식",
-    "category": "award",
+    "category": "honors",
     "start": "2024-09-06",
     "end": "2024-09-06",
     "place": "한국도로공사 (Korea Expressway Corporation)",
