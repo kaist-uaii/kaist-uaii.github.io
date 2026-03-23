@@ -7,13 +7,63 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets_new/css/style.css">
     <!-- Sidebar Navigation Import CSS and JS -->
     <link rel="stylesheet" href="partials/scroll-sidebar.css">
     <script src="partials/scroll-sidebar.js"></script>
     <style>
-        body {
+        html, body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
+            background: #03070f !important;
+            color: #e2e8f0;
+            overflow: auto !important;
+            height: auto !important;
+        }
+
+        /* ── Dark theme overrides ── */
+        .bg-white, .sm\:bg-white { background: rgba(255,255,255,0.12) !important; }
+        .bg-slate-50 { background: #03070f !important; }
+        .bg-white\/80, .bg-white\/70 { background: rgba(255,255,255,0.12) !important; border-color: rgba(255,255,255,0.08) !important; }
+        .backdrop-blur-md { backdrop-filter: blur(12px); }
+        .border-slate-100, .border-slate-200, .border-gray-200, .border-t { border-color: rgba(255,255,255,0.08) !important; }
+        .text-slate-900, .text-slate-800 { color: #fff !important; }
+        .text-slate-700 { color: rgba(255,255,255,0.7) !important; }
+        .text-slate-600 { color: rgba(255,255,255,0.5) !important; }
+        .text-slate-500 { color: rgba(255,255,255,0.4) !important; }
+        .text-slate-400 { color: rgba(255,255,255,0.3) !important; }
+        .text-blue-600 { color: #93c5fd !important; }
+        .text-blue-900 { color: #93c5fd !important; }
+        .text-gray-500 { color: rgba(255,255,255,0.25) !important; }
+        .bg-slate-100 { background: rgba(255,255,255,0.06) !important; }
+        .proj-tag {
+            background: rgba(96,165,250,0.1);
+            color: #93c5fd;
+            border: 1px solid rgba(96,165,250,0.2);
+            box-shadow: 0 0 8px rgba(96,165,250,0.12);
+        }
+        .bg-slate-200 { background: rgba(255,255,255,0.1) !important; }
+        .hover\:bg-slate-200:hover { background: rgba(255,255,255,0.12) !important; }
+        .hover\:bg-slate-300:hover { background: rgba(255,255,255,0.15) !important; }
+        .hover\:text-blue-600:hover { color: #93c5fd !important; }
+        .hover\:bg-blue-50:hover { background: rgba(96,165,250,0.1) !important; }
+        .bg-blue-600 { background: #2563eb !important; }
+        .hover\:bg-blue-700:hover { background: #1d4ed8 !important; }
+        .shadow-sm { box-shadow: 0 1px 3px rgba(0,0,0,0.3) !important; }
+        .shadow-lg { box-shadow: 0 10px 25px rgba(0,0,0,0.4) !important; }
+        .border-white { border-color: rgba(255,255,255,0.1) !important; }
+        .divider-gradient { background: linear-gradient(to right, #2563eb, #93c5fd, transparent) !important; }
+        .card-hover:hover { box-shadow: 0 0 20px rgba(96,165,250,0.15), 0 0 40px rgba(96,165,250,0.08), 0 0 0 1px rgba(96,165,250,0.2) !important; }
+        footer.bg-white { background: transparent !important; }
+        nav.border-b { border-color: rgba(255,255,255,0.08) !important; }
+        .border-slate-300 { border-color: rgba(255,255,255,0.1) !important; }
+        .text-gray-500 { color: rgba(255,255,255,0.25) !important; }
+
+        .markdown strong { color: #93c5fd; }
+        .serif-title {
+            color: #fff !important;
+            font-family: 'Inter', sans-serif !important;
+            text-shadow: 0 0 30px rgba(255,255,255,0.35), 0 0 60px rgba(255,255,255,0.12);
         }
 
         .serif-title {
@@ -36,8 +86,8 @@
         }
 
             .card-hover:hover {
-                transform: translateY(-8px);
-                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+                transform: translateY(-8px) !important;
+                box-shadow: 0 0 20px rgba(96,165,250,0.25), 0 0 40px rgba(96,165,250,0.12), 0 0 0 1px rgba(96,165,250,0.3) !important;
             }
 
         .member-photo-mask {
@@ -223,99 +273,16 @@
 </head>
 <body class="bg-slate-50 text-slate-900">
 
-    <!-- Header / Navigation -->
-    <!-- Header / Navigation -->
-    <nav class="border-b border-slate-100 bg-white/80 backdrop-blur-md sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-6 flex justify-between items-center">
-
-            <!-- Logo -->
-            <a href="index.html" class="text-xl font-black tracking-tighter text-blue-900">
-                UAII <span class="text-slate-400 font-light">People</span>
-            </a>
-
-            <!-- Desktop Menu -->
-            <div class="hidden md:flex gap-6 text-xs font-bold uppercase tracking-widest text-slate-500">
-                <a href="index.html" class="hover:text-blue-600">Home</a>
-                <a href="people.html" class="text-blue-600">People</a>
-                <button id="projectsMegaBtn"
-                        type="button"
-                        class="text-xs font-bold uppercase tracking-widest text-slate-500 hover:text-blue-600"
-                        aria-expanded="false">
-                    Projects
-                </button>
-                <a href="press.html" class="hover:text-blue-600">Events</a>
-                <a href="apply.html" class="hover:text-blue-600">Apply</a>
-            </div>
-
-            <!-- Mobile Menu Button -->
-            <button id="menuBtn"
-                    class="md:hidden text-slate-700 focus:outline-none"
-                    aria-label="Open menu">
-                ☰
-            </button>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobileMenu"
-             class="hidden md:hidden bg-white border-t border-slate-100">
-            <div class="flex flex-col px-6 py-4 gap-4 text-sm font-semibold text-slate-700">
-                <a href="index.html">Home</a>
-                <a href="people.html" class="text-blue-600">People</a>
-                <a href="projects.html">Projects</a>
-                <a href="press.html">Events</a>
-                <a href="apply.html">Apply</a>
-            </div>
-        </div>
+    <!-- Navigation (same as index) -->
+    <nav class="submenu bg-secondary" style="position:sticky;top:0;z-index:50;">
+      <a href="index.html" class="navbar-brand">UAII <span class="navbar-brand-sub">Urban AI Institute</span></a>
+      <ul class="navbar-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="people.html" class="active">People</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="engagement.html">Engagement</a></li>
+      </ul>
     </nav>
-
-    <!-- ===== Projects Mega Menu (nav 아래 펼쳐짐) ===== -->
-    <div id="projectsMegaPanel" class="projects-mega-panel hidden">
-        <div class="projects-mega-inner">
-
-            <div class="projects-mega-header">
-                <div class="projects-mega-breadcrumb">
-                    <span class="projects-mega-title">Projects</span>
-                    <span class="projects-mega-sep">›</span>
-                    <a href="projects.html" class="projects-mega-overview">
-                        See overview
-                    </a>
-                </div>
-
-                <button id="projectsMegaClose"
-                        class="projects-mega-close"
-                        type="button">
-                    ×
-                </button>
-            </div>
-
-            <div class="projects-mega-grid">
-                <a class="projects-mega-item"
-                   href="https://sites.google.com/view/fuscc/home"
-                   target="_blank" rel="noopener">
-                    Urban@KAIST
-                </a>
-
-                <a class="projects-mega-item"
-                   href="https://hcfm.kaist.ac.kr"
-                   target="_blank" rel="noopener">
-                    HcFM
-                </a>
-
-                <a class="projects-mega-item"
-                   href="https://caus.kaist.ac.kr"
-                   target="_blank" rel="noopener">
-                    CAUS
-                </a>
-
-                <a class="projects-mega-item"
-                   href="https://c3.kaist.ac.kr"
-                   target="_blank" rel="noopener">
-                    KAIST-NYU C3
-                </a>
-            </div>
-
-        </div>
-    </div>
 
     <!-- Sidebar Navigation with Trigger -->
     <div class="sidebar-container fixed right-0 top-1/2 -translate-y-1/2 z-40">
@@ -334,7 +301,7 @@
 
                 <!-- Project Filter -->
                 <div class="pt-4 border-t border-slate-200">
-                    <h3 class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-3 px-2">Filter by Project</h3>
+                    <h3 class="text-[10px] font-bold uppercase tracking-widest mb-3 px-2" style="color:rgba(255,255,255,0.35);">Filter by Project</h3>
                     <div id="project-filter-buttons" class="flex flex-col gap-2">
                         <!-- Filter buttons will be injected here -->
                     </div>
@@ -539,7 +506,7 @@
                                                         <div class="relative pl-3 border-l-2 border-blue-400/40 projects-container" data-member-id="${index}">
                                                             <div class="projects-tags flex flex-wrap gap-1.5">
                                                             ${person.projects.slice(0, projectsThreshold).map(project => `
-                                                                <span class="inline-flex items-center sm:px-2 sm:py-1 px-1.5 py-0.5 text-[10px] font-medium bg-slate-100 text-slate-700 border border-slate-300">${project}</span>
+                                                                <span class="inline-flex items-center sm:px-2 sm:py-1 px-1.5 py-0.5 text-[10px] font-medium proj-tag">${project}</span>
                                                             `).join('')}
                                                             ${showMoreProjects ? `
                                                                 <span class="projects-more inline-flex items-center sm:px-2.5 sm:py-1 px-2 py-0.5 text-[10px] font-medium bg-slate-200 text-slate-700 border border-slate-300 cursor-pointer hover:bg-slate-300 transition">+${person.projects.length - projectsThreshold} more</span>
@@ -640,7 +607,8 @@
                         if (filterButtonsContainer && allProjects.length > 0) {
                             // "All" button
                             const allButton = document.createElement('button');
-                            allButton.className = 'project-filter-btn active w-full text-left px-3 py-2 rounded-lg text-xs font-semibold transition-colors bg-blue-600 text-white hover:bg-blue-700';
+                            allButton.className = 'project-filter-btn active w-full text-left px-3 py-2 rounded-lg text-xs font-semibold transition-colors';
+                            allButton.style.cssText = 'background:#2563eb;color:#fff;border:none;';
                             allButton.textContent = 'All';
                             allButton.setAttribute('data-project', 'all');
                             filterButtonsContainer.appendChild(allButton);
@@ -657,7 +625,8 @@
                             filteredProjects.forEach(project => {
                                 const btn = document.createElement('button');
                                 btn.className =
-                                    'project-filter-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold transition-colors bg-slate-100 text-slate-700 hover:bg-slate-200';
+                                    'project-filter-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold transition-colors';
+                                btn.style.cssText = 'background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.55);border:1px solid rgba(255,255,255,0.08);';
                                 btn.textContent = project;
                                 btn.setAttribute('data-project', project.toLowerCase());
                                 filterButtonsContainer.appendChild(btn);
@@ -675,11 +644,11 @@
 
                                         // Update active button
                                         filterButtons.forEach(b => {
-                                            b.classList.remove('active', 'bg-blue-600', 'text-white', 'hover:bg-blue-700');
-                                            b.classList.add('bg-slate-100', 'text-slate-700', 'hover:bg-slate-200');
+                                            b.classList.remove('active');
+                                            b.style.cssText = 'background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.55);border:1px solid rgba(255,255,255,0.08);';
                                         });
-                                        btn.classList.add('active', 'bg-blue-600', 'text-white', 'hover:bg-blue-700');
-                                        btn.classList.remove('bg-slate-100', 'text-slate-700', 'hover:bg-slate-200');
+                                        btn.classList.add('active');
+                                        btn.style.cssText = 'background:#2563eb;color:#fff;border:1px solid #2563eb;';
 
                                         // Update filter
                                         const activeFilter = btn.getAttribute('data-project');

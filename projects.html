@@ -1,635 +1,347 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Urban AI Institute (UAII)</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | UAII - Urban AI Institute</title>
+  <link rel="stylesheet" href="assets_new/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { background: #03070f; }
 
-        .serif-title {
-            font-family: 'Playfair Display', serif;
-        }
+    .proj-page-title {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 800;
+      color: #fff;
+      text-align: left;
+      text-shadow: 0 0 30px rgba(255,255,255,0.35), 0 0 60px rgba(255,255,255,0.12);
+      margin-bottom: 40px;
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .proj-page-title.anim-in {
+      opacity: 1 !important;
+      transform: translate(0,0) !important;
+    }
 
-        .gradient-text {
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+    /* ── Project Links block ── */
+    .proj-links-wrap {
+      max-width: 1200px;
+      width: 100%;
+      text-align: center;
+      padding: 0 40px;
+    }
 
-        .card-hover {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+    .proj-links-title {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 40px;
+    }
 
-            .card-hover:hover {
-                transform: translateY(-8px);
-                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            }
+    .proj-links-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
 
-        .divider-gradient {
-            height: 4px;
-            background: linear-gradient(to right, #1e3a8a, #3b82f6, transparent);
-            border-radius: 2px;
-        }
+    .proj-link-card {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 24px;
+      padding: 32px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.12);
+      text-decoration: none;
+      text-align: left;
+      transition: all 0.3s ease;
+      min-height: 160px;
+    }
 
-        img {
-            transition: transform 0.3s ease;
-        }
+    .proj-link-card:hover {
+      border-color: rgba(96,165,250,0.3);
+      background: rgba(255,255,255,0.16);
+      transform: translateY(-4px);
+      box-shadow: 0 0 20px rgba(96,165,250,0.15), 0 0 0 1px rgba(96,165,250,0.2);
+    }
 
-        .card-hover:hover img {
-            transform: scale(1.05);
-        }
+    .proj-link-img-wrap {
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.06);
+      border-radius: 10px;
+      padding: 10px;
+      flex-shrink: 0;
+    }
 
-        .research-update {
-            scroll-margin-top: 100px;
-        }
+    .proj-link-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
 
-        .projects-mega-panel {
-            position: fixed; /* 떠있게 */
-            left: 0;
-            right: 0;
-            z-index: 9999;
-            background: #ffffff;
-            border-bottom: 1px solid #e5e7eb;
-            animation: slideDown 0.25s ease forwards;
-        }
+    .proj-link-info {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1;
+    }
 
-            .projects-mega-panel .projects-mega-inner {
-                max-width: 1100px;
-                margin: 0 auto;
-                padding: 28px 24px 36px 24px;
-            }
+    .proj-link-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #fff;
+    }
 
-        .projects-mega-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #e5e7eb;
-            padding-bottom: 14px;
-        }
+    .proj-link-card:hover .proj-link-name {
+      color: #93c5fd;
+    }
 
-        .projects-mega-breadcrumb {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+    .proj-link-desc {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.5;
+    }
 
-        .projects-mega-title {
-            font-weight: 700;
-            font-size: 18px;
-            color: #111827;
-        }
+    .proj-link-arrow {
+      font-size: 0.75rem;
+      color: #fff;
+      margin-top: auto;
+    }
 
-        .projects-mega-sep {
-            color: #9ca3af;
-        }
-
-        .projects-mega-overview {
-            font-size: 13px;
-            color: #6b7280;
-            text-decoration: none;
-        }
-
-            .projects-mega-overview:hover {
-                text-decoration: underline;
-                color: #111827;
-            }
-
-        .projects-mega-close {
-            font-size: 26px;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-        }
-
-        .projects-mega-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 26px 40px;
-            margin-top: 24px;
-        }
-
-        .projects-mega-item {
-            display: block;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #e5e7eb;
-            font-size: 16px;
-            font-weight: 600;
-            color: #111827;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-
-            .projects-mega-item:hover {
-                color: #1d4ed8;
-                border-bottom-color: #c7d2fe;
-            }
-
-        /* 슬라이드 애니메이션 */
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-6px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive */
-        @media (max-width: 900px) {
-            .projects-mega-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 520px) {
-            .projects-mega-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    .proj-link-card, .proj-links-title {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .proj-link-card.anim-in,
+    .proj-links-title.anim-in {
+      opacity: 1 !important;
+      transform: translate(0,0) !important;
+    }
+  </style>
 </head>
+<body>
 
-<body class="bg-slate-50 text-slate-900">
+  <!-- Navigation -->
+  <nav class="submenu bg-secondary">
+    <a href="index.html" class="navbar-brand">UAII <span class="navbar-brand-sub">Urban AI Institute</span></a>
+    <ul class="navbar-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="people.html">People</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="engagement.html">Engagement</a></li>
+    </ul>
+  </nav>
 
-    <!-- Header / Navigation -->
-    <nav class="border-b border-slate-100 bg-white/80 backdrop-blur-md sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-6 flex justify-between items-center">
+  <!-- Scroll-snap container -->
+  <div id="landing">
 
-            <!-- Logo -->
-            <a href="index.html" class="text-xl font-black tracking-tighter text-blue-900">
-                UAII <span class="text-slate-400 font-light">Projects</span>
-            </a>
-
-            <!-- Desktop Menu -->
-            <div class="hidden md:flex gap-6 text-xs font-bold uppercase tracking-widest text-slate-500">
-                <a href="index.html" class="hover:text-blue-600">Home</a>
-                <a href="people.html" class="hover:text-blue-600">People</a>
-                <button id="projectsMegaBtn"
-                        type="button"
-                        class="text-xs font-bold uppercase tracking-widest text-slate-500 text-blue-600"
-                        aria-expanded="false">
-                    Projects
-                </button>
-                <a href="press.html" class="hover:text-blue-600">Events</a>
-                <a href="apply.html" class="hover:text-blue-600">Apply</a>
-            </div>
-
-            <!-- Mobile Menu Button -->
-            <button id="menuBtn"
-                    class="md:hidden text-slate-700 focus:outline-none"
-                    aria-label="Open menu">
-                ☰
-            </button>
+    <!-- Block 1: Core Research Themes -->
+    <div class="scroll-block" id="block-1">
+      <div class="research-themes-content">
+        <h1 class="proj-page-title">Projects</h1>
+        <div class="themes-intro-block">
+          <p class="themes-intro">UAII develops core technologies for advancing AI in future cities.</p>
+          <p class="themes-intro-sub">Two core research themes define our approach — one <span class="ui-accent">treating the cities of today</span>, the other <span class="ui-accent">building the cities of tomorrow</span>.</p>
         </div>
 
-        <!-- Mobile Menu -->
-        <div id="mobileMenu"
-             class="hidden md:hidden bg-white border-t border-slate-100">
-            <div class="flex flex-col px-6 py-4 gap-4 text-sm font-semibold text-slate-700">
-                <a href="index.html">Home</a>
-                <a href="people.html">People</a>
-                <a href="projects.html" class="text-blue-600">Projects</a>
-                <a href="press.html">Events</a>
-                <a href="apply.html">Apply</a>
+        <div class="themes-rows">
+
+          <div class="theme-row theme-row-1">
+            <div class="theme-row-left theme-row-1-left">
+              <div class="theme-row-badge">Theme 01</div>
+              <a href="research-doctor-city.html" class="theme-row-name">Dr.City</a>
+              <p class="theme-row-sub">Your city<br>is <strong>sick</strong>.<br>We diagnose it.</p>
+              <svg class="theme-visual ecg-visual" viewBox="0 0 200 56" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMid meet">
+                <defs>
+                  <linearGradient id="ecg-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%"   stop-color="rgba(147,197,253,0)"/>
+                    <stop offset="40%"  stop-color="rgba(147,197,253,0.2)"/>
+                    <stop offset="50%"  stop-color="rgba(255,255,255,1)"/>
+                    <stop offset="60%"  stop-color="rgba(147,197,253,0.2)"/>
+                    <stop offset="100%" stop-color="rgba(147,197,253,0)"/>
+                  </linearGradient>
+                  <mask id="ecg-mask">
+                    <rect class="ecg-glow-rect" x="-60" y="0" width="120" height="56" fill="url(#ecg-glow)"/>
+                  </mask>
+                </defs>
+                <polyline class="ecg-base" points="0,28 112,28 115,22 119,28 122,28 124,30 126,6 128,50 130,28 135,20 141,28 155,28 200,28"/>
+                <polyline class="ecg-bright" points="0,28 112,28 115,22 119,28 122,28 124,30 126,6 128,50 130,28 135,20 141,28 155,28 200,28" mask="url(#ecg-mask)"/>
+              </svg>
             </div>
-        </div>
-    </nav>
-
-    <div id="projectsMegaPanel" class="projects-mega-panel hidden">
-        <div class="projects-mega-inner">
-
-            <div class="projects-mega-header">
-                <div class="projects-mega-breadcrumb">
-                    <span class="projects-mega-title">Projects</span>
-                    <span class="projects-mega-sep">›</span>
-                    <a href="projects.html" class="projects-mega-overview">
-                        See overview
-                    </a>
+            <div class="theme-row-right theme-row-1-right">
+              <p class="theme-row-desc">Cities are living systems — and like any living thing, they suffer.<br>Population shift. Mental health crises. Climate stress. Gridlock.<br><br><strong>Doctor City</strong> treats the urban environment as a patient.<br>AI and data identify what's wrong, prescribe evidence-based interventions, and monitor recovery.</p>
+              <div class="theme-row-pipeline">
+                <span>Data Discovery</span><span class="pipe-arr">→</span><span>Knowledge Extraction</span><span class="pipe-arr">→</span><span>Policy Recommendation</span><span class="pipe-arr">→</span><span>Mitigation Monitoring</span>
+              </div>
+              <div class="theme-row-chips">
+                <button class="see-projects-btn" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('visible')">See Projects</button>
+                <div class="see-projects-list">
+                  <a href="#" class="tree-leaf real">Seoul Project</a>
+                  <a href="#" class="tree-leaf real">URL</a>
                 </div>
-
-                <button id="projectsMegaClose"
-                        class="projects-mega-close"
-                        type="button">
-                    ×
-                </button>
+              </div>
             </div>
+          </div>
 
-            <div class="projects-mega-grid">
-                <a class="projects-mega-item"
-                   href="https://sites.google.com/view/fuscc/home"
-                   target="_blank" rel="noopener">
-                    Urban@KAIST
-                </a>
-
-                <a class="projects-mega-item"
-                   href="https://hcfm.kaist.ac.kr"
-                   target="_blank" rel="noopener">
-                    HcFM
-                </a>
-
-                <a class="projects-mega-item"
-                   href="https://caus.kaist.ac.kr"
-                   target="_blank" rel="noopener">
-                    CAUS
-                </a>
-
-                <a class="projects-mega-item"
-                   href="https://c3.kaist.ac.kr"
-                   target="_blank" rel="noopener">
-                    KAIST-NYU C3
-                </a>
+          <div class="theme-row theme-row-2">
+            <div class="theme-row-left theme-row-2-left">
+              <div class="theme-row-badge">Theme 02</div>
+              <a href="research-city-forward.html" class="theme-row-name">CityFWD.ai</a>
+              <p class="theme-row-sub">Your city<br><strong>doesn't exist yet.</strong><br>We're its architects.</p>
+              <svg class="theme-visual fwd-visual" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMid meet">
+                <defs>
+                  <linearGradient id="fwd-road-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%"   stop-color="rgba(147,197,253,0)"/>
+                    <stop offset="40%"  stop-color="rgba(147,197,253,0.2)"/>
+                    <stop offset="50%"  stop-color="rgba(255,255,255,1)"/>
+                    <stop offset="60%"  stop-color="rgba(147,197,253,0.2)"/>
+                    <stop offset="100%" stop-color="rgba(147,197,253,0)"/>
+                  </linearGradient>
+                  <mask id="fwd-road-mask">
+                    <rect class="fwd-road-glow-rect" x="-60" y="0" width="120" height="60" fill="url(#fwd-road-glow)"/>
+                  </mask>
+                </defs>
+                <line x1="0" y1="53" x2="200" y2="53" class="fwd-road-base"/>
+                <rect x="0" y="52" width="200" height="2" rx="1" class="fwd-road-bright-rect" mask="url(#fwd-road-mask)"/>
+                <g transform="translate(28,28)">
+                  <circle cx="0" cy="0" r="24" class="fwd-tyre-ring"/>
+                  <circle cx="0" cy="0" r="15" class="fwd-tyre-inner-line"/>
+                  <g class="fwd-wheel-spin">
+                    <line x1="0" y1="0" x2="0"     y2="-14" class="fwd-spoke5"/>
+                    <line x1="0" y1="0" x2="13.3"  y2="-4.3" class="fwd-spoke5"/>
+                    <line x1="0" y1="0" x2="8.2"   y2="11.3" class="fwd-spoke5"/>
+                    <line x1="0" y1="0" x2="-8.2"  y2="11.3" class="fwd-spoke5"/>
+                    <line x1="0" y1="0" x2="-13.3" y2="-4.3" class="fwd-spoke5"/>
+                    <circle cx="0" cy="0" r="3" class="fwd-wheel-hub"/>
+                  </g>
+                </g>
+              </svg>
             </div>
+            <div class="theme-row-right theme-row-2-right">
+              <p class="theme-row-desc">The greatest urban challenges aren't solved by fixing what's broken —<br>they're solved by imagining what's never been built.<br><br><strong>CityFWD.ai</strong> is greenfield thinking at civilization scale.<br>We design cities from the ground up using technologies not yet in practice, guided by AI that simulates futures before a single foundation is laid.<br>This isn't urban planning. This is urban invention.</p>
+              <div class="theme-row-chips">
+                <button class="see-projects-btn" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('visible')">See Projects</button>
+                <div class="see-projects-list">
+                  <a href="#" class="tree-leaf real">PRISM-X</a>
+                  <a href="#" class="tree-leaf real">VIGILANT</a>
+                </div>
+              </div>
+            </div>
+          </div>
 
         </div>
+      </div>
     </div>
 
-    <main class="container mx-auto px-6 max-w-7xl">
-        <!-- Hero Section -->
-        <section class="pt-24 pb-20">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-                <div>
-                    <h1 class="serif-title text-5xl md:text-6xl font-bold mb-4">Projects</h1>
-
-                </div>
-                <div class="divider-gradient w-48 hidden md:block"></div>
+    <!-- Block 2: Research Groups & Platforms -->
+    <div class="scroll-block" id="block-2">
+      <div class="proj-links-wrap">
+        <div class="proj-links-grid">
+          <a class="proj-link-card" href="https://sites.google.com/view/fuscc/home" target="_blank" rel="noopener">
+            <div class="proj-link-img-wrap"><img class="proj-link-img" src="assets/images/projects/4.png" alt="Urban@KAIST"></div>
+            <div class="proj-link-info">
+              <span class="proj-link-name">Urban@KAIST</span>
+              <span class="proj-link-desc">Urban@KAIST</span>
+              <span class="proj-link-arrow">Visit →</span>
             </div>
-
-            <!-- Featured Projects Grid -->
-            <div id="featured-projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-32">
-                <!-- Project cards will be injected here -->
+          </a>
+          <a class="proj-link-card" href="https://hcfm.kaist.ac.kr" target="_blank" rel="noopener">
+            <div class="proj-link-img-wrap"><img class="proj-link-img" src="assets/images/projects/5.png" alt="HcFM"></div>
+            <div class="proj-link-info">
+              <span class="proj-link-name">HcFM</span>
+              <span class="proj-link-desc">Human-centered Future Mobility</span>
+              <span class="proj-link-arrow">Visit →</span>
             </div>
-        </section>
-
-
-    </main>
-
-    <footer class="bg-white border-t border-gray-200 py-8 text-center mt-20">
-        <p class="text-gray-500 text-sm">&copy; 2026 Urban AI Institute. All rights reserved.</p>
-    </footer>
-
-    <script>
-        // Load data from projectsData.json
-        async function loadProjectsData() {
-            const url = "data/projectsData.json";  // ✅ 항상 projects.html 기준 상대경로
-            console.log("[Projects] fetching:", url);
-
-            const res = await fetch(url, { cache: "no-store" });
-            if (!res.ok) throw new Error(`Failed to load: ${res.status} ${res.statusText}`);
-
-            return await res.json();
-        }
-
-
-        function createProjectCard(p) {
-            const card = document.createElement('div');
-            const linkHref = p.link;
-            const target = p.type === 'external' ? 'target="_blank" rel="noopener noreferrer"' : '';
-
-            card.className = "card-hover bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100";
-            card.innerHTML = `
-                            <a href="${linkHref}" ${target} class="block h-full">
-                                ${p.image ? `
-                                <div class="relative overflow-hidden bg-slate-100 aspect-video">
-                                    <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                                </div>
-                                ` : ''}
-                                <div class="p-6">
-                                    <h3 class="serif-title text-2xl font-bold text-slate-900 mb-3">${p.title}</h3>
-                                    ${p.desc ? `<p class="text-sm text-slate-600 leading-relaxed mb-4">${p.desc}</p>` : ''}
-                                    <div class="flex items-center gap-2 text-sm font-medium text-blue-600 group-hover:text-blue-700">
-                                        <span>Learn more</span>
-                                        <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </a>
-                        `;
-            return card;
-        }
-
-        function createOtherProjectCard(p) {
-            const card = document.createElement('div');
-            const hasLink = !!p.link;
-            const linkHref = hasLink ? (p.type === 'internal' ? `/projects${p.link}` : p.link) : '#';
-            const target = p.type === 'external' ? 'target="_blank" rel="noopener noreferrer"' : '';
-
-            card.className = "card-hover bg-white rounded-2xl p-6 shadow-sm border border-slate-100";
-
-            if (hasLink) {
-                card.innerHTML = `
-                                <a href="${linkHref}" ${target} class="block h-full">
-                                    <div class="flex items-start justify-between gap-4">
-                                        <div class="flex-1">
-                                            <h3 class="serif-title text-xl font-bold text-slate-900 mb-2">${p.title}</h3>
-                                            ${p.desc ? `<p class="text-sm text-slate-600 leading-relaxed mb-4">${p.desc}</p>` : ''}
-                                            <div class="flex items-center gap-2 text-sm font-medium text-blue-600">
-                                                <span>View project</span>
-                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                                </svg>
-                                            </div>
-                                        </div>
-                                        ${p.researchSectionID ? `
-                                        <span class="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-blue-50 text-blue-700 border border-blue-200 shrink-0">
-                                            ${p.researchSectionID}
-                                        </span>
-                                        ` : ''}
-                                    </div>
-                                </a>
-                            `;
-            } else {
-                card.innerHTML = `
-                                <div class="flex items-start justify-between gap-4">
-                                    <div class="flex-1">
-                                        <h3 class="serif-title text-xl font-bold text-slate-400 mb-2">${p.title}</h3>
-                                        ${p.desc ? `<p class="text-sm text-slate-500 leading-relaxed">${p.desc}</p>` : ''}
-                                    </div>
-                                </div>
-                            `;
-            }
-            return card;
-        }
-
-        async function renderProjects() {
-            try {
-                const projectsData = await loadProjectsData();
-                const featuredGrid = document.getElementById('featured-projects-grid');
-
-                if (!featuredGrid) {
-                    throw new Error("featured-projects-grid not found");
-                }
-
-                featuredGrid.innerHTML = "";
-
-                const featuredProjects = projectsData.filter(
-                    p => p.image && p.link && !p.pagetitle
-                );
-
-                featuredProjects.forEach(p =>
-                    featuredGrid.appendChild(createProjectCard(p))
-                );
-
-            } catch (error) {
-                console.error("❌ Error rendering projects:", error);
-            }
-        }
-
-
-        /* =========================
-Research Update (SAFE)
-========================= */
-
-        (async function RU_init() {
-            try {
-                const listEl = document.getElementById("research-update-list");
-                if (!listEl) return;
-
-                const url = "data/researchData.json"; // ✅ projects.html 기준 상대경로 (가장 안정적)
-                const res = await fetch(url, { cache: "no-store" });
-                if (!res.ok) throw new Error(`Research data load failed: ${res.status}`);
-
-                const buf = await res.arrayBuffer();
-                const text = new TextDecoder("utf-8").decode(buf).replace(/^\uFEFF/, "");
-                const raw = JSON.parse(text);
-
-                const list = Array.isArray(raw) ? raw : [raw];
-
-                // ✅ Research Update 카드 자체 최신순(dateISO) 정렬
-                list.sort((a, b) => {
-                    const ta = Date.parse(a.dateISO || a.date || "") || 0;
-                    const tb = Date.parse(b.dateISO || b.date || "") || 0;
-                    return tb - ta; // 최신 먼저
-                });
-
-                RU_renderList(list);
-
-                RU_handleDeepLink(list);
-
-                // ✅ 로드/렌더 완료 뒤 스크롤 & 상세 오픈 처리
-                window.addEventListener("load", () => {
-                    requestAnimationFrame(() => {
-                        requestAnimationFrame(() => {
-                            RU_applyRouting(list);
-                        });
-                    });
-                });
-
-            } catch (e) {
-                console.warn("[ResearchUpdate] init failed:", e);
-            }
-        })();
-
-        function RU_applyRouting(list) {
-            const params = new URL(location.href).searchParams;
-
-            // 1) view=research면 섹션으로 강제 스크롤
-            if (params.get("view") === "research") {
-                const sec = document.getElementById("research-update");
-                if (sec) sec.scrollIntoView({ behavior: "smooth", block: "start" });
-            }
-
-            // 2) research=<id>면 해당 아이템 상세 자동 오픈
-            const id = params.get("research");
-            if (id) {
-                const found = list.find(x => String(x.id) === String(id));
-                if (found) RU_openDetail(found);
-            }
-        }
-
-        /* ---------- render list ---------- */
-        function RU_renderList(list) {
-            const el = document.getElementById("research-update-list");
-            el.innerHTML = "";
-
-            list.forEach(item => {
-                const title = item.menuTitle || item.title || "Untitled";
-                const desc = item.desc || "";
-                const thumb = item.thumbnail || "";
-
-                const card = document.createElement("article");
-                card.className =
-                    "group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm hover:shadow-md cursor-pointer";
-
-                card.innerHTML = `
-          <div class="flex gap-4">
-            <div class="flex-1 min-w-0">
-              <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-700">
-                ${title}
-              </h3>
-              <p class="mt-2 text-sm text-slate-600 line-clamp-2">
-                ${desc}
-              </p>
-              <div class="mt-3 text-sm font-semibold text-blue-700">
-                View details →
-              </div>
+          </a>
+          <a class="proj-link-card" href="https://caus.kaist.ac.kr" target="_blank" rel="noopener">
+            <div class="proj-link-img-wrap"><img class="proj-link-img" src="assets/images/projects/1.png" alt="CAUS"></div>
+            <div class="proj-link-info">
+              <span class="proj-link-name">CAUS</span>
+              <span class="proj-link-desc">Center for Advanced Urban Systems</span>
+              <span class="proj-link-arrow">Visit →</span>
             </div>
-            ${thumb ? `
-              <div class="hidden md:block w-[120px] h-[80px] rounded-xl overflow-hidden border shrink-0">
-                <img src="${thumb}" class="w-full h-full object-cover" />
-              </div>` : ""}
-          </div>
-        `;
-
-                card.addEventListener("click", () => {
-                    // ✅ 클릭 시 URL도 맞춰줌(새로고침해도 유지)
-                    const next = new URL(location.href);
-                    next.searchParams.set("view", "research");
-                    next.searchParams.set("research", item.id);
-                    history.replaceState({}, "", next.toString());
-
-                    RU_openDetail(item);
-                    document.getElementById("research-update")?.scrollIntoView({ behavior: "smooth", block: "start" });
-                });
-
-                el.appendChild(card);
-            });
-        }
-
-        /* ---------- open detail ---------- */
-        function RU_openDetail(item) {
-            const el = document.getElementById("research-update-detail");
-            if (!el) return;
-
-            function RU_assetUrl(p) {
-                const basePath = location.pathname.replace(/\/[^\/]*$/, "");
-                const clean = String(p || "").trim().replace(/^\//, "");
-                return clean ? `${basePath}/${clean}` : "";
-            }
-
-            const researchList = Array.isArray(item.research) ? item.research : [];
-
-            el.classList.remove("hidden");
-            el.innerHTML = `
-        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-          <div class="flex justify-between items-start gap-4">
-            <div class="min-w-0">
-              <h3 class="text-2xl font-extrabold break-words">
-                ${item.title || ""}
-              </h3>
-              ${item.desc ? `<p class="mt-2 text-slate-600">${item.desc}</p>` : ""}
+          </a>
+          <a class="proj-link-card" href="https://c3.kaist.ac.kr" target="_blank" rel="noopener">
+            <div class="proj-link-img-wrap"><img class="proj-link-img" src="assets/images/projects/2.png" alt="KAIST-NYU C3"></div>
+            <div class="proj-link-info">
+              <span class="proj-link-name">KAIST-NYU C3</span>
+              <span class="proj-link-desc">KAIST-NYU Center for Cities and Climate Change</span>
+              <span class="proj-link-arrow">Visit →</span>
             </div>
-            <button id="ru-close"
-              class="px-3 py-2 text-sm border rounded-lg hover:bg-slate-50 shrink-0">
-              Close
-            </button>
-          </div>
-
-          ${researchList.length ? `
-            <div class="mt-8 space-y-12">
-              ${researchList.map(r => `
-                <section>
-                  <h4 class="text-xl font-bold">${r.title || ""}</h4>
-                  ${r.date ? `<p class="mt-1 text-sm text-slate-500">${r.date}</p>` : ""}
-
-                  ${r.desc ? `
-                    <div class="mt-4 text-slate-700 whitespace-pre-line">
-                      ${r.desc}
-                    </div>` : ""}
-
-                  ${Array.isArray(r.images) && r.images.length > 0 ? `
-          <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            ${r.images.map(src => `
-              <div class="rounded-xl overflow-hidden border bg-slate-100">
-                <img src="${RU_assetUrl(src)}"
-                     alt="Research image"
-                     class="w-full h-full object-cover"
-                     loading="lazy"
-                     onerror="console.error('[RU IMG 404]', this.src);" />
-              </div>
-            `).join("")}
-          </div>
-        ` : ""}
-
-
-                </section>
-              `).join("")}
-            </div>
-          ` : ""}
+          </a>
         </div>
-      `;
+      </div>
+    </div>
 
-            document.getElementById("ru-close").onclick = () => {
-                el.classList.add("hidden");
-                el.innerHTML = "";
-                const next = new URL(location.href);
-                next.searchParams.delete("research");
-                history.replaceState({}, "", next.toString());
-            };
-        }
-
-        function normalizeId(v) {
-            return String(v ?? "")
-                .trim()
-                .toLowerCase()
-                .replace(/\s+/g, " "); // 연속 공백 정리
-        }
-
-        /* ---------- deep link ---------- */
-        function RU_handleDeepLink(list) {
-            const params = new URL(location.href).searchParams;
-
-            if (params.get("view") === "research") {
-                document.getElementById("research-update")
-                    ?.scrollIntoView({ behavior: "smooth", block: "start" });
-            }
-
-            const rawId = params.get("research");
-            if (!rawId) return;
-
-            const id = normalizeId(decodeURIComponent(rawId));
-
-            const found = list.find(x => normalizeId(x.id) === id);
-            if (found) RU_openDetail(found);
-            else console.warn("[ResearchUpdate] id not found:", rawId, "normalized:", id);
-        }
-
-        (function handleResearchView() {
-            const view = new URL(location.href).searchParams.get("view");
-            if (view === "research") {
-                window.addEventListener("load", () => {
-                    document
-                        .getElementById("research-update")
-                        ?.scrollIntoView({ behavior: "smooth" });
-                });
-            }
-        })();
-
-        // ===== Force scroll to Research Update (See all 대응) =====
-        (function forceScrollToResearch() {
-            const params = new URL(location.href).searchParams;
-            if (params.get("view") !== "research") return;
-
-            // 모든 렌더링이 끝난 뒤 스크롤 보장
-            window.addEventListener("load", () => {
-                // 한 프레임 더 기다림 (DOM 안정화)
-                requestAnimationFrame(() => {
-                    requestAnimationFrame(() => {
-                        const target = document.getElementById("research-update");
-                        if (target) {
-                            target.scrollIntoView({ behavior: "smooth", block: "start" });
-                        }
-                    });
-                });
-            });
-        })();
+  </div>
 
 
+  <script>
+  // Block animations
+  (function() {
+    var blocks = {
+      'block-1': [
+        { sel: '.proj-page-title',   delay: 0 },
+        { sel: '.themes-intro-block', delay: 120 },
+        { sel: '.theme-row-1-left',  delay: 300 },
+        { sel: '.theme-row-1-right', delay: 380 },
+        { sel: '.theme-row-2-left',  delay: 520 },
+        { sel: '.theme-row-2-right', delay: 600 },
+      ],
+      'block-2': [
+        { sel: '.proj-page-title',   delay: 0 },
+        { sel: '.proj-link-card',    delay: 100, stagger: 120 },
+      ],
+    };
 
-        // Initialize rendering
-        renderProjects();
-    </script>
-    <script src="assets/script.js"></script>
+    function animateBlock(blockEl) {
+      var defs = blocks[blockEl.id];
+      if (!defs) return;
+      defs.forEach(function(def) {
+        var els = blockEl.querySelectorAll(def.sel);
+        var stagger = def.stagger || 0;
+        els.forEach(function(el, i) {
+          setTimeout(function() { el.classList.add('anim-in'); }, def.delay + i * stagger);
+        });
+      });
+    }
+
+    function resetBlock(blockEl) {
+      var defs = blocks[blockEl.id];
+      if (!defs) return;
+      defs.forEach(function(def) {
+        blockEl.querySelectorAll(def.sel).forEach(function(el) { el.classList.remove('anim-in'); });
+      });
+    }
+
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) animateBlock(entry.target);
+        else resetBlock(entry.target);
+      });
+    }, { threshold: 0.3 });
+
+    Object.keys(blocks).forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    var block1 = document.getElementById('block-1');
+    if (block1) setTimeout(function() { animateBlock(block1); }, 100);
+  })();
+  </script>
+
 </body>
 </html>
