@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events | Urban AI Institute (UAII)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets_new/css/style.css">
+    <style>
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #fcfcfc;
+        }
+        .serif-title { font-family: "Playfair Display", serif; }
+        .events-list-item {
+            transition: all 0.2s ease;
+        }
+        .events-list-item:hover {
+            border-color: #1d4ed8;
+            background-color: #f9fafb;
+        }
+        .badge {
+            font-size: 0.63rem;
+            letter-spacing: 0.16em;
+        }
+        .expand-chevron {
+            transition: transform 0.2s ease;
+        }
+        .rotate-180 {
+            transform: rotate(180deg);
+        }
+        .markdown p {
+            margin-bottom: 1.25rem;
+            line-height: 1.8;
+            color: #374151;
+        }
+
+        .markdown strong {
+            color: #1e3a8a;
+            font-weight: 700;
+        }
+        .projects-mega-panel {
+            position: fixed;
+            left: 0;
+            right: 0;
+            z-index: 40;
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .projects-mega-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 28px 24px 36px 24px;
+        }
+        .projects-mega-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 26px 40px;
+            margin-top: 24px;
+        }
+        .projects-mega-item {
+            display: block;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e5e7eb;
+            font-size: 16px;
+            font-weight: 600;
+            color: #111827;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .projects-mega-item:hover {
+            color: #1d4ed8;
+            border-bottom-color: #c7d2fe;
+        }
+        @media (max-width: 900px) {
+            .projects-mega-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+        @media (max-width: 520px) {
+            .projects-mega-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+    </style>
+</head>
+<body class="text-slate-900">
+    <!-- Header / Navigation -->
+    <nav id="siteNav" class="submenu bg-secondary">
+        <div class="container mx-auto px-6 py-6 flex justify-between items-center">
+
+            <!-- Logo -->
+            <a href="../index.html" class="navbar-brand">
+                UAII <span class="navbar-brand-sub">Urban AI Institute</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <ul class="navbar-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="people.html">People</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="engagement.html">Engagement</a></li>
+            </ul>
+
+            <!-- Mobile Menu Button -->
+            <button id="menuBtn"
+                    class="md:hidden text-slate-700 focus:outline-none"
+                    aria-label="Open menu">
+                ☰
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu"
+             class="hidden md:hidden bg-white border-t border-slate-100">
+            <div class="flex flex-col px-6 py-4 gap-4 text-sm font-semibold text-slate-700">
+                <a href="index.html" class="text-blue-600">Home</a>
+                <a href="people.html">People</a>
+                <a href="projects.html">Projects</a>
+                <a href="press.html">Events</a>
+                <a href="apply.html">Apply</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Projects mega menu -->
+    <div id="projectsMegaPanel" class="projects-mega-panel hidden">
+        <div class="projects-mega-inner">
+            <div class="flex items-center justify-between border-b border-gray-200 pb-3">
+                <div class="flex items-center gap-2 text-sm text-gray-500">
+                    <span class="font-semibold text-gray-900">Projects</span>
+                    <span class="text-gray-400">›</span>
+                    <a href="../projects.html" class="hover:underline">Overview</a>
+                </div>
+                <button id="projectsMegaClose"
+                        class="text-2xl leading-none text-gray-400 hover:text-gray-700"
+                        type="button">
+                    ×
+                </button>
+            </div>
+            <div class="projects-mega-grid">
+                <a class="projects-mega-item"
+                   href="https://sites.google.com/view/fuscc/home"
+                   target="_blank" rel="noopener">
+                    Urban@KAIST
+                </a>
+                <a class="projects-mega-item"
+                   href="https://hcfm.kaist.ac.kr"
+                   target="_blank" rel="noopener">
+                    HcFM
+                </a>
+                <a class="projects-mega-item"
+                   href="https://caus.kaist.ac.kr"
+                   target="_blank" rel="noopener">
+                    CAUS
+                </a>
+                <a class="projects-mega-item"
+                   href="https://c3.kaist.ac.kr"
+                   target="_blank" rel="noopener">
+                    KAIST-NYU C3
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <main class="container mx-auto px-6 max-w-6xl py-10">
+        <!-- Title similar to ETH events page -->
+        <header class="mb-10">
+            <p class="text-xs font-semibold tracking-[0.2em] text-slate-400 uppercase mb-3">
+                News Events Press Publications
+            </p>
+            <h1 class="serif-title text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-2">
+                Engagement
+            </h1>
+            <p class="text-sm text-slate-600 max-w-2xl">
+                A list of UAII events, press, publications and meetings.
+            </p>
+        </header>
+
+        <!-- Layout: main list + filter sidebar -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+            <!-- Main events list -->
+            <section class="lg:col-span-9">
+                <div id="events-list" class="space-y-6">
+                    <!-- Event items injected here -->
+                </div>
+                <button id="loadMoreBtn"
+                        class="mt-8 hidden px-4 py-2 border border-slate-300 text-xs font-semibold tracking-[0.18em] uppercase rounded-full text-slate-700 hover:bg-slate-50">
+                    Load more
+                </button>
+            </section>
+
+            <!-- Filter sidebar -->
+            <aside class="lg:col-span-3">
+                <div class="lg:sticky lg:top-24 space-y-6 bg-white/80 border border-slate-200 rounded-xl p-5 shadow-sm">
+                    <h2 class="text-sm font-semibold tracking-[0.18em] uppercase text-slate-500">
+                        Filter events
+                    </h2>
+
+                    <!-- Search -->
+                    <div>
+                        <label for="searchInput" class="block text-xs font-semibold text-slate-500 uppercase tracking-[0.18em] mb-2">
+                            Keyword
+                        </label>
+                        <input id="searchInput"
+                               type="text"
+                               placeholder="Search title, venue, description"
+                               class="w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+
+                    <!-- Year -->
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-500 uppercase tracking-[0.18em] mb-2">
+                            Year
+                        </label>
+                        <select id="yearSelect"
+                                class="w-full rounded-md border border-slate-300 px-3 py-2 text-sm bg-white focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500">
+                            <option value="">All years</option>
+                        </select>
+                    </div>
+
+                    <!-- Category -->
+                    <div>
+                        <p class="block text-xs font-semibold text-slate-500 uppercase tracking-[0.18em] mb-2">
+                            Category
+                        </p>
+                        <div id="categoryFilters" class="flex flex-wrap gap-2">
+                            <!-- category chips injected here -->
+                        </div>
+                    </div>
+
+                    <button id="resetFiltersBtn"
+                            class="w-full mt-2 px-3 py-2 border border-slate-300 rounded-md text-xs font-semibold tracking-[0.18em] uppercase text-slate-600 hover:bg-slate-50">
+                        Reset filters
+                    </button>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-gray-200 py-8 text-center mt-16">
+        <p class="text-gray-500 text-sm">&copy; 2026 Urban AI Institute. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function loadEventsData() {
+            const url = "../data/eventsData.json";
+            return fetch(url, { cache: "no-store" })
+                .then(function (res) {
+                    if (!res.ok) throw new Error("Failed to load eventsData.json");
+                    return res.json();
+                })
+                .catch(function (err) {
+                    console.error(err);
+                    return [];
+                });
+        }
+
+        function loadPressData() {
+            const url = "../data/pressData.json";
+            return fetch(url, { cache: "no-store" })
+                .then(function (res) {
+                    if (!res.ok) throw new Error("Failed to load pressData.json");
+                    return res.json();
+                })
+                .catch(function (err) {
+                    console.error(err);
+                    return [];
+                });
+        }
+
+        function loadPublicationsData() {
+            const url = "../data/publicationsData.json";
+            return fetch(url, { cache: "no-store" })
+                .then(function (res) {
+                    if (!res.ok) throw new Error("Failed to load publicationsData.json");
+                    return res.json();
+                })
+                .catch(function (err) {
+                    console.error(err);
+                    return [];
+                });
+        }
+
+        function loadNationalData() {
+            const url = "../data/nationalData.json";
+            return fetch(url, { cache: "no-store" })
+                .then(function (res) {
+                    if (!res.ok) throw new Error("Failed to load nationalData.json");
+                    return res.json();
+                })
+                .catch(function (err) {
+                    console.error(err);
+                    return [];
+                });
+        }
+
+        function loadInternationalData() {
+            const url = "../data/internationalData.json";
+            return fetch(url, { cache: "no-store" })
+                .then(function (res) {
+                    if (!res.ok) throw new Error("Failed to load internationalData.json");
+                    return res.json();
+                })
+                .catch(function (err) {
+                    console.error(err);
+                    return [];
+                });
+        }
+
+        function loadMeetingsData() {
+            const url = "../data/researchData.json";
+            return fetch(url, { cache: "no-store" })
+                .then(function (res) {
+                    if (!res.ok) throw new Error("Failed to load meetingsData.json");
+                    return res.json();
+                })
+                .catch(function (err) {
+                    console.error(err);
+                    return [];
+                });
+        }
+
+        function formatRange(start, end) {
+            if (!start) return "";
+            var sv = String(start).trim();
+            var ev = end ? String(end).trim() : "";
+            if (/^\d{4}$/.test(sv)) return sv;
+            if (/^\d{4}-\d{2}$/.test(sv)) {
+                var parts = sv.split("-");
+                var d = new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, 1);
+                return d.toLocaleDateString("en-US", { month: "short", year: "numeric" });
+            }
+            var s = new Date(sv);
+            var e = ev ? new Date(ev) : null;
+            var opts = { day: "numeric", month: "short", year: "numeric" };
+            if (!e) return s.toLocaleDateString("en-US", opts);
+            if (s.toDateString() === e.toDateString()) {
+                return s.toLocaleDateString("en-US", opts);
+            }
+            var sameYear = s.getFullYear() === e.getFullYear();
+            if (sameYear) {
+                return s.toLocaleDateString("en-US", { day: "numeric", month: "short" }) +
+                    " – " +
+                    e.toLocaleDateString("en-US", opts);
+            }
+            return s.toLocaleDateString("en-US", opts) + " – " + e.toLocaleDateString("en-US", opts);
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var eventsListEl = document.getElementById("events-list");
+            var loadMoreBtn = document.getElementById("loadMoreBtn");
+            var searchInput = document.getElementById("searchInput");
+            var yearSelect = document.getElementById("yearSelect");
+            var categoryFiltersEl = document.getElementById("categoryFilters");
+            var resetFiltersBtn = document.getElementById("resetFiltersBtn");
+
+            var allEvents = [];
+            var filteredEvents = [];
+            var visibleCount = 10;
+
+            function buildCategoryChips(categories) {
+                categoryFiltersEl.innerHTML = "";
+                var allBtn = document.createElement("button");
+                allBtn.type = "button";
+                allBtn.textContent = "All";
+                allBtn.className =
+                    "px-3 py-1 rounded-full border border-slate-300 text-xs font-semibold text-slate-700 bg-slate-100";
+                allBtn.dataset.category = "";
+                categoryFiltersEl.appendChild(allBtn);
+
+                categories.forEach(function (cat) {
+                    var btn = document.createElement("button");
+                    btn.type = "button";
+                    btn.textContent = cat;
+                    btn.dataset.category = cat;
+                    btn.className =
+                        "px-3 py-1 rounded-full border border-slate-200 text-xs font-medium text-slate-600 hover:bg-slate-50";
+                    categoryFiltersEl.appendChild(btn);
+                });
+            }
+
+            function extractYear(val) {
+                if (!val) return NaN;
+                var s = String(val).trim();
+                var m = s.match(/^(\d{4})/);
+                return m ? parseInt(m[1], 10) : NaN;
+            }
+
+            function setupYearOptions(events) {
+                var years = {};
+                events.forEach(function (ev) {
+                    if (!ev.start) return;
+                    var y = extractYear(ev.start);
+                    if (!isNaN(y)) years[y] = true;
+                });
+                var sortedYears = Object.keys(years)
+                    .map(function (y) { return parseInt(y, 10); })
+                    .sort(function (a, b) { return b - a; });
+                sortedYears.forEach(function (y) {
+                    var opt = document.createElement("option");
+                    opt.value = String(y);
+                    opt.textContent = String(y);
+                    yearSelect.appendChild(opt);
+                });
+            }
+
+            function getActiveCategory() {
+                var activeBtn = categoryFiltersEl.querySelector("button[data-active='true']");
+                return activeBtn ? activeBtn.dataset.category || "" : "";
+            }
+
+            function applyFilters() {
+                var q = (searchInput.value || "").toLowerCase();
+                var year = yearSelect.value;
+                var category = getActiveCategory();
+
+                filteredEvents = allEvents.filter(function (ev) {
+                    var matchesSearch = true;
+                    if (q) {
+                        var haystack = [
+                            ev.title || "",
+                            ev.place || "",
+                            ev.desc || ""
+                        ].join(" ").toLowerCase();
+                        matchesSearch = haystack.indexOf(q) !== -1;
+                    }
+
+                    var matchesYear = true;
+                    if (year && ev.start) {
+                        var y = extractYear(ev.start);
+                        matchesYear = String(y) === year;
+                    }
+
+                    var matchesCategory = true;
+                    if (category) {
+                        if (category.toLowerCase() === "honors") {
+                            matchesCategory = !!ev.awards;
+                        } else {
+                            matchesCategory = (ev.category || "").toLowerCase() === category.toLowerCase();
+                        }
+                    }
+
+                    return matchesSearch && matchesYear && matchesCategory;
+                });
+
+                filteredEvents.sort(function (a, b) {
+                    var as = a.start || "";
+                    var bs = b.start || "";
+                    return bs.localeCompare(as);
+                });
+
+                visibleCount = 10;
+                renderList();
+            }
+
+            function buildExpandedContent(ev) {
+                var html = '';
+                var fullDesc = ev.desc || "";
+                if (fullDesc) {
+                    html += '<div class="markdown text-sm text-slate-600 leading-relaxed">' +
+                        marked.parse(fullDesc) + '</div>';
+                }
+
+                if (ev.photos && ev.photos.length > 0) {
+                    html += '<div class="flex flex-wrap gap-2 mt-3">';
+                    ev.photos.forEach(function (src) {
+                        if (src && !src.startsWith("../")) src = "../" + src;
+                        html += '<div class="w-24 h-20 rounded overflow-hidden bg-slate-100 shrink-0">' +
+                            '<img src="' + src + '" alt="" class="w-full h-full object-cover" ' +
+                            'onerror="this.parentElement.style.display=\'none\'">' +
+                            '</div>';
+                    });
+                    html += '</div>';
+                }
+
+                if (ev.participants) {
+                    html += '<p class="text-xs text-slate-500 mt-3">' +
+                        '<span class="font-semibold">Participants:</span> ' + ev.participants + '</p>';
+                }
+
+                if (ev.awards) {
+                    html += '<p class="text-xs font-semibold text-amber-600 mt-2">&#9733; ' + ev.awards + '</p>';
+                }
+
+                if (ev.keywords && ev.keywords.length) {
+                    html += '<div class="flex flex-wrap gap-1.5 mt-2">';
+                    ev.keywords.forEach(function (kw) {
+                        html += '<span class="px-2 py-0.5 bg-slate-100 text-slate-500 text-[10px] rounded-full">' + kw + '</span>';
+                    });
+                    html += '</div>';
+                }
+
+                var linkItems = [];
+                if (ev.links && ev.links.length) {
+                    ev.links.forEach(function (l) {
+                        if (l.href) linkItems.push({ label: l.label || l.source || "Link", href: l.href });
+                    });
+                }
+                if (ev.pressLinks && ev.pressLinks.length) {
+                    ev.pressLinks.forEach(function (l) {
+                        if (l.href) linkItems.push({ label: l.source || l.title || "Link", href: l.href });
+                    });
+                }
+                if (ev.linkKr) linkItems.push({ label: "기사 (KR)", href: ev.linkKr });
+                if (ev.linkEn) linkItems.push({ label: "Article (EN)", href: ev.linkEn });
+                if (ev.href) linkItems.push({ label: "View source", href: ev.href });
+
+                if (linkItems.length) {
+                    html += '<div class="flex flex-wrap gap-3 mt-3">';
+                    linkItems.forEach(function (l) {
+                        html += '<a href="' + l.href + '" target="_blank" rel="noopener" ' +
+                            'class="inline-flex items-center gap-1 text-xs font-semibold text-blue-700 hover:text-blue-900" ' +
+                            'onclick="event.stopPropagation()">' +
+                            l.label + ' &rarr;</a>';
+                    });
+                    html += '</div>';
+                }
+
+                return html;
+            }
+
+            function renderList() {
+                eventsListEl.innerHTML = "";
+                if (!filteredEvents.length) {
+                    eventsListEl.innerHTML =
+                        '<p class="text-sm text-slate-500">No events match the current filters.</p>';
+                    loadMoreBtn.classList.add("hidden");
+                    return;
+                }
+
+                filteredEvents.slice(0, visibleCount).forEach(function (ev, idx) {
+                    var wrapper = document.createElement("div");
+                    wrapper.className =
+                        "block border border-slate-200 rounded-lg px-4 py-4 md:px-5 md:py-5 bg-white events-list-item cursor-pointer";
+
+                    var rawStart = ev.start ? String(ev.start).trim() : "";
+                    var isYearOnly = /^\d{4}$/.test(rawStart);
+                    var isYearMonth = /^\d{4}-\d{2}$/.test(rawStart);
+                    var startDate = (rawStart && !isYearOnly && !isYearMonth) ? new Date(rawStart) : null;
+                    var month = "";
+                    var day = "";
+                    var year = "";
+                    if (isYearOnly) {
+                        year = rawStart;
+                    } else if (isYearMonth) {
+                        var ymParts = rawStart.split("-");
+                        var ymDate = new Date(parseInt(ymParts[0]), parseInt(ymParts[1]) - 1, 1);
+                        month = ymDate.toLocaleDateString("en-US", { month: "short" });
+                        year = ymParts[0];
+                    } else if (startDate) {
+                        month = startDate.toLocaleDateString("en-US", { month: "short" });
+                        day = startDate.getDate();
+                        year = startDate.getFullYear();
+                    }
+
+                    var categoryLabel = ev.category ?
+                        ev.category.charAt(0).toUpperCase() + ev.category.slice(1) : "Event";
+
+                    var shortDesc = ev.desc || "";
+                    if (shortDesc.length > 160) shortDesc = shortDesc.slice(0, 155) + "…";
+
+                    var mainDateClass = day
+                        ? "text-3xl leading-none font-semibold text-slate-900"
+                        : "text-lg leading-none font-semibold text-slate-900";
+                    var subDateText = day ? year : "";
+                    var subDateClass = day
+                        ? "text-[11px] text-slate-400 mt-1"
+                        : "text-xs text-slate-400 mt-1";
+
+                    var isExpanded = idx < 3;
+
+                    wrapper.innerHTML =
+                        '<div class="flex sm:flex-row flex-col gap-4 md:gap-6">' +
+                            '<div class="shrink-0 flex flex-col items-center justify-start w-16 pt-1">' +
+                                '<div class="text-xs font-semibold uppercase tracking-[0.18em] text-blue-700">' + month + '</div>' +
+                                '<div class="' + mainDateClass + '">' + (day ? day : (year ? year : "")) + '</div>' +
+                                '<div class="' + subDateClass + '">' + subDateText + '</div>' +
+                            '</div>' +
+                            '<div class="flex-1 min-w-0">' +
+                                '<div class="flex flex-wrap items-center gap-2 justify-between">' +
+                                    '<h3 class="serif-title text-lg md:text-xl font-semibold text-slate-900">' +
+                                        (ev.title || "Untitled") +
+                                    '</h3>' +
+                                    '<div class="flex items-center gap-2">' +
+                                        '<span class="badge inline-flex items-center px-2 py-1 rounded-full bg-slate-900 text-slate-50 font-semibold uppercase">' +
+                                            categoryLabel +
+                                        '</span>' +
+                                        '<span class="expand-chevron text-slate-400 text-xs select-none transition-transform duration-200' +
+                                            (isExpanded ? ' rotate-180' : '') + '">&#9660;</span>' +
+                                    '</div>' +
+                                '</div>' +
+                                (ev.place
+                                    ? '<p class="text-xs font-semibold tracking-[0.18em] uppercase text-slate-500 mt-1">' + ev.place + '</p>'
+                                    : '') +
+                                '<p class="text-xs text-slate-400 mt-1">' + formatRange(ev.start, ev.end) + '</p>' +
+                                '<div class="expand-summary' + (isExpanded ? ' hidden' : '') + '">' +
+                                    '<p class="text-sm text-slate-500 mt-2">' + shortDesc + '</p>' +
+                                '</div>' +
+                                '<div class="expand-detail mt-3' + (isExpanded ? '' : ' hidden') + '">' +
+                                    buildExpandedContent(ev) +
+                                '</div>' +
+                            '</div>' +
+                        '</div>';
+
+                    wrapper.addEventListener("click", function () {
+                        var detail = wrapper.querySelector(".expand-detail");
+                        var summary = wrapper.querySelector(".expand-summary");
+                        var chevron = wrapper.querySelector(".expand-chevron");
+                        var opening = detail.classList.contains("hidden");
+                        detail.classList.toggle("hidden");
+                        summary.classList.toggle("hidden");
+                        if (chevron) chevron.classList.toggle("rotate-180", opening);
+                        wrapper.style.borderColor = opening ? "#1d4ed8" : "";
+                    });
+
+                    if (isExpanded) wrapper.style.borderColor = "#1d4ed8";
+
+                    eventsListEl.appendChild(wrapper);
+                });
+
+                if (visibleCount < filteredEvents.length) {
+                    loadMoreBtn.classList.remove("hidden");
+                } else {
+                    loadMoreBtn.classList.add("hidden");
+                }
+            }
+
+            categoryFiltersEl.addEventListener("click", function (e) {
+                if (e.target.tagName !== "BUTTON") return;
+                Array.prototype.forEach.call(categoryFiltersEl.children, function (btn) {
+                    btn.removeAttribute("data-active");
+                    btn.className =
+                        "px-3 py-1 rounded-full border border-slate-200 text-xs font-medium text-slate-600 hover:bg-slate-50";
+                });
+                e.target.dataset.active = "true";
+                e.target.className =
+                    "px-3 py-1 rounded-full border border-slate-900 text-xs font-semibold text-slate-900 bg-slate-100";
+                applyFilters();
+            });
+
+            searchInput.addEventListener("input", function () {
+                applyFilters();
+            });
+
+            yearSelect.addEventListener("change", function () {
+                applyFilters();
+            });
+
+            loadMoreBtn.addEventListener("click", function () {
+                visibleCount += 10;
+                renderList();
+            });
+
+            resetFiltersBtn.addEventListener("click", function () {
+                searchInput.value = "";
+                yearSelect.value = "";
+                var allBtn = categoryFiltersEl.querySelector("button[data-category='']");
+                if (allBtn) {
+                    Array.prototype.forEach.call(categoryFiltersEl.children, function (btn) {
+                        btn.removeAttribute("data-active");
+                        btn.className =
+                            "px-3 py-1 rounded-full border border-slate-200 text-xs font-medium text-slate-600 hover:bg-slate-50";
+                    });
+                    allBtn.dataset.active = "true";
+                    allBtn.className =
+                        "px-3 py-1 rounded-full border border-slate-900 text-xs font-semibold text-slate-900 bg-slate-100";
+                }
+                applyFilters();
+            });
+
+            var menuBtn = document.getElementById("menuBtn");
+            var mobileMenu = document.getElementById("mobileMenu");
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener("click", function () {
+                    var isHidden = mobileMenu.classList.contains("hidden");
+                    mobileMenu.classList.toggle("hidden");
+                    menuBtn.setAttribute("aria-expanded", String(isHidden));
+                    menuBtn.textContent = isHidden ? "✕" : "☰";
+                });
+            }
+
+            var projectsMegaBtn = document.getElementById("projectsMegaBtn");
+            var projectsMegaPanel = document.getElementById("projectsMegaPanel");
+            var projectsMegaClose = document.getElementById("projectsMegaClose");
+            if (projectsMegaBtn && projectsMegaPanel && projectsMegaClose) {
+                projectsMegaBtn.addEventListener("click", function () {
+                    var isHidden = projectsMegaPanel.classList.contains("hidden");
+                    projectsMegaPanel.classList.toggle("hidden", !isHidden === false);
+                    projectsMegaBtn.setAttribute("aria-expanded", String(isHidden));
+                });
+                projectsMegaClose.addEventListener("click", function () {
+                    projectsMegaPanel.classList.add("hidden");
+                    projectsMegaBtn.setAttribute("aria-expanded", "false");
+                });
+            }
+
+            Promise.all([
+                loadEventsData(),
+                loadMeetingsData(),
+                loadPublicationsData(),
+                loadNationalData(),
+                loadInternationalData(),
+                loadPressData()
+            ]).then(function (results) {
+                var events = Array.isArray(results[0]) ? results[0] : [];
+                var meetings = Array.isArray(results[1]) ? results[1] : [];
+                var publications = Array.isArray(results[2]) ? results[2] : [];
+                var national = Array.isArray(results[3]) ? results[3] : [];
+                var international = Array.isArray(results[4]) ? results[4] : [];
+                var press = Array.isArray(results[5]) ? results[5] : [];
+
+                function normalizeDate(value) {
+                    if (!value) return "";
+                    // Handles plain years like "2025" in publications data.
+                    if (/^\d{4}$/.test(String(value))) return String(value) + "-01-01";
+                    return String(value);
+                }
+
+                function mapEventItem(item) {
+                    return {
+                        id: item.id,
+                        title: item.title || "Untitled event",
+                        desc: item.desc || "",
+                        start: normalizeDate(item.start),
+                        end: normalizeDate(item.end),
+                        category: item.category || "event",
+                        place: item.place || "",
+                        photos: Array.isArray(item.photos) ? item.photos : [],
+                        href: "",
+                        awards: item.award || "",
+                        participants: item.participants || "",
+                        keywords: Array.isArray(item.keyword) ? item.keyword : [],
+                        links: Array.isArray(item.links) ? item.links : [],
+                    };
+                }
+
+                function mapMeetingItem(item) {
+                    return {
+                        id: item.id || item.title,
+                        title: item.title || "Untitled meeting",
+                        desc: item.research[0].desc || "",
+                        start: normalizeDate(item.dateISO || item.date),
+                        end: "",
+                        category: "meeting",
+                        place: "",
+                        photos: item.research[0].images ? item.research[0].images : [],
+                        href: "",
+                    };
+                }
+
+                function mapPublicationItem(item) {
+                    return {
+                        id: item.id || item.title,
+                        title: item.title || "Untitled publication",
+                        desc: [item.authors || "", item.journal || ""].filter(Boolean).join(" • "),
+                        start: item.date,
+                        end: "",
+                        category: "publication",
+                        place: item.journal || "",
+                        photos: [],
+                        href: item.href || "",
+                    };
+                }
+
+                function mapNationalItem(item) {
+                    return {
+                        id: item.id || item.title,
+                        title: item.title || "Untitled national conference",
+                        desc: item.authors || "",
+                        start: item.date,
+                        end: "",
+                        category: "conference",
+                        place: item.conference || "",
+                        href: item.href || "",
+                    };
+                }
+
+                function mapInternationalItem(item) {
+                    return {
+                        id: item.id || item.title,
+                        title: item.title || "Untitled international conference",
+                        desc: item.authors || "",
+                        start: item.date,
+                        end: "",
+                        category: "conference",
+                        place: item.conference || "",
+                        href: item.href || "",
+                    };
+                }
+
+                function mapPressItem(item) {
+                    return {
+                        id: item.id || item.title,
+                        title: item.title || "Untitled press",
+                        desc: item.desc || "",
+                        start: normalizeDate(item.date),
+                        end: "",
+                        category: "press",
+                        place: item.writer || "",
+                        photos: item.image ? [item.image] : [],
+                        href: "",
+                        pressLinks: Array.isArray(item.link_others) ? item.link_others : [],
+                        linkKr: item.link_kr || "",
+                        linkEn: item.link_en || "",
+                    };
+                }
+
+                allEvents = []
+                    .concat(events.map(mapEventItem))
+                    .concat(meetings.map(mapMeetingItem))
+                    .concat(publications.map(mapPublicationItem))
+                    .concat(national.map(mapNationalItem))
+                    .concat(international.map(mapInternationalItem))
+                    .concat(press.map(mapPressItem));
+
+                if (!allEvents.length) {
+                    eventsListEl.innerHTML =
+                        '<p class="text-sm text-slate-500">No items found in events, meetings, publications, or press data.</p>';
+                    return;
+                }
+
+                var catSet = {};
+                allEvents.forEach(function (ev) {
+                    if (ev.category) {
+                        catSet[ev.category.charAt(0).toUpperCase() + ev.category.slice(1)] = true;
+                    }
+                    if (ev.awards) catSet["Honors"] = true;
+                });
+                var cats = Object.keys(catSet).sort();
+                buildCategoryChips(cats);
+                var allBtn = categoryFiltersEl.querySelector("button[data-category='']");
+                if (allBtn) {
+                    allBtn.dataset.active = "true";
+                    allBtn.className =
+                        "px-3 py-1 rounded-full border border-slate-900 text-xs font-semibold text-slate-900 bg-slate-100";
+                }
+                setupYearOptions(allEvents);
+                filteredEvents = allEvents.slice();
+                filteredEvents.sort(function (a, b) {
+                    var as = a.start || "";
+                    var bs = b.start || "";
+                    return bs.localeCompare(as);
+                });
+                renderList();
+            }).catch(function (err) {
+                console.error("Failed to load engagement data", err);
+                eventsListEl.innerHTML =
+                    '<p class="text-sm text-slate-500">Failed to load engagement data.</p>';
+            });
+        });
+    </script>
+</body>
+</html>
