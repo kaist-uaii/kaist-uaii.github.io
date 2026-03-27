@@ -1,3 +1,100 @@
+<style>
+  /* ===== Navbar ===== */
+.submenu.bg-secondary {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  height: var(--nav-header-height);
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(252, 252, 252, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #e2e5eb;
+}
+
+.navbar-brand {
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  color: #1e3a8a;
+}
+
+.navbar-brand-sub {
+  font-weight: 300;
+  color: #94a3b8;
+  margin-left: 6px;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+
+.navbar-links a {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #64748b;
+  transition: color 0.2s;
+}
+
+.navbar-links a:hover {
+  color: #2563eb;
+}
+
+.navbar-links a.active {
+  color: #2563eb;
+}
+
+.navbar-menu-btn {
+  display: none;
+  background: none;
+  border: 0;
+  font-size: 1.2rem;
+  color: #475569;
+  cursor: pointer;
+}
+
+.navbar-mobile-menu {
+  position: fixed;
+  top: var(--nav-header-height);
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  background: rgba(252, 252, 252, 0.97);
+  border-bottom: 1px solid #e2e5eb;
+  padding: 12px 24px;
+}
+
+.navbar-mobile-menu a {
+  display: block;
+  padding: 10px 0;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+@media (max-width: 900px) {
+  .submenu.bg-secondary {
+    padding: 0 20px;
+  }
+
+  .navbar-menu-btn {
+    display: block;
+  }
+
+  .navbar-links {
+    display: none;
+  }
+}
+
+</style>
 <nav class="submenu bg-secondary" aria-label="Main navigation">
   <a id="navbar-home-link" href="index.html" class="navbar-brand">
     UAII <span id="navbar-section" class="navbar-brand-sub">Urban AI Institute</span>

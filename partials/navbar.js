@@ -125,7 +125,7 @@ function loadNavbar(sectionName) {
                 UAII <span id="navbar-section" class="uaii-navbar-brand-sub">${sectionName || "Urban AI Institute"}</span>
             </a>
             <ul class="uaii-navbar-links">
-                <li><a href="#about">About</a></li>
+                <li><a href="#about">Home</a></li>
                 <li><a href="people.html">People</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="apply.html">Apply</a></li>
