@@ -1,62 +1,58 @@
 /**
  * Loads the navbar HTML and injects it into the page
  * @param {string} sectionName - The section name to display (e.g., "Calendar", "People", "Projects")
- * @param {string} navbarPath - Optional path to navbar.html (defaults to 'partials/navbar.html')
  */
-export function loadNavbar(sectionName, navbarPath) {
-    // Auto-detect if we're in a subdirectory
-    var currentPath = window.location.pathname;
-    const isInSubdirectory = currentPath.split('/').filter(p => p && !p.endsWith('.html')).length > 0;
-    const defaultPath = isInSubdirectory ? '../partials/navbar.html' : './partials/navbar.html';
-    const path = navbarPath || defaultPath;
-    
-    fetch(path)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.text();
-        })
-        .then(data => {
-            const navbarContainer = document.getElementById('navbar');
-            if (!navbarContainer) {
-                console.error('Navbar container with id="navbar" not found');
-                return;
-            }
-            
-            navbarContainer.innerHTML = data;
-            
-            // Update section name if provided
-            if (sectionName) {
-                const sectionEl = document.querySelector('#navbar-section');
-                if (sectionEl) {
-                    sectionEl.textContent = sectionName;
-                }
-            }
-            
-            // Update all links to include ../ if we're in a subdirectory
-            if (isInSubdirectory) {
-                const navbarLinks = document.querySelectorAll('#navbar a[href]');
-                navbarLinks.forEach(link => {
-                    const href = link.getAttribute('href');
-                    if (href && !href.startsWith('http') && !href.startsWith('../') && !href.startsWith('/')) {
-                        link.setAttribute('href', '../' + href);
-                    }
-                });
-            }
-        })
-        .catch(error => {
-            console.error('Error loading navbar:', error);
-            // Fallback: show a simple navbar if fetch fails
-            const navbarContainer = document.getElementById('navbar');
-            if (navbarContainer) {
-                const fallbackPath = isInSubdirectory ? '../' : '';
-                navbarContainer.innerHTML = 
-                    '<nav class="border-b border-slate-100 bg-white/80 backdrop-blur-md sticky top-0 z-50">' +
-                    '<div class="container mx-auto px-6 py-6 flex justify-between items-center">' +
-                    `<a href="${fallbackPath}index.html"><div class="text-xl font-black tracking-tighter text-blue-900">UAII <span class="text-slate-400 font-light">${sectionName || 'Projects'}</span></div></a>` +
-                    '<div class="flex gap-6 text-xs font-bold uppercase tracking-widest text-slate-500">' +
-                    '</div></div></nav>';
-            }
-        });
+function loadNavbar(sectionName) {
+    const navbarContainer = document.getElementById('navbar');
+    if (!navbarContainer) {
+        console.error('Navbar container with id="navbar" not found');
+        return;
+    }
+    navbarContainer.innerHTML = `
+    <!-- Header / Navigation --> 
+<nav class="border-b border-slate-100 bg-white/80 backdrop-blur-md sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-6 flex justify-between items-center">
+
+        <!-- Logo -->
+        <a id="navbar-home-link" href="index.html" class="text-xl font-black tracking-tighter text-blue-900">
+            TEST NAVBAR <span id="navbar-section" class="text-slate-400 font-light">Urban AI Institute</span>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex gap-6 text-xs font-bold uppercase tracking-widest text-slate-500">
+            <a href="#about" class="hover:text-blue-600">About</a>
+            <a href="people.html" class="hover:text-blue-600">People</a>
+            <a href="projects.html" class="hover:text-blue-600">Projects</a>
+            <a href="apply.html" class="hover:text-blue-600">Apply</a>
+            <a href="press.html" class="hover:text-blue-600">Press</a>
+            <a href="/calendar/calendar-fullcalendar-v5-test.html">Calendar</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="menuBtn"
+                class="md:hidden text-slate-700 focus:outline-none"
+                aria-label="Open menu">
+            ☰
+        </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu"
+         class="hidden md:hidden bg-white border-t border-slate-100">
+        <div class="flex flex-col px-6 py-4 gap-4 text-sm font-semibold text-slate-700">
+            <a href="#about">About</a>
+            <a href="people.html">People</a>
+            <a href="projects.html">Projects</a>
+            <a href="apply.html">Apply</a>
+            <a href="press.html">Press</a>
+        </div>
+    </div>
+</nav>
+`
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const navbarContainer = document.getElementById('navbar');
+    const sectionName = navbarContainer?.dataset.section ?? '';
+    loadNavbar(sectionName);
+});
