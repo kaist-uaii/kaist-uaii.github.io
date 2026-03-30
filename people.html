@@ -6,6 +6,7 @@
     <title>People | Urban AI Institute (UAII)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <!-- Sidebar Navigation Import CSS and JS -->
     <link rel="stylesheet" href="partials/scroll-sidebar.css">
@@ -110,15 +111,16 @@
         img[loading="lazy"].loaded, img[loading="eager"] { opacity: 1; }
 
         /* ── Member card ── */
+        
         .member-card {
             background: #ffffff;
             border: 1px solid #e2e8f0;
             border-radius: 12px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.04);
             transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
+            break-inside: avoid;
+            margin-bottom: 14px;
+            display: block; /* not flex on the grid level */
         }
         .member-card:hover {
             border-color: #93c5fd;
@@ -127,11 +129,11 @@
         }
         .card-header {
             background: #f8fafc;
-            border-bottom: 1px solid #f1f5f9;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px 12px 16px;
+            padding: 20px 12px 0;
+            cursor: pointer;
         }
         .card-photo {
             width: 72px;
@@ -173,10 +175,12 @@
         }
         .card-body {
             padding: 12px 14px;
-            flex: 1;
-            display: flex;
+            display: none;
             flex-direction: column;
             gap: 8px;
+        }
+        .member-card.expanded .card-body {
+            display: flex;
         }
         .card-position {
             display: flex;
@@ -192,7 +196,8 @@
             flex-shrink: 0;
         }
         .card-position-text {
-            font-size: 0.68rem;
+            font-size: 0.72rem;
+            font-weight: 600;
             color: #64748b;
             line-height: 1.5;
         }
@@ -200,7 +205,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 4px;
-            margin-top: 2px;
+            margin-top: 4px;
         }
         .card-keyword-tag {
             font-size: 0.58rem;
@@ -237,11 +242,56 @@
         }
         .card-link-btn:hover { background: #eff6ff; color: #2563eb; }
 
+        /* ── Expand tab strip ── */
+        .card-expand-tab {
+            width: 100%;
+            margin-top: 2px;
+            padding: 6px 14px 7px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .expand-line {
+            flex: 1;
+            height: 1px;
+            background: #e2e8f0;
+        }
+        .card-expand-chevron {
+            width: 14px;
+            height: 14px;
+            color: #cbd5e1;
+            transition: transform 0.2s ease, color 0.15s ease;
+            flex-shrink: 0;
+        }
+        .member-card:hover .card-expand-chevron { color: #93c5fd; }
+        .member-card.expanded .card-expand-chevron {
+            transform: rotate(180deg);
+            color: #3b82f6;
+        }
+
+        /* ── Section labels + project tag ── */
+        .card-section-label {
+            font-size: 0.58rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: #94a3b8;
+            margin-bottom: 4px;
+            margin-top: 8px;
+        }
+        .card-section-label:first-child { margin-top: 0; }
+        .card-project-tag {
+            background: #f0fdf4;
+            color: #166534;
+            border: 1px solid #bbf7d0;
+        }
+
         /* ── People grid: 2 → 3 → 4 → 5 cols ── */
         .people-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 14px;
+            align-items: start;
         }
         @media (min-width: 640px)  { .people-grid { grid-template-columns: repeat(3, 1fr); } }
         @media (min-width: 1024px) { .people-grid { grid-template-columns: repeat(4, 1fr); } }
@@ -381,6 +431,23 @@
             <aside class="sidebar">
                 <nav class="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-slate-200 p-4">
 
+
+                    <!-- Expand / Collapse All -->
+                    <div class="pb-3 mb-1">
+                        <h3 class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2 px-2">Cards</h3>
+                        <div class="flex gap-2">
+                            <button id="expand-all-btn"
+                                    class="flex-1 py-2 rounded-lg text-[10px] font-bold uppercase tracking-[0.1em] transition-colors"
+                                    style="background:#eff6ff;color:#1e3a8a;border:1px solid #dbeafe;">
+                                Expand All
+                            </button>
+                            <button id="collapse-all-btn"
+                                    class="flex-1 py-2 rounded-lg text-[10px] font-bold uppercase tracking-[0.1em] transition-colors"
+                                    style="background:#f8fafc;color:#64748b;border:1px solid #e2e8f0;">
+                                Collapse
+                            </button>
+                        </div>
+                    </div>
 
                     <!-- Project Filter -->
                     <div class="pt-4 border-t border-slate-200">
@@ -538,25 +605,41 @@
 
                         const projectsAttr = (person.projects || []).map(p => p.toLowerCase()).join(' ');
 
+                        const hasCardBody = posLine || kws.length || (person.projects && person.projects.length);
+
                         const card = document.createElement('div');
                         card.className = 'member-card person-card';
                         card.setAttribute('data-projects', projectsAttr);
 
                         card.innerHTML = `
-                            <div class="card-header">
+                            <div class="card-header" onclick="this.closest('.member-card').classList.toggle('expanded')">
                                 <img class="card-photo" src="${imgSrc}" alt="${person.name}" loading="lazy"
                                      onload="this.classList.add('loaded')"
                                      onerror="this.classList.add('loaded');this.src='${PLACEHOLDER}'">
                                 <div class="card-name">${person.name}</div>
                                 ${person.role ? `<span class="card-role-badge">${person.role}</span>` : ''}
+                                <div class="card-expand-tab">
+                                    <span class="expand-line"></span>
+                                    ${hasCardBody ? `<svg class="card-expand-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4 6l4 4 4-4"/>
+                                    </svg>` : ''}
+                                    <span class="expand-line"></span>
+                                </div>
                             </div>
                             <div class="card-body">
-                                ${posLine ? `<div class="card-position">
-                                    <span class="card-position-dot"></span>
+                                ${posLine ? `
+                                <div class="card-position">
+                                    <!-- <p class="card-section-label">Current Position</p> -->
                                     <span class="card-position-text">${posLine}</span>
                                 </div>` : ''}
-                                ${kws.length ? `<div class="card-keywords">
+                                ${kws.length ? `
+                                <div class="card-keywords">
+                                    <p class="card-section-label">Research Keywords</p>
                                     ${kws.map(k => `<span class="card-keyword-tag">${k}</span>`).join('')}
+                                </div>` : ''}
+                                ${(person.projects && person.projects.length) ? `<p class="card-section-label">Projects</p>
+                                <div class="card-keywords">
+                                    ${person.projects.map(p => `<span class="card-keyword-tag card-project-tag">${p}</span>`).join('')}
                                 </div>` : ''}
                             </div>
                             ${(person.email || person.link) ? `<div class="card-footer">
@@ -765,6 +848,24 @@
                     }
 
                     init();
+
+                    // Expand / Collapse All
+                    var expandAllBtn   = document.getElementById('expand-all-btn');
+                    var collapseAllBtn = document.getElementById('collapse-all-btn');
+                    if (expandAllBtn) {
+                        expandAllBtn.addEventListener('click', function() {
+                            document.querySelectorAll('.person-card').forEach(function(card) {
+                                card.classList.add('expanded');
+                            });
+                        });
+                    }
+                    if (collapseAllBtn) {
+                        collapseAllBtn.addEventListener('click', function() {
+                            document.querySelectorAll('.person-card').forEach(function(card) {
+                                card.classList.remove('expanded');
+                            });
+                        });
+                    }
                 } catch (error) {
                     console.error('Error initializing page:', error);
                     // Show error message to user
