@@ -4,359 +4,286 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects | UAII - Urban AI Institute</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="assets_new/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    body { background: #03070f; }
-
-    .proj-page-title {
-      font-family: 'Inter', sans-serif;
-      font-size: clamp(2.5rem, 5vw, 3.5rem);
-      font-weight: 800;
-      color: #fff;
-      text-align: left;
-      text-shadow: 0 0 30px rgba(255,255,255,0.35), 0 0 60px rgba(255,255,255,0.12);
-      margin-bottom: 40px;
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .proj-page-title.anim-in {
-      opacity: 1 !important;
-      transform: translate(0,0) !important;
+    html, body {
+      overflow-x: hidden;
+      overflow-y: auto;
+      height: auto;
+      background: #f8fafc;
+      color: #1e293b;
+      font-family: 'Inter', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
     }
 
-    /* ── Project Links block ── */
-    .proj-links-wrap {
-      max-width: 1200px;
-      width: 100%;
-      text-align: center;
-      padding: 0 40px;
+    .page-scroll {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
     }
 
-    .proj-links-title {
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: rgba(255,255,255,0.3);
-      margin-bottom: 40px;
+    /* Accordion body */
+    .theme-accordion-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+    .theme-accordion.expanded .theme-accordion-body {
+      max-height: 2000px;
+    }
+    .theme-chevron {
+      transition: transform 0.3s ease;
+    }
+    .theme-accordion.expanded .theme-chevron {
+      transform: rotate(180deg);
     }
 
-    .proj-links-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-    }
-
-    .proj-link-card {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 24px;
-      padding: 32px;
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 12px;
-      background: rgba(255,255,255,0.25);
-      text-decoration: none;
-      text-align: left;
-      transition: all 0.3s ease;
-      min-height: 160px;
-    }
-
-    .proj-link-card:hover {
-      border-color: rgba(96,165,250,0.3);
-      background: rgba(255,255,255,0.16);
-      transform: translateY(-4px);
-      box-shadow: 0 0 20px rgba(96,165,250,0.15), 0 0 0 1px rgba(96,165,250,0.2);
-    }
-
-    .proj-link-img-wrap {
-      width: 80px;
-      height: 80px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(255,255,255,0.06);
-      border-radius: 10px;
-      padding: 10px;
+    /* Pipeline dots */
+    .pipeline-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #2563eb;
+      box-shadow: 0 0 0 4px #dbeafe, 0 2px 8px rgba(37,99,235,0.2);
       flex-shrink: 0;
     }
-
-    .proj-link-img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    .proj-link-info {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
+    .pipeline-connector {
       flex: 1;
+      height: 2px;
+      background: linear-gradient(90deg, #93c5fd, #3b82f6);
+      margin-top: 9px;
+      min-width: 8px;
     }
 
-    .proj-link-name {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #fff;
+    @media (max-width: 640px) {
+      .pipeline-steps-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 0;
+      }
+      .pipeline-steps-wrap .pipeline-steps {
+        width: 100%;
+      }
+      .pipeline-step-name {
+        font-size: 0.65rem;
+      }
+      .pipeline-dot {
+        width: 12px;
+        height: 12px;
+      }
+      .pipeline-connector {
+        margin-top: 5px;
+        min-width: 4px;
+      }
+      .meta-grid-mobile {
+        grid-template-columns: 1fr !important;
+      }
     }
 
-    .proj-link-card:hover .proj-link-name {
-      color: #93c5fd;
-    }
 
-    .proj-link-desc {
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.4);
-      line-height: 1.5;
-    }
-
-    .proj-link-arrow {
-      font-size: 0.75rem;
-      color: #fff;
-      margin-top: auto;
-    }
-
-    .proj-link-card, .proj-links-title {
+    /* Entrance animations */
+    .fade-up {
       opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
     }
-    .proj-link-card.anim-in,
-    .proj-links-title.anim-in {
-      opacity: 1 !important;
-      transform: translate(0,0) !important;
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
+    .fade-up-d1 { transition-delay: 0.08s; }
+    .fade-up-d2 { transition-delay: 0.16s; }
+    .fade-up-d3 { transition-delay: 0.24s; }
+    .fade-up-d4 { transition-delay: 0.36s; }
+
   </style>
 </head>
 <body>
 
   <!-- Navigation -->
-  <nav class="submenu bg-secondary">
-    <a href="index.html" class="navbar-brand">UAII <span class="navbar-brand-sub">Urban AI Institute</span></a>
-    <ul class="navbar-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="people.html">People</a></li>
-      <li><a href="projects.html" class="active">Projects</a></li>
-      <li><a href="engagement.html">Engagement</a></li>
-    </ul>
-  </nav>
+  <div id="navbar" data-page="Projects"></div>
 
-  <div id="landingmap"></div>
+  <div class="page-scroll">
 
-  <!-- Scroll-snap container -->
-  <div id="landing">
-
-    <!-- Block 1: Core Research Themes -->
-    <div class="scroll-block" id="block-1">
-      <div class="research-themes-content">
-        <h1 class="proj-page-title">Projects</h1>
-        <div class="themes-intro-block">
-          <p class="themes-intro">UAII develops core technologies for advancing AI in future cities.</p>
-          <p class="themes-intro-sub">Two core research themes define our approach — one <span class="ui-accent">treating the cities of today</span>, the other <span class="ui-accent">building the cities of tomorrow</span>.</p>
-        </div>
-
-        <div class="themes-rows">
-
-          <div class="theme-row theme-row-1">
-            <div class="theme-row-left theme-row-1-left">
-              <div class="theme-row-badge">Theme 01</div>
-              <a href="research-doctor-city.html" class="theme-row-name">Dr.City</a>
-              <p class="theme-row-sub">Your city<br>is <strong>sick</strong>.<br>We diagnose it.</p>
-              <svg class="theme-visual ecg-visual" viewBox="0 0 200 56" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMid meet">
-                <defs>
-                  <linearGradient id="ecg-glow" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%"   stop-color="rgba(147,197,253,0)"/>
-                    <stop offset="40%"  stop-color="rgba(147,197,253,0.2)"/>
-                    <stop offset="50%"  stop-color="rgba(255,255,255,1)"/>
-                    <stop offset="60%"  stop-color="rgba(147,197,253,0.2)"/>
-                    <stop offset="100%" stop-color="rgba(147,197,253,0)"/>
-                  </linearGradient>
-                  <mask id="ecg-mask">
-                    <rect class="ecg-glow-rect" x="-60" y="0" width="120" height="56" fill="url(#ecg-glow)"/>
-                  </mask>
-                </defs>
-                <polyline class="ecg-base" points="0,28 112,28 115,22 119,28 122,28 124,30 126,6 128,50 130,28 135,20 141,28 155,28 200,28"/>
-                <polyline class="ecg-bright" points="0,28 112,28 115,22 119,28 122,28 124,30 126,6 128,50 130,28 135,20 141,28 155,28 200,28" mask="url(#ecg-mask)"/>
-              </svg>
-            </div>
-            <div class="theme-row-right theme-row-1-right">
-              <p class="theme-row-desc">Cities are living systems — and like any living thing, they suffer.<br>Population shift. Mental health crises. Climate stress. Gridlock.<br><br><strong>Doctor City</strong> treats the urban environment as a patient.<br>AI and data identify what's wrong, prescribe evidence-based interventions, and monitor recovery.</p>
-              <div class="theme-row-pipeline">
-                <span>Data Discovery</span><span class="pipe-arr">→</span><span>Knowledge Extraction</span><span class="pipe-arr">→</span><span>Policy Recommendation</span><span class="pipe-arr">→</span><span>Mitigation Monitoring</span>
-              </div>
-              <div class="theme-row-chips">
-                <button class="see-projects-btn" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('visible')">See Projects</button>
-                <div class="see-projects-list">
-                  <a href="#" class="tree-leaf real">Seoul Project</a>
-                  <a href="#" class="tree-leaf real">URL</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="theme-row theme-row-2">
-            <div class="theme-row-left theme-row-2-left">
-              <div class="theme-row-badge">Theme 02</div>
-              <a href="research-city-forward.html" class="theme-row-name">CityFWD.ai</a>
-              <p class="theme-row-sub">Your city<br><strong>doesn't exist yet.</strong><br>We're its architects.</p>
-              <svg class="theme-visual fwd-visual" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMid meet">
-                <defs>
-                  <linearGradient id="fwd-road-glow" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%"   stop-color="rgba(147,197,253,0)"/>
-                    <stop offset="40%"  stop-color="rgba(147,197,253,0.2)"/>
-                    <stop offset="50%"  stop-color="rgba(255,255,255,1)"/>
-                    <stop offset="60%"  stop-color="rgba(147,197,253,0.2)"/>
-                    <stop offset="100%" stop-color="rgba(147,197,253,0)"/>
-                  </linearGradient>
-                  <mask id="fwd-road-mask">
-                    <rect class="fwd-road-glow-rect" x="-60" y="0" width="120" height="60" fill="url(#fwd-road-glow)"/>
-                  </mask>
-                </defs>
-                <line x1="0" y1="53" x2="200" y2="53" class="fwd-road-base"/>
-                <rect x="0" y="52" width="200" height="2" rx="1" class="fwd-road-bright-rect" mask="url(#fwd-road-mask)"/>
-                <g transform="translate(28,28)">
-                  <circle cx="0" cy="0" r="24" class="fwd-tyre-ring"/>
-                  <circle cx="0" cy="0" r="15" class="fwd-tyre-inner-line"/>
-                  <g class="fwd-wheel-spin">
-                    <line x1="0" y1="0" x2="0"     y2="-14" class="fwd-spoke5"/>
-                    <line x1="0" y1="0" x2="13.3"  y2="-4.3" class="fwd-spoke5"/>
-                    <line x1="0" y1="0" x2="8.2"   y2="11.3" class="fwd-spoke5"/>
-                    <line x1="0" y1="0" x2="-8.2"  y2="11.3" class="fwd-spoke5"/>
-                    <line x1="0" y1="0" x2="-13.3" y2="-4.3" class="fwd-spoke5"/>
-                    <circle cx="0" cy="0" r="3" class="fwd-wheel-hub"/>
-                  </g>
-                </g>
-              </svg>
-            </div>
-            <div class="theme-row-right theme-row-2-right">
-              <p class="theme-row-desc">The greatest urban challenges aren't solved by fixing what's broken —<br>they're solved by imagining what's never been built.<br><br><strong>CityFWD.ai</strong> is greenfield thinking at civilization scale.<br>We design cities from the ground up using technologies not yet in practice, guided by AI that simulates futures before a single foundation is laid.<br>This isn't urban planning. This is urban invention.</p>
-              <div class="theme-row-chips">
-                <button class="see-projects-btn" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('visible')">See Projects</button>
-                <div class="see-projects-list">
-                  <a href="#" class="tree-leaf real">PRISM-X</a>
-                  <a href="#" class="tree-leaf real">VIGILANT</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
+    <!-- Hero -->
+    <div class="max-w-6xl mx-auto px-6 pt-36 pb-12">
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight mb-5 fade-up">Projects</h1>
+      <p class="text-sm sm:text-base text-slate-500 leading-relaxed border-t border-slate-200 pt-4 fade-up fade-up-d1">UAII develops core technologies for advancing AI in future cities.<br>Two core research themes define our approach — one <span class="text-blue-900 font-semibold">treating the cities of today</span>, the other <span class="text-blue-900 font-semibold">building the cities of tomorrow</span>.</p>
     </div>
 
-    <!-- Block 2: Research Groups & Platforms -->
-    <div class="scroll-block" id="block-2">
-      <div class="proj-links-wrap">
-        <div class="proj-links-grid">
-          <a class="proj-link-card" href="https://sites.google.com/view/fuscc/home" target="_blank" rel="noopener">
-            <div class="proj-link-img-wrap"><img class="proj-link-img" src="assets/images/projects/4.png" alt="Urban@KAIST"></div>
-            <div class="proj-link-info">
-              <span class="proj-link-name">Urban@KAIST</span>
-              <span class="proj-link-desc">Urban@KAIST</span>
-              <span class="proj-link-arrow">Visit →</span>
+    <!-- Themes -->
+    <div class="max-w-6xl mx-auto px-6 pb-20 flex flex-col gap-6">
+
+      <!-- Dr.City -->
+      <div class="theme-accordion bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow fade-up fade-up-d3" id="drcity">
+        <div class="flex items-center justify-between px-6 sm:px-8 py-6 border-b border-slate-200 cursor-pointer select-none hover:bg-slate-50 transition-colors" onclick="toggleAccordion(this)">
+          <div class="flex flex-col">
+              <span class="text-[0.6rem] sm:text-xs uppercase tracking-[0.25em] font-semibold text-slate-400 mb-3">Futures of Cities</span>
+              <span class="text-xl sm:text-2xl font-extrabold text-blue-900 tracking-tight">Dr.City</span>
             </div>
-          </a>
-          <a class="proj-link-card" href="https://hcfm.kaist.ac.kr" target="_blank" rel="noopener">
-            <div class="proj-link-img-wrap"><img class="proj-link-img" src="assets/images/projects/5.png" alt="HcFM"></div>
-            <div class="proj-link-info">
-              <span class="proj-link-name">HcFM</span>
-              <span class="proj-link-desc">Human-centered Future Mobility</span>
-              <span class="proj-link-arrow">Visit →</span>
+          <svg class="theme-chevron w-6 h-6 text-slate-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="theme-accordion-body">
+          <div class="px-6 sm:px-8 pt-6 pb-8 overflow-x-hidden max-w-full">
+            <p class="text-sm sm:text-base text-slate-500 leading-relaxed mb-4">Cities are living systems — and like any living thing, they suffer.<br>Population shift. Mental health crises. Climate stress. Gridlock.</p>
+            <p class="text-sm sm:text-base text-slate-700 leading-relaxed mb-7 pl-4 border-l-2 border-blue-200"><strong class="text-slate-900">Doctor City</strong> treats the urban environment as a patient. AI and data identify what's wrong, prescribe evidence-based interventions, and monitor recovery.</p>
+
+            <!-- Pipeline — desktop: horizontal, mobile: vertical -->
+            <!-- Pipeline: Slate→Blue gradient dot (larger) -->
+            <div class="hidden sm:flex items-start gap-0 mb-8">
+              <div class="flex flex-col items-center flex-1 min-w-0"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg"></div><span class="mt-2 text-sm font-bold text-blue-900 text-center">Sense</span></div>
+              <div class="pipeline-connector"></div>
+              <div class="flex flex-col items-center flex-1 min-w-0"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg"></div><span class="mt-2 text-sm font-bold text-blue-900 text-center">Diagnose</span></div>
+              <div class="pipeline-connector"></div>
+              <div class="flex flex-col items-center flex-1 min-w-0"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg"></div><span class="mt-2 text-sm font-bold text-blue-900 text-center">Intervene</span></div>
+              <div class="pipeline-connector"></div>
+              <div class="flex flex-col items-center flex-1 min-w-0"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg"></div><span class="mt-2 text-sm font-bold text-blue-900 text-center">Promote</span></div>
+              <div class="pipeline-connector"></div>
+              <div class="flex flex-col items-center flex-1 min-w-0"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg"></div><span class="mt-2 text-sm font-bold text-blue-900 text-center">Grow</span></div>
             </div>
-          </a>
-          <a class="proj-link-card" href="https://caus.kaist.ac.kr" target="_blank" rel="noopener">
-            <div class="proj-link-img-wrap"><img class="proj-link-img" src="assets/images/projects/1.png" alt="CAUS"></div>
-            <div class="proj-link-info">
-              <span class="proj-link-name">CAUS</span>
-              <span class="proj-link-desc">Center for Advanced Urban Systems</span>
-              <span class="proj-link-arrow">Visit →</span>
+
+            <!-- Mobile vertical (unchanged) -->
+            <div class="sm:hidden relative pl-6 mb-8">
+              <div class="absolute left-[7px] top-[8px] bottom-[8px] w-0.5 bg-gradient-to-b from-blue-300 to-blue-500"></div>
+              <div class="flex items-center gap-3 py-2"><div class="w-4 h-4 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg absolute left-0"></div><span class="text-xs font-bold text-blue-900">Sense</span></div>
+              <div class="flex items-center gap-3 py-2"><div class="w-4 h-4 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg absolute left-0"></div><span class="text-xs font-bold text-blue-900">Diagnose</span></div>
+              <div class="flex items-center gap-3 py-2"><div class="w-4 h-4 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg absolute left-0"></div><span class="text-xs font-bold text-blue-900">Intervene</span></div>
+              <div class="flex items-center gap-3 py-2"><div class="w-4 h-4 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg absolute left-0"></div><span class="text-xs font-bold text-blue-900">Promote</span></div>
+              <div class="flex items-center gap-3 py-2"><div class="w-4 h-4 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg absolute left-0"></div><span class="text-xs font-bold text-blue-900">Grow</span></div>
             </div>
-          </a>
-          <a class="proj-link-card" href="https://c3.kaist.ac.kr" target="_blank" rel="noopener">
-            <div class="proj-link-img-wrap"><img class="proj-link-img" src="assets/images/projects/2.png" alt="KAIST-NYU C3"></div>
-            <div class="proj-link-info">
-              <span class="proj-link-name">KAIST-NYU C3</span>
-              <span class="proj-link-desc">KAIST-NYU Center for Cities and Climate Change</span>
-              <span class="proj-link-arrow">Visit →</span>
-            </div>
-          </a>
+
+            <!-- Research Groups (dynamic from JSON) -->
+            <h3 class="text-xs sm:text-sm font-bold uppercase tracking-widest text-slate-400 mb-4">Research Groups</h3>
+            <div id="drcity-projects"></div>
+
+          </div>
         </div>
       </div>
+
+      <!-- CityFWD.ai -->
+      <div class="theme-accordion bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow fade-up fade-up-d4" id="cityfwd">
+        <div class="flex items-center justify-between px-6 sm:px-8 py-6 border-b border-slate-200 cursor-pointer select-none hover:bg-slate-50 transition-colors" onclick="toggleAccordion(this)">
+          <div class="flex flex-col">
+              <span class="text-[0.6rem] sm:text-xs uppercase tracking-[0.25em] font-semibold text-slate-400 mb-3">Cities of Future</span>
+              <span class="text-xl sm:text-2xl font-extrabold text-blue-900 tracking-tight">CityFWD.ai</span>
+            </div>
+          <svg class="theme-chevron w-6 h-6 text-slate-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="theme-accordion-body">
+          <div class="px-6 sm:px-8 pt-6 pb-8 overflow-x-hidden max-w-full">
+            <p class="text-sm sm:text-base text-slate-500 leading-relaxed mb-4">The greatest urban challenges aren't solved by fixing what's broken — they're solved by imagining what's never been built.</p>
+            <p class="text-sm sm:text-base text-slate-700 leading-relaxed mb-7 pl-4 border-l-2 border-blue-200"><strong class="text-slate-900">CityFWD.ai</strong> is greenfield thinking at civilization scale. We design cities from the ground up using technologies not yet in practice, guided by AI that simulates futures before a single foundation is laid.</p>
+
+            <!-- Pipeline — desktop: horizontal, mobile: vertical -->
+            <div class="hidden sm:flex items-start gap-0 mb-8">
+              <div class="flex flex-col items-center flex-1 min-w-0"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg"></div><span class="mt-2 text-sm font-bold text-blue-900 text-center">Plan</span></div>
+              <div class="pipeline-connector"></div>
+              <div class="flex flex-col items-center flex-1 min-w-0"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg"></div><span class="mt-2 text-sm font-bold text-blue-900 text-center">Design</span></div>
+              <div class="pipeline-connector"></div>
+              <div class="flex flex-col items-center flex-1 min-w-0"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg"></div><span class="mt-2 text-sm font-bold text-blue-900 text-center">Build</span></div>
+              <div class="pipeline-connector"></div>
+              <div class="flex flex-col items-center flex-1 min-w-0"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg"></div><span class="mt-2 text-sm font-bold text-blue-900 text-center">Operate</span></div>
+              <div class="pipeline-connector"></div>
+              <div class="flex flex-col items-center flex-1 min-w-0"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg"></div><span class="mt-2 text-sm font-bold text-blue-900 text-center">Interact</span></div>
+              <div class="pipeline-connector"></div>
+              <div class="flex flex-col items-center flex-1 min-w-0"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg"></div><span class="mt-2 text-sm font-bold text-blue-900 text-center">Reimagine</span></div>
+            </div>
+            <div class="sm:hidden relative pl-6 mb-8">
+              <div class="absolute left-[7px] top-[8px] bottom-[8px] w-0.5 bg-gradient-to-b from-blue-300 to-blue-500"></div>
+              <div class="flex items-center gap-3 py-2"><div class="w-4 h-4 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg absolute left-0"></div><span class="text-xs font-bold text-blue-900">Plan</span></div>
+              <div class="flex items-center gap-3 py-2"><div class="w-4 h-4 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg absolute left-0"></div><span class="text-xs font-bold text-blue-900">Design</span></div>
+              <div class="flex items-center gap-3 py-2"><div class="w-4 h-4 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg absolute left-0"></div><span class="text-xs font-bold text-blue-900">Build</span></div>
+              <div class="flex items-center gap-3 py-2"><div class="w-4 h-4 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg absolute left-0"></div><span class="text-xs font-bold text-blue-900">Operate</span></div>
+              <div class="flex items-center gap-3 py-2"><div class="w-4 h-4 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg absolute left-0"></div><span class="text-xs font-bold text-blue-900">Interact</span></div>
+              <div class="flex items-center gap-3 py-2"><div class="w-4 h-4 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg absolute left-0"></div><span class="text-xs font-bold text-blue-900">Reimagine</span></div>
+            </div>
+
+            <!-- Research Groups (dynamic from JSON) -->
+            <h3 class="text-xs sm:text-sm font-bold uppercase tracking-widest text-slate-400 mb-4">Research Groups</h3>
+            <div id="cityfwd-projects"></div>
+
+          </div>
+        </div>
+      </div>
+
     </div>
 
   </div>
 
   <script>
+  function toggleAccordion(header) {
+    var accordion = header.parentElement;
+    accordion.classList.toggle('expanded');
+  }
+
+  // Auto-expand from URL hash
   (function() {
-    var scripts = ['https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js', 'assets_new/js/xray-bg.js'];
-    function loadNext(i) {
-      if (i >= scripts.length) return;
-      var s = document.createElement('script');
-      s.src = scripts[i];
-      s.onload = function() { loadNext(i + 1); };
-      document.body.appendChild(s);
+    var hash = window.location.hash.replace('#', '');
+    if (hash) {
+      var el = document.getElementById(hash);
+      if (el && el.classList.contains('theme-accordion')) {
+        el.classList.add('expanded');
+        setTimeout(function() {
+          var navHeight = 56;
+          var top = el.getBoundingClientRect().top + window.pageYOffset - navHeight - 40;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+        }, 100);
+      }
     }
-    loadNext(0);
   })();
-  </script>
 
-  <script>
-  // Block animations
-  (function() {
-    var blocks = {
-      'block-1': [
-        { sel: '.proj-page-title',   delay: 0 },
-        { sel: '.themes-intro-block', delay: 120 },
-        { sel: '.theme-row-1-left',  delay: 300 },
-        { sel: '.theme-row-1-right', delay: 380 },
-        { sel: '.theme-row-2-left',  delay: 520 },
-        { sel: '.theme-row-2-right', delay: 600 },
-      ],
-      'block-2': [
-        { sel: '.proj-page-title',   delay: 0 },
-        { sel: '.proj-link-card',    delay: 100, stagger: 120 },
-      ],
-    };
+  // Load project cards from JSON
+  (async function() {
+    var res = await fetch('data/projectsData.json');
+    var text = await res.text();
+    var clean = text.charCodeAt(0) === 0xFEFF ? text.slice(1) : text;
+    var projects = JSON.parse(clean);
 
-    function animateBlock(blockEl) {
-      var defs = blocks[blockEl.id];
-      if (!defs) return;
-      defs.forEach(function(def) {
-        var els = blockEl.querySelectorAll(def.sel);
-        var stagger = def.stagger || 0;
-        els.forEach(function(el, i) {
-          setTimeout(function() { el.classList.add('anim-in'); }, def.delay + i * stagger);
-        });
-      });
+    function renderCard(p) {
+      var img = p.image ? '<div class="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center bg-white rounded-lg border border-slate-200 p-2 flex-shrink-0"><img class="w-full h-full object-contain" src="' + p.image.replace(/^\//, '') + '" alt="' + p.title + '"></div>' : '';
+      var period = p.startYear ? (p.startYear + (p.endYear ? '–' + p.endYear : '–Present')) : '—';
+      var funding = p.funding || '—';
+      var sponsor = p.sponsor || '—';
+      return '<a class="grid grid-cols-[64px_1fr] sm:grid-cols-[80px_1fr] items-start gap-4 p-5 border border-slate-200 rounded-xl bg-slate-50 hover:bg-blue-50 hover:border-blue-300 hover:-translate-y-0.5 transition-all no-underline mb-3" href="' + (p.link || '#') + '" target="_blank" rel="noopener">'
+        + img
+        + '<div class="flex flex-col gap-1 flex-1 min-w-0">'
+        + '<span class="text-base sm:text-lg font-bold text-slate-900">' + p.title + '</span>'
+        + '<span class="text-sm text-slate-500">' + p.fullname + '</span>'
+        + '<div class="grid grid-cols-3 max-sm:grid-cols-1 gap-2 mt-2">'
+        + '<div class="bg-white border border-slate-200 rounded-lg p-2 text-center"><div class="text-[0.6rem] font-bold uppercase tracking-wider text-slate-400 mb-1">Period</div><div class="text-sm font-bold text-blue-900">' + period + '</div></div>'
+        + '<div class="bg-white border border-slate-200 rounded-lg p-2 text-center"><div class="text-[0.6rem] font-bold uppercase tracking-wider text-slate-400 mb-1">Funding</div><div class="text-sm font-bold text-blue-900">' + funding + '</div></div>'
+        + '<div class="bg-white border border-slate-200 rounded-lg p-2 text-center"><div class="text-[0.6rem] font-bold uppercase tracking-wider text-slate-400 mb-1">Sponsor</div><div class="text-sm font-bold text-blue-900">' + sponsor + '</div></div>'
+        + '</div></div></a>';
     }
 
-    function resetBlock(blockEl) {
-      var defs = blocks[blockEl.id];
-      if (!defs) return;
-      defs.forEach(function(def) {
-        blockEl.querySelectorAll(def.sel).forEach(function(el) { el.classList.remove('anim-in'); });
-      });
-    }
+    var drcityEl = document.getElementById('drcity-projects');
+    var cityfwdEl = document.getElementById('cityfwd-projects');
 
-    var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) animateBlock(entry.target);
-        else resetBlock(entry.target);
-      });
-    }, { threshold: 0.3 });
-
-    Object.keys(blocks).forEach(function(id) {
-      var el = document.getElementById(id);
-      if (el) observer.observe(el);
+    projects.forEach(function(p) {
+      if (p.theme === 'drcity') {
+        drcityEl.innerHTML += renderCard(p);
+      } else if (p.theme === 'cityfwd') {
+        cityfwdEl.innerHTML += renderCard(p);
+      }
     });
+  })();
 
-    var block1 = document.getElementById('block-1');
-    if (block1) setTimeout(function() { animateBlock(block1); }, 100);
+  // Entrance animations
+  (function() {
+    var fadeEls = document.querySelectorAll('.fade-up');
+    var fadeObs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    fadeEls.forEach(function(el) { fadeObs.observe(el); });
   })();
   </script>
 
+  <script src="partials/navbar.js"></script>
 </body>
 </html>
