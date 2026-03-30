@@ -108,7 +108,7 @@
       "id": "soh-young-in",
       "name": "Soh Young In",
       "link": "https://www.sohyoung-in.com/about-me",
-      "lab": "https://www.sohyoung-in.com",
+      "lab_link": "https://www.sohyoung-in.com",
       "role": "Kaist Professor",
       "email": "si2131@kaist.ac.kr",
       "position": [
@@ -231,13 +231,13 @@
       "projects": ["Urban AI Governance", "Digital Twin City"],
       "keywords": ["New Mobility","Advanced Air Mobility/Urban Air Mobility","Air Traffic Management", "Shared Mobility"],
       "link": "https://www.linkedin.com/in/yuyu5460/",
-      "lab": "http://www.sum-lab.org",
+      "lab_link": "http://www.sum-lab.org",
       "photo": "assets/images/collab/Yu Zhang.png"
     },
     {
       "id": "sekyoung-choi",
       "name": "Esther Sekyoung Choi",
-      "lab": "https://www.sohyoung-in.com",
+      "lab_link": "https://www.sohyoung-in.com",
       "keywords": ["Climate finance", "Nature finance", "Blended finance", "International environmental politics and governance"],
       "projects": ["Urban AI Governance", "Digital Twin City"],
       "link": "https://www.wri.org/profile/esther-choi",
