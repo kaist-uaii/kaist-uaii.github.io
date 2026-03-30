@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,64 +6,21 @@
     <title>People | Urban AI Institute (UAII)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets_new/css/style.css">
     <!-- Sidebar Navigation Import CSS and JS -->
     <link rel="stylesheet" href="partials/scroll-sidebar.css">
     <script src="partials/scroll-sidebar.js"></script>
     <style>
-        html, body {
+        body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
-            background: #03070f !important;
-            color: #e2e8f0;
-            overflow: auto !important;
-            height: auto !important;
         }
-
-        /* ── Dark theme overrides ── */
-        .bg-white, .sm\:bg-white { background: rgba(255,255,255,0.25) !important; }
-        .bg-slate-50 { background: #03070f !important; }
-        .bg-white\/80, .bg-white\/70 { background: rgba(255,255,255,0.12) !important; border-color: rgba(255,255,255,0.08) !important; }
-        .backdrop-blur-md { backdrop-filter: blur(12px); }
-        .border-slate-100, .border-slate-200, .border-gray-200, .border-t { border-color: rgba(255,255,255,0.08) !important; }
-        .text-slate-900, .text-slate-800 { color: #fff !important; }
-        .text-slate-700 { color: rgba(255,255,255,0.85) !important; }
-        .text-slate-600 { color: rgba(255,255,255,0.5) !important; }
-        .text-slate-500 { color: rgba(255,255,255,0.4) !important; }
-        .text-slate-400 { color: rgba(255,255,255,0.7) !important; }
-        .text-blue-600 { color: #93c5fd !important; }
-        .text-blue-900 { color: #93c5fd !important; }
-        .text-gray-500 { color: rgba(255,255,255,0.25) !important; }
-        .bg-slate-100 { background: rgba(255,255,255,0.06) !important; }
-        .proj-tag {
-            background: rgba(255,255,255,0.1);
-            color: #fff;
-            border: 1px solid rgba(255,255,255,0.15);
-            box-shadow: none;
-        }
-        .bg-slate-200 { background: rgba(255,255,255,0.1) !important; }
-        .hover\:bg-slate-200:hover { background: rgba(255,255,255,0.12) !important; }
-        .hover\:bg-slate-300:hover { background: rgba(255,255,255,0.15) !important; }
-        .hover\:text-blue-600:hover { color: #93c5fd !important; }
-        .hover\:bg-blue-50:hover { background: rgba(96,165,250,0.1) !important; }
-        .bg-blue-600 { background: #2563eb !important; }
-        .hover\:bg-blue-700:hover { background: #1d4ed8 !important; }
-        .shadow-sm { box-shadow: 0 1px 3px rgba(0,0,0,0.3) !important; }
-        .shadow-lg { box-shadow: 0 10px 25px rgba(0,0,0,0.4) !important; }
-        .border-white { border-color: rgba(255,255,255,0.1) !important; }
-        .divider-gradient { background: linear-gradient(to right, #2563eb, #93c5fd, transparent) !important; }
-        .card-hover:hover { box-shadow: 0 0 20px rgba(96,165,250,0.15), 0 0 40px rgba(96,165,250,0.08), 0 0 0 1px rgba(96,165,250,0.2) !important; }
-        footer.bg-white { background: transparent !important; }
-        nav.border-b { border-color: rgba(255,255,255,0.08) !important; }
-        .border-slate-300 { border-color: rgba(255,255,255,0.1) !important; }
-        .text-gray-500 { color: rgba(255,255,255,0.25) !important; }
-
-        .markdown strong { color: #93c5fd; }
-        .serif-title {
-            color: #fff !important;
-            font-family: 'Inter', sans-serif !important;
-            text-shadow: 0 0 30px rgba(255,255,255,0.35), 0 0 60px rgba(255,255,255,0.12);
+        
+        .page-scroll {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
         }
 
         .serif-title {
@@ -81,86 +38,269 @@
             -webkit-text-fill-color: transparent;
         }
 
-        .card-hover {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-            .card-hover:hover {
-                transform: translateY(-8px) !important;
-                box-shadow: 0 0 20px rgba(96,165,250,0.25), 0 0 40px rgba(96,165,250,0.12), 0 0 0 1px rgba(96,165,250,0.3) !important;
-            }
-
-        .member-photo-mask {
-            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-        }
-
         .divider-gradient {
             height: 4px;
             background: linear-gradient(to right, #1e3a8a, #3b82f6, transparent);
             border-radius: 2px;
         }
+        /* ── Hero ── */
+        .page-hero {
+            padding: calc(var(--nav-header-height, 56px) + 80px) 0 60px;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+        .hero-eyebrow {
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            color: #2563eb;
+            margin-bottom: 20px;
+        }
+        .hero-title {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            color: #0f172a;
+            letter-spacing: -1.5px;
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+        .hero-sub {
+            font-size: clamp(0.9rem, 1.3vw, 1.05rem);
+            font-weight: 400;
+            color: #64748b;
+            line-height: 1.7;
+            max-width: 560px;
+            padding-top: 16px;
+            border-top: 1px solid #e2e8f0;
+        }
+        .hero-sub .accent { color: #1e3a8a; font-weight: 600; }
 
-        .markdown p {
-            margin-bottom: 1rem;
+         /* ── Section headers ── */
+         .section-wrap {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px 72px;
+        }
+        .section-eyebrow {
+            font-size: 0.63rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            color: #2563eb;
+            margin-bottom: 6px;
+        }
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: #0f172a;
+            letter-spacing: -0.5px;
+            margin-bottom: 28px;
+        }
+        .section-divider {
+            height: 1px;
+            background: #e2e8f0;
+            margin-bottom: 28px;
         }
 
-        .markdown strong {
-            color: #2f478a;
-        }
         /* Image optimization */
-        img {
-            max-width: 100%;
-            height: auto;
-            /* Prevent layout shift */
-            display: block;
-        }
-            /* Smooth image loading for lazy-loaded images */
-            img[loading="lazy"] {
-                opacity: 0;
-                transition: opacity 0.3s;
-            }
+        img { max-width: 100%; height: auto; display: block; }
+        img[loading="lazy"] { opacity: 0; transition: opacity 0.3s; }
+        img[loading="lazy"].loaded, img[loading="eager"] { opacity: 1; }
 
-                img[loading="lazy"].loaded,
-                img[loading="eager"] {
-                    opacity: 1;
-                }
-        /* Projects tags styling */
-        .projects-container {
-            position: relative;
+        /* ── Member card ── */
+        
+        .member-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+            break-inside: avoid;
+            margin-bottom: 14px;
+            display: block; /* not flex on the grid level */
+        }
+        .member-card:hover {
+            border-color: #93c5fd;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06), 0 0 0 1px rgba(37,99,235,0.08);
+        }
+        .card-header {
+            background: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 12px 0;
+            cursor: pointer;
+        }
+        .card-photo {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #ffffff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 10px;
+        }
+        .card-name {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #0f172a;
+            text-align: center;
+            line-height: 1.3;
+            margin-bottom: 6px;
+        }
+        .card-role-badge {
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.58rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            padding: 2px 8px;
+            border-radius: 99px;
+            background: #eff6ff;
+            color: #1e3a8a;
+            border: 1px solid #dbeafe;
+            white-space: nowrap;
+        }
+        .card-from {
+            font-size: 0.68rem;
+            color: #94a3b8;
+            margin-top: 5px;
+            text-align: center;
+            line-height: 1.4;
+        }
+        .card-body {
+            padding: 12px 14px;
+            display: none;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .member-card.expanded .card-body {
+            display: flex;
+        }
+        .card-position {
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+        }
+        .card-position-dot {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: #93c5fd;
+            margin-top: 5px;
+            flex-shrink: 0;
+        }
+        .card-position-text {
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: #64748b;
+            line-height: 1.5;
+        }
+        .card-keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-top: 4px;
+        }
+        .card-keyword-tag {
+            font-size: 0.58rem;
+            font-weight: 500;
+            padding: 2px 6px;
+            border-radius: 99px;
+            background: #f1f5f9;
+            color: #475569;
+            border: 1px solid #e2e8f0;
+        }
+        .card-footer {
+            border-top: 1px solid #f1f5f9;
+            padding: 8px 10px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .card-link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.62rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #64748b;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px 8px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background 0.15s, color 0.15s;
+        }
+        .card-link-btn:hover { background: #eff6ff; color: #2563eb; }
+
+        /* ── Expand tab strip ── */
+        .card-expand-tab {
+            width: 100%;
+            margin-top: 2px;
+            padding: 6px 14px 7px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .expand-line {
+            flex: 1;
+            height: 1px;
+            background: #e2e8f0;
+        }
+        .card-expand-chevron {
+            width: 14px;
+            height: 14px;
+            color: #cbd5e1;
+            transition: transform 0.2s ease, color 0.15s ease;
+            flex-shrink: 0;
+        }
+        .member-card:hover .card-expand-chevron { color: #93c5fd; }
+        .member-card.expanded .card-expand-chevron {
+            transform: rotate(180deg);
+            color: #3b82f6;
         }
 
-        .projects-all {
-            animation: fadeIn 0.2s ease-in-out;
+        /* ── Section labels + project tag ── */
+        .card-section-label {
+            font-size: 0.58rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: #94a3b8;
+            margin-bottom: 4px;
+            margin-top: 8px;
+        }
+        .card-section-label:first-child { margin-top: 0; }
+        .card-project-tag {
+            background: #f0fdf4;
+            color: #166534;
+            border: 1px solid #bbf7d0;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-5px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* ── People grid: 2 → 3 → 4 → 5 cols ── */
+        .people-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+            align-items: start;
         }
+        @media (min-width: 640px)  { .people-grid { grid-template-columns: repeat(3, 1fr); } }
+        @media (min-width: 1024px) { .people-grid { grid-template-columns: repeat(4, 1fr); } }
+        @media (min-width: 1280px) { .people-grid { grid-template-columns: repeat(5, 1fr); } }
 
-        .projects-tags span {
-            transition: all 0.2s ease;
-        }
+        /* Filter buttons */
+        .project-filter-btn { transition: all 0.2s ease; }
 
-            .projects-tags span:hover {
-                transform: translateY(-1px);
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            }
-        /* Project filter buttons */
-        .project-filter-btn {
-            transition: all 0.2s ease;
-        }
-
-        .person-card {
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
+        .person-card { transition: opacity 0.3s ease; }
 
         .projects-mega-panel {
             position: fixed; /* 떠있게 */
@@ -272,82 +412,84 @@
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
+        <!-- <div id="toast">Email copied!</div>    -->
+        <!-- Navigation -->
+        <div id="navbar" data-page="People"></div>
+        <div class="page-scroll">
+            
+        <!-- Sidebar Navigation with Trigger -->
+        <div class="sidebar-container fixed right-0 top-1/2 -translate-y-1/2 z-40">
+            <!-- Trigger Bar (visible on md and below, sticks to right edge) -->
+            <div class="sidebar-trigger pt-2">
+                <!-- Arrow Icon -->
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+            </div>
 
-    <!-- Navigation (same as index) -->
-    <nav class="submenu bg-secondary" style="position:sticky;top:0;z-index:50;">
-      <a href="index.html" class="navbar-brand">UAII <span class="navbar-brand-sub">Urban AI Institute</span></a>
-      <ul class="navbar-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="people.html" class="active">People</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="engagement.html">Engagement</a></li>
-      </ul>
-    </nav>
+            <!-- Sidebar (always visible on lg+, hover on md and below) -->
+            <aside class="sidebar">
+                <nav class="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-slate-200 p-4">
 
-    <div id="landingmap"></div>
 
-    <!-- Sidebar Navigation with Trigger -->
-    <div class="sidebar-container fixed right-0 top-1/2 -translate-y-1/2 z-40">
-        <!-- Trigger Bar (visible on md and below, sticks to right edge) -->
-        <div class="sidebar-trigger pt-2">
-            <!-- Arrow Icon -->
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-            </svg>
+                    <!-- Expand / Collapse All -->
+                    <div class="pb-3 mb-1">
+                        <h3 class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2 px-2">Cards</h3>
+                        <div class="flex gap-2">
+                            <button id="expand-all-btn"
+                                    class="flex-1 py-2 rounded-lg text-[10px] font-bold uppercase tracking-[0.1em] transition-colors"
+                                    style="background:#eff6ff;color:#1e3a8a;border:1px solid #dbeafe;">
+                                Expand All
+                            </button>
+                            <button id="collapse-all-btn"
+                                    class="flex-1 py-2 rounded-lg text-[10px] font-bold uppercase tracking-[0.1em] transition-colors"
+                                    style="background:#f8fafc;color:#64748b;border:1px solid #e2e8f0;">
+                                Collapse
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project Filter -->
+                    <div class="pt-4 border-t border-slate-200">
+                        <h3 class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-3 px-2">Filter by Project</h3>
+                        <div id="project-filter-buttons" class="flex flex-col gap-2">
+                            <!-- injected -->
+                        </div>
+                    </div>
+
+                </nav>
+            </aside>
         </div>
 
-        <!-- Sidebar (always visible on lg+, hover on md and below) -->
-        <aside class="sidebar">
-            <nav class="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-slate-200 p-4">
+    <main class="page-scroll">
 
+    
+            <!-- Hero -->
+            <header class="page-hero">
+                <p class="hero-eyebrow fade-up">KAIST · Urban AI Institute</p>
+                <h1 class="hero-title fade-up fade-up-d1">Collaborators</h1>
+                <p class="hero-sub fade-up fade-up-d2">
+                    Meet the <span class="accent">faculty, global scholars, staff, and international fellows</span> shaping urban AI research across institutions worldwide.
+                </p>
+            </header>
 
-                <!-- Project Filter -->
-                <div class="pt-4 border-t border-slate-200">
-                    <h3 class="text-[10px] font-bold uppercase tracking-widest mb-3 px-2" style="color:rgba(255,255,255,0.35);">Filter by Project</h3>
-                    <div id="project-filter-buttons" class="flex flex-col gap-2">
-                        <!-- Filter buttons will be injected here -->
-                    </div>
-                </div>
-            </nav>
-        </aside>
-    </div>
-
-    <main class="container mx-auto sm:px-6 max-w-7xl" style="position:relative;z-index:1;">
-
-        <!-- Participants Professors Section -->
-        <main class="mx-auto px-3 sm:px-6 max-w-7xl">
-            <section id="participants" class="pt-24 pb-20">
-                <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-2 sm:gap-6">
-                    <!-- <div class="hidden md:block"></div> -->
-                    <div>
-                        <h2 class="serif-title text-5xl md:text-6xl font-bold mb-4 text-center">People</h2>
-                        <!-- <p class="text-slate-600 text-xl serif-subtitle italic">Meet our members driving our research forward</p> -->
-                    </div>
-                    <div class="divider-gradient w-48  md:block"></div>
-                </div>
-
-                <div id="participants-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-4 sm:gap-10">
-                    <!-- Participants will be injected here -->
-                </div>
+            <!-- Participants Section -->
+             <!-- KAIST Professors -->
+            <section class="section-wrap fade-up fade-up-d3" id="participants">
+                <!-- <p class="section-eyebrow">Faculty</p> -->
+                <h2 class="section-title">Participating Members</h2>
+                <div class="section-divider"></div>
+                <div class="people-grid" id="participants-grid"></div>
             </section>
 
             <!-- Alumni Section -->
-            <section id="alumni" class="py-20 border-t border-slate-200">
-                <div class="text-center mb-20">
-                    <h2 class="serif-title text-4xl sm:text-5xl font-bold mb-6">Alumni</h2>
-                    <!--<p class="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base">Our former members who have moved on to prestigious roles in academia and industry.</p>-->
-                </div>
-
+            <section class="section-wrap fade-up fade-up-d3" id="alumni">
+                <!-- <p class="section-eyebrow">KAIST Faculty</p> -->
+                <h2 class="section-title">Alumni</h2>
+                <div class="section-divider"></div>
                 <div class="space-y-24">
-                    <div>
-                        <!--<h3 class="text-xs font-bold uppercase tracking-[0.2em] text-blue-600 mb-10 border-l-4 border-blue-600 pl-4">Ph.D. Graduates</h3>-->
-                        <div id="alumni-phd-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
-                    </div>
-
-                    <div>
-                        <!--<h3 class="text-xs font-bold uppercase tracking-[0.2em] text-blue-600 mb-10 border-l-4 border-blue-600 pl-4">M.S. Graduates</h3>-->
-                        <div id="alumni-ms-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"></div>
-                    </div>
+                    <div class="people-grid" id="alumni-phd-grid"></div>
+                    <div class="people-grid" id="alumni-ms-grid"></div>
                 </div>
             </section>
 
@@ -435,118 +577,80 @@
                     }
 
                     // Reusable function to create person cards
-                    function createPersonCard(person, options = {}) {
-                        const {
-                            imgIdPrefix = 'person',
-                            // researchField = 'research', // 'edu' or 'position'
-                            projectsThreshold = 4, // Number of projects to show before "+X more"
-                            showLink = false // Whether to show external link icon on hover
-                        } = options;
+                    function createPersonCard(person, options) {
+                        options = options || {};
 
-                        const index = person.id || Math.random().toString(36).substr(2, 9);
-                        const imgId = `${imgIdPrefix}-img-${index}`;
-                        // const backgroundData = person[backgroundField] || [];
-                        const hasProjects = person.projects && person.projects.length > 0;
-                        const showMoreProjects = hasProjects && person.projects.length > projectsThreshold;
+                        const basePath   = location.pathname.replace(/\/[^\/]*$/, '');
+                        const rawPhoto   = (person.photo || '').trim();
+                        const safePhoto  = rawPhoto.startsWith('/') ? rawPhoto.slice(1) : rawPhoto;
+                        const photoPath  = safePhoto ? `${basePath}/${safePhoto}` : '';
+
+                        const PLACEHOLDER = 'data:image/svg+xml,' + encodeURIComponent(
+                            '<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72">' +
+                            '<rect fill="#e2e8f0" width="72" height="72" rx="36"/>' +
+                            '<path fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"' +
+                            ' d="M36 33a7 7 0 1 0 0-14 7 7 0 0 0 0 14zm-14 18a14 14 0 0 1 28 0"/>' +
+                            '</svg>'
+                        );
+                        const imgSrc = photoPath || PLACEHOLDER;
+
+                        const posArr = (Array.isArray(person.position) && person.position.length > 0)
+                            ? person.position: [];
+                        const posLine = posArr.find(s => s && s.trim()) || '';
+
+                        // Keywords (skip empty)
+                        const kws = Array.isArray(person.keywords)
+                            ? person.keywords.filter(k => k && k.trim())
+                            : [];
+
+                        const projectsAttr = (person.projects || []).map(p => p.toLowerCase()).join(' ');
+
+                        const hasCardBody = posLine || kws.length || (person.projects && person.projects.length);
 
                         const card = document.createElement('div');
-                        // Add data attributes for filtering by projects
-                        const projectsAttr = person.projects && person.projects.length > 0
-                            ? person.projects.map(p => p.toLowerCase()).join(' ')
-                            : '';
+                        card.className = 'member-card person-card';
                         card.setAttribute('data-projects', projectsAttr);
-                        card.className = "sm:bg-white rounded-[2rem] py-2 px-4 sm:p-8 sm:shadow-sm border border-slate-100 card-hover flex flex-row gap-4 sm:gap-8 items-start person-card";
 
-                        // Image hover overlay
-                        const hoverOverlay = showLink && person.link
-                            ? `<a href="${person.link}" target="_blank" rel="noopener" class="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition rounded-2xl flex items-center justify-center">
-                                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                                            </a>`
-                            : `<div class="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition rounded-2xl flex items-center justify-center">
-                                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                            </div>`;
-
-                        const basePath = location.pathname.replace(/\/[^\/]*$/, "");
-                        const rawPhoto = (person.photo || "").trim();
-                        const safePhoto = rawPhoto.startsWith("/") ? rawPhoto.slice(1) : rawPhoto;
-                        const photoPath = safePhoto ? `${basePath}/${safePhoto}` : "";
-                        const profilePlaceholderSvg = `<svg class="w-1/2 h-1/2 max-w-[3rem] max-h-[3rem] text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>`;
-                        const profileIconSvg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect fill="#e2e8f0"  width="24" height="24"/><path fill="none" stroke="#94a3b8" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>';
-                        const profileIconDataUrl = 'data:image/svg+xml,' + encodeURIComponent(profileIconSvg);
-                        const imgSrc = safePhoto ? photoPath : profileIconDataUrl;
                         card.innerHTML = `
-                                            <div class="w-20 lg:w-28 shrink-0">
-                                                <div class="relative group">
-                                                    <img id="${imgId}" src="${imgSrc}" alt="${person.name}" class="w-full aspect-square object-cover rounded-2xl shadow-lg border-4 border-white" loading="lazy" decoding="async" data-fallback="${profileIconDataUrl.replace(/"/g, '&quot;')}" onload="this.classList.add('loaded')" onerror="this.src=this.getAttribute('data-fallback');this.classList.add('loaded');">
-                                                    ${hoverOverlay}
-                                                </div>
-                                                <div class="grid grid-cols-2 px-1 mt-2 border-y border-slate-200 lg:border-none">
-                                                    ${person.email ? `<button onclick="copyEmail('${person.email}')" class="inline-flex justify-center items-center p-1 text-center text-xs font-medium text-slate-400 hover:text-blue-600 hover:bg-blue-50 transition-colors ">
-                                                            <svg class="block lg:hidden w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                                                            <span class="hidden lg:block border-b border-slate-200 hover:border-blue-600 transition-colors"> email</span>
-                                                    </button>` : ''}
-                                                    ${person.link ? `<a href="${person.link}" target="_blank" rel="noopener" class="inline-flex justify-center items-center p-1 text-center text-xs font-medium text-slate-400 hover:text-blue-600 hover:bg-blue-50 transition-colors">
-                                                            <svg class="block lg:hidden w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
-                                                            <span class="hidden lg:block border-b border-slate-200 hover:border-blue-600 transition-colors"> profile</span>
-                                                    </a>` : ''}
-                                                </div>
-                                            </div>
-                                            <div class="flex-1">
-                                                <div class="sm:mb-4">
-                                                    <div class="flex items-start justify-between gap-2 mb-1.5">
-                                                        <div class="flex-1">
-                                                            <h3 class="text-lg sm:text-2xl font-bold text-slate-900 mb-1.5">${person.name}</h3>
-                                                            <p class="text-blue-600 font-semibold text-xs sm:text-sm">${person.role || ''}</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="space-y-2 sm:space-y-4">
-                                                    <div>
-                                                        ${hasProjects ?
-                                `<h4 class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-2 hidden sm:block ">Projects</h4>
-                                                        <div class="relative pl-3 border-l-2 border-blue-400/40 projects-container" data-member-id="${index}">
-                                                            <div class="projects-tags flex flex-wrap gap-1.5">
-                                                            ${person.projects.slice(0, projectsThreshold).map(project => `
-                                                                <span class="inline-flex items-center sm:px-2 sm:py-1 px-1.5 py-0.5 text-[10px] font-medium proj-tag">${project}</span>
-                                                            `).join('')}
-                                                            ${showMoreProjects ? `
-                                                                <span class="projects-more inline-flex items-center sm:px-2.5 sm:py-1 px-2 py-0.5 text-[10px] font-medium bg-slate-200 text-slate-700 border border-slate-300 cursor-pointer hover:bg-slate-300 transition">+${person.projects.length - projectsThreshold} more</span>
-                                                            ` : ''}
-                                                            </div>
-                                                            ${showMoreProjects ? `
-                                                            <div class="projects-all hidden absolute left-3 top-full mt-2 z-20 bg-white rounded-lg shadow-xl border border-slate-200 p-3 min-w-[200px] max-w-[280px] max-h-[300px] overflow-y-auto">
-                                                                <div class="flex flex-wrap gap-1.5">
-                                                                    ${person.projects.map(project => `
-                                                                        <span class="inline-flex items-center px-2.5 py-1 text-[10px] font-medium bg-slate-100 text-slate-700 border border-slate-300 whitespace-nowrap">${project}</span>
-                                                                    `).join('')}
-                                                                </div>
-                                                            </div>` : ''}
-                                                        </div>` : ''}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        `;
-
-                        // Setup projects hover/click functionality
-                        if (showMoreProjects) {
-                            const projectsContainer = card.querySelector('.projects-container');
-                            const projectsMore = card.querySelector('.projects-more');
-                            const projectsAll = card.querySelector('.projects-all');
-
-                            if (projectsContainer && projectsMore && projectsAll) {
-                                projectsContainer.addEventListener('mouseenter', () => {
-                                    projectsAll.classList.remove('hidden');
-                                });
-                                projectsContainer.addEventListener('mouseleave', () => {
-                                    projectsAll.classList.add('hidden');
-                                });
-                                projectsMore.addEventListener('click', (e) => {
-                                    e.stopPropagation();
-                                    projectsAll.classList.toggle('hidden');
-                                });
-                            }
-                        }
+                            <div class="card-header" onclick="this.closest('.member-card').classList.toggle('expanded')">
+                                <img class="card-photo" src="${imgSrc}" alt="${person.name}" loading="lazy"
+                                     onload="this.classList.add('loaded')"
+                                     onerror="this.classList.add('loaded');this.src='${PLACEHOLDER}'">
+                                <div class="card-name">${person.name}</div>
+                                ${person.role ? `<span class="card-role-badge">${person.role}</span>` : ''}
+                                <div class="card-expand-tab">
+                                    <span class="expand-line"></span>
+                                    ${hasCardBody ? `<svg class="card-expand-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4 6l4 4 4-4"/>
+                                    </svg>` : ''}
+                                    <span class="expand-line"></span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                ${posLine ? `
+                                <div class="card-position">
+                                    <!-- <p class="card-section-label">Current Position</p> -->
+                                    <span class="card-position-text">${posLine}</span>
+                                </div>` : ''}
+                                ${kws.length ? `
+                                <div class="card-keywords">
+                                    <p class="card-section-label">Research Keywords</p>
+                                    ${kws.map(k => `<span class="card-keyword-tag">${k}</span>`).join('')}
+                                </div>` : ''}
+                                ${(person.projects && person.projects.length) ? `<p class="card-section-label">Projects</p>
+                                <div class="card-keywords">
+                                    ${person.projects.map(p => `<span class="card-keyword-tag card-project-tag">${p}</span>`).join('')}
+                                </div>` : ''}
+                            </div>
+                            ${(person.email || person.link) ? `<div class="card-footer">
+                                ${person.email ? `<button class="card-link-btn" onclick="copyEmail('${person.email.replace(/'/g, "\\'")}')">
+                                    <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                                    Email</button>` : ''}
+                                ${person.link ? `<a class="card-link-btn" href="${person.link}" target="_blank" rel="noopener">
+                                    <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                                    Profile</a>` : ''}
+                            </div>` : ''}
+                        `;
 
                         return card;
                     }
@@ -609,8 +713,7 @@
                         if (filterButtonsContainer && allProjects.length > 0) {
                             // "All" button
                             const allButton = document.createElement('button');
-                            allButton.className = 'project-filter-btn active w-full text-left px-3 py-2 rounded-lg text-xs font-semibold transition-colors';
-                            allButton.style.cssText = 'background:#2563eb;color:#fff;border:none;';
+                            allButton.className = 'project-filter-btn active w-full text-left px-3 py-2 rounded-lg text-xs font-semibold transition-colors bg-blue-600 text-white hover:bg-blue-700';
                             allButton.textContent = 'All';
                             allButton.setAttribute('data-project', 'all');
                             filterButtonsContainer.appendChild(allButton);
@@ -627,50 +730,13 @@
                             filteredProjects.forEach(project => {
                                 const btn = document.createElement('button');
                                 btn.className =
-                                    'project-filter-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold transition-colors';
-                                btn.style.cssText = 'background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.55);border:1px solid rgba(255,255,255,0.08);';
+                                    'project-filter-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold transition-colors bg-slate-100 text-slate-700 hover:bg-slate-200';
                                 btn.textContent = project;
                                 btn.setAttribute('data-project', project.toLowerCase());
                                 filterButtonsContainer.appendChild(btn);
                             });
 
-                            // Filter functionality - will be set up after cards are created
-                            window.setupProjectFilter = function () {
-                                const filterButtons = document.querySelectorAll('.project-filter-btn');
-
-                                filterButtons.forEach(btn => {
-                                    btn.addEventListener('click', () => {
-                                        // Get fresh list of cards each time
-                                        const personCards = document.querySelectorAll('.person-card');
-                                        console.log('Filter clicked, found', personCards.length, 'cards');
-
-                                        // Update active button
-                                        filterButtons.forEach(b => {
-                                            b.classList.remove('active');
-                                            b.style.cssText = 'background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.55);border:1px solid rgba(255,255,255,0.08);';
-                                        });
-                                        btn.classList.add('active');
-                                        btn.style.cssText = 'background:#2563eb;color:#fff;border:1px solid #2563eb;';
-
-                                        // Update filter
-                                        const activeFilter = btn.getAttribute('data-project');
-                                        console.log('Active filter:', activeFilter);
-
-                                        // Filter cards
-                                        let visibleCount = 0;
-                                        personCards.forEach(card => {
-                                            const cardProjects = card.getAttribute('data-projects') || '';
-                                            if (activeFilter === 'all' || cardProjects.includes(activeFilter)) {
-                                                card.style.display = '';
-                                                visibleCount++;
-                                            } else {
-                                                card.style.display = 'none';
-                                            }
-                                        });
-                                        console.log('Visible cards:', visibleCount);
-                                    });
-                                });
-                            };
+                            // Filter setup is deferred until after cards + keywords are built
                         }
 
                         // ===== Participants (merged & sorted) =====
@@ -692,7 +758,7 @@
                             role: s.role || "Research Staff",
                             edu: s.edu || [],
                             position: s.position || [],
-                            research: s.research || "",
+                            keywords: s.keywords || [],
                             projects: s.projects || [],
                             photo: s.photo || ""
                         })), "Research Staff");
@@ -701,15 +767,12 @@
 
                         if (participantsGrid) {
                             participantsGrid.innerHTML = "";
-                            participants.forEach(p => {
-                                const card = createPersonCard(p, {
-                                    imgIdPrefix: "participant",
-                                    projectsThreshold: 4,
-                                    showLink: Boolean(p.link)
-                                });
+                            participants.forEach(function(p) {
+                                var card = createPersonCard(p, { imgIdPrefix: 'participant' });
                                 participantsGrid.appendChild(card);
                             });
                         }
+
 
                         // -- alumni grid --
                         const phdGrid = document.getElementById('alumni-phd-grid');
@@ -731,7 +794,7 @@
                             ...a,
                             // role: a.degree ? `Alumni (${a.degree})` : "Alumni",
                             role: a.degree,
-                            research: a.research || "",
+                            keywords: a.keywords || "",
                             projects: a.projects || [],
                             photo: a.photo || ""
                         })), "Alumni");
@@ -742,32 +805,112 @@
                         if (msGrid) {
                             msGrid.innerHTML = "";
                             ms.forEach(p => {
-                                const card = createPersonCard(p, {
-                                    imgIdPrefix: "alumni-ms",
-                                    projectsThreshold: 4,
-                                    showLink: Boolean(p.link)
-                                });
+                                const card = createPersonCard(p, { imgIdPrefix: 'alumni-ms' });
                                 msGrid.appendChild(card);
                             });
                         }
                         if (phdGrid) {
                             phdGrid.innerHTML = "";
                             phd.forEach(p => {
-                                const card = createPersonCard(p, {
-                                    imgIdPrefix: "alumni-phd",
-                                    projectsThreshold: 4,
-                                    showLink: Boolean(p.link)
-                                });
+                                const card = createPersonCard(p, { imgIdPrefix: 'alumni-phd' });
                                 phdGrid.appendChild(card);
                             });
                         }
 
-                        if (window.setupProjectFilter) {
-                            window.setupProjectFilter();
-                        }
+                        // ── Set up combined project + keyword filter ──
+                        (function() {
+                            var activeProject = 'all';
+
+                            function applyFilters() {
+                                var cards = document.querySelectorAll('.person-card');
+                                cards.forEach(function(card) {
+                                    var cp = card.getAttribute('data-projects') || '';
+                                    var match = (activeProject === 'all') || cp.includes(activeProject);
+                                    card.style.display = match ? '' : 'none';
+                                });
+                            }
+
+                            var projBtns = document.querySelectorAll('.project-filter-btn');
+                            projBtns.forEach(function(btn) {
+                                btn.addEventListener('click', function() {
+                                    projBtns.forEach(function(b) {
+                                        b.classList.remove('bg-blue-600', 'text-white', 'hover:bg-blue-700');
+                                        b.classList.add('bg-slate-100', 'text-slate-700', 'hover:bg-slate-200');
+                                    });
+                                    btn.classList.add('bg-blue-600', 'text-white', 'hover:bg-blue-700');
+                                    btn.classList.remove('bg-slate-100', 'text-slate-700', 'hover:bg-slate-200');
+                                    activeProject = btn.getAttribute('data-project') || 'all';
+                                    applyFilters();
+                                });
+                            });
+
+                        })();
                     }
 
                     init();
+
+                    // Expand / Collapse All
+                    function normalizeExpandedCardHeights() {
+                        var cards = Array.from(document.querySelectorAll('.person-card'))
+                            .filter(function(card) {
+                                return card.style.display !== 'none';
+                            });
+                        if (!cards.length) return;
+
+                        cards.forEach(function(card) {
+                            card.style.minHeight = '';
+                            var body = card.querySelector('.card-body');
+                            if (body) body.style.minHeight = '';
+                        });
+
+                        var rows = new Map();
+                        cards.forEach(function(card) {
+                            var rowKey = Math.round(card.offsetTop);
+                            if (!rows.has(rowKey)) rows.set(rowKey, []);
+                            rows.get(rowKey).push(card);
+                        });
+
+                        rows.forEach(function(rowCards) {
+                            var maxBodyHeight = 0;
+                            rowCards.forEach(function(card) {
+                                var body = card.querySelector('.card-body');
+                                if (!body) return;
+                                maxBodyHeight = Math.max(maxBodyHeight, body.scrollHeight || 0);
+                            });
+                            if (!maxBodyHeight) return;
+                            rowCards.forEach(function(card) {
+                                var body = card.querySelector('.card-body');
+                                if (body) body.style.minHeight = maxBodyHeight + 'px';
+                            });
+                        });
+                    }
+
+                    function resetExpandedCardHeights() {
+                        document.querySelectorAll('.person-card').forEach(function(card) {
+                            card.style.minHeight = '';
+                            var body = card.querySelector('.card-body');
+                            if (body) body.style.minHeight = '';
+                        });
+                    }
+
+                    var expandAllBtn   = document.getElementById('expand-all-btn');
+                    var collapseAllBtn = document.getElementById('collapse-all-btn');
+                    if (expandAllBtn) {
+                        expandAllBtn.addEventListener('click', function() {
+                            document.querySelectorAll('.person-card').forEach(function(card) {
+                                card.classList.add('expanded');
+                            });
+                            requestAnimationFrame(normalizeExpandedCardHeights);
+                        });
+                    }
+                    if (collapseAllBtn) {
+                        collapseAllBtn.addEventListener('click', function() {
+                            document.querySelectorAll('.person-card').forEach(function(card) {
+                                card.classList.remove('expanded');
+                            });
+                            resetExpandedCardHeights();
+                        });
+                    }
                 } catch (error) {
                     console.error('Error initializing page:', error);
                     // Show error message to user
@@ -801,20 +944,8 @@
                 }, 1600);
             }
         </script>
-         <script src="assets/script.js"></script>
-         <script>
-         (function() {
-           var scripts = ['https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js', 'assets_new/js/xray-bg.js'];
-           function loadNext(i) {
-             if (i >= scripts.length) return;
-             var s = document.createElement('script');
-             s.src = scripts[i];
-             s.onload = function() { loadNext(i + 1); };
-             document.body.appendChild(s);
-           }
-           loadNext(0);
-         })();
-         </script> 
+         <script src="assets/script.js"></script> 
+         <script src="partials/navbar.js"></script>
     </main>
 </body>
 </html>
