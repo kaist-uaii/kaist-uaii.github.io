@@ -1,4 +1,4 @@
-﻿{
+{
   "professorData": {
     "id": 1,
     "name": "Prof. Yoonjin Yoon",
@@ -33,7 +33,13 @@
       ],
       "photo": "assets/images/people/profile_yoon.jpg",
       "research": "System-of-systems, which includes transportation system, city, logistics system, and public health system.",
-      "projects": [ "CAUS", "BP" ]
+      "projects": [
+        "CAUS",
+        "BP"
+      ],
+      "lab": "STIL",
+      "labFull": "Spacetime Intelligence Lab",
+      "major": "Civil and Environmental Engineering, Graduate School of Artificial Intelligence, Graduate School of Data Science"
     },
     {
       "id": 2,
@@ -48,7 +54,13 @@
       ],
       "photo": "assets/images/people/2.jpg",
       "research": "",
-      "projects": [ "CAUS", "중견" ]
+      "projects": [
+        "CAUS",
+        "중견"
+      ],
+      "lab": "STIL",
+      "labFull": "Spacetime Intelligence Lab",
+      "major": "Civil and Environmental Engineering"
     },
     {
       "id": 3,
@@ -63,7 +75,14 @@
       ],
       "photo": "assets/images/people/3.jpg",
       "research": "Urban Air Mobility (UAM), evaluation of vertiport locations, addressing the intricacies of their placement in the middle of large metropolitan environments",
-      "projects": [ "CAUS", "BP" ]
+      "projects": [
+        "CAUS",
+        "BP"
+      ],
+      "lab": "STIL",
+      "labFull": "Spacetime Intelligence Lab",
+      "role_major": "Ph.D. Candidate in Civil and Environmental Engineering",
+      "major": "Civil and Environmental Engineering"
     },
     {
       "id": 4,
@@ -76,8 +95,14 @@
         "M.S. in Information Security, Sungkyunkwan University",
         "B.S. in Computer Engineering and Military Science, Korea Air Force Academy"
       ],
-      "projects": [ "CAUS" ],
-      "photo": "assets/images/people/4.jpg"
+      "projects": [
+        "CAUS"
+      ],
+      "photo": "assets/images/people/4.jpg",
+      "lab": "STIL",
+      "labFull": "Spacetime Intelligence Lab",
+      "role_major": "Ph.D. Candidate in Graduate School of Artificial Intelligence",
+      "major": "Graduate School of Artificial Intelligence"
     },
     {
       "id": 5,
@@ -89,21 +114,14 @@
       "edu": [
         "B.S. in Economics and Data Science, University of Seoul"
       ],
-      "projects": [ "CAUS" ],
-      "photo": "assets/images/people/5.jpg"
-    },
-    {
-      "id": 6,
-      "name": "Juneyoung Ro",
-      "link": "https://sites.google.com/view/juneyoungro",
-      "role": "M.S. Candidate",
-      "from": "2024.03~",
-      "email": "juneyoung.ro@kaist.ac.kr",
-      "edu": [
-        "B.S. in Quantitative Sciences and Biology, Emory University"
+      "projects": [
+        "CAUS"
       ],
-      "projects": [ "Urban All" ],
-      "photo": "assets/images/people/6.jpg"
+      "photo": "assets/images/people/5.jpg",
+      "lab": "STIL",
+      "labFull": "Spacetime Intelligence Lab",
+      "role_major": "M.S. Candidate in Graduate School of Data Science",
+      "major": "Graduate School of Data Science"
     },
     {
       "id": 7,
@@ -114,8 +132,14 @@
       "edu": [
         "B.S. in Business Administration, University of Southern California"
       ],
-      "projects": [ "CAUS" ],
-      "photo": "assets/images/people/7.jpg"
+      "projects": [
+        "CAUS"
+      ],
+      "photo": "assets/images/people/7.jpg",
+      "lab": "STIL",
+      "labFull": "Spacetime Intelligence Lab",
+      "role_major": "M.S. Candidate in Graduate School of Data Science",
+      "major": "Graduate School of Data Science"
     },
     {
       "id": 8,
@@ -126,8 +150,14 @@
       "edu": [
         "B.S. in Psychology, University of Utah"
       ],
-      "projects": [ "CAUS" ],
-      "photo": "assets/images/people/8.jpg"
+      "projects": [
+        "CAUS"
+      ],
+      "photo": "assets/images/people/8.jpg",
+      "lab": "STIL",
+      "labFull": "Spacetime Intelligence Lab",
+      "role_major": "Integrated M.S.-Ph.D Candidate in Graduate School of Data Science",
+      "major": "Graduate School of Data Science"
     },
     {
       "id": 9,
@@ -138,8 +168,15 @@
       "edu": [
         "B.A. in Data Science, UC Berkeley"
       ],
-      "projects": [ "CAUS", "중견" ],
-      "photo": "assets/images/people/9.jpg"
+      "projects": [
+        "CAUS",
+        "중견"
+      ],
+      "photo": "assets/images/people/9.jpg",
+      "lab": "STIL",
+      "labFull": "Spacetime Intelligence Lab",
+      "role_major": "M.S. Candidate in Graduate School of Data Science",
+      "major": "Graduate School of Data Science"
     },
     {
       "id": 10,
@@ -150,8 +187,14 @@
       "edu": [
         "B.S. in Civil Engineering, Kyoto University"
       ],
-      "projects": [ "CAUS" ],
-      "photo": "assets/images/people/10.jpg"
+      "projects": [
+        "CAUS"
+      ],
+      "photo": "assets/images/people/10.jpg",
+      "lab": "STIL",
+      "labFull": "Spacetime Intelligence Lab",
+      "role_major": "M.S. Candidate in Civil and Environmental Engineering",
+      "major": "Civil and Environmental Engineering"
     },
     {
       "id": 101,
@@ -165,8 +208,14 @@
         "M.S. in School of Electrical Engineering and Computer Science, GIST",
         "B.S. in Systems Management Engineering, SKKU"
       ],
-      "projects": [ "BP" ],
-      "photo": "assets/images/people/jeongminseok.jpg"
+      "projects": [
+        "BP"
+      ],
+      "photo": "assets/images/people/jeongminseok.jpg",
+      "lab": "ACSS",
+      "labFull": "Autonomous Control for Stochastic Systems Research Lab",
+      "role_major": "Ph.D. Candidate in Electrical Engineering",
+      "major": "Electrical Engineering"
     },
     {
       "id": 102,
@@ -178,8 +227,14 @@
       "edu": [
         "B.S in School of Electrical Engineering, KAIST"
       ],
-      "projects": [ "BP" ],
-      "photo": "assets/images/people/leekwangbin.jpg"
+      "projects": [
+        "BP"
+      ],
+      "photo": "assets/images/people/leekwangbin.jpg",
+      "lab": "ACSS",
+      "labFull": "Autonomous Control for Stochastic Systems Research Lab",
+      "role_major": "M.S. Candidate in Electrical Engineering",
+      "major": "Electrical Engineering"
     },
     {
       "id": 103,
@@ -190,8 +245,14 @@
       "edu": [
         "B.S. in Climate & Energy Systems Engineering and Economics, Ewha Womans University"
       ],
-      "projects": [ "BP" ],
-      "photo": "assets/images/people/songhayoon.jpg"
+      "projects": [
+        "BP"
+      ],
+      "photo": "assets/images/people/songhayoon.jpg",
+      "lab": "IMPACT Lab",
+      "labFull": "Integrating Multidisciplinary Perspectives to Advance Climate Transition Lab",
+      "role_major": "M.S. Candidate in Graduate School of Green Growth and Sustainability",
+      "major": "Graduate School of Green Growth and Sustainability"
     },
     {
       "id": 104,
@@ -203,8 +264,14 @@
       "edu": [
         ""
       ],
-      "projects": [ "CAUS" ],
-      "photo": "assets/images/people/jihyena.JPG"
+      "projects": [
+        "CAUS"
+      ],
+      "photo": "assets/images/people/jihyena.JPG",
+      "lab": "COMET Lab",
+      "labFull": "Computational Optimization Methods Lab",
+      "role_major": "Ph.D. Candidate in Industrial and Systems Engineering",
+      "major": "Industrial and Systems Engineering"
     },
     {
       "id": 105,
@@ -216,8 +283,14 @@
       "edu": [
         ""
       ],
-      "projects": [ "CAUS" ],
-      "photo": "assets/images/people/vy.JPG"
+      "projects": [
+        "CAUS"
+      ],
+      "photo": "assets/images/people/vy.JPG",
+      "lab": "COMET Lab",
+      "labFull": "Computational Optimization Methods Lab",
+      "role_major": "M.S. Candidate in Industrial and Systems Engineering",
+      "major": "Industrial and Systems Engineering"
     },
     {
       "id": 106,
@@ -228,8 +301,14 @@
       "edu": [
         ""
       ],
-      "projects": [ "CAUS" ],
-      "photo": "assets/images/people/jaewoojeong.png"
+      "projects": [
+        "CAUS"
+      ],
+      "photo": "assets/images/people/jaewoojeong.png",
+      "lab": "VILab",
+      "labFull": "Visual Intelligence Lab",
+      "role_major": "Ph.D. Candidate in Mechanical Engineering",
+      "major": "Mechanical Engineering"
     },
     {
       "id": 107,
@@ -240,8 +319,14 @@
       "edu": [
         ""
       ],
-      "projects": [ "CAUS" ],
-      "photo": "assets/images/people/minjunkang.jpg"
+      "projects": [
+        "CAUS"
+      ],
+      "photo": "assets/images/people/minjunkang.jpg",
+      "lab": "VILab",
+      "labFull": "Visual Intelligence Lab",
+      "role_major": "Ph.D. Candidate in The Robotics Program",
+      "major": "The Robotics Program"
     },
     {
       "id": 108,
@@ -251,8 +336,14 @@
       "edu": [
         ""
       ],
-      "projects": [ "CAUS" ],
-      "photo": "assets/images/people/lucas.jpg"
+      "projects": [
+        "CAUS"
+      ],
+      "photo": "assets/images/people/lucas.jpg",
+      "lab": "CDSN Lab",
+      "labFull": "Collaborative and Distributed Systems & Network Lab",
+      "role_major": "Ph.D. Candidate in School of Computing",
+      "major": "School of Computing"
     },
     {
       "id": 109,
@@ -263,8 +354,14 @@
       "edu": [
         ""
       ],
-      "projects": [ "CAUS" ],
-      "photo": "assets/images/people/taeyoungyun.jpg"
+      "projects": [
+        "CAUS"
+      ],
+      "photo": "assets/images/people/taeyoungyun.jpg",
+      "lab": "SILAB",
+      "labFull": "System Intelligence Lab",
+      "role_major": "Ph.D. Candidate in Industrial and Systems Engineering",
+      "major": "Industrial and Systems Engineering"
     },
     {
       "id": 110,
@@ -275,8 +372,14 @@
       "edu": [
         ""
       ],
-      "projects": [ "CAUS" ],
-      "photo": "assets/images/people/kanghoonlee.jpg"
+      "projects": [
+        "CAUS"
+      ],
+      "photo": "assets/images/people/kanghoonlee.jpg",
+      "lab": "SILAB",
+      "labFull": "System Intelligence Lab",
+      "role_major": "Ph.D. Candidate in Industrial and Systems Engineering",
+      "major": "Industrial and Systems Engineering"
     },
     {
       "id": 111,
@@ -286,8 +389,14 @@
       "edu": [
         ""
       ],
-      "projects": [ "CAUS" ],
-      "photo": "assets/images/people/inhyucksong.jpg"
+      "projects": [
+        "CAUS"
+      ],
+      "photo": "assets/images/people/inhyucksong.jpg",
+      "lab": "SILAB",
+      "labFull": "System Intelligence Lab",
+      "role_major": "M.S. Candidate in Industrial and Systems Engineering",
+      "major": "Industrial and Systems Engineering"
     },
     {
       "id": 112,
@@ -297,8 +406,14 @@
       "edu": [
         ""
       ],
-      "projects": [ "CAUS" ],
-      "photo": "assets/images/people/huijaekim.jpg"
+      "projects": [
+        "CAUS"
+      ],
+      "photo": "assets/images/people/huijaekim.jpg",
+      "lab": "CSD Lab",
+      "labFull": "Complex Systems Design Lab",
+      "role_major": "Ph.D. Candidate in Industrial and Systems Engineering",
+      "major": "Industrial and Systems Engineering"
     }
   ],
   "aluminiData": [
@@ -309,7 +424,9 @@
       "degree": "Ph.D.",
       "date": "",
       "projects": [],
-      "photo": "assets/images/people/36.jpg"
+      "photo": "assets/images/people/36.jpg",
+      "current": "ar-ge inc. / Director",
+      "currentKr": "아게건축사사무소 소장"
     },
     {
       "id": 16,
@@ -318,7 +435,8 @@
       "degree": "Ph.D.",
       "date": "2016.09~2022.08",
       "projects": [],
-      "photo": "assets/images/people/16.png"
+      "photo": "assets/images/people/16.png",
+      "current": "NYUAD / Postdoctoral Associate"
     },
     {
       "id": 19,
@@ -328,7 +446,22 @@
       "date": "2016.03~2021.02",
       "photo": "assets/images/people/19.png",
       "projects": [],
-      "desc": "2021.03~2025.07\n\n  (Research Assistant Professor)"
+      "desc": "2021.03~2025.07\n\n  (Research Assistant Professor)",
+      "current": "KOTI / Associate Research Fellow",
+      "currentKr": "한국교통연구원 부연구위원"
+    },
+    {
+      "id": 6,
+      "name": "Juneyoung Ro",
+      "role": "Alumni",
+      "degree": "M.S.",
+      "date": "",
+      "projects": [
+        "Urban All"
+      ],
+      "photo": "assets/images/people/6.jpg",
+      "lab": "STIL",
+      "labFull": "Spacetime Intelligence Lab"
     }
   ]
 }
