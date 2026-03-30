@@ -850,6 +850,49 @@
                     init();
 
                     // Expand / Collapse All
+                    function normalizeExpandedCardHeights() {
+                        var cards = Array.from(document.querySelectorAll('.person-card'))
+                            .filter(function(card) {
+                                return card.style.display !== 'none';
+                            });
+                        if (!cards.length) return;
+
+                        cards.forEach(function(card) {
+                            card.style.minHeight = '';
+                            var body = card.querySelector('.card-body');
+                            if (body) body.style.minHeight = '';
+                        });
+
+                        var rows = new Map();
+                        cards.forEach(function(card) {
+                            var rowKey = Math.round(card.offsetTop);
+                            if (!rows.has(rowKey)) rows.set(rowKey, []);
+                            rows.get(rowKey).push(card);
+                        });
+
+                        rows.forEach(function(rowCards) {
+                            var maxBodyHeight = 0;
+                            rowCards.forEach(function(card) {
+                                var body = card.querySelector('.card-body');
+                                if (!body) return;
+                                maxBodyHeight = Math.max(maxBodyHeight, body.scrollHeight || 0);
+                            });
+                            if (!maxBodyHeight) return;
+                            rowCards.forEach(function(card) {
+                                var body = card.querySelector('.card-body');
+                                if (body) body.style.minHeight = maxBodyHeight + 'px';
+                            });
+                        });
+                    }
+
+                    function resetExpandedCardHeights() {
+                        document.querySelectorAll('.person-card').forEach(function(card) {
+                            card.style.minHeight = '';
+                            var body = card.querySelector('.card-body');
+                            if (body) body.style.minHeight = '';
+                        });
+                    }
+
                     var expandAllBtn   = document.getElementById('expand-all-btn');
                     var collapseAllBtn = document.getElementById('collapse-all-btn');
                     if (expandAllBtn) {
@@ -857,6 +900,7 @@
                             document.querySelectorAll('.person-card').forEach(function(card) {
                                 card.classList.add('expanded');
                             });
+                            requestAnimationFrame(normalizeExpandedCardHeights);
                         });
                     }
                     if (collapseAllBtn) {
@@ -864,6 +908,7 @@
                             document.querySelectorAll('.person-card').forEach(function(card) {
                                 card.classList.remove('expanded');
                             });
+                            resetExpandedCardHeights();
                         });
                     }
                 } catch (error) {
