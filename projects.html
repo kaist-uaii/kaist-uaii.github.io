@@ -53,7 +53,7 @@
       flex: 1;
       height: 2px;
       background: linear-gradient(90deg, #93c5fd, #3b82f6);
-      margin-top: 7px;
+      margin-top: 9px;
       min-width: 8px;
     }
 
@@ -118,76 +118,45 @@
 
       <!-- Dr.City -->
       <div class="theme-accordion bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow fade-up fade-up-d3" id="drcity">
-        <div class="flex items-center justify-between px-6 sm:px-8 py-6 cursor-pointer select-none hover:bg-slate-50 transition-colors" onclick="toggleAccordion(this)">
-          <span class="text-xl sm:text-2xl font-extrabold text-blue-900 tracking-tight">Dr.City</span>
+        <div class="flex items-center justify-between px-6 sm:px-8 py-6 border-b border-slate-200 cursor-pointer select-none hover:bg-slate-50 transition-colors" onclick="toggleAccordion(this)">
+          <div class="flex flex-col">
+              <span class="text-[0.6rem] sm:text-xs uppercase tracking-[0.25em] font-semibold text-slate-400 mb-3">Futures of Cities</span>
+              <span class="text-xl sm:text-2xl font-extrabold text-blue-900 tracking-tight">Dr.City</span>
+            </div>
           <svg class="theme-chevron w-6 h-6 text-slate-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
         </div>
         <div class="theme-accordion-body">
-          <div class="px-6 sm:px-8 pb-8 overflow-x-hidden max-w-full">
-            <p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-7">Cities are living systems — and like any living thing, they suffer. Population shift. Mental health crises. Climate stress. Gridlock.<br><strong class="text-slate-900">Doctor City</strong> treats the urban environment as a patient. AI and data identify what's wrong, prescribe evidence-based interventions, and monitor recovery.</p>
+          <div class="px-6 sm:px-8 pt-6 pb-8 overflow-x-hidden max-w-full">
+            <p class="text-sm sm:text-base text-slate-500 leading-relaxed mb-4">Cities are living systems — and like any living thing, they suffer.<br>Population shift. Mental health crises. Climate stress. Gridlock.</p>
+            <p class="text-sm sm:text-base text-slate-700 leading-relaxed mb-7 pl-4 border-l-2 border-blue-200"><strong class="text-slate-900">Doctor City</strong> treats the urban environment as a patient. AI and data identify what's wrong, prescribe evidence-based interventions, and monitor recovery.</p>
 
             <!-- Pipeline — desktop: horizontal, mobile: vertical -->
+            <!-- Pipeline: Slate→Blue gradient dot (larger) -->
             <div class="hidden sm:flex items-start gap-0 mb-8">
-              <div class="flex flex-col items-center flex-1 min-w-0"><div class="pipeline-dot"></div><span class="mt-2 text-sm font-bold text-blue-900 text-center">Sense</span></div>
+              <div class="flex flex-col items-center flex-1 min-w-0"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg"></div><span class="mt-2 text-sm font-bold text-blue-900 text-center">Sense</span></div>
               <div class="pipeline-connector"></div>
-              <div class="flex flex-col items-center flex-1 min-w-0"><div class="pipeline-dot"></div><span class="mt-2 text-sm font-bold text-blue-900 text-center">Diagnose</span></div>
+              <div class="flex flex-col items-center flex-1 min-w-0"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg"></div><span class="mt-2 text-sm font-bold text-blue-900 text-center">Diagnose</span></div>
               <div class="pipeline-connector"></div>
-              <div class="flex flex-col items-center flex-1 min-w-0"><div class="pipeline-dot"></div><span class="mt-2 text-sm font-bold text-blue-900 text-center">Intervene</span></div>
+              <div class="flex flex-col items-center flex-1 min-w-0"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg"></div><span class="mt-2 text-sm font-bold text-blue-900 text-center">Intervene</span></div>
               <div class="pipeline-connector"></div>
-              <div class="flex flex-col items-center flex-1 min-w-0"><div class="pipeline-dot"></div><span class="mt-2 text-sm font-bold text-blue-900 text-center">Promote</span></div>
+              <div class="flex flex-col items-center flex-1 min-w-0"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg"></div><span class="mt-2 text-sm font-bold text-blue-900 text-center">Promote</span></div>
               <div class="pipeline-connector"></div>
-              <div class="flex flex-col items-center flex-1 min-w-0"><div class="pipeline-dot"></div><span class="mt-2 text-sm font-bold text-blue-900 text-center">Grow</span></div>
+              <div class="flex flex-col items-center flex-1 min-w-0"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg"></div><span class="mt-2 text-sm font-bold text-blue-900 text-center">Grow</span></div>
             </div>
+
+            <!-- Mobile vertical (unchanged) -->
             <div class="sm:hidden relative pl-6 mb-8">
               <div class="absolute left-[7px] top-[8px] bottom-[8px] w-0.5 bg-gradient-to-b from-blue-300 to-blue-500"></div>
-              <div class="flex items-center gap-3 py-2"><div class="pipeline-dot absolute left-0"></div><span class="text-xs font-bold text-blue-900">Sense</span></div>
-              <div class="flex items-center gap-3 py-2"><div class="pipeline-dot absolute left-0"></div><span class="text-xs font-bold text-blue-900">Diagnose</span></div>
-              <div class="flex items-center gap-3 py-2"><div class="pipeline-dot absolute left-0"></div><span class="text-xs font-bold text-blue-900">Intervene</span></div>
-              <div class="flex items-center gap-3 py-2"><div class="pipeline-dot absolute left-0"></div><span class="text-xs font-bold text-blue-900">Promote</span></div>
-              <div class="flex items-center gap-3 py-2"><div class="pipeline-dot absolute left-0"></div><span class="text-xs font-bold text-blue-900">Grow</span></div>
+              <div class="flex items-center gap-3 py-2"><div class="w-4 h-4 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg absolute left-0"></div><span class="text-xs font-bold text-blue-900">Sense</span></div>
+              <div class="flex items-center gap-3 py-2"><div class="w-4 h-4 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg absolute left-0"></div><span class="text-xs font-bold text-blue-900">Diagnose</span></div>
+              <div class="flex items-center gap-3 py-2"><div class="w-4 h-4 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg absolute left-0"></div><span class="text-xs font-bold text-blue-900">Intervene</span></div>
+              <div class="flex items-center gap-3 py-2"><div class="w-4 h-4 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg absolute left-0"></div><span class="text-xs font-bold text-blue-900">Promote</span></div>
+              <div class="flex items-center gap-3 py-2"><div class="w-4 h-4 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg absolute left-0"></div><span class="text-xs font-bold text-blue-900">Grow</span></div>
             </div>
 
-            <!-- Research Groups -->
+            <!-- Research Groups (dynamic from JSON) -->
             <h3 class="text-xs sm:text-sm font-bold uppercase tracking-widest text-slate-400 mb-4">Research Groups</h3>
-
-            <a class="grid grid-cols-[64px_1fr] sm:grid-cols-[80px_1fr] items-start gap-4 p-5 border border-slate-200 rounded-xl bg-slate-50 hover:bg-blue-50 hover:border-blue-300 hover:-translate-y-0.5 transition-all no-underline mb-3" href="https://sites.google.com/view/fuscc/home" target="_blank" rel="noopener">
-              <div class="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center bg-white rounded-lg border border-slate-200 p-2 flex-shrink-0"><img class="w-full h-full object-contain" src="assets/images/projects/4.png" alt="Urban@KAIST"></div>
-              <div class="flex flex-col gap-1 flex-1 min-w-0">
-                <span class="text-base sm:text-lg font-bold text-slate-900">Urban@KAIST</span>
-                <span class="text-sm text-slate-500">Urban@KAIST</span>
-                <div class="grid grid-cols-3 max-sm:grid-cols-1 gap-2 mt-2">
-                  <div class="bg-white border border-slate-200 rounded-lg p-2 text-center"><div class="text-[0.6rem] font-bold uppercase tracking-wider text-slate-400 mb-1">Period</div><div class="text-sm font-bold text-blue-900">TBD</div></div>
-                  <div class="bg-white border border-slate-200 rounded-lg p-2 text-center"><div class="text-[0.6rem] font-bold uppercase tracking-wider text-slate-400 mb-1">Funding</div><div class="text-sm font-bold text-blue-900">TBD</div></div>
-                  <div class="bg-white border border-slate-200 rounded-lg p-2 text-center"><div class="text-[0.6rem] font-bold uppercase tracking-wider text-slate-400 mb-1">Sponsor</div><div class="text-sm font-bold text-blue-900">TBD</div></div>
-                </div>
-              </div>
-            </a>
-
-            <a class="grid grid-cols-[64px_1fr] sm:grid-cols-[80px_1fr] items-start gap-4 p-5 border border-slate-200 rounded-xl bg-slate-50 hover:bg-blue-50 hover:border-blue-300 hover:-translate-y-0.5 transition-all no-underline mb-3" href="https://hcfm.kaist.ac.kr" target="_blank" rel="noopener">
-              <div class="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center bg-white rounded-lg border border-slate-200 p-2 flex-shrink-0"><img class="w-full h-full object-contain" src="assets/images/projects/5.png" alt="HcFM"></div>
-              <div class="flex flex-col gap-1 flex-1 min-w-0">
-                <span class="text-base sm:text-lg font-bold text-slate-900">HcFM</span>
-                <span class="text-sm text-slate-500">Human-centered Future Mobility</span>
-                <div class="grid grid-cols-3 max-sm:grid-cols-1 gap-2 mt-2">
-                  <div class="bg-white border border-slate-200 rounded-lg p-2 text-center"><div class="text-[0.6rem] font-bold uppercase tracking-wider text-slate-400 mb-1">Period</div><div class="text-sm font-bold text-blue-900">TBD</div></div>
-                  <div class="bg-white border border-slate-200 rounded-lg p-2 text-center"><div class="text-[0.6rem] font-bold uppercase tracking-wider text-slate-400 mb-1">Funding</div><div class="text-sm font-bold text-blue-900">TBD</div></div>
-                  <div class="bg-white border border-slate-200 rounded-lg p-2 text-center"><div class="text-[0.6rem] font-bold uppercase tracking-wider text-slate-400 mb-1">Sponsor</div><div class="text-sm font-bold text-blue-900">TBD</div></div>
-                </div>
-              </div>
-            </a>
-
-            <a class="grid grid-cols-[64px_1fr] sm:grid-cols-[80px_1fr] items-start gap-4 p-5 border border-slate-200 rounded-xl bg-slate-50 hover:bg-blue-50 hover:border-blue-300 hover:-translate-y-0.5 transition-all no-underline mb-3" href="https://c3.kaist.ac.kr" target="_blank" rel="noopener">
-              <div class="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center bg-white rounded-lg border border-slate-200 p-2 flex-shrink-0"><img class="w-full h-full object-contain" src="assets/images/projects/2.png" alt="KAIST-NYU C3"></div>
-              <div class="flex flex-col gap-1 flex-1 min-w-0">
-                <span class="text-base sm:text-lg font-bold text-slate-900">KAIST-NYU C3</span>
-                <span class="text-sm text-slate-500 break-words">KAIST-NYU Center for Cities and Climate Change</span>
-                <div class="grid grid-cols-3 max-sm:grid-cols-1 gap-2 mt-2">
-                  <div class="bg-white border border-slate-200 rounded-lg p-2 text-center"><div class="text-[0.6rem] font-bold uppercase tracking-wider text-slate-400 mb-1">Period</div><div class="text-sm font-bold text-blue-900">TBD</div></div>
-                  <div class="bg-white border border-slate-200 rounded-lg p-2 text-center"><div class="text-[0.6rem] font-bold uppercase tracking-wider text-slate-400 mb-1">Funding</div><div class="text-sm font-bold text-blue-900">TBD</div></div>
-                  <div class="bg-white border border-slate-200 rounded-lg p-2 text-center"><div class="text-[0.6rem] font-bold uppercase tracking-wider text-slate-400 mb-1">Sponsor</div><div class="text-sm font-bold text-blue-900">TBD</div></div>
-                </div>
-              </div>
-            </a>
+            <div id="drcity-projects"></div>
 
           </div>
         </div>
@@ -195,53 +164,45 @@
 
       <!-- CityFWD.ai -->
       <div class="theme-accordion bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow fade-up fade-up-d4" id="cityfwd">
-        <div class="flex items-center justify-between px-6 sm:px-8 py-6 cursor-pointer select-none hover:bg-slate-50 transition-colors" onclick="toggleAccordion(this)">
-          <span class="text-xl sm:text-2xl font-extrabold text-blue-900 tracking-tight">CityFWD.ai</span>
+        <div class="flex items-center justify-between px-6 sm:px-8 py-6 border-b border-slate-200 cursor-pointer select-none hover:bg-slate-50 transition-colors" onclick="toggleAccordion(this)">
+          <div class="flex flex-col">
+              <span class="text-[0.6rem] sm:text-xs uppercase tracking-[0.25em] font-semibold text-slate-400 mb-3">Cities of Future</span>
+              <span class="text-xl sm:text-2xl font-extrabold text-blue-900 tracking-tight">CityFWD.ai</span>
+            </div>
           <svg class="theme-chevron w-6 h-6 text-slate-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
         </div>
         <div class="theme-accordion-body">
-          <div class="px-6 sm:px-8 pb-8 overflow-x-hidden max-w-full">
-            <p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-7">The greatest urban challenges aren't solved by fixing what's broken — they're solved by imagining what's never been built.<br><strong class="text-slate-900">CityFWD.ai</strong> is greenfield thinking at civilization scale. We design cities from the ground up using technologies not yet in practice, guided by AI that simulates futures before a single foundation is laid.</p>
+          <div class="px-6 sm:px-8 pt-6 pb-8 overflow-x-hidden max-w-full">
+            <p class="text-sm sm:text-base text-slate-500 leading-relaxed mb-4">The greatest urban challenges aren't solved by fixing what's broken — they're solved by imagining what's never been built.</p>
+            <p class="text-sm sm:text-base text-slate-700 leading-relaxed mb-7 pl-4 border-l-2 border-blue-200"><strong class="text-slate-900">CityFWD.ai</strong> is greenfield thinking at civilization scale. We design cities from the ground up using technologies not yet in practice, guided by AI that simulates futures before a single foundation is laid.</p>
 
             <!-- Pipeline — desktop: horizontal, mobile: vertical -->
             <div class="hidden sm:flex items-start gap-0 mb-8">
-              <div class="flex flex-col items-center flex-1 min-w-0"><div class="pipeline-dot"></div><span class="mt-2 text-sm font-bold text-blue-900 text-center">Plan</span></div>
+              <div class="flex flex-col items-center flex-1 min-w-0"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg"></div><span class="mt-2 text-sm font-bold text-blue-900 text-center">Plan</span></div>
               <div class="pipeline-connector"></div>
-              <div class="flex flex-col items-center flex-1 min-w-0"><div class="pipeline-dot"></div><span class="mt-2 text-sm font-bold text-blue-900 text-center">Design</span></div>
+              <div class="flex flex-col items-center flex-1 min-w-0"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg"></div><span class="mt-2 text-sm font-bold text-blue-900 text-center">Design</span></div>
               <div class="pipeline-connector"></div>
-              <div class="flex flex-col items-center flex-1 min-w-0"><div class="pipeline-dot"></div><span class="mt-2 text-sm font-bold text-blue-900 text-center">Build</span></div>
+              <div class="flex flex-col items-center flex-1 min-w-0"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg"></div><span class="mt-2 text-sm font-bold text-blue-900 text-center">Build</span></div>
               <div class="pipeline-connector"></div>
-              <div class="flex flex-col items-center flex-1 min-w-0"><div class="pipeline-dot"></div><span class="mt-2 text-sm font-bold text-blue-900 text-center">Operate</span></div>
+              <div class="flex flex-col items-center flex-1 min-w-0"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg"></div><span class="mt-2 text-sm font-bold text-blue-900 text-center">Operate</span></div>
               <div class="pipeline-connector"></div>
-              <div class="flex flex-col items-center flex-1 min-w-0"><div class="pipeline-dot"></div><span class="mt-2 text-sm font-bold text-blue-900 text-center">Interact</span></div>
+              <div class="flex flex-col items-center flex-1 min-w-0"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg"></div><span class="mt-2 text-sm font-bold text-blue-900 text-center">Interact</span></div>
               <div class="pipeline-connector"></div>
-              <div class="flex flex-col items-center flex-1 min-w-0"><div class="pipeline-dot"></div><span class="mt-2 text-sm font-bold text-blue-900 text-center">Reimagine</span></div>
+              <div class="flex flex-col items-center flex-1 min-w-0"><div class="w-5 h-5 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg"></div><span class="mt-2 text-sm font-bold text-blue-900 text-center">Reimagine</span></div>
             </div>
             <div class="sm:hidden relative pl-6 mb-8">
               <div class="absolute left-[7px] top-[8px] bottom-[8px] w-0.5 bg-gradient-to-b from-blue-300 to-blue-500"></div>
-              <div class="flex items-center gap-3 py-2"><div class="pipeline-dot absolute left-0"></div><span class="text-xs font-bold text-blue-900">Plan</span></div>
-              <div class="flex items-center gap-3 py-2"><div class="pipeline-dot absolute left-0"></div><span class="text-xs font-bold text-blue-900">Design</span></div>
-              <div class="flex items-center gap-3 py-2"><div class="pipeline-dot absolute left-0"></div><span class="text-xs font-bold text-blue-900">Build</span></div>
-              <div class="flex items-center gap-3 py-2"><div class="pipeline-dot absolute left-0"></div><span class="text-xs font-bold text-blue-900">Operate</span></div>
-              <div class="flex items-center gap-3 py-2"><div class="pipeline-dot absolute left-0"></div><span class="text-xs font-bold text-blue-900">Interact</span></div>
-              <div class="flex items-center gap-3 py-2"><div class="pipeline-dot absolute left-0"></div><span class="text-xs font-bold text-blue-900">Reimagine</span></div>
+              <div class="flex items-center gap-3 py-2"><div class="w-4 h-4 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg absolute left-0"></div><span class="text-xs font-bold text-blue-900">Plan</span></div>
+              <div class="flex items-center gap-3 py-2"><div class="w-4 h-4 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg absolute left-0"></div><span class="text-xs font-bold text-blue-900">Design</span></div>
+              <div class="flex items-center gap-3 py-2"><div class="w-4 h-4 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg absolute left-0"></div><span class="text-xs font-bold text-blue-900">Build</span></div>
+              <div class="flex items-center gap-3 py-2"><div class="w-4 h-4 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg absolute left-0"></div><span class="text-xs font-bold text-blue-900">Operate</span></div>
+              <div class="flex items-center gap-3 py-2"><div class="w-4 h-4 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg absolute left-0"></div><span class="text-xs font-bold text-blue-900">Interact</span></div>
+              <div class="flex items-center gap-3 py-2"><div class="w-4 h-4 rounded-full bg-gradient-to-br from-slate-400 to-blue-700 shadow-lg absolute left-0"></div><span class="text-xs font-bold text-blue-900">Reimagine</span></div>
             </div>
 
-            <!-- Research Groups -->
+            <!-- Research Groups (dynamic from JSON) -->
             <h3 class="text-xs sm:text-sm font-bold uppercase tracking-widest text-slate-400 mb-4">Research Groups</h3>
-
-            <a class="grid grid-cols-[64px_1fr] sm:grid-cols-[80px_1fr] items-start gap-4 p-5 border border-slate-200 rounded-xl bg-slate-50 hover:bg-blue-50 hover:border-blue-300 hover:-translate-y-0.5 transition-all no-underline mb-3" href="https://caus.kaist.ac.kr" target="_blank" rel="noopener">
-              <div class="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center bg-white rounded-lg border border-slate-200 p-2 flex-shrink-0"><img class="w-full h-full object-contain" src="assets/images/projects/1.png" alt="CAUS"></div>
-              <div class="flex flex-col gap-1 flex-1 min-w-0">
-                <span class="text-base sm:text-lg font-bold text-slate-900">CAUS</span>
-                <span class="text-sm text-slate-500">Center for Advanced Urban Systems</span>
-                <div class="grid grid-cols-3 max-sm:grid-cols-1 gap-2 mt-2">
-                  <div class="bg-white border border-slate-200 rounded-lg p-2 text-center"><div class="text-[0.6rem] font-bold uppercase tracking-wider text-slate-400 mb-1">Period</div><div class="text-sm font-bold text-blue-900">TBD</div></div>
-                  <div class="bg-white border border-slate-200 rounded-lg p-2 text-center"><div class="text-[0.6rem] font-bold uppercase tracking-wider text-slate-400 mb-1">Funding</div><div class="text-sm font-bold text-blue-900">TBD</div></div>
-                  <div class="bg-white border border-slate-200 rounded-lg p-2 text-center"><div class="text-[0.6rem] font-bold uppercase tracking-wider text-slate-400 mb-1">Sponsor</div><div class="text-sm font-bold text-blue-900">TBD</div></div>
-                </div>
-              </div>
-            </a>
+            <div id="cityfwd-projects"></div>
 
           </div>
         </div>
@@ -271,6 +232,42 @@
         }, 100);
       }
     }
+  })();
+
+  // Load project cards from JSON
+  (async function() {
+    var res = await fetch('data/projectsData.json');
+    var text = await res.text();
+    var clean = text.charCodeAt(0) === 0xFEFF ? text.slice(1) : text;
+    var projects = JSON.parse(clean);
+
+    function renderCard(p) {
+      var img = p.image ? '<div class="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center bg-white rounded-lg border border-slate-200 p-2 flex-shrink-0"><img class="w-full h-full object-contain" src="' + p.image.replace(/^\//, '') + '" alt="' + p.title + '"></div>' : '';
+      var period = p.startYear ? (p.startYear + (p.endYear ? '–' + p.endYear : '–Present')) : '—';
+      var funding = p.funding || '—';
+      var sponsor = p.sponsor || '—';
+      return '<a class="grid grid-cols-[64px_1fr] sm:grid-cols-[80px_1fr] items-start gap-4 p-5 border border-slate-200 rounded-xl bg-slate-50 hover:bg-blue-50 hover:border-blue-300 hover:-translate-y-0.5 transition-all no-underline mb-3" href="' + (p.link || '#') + '" target="_blank" rel="noopener">'
+        + img
+        + '<div class="flex flex-col gap-1 flex-1 min-w-0">'
+        + '<span class="text-base sm:text-lg font-bold text-slate-900">' + p.title + '</span>'
+        + '<span class="text-sm text-slate-500">' + p.fullname + '</span>'
+        + '<div class="grid grid-cols-3 max-sm:grid-cols-1 gap-2 mt-2">'
+        + '<div class="bg-white border border-slate-200 rounded-lg p-2 text-center"><div class="text-[0.6rem] font-bold uppercase tracking-wider text-slate-400 mb-1">Period</div><div class="text-sm font-bold text-blue-900">' + period + '</div></div>'
+        + '<div class="bg-white border border-slate-200 rounded-lg p-2 text-center"><div class="text-[0.6rem] font-bold uppercase tracking-wider text-slate-400 mb-1">Funding</div><div class="text-sm font-bold text-blue-900">' + funding + '</div></div>'
+        + '<div class="bg-white border border-slate-200 rounded-lg p-2 text-center"><div class="text-[0.6rem] font-bold uppercase tracking-wider text-slate-400 mb-1">Sponsor</div><div class="text-sm font-bold text-blue-900">' + sponsor + '</div></div>'
+        + '</div></div></a>';
+    }
+
+    var drcityEl = document.getElementById('drcity-projects');
+    var cityfwdEl = document.getElementById('cityfwd-projects');
+
+    projects.forEach(function(p) {
+      if (p.theme === 'drcity') {
+        drcityEl.innerHTML += renderCard(p);
+      } else if (p.theme === 'cityfwd') {
+        cityfwdEl.innerHTML += renderCard(p);
+      }
+    });
   })();
 
   // Entrance animations

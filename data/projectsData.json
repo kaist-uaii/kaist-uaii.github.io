@@ -1,30 +1,67 @@
-﻿[
+[
   {
-    "id": 1,
-    "title": "CAUS",
-    "image": "/assets/images/projects/1.png",
-    "link": "https://caus.kaist.ac.kr",
-    "type": "external"
+    "id": 3,
+    "title": "BP",
+    "fullname": "Brain Pool Fellowship Program",
+    "image": "/assets/images/projects/kaist_logo.png",
+    "link": "",
+    "type": "external",
+    "startYear": 2025,
+    "endYear": null,
+    "funding": "2.1B KRW",
+    "sponsor": "National Research Foundation",
+    "theme": "drcity"
   },
   {
     "id": 2,
-    "title": "KAIST-NYU C³",
+    "title": "KN-C³",
+    "fullname": "KAIST-NYU Center for Cities and Climate Change",
     "image": "/assets/images/projects/2.png",
     "link": "https://c3.kaist.ac.kr/home",
-    "type": "external"
+    "type": "external",
+    "startYear": 2023,
+    "endYear": null,
+    "funding": "",
+    "sponsor": "KAIST",
+    "theme": "drcity"
+  },
+  {
+    "id": 5,
+    "title": "HcFM",
+    "fullname": "KAIST Global Initiatives on Human-centered Future Mobility",
+    "image": "/assets/images/projects/5.png",
+    "link": "https://hcfm.kaist.ac.kr/",
+    "type": "external",
+    "startYear": 2021,
+    "endYear": null,
+    "funding": "",
+    "sponsor": "KAIST",
+    "theme": "drcity"
   },
   {
     "id": 4,
     "title": "Urban@KAIST",
+    "fullname": "Urban X",
     "image": "/assets/images/projects/4.png",
     "link": "https://sites.google.com/view/fuscc/home",
-    "type": "external"
+    "type": "external",
+    "startYear": 2021,
+    "endYear": null,
+    "funding": "",
+    "sponsor": "KAIST",
+    "theme": "drcity"
   },
   {
-    "id": 5,
-    "title": "Human-centered Future Mobility (HcFM)",
-    "image": "/assets/images/projects/5.png",
-    "link": "https://hcfm.kaist.ac.kr/",
-    "type": "external"
+    "id": 1,
+    "title": "CAUS",
+    "fullname": "Center for Advanced Urban Systems",
+    "image": "/assets/images/projects/1.png",
+    "link": "https://caus.kaist.ac.kr",
+    "type": "external",
+    "startYear": 2024,
+    "endYear": null,
+    "funding": "4B KRW",
+    "sponsor": "GS Engineering & Construction Corp",
+    "theme": "cityfwd"
   }
 ]
