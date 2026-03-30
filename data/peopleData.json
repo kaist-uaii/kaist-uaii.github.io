@@ -33,6 +33,7 @@
       ],
       "photo": "assets/images/people/profile_yoon.jpg",
       "research": "System-of-systems, which includes transportation system, city, logistics system, and public health system.",
+      "keywords": ["Transportation Systems", "Urban Systems", "Urban Data Science", "Urban AI"],
       "projects": [
         "CAUS",
         "BP"
