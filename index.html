@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UAII - Urban AI Institute</title>
-  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="assets_new/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -12,16 +12,7 @@
 <body class="home">
 
   <!-- Navigation -->
-  <div id="navbar" data-section="Urban AI Institute"></div>
-  <!-- <nav class="submenu bg-secondary">
-    <a href="index.html" class="navbar-brand">UAII <span class="navbar-brand-sub">Urban AI Institute</span></a>
-    <ul class="navbar-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="people.html">People</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="engagement.html">Engagement</a></li>
-    </ul>
-  </nav> -->
+  <div id="navbar" data-page="Urban AI Institute"></div>
 
   <!-- Globe background -->
   <div id="landingmap"></div>
@@ -32,12 +23,45 @@
     <!-- Block 1: Hero -->
     <div class="scroll-block" id="block-1">
       <div class="hero-content">
-        <p class="hero-eyebrow">KAIST · Urban AI Institute</p>
-        <p class="hero-uaii">UAII</p>
-        <div class="hero-headline">
-          <p class="hero-line1"><span class="hero-from">From</span> <span class="hero-ui-word">Artificial Intelligence</span> <span class="hero-from">to</span> <span class="hero-ui-word">Urban Intelligence</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        <p class="hero-uaii">Urban AI Institute</p>
+        <div class="types-grid">
+          <div class="cell">
+            <a href="#publications" class="types-cell">
+              <h1 class="countup" data-number="100">0</h1>
+              <h4>Publications</h4>
+            </a>
+          </div>
+          <div class="cell">
+            <a href="projects.html" class="types-cell">
+              <h1 class="countup" data-number="100">0</h1>
+              <h4>Projects</h4>
+            </a>
+          </div>
+          <div class="cell">
+            <a href="#events" class="types-cell">
+              <h1 class="countup" data-number="100">0</h1>
+              <h4>Events</h4>
+            </a>
+          </div>
+          <div class="cell">
+            <a href="#labs" class="types-cell">
+              <h1 class="countup" data-number="100">0</h1>
+              <h4>Labs</h4>
+            </a>
+          </div>
+          <div class="cell">
+            <a href="people.html" class="types-cell">
+              <h1 class="countup" data-number="100">0</h1>
+              <h4>Researchers</h4>
+            </a>
+          </div>
+          <div class="cell">
+            <a href="#partners" class="types-cell">
+              <h1 class="countup" data-number="100">0</h1>
+              <h4>Partners</h4>
+            </a>
+          </div>
         </div>
-        <p class="hero-mission">Reimagining cities as intelligent systems that learn, adapt, and create human and economic value</p>
       </div>
     </div>
 
@@ -50,6 +74,7 @@
             <span class="b2f-word">Artificial<br>Intelligence</span>
             <span class="b2f-prep">to</span>
             <span class="b2f-word b2f-glow">Urban<br>Intelligence</span>
+            <p class="b2f-bottom b2f-bottom-mobile"><em>Reimagining cities as intelligent systems that learn, adapt, and create human and economic value.</em></p>
           </div>
           <div class="b2f-right">
             <p class="ui-line">Artificial Intelligence is transforming the world.<br>We focus on the next frontier — <span class="ui-accent">Urban Intelligence</span>.</p>
@@ -57,33 +82,100 @@
             <p class="ui-line">At <span class="ui-accent">Urban AI Institute</span>, we conduct research and real-world deployment of AI, integrating it into urban systems for sustainable, human-centered innovation.</p>
           </div>
         </div>
-        <p class="b2f-bottom"><em>Reimagining cities as intelligent systems that learn, adapt, and create human and economic value.</em></p>
+        <p class="b2f-bottom b2f-bottom-desktop"><em>Reimagining cities as intelligent systems that learn, adapt, and create human and economic value.</em></p>
       </div>
     </div>
 
-    <!-- Block 3: Stats -->
+    <!-- Block 3: Research Themes -->
     <div class="scroll-block" id="block-3">
-      <div class="stats-wrap">
-        <p class="block-label">UAII Research, at scale</p>
-        <div class="types-grid">
-          <div class="cell">
-            <a href="#publications" class="types-cell">
-              <h1 class="countup" data-number="87">0</h1>
-              <h4>Publications</h4>
-            </a>
-          </div>
-          <div class="cell">
-            <a href="#projects" class="types-cell">
-              <h1 class="countup" data-number="24">0</h1>
-              <h4>Projects</h4>
-            </a>
-          </div>
-          <div class="cell">
-            <a href="#events" class="types-cell">
-              <h1 class="countup" data-number="15">0</h1>
-              <h4>Events</h4>
-            </a>
-          </div>
+      <div class="flex flex-col items-center w-full max-w-6xl mx-auto px-4">
+        <p class="b3-title">Projects</p>
+        <div class="flex flex-col md:flex-row gap-4 md:gap-5 w-full">
+
+          <!-- Dr.City -->
+          <a href="projects.html#drcity" class="b3-card flex-1 flex flex-col rounded-2xl border border-white/15 bg-white/[0.08] p-6 sm:p-10 no-underline text-inherit hover:bg-white/[0.12] hover:border-blue-400/25 hover:shadow-[0_0_30px_rgba(96,165,250,0.12)] transition-all">
+            <div class="b3-card-name-wrap relative text-center mb-6 sm:mb-9">
+              <span class="b3-card-name text-2xl sm:text-3xl md:text-4xl font-extrabold text-blue-300 tracking-tight" style="text-shadow: 0 0 30px rgba(96,165,250,0.5), 0 0 60px rgba(96,165,250,0.2);">Dr.City</span>
+              <svg class="theme-visual ecg-visual absolute left-0 w-full pointer-events-none" style="bottom:-16px;height:40px;" viewBox="0 0 300 40" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="ecg-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="rgba(147,197,253,0)"/>
+                    <stop offset="40%" stop-color="rgba(147,197,253,0.2)"/>
+                    <stop offset="50%" stop-color="rgba(255,255,255,1)"/>
+                    <stop offset="60%" stop-color="rgba(147,197,253,0.2)"/>
+                    <stop offset="100%" stop-color="rgba(147,197,253,0)"/>
+                  </linearGradient>
+                  <mask id="ecg-mask">
+                    <rect class="ecg-glow-rect" x="-80" y="0" width="160" height="40" fill="url(#ecg-glow)"/>
+                  </mask>
+                </defs>
+                <polyline class="ecg-base" points="0,20 263,20 267,2 271,38 275,20 300,20"/>
+                <polyline class="ecg-bright" points="0,20 263,20 267,2 271,38 275,20 300,20" mask="url(#ecg-mask)"/>
+              </svg>
+            </div>
+            <div class="flex flex-wrap xl:flex-nowrap justify-center items-center gap-1 w-full">
+              <span class="text-[0.55rem] sm:text-[0.6rem] md:text-[0.7rem] font-bold text-white uppercase bg-blue-600/40 border border-blue-500/50 rounded-full px-1.5 sm:px-2 md:px-3 py-1 shrink">Sense</span>
+              <span class="text-white/60 text-xs">→</span>
+              <span class="text-[0.55rem] sm:text-[0.6rem] md:text-[0.7rem] font-bold text-white uppercase bg-blue-600/40 border border-blue-500/50 rounded-full px-1.5 sm:px-2 md:px-3 py-1 shrink">Diagnose</span>
+              <span class="text-white/60 text-xs">→</span>
+              <span class="text-[0.55rem] sm:text-[0.6rem] md:text-[0.7rem] font-bold text-white uppercase bg-blue-600/40 border border-blue-500/50 rounded-full px-1.5 sm:px-2 md:px-3 py-1 shrink">Intervene</span>
+              <span class="text-white/60 text-xs">→</span>
+              <span class="text-[0.55rem] sm:text-[0.6rem] md:text-[0.7rem] font-bold text-white uppercase bg-blue-600/40 border border-blue-500/50 rounded-full px-1.5 sm:px-2 md:px-3 py-1 shrink">Promote</span>
+              <span class="text-white/60 text-xs">→</span>
+              <span class="text-[0.55rem] sm:text-[0.6rem] md:text-[0.7rem] font-bold text-white uppercase bg-blue-600/40 border border-blue-500/50 rounded-full px-1.5 sm:px-2 md:px-3 py-1 shrink">Grow</span>
+            </div>
+          </a>
+
+          <!-- CityFWD.ai -->
+          <a href="projects.html#cityfwd" class="b3-card flex-1 flex flex-col rounded-2xl border border-white/15 bg-white/[0.08] p-6 sm:p-10 no-underline text-inherit hover:bg-white/[0.12] hover:border-blue-400/25 hover:shadow-[0_0_30px_rgba(96,165,250,0.12)] transition-all">
+            <div class="b3-card-name-wrap relative text-center mb-6 sm:mb-9">
+              <span class="b3-card-name text-2xl sm:text-3xl md:text-4xl font-extrabold text-blue-300 tracking-tight" style="text-shadow: 0 0 30px rgba(96,165,250,0.5), 0 0 60px rgba(96,165,250,0.2);">CityFWD.ai</span>
+              <svg class="b3-road-line absolute left-0 w-full pointer-events-none" style="bottom:2px;height:4px;" viewBox="0 0 400 4" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="fwd-road-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="rgba(147,197,253,0)"/>
+                    <stop offset="40%" stop-color="rgba(147,197,253,0.3)"/>
+                    <stop offset="50%" stop-color="rgba(255,255,255,1)"/>
+                    <stop offset="60%" stop-color="rgba(147,197,253,0.3)"/>
+                    <stop offset="100%" stop-color="rgba(147,197,253,0)"/>
+                  </linearGradient>
+                  <mask id="fwd-road-mask">
+                    <rect class="fwd-road-glow-rect" x="-107" y="0" width="213" height="4" fill="url(#fwd-road-glow)"/>
+                  </mask>
+                </defs>
+                <line x1="0" y1="2" x2="400" y2="2" class="fwd-road-base"/>
+                <rect x="0" y="1" width="400" height="2" rx="1" class="fwd-road-bright-rect" mask="url(#fwd-road-mask)"/>
+              </svg>
+              <svg class="b3-wheel absolute pointer-events-none" style="right:8%;bottom:4px;width:36px;height:36px;" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                <g transform="translate(20,20)">
+                  <circle cx="0" cy="0" r="18" class="fwd-tyre-ring"/>
+                  <circle cx="0" cy="0" r="11" class="fwd-tyre-inner-line"/>
+                  <g class="fwd-wheel-spin">
+                    <line x1="0" y1="0" x2="0" y2="-10" class="fwd-spoke5"/>
+                    <line x1="0" y1="0" x2="9.5" y2="-3.1" class="fwd-spoke5"/>
+                    <line x1="0" y1="0" x2="5.9" y2="8.1" class="fwd-spoke5"/>
+                    <line x1="0" y1="0" x2="-5.9" y2="8.1" class="fwd-spoke5"/>
+                    <line x1="0" y1="0" x2="-9.5" y2="-3.1" class="fwd-spoke5"/>
+                    <circle cx="0" cy="0" r="2.5" class="fwd-wheel-hub"/>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <div class="flex flex-wrap xl:flex-nowrap justify-center items-center gap-1 w-full">
+              <span class="text-[0.55rem] sm:text-[0.6rem] md:text-[0.7rem] font-bold text-white uppercase bg-blue-600/40 border border-blue-500/50 rounded-full px-1.5 sm:px-2 md:px-3 py-1 shrink">Plan</span>
+              <span class="text-white/60 text-xs">→</span>
+              <span class="text-[0.55rem] sm:text-[0.6rem] md:text-[0.7rem] font-bold text-white uppercase bg-blue-600/40 border border-blue-500/50 rounded-full px-1.5 sm:px-2 md:px-3 py-1 shrink">Design</span>
+              <span class="text-white/60 text-xs">→</span>
+              <span class="text-[0.55rem] sm:text-[0.6rem] md:text-[0.7rem] font-bold text-white uppercase bg-blue-600/40 border border-blue-500/50 rounded-full px-1.5 sm:px-2 md:px-3 py-1 shrink">Build</span>
+              <span class="text-white/60 text-xs">→</span>
+              <span class="text-[0.55rem] sm:text-[0.6rem] md:text-[0.7rem] font-bold text-white uppercase bg-blue-600/40 border border-blue-500/50 rounded-full px-1.5 sm:px-2 md:px-3 py-1 shrink">Operate</span>
+              <span class="text-white/60 text-xs">→</span>
+              <span class="text-[0.55rem] sm:text-[0.6rem] md:text-[0.7rem] font-bold text-white uppercase bg-blue-600/40 border border-blue-500/50 rounded-full px-1.5 sm:px-2 md:px-3 py-1 shrink">Interact</span>
+              <span class="text-white/60 text-xs">→</span>
+              <span class="text-[0.55rem] sm:text-[0.6rem] md:text-[0.7rem] font-bold text-white uppercase bg-blue-600/40 border border-blue-500/50 rounded-full px-1.5 sm:px-2 md:px-3 py-1 shrink">Reimagine</span>
+            </div>
+          </a>
+
         </div>
       </div>
     </div>
