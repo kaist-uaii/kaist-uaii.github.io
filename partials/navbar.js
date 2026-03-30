@@ -80,22 +80,20 @@ function loadNavbar(pageName) {
                 UAII <span id="navbar-page" class="uaii-navbar-brand-sub">${pageName || "Urban AI Institute"}</span>
             </a>
             <ul class="uaii-navbar-links">
-                <li><a href="#about">About</a></li>
                 <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="people.html">People</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="engagement.html">Engagement</a></li>
-                <li><a href="apply.html">Apply</a></li>
             </ul>
             <button id="menuBtn" class="uaii-menu-btn" aria-label="Toggle menu" aria-expanded="false">☰</button>
         </nav>
         <div id="mobileMenu" class="uaii-mobile-menu">
-            <a href="#about">About</a>
             <a href="index.html">Home</a>
+            <a href="#about">About</a>
             <a href="people.html">People</a>
             <a href="projects.html">Projects</a>
-            <a href="engagement.html">Engagement</a>
-            <a href="apply.html">Apply</a>      
+            <a href="engagement.html">Engagement</a>   
         </div>
     `;
 
