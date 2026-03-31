@@ -3,25 +3,13 @@
 
   var blocks = {
     'block-1': [
-      { sel: '.hero-label',   delay: 0   },
-      { sel: '.hero-uaii',    delay: 120 },
-      { sel: '.hero-line1',   delay: 260 },
-      { sel: '.hero-line2',   delay: 380 },
+      { sel: '.hero-uaii',    delay: 0   },
+      { sel: '.cell',         delay: 200, stagger: 80 },
     ],
     'block-2': [
-      { sel: '.b2f-prep:nth-child(1)',    delay: 0   },
-      { sel: '.b2f-word:nth-child(2)',    delay: 120 },
-      { sel: '.b2f-prep:nth-child(3)',    delay: 260 },
-      { sel: '.b2f-word:nth-child(4)',    delay: 380 },
-      { sel: '.b2f-statement',            delay: 480 },
-      { sel: '.ui-line',                  delay: 580, stagger: 120 },
-      { sel: '.b2f-bottom',               delay: 820 },
-    ],
-    'block-3': [
-      { sel: '.block-label',           delay: 0   },
-      { sel: '.cell:nth-child(1)',     delay: 140 },
-      { sel: '.cell:nth-child(2)',     delay: 260 },
-      { sel: '.cell:nth-child(3)',     delay: 380 },
+      { sel: '.b3-title',               delay: 0   },
+      { sel: '.b3-card:nth-child(1)',   delay: 140 },
+      { sel: '.b3-card:nth-child(2)',   delay: 140 },
     ],
   };
 

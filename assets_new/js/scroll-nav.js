@@ -3,7 +3,7 @@
   var scrollEl = document.getElementById('landing');
   if (!scrollEl) return;
 
-  var blockIds = ['block-1', 'block-2', 'block-3'];
+  var blockIds = ['block-1', 'block-2'];
   var currentIndex = 0;
 
   var upBtn = document.getElementById('scroll-up');
