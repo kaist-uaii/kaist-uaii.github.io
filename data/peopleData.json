@@ -21,6 +21,7 @@
       "name": "Yoonjin Yoon",
       "link": "https://sites.google.com/view/yoonjintrue",
       "role": "Kaist Professor",
+      "affiliation": "Civil and Environmental Engineering",
       "email": "yoonjin@kaist.ac.kr",
       "edu": [
         "B.S. Mathematics, SNU",
@@ -55,6 +56,7 @@
       "name": "Sungmin Sohn",
       "link": "https://sites.google.com/view/sungmin-sohn",
       "role": "Ph.D. Candidate",
+      "affiliation": "Civil and Environmental Engineering",
       "from": "2023.09~",
       "email": "smsohn1997@kaist.ac.kr",
       "edu": [
@@ -158,6 +160,7 @@
       "name": "Minseok Jeong",
       "link": "https://dsa950115.github.io",
       "role": "Ph.D. Candidate",
+      "affiliation": "Electrical Engineering",
       "from": "2025.09~",
       "email": "dsa950115@kaist.ac.kr",
       "edu": [
@@ -173,6 +176,7 @@
       "name": "Kwangbin Lee",
       "link": "https://www.linkedin.com/in/kwangbin417",
       "role": "M.S. Candidate",
+      "affiliation": "Electrical Engineering",
       "from": "2025.09~",
       "email": "lkb20015@kaist.ac.kr",
       "edu": [
@@ -185,6 +189,7 @@
       "id": 103,
       "name": "Hayoon Song",
       "role": "M.S. Candidate",
+      "affiliation": "Civil and Environmental Engineering",
       "from": "2025.09~",
       "email": "hayoonsong00@kaist.ac.kr",
       "edu": [
