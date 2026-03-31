@@ -110,6 +110,7 @@
       "link": "https://www.sohyoung-in.com/about-me",
       "lab_link": "https://www.sohyoung-in.com",
       "role": "Kaist Professor",
+      "affiliation": "Civil and Environmental Engineering",
       "email": "si2131@kaist.ac.kr",
       "position": [
         "Assistant Professor in the Department of Civil and Environmental Engineering KAIST",
@@ -125,6 +126,7 @@
       "name": "SooJean Han",
       "link": "http://acss.kaist.ac.kr/#team",
       "role": "Kaist Professor",
+      "affiliation": "Electrical Engineering",
       "email": "si2131@kaist.ac.kr",
       "position": [
         "Assistant professor at School of Electrical Engineering, KAIST",
@@ -207,18 +209,21 @@
     {
       "id": "jiwon-park",
       "name": "Jiwon Park",
+      "affiliation": "Operations Team",
       "projects": [ "CAUS", "BP" ],
       "photo": "assets/images/people/35.JPG"
     },
     {
       "id": "yiseo-yoon",
       "name": "Yiseo Yoon",
+      "affiliation": "Operations Team",
       "projects": [ "CAUS", "BP" ],
       "photo": "assets/images/people/yiseo_yoon.jpg"
     },
     {
       "id": "seyeon-jeong",
       "name": "Seyeon Jeong",
+      "affiliation": "Operations Team",
       "projects": [ "CAUS", "BP" ],
       "photo": "assets/images/people/seyeon_jeong.jpg"
     }
@@ -228,6 +233,8 @@
     {
       "id": "yu-zhang",
       "name": "Yu (April) Zhang",
+      "role": "BP Fellow",
+      "affiliation": "Advanced Air Mobility/CUTR",
       "projects": ["Urban AI Governance", "Digital Twin City"],
       "keywords": ["New Mobility","Advanced Air Mobility/Urban Air Mobility","Air Traffic Management", "Shared Mobility"],
       "link": "https://www.linkedin.com/in/yuyu5460/",
@@ -239,6 +246,8 @@
       "name": "Esther Sekyoung Choi",
       "lab_link": "https://www.sohyoung-in.com",
       "keywords": ["Climate finance", "Nature finance", "Blended finance", "International environmental politics and governance"],
+      "role": "BP Fellow",
+      "affiliation": "World Resources Institute(WRI)",
       "projects": ["Urban AI Governance", "Digital Twin City"],
       "link": "https://www.wri.org/profile/esther-choi",
       "photo": "assets/images/collab/Esther Sekyoug Choi.png"
