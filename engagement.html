@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets_new/css/style.css">
+    <link rel="stylesheet" href="assets_new/css/hero.css">
     <style>
         html, body {
             overflow-x: hidden;
@@ -24,42 +25,7 @@
             z-index: 1;
             min-height: 100vh;
         }
-
-        /* Hero */
-        .engage-hero {
-            padding: calc(var(--nav-header-height, 56px) + 80px) 0 60px;
-            text-align: left;
-            max-width: 1152px;
-            margin: 0 auto;
-            padding-left: 24px;
-            padding-right: 24px;
-        }
-        .engage-hero-eyebrow {
-            font-size: 0.68rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.22em;
-            color: #2563eb;
-            margin-bottom: 20px;
-        }
-        .engage-hero-title {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            font-weight: 800;
-            color: #0f172a;
-            letter-spacing: -1.5px;
-            line-height: 1.05;
-            margin-bottom: 20px;
-        }
-        .engage-hero-sub {
-            font-size: clamp(0.9rem, 1.3vw, 1.05rem);
-            font-weight: 400;
-            color: #64748b;
-            line-height: 1.7;
-            max-width: 560px;
-            padding-top: 16px;
-            border-top: 1px solid #e2e8f0;
-        }
-        .engage-hero-sub .accent { color: #1e3a8a; font-weight: 600; }
+        
 
         /* Stat pills */
         .stat-row {
@@ -211,11 +177,9 @@
 
         <!-- Hero -->
         <header class="engage-hero">
-            <p class="engage-hero-eyebrow fade-up">KAIST · Urban AI Institute</p>
-            <h1 class="engage-hero-title fade-up fade-up-d1">Engagement</h1>
-            <p class="engage-hero-sub fade-up fade-up-d2">
-                News, events, press coverage, and publications from <span class="accent">UAII</span> — tracking our research impact and global partnerships.
-            </p>
+            <p class="page-hero-eyebrow fade-up">KAIST · Urban AI Institute</p>
+            <h1 class="page-hero-title fade-up fade-up-d1">Engagement</h1>
+            <p class="page-hero-sub fade-up fade-up-d2"></p>
             <!-- <div class="stat-row fade-up fade-up-d3">
                 <div class="stat-pill">
                     <span class="stat-num" id="stat-total">—</span>
@@ -441,12 +405,14 @@
             var CHIP_INACTIVE = "border:1px solid #e2e8f0;color:#64748b;background:#ffffff;transition:all 0.2s;";
 
             function buildCategoryChips(categories) {
+                var currentCategory = getActiveCategory();
+                var validCategory = (currentCategory && categories.indexOf(currentCategory) !== -1)
+                    ? currentCategory : "";
                 categoryFiltersEl.innerHTML = "";
                 var allBtn = document.createElement("button");
                 allBtn.type = "button";
                 allBtn.textContent = "All";
                 allBtn.className = "px-3 py-1 rounded-full text-xs font-semibold";
-                allBtn.style.cssText = CHIP_ACTIVE;
                 allBtn.dataset.category = "";
                 categoryFiltersEl.appendChild(allBtn);
 
@@ -456,8 +422,18 @@
                     btn.textContent = cat;
                     btn.dataset.category = cat;
                     btn.className = "px-3 py-1 rounded-full text-xs font-medium";
-                    btn.style.cssText = CHIP_INACTIVE;
                     categoryFiltersEl.appendChild(btn);
+                });
+
+                Array.prototype.forEach.call(categoryFiltersEl.children, function (btn) {
+                    if ((btn.dataset.category || "") === validCategory) {
+                        btn.dataset.active = "true";
+                        btn.className = "px-3 py-1 rounded-full text-xs font-semibold";
+                        btn.style.cssText = CHIP_ACTIVE;
+                    } else {
+                        btn.removeAttribute("data-active");
+                        btn.style.cssText = CHIP_INACTIVE;
+                    }
                 });
             }
 
@@ -478,12 +454,16 @@
                 var sortedYears = Object.keys(years)
                     .map(function (y) { return parseInt(y, 10); })
                     .sort(function (a, b) { return b - a; });
+                var currentYear = yearSelect.value;
+                while (yearSelect.options.length > 1) yearSelect.remove(1);
                 sortedYears.forEach(function (y) {
                     var opt = document.createElement("option");
                     opt.value = String(y);
                     opt.textContent = String(y);
                     yearSelect.appendChild(opt);
                 });
+                yearSelect.value = (currentYear && sortedYears.indexOf(parseInt(currentYear, 10)) !== -1)
+                    ? currentYear : "";
             }
 
             function getActiveCategory() {
@@ -495,6 +475,30 @@
                 var q = (searchInput.value || "").toLowerCase();
                 var year = yearSelect.value;
                 var category = getActiveCategory();
+
+                // Year options: items matching search + category (ignoring year)
+                var yearPool = allEvents.filter(function (ev) {
+                    var matchSearch = !q || [ev.title || "", ev.place || "", ev.desc || ""].join(" ").toLowerCase().indexOf(q) !== -1;
+                    var matchCat = !category || (ev.category || "").toLowerCase() === category.toLowerCase();
+                    return matchSearch && matchCat;
+                });
+                setupYearOptions(yearPool);
+
+                // Category chips: items matching search + year (ignoring category)
+                var catPool = allEvents.filter(function (ev) {
+                    var matchSearch = !q || [ev.title || "", ev.place || "", ev.desc || ""].join(" ").toLowerCase().indexOf(q) !== -1;
+                    var matchYear = !year || (ev.start && String(extractYear(ev.start)) === year);
+                    return matchSearch && matchYear;
+                });
+                var availableCats = catPool.reduce(function (acc, ev) {
+                    if (ev.category && acc.indexOf(ev.category) === -1) acc.push(ev.category);
+                    return acc;
+                }, []).sort();
+                buildCategoryChips(availableCats);
+
+                // Re-read after potential resets caused by rebuilding options
+                year = yearSelect.value;
+                category = getActiveCategory();
 
                 filteredEvents = allEvents.filter(function (ev) {
                     var matchesSearch = true;
@@ -515,7 +519,7 @@
 
                     var matchesCategory = true;
                     if (category) {
-                            matchesCategory = (ev.category || "").toLowerCase() === category.toLowerCase();
+                        matchesCategory = (ev.category || "").toLowerCase() === category.toLowerCase();
                     }
 
                     return matchesSearch && matchesYear && matchesCategory;
@@ -908,25 +912,7 @@
                 }
 
                 updateStats(allEvents);
-                var cats = allEvents.reduce(function(acc, ev) {
-                    if (ev.category && acc.indexOf(ev.category) === -1) acc.push(ev.category);
-                    return acc;
-                }, []).sort();
-                buildCategoryChips(cats);
-                var allBtn = categoryFiltersEl.querySelector("button[data-category='']");
-                if (allBtn) {
-                    allBtn.dataset.active = "true";
-                    allBtn.className = "px-3 py-1 rounded-full text-xs font-semibold";
-                    allBtn.style.cssText = CHIP_ACTIVE;
-                }
-                setupYearOptions(allEvents);
-                filteredEvents = allEvents.slice();
-                filteredEvents.sort(function (a, b) {
-                    var as = a.start || "";
-                    var bs = b.start || "";
-                    return bs.localeCompare(as);
-                });
-                renderList();
+                applyFilters();
             }).catch(function (err) {
                 console.error("Failed to load engagement data", err);
                 eventsListEl.innerHTML =
