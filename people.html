@@ -10,7 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <!-- Sidebar Navigation Import CSS and JS -->
     <link rel="stylesheet" href="partials/scroll-sidebar.css">
+    <link rel="stylesheet" href="assets_new/css/hero.css">
     <script src="partials/scroll-sidebar.js"></script>
+    
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -43,40 +45,7 @@
             background: linear-gradient(to right, #1e3a8a, #3b82f6, transparent);
             border-radius: 2px;
         }
-        /* ── Hero ── */
-        .page-hero {
-            padding: calc(var(--nav-header-height, 56px) + 80px) 0 60px;
-            max-width: 1280px;
-            margin: 0 auto;
-            padding-left: 24px;
-            padding-right: 24px;
-        }
-        .hero-eyebrow {
-            font-size: 0.68rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.22em;
-            color: #2563eb;
-            margin-bottom: 20px;
-        }
-        .hero-title {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            font-weight: 800;
-            color: #0f172a;
-            letter-spacing: -1.5px;
-            line-height: 1.05;
-            margin-bottom: 20px;
-        }
-        .hero-sub {
-            font-size: clamp(0.9rem, 1.3vw, 1.05rem);
-            font-weight: 400;
-            color: #64748b;
-            line-height: 1.7;
-            max-width: 560px;
-            padding-top: 16px;
-            border-top: 1px solid #e2e8f0;
-        }
-        .hero-sub .accent { color: #1e3a8a; font-weight: 600; }
+        
 
          /* ── Section headers ── */
          .section-wrap {
@@ -166,6 +135,19 @@
             border: 1px solid #dbeafe;
             white-space: nowrap;
         }
+        .card-lab-badge {
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.58rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            padding: 2px 8px;
+            background: #eff6ff;
+            color: #424c66;
+            border: 1px solid #dbeafe;
+            white-space: nowrap;
+        }
         .card-from {
             font-size: 0.68rem;
             color: #94a3b8;
@@ -184,6 +166,7 @@
         }
         .card-position {
             display: flex;
+            flex-direction: column;
             align-items: flex-start;
             gap: 6px;
         }
@@ -198,6 +181,12 @@
         .card-position-text {
             font-size: 0.72rem;
             font-weight: 600;
+            color: #64748b;
+            line-height: 1.5;
+        }
+        .card-text {
+            font-size: 0.72rem;
+            font-weight: 400;
             color: #64748b;
             line-height: 1.5;
         }
@@ -276,7 +265,7 @@
             text-transform: uppercase;
             letter-spacing: 0.18em;
             color: #94a3b8;
-            margin-bottom: 4px;
+            margin-bottom: 2px;
             margin-top: 8px;
         }
         .card-section-label:first-child { margin-top: 0; }
@@ -284,6 +273,7 @@
             background: #f0fdf4;
             color: #166534;
             border: 1px solid #bbf7d0;
+            border-radius: 0px;
         }
 
         /* ── People grid: 2 → 3 → 4 → 5 cols ── */
@@ -409,6 +399,55 @@
             }
         }
 
+        /* ── Mobile / touch responsive ── */
+        @media (max-width: 639px) {
+            .section-wrap {
+                padding-left: 16px;
+                padding-right: 16px;
+                padding-bottom: 40px;
+            }
+            /* 1-col on very small phones */
+            .people-grid {
+                grid-template-columns: repeat(1, 1fr);
+                gap: 10px;
+            }
+        }
+
+        /* Right-side breathing room so the sidebar trigger doesn't cover content */
+        @media (max-width: 1439px) {
+            .section-wrap { padding-right: max(44px, 3vw); }
+        }
+
+        /* Disable hover-lift on touch devices (prevents "stuck" state) */
+        @media (hover: none) {
+            .member-card:hover {
+                transform: none;
+                border-color: #e2e8f0;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            }
+            .member-card:hover .card-expand-chevron { color: #cbd5e1; }
+        }
+
+        /* Larger tap target for expand strip */
+        .card-expand-tab { min-height: 36px; }
+
+        /* Sidebar open via tap (JS toggles .sidebar-open on the container) */
+        @media (max-width: 1439px) {
+            .sidebar-container.sidebar-open .sidebar {
+                opacity: 0.97;
+                transform: translateX(0) translateY(-50%);
+                pointer-events: all;
+            }
+            .sidebar-container.sidebar-open .sidebar-trigger {
+                background: rgba(96, 100, 133, 0.95);
+                width: 36px;
+            }
+            .sidebar-container.sidebar-open .sidebar-trigger svg {
+                transform: rotate(180deg);
+                color: #bcd0fd;
+            }
+        }
+
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
@@ -466,8 +505,8 @@
     
             <!-- Hero -->
             <header class="page-hero">
-                <p class="hero-eyebrow fade-up">KAIST · Urban AI Institute</p>
-                <h1 class="hero-title fade-up fade-up-d1">People</h1>
+                <p class="page-hero-eyebrow fade-up">KAIST · Urban AI Institute</p>
+                <h1 class="page-hero-title fade-up fade-up-d1">People</h1>
             </header>
 
             <!-- Participants Section -->
@@ -485,8 +524,7 @@
                 <h2 class="section-title">Alumni</h2>
                 <div class="section-divider"></div>
                 <div class="space-y-24">
-                    <div class="people-grid" id="alumni-phd-grid"></div>
-                    <div class="people-grid" id="alumni-ms-grid"></div>
+                    <div class="people-grid" id="alumni-grid"></div>
                 </div>
             </section>
 
@@ -602,19 +640,21 @@
 
                         const projectsAttr = (person.projects || []).map(p => p.toLowerCase()).join(' ');
 
-                        const hasCardBody = posLine || kws.length || (person.projects && person.projects.length);
+                        const hasCardBody = kws.length || (person.projects && person.projects.length);
 
                         const card = document.createElement('div');
                         card.className = 'member-card person-card';
                         card.setAttribute('data-projects', projectsAttr);
+                        card.setAttribute('data-expandable', hasCardBody ? 'true' : 'false');
 
                         card.innerHTML = `
-                            <div class="card-header" onclick="this.closest('.member-card').classList.toggle('expanded')">
+                            <div class="card-header" ${hasCardBody ? `onclick="this.closest('.member-card').classList.toggle('expanded')"` : ''} ${hasCardBody ? '' : 'style="cursor:default;"'}>
                                 <img class="card-photo" src="${imgSrc}" alt="${person.name}" loading="lazy"
                                      onload="this.classList.add('loaded')"
                                      onerror="this.classList.add('loaded');this.src='${PLACEHOLDER}'">
                                 <div class="card-name">${person.name}</div>
-                                ${person.role ? `<span class="card-role-badge">${person.role}</span>` : ''}
+                                <!-- ${person.role ? `<span class="card-role-badge">${person.role}</span>` : ''} -->
+                                ${person.current ? `<span class="card-position-text">${person.current}</span>` : ''}
                                 <div class="card-expand-tab">
                                     <span class="expand-line"></span>
                                     ${hasCardBody ? `<svg class="card-expand-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -626,7 +666,7 @@
                             <div class="card-body">
                                 ${posLine ? `
                                 <div class="card-position">
-                                    <!-- <p class="card-section-label">Current Position</p> -->
+                                    <p class="card-section-label">Current Position</p>
                                     <span class="card-position-text">${posLine}</span>
                                 </div>` : ''}
                                 ${kws.length ? `
@@ -638,6 +678,11 @@
                                 <div class="card-keywords">
                                     ${person.projects.map(p => `<span class="card-keyword-tag card-project-tag">${p}</span>`).join('')}
                                 </div>` : ''}
+                                ${person.lab && person.labFull ? `<p class="card-section-label">Lab</p>
+                                <div class="card-keywords">
+                                    ${person.lab ? `<span class="card-lab-badge">${person.lab}</span>` : ''}
+                                    <span class="card-text">${person.labFull}</span>
+                                </div>` : ''}
                             </div>
                             ${(person.email || person.link) ? `<div class="card-footer">
                                 ${person.email ? `<button class="card-link-btn" onclick="copyEmail('${person.email.replace(/'/g, "\\'")}')">
@@ -645,7 +690,7 @@
                                     Email</button>` : ''}
                                 ${person.link ? `<a class="card-link-btn" href="${person.link}" target="_blank" rel="noopener">
                                     <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                                    Profile</a>` : ''}
+                                    Personal Page</a>` : ''}
                             </div>` : ''}
                         `;
 
@@ -772,18 +817,12 @@
 
 
                         // -- alumni grid --
-                        const phdGrid = document.getElementById('alumni-phd-grid');
-                        const msGrid = document.getElementById('alumni-ms-grid');
-
-                        const ms = [];
-                        const phd = [];
+                        const alumniGrid = document.getElementById('alumni-grid');
+                        const alumni = [];
 
                         function pushAlumni(arr, sourceLabel) {
                             if (!Array.isArray(arr)) return;
-                            arr.forEach(p => {
-                                if (p.degree === 'M.S.') ms.push({ ...p, sourceLabel });
-                                else phd.push({ ...p, sourceLabel });
-                            });
+                            arr.forEach(a => alumni.push({ ...a, sourceLabel }));
                         }
 
                         // Alumni: createPersonCard 포맷에 맞춰 보정
@@ -796,21 +835,13 @@
                             photo: a.photo || ""
                         })), "Alumni");
 
-                        ms.sort(sortByLastName);
-                        phd.sort(sortByLastName);
+                        alumni.sort(sortByLastName);
 
-                        if (msGrid) {
-                            msGrid.innerHTML = "";
-                            ms.forEach(p => {
-                                const card = createPersonCard(p, { imgIdPrefix: 'alumni-ms' });
-                                msGrid.appendChild(card);
-                            });
-                        }
-                        if (phdGrid) {
-                            phdGrid.innerHTML = "";
-                            phd.forEach(p => {
-                                const card = createPersonCard(p, { imgIdPrefix: 'alumni-phd' });
-                                phdGrid.appendChild(card);
+                        if (alumniGrid) {
+                            alumniGrid.innerHTML = "";
+                            alumni.forEach(p => {
+                                const card = createPersonCard(p, { imgIdPrefix: 'alumni' });
+                                alumniGrid.appendChild(card);
                             });
                         }
 
@@ -895,7 +926,9 @@
                     if (expandAllBtn) {
                         expandAllBtn.addEventListener('click', function() {
                             document.querySelectorAll('.person-card').forEach(function(card) {
-                                card.classList.add('expanded');
+                                if (card.getAttribute('data-expandable') === 'true') {
+                                    card.classList.add('expanded');
+                                }
                             });
                             requestAnimationFrame(normalizeExpandedCardHeights);
                         });
@@ -914,6 +947,22 @@
                     document.body.innerHTML = '<div style="padding: 2rem; text-align: center;"><h1>Error loading page data</h1><p>Please check the console for details.</p></div>';
                 }
             })();
+            // Make sidebar trigger tappable on touch / mobile
+            (function() {
+                var trigger   = document.querySelector('.sidebar-trigger');
+                var container = document.querySelector('.sidebar-container');
+                if (!trigger || !container) return;
+                trigger.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    container.classList.toggle('sidebar-open');
+                });
+                document.addEventListener('click', function(e) {
+                    if (!container.contains(e.target)) {
+                        container.classList.remove('sidebar-open');
+                    }
+                });
+            })();
+
             // Sidebar navigation functionality
             (async () => {
                 const sidebarSlot = document.getElementById("scroll-sidebar-slot");
