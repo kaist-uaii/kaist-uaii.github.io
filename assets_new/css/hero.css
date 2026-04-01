@@ -1,0 +1,60 @@
+/* Hero */
+.engage-hero {
+    padding: calc(var(--nav-header-height, 56px) + 80px) 0 60px;
+    text-align: left;
+    max-width: 1152px;
+    margin: 0 auto;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.page-hero {
+    padding: calc(var(--nav-header-height, 56px) + 80px) 0 60px;
+    text-align: left;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+.page-hero-eyebrow {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: #2563eb;
+    margin-bottom: 20px;
+}
+.page-hero-title {
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    font-weight: 750;
+    color: #0f172a;
+    letter-spacing: -1.5px;
+    line-height: 1.05;
+    margin-bottom: 20px;
+}
+.page-hero-sub {
+    font-size: clamp(0.9rem, 1.3vw, 1.05rem);
+    font-weight: 400;
+    color: #64748b;
+    line-height: 1.7;
+    max-width: 560px;
+    padding-top: 16px;
+    border-top: 1px solid #e2e8f0;
+}
+.page-hero-sub .accent { color: #1e3a8a; font-weight: 600; }
+
+/* ── Mobile / touch responsive ── */
+/* Tighter hero on phones */
+@media (max-width: 639px) {
+    .page-hero {
+        padding-top: calc(var(--nav-header-height, 56px) + 32px);
+        padding-bottom: 28px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .hero-title { letter-spacing: -0.5px; }
+}
+/* Right-side breathing room so the sidebar trigger doesn't cover content */
+@media (max-width: 1439px) {
+    .page-hero   { padding-right: max(44px, 3vw); }
+}
