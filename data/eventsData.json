@@ -32,7 +32,7 @@
   {
     "id": "20251103",
     "title": "Presentation at ACM SIGSPATIAL",
-    "category": "workshop",
+    "category": "conference",
     "start": "2025-11-03",
     "end": "2025-11-06",
     "place": "Minneapolis, Minnesota",
@@ -60,7 +60,7 @@
   {
     "id": "20251019",
     "title": "Presentation at ICCV 2025",
-    "category": "workshop",
+    "category": "conference",
     "start": "2025-10-10",
     "end": "2025-10-23",
     "place": "Honolulu, Hawaii",
