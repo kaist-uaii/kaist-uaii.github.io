@@ -4,18 +4,18 @@
     "title": "BP",
     "fullname": "Brain Pool Fellowship Program",
     "image": "/assets/images/projects/kaist_logo.png",
-    "link": "",
+    "link": "projects-bp.html",
     "type": "external",
     "startYear": 2025,
     "endYear": null,
     "funding": "2.1B KRW",
-    "sponsor": "National Research Foundation",
+    "sponsor": "NRF",
     "theme": "drcity"
   },
   {
     "id": 4,
     "title": "Urban@KAIST",
-    "fullname": "Urban X",
+    "fullname": "Urban X Seminar Series",
     "image": "/assets/images/projects/4.png",
     "link": "https://sites.google.com/view/fuscc/home",
     "type": "external",
@@ -23,6 +23,32 @@
     "endYear": null,
     "funding": "",
     "sponsor": "KAIST",
+    "theme": "drcity"
+  },
+  {
+    "id": 7,
+    "title": "",
+    "fullname": "Urban Heat, Urban Sales",
+    "image": "/assets/images/projects/saif.png",
+    "link": "",
+    "type": "external",
+    "startYear": 2025,
+    "endYear": 2025,
+    "funding": "",
+    "sponsor": "Seoul AI Foundation",
+    "theme": "drcity"
+  },
+  {
+    "id": 8,
+    "title": "",
+    "fullname": "Healing Nature",
+    "image": "/assets/images/projects/saif.png",
+    "link": "",
+    "type": "external",
+    "startYear": 2025,
+    "endYear": 2025,
+    "funding": "",
+    "sponsor": "Seoul AI Foundation",
     "theme": "drcity"
   },
   {
@@ -52,6 +78,19 @@
     "theme": "drcity"
   },
   {
+    "id": 6,
+    "title": "",
+    "fullname": "Attention based Graph Neural Network Models for Urban Mobility Network Analysis and Prediction",
+    "image": "/assets/images/projects/kaist_logo.png",
+    "link": "",
+    "type": "external",
+    "startYear": 2021,
+    "endYear": 2024,
+    "funding": "",
+    "sponsor": "BRL",
+    "theme": "drcity"
+  },
+  {
     "id": 1,
     "title": "CAUS",
     "fullname": "Center for Advanced Urban Systems",
@@ -61,7 +100,7 @@
     "startYear": 2024,
     "endYear": null,
     "funding": "4B KRW",
-    "sponsor": "GS Engineering & Construction Corp",
+    "sponsor": "GS E&C",
     "theme": "cityfwd"
   }
 ]
