@@ -1,10 +1,9 @@
-[
+﻿[
   {
     "id": 3,
-    "title": "BP",
     "fullname": "Brain Pool Fellowship Program",
     "image": "/assets/images/projects/kaist_logo.png",
-    "link": "projects-bp.html",
+    "link": "./projects-bp.html",
     "type": "external",
     "startYear": 2025,
     "endYear": null,
@@ -14,8 +13,7 @@
   },
   {
     "id": 4,
-    "title": "Urban@KAIST",
-    "fullname": "Urban X Seminar Series",
+    "fullname": "Urban@KAIST",
     "image": "/assets/images/projects/4.png",
     "link": "https://sites.google.com/view/fuscc/home",
     "type": "external",
@@ -30,8 +28,8 @@
     "title": "",
     "fullname": "Urban Heat, Urban Sales",
     "image": "/assets/images/projects/saif.png",
-    "link": "",
-    "type": "external",
+    
+    
     "startYear": 2025,
     "endYear": 2025,
     "funding": "",
@@ -43,8 +41,8 @@
     "title": "",
     "fullname": "Healing Nature",
     "image": "/assets/images/projects/saif.png",
-    "link": "",
-    "type": "external",
+    
+    
     "startYear": 2025,
     "endYear": 2025,
     "funding": "",
@@ -87,7 +85,7 @@
     "startYear": 2021,
     "endYear": 2024,
     "funding": "",
-    "sponsor": "BRL",
+    "sponsor": "NRF",
     "theme": "drcity"
   },
   {

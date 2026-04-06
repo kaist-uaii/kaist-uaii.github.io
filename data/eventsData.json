@@ -698,5 +698,192 @@
     "youtube": "https://www.youtube-nocookie.com/embed/CZH92bvJwcc?si=S_MLoFMdZHeAwd1A",
     "speaker": "Prof. Jihee Kim",
     "time": "10:00 am KST"
+  },
+  {
+    "id": "20241108-korms-1",
+    "title": "KORMS Annual Fall Conference",
+    "category": "conference",
+    "start": "2024-11-08",
+    "end": "",
+    "place": "Goyang, Korea",
+    "participants": "Jungchan Ahn, 이지수, Taesik Lee",
+    "keyword": [
+      "Conference",
+      "KORMS"
+    ],
+    "desc": "Conference presentation at the KORMS Annual Fall Conference.",
+    "photos": [],
+    "links": [],
+    "time": ""
+  },
+  {
+    "id": "20241108-korms-special",
+    "title": "2024 한국경영과학회 추계학술대회",
+    "category": "conference",
+    "start": "2024-11-08",
+    "end": "",
+    "place": "",
+    "participants": "Youngjun Park, Jihye Na, Keonhee Jang, Changhyun Kwon",
+    "keyword": [
+      "Conference",
+      "Special Session"
+    ],
+    "desc": "Conference presentation in a special session at the 2024 한국경영과학회 추계학술대회.",
+    "photos": [],
+    "links": [],
+    "time": ""
+  },
+  {
+    "id": "20250519-tsl-workshop",
+    "title": "TSL 2025 Workshop",
+    "category": "workshop",
+    "start": "2025-05-19",
+    "end": "2025-05-21",
+    "place": "",
+    "participants": "Taeyoung Yun, Yujin Shin, Inhyuck Song, and Jinkyoo Park",
+    "keyword": [
+      "Workshop",
+      "TSL 2025"
+    ],
+    "desc": "Workshop presentation at TSL 2025 Workshop.",
+    "photos": [],
+    "links": [],
+    "time": ""
+  },
+  {
+    "id": "20251107-kiie",
+    "title": "2025 KIIE Annual Fall Conference",
+    "category": "conference",
+    "start": "2025-11-07",
+    "end": "",
+    "place": "Daejeon, Korea",
+    "participants": "Jungchan Ahn, 이지수, Taesik Lee",
+    "keyword": [
+      "Conference",
+      "KIIE"
+    ],
+    "desc": "Conference presentation at the 2025 KIIE Annual Fall Conference.",
+    "photos": [],
+    "links": [],
+    "time": ""
+  },
+  {
+    "id": "20251206-neurips-workshop",
+    "title": "2025 NeurIPS Workshop on Differentiable Learning of Combinatorial Algorithms",
+    "category": "workshop",
+    "start": "2025-12-06",
+    "end": "",
+    "place": "",
+    "participants": "Waquar Kaleem, 이도영, Changhyun Kwon, Anirudh Subramanyam",
+    "keyword": [
+      "Workshop",
+      "NeurIPS"
+    ],
+    "desc": "Workshop presentation at the 2025 NeurIPS Workshop on Differentiable Learning of Combinatorial Algorithms.",
+    "photos": [],
+    "links": [],
+    "time": ""
+  },
+  {
+    "id": "20260212-caus-monthly-meeting",
+    "title": "CAUS Monthly Meeting",
+    "category": "meeting",
+    "start": "2026-02-12",
+    "end": "",
+    "place": "",
+    "participants": "",
+    "keyword": [
+      "CAUS",
+      "Meeting"
+    ],
+    "desc": "",
+    "photos": [],
+    "links": [],
+    "time": ""
+  },
+  {
+    "id": "20250820-caus-monthly-meeting",
+    "title": "CAUS Monthly Meeting",
+    "category": "meeting",
+    "start": "2025-08-20",
+    "end": "",
+    "place": "",
+    "participants": "",
+    "keyword": [
+      "CAUS",
+      "Meeting"
+    ],
+    "desc": "",
+    "photos": [],
+    "links": [],
+    "time": ""
+  },
+  {
+    "id": "20250918-caus-monthly-meeting",
+    "title": "CAUS Monthly Meeting",
+    "category": "meeting",
+    "start": "2025-09-18",
+    "end": "",
+    "place": "",
+    "participants": "",
+    "keyword": [
+      "CAUS",
+      "Meeting"
+    ],
+    "desc": "",
+    "photos": [],
+    "links": [],
+    "time": ""
+  },
+  {
+    "id": "20251016-caus-monthly-meeting",
+    "title": "CAUS Monthly Meeting",
+    "category": "meeting",
+    "start": "2025-10-16",
+    "end": "",
+    "place": "",
+    "participants": "",
+    "keyword": [
+      "CAUS",
+      "Meeting"
+    ],
+    "desc": "",
+    "photos": [],
+    "links": [],
+    "time": ""
+  },
+  {
+    "id": "20251120-caus-monthly-meeting",
+    "title": "CAUS Monthly Meeting",
+    "category": "meeting",
+    "start": "2025-11-20",
+    "end": "",
+    "place": "",
+    "participants": "",
+    "keyword": [
+      "CAUS",
+      "Meeting"
+    ],
+    "desc": "",
+    "photos": [],
+    "links": [],
+    "time": ""
+  },
+  {
+    "id": "20251211-caus-monthly-meeting",
+    "title": "CAUS Monthly Meeting",
+    "category": "meeting",
+    "start": "2025-12-11",
+    "end": "",
+    "place": "",
+    "participants": "",
+    "keyword": [
+      "CAUS",
+      "Meeting"
+    ],
+    "desc": "",
+    "photos": [],
+    "links": [],
+    "time": ""
   }
 ]

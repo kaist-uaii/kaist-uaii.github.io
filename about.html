@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -110,6 +110,7 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
+      gap: 8px;
       padding: 0 48px 0 0;
       border-right: 1px solid #e2e8f0;
     }
@@ -117,6 +118,7 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
+      gap: 8px;
       padding: 0 0 0 48px;
     }
     .ui-prep {
@@ -129,20 +131,20 @@
       line-height: 1;
     }
     .ui-word {
-      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-size: clamp(1.95rem, 3.5vw, 3rem);
       font-weight: 800;
       color: #0f172a;
       letter-spacing: -1.5px;
       line-height: 1.05;
-      margin-top: -0.18em;
+      margin-top: 0;
     }
     .ui-word-accent {
-      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-size: clamp(1.95rem, 3.5vw, 3rem);
       font-weight: 800;
       color: #2563eb;
       letter-spacing: -1.5px;
       line-height: 1.05;
-      margin-top: -0.18em;
+      margin-top: 0;
     }
     .ui-desc {
       border-top: 1px solid #e2e8f0;
@@ -152,7 +154,7 @@
       gap: 32px;
     }
     .ui-para {
-      font-size: 0.92rem;
+      font-size: 1.08rem;
       color: #475569;
       line-height: 1.85;
     }
@@ -161,7 +163,9 @@
     /* ════════════════════════════════
        SECTION 3 · INSTITUTE STRUCTURE
     ════════════════════════════════ */
-    .structure-section {}
+    .structure-section {
+      padding-bottom: 56px;
+    }
 
     /* · Org Chart · */
     .org-tree {
@@ -306,8 +310,8 @@
       padding-left: 20px;
       margin: 0;
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px 32px;
+      grid-template-columns: 1fr;
+      gap: 12px;
     }
     .structure-list li {
       color: #0f172a;
@@ -396,7 +400,7 @@
     .career-inner {
       max-width: 1152px;
       margin: 0 auto;
-      padding: 96px 24px;
+      padding: 56px 24px 96px;
     }
     .career-body {
       display: grid;
@@ -540,7 +544,7 @@
     }
     .contact-inner .section-eyebrow { color: #60a5fa; }
     .contact-title {
-      font-size: clamp(3rem, 8vw, 6rem);
+      font-size: clamp(2.4rem, 6vw, 4.8rem);
       font-weight: 800;
       color: #f1f5f9;
       letter-spacing: -2px;
@@ -614,11 +618,16 @@
     }
     .contact-info-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 24px;
     }
-    @media (max-width: 768px) {
-      .contact-info-grid { grid-template-columns: 1fr; }
+    .contact-channel-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+    @media (max-width: 900px) {
+      .contact-channel-grid { grid-template-columns: 1fr; }
     }
 
     /* ── Footer ── */
@@ -719,11 +728,13 @@
       .career-body { grid-template-columns: 1fr; gap: 36px; }
       .career-opening-card { flex-direction: column; align-items: flex-start; }
       /* Contact */
-      .contact-title { font-size: clamp(2.8rem, 12vw, 5rem); letter-spacing: -1px; }
+      .contact-title { font-size: clamp(2.3rem, 10vw, 4rem); letter-spacing: -1px; }
       /* Intro */
       .intro-section { padding: 0 0 64px; }
       .about-section { padding: 64px 0; }
+      .structure-section { padding-bottom: 40px; }
       .ui-inner, .career-inner, .contact-inner { padding: 64px 20px; }
+      .career-inner { padding: 40px 20px 64px; }
       .about-container { padding-left: 20px; padding-right: 20px; }
       .structure-card { padding: 24px; }
       .structure-list { grid-template-columns: 1fr; }
@@ -821,16 +832,15 @@
         <!-- ·· ORG CHART (PC: 가로 / Mobile: 세로) ·· -->
         <div class="structure-card fade-up fade-up-d2">
           <div class="structure-root">KAIST · Urban AI Institute (UAII)</div>
-          <p class="structure-desc">
-            UAII is organized as a network of research programs and initiatives spanning urban systems, AI, mobility, and future city experimentation.
-          </p>
           <ul class="structure-list">
-            <li>CAUS</li>
-            <li>BP</li>
-            <li>SAIF</li>
+            <li>Center for Advanced Urban Systems(CAUS)</li>
+            <li>Brain Pool Fellowship Program</li>
             <li>Urban@KAIST</li>
-            <li>HcFM</li>
-            <li>KN C3</li>
+            <li>Urban Heat, Urban Sales</li>
+            <li>Healing Nature</li>
+            <li>KAIST-NYU Center for Cities and Climate Change(KN-C³)</li>
+            <li>KAIST Global Initiatives on Human-centered Future Mobility(HcFM)</li>
+            <li>Attention based Graph Neural Network Models for Urban Mobility Network Analysis and Prediction</li>
           </ul>
         </div>
 
@@ -899,24 +909,10 @@
               <div class="career-openings-list">
                 <div class="career-opening-card">
                   <div class="career-opening-meta">
-                    <div class="career-opening-role">Graduate Students</div>
-                    <div class="career-opening-note">Prospective M.S. and Ph.D. students interested in Urban AI, mobility, data science, and intelligent infrastructure.</div>
-                  </div>
-                  <a href="apply-students.html" class="career-opening-link">View</a>
-                </div>
-                <div class="career-opening-card">
-                  <div class="career-opening-meta">
                     <div class="career-opening-role">Postdoctoral Researchers</div>
                     <div class="career-opening-note">Research-focused positions for candidates with strong publication records and interests aligned with UAII programs.</div>
                   </div>
                   <a href="apply-postdoc.html" class="career-opening-link">View</a>
-                </div>
-                <div class="career-opening-card">
-                  <div class="career-opening-meta">
-                    <div class="career-opening-role">Research Interns</div>
-                    <div class="career-opening-note">Short-term research opportunities for students who want to contribute to active projects and workshops.</div>
-                  </div>
-                  <a href="apply-internships.html" class="career-opening-link">View</a>
                 </div>
               </div>
             </div>
@@ -961,17 +957,34 @@
               </span>
             </div>
           </div>
-          <div class="contact-block">
-            <div class="contact-block-label">Email</div>
-            <div class="contact-item" style="margin-bottom:0;">
-              <span class="contact-item-icon">✉️</span>
-              <span class="contact-item-text">
-                <a href="mailto:urban@kaist.ac.kr">urban@kaist.ac.kr</a>
-                <span class="contact-links">
-                  <a class="contact-link-pill" href="https://www.youtube.com/@KUAI-pw2dm" target="_blank" rel="noopener noreferrer">youtube</a>
-                  <a class="contact-link-pill" href="https://www.linkedin.com/company/center-for-city-learning-ai-research/" target="_blank" rel="noopener noreferrer">linkedin</a>
+
+          <div class="contact-channel-grid">
+            <div class="contact-block">
+              <div class="contact-block-label">Email</div>
+              <div class="contact-item" style="margin-bottom:0;">
+                <span class="contact-item-icon">✉️</span>
+                <span class="contact-item-text">
+                  <a href="mailto:urban@kaist.ac.kr">urban@kaist.ac.kr</a>
                 </span>
-              </span>
+              </div>
+            </div>
+            <div class="contact-block">
+              <div class="contact-block-label">Youtube</div>
+              <div class="contact-item" style="margin-bottom:0;">
+                <span class="contact-item-icon">▶</span>
+                <span class="contact-item-text">
+                  <a href="https://www.youtube.com/@KUAI-pw2dm" target="_blank" rel="noopener noreferrer">youtube</a>
+                </span>
+              </div>
+            </div>
+            <div class="contact-block">
+              <div class="contact-block-label">LinkedIn</div>
+              <div class="contact-item" style="margin-bottom:0;">
+                <span class="contact-item-icon">in</span>
+                <span class="contact-item-text">
+                  <a href="https://www.linkedin.com/company/center-for-city-learning-ai-research/" target="_blank" rel="noopener noreferrer">linkedin</a>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -981,7 +994,7 @@
 
     <!-- Footer -->
     <footer class="about-footer">
-      <p>© 2025 KAIST Urban AI Institute · Daejeon, Republic of Korea</p>
+      <p>© 2026 Urban AI Institute · Daejeon, Republic of Korea</p>
     </footer>
 
   </div><!-- end page-scroll -->
