@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets_new/css/style.css">
+    <link rel="stylesheet" href="assets_new/css/hero.css">
     <style>
         html, body {
             overflow-x: hidden;
@@ -285,38 +286,54 @@
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
         ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
         @media (max-width: 900px) {
             .featured-notice-card {
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Photo hover zoom popup */
+        #photo-zoom {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            pointer-events: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.22), 0 0 0 1px rgba(0,0,0,0.06);
+            max-width: 360px;
+            max-height: 280px;
+            background: #f1f5f9;
+            transition: opacity 0.15s ease;
+        }
+        #photo-zoom img {
+            display: block;
+            max-width: 360px;
+            max-height: 280px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+
+        }
     </style>
 </head>
 <body>
+    <!-- Photo zoom popup -->
+    <div id="photo-zoom"><img id="photo-zoom-img" src="" alt=""></div>
+
     <!-- Navigation -->
-    <div id="navbar" data-section="Urban AI Institute"></div>
-    <!-- <nav class="submenu bg-secondary">
-        <a href="index.html" class="navbar-brand">UAII <span class="navbar-brand-sub">Urban AI Institute</span></a>
-        <ul class="navbar-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="people.html">People</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="engagement.html" class="active">Engagement</a></li>
-        </ul>
-    </nav> -->
+    <div id="navbar" data-page="Engagement"></div>
 
     <!-- Scrollable page content -->
     <div class="page-scroll">
 
         <!-- Hero -->
         <header class="engage-hero">
-            <p class="engage-hero-eyebrow fade-up">KAIST · Urban AI Institute</p>
-            <h1 class="engage-hero-title fade-up fade-up-d1">Engagement</h1>
-            <p class="engage-hero-sub fade-up fade-up-d2">
-                News, events, press coverage, and publications from <span class="accent">UAII</span> — tracking our research impact and global partnerships.
-            </p>
-<!-- stats
-            <div class="stat-row fade-up fade-up-d3">
+            <p class="page-hero-eyebrow fade-up">KAIST · Urban AI Institute</p>
+            <h1 class="page-hero-title fade-up fade-up-d1">Engagement</h1>
+            <p class="page-hero-sub fade-up fade-up-d2"></p>
+            <!-- <div class="stat-row fade-up fade-up-d3">
                 <div class="stat-pill">
                     <span class="stat-num" id="stat-total">—</span>
                     <span class="stat-label">Total Items</span>
@@ -333,8 +350,7 @@
                     <span class="stat-num" id="stat-press">—</span>
                     <span class="stat-label">Press</span>
                 </div>
-            </div>
--->
+            </div> -->
         </header>
 
         <section class="featured-notice">
@@ -568,12 +584,14 @@
             var CHIP_INACTIVE = "border:1px solid #e2e8f0;color:#64748b;background:#ffffff;transition:all 0.2s;";
 
             function buildCategoryChips(categories) {
+                var currentCategory = getActiveCategory();
+                var validCategory = (currentCategory && categories.indexOf(currentCategory) !== -1)
+                    ? currentCategory : "";
                 categoryFiltersEl.innerHTML = "";
                 var allBtn = document.createElement("button");
                 allBtn.type = "button";
                 allBtn.textContent = "All";
                 allBtn.className = "px-3 py-1 rounded-full text-xs font-semibold";
-                allBtn.style.cssText = CHIP_ACTIVE;
                 allBtn.dataset.category = "";
                 categoryFiltersEl.appendChild(allBtn);
 
@@ -583,8 +601,18 @@
                     btn.textContent = cat;
                     btn.dataset.category = cat;
                     btn.className = "px-3 py-1 rounded-full text-xs font-medium";
-                    btn.style.cssText = CHIP_INACTIVE;
                     categoryFiltersEl.appendChild(btn);
+                });
+
+                Array.prototype.forEach.call(categoryFiltersEl.children, function (btn) {
+                    if ((btn.dataset.category || "") === validCategory) {
+                        btn.dataset.active = "true";
+                        btn.className = "px-3 py-1 rounded-full text-xs font-semibold";
+                        btn.style.cssText = CHIP_ACTIVE;
+                    } else {
+                        btn.removeAttribute("data-active");
+                        btn.style.cssText = CHIP_INACTIVE;
+                    }
                 });
             }
 
@@ -605,12 +633,16 @@
                 var sortedYears = Object.keys(years)
                     .map(function (y) { return parseInt(y, 10); })
                     .sort(function (a, b) { return b - a; });
+                var currentYear = yearSelect.value;
+                while (yearSelect.options.length > 1) yearSelect.remove(1);
                 sortedYears.forEach(function (y) {
                     var opt = document.createElement("option");
                     opt.value = String(y);
                     opt.textContent = String(y);
                     yearSelect.appendChild(opt);
                 });
+                yearSelect.value = (currentYear && sortedYears.indexOf(parseInt(currentYear, 10)) !== -1)
+                    ? currentYear : "";
             }
 
             function getActiveCategory() {
@@ -622,6 +654,30 @@
                 var q = (searchInput.value || "").toLowerCase();
                 var year = yearSelect.value;
                 var category = getActiveCategory();
+
+                // Year options: items matching search + category (ignoring year)
+                var yearPool = allEvents.filter(function (ev) {
+                    var matchSearch = !q || [ev.title || "", ev.place || "", ev.desc || ""].join(" ").toLowerCase().indexOf(q) !== -1;
+                    var matchCat = !category || (ev.category || "").toLowerCase() === category.toLowerCase();
+                    return matchSearch && matchCat;
+                });
+                setupYearOptions(yearPool);
+
+                // Category chips: items matching search + year (ignoring category)
+                var catPool = allEvents.filter(function (ev) {
+                    var matchSearch = !q || [ev.title || "", ev.place || "", ev.desc || ""].join(" ").toLowerCase().indexOf(q) !== -1;
+                    var matchYear = !year || (ev.start && String(extractYear(ev.start)) === year);
+                    return matchSearch && matchYear;
+                });
+                var availableCats = catPool.reduce(function (acc, ev) {
+                    if (ev.category && acc.indexOf(ev.category) === -1) acc.push(ev.category);
+                    return acc;
+                }, []).sort();
+                buildCategoryChips(availableCats);
+
+                // Re-read after potential resets caused by rebuilding options
+                year = yearSelect.value;
+                category = getActiveCategory();
 
                 filteredEvents = allEvents.filter(function (ev) {
                     var matchesSearch = true;
@@ -642,11 +698,7 @@
 
                     var matchesCategory = true;
                     if (category) {
-                        if (category.toLowerCase() === "honors") {
-                            matchesCategory = !!ev.awards;
-                        } else {
-                            matchesCategory = (ev.category || "").toLowerCase() === category.toLowerCase();
-                        }
+                        matchesCategory = (ev.category || "").toLowerCase() === category.toLowerCase();
                     }
 
                     return matchesSearch && matchesYear && matchesCategory;
@@ -664,6 +716,9 @@
 
             function buildExpandedContent(ev) {
                 var html = '';
+
+                var dateRange = formatRange(ev.start, ev.end);
+                html += '<p class="text-xs mt-1" style="color:#cbd5e1;">' + dateRange + '</p>';
                 var fullDesc = ev.desc || "";
                 if (fullDesc) {
                     html += '<div class="markdown text-sm leading-relaxed" style="color:#475569;">' +
@@ -674,9 +729,11 @@
                     html += '<div class="flex flex-wrap gap-2 mt-3">';
                     ev.photos.forEach(function (src) {
                         if (src && !src.startsWith("../")) src = "../" + src;
-                        html += '<div class="w-24 h-20 rounded-lg overflow-hidden shrink-0" style="background:#f1f5f9;">' +
-                            '<img src="' + src + '" alt="" class="w-full h-full object-cover" ' +
-                            'onerror="this.parentElement.style.display=\'none\'">' +
+                        html += '<div class="h-24 rounded-lg overflow-hidden shrink-0" style="background:#f1f5f9;">' +
+                            '<a href="' + src + '" target="_blank" rel="noopener" onclick="event.stopPropagation()">' +
+                            '<img src="' + src + '" alt="" class="w-full h-full object-cover" style="cursor:zoom-in;" ' +
+                            'onerror="this.closest(\'.h-20\').style.display=\'none\'">' +
+                            '</a>' +
                             '</div>';
                     });
                     html += '</div>';
@@ -685,18 +742,6 @@
                 if (ev.participants) {
                     html += '<p class="text-xs mt-3" style="color:#94a3b8;">' +
                         '<span class="font-semibold" style="color:#334155;">Participants:</span> ' + ev.participants + '</p>';
-                }
-
-                if (ev.awards) {
-                    html += '<p class="text-xs font-semibold mt-2" style="color:#d97706;">&#9733; ' + ev.awards + '</p>';
-                }
-
-                if (ev.keywords && ev.keywords.length) {
-                    html += '<div class="flex flex-wrap gap-1.5 mt-3">';
-                    ev.keywords.forEach(function (kw) {
-                        html += '<span class="px-2 py-0.5 text-[10px] rounded-full" style="background:#eff6ff;color:#1e3a8a;border:1px solid #dbeafe;">' + kw + '</span>';
-                    });
-                    html += '</div>';
                 }
 
                 var linkItems = [];
@@ -730,6 +775,112 @@
                 return html;
             }
 
+            function createItemElement(ev, idx) {
+                var wrapper = document.createElement("div");
+                wrapper.className = "events-list-item cursor-pointer px-4 py-4 md:px-5 md:py-5";
+
+                var rawStart = ev.start ? String(ev.start).trim() : "";
+                var isYearOnly = /^\d{4}$/.test(rawStart);
+                var isYearMonth = /^\d{4}-\d{2}$/.test(rawStart);
+                var startDate = (rawStart && !isYearOnly && !isYearMonth) ? new Date(rawStart) : null;
+                var month = "", day = "", year = "";
+                if (isYearOnly) {
+                    year = rawStart;
+                } else if (isYearMonth) {
+                    var ymParts = rawStart.split("-");
+                    var ymDate = new Date(parseInt(ymParts[0]), parseInt(ymParts[1]) - 1, 1);
+                    month = ymDate.toLocaleDateString("en-US", { month: "short" });
+                    year = ymParts[0];
+                } else if (startDate) {
+                    month = startDate.toLocaleDateString("en-US", { month: "short" });
+                    day = startDate.getDate();
+                    year = startDate.getFullYear();
+                }
+
+
+                var isExpanded = idx < 0;
+                var mainDateStyle = day
+                    ? "font-size:1.75rem;line-height:1;font-weight:700;color:#0f172a;"
+                    : "font-size:1rem;line-height:1;font-weight:700;color:#0f172a;";
+                var subDateText = day ? year : "";
+                var keywordPreviewHtml = "";
+                if (ev.keywords && ev.keywords.length) {
+                    keywordPreviewHtml =
+                        '<div class="flex flex-wrap gap-1.5 mt-3">' +
+                        ev.keywords.map(function (kw) {
+                            return '<span class="px-2 py-0.5 text-[10px] rounded-full" style="background:#eff6ff;color:#1e3a8a;border:1px solid #dbeafe;">' + kw + '</span>';
+                        }).join("") +
+                        "</div>";
+                }
+
+                wrapper.innerHTML = `
+                    <div class="flex sm:flex-row flex-col gap-4 md:gap-5">
+                        <div class="shrink-0 flex flex-col items-center justify-start w-16 pt-1">
+                            <div class="text-xs font-bold uppercase tracking-[0.18em]" style="color:#2563eb;">${month}</div>
+                            <div style="${mainDateStyle}">${day ? day : (year ? year : "")}</div>
+                            <div style="font-size:11px;color:#94a3b8;margin-top:4px;">${subDateText}</div>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <div class="flex flex-wrap items-center gap-2 justify-between">
+                                <h3 class="text-base md:text-lg font-semibold" style="color:#0f172a;line-height:1.35;">
+                                    ${ev.title || "Untitled"}
+                                </h3>
+                                <div class="flex items-center gap-2 shrink-0">
+                                    <span class="badge inline-flex items-center px-2 py-1 rounded-full font-semibold uppercase" style="background:#f1f5f9;color:#475569;border:1px solid #e2e8f0;">
+                                        ${ev.label}
+                                    </span>
+                                    <span class="expand-chevron text-xs select-none${isExpanded ? " rotate-180" : ""}" style="color:#cbd5e1;">&#9660;</span>
+                                </div>
+                            </div>
+                            ${ev.place
+                                ? `<p class="text-xs font-semibold tracking-[0.12em] uppercase mt-1.5" style="color:#94a3b8;">${ev.place}</p>`
+                                : ""}
+                            <div class="expand-detail mt-3${isExpanded ? "" : " hidden"}">
+                                ${isExpanded ? buildExpandedContent(ev) : ""}
+                            </div>
+                            ${keywordPreviewHtml}
+                        </div>
+                    </div>`;
+
+                wrapper.addEventListener("click", function () {
+                    var detail = wrapper.querySelector(".expand-detail");
+                    var chevron = wrapper.querySelector(".expand-chevron");
+                    var opening = detail.classList.contains("hidden");
+                    // Lazy-build expanded content on first open
+                    if (opening && !detail._built) {
+                        detail.innerHTML = buildExpandedContent(ev);
+                        detail._built = true;
+                    }
+                    detail.classList.toggle("hidden");
+                    if (chevron) chevron.classList.toggle("rotate-180", opening);
+                    wrapper.style.borderColor = opening ? "#93c5fd" : "#e2e8f0";
+                    wrapper.style.boxShadow = opening ? "0 4px 16px rgba(37,99,235,0.08)" : "none";
+                });
+
+                if (isExpanded) {
+                    var detail = wrapper.querySelector(".expand-detail");
+                    if (detail) detail._built = true;
+                    wrapper.style.borderColor = "#93c5fd";
+                    wrapper.style.boxShadow = "0 4px 16px rgba(37,99,235,0.08)";
+                }
+
+                return wrapper;
+            }
+
+            function appendItems(fromIdx, toIdx) {
+                filteredEvents.slice(fromIdx, toIdx).forEach(function (ev, i) {
+                    eventsListEl.appendChild(createItemElement(ev, fromIdx + i));
+                });
+            }
+
+            function updateLoadMoreBtn() {
+                if (visibleCount < filteredEvents.length) {
+                    loadMoreBtn.classList.remove("hidden");
+                } else {
+                    loadMoreBtn.classList.add("hidden");
+                }
+            }
+
             function renderList() {
                 eventsListEl.innerHTML = "";
                 if (!filteredEvents.length) {
@@ -738,105 +889,8 @@
                     loadMoreBtn.classList.add("hidden");
                     return;
                 }
-
-                filteredEvents.slice(0, visibleCount).forEach(function (ev, idx) {
-                    var wrapper = document.createElement("div");
-                    wrapper.className = "events-list-item cursor-pointer px-4 py-4 md:px-5 md:py-5";
-
-                    var rawStart = ev.start ? String(ev.start).trim() : "";
-                    var isYearOnly = /^\d{4}$/.test(rawStart);
-                    var isYearMonth = /^\d{4}-\d{2}$/.test(rawStart);
-                    var startDate = (rawStart && !isYearOnly && !isYearMonth) ? new Date(rawStart) : null;
-                    var month = "";
-                    var day = "";
-                    var year = "";
-                    if (isYearOnly) {
-                        year = rawStart;
-                    } else if (isYearMonth) {
-                        var ymParts = rawStart.split("-");
-                        var ymDate = new Date(parseInt(ymParts[0]), parseInt(ymParts[1]) - 1, 1);
-                        month = ymDate.toLocaleDateString("en-US", { month: "short" });
-                        year = ymParts[0];
-                    } else if (startDate) {
-                        month = startDate.toLocaleDateString("en-US", { month: "short" });
-                        day = startDate.getDate();
-                        year = startDate.getFullYear();
-                    }
-
-                    var categoryLabel = ev.category ?
-                        ev.category.charAt(0).toUpperCase() + ev.category.slice(1) : "Event";
-
-                    var shortDesc = ev.desc || "";
-                    if (shortDesc.length > 160) shortDesc = shortDesc.slice(0, 155) + "…";
-
-                    var mainDateStyle = day
-                        ? "font-size:1.75rem;line-height:1;font-weight:700;color:#0f172a;"
-                        : "font-size:1rem;line-height:1;font-weight:700;color:#0f172a;";
-                    var subDateText = day ? year : "";
-                    var subDateStyle = day
-                        ? "font-size:11px;color:#94a3b8;margin-top:4px;"
-                        : "font-size:11px;color:#94a3b8;margin-top:4px;";
-
-                    var isExpanded = idx < 3;
-
-                    wrapper.innerHTML =
-                        '<div class="flex sm:flex-row flex-col gap-4 md:gap-5">' +
-                            '<div class="shrink-0 flex flex-col items-center justify-start w-16 pt-1">' +
-                                '<div class="text-xs font-bold uppercase tracking-[0.18em]" style="color:#2563eb;">' + month + '</div>' +
-                                '<div style="' + mainDateStyle + '">' + (day ? day : (year ? year : "")) + '</div>' +
-                                '<div style="' + subDateStyle + '">' + subDateText + '</div>' +
-                            '</div>' +
-                            '<div class="flex-1 min-w-0">' +
-                                '<div class="flex flex-wrap items-center gap-2 justify-between">' +
-                                    '<h3 class="text-base md:text-lg font-semibold" style="color:#0f172a;line-height:1.35;">' +
-                                        (ev.title || "Untitled") +
-                                    '</h3>' +
-                                    '<div class="flex items-center gap-2 shrink-0">' +
-                                        '<span class="badge inline-flex items-center px-2 py-1 rounded-full font-semibold uppercase" style="background:#f1f5f9;color:#475569;border:1px solid #e2e8f0;">' +
-                                            categoryLabel +
-                                        '</span>' +
-                                        '<span class="expand-chevron text-xs select-none' +
-                                            (isExpanded ? ' rotate-180' : '') + '" style="color:#cbd5e1;">&#9660;</span>' +
-                                    '</div>' +
-                                '</div>' +
-                                (ev.place
-                                    ? '<p class="text-xs font-semibold tracking-[0.12em] uppercase mt-1.5" style="color:#94a3b8;">' + ev.place + '</p>'
-                                    : '') +
-                                '<p class="text-xs mt-1" style="color:#cbd5e1;">' + formatRange(ev.start, ev.end) + '</p>' +
-                                '<div class="expand-summary' + (isExpanded ? ' hidden' : '') + '">' +
-                                    '<p class="text-sm mt-2" style="color:#64748b;line-height:1.6;">' + shortDesc + '</p>' +
-                                '</div>' +
-                                '<div class="expand-detail mt-3' + (isExpanded ? '' : ' hidden') + '">' +
-                                    buildExpandedContent(ev) +
-                                '</div>' +
-                            '</div>' +
-                        '</div>';
-
-                    wrapper.addEventListener("click", function () {
-                        var detail = wrapper.querySelector(".expand-detail");
-                        var summary = wrapper.querySelector(".expand-summary");
-                        var chevron = wrapper.querySelector(".expand-chevron");
-                        var opening = detail.classList.contains("hidden");
-                        detail.classList.toggle("hidden");
-                        summary.classList.toggle("hidden");
-                        if (chevron) chevron.classList.toggle("rotate-180", opening);
-                        wrapper.style.borderColor = opening ? "#93c5fd" : "#e2e8f0";
-                        wrapper.style.boxShadow = opening ? "0 4px 16px rgba(37,99,235,0.08)" : "none";
-                    });
-
-                    if (isExpanded) {
-                        wrapper.style.borderColor = "#93c5fd";
-                        wrapper.style.boxShadow = "0 4px 16px rgba(37,99,235,0.08)";
-                    }
-
-                    eventsListEl.appendChild(wrapper);
-                });
-
-                if (visibleCount < filteredEvents.length) {
-                    loadMoreBtn.classList.remove("hidden");
-                } else {
-                    loadMoreBtn.classList.add("hidden");
-                }
+                appendItems(0, visibleCount);
+                updateLoadMoreBtn();
             }
 
             categoryFiltersEl.addEventListener("click", function (e) {
@@ -852,8 +906,10 @@
                 applyFilters();
             });
 
+            var _searchDebounce;
             searchInput.addEventListener("input", function () {
-                applyFilters();
+                clearTimeout(_searchDebounce);
+                _searchDebounce = setTimeout(applyFilters, 250);
             });
 
             yearSelect.addEventListener("change", function () {
@@ -861,8 +917,10 @@
             });
 
             loadMoreBtn.addEventListener("click", function () {
+                var prevCount = visibleCount;
                 visibleCount += 10;
-                renderList();
+                appendItems(prevCount, Math.min(visibleCount, filteredEvents.length));
+                updateLoadMoreBtn();
             });
 
             resetFiltersBtn.addEventListener("click", function () {
@@ -923,17 +981,18 @@
                 }
 
                 function mapEventItem(item) {
+                    var cat = item.category || "event";
                     return {
                         id: item.id,
                         title: item.title || "Untitled event",
                         desc: item.desc || "",
                         start: normalizeDate(item.start),
                         end: normalizeDate(item.end),
-                        category: item.category || "event",
+                        category: cat,
+                        label: cat.charAt(0).toUpperCase() + cat.slice(1),
                         place: item.place || "",
                         photos: Array.isArray(item.photos) ? item.photos : [],
                         href: "",
-                        awards: item.award || "",
                         participants: item.participants || "",
                         keywords: Array.isArray(item.keyword) ? item.keyword : [],
                         links: Array.isArray(item.links) ? item.links : [],
@@ -941,15 +1000,17 @@
                 }
 
                 function mapMeetingItem(item) {
+                    var research0 = (Array.isArray(item.research) && item.research[0]) ? item.research[0] : {};
                     return {
                         id: item.id || item.title,
                         title: item.title || "Untitled meeting",
-                        desc: item.research[0].desc || "",
+                        desc: research0.desc || "",
                         start: normalizeDate(item.dateISO || item.date),
                         end: "",
                         category: "meeting",
+                        label: "Meeting",
                         place: "",
-                        photos: item.research[0].images ? item.research[0].images : [],
+                        photos: Array.isArray(research0.images) ? research0.images : [],
                         href: "",
                     };
                 }
@@ -962,6 +1023,7 @@
                         start: item.date,
                         end: "",
                         category: "publication",
+                        label: "Journal Publication",
                         place: item.journal || "",
                         photos: [],
                         href: item.href || "",
@@ -976,6 +1038,7 @@
                         start: item.date,
                         end: "",
                         category: "conference",
+                        label: "Conference Publication",
                         place: item.conference || "",
                         href: item.href || "",
                     };
@@ -989,6 +1052,7 @@
                         start: item.date,
                         end: "",
                         category: "conference",
+                        label: "Conference Publication",
                         place: item.conference || "",
                         href: item.href || "",
                     };
@@ -1002,6 +1066,7 @@
                         start: normalizeDate(item.date),
                         end: "",
                         category: "press",
+                        label: "Press",
                         place: item.writer || "",
                         photos: item.image ? [item.image] : [],
                         href: "",
@@ -1026,36 +1091,45 @@
                 }
 
                 updateStats(allEvents);
-
-                var catSet = {};
-                allEvents.forEach(function (ev) {
-                    if (ev.category) {
-                        catSet[ev.category.charAt(0).toUpperCase() + ev.category.slice(1)] = true;
-                    }
-                    if (ev.awards) catSet["Honors"] = true;
-                });
-                var cats = Object.keys(catSet).sort();
-                buildCategoryChips(cats);
-                var allBtn = categoryFiltersEl.querySelector("button[data-category='']");
-                if (allBtn) {
-                    allBtn.dataset.active = "true";
-                    allBtn.className = "px-3 py-1 rounded-full text-xs font-semibold";
-                    allBtn.style.cssText = CHIP_ACTIVE;
-                }
-                setupYearOptions(allEvents);
-                filteredEvents = allEvents.slice();
-                filteredEvents.sort(function (a, b) {
-                    var as = a.start || "";
-                    var bs = b.start || "";
-                    return bs.localeCompare(as);
-                });
-                renderList();
+                applyFilters();
             }).catch(function (err) {
                 console.error("Failed to load engagement data", err);
                 eventsListEl.innerHTML =
                     '<p class="text-sm" style="color:#94a3b8;">Failed to load engagement data.</p>';
             });
         });
+        // Photo hover zoom
+        (function () {
+            var zoomEl = document.getElementById("photo-zoom");
+            var zoomImg = document.getElementById("photo-zoom-img");
+            var MARGIN = 16;
+
+            document.addEventListener("mouseover", function (e) {
+                var img = e.target;
+                if (!(img.tagName === "IMG" && img.style.cursor === "zoom-in")) return;
+                zoomImg.src = img.src;
+                zoomEl.style.display = "block";
+            });
+
+            document.addEventListener("mousemove", function (e) {
+                if (zoomEl.style.display === "none") return;
+                var x = e.clientX + MARGIN;
+                var y = e.clientY + MARGIN;
+                var w = zoomEl.offsetWidth;
+                var h = zoomEl.offsetHeight;
+                if (x + w > window.innerWidth)  x = e.clientX - w - MARGIN;
+                if (y + h > window.innerHeight) y = e.clientY - h - MARGIN;
+                zoomEl.style.left = x + "px";
+                zoomEl.style.top  = y + "px";
+            });
+
+            document.addEventListener("mouseout", function (e) {
+                var img = e.target;
+                if (!(img.tagName === "IMG" && img.style.cursor === "zoom-in")) return;
+                zoomEl.style.display = "none";
+                zoomImg.src = "";
+            });
+        })();
     </script>
     <script src="partials/navbar.js"></script>
 </body>

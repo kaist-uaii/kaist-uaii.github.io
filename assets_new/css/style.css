@@ -424,7 +424,7 @@ body.home #landing,
 
 /* ===== Urban Intelligence Section (Block 2) ===== */
 .urban-intel-content {
-  max-width: 1300px;
+  max-width: 1800px;
   width: 100%;
   text-align: left;
   padding: 0 40px;
@@ -433,8 +433,8 @@ body.home #landing,
 /* ── Block-2 F-layout ── */
 .b2f-layout {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 0 60px;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 40px;
   align-items: center;
   width: 100%;
 }
@@ -442,11 +442,13 @@ body.home #landing,
 .b2f-left {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   gap: 10px;
 }
 
 .b2f-prep {
-  font-size: clamp(0.85rem, 1.4vw, 1.05rem);
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
   font-weight: 400;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -456,7 +458,7 @@ body.home #landing,
 }
 
 .b2f-word {
-  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-size: 7rem;
   font-weight: 800;
   line-height: 1.05;
   letter-spacing: -1.5px;
@@ -482,17 +484,19 @@ body.home #landing,
 .b2f-right {
   display: flex;
   flex-direction: column;
-  gap: 28px;
-  padding-left: 40px;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  padding-left: 0;
 }
 
 .b2f-bottom {
-  margin-top: 56px;
-  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  margin-top: 80px;
+  font-size: clamp(1.2rem, 1.8vw, 1.5rem);
   line-height: 1.6;
   color: #ffffff;
   font-weight: 400;
-  text-align: left;
+  text-align: center;
   text-shadow: 0 0 20px rgba(255,255,255,0.3), 0 0 40px rgba(255,255,255,0.1);
   padding-top: 0;
 }
@@ -1334,11 +1338,7 @@ body.community {
     margin-bottom: 32px;
   }
 
-  .b2f-word {
-    font-size: clamp(2.2rem, 7vw, 3.5rem) !important;
-  }
-
-  .b3-title {
+  .b2f-word, .b3-title {
     font-size: clamp(2.2rem, 7vw, 3.5rem) !important;
   }
 

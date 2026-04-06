@@ -32,7 +32,7 @@
   {
     "id": "20251103",
     "title": "Presentation at ACM SIGSPATIAL",
-    "category": "workshop",
+    "category": "conference",
     "start": "2025-11-03",
     "end": "2025-11-06",
     "place": "Minneapolis, Minnesota",
@@ -60,7 +60,7 @@
   {
     "id": "20251019",
     "title": "Presentation at ICCV 2025",
-    "category": "workshop",
+    "category": "conference",
     "start": "2025-10-10",
     "end": "2025-10-23",
     "place": "Honolulu, Hawaii",
@@ -258,7 +258,7 @@
   {
     "id": "20250105",
     "title": "Presentation at TRB Annual Meeting",
-    "category": "meeting",
+    "category": "conference",
     "start": "2025-01-05",
     "end": "2025-01-09",
     "place": "Washington D.C.",
@@ -337,26 +337,6 @@
       "assets/images/events/unnamed(25).jpg"
     ],
     "time": "10:30 am KST"
-  },
-  {
-    "id": "20241111",
-    "title": "K-DS Hackathon: 2nd Prize!",
-    "category": "honors",
-    "start": "2024-11-11",
-    "end": "2024-11-13",
-    "place": "Seoul National University Samsung Convention Center",
-    "participants": "Donghyun Yoon (Ph.D. candidate), Sungmin Sohn (Ph.D. candidate), Juneyoung Ro (M.S. candidate), Seungro Lee (M.S. candidate)",
-    "keyword": [
-      "K-DS",
-      "Hackathon"
-    ],
-    "photos": [
-      "assets/images/events/unnamed(26).jpg",
-      "assets/images/events/unnamed(27).jpg",
-      "assets/images/events/unnamed(28).jpg"
-    ],
-    "award": "2nd Prize",
-    "time": ""
   },
   {
     "id": "20241108",
@@ -477,24 +457,6 @@
     ],
     "speaker": "Prof. Taesik Lee",
     "time": "14:00 pm KST"
-  },
-  {
-    "id": "20240906",
-    "title": "고속도로 비전 캠퍼스 논문 공모전 장려상 시상식",
-    "category": "honors",
-    "start": "2024-09-06",
-    "end": "2024-09-06",
-    "place": "한국도로공사 (Korea Expressway Corporation)",
-    "participants": "Donghyun Yoon (Ph.D. candidate), Minwoo Jeong (M.S. candidate)",
-    "keyword": [
-      "한국도로공사"
-    ],
-    "photos": [
-      "assets/images/events/unnamed(42).jpg",
-      "assets/images/events/unnamed(43).jpg"
-    ],
-    "award": "장려상 (Encouragement Award)",
-    "time": "10:00 am KST"
   },
   {
     "id": "20240904",
@@ -645,7 +607,7 @@
   {
     "id": "20231208",
     "title": "Urban@KAIST Urban-X Seminar",
-    "category": "seminar",
+    "category": "Urban-X Seminar",
     "start": "2023-12-08",
     "end": "2023-12-08",
     "place": "",
@@ -666,7 +628,7 @@
   {
     "id": "20231201",
     "title": "Urban@KAIST Urban-X Seminar",
-    "category": "seminar",
+    "category": "Urban-X Seminar",
     "start": "2023-12-01",
     "end": "2023-12-01",
     "place": "",
@@ -684,7 +646,7 @@
   {
     "id": "20231124",
     "title": "Urban@KAIST Urban-X Seminar",
-    "category": "seminar",
+    "category": "Urban-X Seminar",
     "start": "2023-11-24",
     "end": "2023-11-24",
     "place": "",
@@ -701,7 +663,7 @@
   {
     "id": "20231117",
     "title": "Urban@KAIST Urban-X Seminar",
-    "category": "seminar",
+    "category": "Urban-X Seminar",
     "start": "2023-11-17",
     "end": "2023-11-17",
     "place": "",
@@ -723,7 +685,7 @@
   {
     "id": "20231110",
     "title": "Urban@KAIST Urban-X Seminar",
-    "category": "seminar",
+    "category": "Urban-X Seminar",
     "start": "2023-11-10",
     "end": "2023-11-10",
     "place": "",
