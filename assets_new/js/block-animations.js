@@ -7,6 +7,11 @@
       { sel: '.cell',         delay: 200, stagger: 80 },
     ],
     'block-2': [
+      { sel: '.b2f-prep',                  delay: 0, stagger: 260 },
+      { sel: '.b2f-word',                  delay: 120, stagger: 260 },
+      { sel: '.b2f-bottom',               delay: 480 },
+    ],
+    'block-3': [
       { sel: '.b3-title',               delay: 0   },
       { sel: '.b3-card:nth-child(1)',   delay: 140 },
       { sel: '.b3-card:nth-child(2)',   delay: 140 },

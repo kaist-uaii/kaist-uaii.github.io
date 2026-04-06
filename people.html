@@ -14,6 +14,20 @@
     <script src="partials/scroll-sidebar.js"></script>
     
     <style>
+        .fade-up {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .fade-up-d1 { transition-delay: 0.08s; }
+        .fade-up-d2 { transition-delay: 0.16s; }
+        .fade-up-d3 { transition-delay: 0.24s; }
+        .fade-up-d4 { transition-delay: 0.36s; }
+
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
@@ -507,6 +521,7 @@
             <header class="page-hero">
                 <p class="page-hero-eyebrow fade-up">KAIST · Urban AI Institute</p>
                 <h1 class="page-hero-title fade-up fade-up-d1">People</h1>
+                <div class="fade-up fade-up-d2" style="max-width:560px;border-top:1px solid #e2e8f0;padding-top:16px;"></div>
             </header>
 
             <!-- Participants Section -->
@@ -990,7 +1005,17 @@
                 }, 1600);
             }
         </script>
-         <script src="assets/script.js"></script> 
+         <script>
+         // Entrance animations
+         var fadeEls = document.querySelectorAll('.fade-up');
+         var fadeObs = new IntersectionObserver(function(entries) {
+             entries.forEach(function(entry) {
+                 if (entry.isIntersecting) { entry.target.classList.add('visible'); }
+             });
+         }, { threshold: 0.15 });
+         fadeEls.forEach(function(el) { fadeObs.observe(el); });
+         </script>
+         <script src="assets/script.js"></script>
          <script src="partials/navbar.js"></script>
     </main>
 </body>

@@ -6,6 +6,7 @@
   <title>Projects | UAII - Urban AI Institute</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="assets_new/css/style.css">
+  <link rel="stylesheet" href="assets_new/css/hero.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
@@ -31,7 +32,7 @@
       transition: max-height 0.4s ease;
     }
     .theme-accordion.expanded .theme-accordion-body {
-      max-height: 2000px;
+      max-height: 5000px;
     }
     .theme-chevron {
       transition: transform 0.3s ease;
@@ -109,27 +110,25 @@
 
     <!-- Hero -->
     <div class="max-w-6xl mx-auto px-6 pt-36 pb-12">
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight mb-5 fade-up">Projects</h1>
-      <p class="text-sm sm:text-base text-slate-500 leading-relaxed border-t border-slate-200 pt-4 fade-up fade-up-d1">UAII develops core technologies for advancing AI in future cities.<br>Two core research themes define our approach — one <span class="text-blue-900 font-semibold">treating the cities of today</span>, the other <span class="text-blue-900 font-semibold">building the cities of tomorrow</span>.</p>
+      <p class="page-hero-eyebrow fade-up">KAIST · Urban AI Institute</p>
+      <h1 class="page-hero-title fade-up fade-up-d1">Projects</h1>
+      <p class="page-hero-sub fade-up fade-up-d2"></p>
     </div>
 
     <!-- Themes -->
     <div class="max-w-6xl mx-auto px-6 pb-20 flex flex-col gap-6">
 
       <!-- Dr.City -->
-      <div class="theme-accordion bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow fade-up fade-up-d3" id="drcity">
+      <div class="theme-accordion bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg fade-up" id="drcity">
         <div class="flex items-center justify-between px-6 sm:px-8 py-6 border-b border-slate-200 cursor-pointer select-none hover:bg-slate-50 transition-colors" onclick="toggleAccordion(this)">
-          <div class="flex flex-col">
-              <span class="text-[0.6rem] sm:text-xs uppercase tracking-[0.25em] font-semibold text-slate-400 mb-3">Future of Cities</span>
+          <div class="flex items-baseline gap-3">
               <span class="text-xl sm:text-2xl font-extrabold text-blue-900 tracking-tight">Dr.City</span>
+              <span class="text-[0.6rem] sm:text-xs uppercase tracking-[0.25em] font-semibold text-slate-400">Future of Cities</span>
             </div>
           <svg class="theme-chevron w-6 h-6 text-slate-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
         </div>
         <div class="theme-accordion-body">
-          <div class="px-6 sm:px-8 pt-6 pb-8 overflow-x-hidden max-w-full">
-            <p class="text-sm sm:text-base text-slate-500 leading-relaxed mb-4">Cities are living systems — and like any living thing, they suffer.<br>Population shift. Mental health crises. Climate stress. Gridlock.</p>
-            <p class="text-sm sm:text-base text-slate-700 leading-relaxed mb-7 pl-4 border-l-2 border-blue-200"><strong class="text-slate-900">Doctor City</strong> treats the urban environment as a patient. AI and data identify what's wrong, prescribe evidence-based interventions, and monitor recovery.</p>
-
+          <div class="px-6 sm:px-8 pt-10 pb-12 overflow-x-hidden max-w-full">
             <!-- Pipeline — desktop: horizontal, mobile: vertical -->
             <!-- Pipeline: Slate→Blue gradient dot (larger) -->
             <div class="hidden sm:flex items-start gap-0 mb-8">
@@ -155,7 +154,6 @@
             </div>
 
             <!-- Research Groups (dynamic from JSON) -->
-            <h3 class="text-xs sm:text-sm font-bold uppercase tracking-widest text-slate-400 mb-4">Research Groups</h3>
             <div id="drcity-projects"></div>
 
           </div>
@@ -163,18 +161,16 @@
       </div>
 
       <!-- CityFWD.ai -->
-      <div class="theme-accordion bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow fade-up fade-up-d4" id="cityfwd">
+      <div class="theme-accordion bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg fade-up" id="cityfwd">
         <div class="flex items-center justify-between px-6 sm:px-8 py-6 border-b border-slate-200 cursor-pointer select-none hover:bg-slate-50 transition-colors" onclick="toggleAccordion(this)">
-          <div class="flex flex-col">
-              <span class="text-[0.6rem] sm:text-xs uppercase tracking-[0.25em] font-semibold text-slate-400 mb-3">Cities of Future</span>
+          <div class="flex items-baseline gap-3">
               <span class="text-xl sm:text-2xl font-extrabold text-blue-900 tracking-tight">CityFWD.ai</span>
+              <span class="text-[0.6rem] sm:text-xs uppercase tracking-[0.25em] font-semibold text-slate-400">Cities of Future</span>
             </div>
           <svg class="theme-chevron w-6 h-6 text-slate-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
         </div>
         <div class="theme-accordion-body">
-          <div class="px-6 sm:px-8 pt-6 pb-8 overflow-x-hidden max-w-full">
-            <p class="text-sm sm:text-base text-slate-500 leading-relaxed mb-4">The greatest urban challenges aren't solved by fixing what's broken — they're solved by imagining what's never been built.</p>
-            <p class="text-sm sm:text-base text-slate-700 leading-relaxed mb-7 pl-4 border-l-2 border-blue-200"><strong class="text-slate-900">CityFWD.ai</strong> is greenfield thinking at civilization scale. We design cities from the ground up using technologies not yet in practice, guided by AI that simulates futures before a single foundation is laid.</p>
+          <div class="px-6 sm:px-8 pt-10 pb-12 overflow-x-hidden max-w-full">
 
             <!-- Pipeline — desktop: horizontal, mobile: vertical -->
             <div class="hidden sm:flex items-start gap-0 mb-8">
@@ -201,7 +197,6 @@
             </div>
 
             <!-- Research Groups (dynamic from JSON) -->
-            <h3 class="text-xs sm:text-sm font-bold uppercase tracking-widest text-slate-400 mb-4">Research Groups</h3>
             <div id="cityfwd-projects"></div>
 
           </div>
@@ -243,17 +238,16 @@
 
     function renderCard(p) {
       var img = p.image ? '<div class="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center bg-white rounded-lg border border-slate-200 p-2 flex-shrink-0"><img class="w-full h-full object-contain" src="' + p.image.replace(/^\//, '') + '" alt="' + p.title + '"></div>' : '';
-      var period = p.startYear ? (p.startYear + (p.endYear ? '–' + p.endYear : '–Present')) : '—';
-      var funding = p.funding || '—';
+      var period = p.startYear ? (p.endYear ? (p.startYear === p.endYear ? '' + p.startYear : p.startYear + '–' + p.endYear) : p.startYear + '–Present') : '—';
+
       var sponsor = p.sponsor || '—';
       return '<a class="grid grid-cols-[64px_1fr] sm:grid-cols-[80px_1fr] items-start gap-4 p-5 border border-slate-200 rounded-xl bg-slate-50 hover:bg-blue-50 hover:border-blue-300 hover:-translate-y-0.5 transition-all no-underline mb-3" href="' + (p.link || '#') + '" target="_blank" rel="noopener">'
         + img
         + '<div class="flex flex-col gap-1 flex-1 min-w-0">'
-        + '<span class="text-base sm:text-lg font-bold text-slate-900">' + p.title + '</span>'
-        + '<span class="text-sm text-slate-500">' + p.fullname + '</span>'
-        + '<div class="grid grid-cols-3 max-sm:grid-cols-1 gap-2 mt-2">'
+        + '<span class="text-base sm:text-lg font-bold text-slate-900">' + p.fullname + (p.title ? ' <span class="text-slate-300 font-normal mx-1">|</span> <span class="text-slate-400 font-normal">' + p.title + '</span>' : '') + '</span>'
+        
+        + '<div class="grid grid-cols-2 max-sm:grid-cols-1 gap-2 mt-2">'
         + '<div class="bg-white border border-slate-200 rounded-lg p-2 text-center"><div class="text-[0.6rem] font-bold uppercase tracking-wider text-slate-400 mb-1">Period</div><div class="text-sm font-bold text-blue-900">' + period + '</div></div>'
-        + '<div class="bg-white border border-slate-200 rounded-lg p-2 text-center"><div class="text-[0.6rem] font-bold uppercase tracking-wider text-slate-400 mb-1">Funding</div><div class="text-sm font-bold text-blue-900">' + funding + '</div></div>'
         + '<div class="bg-white border border-slate-200 rounded-lg p-2 text-center"><div class="text-[0.6rem] font-bold uppercase tracking-wider text-slate-400 mb-1">Sponsor</div><div class="text-sm font-bold text-blue-900">' + sponsor + '</div></div>'
         + '</div></div></a>';
     }
@@ -279,7 +273,7 @@
           entry.target.classList.add('visible');
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.15 });
     fadeEls.forEach(function(el) { fadeObs.observe(el); });
   })();
   </script>
