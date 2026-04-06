@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -110,6 +110,7 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
+      gap: 8px;
       padding: 0 48px 0 0;
       border-right: 1px solid #e2e8f0;
     }
@@ -117,6 +118,7 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
+      gap: 8px;
       padding: 0 0 0 48px;
     }
     .ui-prep {
@@ -129,20 +131,20 @@
       line-height: 1;
     }
     .ui-word {
-      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-size: clamp(1.95rem, 3.5vw, 3rem);
       font-weight: 800;
       color: #0f172a;
       letter-spacing: -1.5px;
       line-height: 1.05;
-      margin-top: -0.18em;
+      margin-top: 0;
     }
     .ui-word-accent {
-      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-size: clamp(1.95rem, 3.5vw, 3rem);
       font-weight: 800;
       color: #2563eb;
       letter-spacing: -1.5px;
       line-height: 1.05;
-      margin-top: -0.18em;
+      margin-top: 0;
     }
     .ui-desc {
       border-top: 1px solid #e2e8f0;
@@ -152,7 +154,7 @@
       gap: 32px;
     }
     .ui-para {
-      font-size: 0.92rem;
+      font-size: 1.08rem;
       color: #475569;
       line-height: 1.85;
     }
@@ -161,7 +163,9 @@
     /* ════════════════════════════════
        SECTION 3 · INSTITUTE STRUCTURE
     ════════════════════════════════ */
-    .structure-section {}
+    .structure-section {
+      padding-bottom: 56px;
+    }
 
     /* · Org Chart · */
     .org-tree {
@@ -271,6 +275,51 @@
       }
     }
 
+    .structure-card {
+      max-width: 780px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .structure-root {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #1e3a8a;
+      margin-bottom: 20px;
+    }
+    .structure-desc {
+      font-size: 0.96rem;
+      color: #475569;
+      line-height: 1.8;
+      margin-bottom: 24px;
+      max-width: 640px;
+    }
+    .structure-list {
+      list-style: disc;
+      padding-left: 20px;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .structure-list li {
+      color: #0f172a;
+      font-size: 0.95rem;
+      font-weight: 700;
+      line-height: 1.6;
+    }
+
     /* ════════════════════════════════
        SECTION 4 · DIRECTOR
     ════════════════════════════════ */
@@ -351,7 +400,7 @@
     .career-inner {
       max-width: 1152px;
       margin: 0 auto;
-      padding: 96px 24px;
+      padding: 56px 24px 96px;
     }
     .career-body {
       display: grid;
@@ -421,6 +470,66 @@
       font-size: 0.78rem;
       color: #64748b;
     }
+    .career-openings {
+      margin-top: 32px;
+    }
+    .career-openings-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #2563eb;
+      margin-bottom: 14px;
+    }
+    .career-openings-list {
+      display: grid;
+      gap: 14px;
+    }
+    .career-opening-card {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+      padding: 18px 20px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+    }
+    .career-opening-meta {
+      min-width: 0;
+    }
+    .career-opening-role {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+    .career-opening-note {
+      font-size: 0.82rem;
+      color: #64748b;
+      line-height: 1.6;
+    }
+    .career-opening-link {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: 1px solid #cbd5e1;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #1e3a8a;
+      background: #ffffff;
+      text-decoration: none;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+    .career-opening-link:hover {
+      background: #eff6ff;
+      border-color: #93c5fd;
+    }
 
     /* ════════════════════════════════
        SECTION 6 · CONTACT
@@ -435,7 +544,7 @@
     }
     .contact-inner .section-eyebrow { color: #60a5fa; }
     .contact-title {
-      font-size: clamp(3rem, 8vw, 6rem);
+      font-size: clamp(2.4rem, 6vw, 4.8rem);
       font-weight: 800;
       color: #f1f5f9;
       letter-spacing: -2px;
@@ -482,13 +591,43 @@
       text-decoration: none;
     }
     .contact-item-text a:hover { text-decoration: underline; }
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 10px;
+    }
+    .contact-link-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(147,197,253,0.35);
+      background: rgba(59,130,246,0.08);
+      color: #bfdbfe;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+    .contact-link-pill:hover {
+      background: rgba(59,130,246,0.14);
+      text-decoration: none;
+    }
     .contact-info-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 24px;
     }
-    @media (max-width: 768px) {
-      .contact-info-grid { grid-template-columns: 1fr; }
+    .contact-channel-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+    @media (max-width: 900px) {
+      .contact-channel-grid { grid-template-columns: 1fr; }
     }
 
     /* ── Footer ── */
@@ -583,21 +722,22 @@
         border-bottom: 1px solid #e2e8f0;
         padding: 0 0 32px 0;
       }
-      .ui-right {
-          border-right: none;
-          border-bottom: 1px solid #e2e8f0;
-          padding: 0 0 32px 0;
-      }
+      .ui-right { padding: 0; }
       .ui-desc { grid-template-columns: 1fr; gap: 18px; }
       /* Career */
       .career-body { grid-template-columns: 1fr; gap: 36px; }
+      .career-opening-card { flex-direction: column; align-items: flex-start; }
       /* Contact */
-      .contact-title { font-size: clamp(2.8rem, 12vw, 5rem); letter-spacing: -1px; }
+      .contact-title { font-size: clamp(2.3rem, 10vw, 4rem); letter-spacing: -1px; }
       /* Intro */
       .intro-section { padding: 0 0 64px; }
       .about-section { padding: 64px 0; }
+      .structure-section { padding-bottom: 40px; }
       .ui-inner, .career-inner, .contact-inner { padding: 64px 20px; }
+      .career-inner { padding: 40px 20px 64px; }
       .about-container { padding-left: 20px; padding-right: 20px; }
+      .structure-card { padding: 24px; }
+      .structure-list { grid-template-columns: 1fr; }
     }
     @media (max-width: 480px) {
       .section-title { font-size: clamp(1.8rem, 7vw, 2.5rem); }
@@ -690,43 +830,18 @@
         <h2 class="section-title fade-up fade-up-d1">Institute Structure</h2>
 
         <!-- ·· ORG CHART (PC: 가로 / Mobile: 세로) ·· -->
-        <div class="org-tree">
-
-          <div class="org-root fade-up">
-            <div class="org-root-label">KAIST</div>
-            <div class="org-root-name">Urban AI Institute (UAII)</div>
-          </div>
-
-          <div class="org-trunk"></div>
-          <div class="org-hbar"></div>
-
-          <div class="org-children-wrap">
-            <div class="org-item fade-up">
-              <div class="org-item-v"></div>
-              <div class="org-node">CAUS</div>
-            </div>
-            <div class="org-item fade-up fade-up-d1">
-              <div class="org-item-v"></div>
-              <div class="org-node">BP</div>
-            </div>
-            <div class="org-item fade-up fade-up-d2">
-              <div class="org-item-v"></div>
-              <div class="org-node">SAIF</div>
-            </div>
-            <div class="org-item fade-up fade-up-d3">
-              <div class="org-item-v"></div>
-              <div class="org-node">Urban@KAIST</div>
-            </div>
-            <div class="org-item fade-up fade-up-d4">
-              <div class="org-item-v"></div>
-              <div class="org-node">HcFM</div>
-            </div>
-            <div class="org-item fade-up fade-up-d5">
-              <div class="org-item-v"></div>
-              <div class="org-node">KN C³</div>
-            </div>
-          </div>
-
+        <div class="structure-card fade-up fade-up-d2">
+          <div class="structure-root">KAIST · Urban AI Institute (UAII)</div>
+          <ul class="structure-list">
+            <li>Center for Advanced Urban Systems(CAUS)</li>
+            <li>Brain Pool Fellowship Program</li>
+            <li>Urban@KAIST</li>
+            <li>Urban Heat, Urban Sales</li>
+            <li>Healing Nature</li>
+            <li>KAIST-NYU Center for Cities and Climate Change(KN-C³)</li>
+            <li>KAIST Global Initiatives on Human-centered Future Mobility(HcFM)</li>
+            <li>Attention based Graph Neural Network Models for Urban Mobility Network Analysis and Prediction</li>
+          </ul>
         </div>
 
       </div>
@@ -788,6 +903,19 @@
               <a href="mailto:urban@kaist.ac.kr" style="color:#1e3a8a;font-weight:600;">urban@kaist.ac.kr</a>
             </p>
             <a href="mailto:urban@kaist.ac.kr?subject=Career Opportunity Inquiry" class="career-cta fade-up fade-up-d4">Send CV &amp; Inquire ↗</a>
+
+            <div class="career-openings fade-up fade-up-d5">
+              <div class="career-openings-label">Current Openings</div>
+              <div class="career-openings-list">
+                <div class="career-opening-card">
+                  <div class="career-opening-meta">
+                    <div class="career-opening-role">Postdoctoral Researchers</div>
+                    <div class="career-opening-note">Research-focused positions for candidates with strong publication records and interests aligned with UAII programs.</div>
+                  </div>
+                  <a href="apply-postdoc.html" class="career-opening-link">View</a>
+                </div>
+              </div>
+            </div>
           </div>
 
           <ul class="career-apply-list fade-up fade-up-d2">
@@ -829,13 +957,34 @@
               </span>
             </div>
           </div>
-          <div class="contact-block">
-            <div class="contact-block-label">Email</div>
-            <div class="contact-item" style="margin-bottom:0;">
-              <span class="contact-item-icon">✉️</span>
-              <span class="contact-item-text">
-                <a href="mailto:urban@kaist.ac.kr">urban@kaist.ac.kr</a>
-              </span>
+
+          <div class="contact-channel-grid">
+            <div class="contact-block">
+              <div class="contact-block-label">Email</div>
+              <div class="contact-item" style="margin-bottom:0;">
+                <span class="contact-item-icon">✉️</span>
+                <span class="contact-item-text">
+                  <a href="mailto:urban@kaist.ac.kr">urban@kaist.ac.kr</a>
+                </span>
+              </div>
+            </div>
+            <div class="contact-block">
+              <div class="contact-block-label">Youtube</div>
+              <div class="contact-item" style="margin-bottom:0;">
+                <span class="contact-item-icon">▶</span>
+                <span class="contact-item-text">
+                  <a href="https://www.youtube.com/@KUAI-pw2dm" target="_blank" rel="noopener noreferrer">youtube</a>
+                </span>
+              </div>
+            </div>
+            <div class="contact-block">
+              <div class="contact-block-label">LinkedIn</div>
+              <div class="contact-item" style="margin-bottom:0;">
+                <span class="contact-item-icon">in</span>
+                <span class="contact-item-text">
+                  <a href="https://www.linkedin.com/company/center-for-city-learning-ai-research/" target="_blank" rel="noopener noreferrer">linkedin</a>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -845,7 +994,7 @@
 
     <!-- Footer -->
     <footer class="about-footer">
-      <p>© 2025 KAIST Urban AI Institute · Daejeon, Republic of Korea</p>
+      <p>© 2026 Urban AI Institute · Daejeon, Republic of Korea</p>
     </footer>
 
   </div><!-- end page-scroll -->

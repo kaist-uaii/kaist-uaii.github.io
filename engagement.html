@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -25,7 +25,133 @@
             z-index: 1;
             min-height: 100vh;
         }
-        
+
+        /* Hero */
+        .engage-hero {
+            padding: calc(var(--nav-header-height, 56px) + 80px) 0 60px;
+            text-align: left;
+            max-width: 1152px;
+            margin: 0 auto;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+        .engage-hero-eyebrow {
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            color: #2563eb;
+            margin-bottom: 20px;
+        }
+        .engage-hero-title {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            color: #0f172a;
+            letter-spacing: -1.5px;
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+        .engage-hero-sub {
+            font-size: clamp(0.9rem, 1.3vw, 1.05rem);
+            font-weight: 400;
+            color: #64748b;
+            line-height: 1.7;
+            max-width: 560px;
+            padding-top: 16px;
+            border-top: 1px solid #e2e8f0;
+        }
+        .engage-hero-sub .accent { color: #1e3a8a; font-weight: 600; }
+        .featured-notice {
+            max-width: 1152px;
+            margin: 0 auto 36px;
+            padding: 0 24px;
+        }
+        .featured-notice-card {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+            align-items: start;
+            padding: 24px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 24px;
+            color: #0f172a;
+            box-shadow: 0 18px 44px rgba(15,23,42,0.08);
+        }
+        .featured-notice-label {
+            display: inline-flex;
+            align-items: center;
+            padding: 7px 12px;
+            border-radius: 999px;
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+            color: #1e3a8a;
+        }
+        .featured-notice-title {
+            font-size: clamp(1.7rem, 3vw, 2.4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: 14px;
+        }
+        .featured-notice-desc {
+            font-size: 0.98rem;
+            line-height: 1.8;
+            color: #475569;
+            max-width: 620px;
+        }
+        .featured-notice-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 0;
+        }
+        .featured-notice-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 18px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+        }
+        .featured-notice-cta.primary {
+            background: #0f172a;
+            color: #ffffff;
+        }
+        .featured-notice-cta.secondary {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            color: #334155;
+        }
+        .featured-notice-cta:hover {
+            transform: translateY(-1px);
+        }
+        .featured-notice-copy {
+            max-width: 720px;
+        }
+        .featured-notice-meta {
+            display: grid;
+            gap: 8px;
+        }
+        .featured-notice-meta-item {
+            font-size: 0.92rem;
+            line-height: 1.7;
+            color: #475569;
+        }
+        .featured-notice-meta-item strong {
+            color: #0f172a;
+            font-weight: 700;
+        }
 
         /* Stat pills */
         .stat-row {
@@ -141,6 +267,12 @@
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
         ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
 
+        @media (max-width: 900px) {
+            .featured-notice-card {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* Photo hover zoom popup */
         #photo-zoom {
             display: none;
@@ -162,6 +294,7 @@
             width: auto;
             height: auto;
             object-fit: contain;
+
         }
     </style>
 </head>
@@ -199,6 +332,23 @@
                 </div>
             </div> -->
         </header>
+
+        <!--<section class="featured-notice">
+            <div class="featured-notice-card fade-up fade-up-d3">
+                <div class="featured-notice-copy">
+                    <div class="featured-notice-label">Workshop Notice</div>
+                    <h2 class="featured-notice-title">AAM Workshop</h2>
+                    <div class="featured-notice-meta">
+                        <div class="featured-notice-meta-item"><strong>Date</strong> April 28, 2026</div>
+                        <div class="featured-notice-meta-item"><strong>Location</strong> Hong&Park KI Building (E4) 2F Matrix Hall, KAIST</div>
+                        <div class="featured-notice-meta-item"><strong>Topic</strong> Advanced Air Mobility(AAM)</div>
+                    </div>
+                </div>
+                <div class="featured-notice-actions">
+                    <a href="assets/260428_AAM-workshop.pdf" target="_blank" rel="noopener noreferrer" class="featured-notice-cta primary">Open poster</a>
+                </div>
+            </div>
+        </section>-->
 
         <!-- Content area -->
         <div class="max-w-6xl mx-auto px-6 pb-16">

@@ -1,11 +1,11 @@
-{
+﻿{
   "collabProfsData": [
     {
       "id": "changhyun-kwon",
       "name": "Changhyun Kwon",
       "link": "https://www.chkwon.net/",
-      "role": "Kaist Professor",
-      "current": "Professor, Kaist ISsyE",
+      "role": "KAIST Professor",
+      "current": "Professor, KAIST ISsyE",
       "email": "chkwon@kaist.ac.kr",
       "position": [
         "Associate Professor, Industrial and Systems Engineering, KAIST",
@@ -23,8 +23,8 @@
       "id": "jinkyoo-park",
       "name": "Jinkyoo Park",
       "link": "http://silab.kaist.ac.kr/",
-      "role": "Kaist Professor",
-      "current": "Professor, Kaist ISsyE",
+      "role": "KAIST Professor",
+      "current": "Professor, KAIST ISsyE",
       "email": "jinkyoo.park@kaist.ac.kr",
       "position": [
         "Associate Professor, Department of Industrial and Systems Engineering",
@@ -42,8 +42,8 @@
       "id": "taesik-lee",
       "name": "Taesik Lee",
       "link": "https://csdlab.kaist.ac.kr/people/Professor",
-      "role": "Kaist Professor",
-      "current": "Professor, Kaist ISsyE",
+      "role": "KAIST Professor",
+      "current": "Professor, KAIST ISsyE",
       "email": "taesik.lee@kaist.edu",
       "position": [
         "Associate Vice President, Office of Academic Affairs, KAIST",
@@ -60,8 +60,8 @@
       "id": "dongman-lee",
       "name": "Dongman Lee",
       "link": "https://cds.kaist.ac.kr/people/",
-      "role": "Kaist Professor",
-      "current": "KEPCO Professor, Kaist SoC",
+      "role": "KAIST Professor",
+      "current": "KEPCO Professor, KAIST SoC",
       "email": "dlee@kaist.ac.kr",
       "position": [
         "ICT Endowed Chair Professor at KAIST"
@@ -77,8 +77,8 @@
       "id": "kukjin-yoon",
       "name": "Kuk-Jin Yoon",
       "link": "https://vi.kaist.ac.kr/pages/faculty/",
-      "role": "Kaist Professor",
-      "current": "Professor, Kaist ME",
+      "role": "KAIST Professor",
+      "current": "Professor, KAIST ME",
       "email": "kjyoon@kaist.ac.kr",
       "position": [
         "Professor, Department of Mechanical Engineering, KAIST"
@@ -94,8 +94,8 @@
       "id": "minjoon-seo",
       "name": "Minjoon Seo",
       "link": "https://seominjoon.github.io/",
-      "role": "Kaist Professor",
-      "current": "Professor, Kaist AI",
+      "role": "KAIST Professor",
+      "current": "Professor, KAIST AI",
       "email": "minjoon@kaist.ac.kr",
       "position": [
         "Co-Founder & CEO at Config Intelligence",
@@ -112,8 +112,8 @@
       "id": "uichin-lee",
       "name": "Uichin Lee",
       "link": "https://ic.kaist.ac.kr/",
-      "role": "Kaist Professor",
-      "current": "Professor, Kaist SoC",
+      "role": "KAIST Professor",
+      "current": "Professor, KAIST SoC",
       "email": "uclee@kaist.ac.kr",
       "position": [
         "Professor in School of Computing, KAIST"
@@ -130,8 +130,8 @@
       "name": "Soh Young In",
       "link": "https://www.sohyoung-in.com/about-me",
       "lab_link": "https://www.sohyoung-in.com",
-      "role": "Kaist Professor",
-      "current": "Assistant Professor, Kaist CEE",
+      "role": "KAIST Professor",
+      "current": "Assistant Professor, KAIST CEE",
       "affiliation": "Civil and Environmental Engineering",
       "email": "si2131@kaist.ac.kr",
       "position": [
@@ -149,8 +149,8 @@
       "id": "soojean-han",
       "name": "SooJean Han",
       "link": "http://acss.kaist.ac.kr/#team",
-      "role": "Kaist Professor",
-      "current": "Assistant Professor, Kaist EE",
+      "role": "KAIST Professor",
+      "current": "Assistant Professor, KAIST EE",
       "affiliation": "Electrical Engineering",
       "email": "si2131@kaist.ac.kr",
       "position": [
@@ -249,32 +249,26 @@
     {
       "id": "jiwon-park",
       "name": "Jiwon Park",
-      "current": "Research Staff, Kaist STIL",
+      "current": "Research Staff, KAIST UAII",
       "affiliation": "Operations Team",
       "projects": [ "CAUS", "BP" ],
-      "photo": "assets/images/people/35.JPG",
-      "lab": "STIL",
-      "labFull": "Spacetime Intelligence Lab"
+      "photo": "assets/images/people/35.JPG"
     },
     {
       "id": "yiseo-yoon",
       "name": "Yiseo Yoon",
-      "current": "Research Staff, Kaist STIL",
+      "current": "Research Staff, KAIST UAII",
       "affiliation": "Operations Team",
       "projects": [ "CAUS", "BP" ],
-      "photo": "assets/images/people/yiseo_yoon.jpg",
-      "lab": "STIL",
-      "labFull": "Spacetime Intelligence Lab"
+      "photo": "assets/images/people/yiseo_yoon.jpg"
     },
     {
       "id": "seyeon-jeong",
       "name": "Seyeon Jeong",
-      "current": "Research Staff, Kaist STIL",
+      "current": "Research Staff, KAIST UAII",
       "affiliation": "Operations Team",
       "projects": [ "CAUS", "BP" ],
-      "photo": "assets/images/people/seyeon_jeong.jpg",
-      "lab": "STIL",
-      "labFull": "Spacetime Intelligence Lab"
+      "photo": "assets/images/people/seyeon_jeong.jpg"
     }
   ],
 

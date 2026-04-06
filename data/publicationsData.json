@@ -278,5 +278,21 @@
     "date": "2012",
     "journal": "Transportation research part E: logistics and transportation review, 48(1), 34-49.",
     "href": "https://doi.org/10.1016/j.tre.2011.05.005"
+  },
+  {
+    "id": "20260126-lncs-airbnb",
+    "title": "Enhancing Regional Airbnb Trend Forecasting Using LLM-Based Embeddings of Accessibility and Human Mobility",
+    "authors": "Hongju Lee, Youngjun Park, Jisun An & Dongman Lee",
+    "date": "2026-01-26",
+    "journal": "LNCS, 2026",
+    "href": ""
+  },
+  {
+    "id": "20260221-wsdm-traffic",
+    "title": "Urban Traffic Network Layout Optimization with Guided Discrete Diffusion Models",
+    "authors": "Taeyoung Yun, Inhyuck Song, Woocheol Shin, Yujin Shin, Sungpil Woo, Sunhwan Lim, Jinkyoo Park",
+    "date": "2026-02-21",
+    "journal": "WSDM, 2026",
+    "href": ""
   }
 ]

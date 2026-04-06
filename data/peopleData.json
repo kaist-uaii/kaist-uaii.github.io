@@ -1,4 +1,4 @@
-{
+﻿{
   "professorData": {
     "id": 1,
     "name": "Prof. Yoonjin Yoon",
@@ -20,8 +20,8 @@
       "id": 1,
       "name": "Yoonjin Yoon",
       "link": "https://sites.google.com/view/yoonjintrue",
-      "role": "Kaist Professor",
-      "current": "Professor, Kaist CEE",
+      "role": "KAIST Professor",
+      "current": "Professor, KAIST CEE",
       "affiliation": "Civil and Environmental Engineering",
       "email": "yoonjin@kaist.ac.kr",
       "edu": [
@@ -49,7 +49,7 @@
       "name": "Namwoo Kim",
       "link": "https://sites.google.com/view/namwookim",
       "role": "Postdoctoral Researcher",
-      "current": "Postdoc, Kaist CEE",
+      "current": "Research Professor, KAIST UAII",
       "from": "2023.09~",
       "email": "ih736x@kaist.ac.kr",
       "edu": [
@@ -62,16 +62,14 @@
         "CAUS",
         "중견"
       ],
-      "lab": "STIL",
-      "labFull": "Spacetime Intelligence Lab",
       "major": "Civil and Environmental Engineering"
     },
     {
       "id": 3,
       "name": "Sungmin Sohn",
       "link": "https://sites.google.com/view/sungmin-sohn",
-      "role": "Ph.D. Candidate",
-      "current": "Ph.D. Candidate, Kaist CEE",
+      "role": "Ph.D. Student",
+      "current": "Ph.D. Student, KAIST CEE",
       "affiliation": "Civil and Environmental Engineering",
       "from": "2023.09~",
       "email": "smsohn1997@kaist.ac.kr",
@@ -87,15 +85,15 @@
       ],
       "lab": "STIL",
       "labFull": "Spacetime Intelligence Lab",
-      "position": ["Ph.D. Candidate in Civil and Environmental Engineering"],
+      "position": ["Ph.D. Student in Civil and Environmental Engineering"],
       "major": "Civil and Environmental Engineering"
     },
     {
       "id": 4,
       "name": "Donghyun Yoon",
       "link": "https://sites.google.com/view/donghyun-yoon",
-      "role": "Ph.D. Candidate",
-      "current": "Ph.D. Candidate, Kaist AI",
+      "role": "Ph.D. Student",
+      "current": "Ph.D. Student, KAIST AI",
       "from": "2024.03~",
       "email": "tloveu49@kaist.ac.kr",
       "edu": [
@@ -108,7 +106,7 @@
       "photo": "assets/images/people/4.jpg",
       "lab": "STIL",
       "labFull": "Spacetime Intelligence Lab",
-      "position": ["Ph.D. Candidate in Graduate School of Artificial Intelligence"],
+      "position": ["Ph.D. Student in Graduate School of Artificial Intelligence"],
       "major": "Graduate School of Artificial Intelligence"
     },
     {
@@ -116,7 +114,7 @@
       "name": "Minwoo Jeong",
       "link": "https://sites.google.com/view/minwoo-jeong",
       "role": "Research Associate",
-      "current": "Research Associate, Kaist STIL",
+      "current": "Research Associate, KAIST UAII",
       "from": "2024.03~",
       "email": "minwoo5003@kaist.ac.kr",
       "edu": [
@@ -135,7 +133,7 @@
       "id": 7,
       "name": "Seungro Lee",
       "role": "M.S. Student",
-      "current": "M.S. Student, Kaist DS",
+      "current": "M.S. Student, KAIST DS",
       "from": "2024.09~",
       "email": "roy.seungro.lee@kaist.ac.kr",
       "edu": [
@@ -153,8 +151,8 @@
     {
       "id": 8,
       "name": "Keonhee Jang",
-      "role": "Integrated M.S.-Ph.D Candidate",
-      "current": "Integrated M.S.-Ph.D Candidate, Kaist DS",
+      "role": "Integrated M.S.-Ph.D Student",
+      "current": "Integrated M.S.-Ph.D Student, KAIST DS",
       "from": "2024.09~",
       "email": "keoniverse@kaist.ac.kr",
       "edu": [
@@ -166,14 +164,14 @@
       "photo": "assets/images/people/8.jpg",
       "lab": "STIL",
       "labFull": "Spacetime Intelligence Lab",
-      "position": ["Integrated M.S.-Ph.D Candidate in Graduate School of Data Science"],
+      "position": ["Integrated M.S.-Ph.D Student in Graduate School of Data Science"],
       "major": "Graduate School of Data Science"
     },
     {
       "id": 9,
       "name": "Jeeyun Chang",
       "role": "M.S. Student",
-      "current": "M.S. Student, Kaist DS",
+      "current": "M.S. Student, KAIST DS",
       "from": "2025.03~",
       "email": "jyc021@kaist.ac.kr",
       "edu": [
@@ -193,7 +191,7 @@
       "id": 10,
       "name": "Jihyeon Ohk",
       "role": "M.S. Student",
-      "current": "M.S. Student, Kaist CEE",
+      "current": "M.S. Student, KAIST CEE",
       "from": "2025.09~",
       "email": "jh.ohk@kaist.ac.kr",
       "edu": [
@@ -212,8 +210,8 @@
       "id": 101,
       "name": "Minseok Jeong",
       "link": "https://dsa950115.github.io",
-      "role": "Ph.D. Candidate",
-      "current": "Ph.D. Candidate, Kaist EE",
+      "role": "Ph.D. Student",
+      "current": "Ph.D. Student, KAIST EE",
       "affiliation": "Electrical Engineering",
       "from": "2025.09~",
       "email": "dsa950115@kaist.ac.kr",
@@ -228,7 +226,7 @@
       "photo": "assets/images/people/jeongminseok.jpg",
       "lab": "ACSS",
       "labFull": "Autonomous Control for Stochastic Systems Research Lab",
-      "position": ["Ph.D. Candidate in Electrical Engineering"],
+      "position": [ "Ph.D. Student in Electrical Engineering" ],
       "major": "Electrical Engineering"
     },
     {
@@ -236,7 +234,7 @@
       "name": "Kwangbin Lee",
       "link": "https://www.linkedin.com/in/kwangbin417",
       "role": "M.S. Student",
-      "current": "M.S. Student, Kaist EE",
+      "current": "M.S. Student, KAIST EE",
       "affiliation": "Electrical Engineering",
       "from": "2025.09~",
       "email": "lkb20015@kaist.ac.kr",
@@ -256,7 +254,7 @@
       "id": 103,
       "name": "Hayoon Song",
       "role": "M.S. Student",
-      "current": "M.S. Student, Kaist CEE",
+      "current": "M.S. Student, KAIST CEE",
       "affiliation": "Civil and Environmental Engineering",
       "from": "2025.09~",
       "email": "hayoonsong00@kaist.ac.kr",
@@ -276,8 +274,8 @@
       "id": 104,
       "name": "Jihye NA",
       "link": "https://www.linkedin.com/in/jihye-na-comet/",
-      "role": "Ph.D. Candidate",
-      "current": "Ph.D. Candidate, Kaist ISsyE",
+      "role": "Ph.D. Student",
+      "current": "Ph.D. Student, KAIST ISsyE",
       "from": "2026.03~",
       "email": "jhna01@kaist.ac.kr",
       "edu": [
@@ -289,7 +287,7 @@
       "photo": "assets/images/people/jihyena.JPG",
       "lab": "COMET Lab",
       "labFull": "Computational Optimization Methods Lab",
-      "position": ["Ph.D. Candidate in Industrial and Systems Engineering"],
+      "position": [ "Ph.D. Student in Industrial and Systems Engineering" ],
       "major": "Industrial and Systems Engineering"
     },
     {
@@ -297,7 +295,7 @@
       "name": "Thi Thao Vy Bui",
       "link": "https://www.linkedin.com/in/vy-bui-ba0a181aa/",
       "role": "M.S. Student",
-      "current": "M.S. Student, Kaist ISsyE",
+      "current": "M.S. Student, KAIST ISsyE",
       "from": "2025.03~",
       "email": "btthaovy124@kaist.ac.kr",
       "edu": [
@@ -316,8 +314,8 @@
       "id": 106,
       "name": "Jaewoo Jeong",
       "link": "jaewoo97.github.io",
-      "role": "Ph.D. Candidate",
-      "current": "Ph.D. Candidate, Kaist ME",
+      "role": "Ph.D. Student",
+      "current": "Ph.D. Student, KAIST ME",
       "email": "jeong207@kaist.ac.kr",
       "edu": [
         ""
@@ -328,15 +326,15 @@
       "photo": "assets/images/people/jaewoojeong.png",
       "lab": "VILab",
       "labFull": "Visual Intelligence Lab",
-      "position": ["Ph.D. Candidate in Mechanical Engineering"],
+      "position": [ "Ph.D. Student in Mechanical Engineering" ],
       "major": "Mechanical Engineering"
     },
     {
       "id": 107,
       "name": "Minjun Kang",
       "link": "https://sites.google.com/view/minjun-kang",
-      "role": "Ph.D. Candidate",
-      "current": "Ph.D. Candidate, Kaist RP",
+      "role": "Ph.D. Student",
+      "current": "Ph.D. Student, KAIST RP",
       "email": "kmmj2005@kaist.ac.kr",
       "edu": [
         ""
@@ -347,14 +345,14 @@
       "photo": "assets/images/people/minjunkang.jpg",
       "lab": "VILab",
       "labFull": "Visual Intelligence Lab",
-      "position": ["Ph.D. Candidate in The Robotics Program"],
+      "position": [ "Ph.D. Student in The Robotics Program" ],
       "major": "The Robotics Program"
     },
     {
       "id": 108,
       "name": "Lucas Liebe",
-      "role": "Ph.D. Candidate",
-      "current": "Ph.D. Candidate, Kaist SoC",
+      "role": "Ph.D. Student",
+      "current": "Ph.D. Student, KAIST SoC",
       "email": "lucasliebe@kaist.ac.kr",
       "edu": [
         ""
@@ -365,15 +363,15 @@
       "photo": "assets/images/people/lucas.jpg",
       "lab": "CDSN Lab",
       "labFull": "Collaborative and Distributed Systems & Network Lab",
-      "position": ["Ph.D. Candidate in School of Computing"],
+      "position": ["Ph.D. Student in School of Computing"],
       "major": "School of Computing"
     },
     {
       "id": 109,
       "name": "Taeyoung Yun",
       "link": "https://dbsxodud-11.github.io/",
-      "role": "Ph.D. Candidate",
-      "current": "Ph.D. Candidate, Kaist ISsyE",
+      "role": "Ph.D. Student",
+      "current": "Ph.D. Student, KAIST ISsyE",
       "email": "99yty@kaist.ac.kr",
       "edu": [
         ""
@@ -384,15 +382,15 @@
       "photo": "assets/images/people/taeyoungyun.jpg",
       "lab": "SILAB",
       "labFull": "System Intelligence Lab",
-      "position": ["Ph.D. Candidate in Industrial and Systems Engineering"],
+      "position": ["Ph.D. Student in Industrial and Systems Engineering"],
       "major": "Industrial and Systems Engineering"
     },
     {
       "id": 110,
       "name": "Kanghoon Lee",
       "link": "https://www.linkedin.com/in/kanghoon-lee-675053204/",
-      "role": "Ph.D. Candidate",
-      "current": "Ph.D. Candidate, Kaist ISsyE",
+      "role": "Ph.D. Student",
+      "current": "Ph.D. Student, KAIST ISsyE",
       "email": "leehoon@kaist.ac.kr",
       "edu": [
         ""
@@ -403,14 +401,14 @@
       "photo": "assets/images/people/kanghoonlee.jpg",
       "lab": "SILAB",
       "labFull": "System Intelligence Lab",
-      "position": ["Ph.D. Candidate in Industrial and Systems Engineering"],
+      "position": ["Ph.D. Student in Industrial and Systems Engineering"],
       "major": "Industrial and Systems Engineering"
     },
     {
       "id": 111,
       "name": "Inhyuck Song",
       "role": "M.S. Student",
-      "current": "M.S. Student, Kaist ISsyE",
+      "current": "M.S. Student, KAIST ISsyE",
       "email": "son9ih@kaist.ac.kr",
       "edu": [
         ""
@@ -427,8 +425,8 @@
     {
       "id": 112,
       "name": "Huijae Kim",
-      "role": "Ph.D. Candidate",
-      "current": "Ph.D. Candidate, Kaist ISsyE",
+      "role": "Ph.D. Student",
+      "current": "Ph.D. Student, KAIST ISsyE",
       "email": "heejae6021@kaist.ac.kr",
       "edu": [
         ""
@@ -439,7 +437,7 @@
       "photo": "assets/images/people/huijaekim.jpg",
       "lab": "CSD Lab",
       "labFull": "Complex Systems Design Lab",
-      "position": ["Ph.D. Candidate in Industrial and Systems Engineering"],
+      "position": ["Ph.D. Student in Industrial and Systems Engineering"],
       "major": "Industrial and Systems Engineering"
     }
   ],
