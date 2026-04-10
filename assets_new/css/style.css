@@ -726,8 +726,9 @@ body.home #landing,
 
 .theme-row-pipeline {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   gap: 6px;
   margin-bottom: 12px;
 }
