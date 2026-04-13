@@ -1,0 +1,1032 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Urban AI Institute (UAII)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets_new/css/style.css">
+  <link rel="stylesheet" href="assets_new/css/hero.css">
+  <style>
+    html, body {
+      overflow-x: hidden;
+      overflow-y: auto;
+      height: auto;
+      background: #f8fafc;
+      color: #1e293b;
+      font-family: 'Inter', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    .page-scroll {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+    }
+
+    /* ── Container ── */
+    .about-container {
+      max-width: 1152px;
+      margin: 0 auto;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    /* ── Entrance animation ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up-d1 { transition-delay: 0.08s; }
+    .fade-up-d2 { transition-delay: 0.16s; }
+    .fade-up-d3 { transition-delay: 0.24s; }
+    .fade-up-d4 { transition-delay: 0.36s; }
+    .fade-up-d5 { transition-delay: 0.44s; }
+    .fade-up-d6 { transition-delay: 0.52s; }
+
+    /* ── Section shared ── */
+    .about-section {
+      padding: 96px 0;
+    }
+    .about-section + .about-section {
+      border-top: 1px solid #e2e8f0;
+    }
+    .section-eyebrow {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: #2563eb;
+      margin-bottom: 20px;
+      display: block;
+    }
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -1px;
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+
+    /* ════════════════════════════════
+       SECTION 1 · INTRO
+    ════════════════════════════════ */
+    .intro-section {
+      padding: 0 0 96px;
+    }
+    .intro-grid {
+      max-width: 720px;
+    }
+    .intro-body {
+      font-size: clamp(1rem, 1.4vw, 1.15rem);
+      color: #475569;
+      line-height: 1.85;
+      margin-bottom: 20px;
+    }
+    .intro-body strong { color: #1e3a8a; font-weight: 600; }
+
+    /* ════════════════════════════════
+       SECTION 2 · FROM AI TO URBAN INTELLIGENCE
+    ════════════════════════════════ */
+    .ui-section {
+      background: #ffffff;
+    }
+    .ui-inner {
+      max-width: 1152px;
+      margin: 0 auto;
+      padding: 96px 24px;
+    }
+    /* 2열: 테두리 없음 */
+    .ui-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      margin-bottom: 56px;
+    }
+    .ui-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 8px;
+      padding: 0 48px 0 0;
+      border-right: 1px solid #e2e8f0;
+    }
+    .ui-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 8px;
+      padding: 0 0 0 48px;
+    }
+    .ui-prep {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      color: #94a3b8;
+      margin-bottom: 4px;
+      line-height: 1;
+    }
+    .ui-word {
+      font-size: clamp(1.95rem, 3.5vw, 3rem);
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -1.5px;
+      line-height: 1.05;
+      margin-top: 0;
+    }
+    .ui-word-accent {
+      font-size: clamp(1.95rem, 3.5vw, 3rem);
+      font-weight: 800;
+      color: #2563eb;
+      letter-spacing: -1.5px;
+      line-height: 1.05;
+      margin-top: 0;
+    }
+    .ui-desc {
+      border-top: 1px solid #e2e8f0;
+      padding-top: 40px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .ui-para {
+      font-size: 1.08rem;
+      color: #475569;
+      line-height: 1.85;
+    }
+    .ui-para .accent { color: #1e3a8a; font-weight: 600; }
+
+    /* ════════════════════════════════
+       SECTION 3 · INSTITUTE STRUCTURE
+    ════════════════════════════════ */
+    .structure-section {
+      padding-bottom: 56px;
+    }
+
+    /* · Org Chart · */
+    .org-tree {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+    .org-root {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      background: #0f172a;
+      color: #ffffff;
+      border-radius: 10px;
+      padding: 12px 28px;
+      text-align: center;
+    }
+    .org-root-label {
+      font-size: 0.58rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: #94a3b8;
+      margin-bottom: 2px;
+    }
+    .org-root-name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+    .org-trunk {
+      width: 2px;
+      height: 24px;
+      background: #cbd5e1;
+    }
+    /* ── Desktop: horizontal row ── */
+    .org-hbar {
+      width: 100%;
+      height: 2px;
+      background: #cbd5e1;
+    }
+    .org-children-wrap {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      gap: 10px;
+    }
+    .org-item {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .org-item-v {
+      width: 2px;
+      height: 20px;
+      background: #cbd5e1;
+      flex-shrink: 0;
+    }
+    .org-node {
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 10px 8px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #1e3a8a;
+      text-align: center;
+      width: 100%;
+    }
+    /* ── Mobile: vertical list ── */
+    @media (max-width: 768px) {
+      .org-hbar { display: none; }
+      .org-children-wrap {
+        flex-direction: column;
+        align-items: flex-start;
+        border-left: 2px solid #cbd5e1;
+        margin-left: 32px;
+        gap: 0;
+        width: auto;
+      }
+      .org-item {
+        flex-direction: row;
+        align-items: center;
+        padding: 5px 0;
+        position: relative;
+      }
+      .org-item::before {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: #cbd5e1;
+        flex-shrink: 0;
+      }
+      .org-item-v { display: none; }
+      .org-node { width: auto; white-space: nowrap; }
+      .org-item:last-child::after {
+        content: '';
+        position: absolute;
+        left: -2px;
+        top: 50%;
+        bottom: 0;
+        width: 2px;
+        background: #f8fafc;
+      }
+    }
+
+    .structure-card {
+      max-width: 780px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .structure-root {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #1e3a8a;
+      margin-bottom: 20px;
+    }
+    .structure-desc {
+      font-size: 0.96rem;
+      color: #475569;
+      line-height: 1.8;
+      margin-bottom: 24px;
+      max-width: 640px;
+    }
+    .structure-list {
+      list-style: disc;
+      padding-left: 20px;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .structure-list li {
+      color: #0f172a;
+      font-size: 0.95rem;
+      font-weight: 700;
+      line-height: 1.6;
+    }
+
+    /* ════════════════════════════════
+       SECTION 4 · DIRECTOR
+    ════════════════════════════════ */
+    .director-section {
+      background: #ffffff;
+    }
+    .director-inner {
+      max-width: 1152px;
+      margin: 0 auto;
+      padding: 96px 24px;
+    }
+    .director-card {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 36px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 40px;
+      align-items: start;
+    }
+    .director-photo {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 10px;
+      border: 1px solid #e2e8f0;
+      display: block;
+    }
+    .director-photo-placeholder {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 10px;
+      background: #e2e8f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: #94a3b8;
+    }
+    .director-role {
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: #2563eb;
+      margin-bottom: 6px;
+    }
+    .director-name {
+      font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
+    }
+    .director-title {
+      font-size: 0.82rem;
+      color: #64748b;
+      line-height: 1.6;
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .director-greeting {
+      font-size: 1rem;
+      color: #334155;
+      line-height: 1.9;
+      font-style: italic;
+    }
+
+    /* ════════════════════════════════
+       SECTION 5 · CAREER OPPORTUNITY
+    ════════════════════════════════ */
+    .career-section {
+      background: #f8fafc;
+    }
+    .career-inner {
+      max-width: 1152px;
+      margin: 0 auto;
+      padding: 56px 24px 96px;
+    }
+    .career-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+      margin-top: 40px;
+    }
+    .career-desc {
+      font-size: 1rem;
+      color: #475569;
+      line-height: 1.85;
+      margin-bottom: 28px;
+    }
+    .career-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 32px;
+    }
+    .career-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #1e3a8a;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      padding: 6px 14px;
+      border-radius: 20px;
+    }
+    .career-cta {
+      display: inline-block;
+      padding: 11px 26px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      background: #1e3a8a;
+      color: #ffffff;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .career-cta:hover { background: #1d4ed8; }
+    .career-apply-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .career-apply-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 20px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+    }
+    .career-apply-icon {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .career-apply-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .career-apply-sub {
+      font-size: 0.78rem;
+      color: #64748b;
+    }
+    .career-openings {
+      margin-top: 32px;
+    }
+    .career-openings-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #2563eb;
+      margin-bottom: 14px;
+    }
+    .career-openings-list {
+      display: grid;
+      gap: 14px;
+    }
+    .career-opening-card {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+      padding: 18px 20px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+    }
+    .career-opening-meta {
+      min-width: 0;
+    }
+    .career-opening-role {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+    .career-opening-note {
+      font-size: 0.82rem;
+      color: #64748b;
+      line-height: 1.6;
+    }
+    .career-opening-link {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: 1px solid #cbd5e1;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #1e3a8a;
+      background: #ffffff;
+      text-decoration: none;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+    .career-opening-link:hover {
+      background: #eff6ff;
+      border-color: #93c5fd;
+    }
+
+    /* ════════════════════════════════
+       SECTION 6 · CONTACT
+    ════════════════════════════════ */
+    .contact-section {
+      background: #0f172a;
+    }
+    .contact-inner {
+      max-width: 1152px;
+      margin: 0 auto;
+      padding: 96px 24px;
+    }
+    .contact-inner .section-eyebrow { color: #60a5fa; }
+    .contact-title {
+      font-size: clamp(2.4rem, 6vw, 4.8rem);
+      font-weight: 800;
+      color: #f1f5f9;
+      letter-spacing: -2px;
+      line-height: 1;
+      margin-bottom: 56px;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+    }
+    .contact-block {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 36px;
+    }
+    .contact-block-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: #60a5fa;
+      margin-bottom: 16px;
+    }
+    .contact-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      margin-bottom: 14px;
+    }
+    .contact-item-icon {
+      font-size: 0.9rem;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    .contact-item-text {
+      font-size: 0.9rem;
+      color: #94a3b8;
+      line-height: 1.6;
+    }
+    .contact-item-text a {
+      color: #93c5fd;
+      text-decoration: none;
+    }
+    .contact-item-text a:hover { text-decoration: underline; }
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 10px;
+    }
+    .contact-link-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(147,197,253,0.35);
+      background: rgba(59,130,246,0.08);
+      color: #bfdbfe;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+    .contact-link-pill:hover {
+      background: rgba(59,130,246,0.14);
+      text-decoration: none;
+    }
+    .contact-info-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .contact-channel-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+    @media (max-width: 900px) {
+      .contact-channel-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── Footer ── */
+    .about-footer {
+      border-top: 1px solid #e2e8f0;
+      padding: 32px 0;
+      text-align: center;
+      background: #ffffff;
+    }
+    .about-footer p {
+      font-size: 0.8rem;
+      color: #94a3b8;
+    }
+
+    /* ── Mobile Nav ── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 36px;
+      height: 36px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+      flex-shrink: 0;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #1e3a8a;
+      border-radius: 2px;
+      transition: all 0.25s ease;
+    }
+    .nav-hamburger.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .nav-hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+    .nav-hamburger.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      /* Nav */
+      .nav-hamburger { display: flex; }
+      .navbar-links {
+        position: fixed;
+        top: var(--nav-header-height, 56px);
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        gap: 0;
+        background: rgba(252, 252, 252, 0.98);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid #e2e5eb;
+        padding: 8px 0 20px;
+        transform: translateY(-110%);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.25s ease, opacity 0.2s ease;
+        z-index: 99;
+      }
+      .navbar-links.open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+      }
+      .navbar-links li a {
+        display: block;
+        padding: 13px 28px;
+        font-size: 13px;
+        letter-spacing: 0.1em;
+      }
+      /* FROM/TO */
+      .ui-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .ui-left {
+        border-right: none;
+        border-bottom: 1px solid #e2e8f0;
+        padding: 0 0 32px 0;
+      }
+      .ui-right { padding: 0; }
+      .ui-desc { grid-template-columns: 1fr; gap: 18px; }
+      /* Career */
+      .career-body { grid-template-columns: 1fr; gap: 36px; }
+      .career-opening-card { flex-direction: column; align-items: flex-start; }
+      /* Contact */
+      .contact-title { font-size: clamp(2.3rem, 10vw, 4rem); letter-spacing: -1px; }
+      /* Intro */
+      .intro-section { padding: 0 0 64px; }
+      .about-section { padding: 64px 0; }
+      .structure-section { padding-bottom: 40px; }
+      .ui-inner, .career-inner, .contact-inner { padding: 64px 20px; }
+      .career-inner { padding: 40px 20px 64px; }
+      .about-container { padding-left: 20px; padding-right: 20px; }
+      .structure-card { padding: 24px; }
+      .structure-list { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .section-title { font-size: clamp(1.8rem, 7vw, 2.5rem); }
+      .submenu.bg-secondary { padding: 0 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="submenu bg-secondary" id="main-nav">
+    <a href="index.html" class="navbar-brand">UAII <span class="navbar-brand-sub">Urban AI Institute</span></a>
+    <button class="nav-hamburger" id="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="navbar-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="people.html">People</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="engagement.html">Engagement</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-scroll">
+
+    <!-- ════════════════════════════════
+         SECTION 1 · INSTITUTE INTRO
+    ════════════════════════════════ -->
+    <section class="intro-section">
+      <div class="engage-hero">
+        <p class="page-hero-eyebrow fade-up">KAIST · Urban AI Institute</p>
+        <h1 class="page-hero-title fade-up fade-up-d1">About</h1>
+        <p class="page-hero-sub fade-up fade-up-d2"></p>
+      </div>
+      <div class="about-container">
+        <div class="intro-grid">
+          <p class="intro-body fade-up fade-up-d3">
+            The <strong>Urban AI Institute (UAII)</strong> at KAIST is a research institute dedicated to reimagining cities as intelligent, adaptive systems through the convergence of artificial intelligence and urban science.
+          </p>
+          <p class="intro-body fade-up fade-up-d4">
+            We conduct fundamental research and real-world deployments that integrate <strong>AI, data infrastructure, mobility, buildings, and human activity</strong> into coherent urban systems — where cities can learn, optimize, and continuously improve.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════
+         SECTION 2 · FROM AI TO URBAN INTELLIGENCE
+    ════════════════════════════════ -->
+    <section class="ui-section">
+      <div class="ui-inner">
+
+        <div class="ui-layout">
+          <!-- Left: FROM Artificial Intelligence -->
+          <div class="ui-left">
+            <span class="ui-prep fade-up">FROM</span>
+            <div class="ui-word fade-up fade-up-d1">Artificial<br>Intelligence</div>
+          </div>
+          <!-- Right: TO Urban Intelligence -->
+          <div class="ui-right">
+            <span class="ui-prep fade-up">TO</span>
+            <div class="ui-word-accent fade-up fade-up-d1">Urban<br>Intelligence</div>
+          </div>
+        </div>
+
+        <!-- Description below -->
+        <div class="ui-desc">
+          <p class="ui-para fade-up">
+            Artificial Intelligence is transforming the world. We focus on the next frontier — <span class="accent">Urban Intelligence</span>.
+          </p>
+          <p class="ui-para fade-up fade-up-d1">
+            <span class="accent">Urban Intelligence</span> connects data, infrastructure, mobility, buildings, and human activity into an integrated system where cities can continuously learn and improve.
+          </p>
+          <p class="ui-para fade-up fade-up-d2">
+            At <span class="accent">Urban AI Institute</span>, we conduct research and real-world deployment of AI, integrating it into urban systems for sustainable, human-centered innovation.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════
+         SECTION 3 · INSTITUTE STRUCTURE
+    ════════════════════════════════ -->
+    <section class="about-section structure-section">
+      <div class="about-container">
+
+        <span class="section-eyebrow fade-up">Organization</span>
+        <h2 class="section-title fade-up fade-up-d1">Institute Structure</h2>
+
+        <!-- ·· ORG CHART (PC: 가로 / Mobile: 세로) ·· -->
+        <div class="structure-card fade-up fade-up-d2">
+          <div class="structure-root">KAIST · Urban AI Institute (UAII)</div>
+          <ul class="structure-list">
+            <li>Center for Advanced Urban Systems(CAUS)</li>
+            <li>Brain Pool Fellowship Program</li>
+            <li>Urban@KAIST</li>
+            <li>Urban Heat, Urban Sales</li>
+            <li>Healing Nature</li>
+            <li>KAIST-NYU Center for Cities and Climate Change(KN-C³)</li>
+            <li>KAIST Global Initiatives on Human-centered Future Mobility(HcFM)</li>
+            <li>Attention based Graph Neural Network Models for Urban Mobility Network Analysis and Prediction</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════
+         SECTION 4 · DIRECTOR (비활성)
+    ════════════════════════════════ -->
+    <!--
+    <section class="director-section">
+      <div class="director-inner">
+
+        <span class="section-eyebrow fade-up">Leadership</span>
+        <h2 class="section-title fade-up fade-up-d1">Director</h2>
+
+        <div class="director-card fade-up fade-up-d2">
+          <div>
+            <img
+              src="assets/images/people/profile_yoon.jpg"
+              alt="Prof. Yoonjin Yoon"
+              class="director-photo"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+            >
+            <div class="director-photo-placeholder" style="display:none;">👤</div>
+          </div>
+          <div>
+            <div class="director-role">Founding Director</div>
+            <div class="director-name">Prof. Yoonjin Yoon</div>
+            <div class="director-title">
+              Associate Professor, Dept. of Civil &amp; Environmental Engineering, KAIST<br>
+              Joint Appointment: Graduate School of AI · Graduate School of Data Science
+            </div>
+            <p class="director-greeting">
+              "교수님 인사말을 이 곳에 입력해 주세요."
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    -->
+
+    <!-- ════════════════════════════════
+         SECTION 5 · CAREER OPPORTUNITY
+    ════════════════════════════════ -->
+    <section class="career-section">
+      <div class="career-inner">
+
+        <span class="section-eyebrow fade-up">Join Us</span>
+        <h2 class="section-title fade-up fade-up-d1">Career Opportunity</h2>
+
+        <div class="career-body">
+          <div>
+            <p class="career-desc fade-up fade-up-d2">
+              We are always looking for motivated researchers and students who are passionate about Urban AI, data science, and building intelligent urban systems.
+            </p>
+            <p class="career-desc fade-up fade-up-d3" style="margin-bottom:28px;">
+              Please submit your CV and inquiry to
+              <a href="mailto:urban@kaist.ac.kr" style="color:#1e3a8a;font-weight:600;">urban@kaist.ac.kr</a>
+            </p>
+            <a href="mailto:urban@kaist.ac.kr?subject=Career Opportunity Inquiry" class="career-cta fade-up fade-up-d4">Send CV &amp; Inquire ↗</a>
+
+            <div class="career-openings fade-up fade-up-d5">
+              <div class="career-openings-label">Current Openings</div>
+              <div class="career-openings-list">
+                <div class="career-opening-card">
+                  <div class="career-opening-meta">
+                    <div class="career-opening-role">Postdoctoral Researchers</div>
+                    <div class="career-opening-note">Research-focused positions for candidates with strong publication records and interests aligned with UAII programs.</div>
+                  </div>
+                  <a href="apply-postdoc.html" class="career-opening-link">View</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <ul class="career-apply-list fade-up fade-up-d2">
+            <li class="career-apply-item">
+              <span class="career-apply-icon">🎓</span>
+              <div class="career-apply-title">Graduate Students (Ph.D. / M.S.)</div>
+            </li>
+            <li class="career-apply-item">
+              <span class="career-apply-icon">🔬</span>
+              <div class="career-apply-title">Postdoctoral Researchers</div>
+            </li>
+            <li class="career-apply-item">
+              <span class="career-apply-icon">💼</span>
+              <div class="career-apply-title">Research Interns</div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════
+         SECTION 6 · CONTACT
+    ════════════════════════════════ -->
+    <section class="contact-section">
+      <div class="contact-inner">
+
+        <h2 class="contact-title fade-up">CONTACT</h2>
+
+        <div class="contact-info-grid fade-up fade-up-d1">
+          <div class="contact-block">
+            <div class="contact-block-label">Address</div>
+            <div class="contact-item" style="margin-bottom:0;">
+              <span class="contact-item-icon">📍</span>
+              <span class="contact-item-text">
+                Urban AI Institute (UAII)<br>
+                KAIST, 291 Daehak-ro, Yuseong-gu<br>
+                Daejeon 34141, Republic of Korea
+              </span>
+            </div>
+          </div>
+
+          <div class="contact-channel-grid">
+            <div class="contact-block">
+              <div class="contact-block-label">Email</div>
+              <div class="contact-item" style="margin-bottom:0;">
+                <span class="contact-item-icon">✉️</span>
+                <span class="contact-item-text">
+                  <a href="mailto:urban@kaist.ac.kr">urban@kaist.ac.kr</a>
+                </span>
+              </div>
+            </div>
+            <div class="contact-block">
+              <div class="contact-block-label">Youtube</div>
+              <div class="contact-item" style="margin-bottom:0;">
+                <span class="contact-item-icon">▶</span>
+                <span class="contact-item-text">
+                  <a href="https://www.youtube.com/@KUAI-pw2dm" target="_blank" rel="noopener noreferrer">youtube</a>
+                </span>
+              </div>
+            </div>
+            <div class="contact-block">
+              <div class="contact-block-label">LinkedIn</div>
+              <div class="contact-item" style="margin-bottom:0;">
+                <span class="contact-item-icon">in</span>
+                <span class="contact-item-text">
+                  <a href="https://www.linkedin.com/company/center-for-city-learning-ai-research/" target="_blank" rel="noopener noreferrer">linkedin</a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="about-footer">
+      <p>© 2026 Urban AI Institute · Daejeon, Republic of Korea</p>
+    </footer>
+
+  </div><!-- end page-scroll -->
+
+  <script>
+    // ── Mobile Nav ──
+    const toggle = document.getElementById('nav-toggle');
+    const links  = document.getElementById('nav-links');
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('open');
+      links.classList.toggle('open');
+    });
+    // 메뉴 항목 클릭 시 닫기
+    links.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        toggle.classList.remove('open');
+        links.classList.remove('open');
+      });
+    });
+
+    // ── Scroll-based fade-up ──
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

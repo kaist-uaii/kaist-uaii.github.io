@@ -3,91 +3,258 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Apply | Research Professors / Postdoctoral Fellows</title>
+    <title>Apply | Postdoctoral Researchers</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-slate-50 text-slate-900">
 
-    <nav class="border-b border-slate-100 bg-white/80 backdrop-blur-md sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-6 flex justify-between items-center">
-            <a href="index.html" class="text-xl font-black tracking-tighter text-blue-900">
-                UAII <span class="text-slate-400 font-light">Apply</span>
-            </a>
-            <div class="hidden md:flex gap-6 text-xs font-bold uppercase tracking-widest text-slate-500">
-                <a href="index.html" class="hover:text-blue-600">Home</a>
-                <a href="people.html" class="hover:text-blue-600">People</a>
-                <a href="projects.html" class="hover:text-blue-600">Projects</a>
-                <a href="press.html" class="hover:text-blue-600">Events</a>
-                <a href="apply.html" class="text-blue-600">Apply</a>
+    <div id="navbar" data-page="Apply"></div>
+
+    <main class="container mx-auto px-6 py-14 max-w-5xl">
+
+        <header class="mt-6">
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-blue-700">Postdoctoral Hiring</p>
+            <h1 class="text-4xl font-extrabold tracking-tight mt-3">Postdoctoral Researchers</h1>
+        </header>
+
+        <section class="mt-10">
+            <div class="inline-flex flex-wrap gap-3 rounded-2xl border border-slate-200 bg-white p-2">
+                <button
+                    type="button"
+                    class="job-tab rounded-xl px-4 py-3 text-sm font-semibold transition"
+                    data-job="pm"
+                    aria-pressed="true">
+                    Research PM
+                </button>
+                <button
+                    type="button"
+                    class="job-tab rounded-xl px-4 py-3 text-sm font-semibold transition"
+                    data-job="research"
+                    aria-pressed="false">
+                    Urban AI / Smart City Research
+                </button>
             </div>
-        </div>
-    </nav>
-
-    <main class="container mx-auto px-6 py-14 max-w-4xl">
-        <a href="apply.html" class="text-sm text-slate-500 hover:text-blue-600">&larr; Back to Apply</a>
-
-        <h1 class="text-4xl font-extrabold tracking-tight mt-6">Research Professors / Postdoctoral Fellows</h1>
-        <p class="text-slate-600 mt-4">
-            We welcome Ph.D. holders who are excited to lead and contribute to research in Urban AI, simulation,
-            urban representation, and data-driven infrastructure systems.
-        </p>
-
-        <section class="mt-10 bg-white border border-slate-200 rounded-2xl p-8">
-            <h2 class="text-xl font-bold mb-4">What we look for</h2>
-            <ul class="list-disc list-inside text-slate-600 space-y-2">
-                <li>Ph.D. in a relevant field (Civil/Urban/Transportation/CS/AI, etc.)</li>
-                <li>Strong publication record or demonstrated project leadership</li>
-                <li>Ability to work collaboratively across disciplines (AI × urban systems)</li>
-                <li>Experience with research software (Python, ML stacks, simulation tooling) is a plus</li>
-            </ul>
         </section>
 
-        <section class="mt-6 bg-white border border-slate-200 rounded-2xl p-8">
-            <h2 class="text-xl font-bold mb-4">Research focus</h2>
-            <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-100">Urban AI</span>
-                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-100">Urban Representation</span>
-                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-100">Urban Simulation</span>
-            </div>
-            <p class="text-xs text-slate-500 mt-4">
-                Depending on ongoing projects, there may be opportunities to lead sub-projects, mentor students, and
-                contribute to proposal writing.
-            </p>
-        </section>
+        <section id="job-panel" class="mt-8 rounded-3xl border border-slate-200 bg-white p-8 sm:p-10 shadow-sm">
+            <div class="flex flex-col gap-6">
+                <div>
+                    <h2 id="job-title" class="mt-3 text-3xl font-extrabold tracking-tight"></h2>
+                    <p id="job-summary" class="mt-4 text-slate-600 leading-7 max-w-3xl"></p>
+                </div>
 
-        <section class="mt-6 bg-white border border-slate-200 rounded-2xl p-8">
-            <h2 class="text-xl font-bold mb-4">Application materials</h2>
-            <ul class="list-disc list-inside text-slate-600 space-y-2">
-                <li>CV (including publications)</li>
-            </ul>
-        </section>
+                <div class="grid gap-4 md:grid-cols-3">
+                    <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                        <div class="text-xs font-bold uppercase tracking-[0.18em] text-slate-400">Location</div>
+                        <div id="job-location" class="mt-2 text-sm font-semibold text-slate-900"></div>
+                    </div>
+                    <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                        <div class="text-xs font-bold uppercase tracking-[0.18em] text-slate-400">Compensation</div>
+                        <div id="job-comp" class="mt-2 text-sm font-semibold text-slate-900"></div>
+                    </div>
+                    <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                        <div class="text-xs font-bold uppercase tracking-[0.18em] text-slate-400">Application</div>
+                        <div id="job-apply" class="mt-2 text-sm font-semibold text-slate-900"></div>
+                    </div>
+                </div>
 
-        <section class="mt-6 bg-white border border-slate-200 rounded-2xl p-8">
-            <h2 class="text-xl font-bold mb-4">How to apply</h2>
-            <ol class="list-decimal list-inside text-slate-600 space-y-2">
-                <li>Prepare the CV(Curriculum Vitae)</li>
-                <li>
-                    Email to <span class="font-semibold">urban@kaist.ac.kr</span> with the subject:
-                    <span class="italic">[Application] Postdoc - Your_Name</span>
-                </li>
-                <li>Shortlisted candidates will be contacted for an interview.</li>
-            </ol>
+                <div class="grid gap-6 lg:grid-cols-2">
+                    <section class="rounded-2xl border border-slate-200 p-6">
+                        <h3 class="text-lg font-bold">What You Will Do</h3>
+                        <ul id="job-responsibilities" class="mt-4 list-disc pl-5 space-y-2 text-slate-600 leading-7"></ul>
+                    </section>
+                    <section class="rounded-2xl border border-slate-200 p-6">
+                        <h3 class="text-lg font-bold">Required Qualifications</h3>
+                        <ul id="job-required" class="mt-4 list-disc pl-5 space-y-2 text-slate-600 leading-7"></ul>
+                    </section>
+                </div>
 
-            <div class="mt-6 flex flex-col sm:flex-row gap-3">
-                <a href="mailto:urban@kaist.ac.kr?subject=%5BApplication%5D%20Postdoc%20-%20Your_Name"
-                   class="inline-flex justify-center items-center px-4 py-2 rounded-xl bg-slate-900 text-white font-semibold hover:bg-slate-800">
-                    Email to Apply
-                </a>
-                <a href="apply.html"
-                   class="inline-flex justify-center items-center px-4 py-2 rounded-xl bg-white border border-slate-200 text-slate-700 font-semibold hover:border-blue-400 hover:text-blue-600">
-                    View other positions
-                </a>
+                <div class="grid gap-6 lg:grid-cols-2">
+                    <section class="rounded-2xl border border-slate-200 p-6">
+                        <h3 class="text-lg font-bold">Preferred Qualifications</h3>
+                        <ul id="job-preferred" class="mt-4 list-disc pl-5 space-y-2 text-slate-600 leading-7"></ul>
+                    </section>
+                    <section class="rounded-2xl border border-slate-200 p-6">
+                        <h3 class="text-lg font-bold">Why This Role</h3>
+                        <ul id="job-highlights" class="mt-4 list-disc pl-5 space-y-2 text-slate-600 leading-7"></ul>
+                    </section>
+                </div>
+
+                <section class="rounded-2xl border border-slate-200 p-6">
+                    <h3 class="text-lg font-bold">Application Materials</h3>
+                    <ul id="job-materials" class="mt-4 list-disc pl-5 space-y-2 text-slate-600 leading-7"></ul>
+                </section>
+
+                <section class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+                    <h3 class="text-lg font-bold">How to Apply</h3>
+                    <ol id="job-steps" class="mt-4 list-decimal pl-5 space-y-2 text-slate-600 leading-7"></ol>
+
+                    <div class="mt-6 flex flex-col sm:flex-row gap-3">
+                        <a id="job-email-link"
+                           href="mailto:urban@kaist.ac.kr?subject=%5BApplication%5D%20Postdoc%20-%20Your_Name"
+                           class="inline-flex justify-center items-center px-4 py-2 rounded-xl bg-slate-900 text-white font-semibold hover:bg-slate-800">
+                            Email to Apply
+                        </a>
+                    </div>
+                </section>
             </div>
         </section>
     </main>
 
+    <script>
+        const jobData = {
+            pm: {
+                title: "Postdoctoral Fellow (Research Program Management)",
+                summary: "This role is designed for a PhD-level researcher who can help shape and operate a large-scale research program spanning urban systems, AI, infrastructure, and real-world deployment.",
+                location: "Seoul / Daejeon / Hybrid, South Korea",
+                compensation: "KRW 55M - 90M+ (negotiable)",
+                apply: "urban@kaist.ac.kr",
+                responsibilities: [
+                    "Coordinate multiple research tracks across AI, infrastructure, mobility, and human-city interaction.",
+                    "Manage timelines, deliverables, milestones, and research outputs such as papers, datasets, PoCs, and systems.",
+                    "Support research roadmap design, identify emerging urban AI directions, and translate complex topics into actionable programs.",
+                    "Work with GS E&C and global collaborators including institutions such as MIT, Stanford, and NYU.",
+                    "Plan and support workshops, meetings, testbeds, living labs, and real-world PoC deployments."
+                ],
+                required: [
+                    "PhD in a relevant field such as Computer Science, Urban Engineering, Transportation, AI, Industrial Engineering, or Mechanical Engineering, or an M.S. with 5+ years of industry experience.",
+                    "Experience managing complex research or R&D projects.",
+                    "Strong analytical, structured thinking, and program-planning ability.",
+                    "Excellent writing and communication skills in Korean and English."
+                ],
+                preferred: [
+                    "Familiarity with data or AI pipelines and simulation tools such as SUMO or MATSim.",
+                    "Experience with large-scale interdisciplinary research programs or industry collaboration.",
+                    "Background in consulting, strategy, or program management.",
+                    "International collaboration experience.",
+                    "Experience related to smart cities, digital twins, or urban AI."
+                ],
+                highlights: [
+                    "Real-world impact through city-scale and industry-connected projects.",
+                    "Interdisciplinary scope across AI, urban systems, infrastructure, and policy.",
+                    "Opportunity to help design and operate a major multi-year research program.",
+                    "Global exposure through partnerships with top-tier institutions and industry.",
+                    "Strong path toward faculty, research leadership, or industry strategy roles."
+                ],
+                materials: [
+                    "CV",
+                    "Brief statement of interest (1-2 pages)"
+                ],
+                steps: [
+                    "Prepare your CV and brief statement of interest.",
+                    "Email the materials to urban@kaist.ac.kr with the subject [Application] Postdoc PM - Your_Name.",
+                    "Shortlisted candidates will be contacted for follow-up discussion."
+                ],
+                subject: "[Application] Postdoc PM - Your_Name"
+            },
+            research: {
+                title: "Postdoctoral Fellow (Urban AI / Smart City Research)",
+                summary: "This role is for a research-focused postdoctoral fellow who wants to publish at top-tier venues, conduct interdisciplinary urban AI research, and participate in sustained global collaborative research.",
+                location: "Seoul / Daejeon / Hybrid, South Korea",
+                compensation: "KRW 55M - 90M+ (negotiable)",
+                apply: "urban@kaist.ac.kr",
+                responsibilities: [
+                    "Conduct original research in urban AI, smart cities, and related interdisciplinary topics.",
+                    "Publish in top-tier conferences and journals such as NeurIPS, ICML, KDD, Nature, and related venues.",
+                    "Develop methodologies that integrate AI, data, and urban systems.",
+                    "Work across AI/ML, urban systems, spatial data, and multimodal urban datasets.",
+                    "Participate in joint research with Stanford, MIT, NYU, and other global partners, including at least 3 months per year abroad.",
+                    "Contribute to simulation platforms, AI models, urban analytics systems, and testbeds."
+                ],
+                required: [
+                    "PhD in a relevant field such as Computer Science, AI, Urban Engineering, Transportation, or Data Science.",
+                    "Strong research track record with top-tier publications or equivalent outcomes.",
+                    "Ability to independently conduct research from problem definition to final results.",
+                    "Excellent English communication skills for research writing and collaboration.",
+                    "Willingness and ability to conduct international collaborative research for at least 3 months per year abroad."
+                ],
+                preferred: [
+                    "Experience in interdisciplinary research connecting AI with urban, mobility, or environmental systems.",
+                    "Experience with simulation tools such as SUMO or MATSim, or large-scale data analysis.",
+                    "Familiarity with modern AI techniques such as LLMs, generative models, or graph learning.",
+                    "Prior international collaboration or visiting research experience.",
+                    "Strong interest in real-world urban applications."
+                ],
+                highlights: [
+                    "Top-tier publication-oriented research environment.",
+                    "Deep collaboration with global institutions including MIT, Stanford, and NYU.",
+                    "Frontier interdisciplinary work at the intersection of AI and urban science.",
+                    "Real-world relevance through smart city deployments and experimental testbeds.",
+                    "Career development toward faculty positions or research leadership."
+                ],
+                materials: [
+                    "CV",
+                    "Research statement (1-2 pages)",
+                    "Publications (max 2)",
+                    "At least 2 references with contact information"
+                ],
+                steps: [
+                    "Prepare your CV, research statement, publications, and reference contacts.",
+                    "Email the materials to urban@kaist.ac.kr with the subject [Application] Postdoc Research - Your_Name.",
+                    "Selected applicants will be contacted for the next stage."
+                ],
+                subject: "[Application] Postdoc Research - Your_Name"
+            }
+        };
+
+        const tabButtons = Array.from(document.querySelectorAll(".job-tab"));
+        const titleEl = document.getElementById("job-title");
+        const summaryEl = document.getElementById("job-summary");
+        const locationEl = document.getElementById("job-location");
+        const compEl = document.getElementById("job-comp");
+        const applyEl = document.getElementById("job-apply");
+        const responsibilitiesEl = document.getElementById("job-responsibilities");
+        const requiredEl = document.getElementById("job-required");
+        const preferredEl = document.getElementById("job-preferred");
+        const highlightsEl = document.getElementById("job-highlights");
+        const materialsEl = document.getElementById("job-materials");
+        const stepsEl = document.getElementById("job-steps");
+        const emailLinkEl = document.getElementById("job-email-link");
+
+        function renderList(container, items) {
+            container.innerHTML = "";
+            items.forEach((item) => {
+                const li = document.createElement("li");
+                li.textContent = item;
+                container.appendChild(li);
+            });
+        }
+
+        function setActiveTab(jobKey) {
+            const job = jobData[jobKey];
+            titleEl.textContent = job.title;
+            summaryEl.textContent = job.summary;
+            locationEl.textContent = job.location;
+            compEl.textContent = job.compensation;
+            applyEl.textContent = job.apply;
+            renderList(responsibilitiesEl, job.responsibilities);
+            renderList(requiredEl, job.required);
+            renderList(preferredEl, job.preferred);
+            renderList(highlightsEl, job.highlights);
+            renderList(materialsEl, job.materials);
+            renderList(stepsEl, job.steps);
+            emailLinkEl.href = `mailto:urban@kaist.ac.kr?subject=${encodeURIComponent(job.subject)}`;
+
+            tabButtons.forEach((button) => {
+                const isActive = button.dataset.job === jobKey;
+                button.setAttribute("aria-pressed", String(isActive));
+                button.className = isActive
+                    ? "job-tab rounded-xl px-4 py-3 text-sm font-semibold transition bg-slate-900 text-white shadow-sm"
+                    : "job-tab rounded-xl px-4 py-3 text-sm font-semibold transition bg-white text-slate-600 hover:text-blue-600";
+            });
+        }
+
+        tabButtons.forEach((button) => {
+            button.addEventListener("click", () => setActiveTab(button.dataset.job));
+        });
+
+        setActiveTab("pm");
+    </script>
+
     <footer class="bg-white border-t border-gray-200 py-8 text-center mt-20">
         <p class="text-gray-500 text-sm">&copy; 2026 Urban AI Institute. All rights reserved.</p>
     </footer>
+
+    <script src="partials/navbar.js"></script>
 </body>
 </html>

@@ -20,7 +20,8 @@
       "id": 1,
       "name": "Yoonjin Yoon",
       "link": "https://sites.google.com/view/yoonjintrue",
-      "role": "Kaist Professor",
+      "role": "KAIST Professor",
+      "current": "Professor, KAIST CEE",
       "affiliation": "Civil and Environmental Engineering",
       "email": "yoonjin@kaist.ac.kr",
       "edu": [
@@ -34,13 +35,21 @@
       ],
       "photo": "assets/images/people/profile_yoon.jpg",
       "research": "System-of-systems, which includes transportation system, city, logistics system, and public health system.",
-      "projects": [ "CAUS", "BP" ]
+      "keywords": ["Transportation Systems", "Urban Systems", "Urban Data Science", "Urban AI"],
+      "projects": [
+        "CAUS",
+        "BP"
+      ],
+      "lab": "STIL",
+      "labFull": "Spacetime Intelligence Lab",
+      "major": "Civil and Environmental Engineering, Graduate School of Artificial Intelligence, Graduate School of Data Science"
     },
     {
       "id": 2,
       "name": "Namwoo Kim",
       "link": "https://sites.google.com/view/namwookim",
       "role": "Postdoctoral Researcher",
+      "current": "Research Professor, KAIST UAII",
       "from": "2023.09~",
       "email": "ih736x@kaist.ac.kr",
       "edu": [
@@ -49,13 +58,18 @@
       ],
       "photo": "assets/images/people/2.jpg",
       "research": "",
-      "projects": [ "CAUS", "중견" ]
+      "projects": [
+        "CAUS",
+        "중견"
+      ],
+      "major": "Civil and Environmental Engineering"
     },
     {
       "id": 3,
       "name": "Sungmin Sohn",
       "link": "https://sites.google.com/view/sungmin-sohn",
-      "role": "Ph.D. Candidate",
+      "role": "Ph.D. Student",
+      "current": "Ph.D. Student, KAIST CEE",
       "affiliation": "Civil and Environmental Engineering",
       "from": "2023.09~",
       "email": "smsohn1997@kaist.ac.kr",
@@ -65,101 +79,139 @@
       ],
       "photo": "assets/images/people/3.jpg",
       "research": "Urban Air Mobility (UAM), evaluation of vertiport locations, addressing the intricacies of their placement in the middle of large metropolitan environments",
-      "projects": [ "CAUS", "BP" ]
+      "projects": [
+        "CAUS",
+        "BP"
+      ],
+      "lab": "STIL",
+      "labFull": "Spacetime Intelligence Lab",
+      "position": ["Ph.D. Student in Civil and Environmental Engineering"],
+      "major": "Civil and Environmental Engineering"
     },
     {
       "id": 4,
       "name": "Donghyun Yoon",
       "link": "https://sites.google.com/view/donghyun-yoon",
-      "role": "Ph.D. Candidate",
+      "role": "Ph.D. Student",
+      "current": "Ph.D. Student, KAIST AI",
       "from": "2024.03~",
       "email": "tloveu49@kaist.ac.kr",
       "edu": [
         "M.S. in Information Security, Sungkyunkwan University",
         "B.S. in Computer Engineering and Military Science, Korea Air Force Academy"
       ],
-      "projects": [ "CAUS" ],
-      "photo": "assets/images/people/4.jpg"
+      "projects": [
+        "CAUS"
+      ],
+      "photo": "assets/images/people/4.jpg",
+      "lab": "STIL",
+      "labFull": "Spacetime Intelligence Lab",
+      "position": ["Ph.D. Student in Graduate School of Artificial Intelligence"],
+      "major": "Graduate School of Artificial Intelligence"
     },
     {
       "id": 5,
       "name": "Minwoo Jeong",
       "link": "https://sites.google.com/view/minwoo-jeong",
-      "role": "M.S. Candidate",
+      "role": "Research Associate",
+      "current": "Research Associate, KAIST UAII",
       "from": "2024.03~",
       "email": "minwoo5003@kaist.ac.kr",
       "edu": [
+        "M.S. in Graduate School of Data Science, KAIST",
         "B.S. in Economics and Data Science, University of Seoul"
       ],
-      "projects": [ "CAUS" ],
-      "photo": "assets/images/people/5.jpg"
-    },
-    {
-      "id": 6,
-      "name": "Juneyoung Ro",
-      "link": "https://sites.google.com/view/juneyoungro",
-      "role": "M.S. Candidate",
-      "from": "2024.03~",
-      "email": "juneyoung.ro@kaist.ac.kr",
-      "edu": [
-        "B.S. in Quantitative Sciences and Biology, Emory University"
+      "projects": [
+        "CAUS"
       ],
-      "projects": [ "Urban All" ],
-      "photo": "assets/images/people/6.jpg"
+      "photo": "assets/images/people/5.jpg",
+      "lab": "STIL",
+      "labFull": "Spacetime Intelligence Lab",
+      "position": ["Research Associate in Spacetime Intelligence Lab"]
     },
     {
       "id": 7,
       "name": "Seungro Lee",
-      "role": "M.S. Candidate",
+      "role": "M.S. Student",
+      "current": "M.S. Student, KAIST DS",
       "from": "2024.09~",
       "email": "roy.seungro.lee@kaist.ac.kr",
       "edu": [
         "B.S. in Business Administration, University of Southern California"
       ],
-      "projects": [ "CAUS" ],
-      "photo": "assets/images/people/7.jpg"
+      "projects": [
+        "CAUS"
+      ],
+      "photo": "assets/images/people/7.jpg",
+      "lab": "STIL",
+      "labFull": "Spacetime Intelligence Lab",
+      "position": ["M.S. Student in Graduate School of Data Science"],
+      "major": "Graduate School of Data Science"
     },
     {
       "id": 8,
       "name": "Keonhee Jang",
-      "role": "Integrated M.S.-Ph.D Candidate",
+      "role": "Integrated M.S.-Ph.D Student",
+      "current": "Integrated M.S.-Ph.D Student, KAIST DS",
       "from": "2024.09~",
       "email": "keoniverse@kaist.ac.kr",
       "edu": [
         "B.S. in Psychology, University of Utah"
       ],
-      "projects": [ "CAUS" ],
-      "photo": "assets/images/people/8.jpg"
+      "projects": [
+        "CAUS"
+      ],
+      "photo": "assets/images/people/8.jpg",
+      "lab": "STIL",
+      "labFull": "Spacetime Intelligence Lab",
+      "position": ["Integrated M.S.-Ph.D Student in Graduate School of Data Science"],
+      "major": "Graduate School of Data Science"
     },
     {
       "id": 9,
       "name": "Jeeyun Chang",
-      "role": "M.S. Candidate",
+      "role": "M.S. Student",
+      "current": "M.S. Student, KAIST DS",
       "from": "2025.03~",
       "email": "jyc021@kaist.ac.kr",
       "edu": [
         "B.A. in Data Science, UC Berkeley"
       ],
-      "projects": [ "CAUS", "중견" ],
-      "photo": "assets/images/people/9.jpg"
+      "projects": [
+        "CAUS",
+        "중견"
+      ],
+      "photo": "assets/images/people/9.jpg",
+      "lab": "STIL",
+      "labFull": "Spacetime Intelligence Lab",
+      "position": ["M.S. Student in Graduate School of Data Science"],
+      "major": "Graduate School of Data Science"
     },
     {
       "id": 10,
       "name": "Jihyeon Ohk",
-      "role": "M.S. Candidate",
+      "role": "M.S. Student",
+      "current": "M.S. Student, KAIST CEE",
       "from": "2025.09~",
       "email": "jh.ohk@kaist.ac.kr",
       "edu": [
         "B.S. in Civil Engineering, Kyoto University"
       ],
-      "projects": [ "CAUS" ],
-      "photo": "assets/images/people/10.jpg"
+      "projects": [
+        "CAUS"
+      ],
+      "photo": "assets/images/people/10.jpg",
+      "lab": "STIL",
+      "labFull": "Spacetime Intelligence Lab",
+      "position": ["M.S. Student in Civil and Environmental Engineering"],
+      "major": "Civil and Environmental Engineering"
     },
     {
       "id": 101,
       "name": "Minseok Jeong",
       "link": "https://dsa950115.github.io",
-      "role": "Ph.D. Candidate",
+      "role": "Ph.D. Student",
+      "current": "Ph.D. Student, KAIST EE",
       "affiliation": "Electrical Engineering",
       "from": "2025.09~",
       "email": "dsa950115@kaist.ac.kr",
@@ -168,142 +220,225 @@
         "M.S. in School of Electrical Engineering and Computer Science, GIST",
         "B.S. in Systems Management Engineering, SKKU"
       ],
-      "projects": [ "BP" ],
-      "photo": "assets/images/people/jeongminseok.jpg"
+      "projects": [
+        "BP"
+      ],
+      "photo": "assets/images/people/jeongminseok.jpg",
+      "lab": "ACSS",
+      "labFull": "Autonomous Control for Stochastic Systems Research Lab",
+      "position": [ "Ph.D. Student in Electrical Engineering" ],
+      "major": "Electrical Engineering"
     },
     {
       "id": 102,
       "name": "Kwangbin Lee",
       "link": "https://www.linkedin.com/in/kwangbin417",
-      "role": "M.S. Candidate",
+      "role": "M.S. Student",
+      "current": "M.S. Student, KAIST EE",
       "affiliation": "Electrical Engineering",
       "from": "2025.09~",
       "email": "lkb20015@kaist.ac.kr",
       "edu": [
         "B.S in School of Electrical Engineering, KAIST"
       ],
-      "projects": [ "BP" ],
-      "photo": "assets/images/people/leekwangbin.jpg"
+      "projects": [
+        "BP"
+      ],
+      "photo": "assets/images/people/leekwangbin.jpg",
+      "lab": "ACSS",
+      "labFull": "Autonomous Control for Stochastic Systems Research Lab",
+      "position": ["M.S. Student in Electrical Engineering"],
+      "major": "Electrical Engineering"
     },
     {
       "id": 103,
       "name": "Hayoon Song",
-      "role": "M.S. Candidate",
+      "role": "M.S. Student",
+      "current": "M.S. Student, KAIST CEE",
       "affiliation": "Civil and Environmental Engineering",
       "from": "2025.09~",
       "email": "hayoonsong00@kaist.ac.kr",
       "edu": [
         "B.S. in Climate & Energy Systems Engineering and Economics, Ewha Womans University"
       ],
-      "projects": [ "BP" ],
-      "photo": "assets/images/people/songhayoon.jpg"
+      "projects": [
+        "BP"
+      ],
+      "photo": "assets/images/people/songhayoon.jpg",
+      "lab": "IMPACT Lab",
+      "labFull": "Integrating Multidisciplinary Perspectives to Advance Climate Transition Lab",
+      "position": ["M.S. Student in Graduate School of Green Growth and Sustainability"],
+      "major": "Graduate School of Green Growth and Sustainability"
     },
     {
       "id": 104,
       "name": "Jihye NA",
       "link": "https://www.linkedin.com/in/jihye-na-comet/",
-      "role": "Ph.D. Candidate",
+      "role": "Ph.D. Student",
+      "current": "Ph.D. Student, KAIST ISsyE",
       "from": "2026.03~",
       "email": "jhna01@kaist.ac.kr",
       "edu": [
         ""
       ],
-      "projects": [ "CAUS" ],
-      "photo": "assets/images/people/jihyena.JPG"
+      "projects": [
+        "CAUS"
+      ],
+      "photo": "assets/images/people/jihyena.JPG",
+      "lab": "COMET Lab",
+      "labFull": "Computational Optimization Methods Lab",
+      "position": [ "Ph.D. Student in Industrial and Systems Engineering" ],
+      "major": "Industrial and Systems Engineering"
     },
     {
       "id": 105,
       "name": "Thi Thao Vy Bui",
       "link": "https://www.linkedin.com/in/vy-bui-ba0a181aa/",
-      "role": "M.S. Candidate",
+      "role": "M.S. Student",
+      "current": "M.S. Student, KAIST ISsyE",
       "from": "2025.03~",
       "email": "btthaovy124@kaist.ac.kr",
       "edu": [
         ""
       ],
-      "projects": [ "CAUS" ],
-      "photo": "assets/images/people/vy.JPG"
+      "projects": [
+        "CAUS"
+      ],
+      "photo": "assets/images/people/vy.JPG",
+      "lab": "COMET Lab",
+      "labFull": "Computational Optimization Methods Lab",
+      "position": ["M.S. Student in Industrial and Systems Engineering"],
+      "major": "Industrial and Systems Engineering"
     },
     {
       "id": 106,
       "name": "Jaewoo Jeong",
       "link": "jaewoo97.github.io",
-      "role": "Ph.D. Candidate",
+      "role": "Ph.D. Student",
+      "current": "Ph.D. Student, KAIST ME",
       "email": "jeong207@kaist.ac.kr",
       "edu": [
         ""
       ],
-      "projects": [ "CAUS" ],
-      "photo": "assets/images/people/jaewoojeong.png"
+      "projects": [
+        "CAUS"
+      ],
+      "photo": "assets/images/people/jaewoojeong.png",
+      "lab": "VILab",
+      "labFull": "Visual Intelligence Lab",
+      "position": [ "Ph.D. Student in Mechanical Engineering" ],
+      "major": "Mechanical Engineering"
     },
     {
       "id": 107,
       "name": "Minjun Kang",
       "link": "https://sites.google.com/view/minjun-kang",
-      "role": "Ph.D. Candidate",
+      "role": "Ph.D. Student",
+      "current": "Ph.D. Student, KAIST RP",
       "email": "kmmj2005@kaist.ac.kr",
       "edu": [
         ""
       ],
-      "projects": [ "CAUS" ],
-      "photo": "assets/images/people/minjunkang.jpg"
+      "projects": [
+        "CAUS"
+      ],
+      "photo": "assets/images/people/minjunkang.jpg",
+      "lab": "VILab",
+      "labFull": "Visual Intelligence Lab",
+      "position": [ "Ph.D. Student in The Robotics Program" ],
+      "major": "The Robotics Program"
     },
     {
       "id": 108,
       "name": "Lucas Liebe",
-      "role": "Ph.D. Candidate",
+      "role": "Ph.D. Student",
+      "current": "Ph.D. Student, KAIST SoC",
       "email": "lucasliebe@kaist.ac.kr",
       "edu": [
         ""
       ],
-      "projects": [ "CAUS" ],
-      "photo": "assets/images/people/lucas.jpg"
+      "projects": [
+        "CAUS"
+      ],
+      "photo": "assets/images/people/lucas.jpg",
+      "lab": "CDSN Lab",
+      "labFull": "Collaborative and Distributed Systems & Network Lab",
+      "position": ["Ph.D. Student in School of Computing"],
+      "major": "School of Computing"
     },
     {
       "id": 109,
       "name": "Taeyoung Yun",
       "link": "https://dbsxodud-11.github.io/",
-      "role": "Ph.D. Candidate",
+      "role": "Ph.D. Student",
+      "current": "Ph.D. Student, KAIST ISsyE",
       "email": "99yty@kaist.ac.kr",
       "edu": [
         ""
       ],
-      "projects": [ "CAUS" ],
-      "photo": "assets/images/people/taeyoungyun.jpg"
+      "projects": [
+        "CAUS"
+      ],
+      "photo": "assets/images/people/taeyoungyun.jpg",
+      "lab": "SILAB",
+      "labFull": "System Intelligence Lab",
+      "position": ["Ph.D. Student in Industrial and Systems Engineering"],
+      "major": "Industrial and Systems Engineering"
     },
     {
       "id": 110,
       "name": "Kanghoon Lee",
       "link": "https://www.linkedin.com/in/kanghoon-lee-675053204/",
-      "role": "Ph.D. Candidate",
+      "role": "Ph.D. Student",
+      "current": "Ph.D. Student, KAIST ISsyE",
       "email": "leehoon@kaist.ac.kr",
       "edu": [
         ""
       ],
-      "projects": [ "CAUS" ],
-      "photo": "assets/images/people/kanghoonlee.jpg"
+      "projects": [
+        "CAUS"
+      ],
+      "photo": "assets/images/people/kanghoonlee.jpg",
+      "lab": "SILAB",
+      "labFull": "System Intelligence Lab",
+      "position": ["Ph.D. Student in Industrial and Systems Engineering"],
+      "major": "Industrial and Systems Engineering"
     },
     {
       "id": 111,
       "name": "Inhyuck Song",
-      "role": "M.S. Candidate",
+      "role": "M.S. Student",
+      "current": "M.S. Student, KAIST ISsyE",
       "email": "son9ih@kaist.ac.kr",
       "edu": [
         ""
       ],
-      "projects": [ "CAUS" ],
-      "photo": "assets/images/people/inhyucksong.jpg"
+      "projects": [
+        "CAUS"
+      ],
+      "photo": "assets/images/people/inhyucksong.jpg",
+      "lab": "SILAB",
+      "labFull": "System Intelligence Lab",
+      "position": ["M.S. Student in Industrial and Systems Engineering"],
+      "major": "Industrial and Systems Engineering"
     },
     {
       "id": 112,
       "name": "Huijae Kim",
-      "role": "Ph.D. Candidate",
+      "role": "Ph.D. Student",
+      "current": "Ph.D. Student, KAIST ISsyE",
       "email": "heejae6021@kaist.ac.kr",
       "edu": [
         ""
       ],
-      "projects": [ "CAUS" ],
-      "photo": "assets/images/people/huijaekim.jpg"
+      "projects": [
+        "CAUS"
+      ],
+      "photo": "assets/images/people/huijaekim.jpg",
+      "lab": "CSD Lab",
+      "labFull": "Complex Systems Design Lab",
+      "position": ["Ph.D. Student in Industrial and Systems Engineering"],
+      "major": "Industrial and Systems Engineering"
     }
   ],
   "aluminiData": [
@@ -311,29 +446,56 @@
       "id": 1502,
       "name": "Youngjun Park",
       "role": "Research Staff",
+      "current": "Director, ar-ge inc.",
       "degree": "Ph.D.",
       "date": "",
       "projects": [],
-      "photo": "assets/images/people/36.jpg"
+      "photo": "assets/images/people/36.jpg",
+      "position": ["ar-ge inc. / Director"],
+      "positionKr": "아게건축사사무소 소장",
+      "lab": "STIL",
+      "labFull": "Spacetime Intelligence Lab"
     },
     {
       "id": 16,
       "name": "Yuyol Shin",
       "role": "Research Staff",
+      "current": "Postdoctoral Associate, NYUAD",
       "degree": "Ph.D.",
       "date": "2016.09~2022.08",
       "projects": [],
-      "photo": "assets/images/people/16.png"
+      "photo": "assets/images/people/16.png",
+      "position": ["NYUAD / Postdoctoral Associate"],
+      "lab": "STIL",
+      "labFull": "Spacetime Intelligence Lab"
     },
     {
       "id": 19,
       "name": "Seyun Kim",
       "role": "Research Staff",
+      "current": "Associate Research Fellow, KOTI",
       "degree": "Ph.D.",
       "date": "2016.03~2021.02",
       "photo": "assets/images/people/19.png",
       "projects": [],
-      "desc": "2021.03~2025.07\n\n  (Research Assistant Professor)"
+      "desc": "2021.03~2025.07\n\n  (Research Assistant Professor)",
+      "position": ["KOTI / Associate Research Fellow"],
+      "positionKr": "한국교통연구원 부연구위원",
+      "lab": "STIL",
+      "labFull": "Spacetime Intelligence Lab"
+    },
+    {
+      "id": 6,
+      "name": "Juneyoung Ro",
+      "role": "Alumni",
+      "degree": "M.S.",
+      "date": "",
+      "projects": [
+        "Urban All"
+      ],
+      "photo": "assets/images/people/6.jpg",
+      "lab": "STIL",
+      "labFull": "Spacetime Intelligence Lab"
     }
   ]
 }

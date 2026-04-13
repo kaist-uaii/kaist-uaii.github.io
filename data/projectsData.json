@@ -1,30 +1,104 @@
 ﻿[
   {
-    "id": 1,
-    "title": "CAUS",
-    "image": "/assets/images/projects/1.png",
-    "link": "https://caus.kaist.ac.kr",
-    "type": "external"
-  },
-  {
-    "id": 2,
-    "title": "KAIST-NYU C³",
-    "image": "/assets/images/projects/2.png",
-    "link": "https://c3.kaist.ac.kr/home",
-    "type": "external"
+    "id": 3,
+    "fullname": "Brain Pool Fellowship Program",
+    "image": "/assets/images/projects/kaist_logo.png",
+    "link": "./projects-bp.html",
+    "type": "external",
+    "startYear": 2025,
+    "endYear": null,
+    "funding": "2.1B KRW",
+    "sponsor": "NRF",
+    "theme": "drcity"
   },
   {
     "id": 4,
-    "title": "Urban@KAIST",
+    "fullname": "Urban@KAIST",
     "image": "/assets/images/projects/4.png",
     "link": "https://sites.google.com/view/fuscc/home",
-    "type": "external"
+    "type": "external",
+    "startYear": 2021,
+    "endYear": null,
+    "funding": "",
+    "sponsor": "KAIST",
+    "theme": "drcity"
+  },
+  {
+    "id": 7,
+    "title": "",
+    "fullname": "Urban Heat, Urban Sales",
+    "image": "/assets/images/projects/saif.png",
+    
+    
+    "startYear": 2025,
+    "endYear": 2025,
+    "funding": "",
+    "sponsor": "Seoul AI Foundation",
+    "theme": "drcity"
+  },
+  {
+    "id": 8,
+    "title": "",
+    "fullname": "Healing Nature",
+    "image": "/assets/images/projects/saif.png",
+    
+    
+    "startYear": 2025,
+    "endYear": 2025,
+    "funding": "",
+    "sponsor": "Seoul AI Foundation",
+    "theme": "drcity"
+  },
+  {
+    "id": 2,
+    "title": "KN-C³",
+    "fullname": "KAIST-NYU Center for Cities and Climate Change",
+    "image": "/assets/images/projects/2.png",
+    "link": "https://c3.kaist.ac.kr/home",
+    "type": "external",
+    "startYear": 2023,
+    "endYear": 2024,
+    "funding": "",
+    "sponsor": "KAIST",
+    "theme": "drcity"
   },
   {
     "id": 5,
-    "title": "Human-centered Future Mobility (HcFM)",
+    "title": "HcFM",
+    "fullname": "KAIST Global Initiatives on Human-centered Future Mobility",
     "image": "/assets/images/projects/5.png",
     "link": "https://hcfm.kaist.ac.kr/",
-    "type": "external"
+    "type": "external",
+    "startYear": 2021,
+    "endYear": 2024,
+    "funding": "300M KRW",
+    "sponsor": "KAIST",
+    "theme": "drcity"
+  },
+  {
+    "id": 6,
+    "title": "",
+    "fullname": "Attention based Graph Neural Network Models for Urban Mobility Network Analysis and Prediction",
+    "image": "/assets/images/projects/kaist_logo.png",
+    "link": "",
+    "type": "external",
+    "startYear": 2021,
+    "endYear": 2024,
+    "funding": "",
+    "sponsor": "NRF",
+    "theme": "drcity"
+  },
+  {
+    "id": 1,
+    "title": "CAUS",
+    "fullname": "Center for Advanced Urban Systems",
+    "image": "/assets/images/projects/1.png",
+    "link": "https://caus.kaist.ac.kr",
+    "type": "external",
+    "startYear": 2024,
+    "endYear": null,
+    "funding": "4B KRW",
+    "sponsor": "GS E&C",
+    "theme": "cityfwd"
   }
 ]

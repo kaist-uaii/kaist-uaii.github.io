@@ -4,22 +4,27 @@
       "id": "changhyun-kwon",
       "name": "Changhyun Kwon",
       "link": "https://www.chkwon.net/",
-      "role": "Kaist Professor",
+      "role": "KAIST Professor",
+      "current": "Professor, KAIST ISsyE",
       "email": "chkwon@kaist.ac.kr",
       "position": [
-        "Associate Professor in Industrial and Systems Engineering, KAIST",
+        "Associate Professor, Industrial and Systems Engineering, KAIST",
         "Editorial Boards of Transportation Research Part B: Methodological, Socio-Economic Planning Sciences",
         "Transportation Network Modeling Committee of TRB"
       ],
       "photo": "assets/images/collab/profile_kwon.jpg",
       "research": "Aiming to advance computational optimization methods for efficient transportation and logistics systems",
-      "projects": [ "CAUS" ]
+      "keywords": ["Transportation Science", "Operations Research", "Computational Optimization","Urban Logistics", "Mobility"],
+      "projects": [ "CAUS" ],
+      "lab": "COMET Lab",
+      "labFull": "Computational Optimization Methods Lab"
     },
     {
       "id": "jinkyoo-park",
       "name": "Jinkyoo Park",
       "link": "http://silab.kaist.ac.kr/",
-      "role": "Kaist Professor",
+      "role": "KAIST Professor",
+      "current": "Professor, KAIST ISsyE",
       "email": "jinkyoo.park@kaist.ac.kr",
       "position": [
         "Associate Professor, Department of Industrial and Systems Engineering",
@@ -28,13 +33,17 @@
       ],
       "photo": "assets/images/collab/profile_jinkyoo_park.jpg",
       "research": "Aiming to develop a generalist agent that can solve complex and real-world decision-making problems",
-      "projects": [ "CAUS" ]
+      "keywords": ["Machine Learning", "Game Theory", "Optimal Control"],
+      "projects": [ "CAUS" ],
+      "lab": "SILAB",
+      "labFull": "System Intelligence Lab"
     },
     {
       "id": "taesik-lee",
       "name": "Taesik Lee",
       "link": "https://csdlab.kaist.ac.kr/people/Professor",
-      "role": "Kaist Professor",
+      "role": "KAIST Professor",
+      "current": "Professor, KAIST ISsyE",
       "email": "taesik.lee@kaist.edu",
       "position": [
         "Associate Vice President, Office of Academic Affairs, KAIST",
@@ -42,66 +51,87 @@
       ],
       "photo": "assets/images/collab/profile_taesik_lee.jpg",
       "research": "Healthcare analytics, Disaster response system, Modeling & simulation of large-scale systems, Systems engineering, Decision making under uncertainty",
-      "projects": [ "CAUS" ]
+      "keywords": ["Healthcare Analytics", "Disaster Response", "Modeling & Simulation", "Systems Engineering", "Decision Making Under Uncertainty"],
+      "projects": [ "CAUS" ],
+      "lab": "CSD Lab",
+      "labFull": "Complex Systems Design Lab"
     },
     {
       "id": "dongman-lee",
       "name": "Dongman Lee",
       "link": "https://cds.kaist.ac.kr/people/",
-      "role": "Kaist Professor",
+      "role": "KAIST Professor",
+      "current": "KEPCO Professor, KAIST SoC",
       "email": "dlee@kaist.ac.kr",
       "position": [
         "ICT Endowed Chair Professor at KAIST"
       ],
       "photo": "assets/images/collab/profile_dongman_lee.jpg",
       "research": "Systems-Networks, Social Computing, Interactive Computing, Edge Computing, Urban Computing, Ubiquitous Computing",
-      "projects": [ "CAUS" ]
+      "keywords": ["Systems-Networks", "Social Computing", "Interactive Computing", "Edge Computing", "Urban Computing", "Ubiquitous Computing"],
+      "projects": [ "CAUS" ],
+      "lab": "CDSN Lab",
+      "labFull": "Collaborative and Distributed Systems & Network Lab"
     },
     {
       "id": "kukjin-yoon",
       "name": "Kuk-Jin Yoon",
       "link": "https://vi.kaist.ac.kr/pages/faculty/",
-      "role": "Kaist Professor",
+      "role": "KAIST Professor",
+      "current": "Professor, KAIST ME",
       "email": "kjyoon@kaist.ac.kr",
       "position": [
         "Professor, Department of Mechanical Engineering, KAIST"
       ],
       "research": "Developing intelligent systems capable of understanding, reconstructing, and interacting with the complex real world",
+      "keywords": ["Computer Vision", "Autonomous Driving", "Event Camera"],
       "projects": [ "CAUS" ],
-      "photo": "assets/images/collab/profile_kukjin_yoon.jpg"
+      "photo": "assets/images/collab/profile_kukjin_yoon.jpg",
+      "lab": "VILab",
+      "labFull": "Visual Intelligence Lab"
     },
     {
       "id": "minjoon-seo",
       "name": "Minjoon Seo",
       "link": "https://seominjoon.github.io/",
-      "role": "Kaist Professor",
+      "role": "KAIST Professor",
+      "current": "Professor, KAIST AI",
       "email": "minjoon@kaist.ac.kr",
       "position": [
         "Co-Founder & CEO at Config Intelligence",
         "Associate Professor, KAIST AI"
       ],
       "research": "Natural Language Processing, Knowledge Base, Large-Scale Machine Learning",
+      "keywords": ["Natural Language Processing", "Knowledge Base", "Large-Scale Machine Learning"],
       "projects": [ "CAUS" ],
-      "photo": "assets/images/collab/profile_minjoon_seo.jpg"
+      "photo": "assets/images/collab/profile_minjoon_seo.jpg",
+      "lab": "LK Lab",
+      "labFull": "Language & Knowledge Lab"
     },
     {
       "id": "uichin-lee",
       "name": "Uichin Lee",
       "link": "https://ic.kaist.ac.kr/",
-      "role": "Kaist Professor",
+      "role": "KAIST Professor",
+      "current": "Professor, KAIST SoC",
       "email": "uclee@kaist.ac.kr",
       "position": [
         "Professor in School of Computing, KAIST"
       ],
       "research": "Human-Computer Interaction (HCI), Ubiquitous Computing (UbiComp)",
+      "keywords": ["Human-Computer Interaction", "Ubiquitous Computing", "Social Computing"],
       "projects": [ "CAUS" ],
-      "photo": "assets/images/collab/profile_uichin_lee.jpg"
+      "photo": "assets/images/collab/profile_uichin_lee.jpg",
+      "lab": "ICL Lab",
+      "labFull": "Interactive Computing Lab"
     },
     {
       "id": "soh-young-in",
       "name": "Soh Young In",
-      "link": "https://www.sohyoung-in.com/",
-      "role": "Kaist Professor",
+      "link": "https://www.sohyoung-in.com/about-me",
+      "lab_link": "https://www.sohyoung-in.com",
+      "role": "KAIST Professor",
+      "current": "Assistant Professor, KAIST CEE",
       "affiliation": "Civil and Environmental Engineering",
       "email": "si2131@kaist.ac.kr",
       "position": [
@@ -109,14 +139,18 @@
         "Affiliate Faculty of the Graduate School of Green Growth and Sustainability, KAIST"
       ],
       "research": "Demonstrating environmental, social, and economic incentives related to low-carbon transition and implementing sustainable and resilient infrastructure systems through behavior change of various stakeholders",
+      "keywords": ["Sustainable Investment Ecosystem","Clean Energy Infrastructure","ESG Investment","Public Infrastructure Development","Strategic Management"],
       "projects": [ "BP" ],
-      "photo": "assets/images/collab/profile_soh_young_in.jpg"
+      "photo": "assets/images/collab/profile_soh_young_in.jpg",
+      "lab": "IMPACT Lab",
+      "labFull": "Integrating Multidisciplinary Perspectives to Advance Climate Transition Lab"
     },
     {
       "id": "soojean-han",
       "name": "SooJean Han",
       "link": "http://acss.kaist.ac.kr/#team",
-      "role": "Kaist Professor",
+      "role": "KAIST Professor",
+      "current": "Assistant Professor, KAIST EE",
       "affiliation": "Electrical Engineering",
       "email": "si2131@kaist.ac.kr",
       "position": [
@@ -124,8 +158,11 @@
         "Director of the Autonomous Control for Stochastic Systems (ACSS) Lab"
       ],
       "research": "Broadly at the intersection of control theory and artificial intelligence: stochastic systems, distributed sensing, and decision-making networks",
+      "keywords": ["Autonomous control", "Stochastic processes", "AI"],
       "projects": [ "BP" ],
-      "photo": "assets/images/collab/profile_soojean_han.jpg"
+      "photo": "assets/images/collab/profile_soojean_han.jpg",
+      "lab": "ACSS Lab",
+      "labFull": "Autonomous Control for Stochastic Systems Research Lab"
     }
   ],
   "collabScholarsData": [
@@ -133,6 +170,7 @@
       "id": "maurizio-porfiri",
       "name": "Maurizio Porfiri",
       "role": "Global Scholar",
+      "current": "Interim Chair, NYU Tandon CEE",
       "email": "mporfiri@nyu.edu",
       "projects": [ "CAUS" ],
       "position": [
@@ -142,26 +180,34 @@
         "Director of the Urban Institute, NYU Tandon"
       ],
       "research": "Collective Behavior Complex Systems Network Science Theoretical Mechanics Urban Science",
+      "keywords": ["Collective Behavior", "Complex Systems", "Network Science", "Theoretical Mechanics", "Urban Science"],
       "link": "https://engineering.nyu.edu/faculty/maurizio-porfiri",
-      "photo": "assets/images/collab/profile_mau.png"
+      "photo": "assets/images/collab/profile_mau.png",
+      "lab": "NYU DSL",
+      "labFull": "Dynamical Systems Laboratory at NYU Tandon"
     },
     {
       "id": "takahiro-yabe",
       "name": "Takahiro Yabe",
       "role": "Global Scholar",
+      "current": "Assistant Professor, NYU Tandon TMI",
       "email": "ty2520@nyu.edu",
       "position": [
         "Assistant Professor at Department of Technology Management and Innovation (TMI), NYU Tandon",
         "Assistant Professor of the Center for Urban Science + Progress (CUSP), NYU Tandon"
       ],
       "research": "Computational social science and network science approaches to model the resilience of cities to disasters, pandemics, and disruptive mobility technology",
+      "keywords": ["Human mobility", "Urban resilience", "Computational social science", "Complex systems"],
       "projects": [ "CAUS" ],
       "link": "http://engineering.nyu.edu/faculty/takahiro-yabe",
-      "photo": "assets/images/collab/profile_taka.jpg"
+      "photo": "assets/images/collab/profile_taka.jpg",
+      "lab": "NYU Run Lab",
+      "labFull": "Run Lab at NYU Tandon"
     },
     {
       "id": "fabio-duarte",
       "role": "Global Scholar",
+      "current": "Associate Director, MIT SCL",
       "name": "Fabio Duarte",
       "email": "fabio@mit.edu",
       "position": [
@@ -172,13 +218,17 @@
       ],
       "projects": [ "CAUS" ],
       "research": "Currently working on: City Scanner, Favelas 4D, Planning Ideas that Matter Podcast, The Impact of Police Surveillance on Racial Bias using Open Data",
+      "keywords": ["Urban technologies", "Urban Mobility", "Smart Cities"],
       "link": "https://dusp.mit.edu/people/fabio-duarte",
-      "photo": "assets/images/collab/profile_fabio_duarte.jpg"
+      "photo": "assets/images/collab/profile_fabio_duarte.jpg",
+      "lab": "MIT SCL",
+      "labFull": "MIT Senseable City Lab"
     },
     {
       "id": "kincho-law",
       "role": "Global Scholar",
       "name": "Kincho Law",
+      "current": "Professor, Stanford CEE",
       "email": "kvonner@stanford.edu",
       "position": [
         "Professor, Civil and Environmental Engineering, Stanford",
@@ -186,8 +236,12 @@
       ],
       "projects": [ "CAUS" ],
       "research": "Application of computational and information science in engineering",
+      "keywords": ["Computing in civil engineering"],
       "link": "https://profiles.stanford.edu/kincho-law",
-      "photo": "assets/images/collab/profile_kincho_h_law.jpg"
+      "photo": "assets/images/collab/profile_kincho_h_law.jpg",
+      "lab": "EIL",
+      "labFull": "Engineering Informatics Lab"
+
     }
   ],
 
@@ -195,6 +249,7 @@
     {
       "id": "jiwon-park",
       "name": "Jiwon Park",
+      "current": "Research Staff, KAIST UAII",
       "affiliation": "Operations Team",
       "projects": [ "CAUS", "BP" ],
       "photo": "assets/images/people/35.JPG"
@@ -202,6 +257,7 @@
     {
       "id": "yiseo-yoon",
       "name": "Yiseo Yoon",
+      "current": "Research Staff, KAIST UAII",
       "affiliation": "Operations Team",
       "projects": [ "CAUS", "BP" ],
       "photo": "assets/images/people/yiseo_yoon.jpg"
@@ -209,6 +265,7 @@
     {
       "id": "seyeon-jeong",
       "name": "Seyeon Jeong",
+      "current": "Research Staff, KAIST UAII",
       "affiliation": "Operations Team",
       "projects": [ "CAUS", "BP" ],
       "photo": "assets/images/people/seyeon_jeong.jpg"
@@ -222,17 +279,25 @@
       "role": "BP Fellow",
       "affiliation": "Advanced Air Mobility/CUTR",
       "projects": ["Urban AI Governance", "Digital Twin City"],
+      "keywords": ["New Mobility","Advanced Air Mobility/Urban Air Mobility","Air Traffic Management", "Shared Mobility"],
       "link": "https://www.linkedin.com/in/yuyu5460/",
-      "photo": "assets/images/collab/Yu Zhang.png"
+      "lab_link": "http://www.sum-lab.org",
+      "photo": "assets/images/collab/Yu Zhang.png",
+      "lab": "USF SUM-Lab",
+      "labFull": "University of South Florida Smart Urban Mobility Laboratory"
     },
     {
       "id": "sekyoung-choi",
       "name": "Esther Sekyoung Choi",
+      "lab_link": "https://www.sohyoung-in.com",
+      "keywords": ["Climate finance", "Nature finance", "Blended finance", "International environmental politics and governance"],
       "role": "BP Fellow",
       "affiliation": "World Resources Institute(WRI)",
       "projects": ["Urban AI Governance", "Digital Twin City"],
       "link": "https://www.wri.org/profile/esther-choi",
-      "photo": "assets/images/collab/Esther Sekyoug Choi.png"
+      "photo": "assets/images/collab/Esther Sekyoug Choi.png",
+      "lab": "IMPACT Lab",
+      "labFull": "Integrated Microsytems Powered with Advanced Circuit Technology"
     }
   ]
 }
