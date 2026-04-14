@@ -797,7 +797,10 @@
       "Meeting"
     ],
     "desc": "",
-    "photos": [],
+    "photos": [
+      "assets/images/events/caus260212_1.jpg",
+      "assets/images/events/caus260212_2.jpg"
+    ],
     "links": [],
     "time": ""
   },
@@ -882,7 +885,10 @@
       "Meeting"
     ],
     "desc": "",
-    "photos": [],
+    "photos": [
+      "assets/images/events/caus251211_1.jpg",
+      "assets/images/events/caus251211_2.jpg"
+    ],
     "links": [],
     "time": ""
   }
