@@ -285,7 +285,7 @@
     "authors": "Hongju Lee, Youngjun Park, Jisun An & Dongman Lee",
     "date": "2026-01-26",
     "journal": "LNCS, 2026",
-    "href": ""
+    "href": "https://doi.org/10.1007/978-3-032-13513-1_30"
   },
   {
     "id": "20260221-wsdm-traffic",
@@ -293,6 +293,6 @@
     "authors": "Taeyoung Yun, Inhyuck Song, Woocheol Shin, Yujin Shin, Sungpil Woo, Sunhwan Lim, Jinkyoo Park",
     "date": "2026-02-21",
     "journal": "WSDM, 2026",
-    "href": ""
+    "href": "https://doi.org/10.1145/3773966.3777950"
   }
 ]
