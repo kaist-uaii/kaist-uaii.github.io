@@ -22,16 +22,16 @@
                 <button
                     type="button"
                     class="job-tab rounded-xl px-4 py-3 text-sm font-semibold transition"
-                    data-job="pm"
+                    data-job="research"
                     aria-pressed="true">
-                    Research PM
+                    Research-focused
                 </button>
                 <button
                     type="button"
                     class="job-tab rounded-xl px-4 py-3 text-sm font-semibold transition"
-                    data-job="research"
+                    data-job="pm"
                     aria-pressed="false">
-                    Urban AI / Smart City Research
+                    Project Management-focused
                 </button>
             </div>
         </section>
@@ -155,7 +155,7 @@
                 apply: "urban@kaist.ac.kr",
                 responsibilities: [
                     "Conduct original research in urban AI, smart cities, and related interdisciplinary topics.",
-                    "Publish in top-tier conferences and journals such as NeurIPS, ICML, KDD, Nature, and related venues.",
+                    "Publish in top-tier AI conferences and journals.",
                     "Develop methodologies that integrate AI, data, and urban systems.",
                     "Work across AI/ML, urban systems, spatial data, and multimodal urban datasets.",
                     "Participate in joint research with Stanford, MIT, NYU, and other global partners, including at least 3 months per year abroad.",
@@ -248,7 +248,7 @@
             button.addEventListener("click", () => setActiveTab(button.dataset.job));
         });
 
-        setActiveTab("pm");
+        setActiveTab("research");
     </script>
 
     <footer class="bg-white border-t border-gray-200 py-8 text-center mt-20">

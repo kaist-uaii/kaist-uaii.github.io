@@ -1,4 +1,4 @@
-function ensureNavbarStylesheet() {
+function ensureNavbarStylesheet(prefix) {
     if (document.getElementById("uaii-navbar-css")) {
         return;
     }
@@ -6,15 +6,29 @@ function ensureNavbarStylesheet() {
     const link = document.createElement("link");
     link.id = "uaii-navbar-css";
     link.rel = "stylesheet";
-    link.href = "partials/navbar.css";
+    link.href = (prefix || "") + "partials/navbar.css";
     document.head.appendChild(link);
 }
 
 function setActivePageLinks() {
-    const currentPath = window.location.pathname.split("/").pop() || "index.html";
-    const navLinks = document.querySelectorAll(".uaii-navbar a[href], .uaii-mobile-menu a[href]");
+    const navbarContainer = document.getElementById("navbar");
+    const activeKey = navbarContainer?.dataset.active;
+    const navLinks = document.querySelectorAll(".uaii-navbar a[data-key], .uaii-mobile-menu a[data-key]");
 
-    navLinks.forEach((link) => {
+    if (activeKey) {
+        navLinks.forEach((link) => {
+            if (link.dataset.key === activeKey) {
+                link.classList.add("active");
+            } else {
+                link.classList.remove("active");
+            }
+        });
+        return;
+    }
+
+    const currentPath = window.location.pathname.split("/").pop() || "index.html";
+    const allLinks = document.querySelectorAll(".uaii-navbar a[href], .uaii-mobile-menu a[href]");
+    allLinks.forEach((link) => {
         const href = link.getAttribute("href") || "";
         let isActive = false;
 
@@ -72,28 +86,31 @@ function loadNavbar(pageName) {
         return;
     }
 
-    ensureNavbarStylesheet();
+    const prefix = navbarContainer.dataset.prefix || "";
+    ensureNavbarStylesheet(prefix);
 
     navbarContainer.innerHTML = `
         <nav class="uaii-navbar" aria-label="Main navigation">
-            <a id="navbar-home-link" href="index.html" class="uaii-navbar-brand">
+            <a id="navbar-home-link" href="${prefix}index.html" class="uaii-navbar-brand">
                 UAII <span id="navbar-page" class="uaii-navbar-brand-sub">${pageName || "Urban AI Institute"}</span>
             </a>
             <ul class="uaii-navbar-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="people.html">People</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="engagement.html">Engagement</a></li>
+                <li><a href="${prefix}index.html" data-key="home">Home</a></li>
+                <li><a href="${prefix}about.html" data-key="about">About</a></li>
+                <li><a href="${prefix}people.html" data-key="people">People</a></li>
+                <li><a href="${prefix}projects.html" data-key="projects">Projects</a></li>
+                <li><a href="${prefix}engagement.html" data-key="engagement">Engagement</a></li>
+                <!-- <li><a href="${prefix}conferences/index.html" data-key="conferences">Conferences</a></li> -->
             </ul>
             <button id="menuBtn" class="uaii-menu-btn" aria-label="Toggle menu" aria-expanded="false">☰</button>
         </nav>
         <div id="mobileMenu" class="uaii-mobile-menu">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="people.html">People</a>
-            <a href="projects.html">Projects</a>
-            <a href="engagement.html">Engagement</a>   
+            <a href="${prefix}index.html" data-key="home">Home</a>
+            <a href="${prefix}about.html" data-key="about">About</a>
+            <a href="${prefix}people.html" data-key="people">People</a>
+            <a href="${prefix}projects.html" data-key="projects">Projects</a>
+            <a href="${prefix}engagement.html" data-key="engagement">Engagement</a>
+            <!-- <a href="${prefix}conferences/index.html" data-key="conferences">Conferences</a> -->
         </div>
     `;
 
