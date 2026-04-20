@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2026 International Conference on Urban AI</title>
+  <meta name="description" content="2026 International Conference on Urban AI — July 15–16, 2026 · Seoul, Republic of Korea" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f8f9fb;
+      --surface: #ffffff;
+      --text: #101828;
+      --muted: #667085;
+      --line: #e6e9ef;
+      --line-strong: #d0d5dd;
+      --accent: #1d4ed8;
+
+      --max: 1080px;
+      --section-gap: clamp(56px, 8vw, 96px);
+      --header-offset: 84px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      width: 0%;
+      background: var(--accent);
+      z-index: 100;
+      transition: width 0.08s linear;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 90;
+      background: rgba(248, 249, 251, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .nav-links a {
+      padding: 8px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: #eef2ff;
+      color: #1e3a8a;
+    }
+
+    main {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      padding-bottom: 64px;
+    }
+
+    section[id] { scroll-margin-top: var(--header-offset); }
+
+    .hero {
+      padding-top: clamp(36px, 6vw, 72px);
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 36px;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(42px, 9vw, 84px);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+    }
+
+    .lead {
+      margin: 22px 0 0;
+      max-width: 70ch;
+      font-size: clamp(16px, 1.5vw, 20px);
+      color: #344054;
+    }
+
+    .hero-actions {
+      margin-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: 10px;
+      border: 1px solid var(--line-strong);
+      background: var(--surface);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #f2f4f7;
+      border-color: #bfc5d2;
+    }
+
+    .deadline {
+      font-size: 14px;
+      color: #344054;
+    }
+
+    .meta-grid {
+      padding-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .meta-box {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .meta-label {
+      margin: 0 0 8px;
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .meta-value {
+      margin: 0;
+      font-size: clamp(20px, 2.6vw, 30px);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      font-weight: 800;
+    }
+
+    .meta-value.address {
+      font-size: clamp(15px, 1.4vw, 18px);
+      font-weight: 600;
+      line-height: 1.6;
+      color: #344054;
+    }
+
+    .section {
+      padding-top: var(--section-gap);
+    }
+
+    .section-title {
+      margin: 0 0 18px;
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: 1;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+    }
+
+    .section-intro,
+    .prose p {
+      margin: 0 0 14px;
+      max-width: 70ch;
+      color: #344054;
+      font-size: clamp(16px, 1.3vw, 19px);
+    }
+
+    .topic-list,
+    .plain-list,
+    .committee-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid var(--line);
+    }
+
+    .topic-item,
+    .committee-item {
+      border-bottom: 1px solid var(--line);
+      padding: 14px 0;
+    }
+
+    .topic-item h3 {
+      margin: 0 0 8px;
+      font-size: clamp(20px, 1.8vw, 28px);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .topic-item ul {
+      margin: 0;
+      padding-left: 1.1em;
+      color: #475467;
+      font-size: 15px;
+      line-height: 1.7;
+      max-width: 74ch;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px;
+      max-width: 860px;
+    }
+
+    .subhead {
+      margin: 0 0 10px;
+      font-size: clamp(18px, 1.6vw, 24px);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+    }
+
+    .plain-list li {
+      border-bottom: 1px solid var(--line);
+      padding: 10px 0;
+      color: #344054;
+    }
+
+    .plain-list li:last-child { border-bottom: 0; }
+
+    .dates-list {
+      margin: 0;
+      padding-left: 1.2em;
+      max-width: 800px;
+      color: #344054;
+    }
+
+    .dates-list li {
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    .dates-list strong {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .committee-item {
+      display: grid;
+      grid-template-columns: minmax(220px, 1fr) minmax(180px, 0.8fr);
+      gap: 12px;
+      align-items: baseline;
+    }
+
+    .committee-name {
+      margin: 0;
+      font-size: clamp(18px, 1.6vw, 24px);
+      font-weight: 700;
+    }
+
+    .committee-aff {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    footer {
+      margin-top: 72px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(16, 24, 40, 0.36);
+      display: grid;
+      place-items: center;
+      padding: 16px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s ease, visibility 0.2s ease;
+      z-index: 110;
+    }
+
+    .modal-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal {
+      width: min(640px, 100%);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .modal-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 16px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .modal-title {
+      margin: 0;
+      font-size: clamp(20px, 2.2vw, 28px);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+    }
+
+    .modal-close {
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      cursor: pointer;
+    }
+
+    .modal-body {
+      padding: 16px;
+      display: grid;
+      gap: 12px;
+      color: #344054;
+    }
+
+    .modal-email {
+      font-weight: 700;
+      color: #1e3a8a;
+    }
+
+    @media (max-width: 900px) {
+      .meta-grid { grid-template-columns: 1fr; }
+      .committee-item { grid-template-columns: 1fr; gap: 4px; }
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        min-height: auto;
+        padding: 10px 0;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn { width: 100%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header id="siteHeader">
+    <div class="nav">
+      <div class="brand">Urban AI 2026</div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#overview">Overview</a>
+        <a href="#topics">Topics</a>
+        <a href="#submission">Submission</a>
+        <a href="#dates">Dates</a>
+        <a href="#committee">Committee</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="eyebrow">2026 International Conference on</p>
+      <h1 id="hero-title">Urban AI</h1>
+      <p class="lead">
+        We invite submissions for the second International Conference on Urban AI, a forum bringing together researchers, practitioners, and policymakers working at the intersection of artificial intelligence, urban systems, and societal infrastructure.
+      </p>
+      <div class="hero-actions">
+        <a href="#submission" class="btn">View Submission Details</a>
+        <a href="#" class="btn" id="openModal">Quick Submission Info</a>
+        <span class="deadline"><strong>Deadline:</strong> May 15, 2026</span>
+      </div>
+
+      <div class="meta-grid" aria-label="Conference information">
+        <div class="meta-box">
+          <p class="meta-label">Conference Dates</p>
+          <p class="meta-value">July 15–16, 2026</p>
+        </div>
+        <div class="meta-box">
+          <p class="meta-label">Location</p>
+          <p class="meta-value address">Seoul AI Hub<br />108, Taebong-ro, Seocho-gu, Seoul, Republic of Korea</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="overview" class="section">
+      <h2 class="section-title">Conference Overview</h2>
+      <div class="prose">
+        <p>
+          This conference seeks to advance the foundations and applications of Urban AI: the design, analysis, and deployment of AI-driven methods for understanding, optimizing, and transforming urban environments.
+        </p>
+        <p>
+          We aim to foster interdisciplinary dialogue across urban planning, urban intelligence, city operations, operations research, machine learning, transportation, and public policy.
+        </p>
+      </div>
+    </section>
+
+    <section id="topics" class="section">
+      <h2 class="section-title">Topics</h2>
+      <p class="section-intro">We welcome contributions addressing a broad range of topics, including but not limited to:</p>
+      <ol class="topic-list">
+        <li class="topic-item">
+          <h3>Urban Mobility and Transportation</h3>
+          <ul>
+            <li>Traffic prediction, control, and optimization</li>
+            <li>Autonomous and connected transportation systems</li>
+            <li>Shared mobility and demand-responsive transit</li>
+            <li>Urban air mobility and multimodal systems</li>
+          </ul>
+        </li>
+        <li class="topic-item">
+          <h3>Urban Infrastructure and Systems</h3>
+          <ul>
+            <li>Smart grids, energy systems, and sustainability</li>
+            <li>Water, waste, and environmental monitoring</li>
+            <li>Infrastructure resilience and climate adaptation</li>
+          </ul>
+        </li>
+        <li class="topic-item">
+          <h3>AI for Urban Operations</h3>
+          <ul>
+            <li>Large-scale optimization and real-time decision-making</li>
+            <li>Digital twins and simulation of urban systems</li>
+            <li>Reinforcement learning and control in cities</li>
+          </ul>
+        </li>
+        <li class="topic-item">
+          <h3>Human-Centered Urban AI</h3>
+          <ul>
+            <li>Modeling human behavior and mobility patterns</li>
+            <li>Equity, fairness, and accessibility in urban systems</li>
+            <li>Human-AI interaction in public infrastructure</li>
+          </ul>
+        </li>
+        <li class="topic-item">
+          <h3>Urban Data and Sensing</h3>
+          <ul>
+            <li>Spatiotemporal data analytics</li>
+            <li>Sensor networks, IoT, and edge intelligence</li>
+            <li>Privacy, security, and governance of urban data</li>
+          </ul>
+        </li>
+        <li class="topic-item">
+          <h3>Urban Economics and Policy</h3>
+          <ul>
+            <li>Market design and mechanism design in cities</li>
+            <li>Policy optimization and decision support systems</li>
+            <li>Data-driven urban planning</li>
+          </ul>
+        </li>
+        <li class="topic-item">
+          <h3>Foundations of Urban AI</h3>
+          <ul>
+            <li>Learning-optimization integration</li>
+            <li>Scalable algorithms for city-scale systems</li>
+            <li>Robust, adaptive, and interpretable AI</li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+
+    <section id="submission" class="section">
+      <h2 class="section-title">Submission Details</h2>
+      <div class="card">
+        <h3 class="subhead">Please submit a 2-page extended abstract describing:</h3>
+        <ul class="plain-list">
+          <li>the research problem and motivation</li>
+          <li>methodology and technical approach</li>
+          <li>key results (if available)</li>
+          <li>potential impact on urban systems</li>
+        </ul>
+
+        <h3 class="subhead" style="margin-top: 18px;">Review Criteria</h3>
+        <ul class="plain-list">
+          <li>relevance to the symposium theme</li>
+          <li>novelty and technical quality</li>
+          <li>potential impact and interdisciplinary significance</li>
+        </ul>
+
+        <h3 class="subhead" style="margin-top: 18px;">Formatting</h3>
+        <ul class="plain-list">
+          <li>PDF format</li>
+          <li>Free style (no strict template required)</li>
+        </ul>
+
+        <h3 class="subhead" style="margin-top: 18px;">Submission Method</h3>
+        <p style="margin: 0; color: #344054;">
+          Email submission to:
+          <a href="mailto:urban@kaist.ac.kr" style="color: #1e3a8a; font-weight: 700;">urban@kaist.ac.kr</a>
+        </p>
+      </div>
+    </section>
+
+    <section id="dates" class="section">
+      <h2 class="section-title">Important Dates</h2>
+      <ol class="dates-list">
+        <li><strong>May 15, 2026</strong> — Abstract submission deadline</li>
+        <li><strong>May 22, 2026</strong> — Notification of acceptance</li>
+        <li><strong>July 15–16, 2026</strong> — Conference dates</li>
+      </ol>
+    </section>
+
+    <section id="committee" class="section">
+      <h2 class="section-title">Organizing Committee</h2>
+      <ul class="committee-list">
+        <li class="committee-item">
+          <p class="committee-name">Yoonjin Yoon</p>
+          <p class="committee-aff">KAIST</p>
+        </li>
+        <li class="committee-item">
+          <p class="committee-name">Changhyun Kwon</p>
+          <p class="committee-aff">KAIST</p>
+        </li>
+        <li class="committee-item">
+          <p class="committee-name">Namwoo Kim</p>
+          <p class="committee-aff">KAIST</p>
+        </li>
+        <li class="committee-item">
+          <p class="committee-name">Fabio Duarte</p>
+          <p class="committee-aff">Massachusetts Institute of Technology</p>
+        </li>
+        <li class="committee-item">
+          <p class="committee-name">Kincho Law</p>
+          <p class="committee-aff">Stanford University</p>
+        </li>
+        <li class="committee-item">
+          <p class="committee-name">Takahiro Yabe</p>
+          <p class="committee-aff">New York University</p>
+        </li>
+      </ul>
+    </section>
+
+    <footer>2026 International Conference on Urban AI</footer>
+  </main>
+
+  <div class="modal-overlay" id="submissionModal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-head">
+        <h2 class="modal-title" id="modalTitle">Submission Snapshot</h2>
+        <button class="modal-close" id="closeModal" aria-label="Close dialog">✕</button>
+      </div>
+      <div class="modal-body">
+        <p>
+          Please submit a 2-page extended abstract describing the research problem and motivation, methodology and technical approach, key results (if available), and potential impact on urban systems.
+        </p>
+        <p><strong>Formatting:</strong> PDF format, free style (no strict template required)</p>
+        <p><strong>Deadline:</strong> May 15, 2026</p>
+        <p><strong>Notification:</strong> May 22, 2026</p>
+        <p>
+          <strong>Submission:</strong>
+          <a class="modal-email" href="mailto:urban@kaist.ac.kr">urban@kaist.ac.kr</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const progressBar = document.querySelector(".scroll-progress");
+    const navLinks = document.querySelectorAll(".nav-links a");
+    const header = document.getElementById("siteHeader");
+
+    const modal = document.getElementById("submissionModal");
+    const openModal = document.getElementById("openModal");
+    const closeModal = document.getElementById("closeModal");
+    let lastFocusedElement = null;
+
+    const setHeaderOffset = () => {
+      const h = header ? header.offsetHeight : 84;
+      document.documentElement.style.setProperty("--header-offset", `${h + 12}px`);
+    };
+
+    const updateProgress = () => {
+      const scrollTop = window.scrollY;
+      const height = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = height > 0 ? (scrollTop / height) * 100 : 0;
+      progressBar.style.width = `${progress}%`;
+    };
+
+    const updateActiveNav = () => {
+      let current = "";
+      document.querySelectorAll("section[id]").forEach((sec) => {
+        const top = sec.offsetTop - (header.offsetHeight + 70);
+        if (window.scrollY >= top) current = sec.id;
+      });
+
+      navLinks.forEach((link) => {
+        link.classList.toggle("active", link.getAttribute("href") === `#${current}`);
+      });
+    };
+
+    const toggleModal = (open) => {
+      modal.classList.toggle("open", open);
+      modal.setAttribute("aria-hidden", String(!open));
+      document.body.style.overflow = open ? "hidden" : "";
+
+      if (open) {
+        lastFocusedElement = document.activeElement;
+        closeModal.focus();
+      } else if (lastFocusedElement && typeof lastFocusedElement.focus === "function") {
+        lastFocusedElement.focus();
+      }
+    };
+
+    openModal.addEventListener("click", (e) => {
+      e.preventDefault();
+      toggleModal(true);
+    });
+
+    closeModal.addEventListener("click", () => toggleModal(false));
+
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) toggleModal(false);
+    });
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.classList.contains("open")) {
+        toggleModal(false);
+      }
+    });
+
+    window.addEventListener("scroll", () => {
+      updateProgress();
+      updateActiveNav();
+    });
+
+    window.addEventListener("resize", () => {
+      setHeaderOffset();
+      updateActiveNav();
+    });
+
+    setHeaderOffset();
+    updateProgress();
+    updateActiveNav();
+  </script>
+</body>
+</html>
