@@ -891,5 +891,171 @@
     ],
     "links": [],
     "time": ""
+  },
+  {
+    "id": "20251120-urbanx",
+    "title": "Urban@KAIST Urban-X Seminar",
+    "category": "Urban-X Seminar",
+    "start": "2025-11-20",
+    "end": "2025-11-20",
+    "place": "",
+    "participants": "Speaker: Prof. Hayon Choi, Assistant Professor, Graduate School of Green Growth & Sustainability, KAIST",
+    "keyword": ["Urban X", "Urban Health", "Climate Change"],
+    "desc": "Urban Health: Climate Change Health Impact",
+    "speaker": "Prof. Hayon Choi",
+    "photos": [],
+    "links": [],
+    "time": ""
+  },
+  {
+    "id": "20251223-urbanx",
+    "title": "Urban@KAIST Urban-X Seminar",
+    "category": "Urban-X Seminar",
+    "start": "2025-12-23",
+    "end": "2025-12-23",
+    "place": "",
+    "participants": "Speaker: Prof. Simon Oh, Associate Professor, Department of Future Mobility, Korea University",
+    "keyword": ["Urban X", "Agent-based Simulation", "Urban Mobility"],
+    "desc": "Agent-based Simulation and its Applications for Urban Mobility",
+    "speaker": "Prof. Simon Oh",
+    "photos": [
+      "assets/images/events/simon_0.jpg",
+      "assets/images/events/simon_1.jpg"
+    ],
+    "links": [],
+    "time": ""
+  },
+  {
+    "id": "20260220-urbanx",
+    "title": "Urban@KAIST Urban-X Seminar",
+    "category": "Urban-X Seminar",
+    "start": "2026-02-20",
+    "end": "2026-02-20",
+    "place": "",
+    "participants": "Speaker: Dr. Esther Choi, Research Lead for Nature-Based Solutions and the Private Climate Sector at World Resources Institute",
+    "keyword": ["Urban X", "Climate", "Innovation"],
+    "desc": "Constructing Climate Startup Ecosystems: Urban Conditions and Innovation Dynamics in Korea",
+    "speaker": "Dr. Esther Choi",
+    "photos": [
+      "assets/images/events/esther_0.png",
+      "assets/images/events/esther_1.png",
+      "assets/images/events/esther_2.png"
+    ],
+    "links": [],
+    "time": ""
+  },
+  {
+    "id": "20260402-urbanx",
+    "title": "Urban@KAIST Urban-X Seminar",
+    "category": "Urban-X Seminar",
+    "start": "2026-04-02",
+    "end": "2026-04-02",
+    "place": "",
+    "participants": "Speaker: Prof. Ji-Eun Kim, Associate Professor, Industrial & Systems Engineering, University of Washington, Seattle",
+    "keyword": ["Urban X", "Vigilance", "AI", "Safety"],
+    "desc": "Mitigating vigilance decrement in the safety-critical environment: Measurement, detection, and intervention design using AI and sensors",
+    "speaker": "Prof. Ji-Eun Kim",
+    "photos": [
+      "assets/images/events/jieun_0.jpg",
+      "assets/images/events/jieun_1.jpeg",
+      "assets/images/events/jieun_2.jpeg",
+      "assets/images/events/jieun_3.jpeg"
+    ],
+    "links": [],
+    "time": ""
+  },
+  {
+    "id": "20260416-urbanx",
+    "title": "Urban@KAIST Urban-X Seminar",
+    "category": "Urban-X Seminar",
+    "start": "2026-04-16",
+    "end": "2026-04-16",
+    "place": "",
+    "participants": "Speaker: Prof. Seungryong Kim, Associate Professor, Kim Jaechul Graduate School of AI, KAIST",
+    "keyword": ["Urban X", "Seoul World Model"],
+    "desc": "Seoul World Model: Grounding World Simulation Models in a Real-World Metropolis",
+    "speaker": "Prof. Seungryong Kim",
+    "photos": [
+      "assets/images/events/SWM_0.png",
+      "assets/images/events/SWM_1.png",
+      "assets/images/events/SWM_2.png"
+    ],
+    "links": [
+      {
+        "label": "View Website",
+        "href": "https://seoul-world-model.github.io/"
+      }
+    ],
+    "time": ""
+  },
+  {
+    "id": "20260417-kincho",
+    "title": "Stanford Center for Sustainable Development and Global Competitiveness, Professor Meeting",
+    "category": "meeting",
+    "start": "2026-04-17",
+    "end": "2026-04-17",
+    "place": "",
+    "participants": "Yoonjin Yoon(KAIST), Kincho Law(Stanford)",
+    "keyword": [ "CAUS", "Stanford", "SDGC" ],
+    "desc": "",
+    "photos": [],
+    "links": [],
+    "time": ""
+  },
+  {
+    "id": "20260417-datamining",
+    "title": "School of Computing, DataMining Lab, Professor Meeting",
+    "category": "meeting",
+    "start": "2026-04-17",
+    "end": "2026-04-17",
+    "place": "",
+    "participants": "Yoonjin Yoon, Jaegil Lee, Minwoo Jeong, Jeeyun Chang (KAIST)",
+    "keyword": ["CAUS"],
+    "desc": "",
+    "photos": [],
+    "links": [],
+    "time": ""
+  },
+  {
+    "id": "demo-citydialogue",
+    "title": "CityDialogue — Demo Video",
+    "category": "demo",
+    "start": "2026-04-20",
+    "desc": "Demo video for CityDialogue, a project by the Urban AI Institute.\n\n**Development** Jeeyun Chang (KAIST), Minwoo Jeong (KAIST)\n\n**Voice** Jeeyun Chang (KAIST)",
+    "youtube": "https://www.youtube.com/embed/8Dqbt77K0ko",
+    "keyword": ["CityDialogue"],
+    "photos": [],
+    "links": [
+      { "label": "Watch on YouTube", "href": "https://youtu.be/8Dqbt77K0ko" }
+    ],
+    "time": ""
+  },
+  {
+    "id": "demo-agentk",
+    "title": "AgentK — Demo Video",
+    "category": "demo",
+    "start": "2026-04-20",
+    "desc": "Demo video for AgentK, a project by the Urban AI Institute.\n\n**Development** Huijae Kim (KAIST), Joongchan Ahn (KAIST)\n\n**Voice** Keonhee Jang (KAIST)",
+    "youtube": "https://www.youtube.com/embed/ATDGT88CqGs",
+    "keyword": ["AgentK"],
+    "photos": [],
+    "links": [
+      { "label": "Watch on YouTube", "href": "https://youtu.be/ATDGT88CqGs" }
+    ],
+    "time": ""
+  },
+  {
+    "id": "demo-agentsumo",
+    "title": "AgentSUMO — Demo Video",
+    "category": "demo",
+    "start": "2026-04-20",
+    "desc": "Demo video for AgentSUMO, a project by the Urban AI Institute.\n\n**Development** Minwoo Jeong (KAIST), Jeeyun Chang (KAIST)\n\n**Voice** Minwoo Jeong (KAIST)",
+    "youtube": "https://www.youtube.com/embed/1jPtXY76mXA",
+    "keyword": ["AgentSUMO"],
+    "photos": [],
+    "links": [
+      { "label": "Watch on YouTube", "href": "https://youtu.be/1jPtXY76mXA" }
+    ],
+    "time": ""
   }
 ]

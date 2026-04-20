@@ -26,17 +26,19 @@ function setActivePageLinks() {
         return;
     }
 
-    const currentPath = window.location.pathname.split("/").pop() || "index.html";
+    const currentPathname = window.location.pathname;
     const allLinks = document.querySelectorAll(".uaii-navbar a[href], .uaii-mobile-menu a[href]");
     allLinks.forEach((link) => {
         const href = link.getAttribute("href") || "";
         let isActive = false;
 
         if (href.startsWith("#")) {
-            isActive = currentPath === "index.html" && window.location.hash === href;
+            const currentFile = currentPathname.split("/").pop() || "index.html";
+            isActive = currentFile === "index.html" && window.location.hash === href;
         } else {
-            const targetPath = href.split("/").pop();
-            isActive = targetPath === currentPath;
+            const resolved = new URL(href, window.location.href).pathname;
+            isActive = resolved === currentPathname ||
+                (currentPathname.endsWith("/") && resolved === currentPathname + "index.html");
         }
 
         if (isActive) {
@@ -100,7 +102,7 @@ function loadNavbar(pageName) {
                 <li><a href="${prefix}people.html" data-key="people">People</a></li>
                 <li><a href="${prefix}projects.html" data-key="projects">Projects</a></li>
                 <li><a href="${prefix}engagement.html" data-key="engagement">Engagement</a></li>
-                <!-- <li><a href="${prefix}conferences/index.html" data-key="conferences">Conferences</a></li> -->
+                <li><a href="${prefix}conferences/index.html" data-key="conferences">Conferences</a></li>
             </ul>
             <button id="menuBtn" class="uaii-menu-btn" aria-label="Toggle menu" aria-expanded="false">☰</button>
         </nav>
@@ -110,7 +112,7 @@ function loadNavbar(pageName) {
             <a href="${prefix}people.html" data-key="people">People</a>
             <a href="${prefix}projects.html" data-key="projects">Projects</a>
             <a href="${prefix}engagement.html" data-key="engagement">Engagement</a>
-            <!-- <a href="${prefix}conferences/index.html" data-key="conferences">Conferences</a> -->
+            <a href="${prefix}conferences/index.html" data-key="conferences">Conferences</a>
         </div>
     `;
 
