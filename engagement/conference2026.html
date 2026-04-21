@@ -113,27 +113,51 @@
       padding-bottom: 36px;
     }
 
+    .hero-title-wrap {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: baseline;
+      gap: 0.25em;
+      margin-bottom: 0;
+    }
+
     .eyebrow {
-      margin: 0 0 10px;
-      font-size: 13px;
-      color: var(--muted);
-      letter-spacing: 0.08em;
+      margin: 0;
+      font-size: clamp(14px, 3.2vw, 38px);
+      font-weight: 800;
+      color: var(--text);
       text-transform: uppercase;
-      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 0.95;
+      white-space: nowrap;
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(42px, 9vw, 84px);
+      font-size: clamp(14px, 3.2vw, 38px);
+      font-weight: 800;
       line-height: 0.95;
       letter-spacing: -0.04em;
       text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 640px) {
+      .hero-title-wrap {
+        flex-direction: column;
+        gap: 6px;
+      }
+      .eyebrow,
+      h1 {
+        font-size: clamp(22px, 7vw, 30px);
+        white-space: normal;
+      }
     }
 
     .lead {
       margin: 22px 0 0;
       max-width: 70ch;
-      font-size: clamp(16px, 1.5vw, 20px);
+      font-size: clamp(15px, 1.3vw, 18px);
       color: #344054;
     }
 
@@ -196,7 +220,7 @@
 
     .meta-value {
       margin: 0;
-      font-size: clamp(20px, 2.6vw, 30px);
+      font-size: clamp(18px, 2vw, 26px);
       line-height: 1.15;
       letter-spacing: -0.02em;
       font-weight: 800;
@@ -215,7 +239,7 @@
 
     .section-title {
       margin: 0 0 18px;
-      font-size: clamp(28px, 4vw, 48px);
+      font-size: clamp(22px, 3vw, 36px);
       line-height: 1;
       letter-spacing: -0.03em;
       text-transform: uppercase;
@@ -226,7 +250,7 @@
       margin: 0 0 14px;
       max-width: 70ch;
       color: #344054;
-      font-size: clamp(16px, 1.3vw, 19px);
+      font-size: clamp(14px, 1.1vw, 16px);
     }
 
     .topic-list,
@@ -246,7 +270,7 @@
 
     .topic-item h3 {
       margin: 0 0 8px;
-      font-size: clamp(20px, 1.8vw, 28px);
+      font-size: clamp(16px, 1.4vw, 20px);
       line-height: 1.2;
       letter-spacing: -0.02em;
     }
@@ -255,7 +279,7 @@
       margin: 0;
       padding-left: 1.1em;
       color: #475467;
-      font-size: 15px;
+      font-size: 14px;
       line-height: 1.7;
       max-width: 74ch;
     }
@@ -270,16 +294,16 @@
 
     .subhead {
       margin: 0 0 10px;
-      font-size: clamp(18px, 1.6vw, 24px);
+      font-size: clamp(14px, 1.2vw, 17px);
       line-height: 1.2;
       letter-spacing: -0.01em;
-      text-transform: uppercase;
     }
 
     .plain-list li {
       border-bottom: 1px solid var(--line);
       padding: 10px 0;
       color: #344054;
+      font-size: 14px;
     }
 
     .plain-list li:last-child { border-bottom: 0; }
@@ -293,7 +317,7 @@
 
     .dates-list li {
       margin-bottom: 10px;
-      font-size: 16px;
+      font-size: 15px;
     }
 
     .dates-list strong {
@@ -310,14 +334,14 @@
 
     .committee-name {
       margin: 0;
-      font-size: clamp(18px, 1.6vw, 24px);
+      font-size: clamp(15px, 1.3vw, 18px);
       font-weight: 700;
     }
 
     .committee-aff {
       margin: 0;
       color: var(--muted);
-      font-size: 15px;
+      font-size: 13px;
     }
 
     footer {
@@ -440,15 +464,17 @@
 
   <main>
     <section class="hero" aria-labelledby="hero-title">
-      <p class="eyebrow">2026 International Conference on</p>
-      <h1 id="hero-title">Urban AI</h1>
+      <div class="hero-title-wrap">
+        <p class="eyebrow">2026 International Conference on</p>
+        <h1 id="hero-title">Urban AI</h1>
+      </div>
       <p class="lead">
         We invite submissions for the second International Conference on Urban AI, a forum bringing together researchers, practitioners, and policymakers working at the intersection of artificial intelligence, urban systems, and societal infrastructure.
       </p>
       <div class="hero-actions">
         <a href="#submission" class="btn">View Submission Details</a>
         <a href="#" class="btn" id="openModal">Quick Submission Info</a>
-        <span class="deadline"><strong>Deadline:</strong> May 15, 2026</span>
+        <span class="deadline"><strong>Deadline:</strong> May 21, 2026</span>
       </div>
 
       <div class="meta-grid" aria-label="Conference information">
@@ -550,7 +576,7 @@
           <li>potential impact on urban systems</li>
         </ul>
 
-        <h3 class="subhead" style="margin-top: 18px;">Review Criteria</h3>
+        <h3 class="subhead" style="margin-top: 18px;">Review criteria</h3>
         <ul class="plain-list">
           <li>relevance to the symposium theme</li>
           <li>novelty and technical quality</li>
@@ -563,7 +589,7 @@
           <li>Free style (no strict template required)</li>
         </ul>
 
-        <h3 class="subhead" style="margin-top: 18px;">Submission Method</h3>
+        <h3 class="subhead" style="margin-top: 18px;">Submission method</h3>
         <p style="margin: 0; color: #344054;">
           Email submission to:
           <a href="mailto:urban@kaist.ac.kr" style="color: #1e3a8a; font-weight: 700;">urban@kaist.ac.kr</a>
@@ -574,8 +600,8 @@
     <section id="dates" class="section">
       <h2 class="section-title">Important Dates</h2>
       <ol class="dates-list">
-        <li><strong>May 15, 2026</strong> — Abstract submission deadline</li>
-        <li><strong>May 22, 2026</strong> — Notification of acceptance</li>
+        <li><strong>May 21, 2026</strong> — Abstract submission deadline</li>
+        <li><strong>May 30, 2026</strong> — Notification of acceptance</li>
         <li><strong>July 15–16, 2026</strong> — Conference dates</li>
       </ol>
     </section>
@@ -624,8 +650,8 @@
           Please submit a 2-page extended abstract describing the research problem and motivation, methodology and technical approach, key results (if available), and potential impact on urban systems.
         </p>
         <p><strong>Formatting:</strong> PDF format, free style (no strict template required)</p>
-        <p><strong>Deadline:</strong> May 15, 2026</p>
-        <p><strong>Notification:</strong> May 22, 2026</p>
+        <p><strong>Deadline:</strong> May 21, 2026</p>
+        <p><strong>Notification:</strong> May 30, 2026</p>
         <p>
           <strong>Submission:</strong>
           <a class="modal-email" href="mailto:urban@kaist.ac.kr">urban@kaist.ac.kr</a>

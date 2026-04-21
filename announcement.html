@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Engagement | Urban AI Institute (UAII)</title>
+    <title>Announcement | Urban AI Institute (UAII)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -303,7 +303,7 @@
     <div id="photo-zoom"><img id="photo-zoom-img" src="" alt=""></div>
 
     <!-- Navigation -->
-    <div id="navbar" data-page="Engagement"></div>
+    <div id="navbar" data-page="Announcement"></div>
 
     <!-- Scrollable page content -->
     <div class="page-scroll">
@@ -311,7 +311,7 @@
         <!-- Hero -->
         <header class="engage-hero">
             <p class="page-hero-eyebrow fade-up">KAIST · Urban AI Institute</p>
-            <h1 class="page-hero-title fade-up fade-up-d1">Engagement</h1>
+            <h1 class="page-hero-title fade-up fade-up-d1">Announcement</h1>
             <p class="page-hero-sub fade-up fade-up-d2"></p>
             <!-- <div class="stat-row fade-up fade-up-d3">
                 <div class="stat-pill">
@@ -1074,9 +1074,9 @@
                 updateStats(allEvents);
                 applyFilters();
             }).catch(function (err) {
-                console.error("Failed to load engagement data", err);
+                console.error("Failed to load announcement data", err);
                 eventsListEl.innerHTML =
-                    '<p class="text-sm" style="color:#94a3b8;">Failed to load engagement data.</p>';
+                    '<p class="text-sm" style="color:#94a3b8;">Failed to load announcement data.</p>';
             });
         });
         // Photo hover zoom

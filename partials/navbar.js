@@ -101,8 +101,8 @@ function loadNavbar(pageName) {
                 <li><a href="${prefix}about.html" data-key="about">About</a></li>
                 <li><a href="${prefix}people.html" data-key="people">People</a></li>
                 <li><a href="${prefix}projects.html" data-key="projects">Projects</a></li>
-                <li><a href="${prefix}engagement.html" data-key="engagement">Engagement</a></li>
-                <li><a href="${prefix}conferences/index.html" data-key="conferences">Conferences</a></li>
+                <li><a href="${prefix}announcement.html" data-key="engagement">Announcement</a></li>
+                <li><a href="${prefix}engagement/index.html" data-key="conferences">Engagement</a></li>
             </ul>
             <button id="menuBtn" class="uaii-menu-btn" aria-label="Toggle menu" aria-expanded="false">☰</button>
         </nav>
@@ -111,8 +111,8 @@ function loadNavbar(pageName) {
             <a href="${prefix}about.html" data-key="about">About</a>
             <a href="${prefix}people.html" data-key="people">People</a>
             <a href="${prefix}projects.html" data-key="projects">Projects</a>
-            <a href="${prefix}engagement.html" data-key="engagement">Engagement</a>
-            <a href="${prefix}conferences/index.html" data-key="conferences">Conferences</a>
+            <a href="${prefix}announcement.html" data-key="engagement">Announcement</a>
+            <a href="${prefix}engagement/index.html" data-key="conferences">Engagement</a>
         </div>
     `;
 
