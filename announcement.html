@@ -676,6 +676,8 @@
                 });
 
                 filteredEvents.sort(function (a, b) {
+                    if (a.pinned && !b.pinned) return -1;
+                    if (!a.pinned && b.pinned) return 1;
                     var as = a.start || "";
                     var bs = b.start || "";
                     return bs.localeCompare(as);
@@ -977,6 +979,7 @@
                         keywords: Array.isArray(item.keyword) ? item.keyword : [],
                         links: Array.isArray(item.links) ? item.links : [],
                         youtube: item.youtube || "",
+                        pinned: item.pinned || false,
                     };
                 }
 

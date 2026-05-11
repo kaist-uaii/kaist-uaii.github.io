@@ -533,6 +533,13 @@
                 <div class="people-grid" id="participants-grid"></div>
             </section>
 
+            <!-- Advisory Board Section -->
+            <section class="section-wrap fade-up fade-up-d3" id="advisory-board">
+                <h2 class="section-title">Advisory Board</h2>
+                <div class="section-divider"></div>
+                <div class="people-grid" id="advisory-board-grid"></div>
+            </section>
+
             <!-- Alumni Section -->
             <section class="section-wrap fade-up fade-up-d3" id="alumni">
                 <!-- <p class="section-eyebrow">KAIST Faculty</p> -->
@@ -592,6 +599,7 @@
                     window.collabProfsData = collabData.collabProfsData;
                     window.collabScholarsData = collabData.collabScholarsData;
                     window.staffsData = collabData.staffsData;
+                    window.advisoryBoardData = collabData.advisoryBoardData;
 
                     const professorData = window.professorData;
                     const labMembersData = window.labMembersData;
@@ -599,6 +607,7 @@
                     const collabProfsData = window.collabProfsData;
                     const collabScholarsData = window.collabScholarsData;
                     const staffsData = window.staffsData;
+                    const advisoryBoardData = window.advisoryBoardData;
 
 
                     // Helper function to load image with error handling
@@ -830,6 +839,31 @@
                             });
                         }
 
+
+                        // -- advisory board grid --
+                        const advisoryBoardGrid = document.getElementById('advisory-board-grid');
+                        const advisoryMembers = [];
+
+                        function pushAdvisory(arr) {
+                            if (!Array.isArray(arr)) return;
+                            arr.forEach(a => advisoryMembers.push({
+                                ...a,
+                                keywords: a.keywords || [],
+                                projects: a.projects || [],
+                                photo: a.photo || ""
+                            }));
+                        }
+
+                        pushAdvisory(advisoryBoardData);
+                        advisoryMembers.sort(sortByLastName);
+
+                        if (advisoryBoardGrid) {
+                            advisoryBoardGrid.innerHTML = "";
+                            advisoryMembers.forEach(function(p) {
+                                const card = createPersonCard(p, { imgIdPrefix: 'advisory' });
+                                advisoryBoardGrid.appendChild(card);
+                            });
+                        }
 
                         // -- alumni grid --
                         const alumniGrid = document.getElementById('alumni-grid');

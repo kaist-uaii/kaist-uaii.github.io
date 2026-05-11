@@ -170,7 +170,7 @@
       "id": "maurizio-porfiri",
       "name": "Maurizio Porfiri",
       "role": "Global Scholar",
-      "current": "Interim Chair, NYU Tandon CEE",
+      "current": "Professor, NYU Tandon CEE",
       "email": "mporfiri@nyu.edu",
       "projects": [ "CAUS" ],
       "position": [
@@ -269,6 +269,99 @@
       "affiliation": "Operations Team",
       "projects": [ "CAUS", "BP" ],
       "photo": "assets/images/people/seyeon_jeong.jpg"
+    }
+  ],
+
+  "advisoryBoardData": [
+    {
+      "id": "sangyup-lee",
+      "name": "Sang Yup Lee",
+      "current": "Senior Vice President for Research, KAIST",
+      "role": "Advisory Board",
+      "position": [
+        "Senior Vice President for Research, KAIST"
+      ],
+      "link": "https://mbel.kaist.ac.kr/",
+      "email": "leesy@kaist.ac.kr",
+      "keywords": [],
+      "photo": "assets/images/collab/sangyup.jpg"
+    },
+    {
+      "id": "gyechun-cho",
+      "name": "Gye Chun Cho",
+      "current": "Professor, KAIST CEE",
+      "role": "Advisory Board",
+      "position": [
+        "Professor, Department of Civil and Environmental Engineering, KAIST"
+      ],
+      "link": "https://geosystems.kaist.ac.kr",
+      "email": "gyechun@kaist.ac.kr",
+      "keywords": [],
+      "photo": "assets/images/collab/gyechun.jpg"
+    },
+    {
+      "id": "song-chong",
+      "name": "Song Chong",
+      "current": "Professor, KAIST AI",
+      "role": "Advisory Board",
+      "position": [
+        "Professor, Kim Jaechul Graduate School of AI, KAIST"
+      ],
+      "email": "songchong@kaist.ac.kr",
+      "keywords": [],
+      "photo": "assets/images/collab/songchong.jpg"
+    },
+    {
+      "id": "mansung-yim",
+      "name": "Man Sung Yim",
+      "current": "Professor, Texas A&M University",
+      "role": "Advisory Board",
+      "position": [
+        "Professor, Texas A&M University"
+      ],
+      "keywords": [],
+      "photo": "assets/images/collab/mansung.jfif"
+    },
+    {
+      "id": "kincho-law-ab",
+      "name": "Kincho Law",
+      "current": "Professor, Stanford CEE",
+      "role": "Advisory Board",
+      "position": [
+        "Professor, Civil and Environmental Engineering, Stanford University"
+      ],
+      "link": "https://profiles.stanford.edu/kincho-law",
+      "email": "kvonner@stanford.edu",
+      "keywords": ["Computing in Civil Engineering"],
+      "photo": "assets/images/collab/profile_kincho_h_law.jpg"
+    },
+    {
+      "id": "maurizio-porfiri-ab",
+      "name": "Maurizio Porfiri",
+      "current": "Professor, NYU Tandon CEE",
+      "role": "Advisory Board",
+      "position": [
+        "Institute Professor, School of Engineering, NYU Tandon",
+        "Director, Center for Urban Science + Progress (CUSP), NYU Tandon"
+      ],
+      "link": "https://engineering.nyu.edu/faculty/maurizio-porfiri",
+      "email": "mporfiri@nyu.edu",
+      "keywords": ["Collective Behavior", "Complex Systems", "Network Science", "Urban Science"],
+      "photo": "assets/images/collab/profile_mau.png"
+    },
+    {
+      "id": "fabio-duarte-ab",
+      "name": "Fabio Duarte",
+      "current": "Associate Director, MIT SCL",
+      "role": "Advisory Board",
+      "position": [
+        "Associate Director, Research & Design, MIT Senseable City Lab",
+        "Principal Research Scientist, MIT Senseable City Lab"
+      ],
+      "link": "https://dusp.mit.edu/people/fabio-duarte",
+      "email": "fabio@mit.edu",
+      "keywords": ["Urban Technologies", "Urban Mobility", "Smart Cities"],
+      "photo": "assets/images/collab/profile_fabio_duarte.jpg"
     }
   ],
 
