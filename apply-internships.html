@@ -1,89 +1,145 @@
-﻿<!-- ====== apply-internships.html ====== -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Apply | Winter / Summer Internships</title>
+    <title>Apply | Research Internship · Summer 2026</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-slate-50 text-slate-900">
 
-    <nav class="border-b border-slate-100 bg-white/80 backdrop-blur-md sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-6 flex justify-between items-center">
-            <a href="index.html" class="text-xl font-black tracking-tighter text-blue-900">
-                UAII <span class="text-slate-400 font-light">Apply</span>
-            </a>
-            <div class="hidden md:flex gap-6 text-xs font-bold uppercase tracking-widest text-slate-500">
-                <a href="index.html" class="hover:text-blue-600">Home</a>
-                <a href="people.html" class="hover:text-blue-600">People</a>
-                <a href="projects.html" class="hover:text-blue-600">Projects</a>
-                <a href="press.html" class="hover:text-blue-600">Events</a>
-                <a href="apply.html" class="text-blue-600">Apply</a>
-            </div>
-        </div>
-    </nav>
+    <div id="navbar" data-page="Apply"></div>
 
-    <main class="container mx-auto px-6 py-14 max-w-4xl">
-        <a href="apply.html" class="text-sm text-slate-500 hover:text-blue-600">&larr; Back to Apply</a>
+    <main class="container mx-auto px-6 py-14 max-w-5xl">
 
-        <h1 class="text-4xl font-extrabold tracking-tight mt-6">Winter / Summer Internships</h1>
-        <p class="text-slate-600 mt-4">
-            UAII internships are designed for undergraduate (and early graduate) students who want hands-on experience
-            in Urban AI, simulation, data-driven urban systems, and research software engineering.
-        </p>
-
-        <section class="mt-10 bg-white border border-slate-200 rounded-2xl p-8">
-            <h2 class="text-xl font-bold mb-4">Who should apply</h2>
-            <ul class="list-disc list-inside text-slate-600 space-y-2">
-                <li>Undergraduate students (or early graduate students) interested in AI, simulation, and urban systems</li>
-                <li>Comfortable with at least one programming language (Python recommended)</li>
-                <li>Interest in building prototypes, running experiments, and writing research code</li>
-            </ul>
-        </section>
-
-        <section class="mt-6 bg-white border border-slate-200 rounded-2xl p-8">
-            <h2 class="text-xl font-bold mb-4">Period & format</h2>
-            <ul class="list-disc list-inside text-slate-600 space-y-2">
-                <li><span class="font-semibold">Period:</span> Every Winter & Summer vacation (exact dates vary)</li>
-                <li><span class="font-semibold">Format:</span> Full-time (recommended) / Part-time (limited cases)</li>
-                <li><span class="font-semibold">Location:</span> KAIST (Daejeon) / Remote (case-by-case)</li>
-            </ul>
-            <p class="text-xs text-slate-500 mt-4">
-                Note: Internship schedules and availability may depend on project timelines and advisor capacity.
+        <header class="mt-6">
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-blue-700">Internship Hiring</p>
+            <h1 class="text-4xl font-extrabold tracking-tight mt-3">Research Internship · Summer 2026</h1>
+            <p class="mt-4 text-slate-600 leading-7 max-w-3xl">
+                We are recruiting research interns to join the Urban AI Institute for the summer research program.
             </p>
-        </section>
+        </header>
 
-        <section class="mt-6 bg-white border border-slate-200 rounded-2xl p-8">
-            <h2 class="text-xl font-bold mb-4">Typical projects</h2>
-            <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-100">Data pipeline & visualization</span>
-                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-100">Urban simulation / digital twin</span>
-                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-100">ML / CV for urban sensing</span>
-                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-100">Research tooling & web demos</span>
-            </div>
-        </section>
+        <section id="job-panel" class="mt-8 rounded-3xl border border-slate-200 bg-white p-8 sm:p-10 shadow-sm">
+            <div class="flex flex-col gap-6">
 
-        <section class="mt-6 bg-white border border-slate-200 rounded-2xl p-8">
-            <h2 class="text-xl font-bold mb-4">How to apply</h2>
-            <ol class="list-decimal list-inside text-slate-600 space-y-2">
-                <li>Prepare CV(Curriculum Vitae)</li>
-                <li>
-                    Email your documents to <span class="font-semibold">urban@kaist.ac.kr</span> with the subject:
-                    <span class="italic">[Application] Internship - Your_Name</span>
-                </li>
-                <li>Shortlisted candidates will be contacted for an interview and project matching.</li>
-            </ol>
+                <div class="grid gap-4 md:grid-cols-3">
+                    <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                        <div class="text-xs font-bold uppercase tracking-[0.18em] text-slate-400">Location</div>
+                        <div class="mt-2 text-sm font-semibold text-slate-900">Seoul / Daejeon, South Korea</div>
+                    </div>
+                    <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                        <div class="text-xs font-bold uppercase tracking-[0.18em] text-slate-400">Compensation</div>
+                        <div class="mt-2 text-sm font-semibold text-slate-900">KRW 1,000,000 (negotiable)</div>
+                    </div>
+                    <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                        <div class="text-xs font-bold uppercase tracking-[0.18em] text-slate-400">Application</div>
+                        <div class="mt-2 text-sm font-semibold text-slate-900">urban@kaist.ac.kr</div>
+                    </div>
+                </div>
 
-            <div class="mt-6 flex flex-col sm:flex-row gap-3">
-                <a href="mailto:urban@kaist.ac.kr?subject=%5BApplication%5D%20Internship%20-%20Your_Name"
-                   class="inline-flex justify-center items-center px-4 py-2 rounded-xl bg-slate-900 text-white font-semibold hover:bg-slate-800">
-                    Email to Apply
-                </a>
-                <a href="apply.html"
-                   class="inline-flex justify-center items-center px-4 py-2 rounded-xl bg-white border border-slate-200 text-slate-700 font-semibold hover:border-blue-400 hover:text-blue-600">
-                    View other positions
-                </a>
+                <section class="rounded-2xl border border-slate-200 p-6">
+                    <h3 class="text-lg font-bold">Schedule</h3>
+                    <div class="mt-4 flex flex-col gap-3">
+                        <div class="flex gap-4 text-base">
+                            <span class="w-44 font-semibold text-slate-700 shrink-0">Application Period</span>
+                            <span class="text-slate-600">Jun 1 – 7, 2026 (by 23:59 Sun)</span>
+                        </div>
+                        <div class="flex gap-4 text-base">
+                            <span class="w-44 font-semibold text-slate-700 shrink-0">Review Period</span>
+                            <span class="text-slate-600">Jun 8 – 11, 2026 (tentative)</span>
+                        </div>
+                        <div class="flex gap-4 text-base">
+                            <span class="w-44 font-semibold text-slate-700 shrink-0">Decision</span>
+                            <span class="text-slate-600">Jun 12, 2026 (Fri)</span>
+                        </div>
+                        <div class="flex gap-4 text-base">
+                            <span class="w-44 font-semibold text-slate-700 shrink-0">Internship Period</span>
+                            <span class="text-slate-600">Jul 1 – 31, 2026</span>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="grid gap-6 lg:grid-cols-2">
+                    <section class="rounded-2xl border border-slate-200 p-6">
+                        <h3 class="text-lg font-bold">Research Topics</h3>
+                        <ul class="mt-4 list-disc pl-5 space-y-2 text-slate-600 leading-7">
+                            <li>Agent-based Simulation (e.g. MATSim, Mesa)</li>
+                            <li>Vision-based urban spatial reasoning</li>
+                            <li>Other urban-related topics</li>
+                        </ul>
+                    </section>
+                    <section class="rounded-2xl border border-slate-200 p-6">
+                        <h3 class="text-lg font-bold">Required Qualifications</h3>
+                        <ul class="mt-4 list-disc pl-5 space-y-2 text-slate-600 leading-7">
+                            <li>Students majoring in Urban AI, Geospatial AI, or related fields</li>
+                            <li>Undergraduate or graduate students are welcome to apply</li>
+                        </ul>
+                    </section>
+                </div>
+
+                <div class="grid gap-6 lg:grid-cols-2">
+                    <section class="rounded-2xl border border-slate-200 p-6">
+                        <h3 class="text-lg font-bold">Number of Positions</h3>
+                        <ul class="mt-4 list-disc pl-5 space-y-2 text-slate-600 leading-7">
+                            <li>1–3 positions</li>
+                        </ul>
+                    </section>
+                    <section class="rounded-2xl border border-slate-200 p-6">
+                        <h3 class="text-lg font-bold">Why This Role</h3>
+                        <ul class="mt-4 list-disc pl-5 space-y-2 text-slate-600 leading-7">
+                            <li>Stipend of KRW 1,000,000 (negotiable)</li>
+                            <li>Access to KAIST Urban AI proprietary datasets and computing resources</li>
+                            <li>Mentoring from KAIST Urban AI researchers</li>
+                        </ul>
+                    </section>
+                </div>
+
+                <section class="rounded-2xl border border-slate-200 p-6">
+                    <h3 class="text-lg font-bold">Application Materials</h3>
+                    <ul class="mt-4 list-disc pl-5 space-y-2 text-slate-600 leading-7">
+                        <li>CV</li>
+                        <li>Research Proposal (2–3 pages, free format)</li>
+                    </ul>
+                </section>
+
+                <section class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+                    <h3 class="text-lg font-bold">How to Apply</h3>
+                    <ol class="mt-4 list-decimal pl-5 space-y-2 text-slate-600 leading-7">
+                        <li>Prepare your CV and research proposal.</li>
+                        <li>Submit via email (see button below).</li>
+                        <li>Shortlisted applicants will be contacted for an online interview if needed.</li>
+                        <li>Final decisions announced on Jun 12, 2026.</li>
+                    </ol>
+                    <p class="mt-4 text-xs text-slate-500">
+                        ※ Late submissions may not be considered. Please strictly observe the application deadline.
+                    </p>
+                    <div class="mt-6">
+                        <button id="copy-email-btn" onclick="copyEmail()"
+                            class="inline-flex justify-center items-center px-4 py-2 rounded-xl bg-slate-900 text-white font-semibold hover:bg-slate-800 transition">
+                            Copy Email Address
+                        </button>
+                    </div>
+
+                    <script>
+                        function copyEmail() {
+                            navigator.clipboard.writeText("urban@kaist.ac.kr").then(function () {
+                                const btn = document.getElementById("copy-email-btn");
+                                btn.textContent = "Copied!";
+                                btn.classList.add("bg-green-700");
+                                btn.classList.remove("bg-slate-900");
+                                setTimeout(function () {
+                                    btn.textContent = "Copy Email Address";
+                                    btn.classList.remove("bg-green-700");
+                                    btn.classList.add("bg-slate-900");
+                                }, 2000);
+                            });
+                        }
+                    </script>
+                </section>
+
             </div>
         </section>
     </main>
@@ -91,5 +147,8 @@
     <footer class="bg-white border-t border-gray-200 py-8 text-center mt-20">
         <p class="text-gray-500 text-sm">&copy; 2026 Urban AI Institute. All rights reserved.</p>
     </footer>
+
+    <script src="partials/navbar.js"></script>
 </body>
+
 </html>
