@@ -6,7 +6,7 @@
     "start": "2026-05",
     "pinned": true,
     "place": "KAIST · Seoul / Daejeon / Hybrid",
-    "desc": "The Urban AI Institute at KAIST is recruiting postdoctoral researchers for two tracks.\n\n**Research-focused** · For researchers who want to publish at top-tier venues and conduct interdisciplinary urban AI research with global partners including MIT, Stanford, and NYU. International collaborative visits of at least 3 months per year are expected.\n\n**Project Management-focused** · For PhD-level researchers who can help shape and operate a large-scale research program spanning urban systems, AI, infrastructure, and real-world deployment across KAIST, GS E&C, and global institutions.\n\nCompensation: KRW 50M–90M+ (negotiable). Applications reviewed on a rolling basis.",
+    "desc": "KAIST Urban AI (KUAI) is recruiting postdoctoral researchers for two tracks.\n\n**Research-focused** · For researchers who want to publish at top-tier venues and conduct interdisciplinary urban AI research with global partners including MIT, Stanford, and NYU. International collaborative visits of at least 3 months per year are expected.\n\n**Project Management-focused** · For PhD-level researchers who can help shape and operate a large-scale research program spanning urban systems, AI, infrastructure, and real-world deployment across KAIST, GS E&C, and global institutions.\n\nCompensation: KRW 50M–90M+ (negotiable). Applications reviewed on a rolling basis.",
     "links": [
       { "label": "View Positions", "href": "apply-postdoc.html" }
     ],
@@ -45,7 +45,7 @@
       "Agentic AI",
       "Berkeley"
     ],
-    "desc": "The Urban AI Institute hosted the 2025 Urban X HcFM Workshop in Berkeley on November 24–25. The two-day workshop featured seminars and open discussions on topics including Urban Air Mobility (UAM) and Agentic AI, with invited speakers from Google Research, UC Berkeley, the University of Illinois Chicago, and Config Intelligence.",
+    "desc": "KAIST Urban AI (KUAI) hosted the 2025 Urban X HcFM Workshop in Berkeley on November 24–25. The two-day workshop featured seminars and open discussions on topics including Urban Air Mobility (UAM) and Agentic AI, with invited speakers from Google Research, UC Berkeley, the University of Illinois Chicago, and Config Intelligence.",
     "photos": [
       "assets/images/events/berkeley1.jpeg",
       "assets/images/events/berkeley2.jpeg",
@@ -1053,7 +1053,7 @@
     "title": "CityDialogue — Demo Video",
     "category": "demo",
     "start": "2026-04-20",
-    "desc": "Demo video for CityDialogue, a project by the Urban AI Institute.\n\n**Development** Jeeyun Chang (KAIST), Minwoo Jeong (KAIST)\n\n**Voice** Jeeyun Chang (KAIST)",
+    "desc": "Demo video for CityDialogue, a project by KAIST Urban AI (KUAI).\n\n**Development** Jeeyun Chang (KAIST), Minwoo Jeong (KAIST)\n\n**Voice** Jeeyun Chang (KAIST)",
     "youtube": "https://www.youtube.com/embed/8Dqbt77K0ko",
     "keyword": ["CityDialogue"],
     "photos": [],
@@ -1067,7 +1067,7 @@
     "title": "AgentK — Demo Video",
     "category": "demo",
     "start": "2026-04-20",
-    "desc": "Demo video for AgentK, a project by the Urban AI Institute.\n\n**Development** Huijae Kim (KAIST), Joongchan Ahn (KAIST)\n\n**Voice** Keonhee Jang (KAIST)",
+    "desc": "Demo video for AgentK, a project by KAIST Urban AI (KUAI).\n\n**Development** Huijae Kim (KAIST), Joongchan Ahn (KAIST)\n\n**Voice** Keonhee Jang (KAIST)",
     "youtube": "https://www.youtube.com/embed/ATDGT88CqGs",
     "keyword": ["AgentK"],
     "photos": [],
@@ -1081,7 +1081,7 @@
     "title": "AgentSUMO — Demo Video",
     "category": "demo",
     "start": "2026-04-20",
-    "desc": "Demo video for AgentSUMO, a project by the Urban AI Institute.\n\n**Development** Minwoo Jeong (KAIST), Jeeyun Chang (KAIST)\n\n**Voice** Minwoo Jeong (KAIST)",
+    "desc": "Demo video for AgentSUMO, a project by KAIST Urban AI (KUAI).\n\n**Development** Minwoo Jeong (KAIST), Jeeyun Chang (KAIST)\n\n**Voice** Minwoo Jeong (KAIST)",
     "youtube": "https://www.youtube.com/embed/1jPtXY76mXA",
     "keyword": ["AgentSUMO"],
     "photos": [],

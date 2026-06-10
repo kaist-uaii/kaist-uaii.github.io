@@ -176,7 +176,7 @@ function renderPressSlider(pressData) {
         const slide = document.createElement('div');
         slide.className = `press-item ${isActive ? 'is-active' : ''}`;
         slide.setAttribute('aria-hidden', String(!isActive));
-        slide.setAttribute('aria-label', 'UAII press article');
+        slide.setAttribute('aria-label', 'KUAI press article');
 
         // Use summary if available, otherwise use desc, otherwise use first 400 chars of desc
         const summary = item.summary || item.desc || '';
@@ -205,7 +205,7 @@ function renderPressSlider(pressData) {
             <!-- TEXT → 내부 press.html -->
             <a class="press-body press-card-link"
                href="press-detail.html?id=${item.id}"
-               aria-label="View article summary on UAII press page">
+               aria-label="View article summary on KUAI press page">
                 <p class="press-summary">
                     ${displaySummary}
                 </p>

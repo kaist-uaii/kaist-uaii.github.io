@@ -94,7 +94,7 @@ function loadNavbar(pageName) {
     navbarContainer.innerHTML = `
         <nav class="uaii-navbar" aria-label="Main navigation">
             <a id="navbar-home-link" href="${prefix}index.html" class="uaii-navbar-brand">
-                UAII <span id="navbar-page" class="uaii-navbar-brand-sub">${pageName || "Urban AI Institute"}</span>
+                KUAI <span id="navbar-page" class="uaii-navbar-brand-sub">${pageName || "KAIST Urban AI"}</span>
             </a>
             <ul class="uaii-navbar-links">
                 <li><a href="${prefix}index.html" data-key="home">Home</a></li>
