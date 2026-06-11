@@ -805,7 +805,7 @@
                         <div class="flex-1 min-w-0">
                             <div class="flex flex-wrap items-center gap-2 justify-between">
                                 <h3 class="text-base md:text-lg font-semibold" style="color:#0f172a;line-height:1.35;">
-                                    ${ev.title || "Untitled"}
+                                    ${ev.title || "Untitled"}${ev.number ? ` <span style="font-size:12px;font-weight:500;color:#64748b;">#${ev.number.replace(/\D/g,'')}</span>` : ""}
                                 </h3>
                                 <div class="flex items-center gap-2 shrink-0">
                                     <span class="badge inline-flex items-center px-2 py-1 rounded-full font-semibold uppercase" style="background:#f1f5f9;color:#475569;border:1px solid #e2e8f0;">
@@ -971,7 +971,7 @@
                         start: normalizeDate(item.start),
                         end: normalizeDate(item.end),
                         category: cat,
-                        label: cat.charAt(0).toUpperCase() + cat.slice(1),
+                        label: cat === "KAIST Urban AI Forum" ? "KUAIF" : cat.charAt(0).toUpperCase() + cat.slice(1),
                         place: item.place || "",
                         photos: Array.isArray(item.photos) ? item.photos : [],
                         href: "",
@@ -980,6 +980,7 @@
                         links: Array.isArray(item.links) ? item.links : [],
                         youtube: item.youtube || "",
                         pinned: item.pinned || false,
+                        number: item.number || "",
                     };
                 }
 
