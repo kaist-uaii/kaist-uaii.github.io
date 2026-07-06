@@ -190,11 +190,6 @@
       border-color: #bfc5d2;
     }
 
-    .deadline {
-      font-size: 14px;
-      color: #344054;
-    }
-
     .meta-grid {
       padding-top: 28px;
       display: grid;
@@ -355,70 +350,6 @@
       text-transform: uppercase;
     }
 
-    .modal-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(16, 24, 40, 0.36);
-      display: grid;
-      place-items: center;
-      padding: 16px;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.2s ease, visibility 0.2s ease;
-      z-index: 110;
-    }
-
-    .modal-overlay.open {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .modal {
-      width: min(640px, 100%);
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      overflow: hidden;
-    }
-
-    .modal-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 16px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .modal-title {
-      margin: 0;
-      font-size: clamp(20px, 2.2vw, 28px);
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-      text-transform: uppercase;
-    }
-
-    .modal-close {
-      width: 36px;
-      height: 36px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: #fff;
-      cursor: pointer;
-    }
-
-    .modal-body {
-      padding: 16px;
-      display: grid;
-      gap: 12px;
-      color: #344054;
-    }
-
-    .modal-email {
-      font-weight: 700;
-      color: #1e3a8a;
-    }
-
     @media (max-width: 900px) {
       .meta-grid { grid-template-columns: 1fr; }
       .committee-item { grid-template-columns: 1fr; gap: 4px; }
@@ -455,6 +386,7 @@
       <nav class="nav-links" aria-label="Primary">
         <a href="#overview">Overview</a>
         <a href="#topics">Topics</a>
+        <a href="conference2026-program.html">Program</a>
         <a href="#submission">Submission</a>
         <a href="#registration">Registration</a>
         <a href="#dates">Dates</a>
@@ -477,8 +409,7 @@
            target="_blank" rel="noopener"
            class="btn" style="background:#1d4ed8;color:#fff;border-color:#1d4ed8;">Register Now &rarr;</a>
         <a href="#submission" class="btn">View Submission Details</a>
-        <a href="#" class="btn" id="openModal">Quick Submission Info</a>
-        <span class="deadline"><strong>Deadline:</strong> May 21, 2026</span>
+        <a href="conference2026-program.html" class="btn">View Program</a>
       </div>
 
       <div class="meta-grid" aria-label="Conference information">
@@ -488,7 +419,7 @@
         </div>
         <div class="meta-box">
           <p class="meta-label">Location</p>
-          <p class="meta-value address">Seoul AI Hub<br />108, Taebong-ro, Seocho-gu, Seoul, Republic of Korea</p>
+          <p class="meta-value address">Seoul AI Hub · 3F<br />108, Taebong-ro, Seocho-gu, Seoul, Republic of Korea</p>
         </div>
       </div>
     </section>
@@ -689,46 +620,10 @@
     <footer>2026 International Conference on Urban AI</footer>
   </main>
 
-  <div class="modal-overlay" id="submissionModal" aria-hidden="true">
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <div class="modal-head">
-        <h2 class="modal-title" id="modalTitle">Submission Snapshot</h2>
-        <button class="modal-close" id="closeModal" aria-label="Close dialog">✕</button>
-      </div>
-      <div class="modal-body">
-        <p>
-          Please submit a 2-page extended abstract describing the research problem and motivation, methodology and technical approach, key results (if available), and potential impact on urban systems.
-        </p>
-        <p><strong>Formatting:</strong> PDF format, free style (no strict template required)</p>
-        <p><strong>Deadline:</strong> May 21, 2026</p>
-        <p><strong>Notification:</strong> May 30, 2026</p>
-        <p>
-          <strong>Submission:</strong>
-          <a class="modal-email" href="mailto:urban@kaist.ac.kr">urban@kaist.ac.kr</a>
-        </p>
-        <hr style="border:none;border-top:1px solid var(--line);margin:4px 0;">
-        <p><strong>Registration Fee:</strong> KRW 100,000 · General &nbsp;/&nbsp; KRW 50,000 · Student</p>
-        <p><strong>Payment:</strong> Onsite by credit card (Diners Club, JCB, Mastercard, VISA)</p>
-        <p>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLScZ2wuER1n6Wm-yhYag-UrP-NdheuQE5dmzU97OvB9E2IW0KQ/viewform"
-             target="_blank" rel="noopener"
-             style="display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:#1d4ed8;color:#fff;border-radius:8px;font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">
-            Register Now &rarr;
-          </a>
-        </p>
-      </div>
-    </div>
-  </div>
-
   <script>
     const progressBar = document.querySelector(".scroll-progress");
     const navLinks = document.querySelectorAll(".nav-links a");
     const header = document.getElementById("siteHeader");
-
-    const modal = document.getElementById("submissionModal");
-    const openModal = document.getElementById("openModal");
-    const closeModal = document.getElementById("closeModal");
-    let lastFocusedElement = null;
 
     const setHeaderOffset = () => {
       const h = header ? header.offsetHeight : 84;
@@ -753,36 +648,6 @@
         link.classList.toggle("active", link.getAttribute("href") === `#${current}`);
       });
     };
-
-    const toggleModal = (open) => {
-      modal.classList.toggle("open", open);
-      modal.setAttribute("aria-hidden", String(!open));
-      document.body.style.overflow = open ? "hidden" : "";
-
-      if (open) {
-        lastFocusedElement = document.activeElement;
-        closeModal.focus();
-      } else if (lastFocusedElement && typeof lastFocusedElement.focus === "function") {
-        lastFocusedElement.focus();
-      }
-    };
-
-    openModal.addEventListener("click", (e) => {
-      e.preventDefault();
-      toggleModal(true);
-    });
-
-    closeModal.addEventListener("click", () => toggleModal(false));
-
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) toggleModal(false);
-    });
-
-    window.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && modal.classList.contains("open")) {
-        toggleModal(false);
-      }
-    });
 
     window.addEventListener("scroll", () => {
       updateProgress();

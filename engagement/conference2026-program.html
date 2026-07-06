@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program — 2026 International Conference on Urban AI</title>
+  <meta name="description" content="Program schedule for the 2026 International Conference on Urban AI — July 15–16, 2026 · Seoul, Republic of Korea" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f8f9fb;
+      --surface: #ffffff;
+      --text: #101828;
+      --muted: #667085;
+      --line: #e6e9ef;
+      --line-strong: #d0d5dd;
+      --accent: #1d4ed8;
+
+      --max: 1080px;
+      --section-gap: clamp(56px, 8vw, 96px);
+      --header-offset: 84px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      width: 0%;
+      background: var(--accent);
+      z-index: 100;
+      transition: width 0.08s linear;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 90;
+      background: rgba(248, 249, 251, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .nav-links a {
+      padding: 8px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: #eef2ff;
+      color: #1e3a8a;
+    }
+
+    main {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      padding-bottom: 64px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: clamp(28px, 5vw, 48px);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .back-link:hover { color: #1e3a8a; }
+
+    .section-title {
+      margin: 18px 0 18px;
+      font-size: clamp(22px, 3vw, 36px);
+      line-height: 1;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+    }
+
+    .section-intro {
+      margin: 0 0 14px;
+      max-width: 70ch;
+      color: #344054;
+      font-size: clamp(14px, 1.1vw, 16px);
+    }
+
+    .day-heading {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.4em;
+      margin: 32px 0 0;
+      font-size: clamp(20px, 2.4vw, 28px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+    }
+
+    .day-heading:first-of-type { margin-top: 0; }
+
+    .day-date {
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 14px;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    .program-list {
+      list-style: none;
+      margin: 14px 0 0;
+      padding: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .program-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .program-time {
+      flex: none;
+      width: 96px;
+      padding-top: 2px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .program-body { flex: 1; min-width: 0; }
+
+    .program-title {
+      margin: 6px 0 0;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .program-meta {
+      margin: 2px 0 0;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 999px;
+    }
+
+    .badge-keynote { background: #eef2ff; color: #1e3a8a; }
+    .badge-session { background: #e1f5ee; color: #075041; }
+    .badge-tutorial { background: #faece7; color: #712b13; }
+
+    .program-papers {
+      list-style: none;
+      margin: 10px 0 0;
+      padding: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .program-papers li {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .program-papers strong {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .program-papers span {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    footer {
+      margin-top: 72px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        min-height: auto;
+        padding: 10px 0;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .program-item {
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .program-time { width: auto; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header id="siteHeader">
+    <div class="nav">
+        <a href="index.html"><div class="brand">Urban AI 2026</div></a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="conference2026.html#overview">Overview</a>
+        <a href="conference2026.html#topics">Topics</a>
+        <a href="conference2026-program.html" class="active">Program</a>
+        <a href="conference2026.html#submission">Submission</a>
+        <a href="conference2026.html#registration">Registration</a>
+        <a href="conference2026.html#dates">Dates</a>
+        <a href="conference2026.html#committee">Committee</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <a href="conference2026.html" class="back-link">&larr; Back to conference overview</a>
+
+    <h1 class="section-title">Program</h1>
+
+    <h2 class="day-heading"><span>Day 1</span><span class="day-date">— July 15</span></h2>
+    <ol class="program-list">
+      <li class="program-item">
+        <div class="program-time">9:30–9:40</div>
+        <div class="program-body">
+          <p class="program-title">Opening Remarks</p>
+          <p class="program-meta">Yoonjin Yoon · KAIST</p>
+        </div>
+      </li>
+      <li class="program-item">
+        <div class="program-time">9:40–10:20</div>
+        <div class="program-body">
+          <span class="badge badge-keynote">Keynote</span>
+          <p class="program-title">AI of Cities, Cities of AI: Building the Next Generation of Urban Intelligence</p>
+          <p class="program-meta">Yoonjin Yoon · KAIST</p>
+        </div>
+      </li>
+      <li class="program-item">
+        <div class="program-time">10:40–12:00</div>
+        <div class="program-body">
+          <span class="badge badge-session">Session 1 · CAUS</span>
+          <p class="program-meta">Chair: Yoonjin Yoon (KAIST)</p>
+          <ul class="program-papers">
+            <li><strong>Socially Consistent Multi-Robot Navigation and Control</strong><span>Matthew Sato · Stanford University</span></li>
+            <li><strong>Cooperative Informative Sensing for Monitoring Dynamic Indoor Environments via Multi-Agent Reinforcement Learning</strong><span>Kanghoon Lee · KAIST</span></li>
+            <li><strong>A Web-based Interactive Decision Support System for LLM-Guided Traffic Simulation in Urban Environments</strong><span>Minwoo Jeong · KAIST</span></li>
+            <li><strong>Benchmarking LLM Comprehension of SUMO Simulation Files</strong><span>Jeeyun Chang · KAIST</span></li>
+          </ul>
+        </div>
+      </li>
+      <li class="program-item">
+        <div class="program-time">13:00–13:40</div>
+        <div class="program-body">
+          <span class="badge badge-tutorial">Tutorial 1</span>
+          <p class="program-title">Science Storytelling</p>
+          <p class="program-meta">Fabio Duarte · MIT</p>
+        </div>
+      </li>
+      <li class="program-item">
+        <div class="program-time">14:00–14:40</div>
+        <div class="program-body">
+          <span class="badge badge-tutorial">Tutorial 2</span>
+          <p class="program-title">Time Series Representation Learning: Concepts, Methods, and Applications</p>
+          <p class="program-meta">Namwoo Kim · KAIST</p>
+        </div>
+      </li>
+      <li class="program-item">
+        <div class="program-time">15:00–16:20</div>
+        <div class="program-body">
+          <span class="badge badge-session">Session 2 · CAUS</span>
+          <p class="program-meta">Chair: Changhyun Kwon (KAIST)</p>
+          <ul class="program-papers">
+            <li><strong>SPATIALQA: Spatial-Semantic Grounding for Question Answering in Ambient Sensor Spaces</strong><span>Lucas Liebe · KAIST</span></li>
+            <li><strong>RAG-Grounded Vision-Language Navigation: A Benchmark for Knowledge Reasoning from Human Dialogue</strong><span>Jaewoo Jeong · KAIST</span></li>
+            <li><strong>Urban Accessibility Analytics via LLM-MCP: Service-Aware Metric Recommendation and GIS Execution</strong><span>Keonhee Jang · KAIST</span></li>
+            <li><strong>UAM Simulator: On-Demand and Scheduled Fleet Operations under Resource Constraints</strong><span>Bui, Thi Thao Vy · KAIST</span></li>
+          </ul>
+        </div>
+      </li>
+      <li class="program-item">
+        <div class="program-time">&nbsp;</div>
+        <div class="program-body">
+          <p class="program-title">Closing Remarks</p>
+          <p class="program-meta">Yoonjin Yoon · KAIST</p>
+        </div>
+      </li>
+    </ol>
+
+    <h2 class="day-heading"><span>Day 2</span><span class="day-date">— July 16</span></h2>
+    <ol class="program-list">
+      <li class="program-item">
+        <div class="program-time">9:30–9:40</div>
+        <div class="program-body">
+          <p class="program-title">Opening Remarks</p>
+          <p class="program-meta">Yoonjin Yoon · KAIST</p>
+        </div>
+      </li>
+      <li class="program-item">
+        <div class="program-time">9:40–11:00</div>
+        <div class="program-body">
+          <span class="badge badge-session">General Session</span>
+          <p class="program-meta">Chair: Kincho Law (Stanford)</p>
+          <ul class="program-papers">
+            <li><strong>Explainable Modeling of Neighborhood Economic Responses to Extreme Heat: Evidence from Seoul</strong><span>Keonhee Jang · KAIST</span></li>
+            <li><strong>A Generative Agent-Based Model of Youth Migration Intentions in Busan</strong><span>Jiyoung Baek · KAIST</span></li>
+            <li><strong>Human-Centered Privacy for Cognitive Cities: ADIKW-Aligned Framework for Urban Data Pipelines</strong><span>Donghyun Yoon · Hyundai AutoEver</span></li>
+            <li><strong>Learning Urban Access Costs from Origin–Destination Flows via Inverse Optimal Transport</strong><span>Paula Joy B. Martinez · Education Center for AI Research</span></li>
+          </ul>
+        </div>
+      </li>
+      <li class="program-item">
+        <div class="program-time">11:20–12:00</div>
+        <div class="program-body">
+          <span class="badge badge-tutorial">Tutorial 3</span>
+          <p class="program-title">Power Infrastructure for Future Cities: How Energy Transition and AI Are Reshaping Urban Planning</p>
+          <p class="program-meta">Chaeyeon Bae · LS Electric</p>
+        </div>
+      </li>
+      <li class="program-item">
+        <div class="program-time">13:00–13:40</div>
+        <div class="program-body">
+          <span class="badge badge-tutorial">Tutorial 4</span>
+          <p class="program-title">Seoul World Model: Grounding World Simulation Models in a Real-World Metropolis</p>
+          <p class="program-meta">Seungryong Kim · KAIST</p>
+        </div>
+      </li>
+      <li class="program-item">
+        <div class="program-time">14:00–15:40</div>
+        <div class="program-body">
+          <span class="badge badge-session">BrainPool Session</span>
+          <p class="program-meta">Chair: Namwoo Kim (KAIST)</p>
+          <ul class="program-papers">
+            <li><strong>Opening the Black Box of Urban-Regional Entrepreneurial Ecosystems</strong><span>Esther Sekyoung Choi · World Resources Institute</span></li>
+            <li><strong>Why Communities Say No: An LLM Framework for Mapping Local Acceptance of Renewable Energy Infrastructure</strong><span>Chaerim Song, Hayoon Song · KAIST</span></li>
+            <li><strong>A Modeling and Optimization Framework for AAM Corridor Network Design with Geometry-Based Deconfliction</strong><span>Jihye Na · KAIST</span></li>
+            <li><strong>Estimating the Spatial Distribution of Public Adoption Propensity of AAM</strong><span>Sungmin Sohn · KAIST</span></li>
+            <li><strong>Temporal Vision-Language Reward Modeling for Complex Tasks</strong><span>Kwangbin Lee · KAIST</span></li>
+          </ul>
+        </div>
+      </li>
+      <li class="program-item">
+        <div class="program-time">&nbsp;</div>
+        <div class="program-body">
+          <p class="program-title">Award Ceremony &amp; Closing Remarks</p>
+          <p class="program-meta">Yoonjin Yoon · KAIST</p>
+        </div>
+      </li>
+    </ol>
+
+    <footer>2026 International Conference on Urban AI</footer>
+  </main>
+
+  <script>
+    const progressBar = document.querySelector(".scroll-progress");
+
+    const updateProgress = () => {
+      const scrollTop = window.scrollY;
+      const height = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = height > 0 ? (scrollTop / height) * 100 : 0;
+      progressBar.style.width = `${progress}%`;
+    };
+
+    window.addEventListener("scroll", updateProgress);
+    updateProgress();
+  </script>
+</body>
+</html>
