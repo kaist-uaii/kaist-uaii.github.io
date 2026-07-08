@@ -147,6 +147,12 @@
 
     .day-heading:first-of-type { margin-top: 0; }
 
+    .day-note {
+      margin: 4px 0 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
     .day-date {
       color: var(--muted);
       font-weight: 600;
@@ -207,6 +213,12 @@
     .badge-keynote { background: #eef2ff; color: #1e3a8a; }
     .badge-session { background: #e1f5ee; color: #075041; }
     .badge-tutorial { background: #faece7; color: #712b13; }
+
+    .badge-invite {
+      background: transparent;
+      border: 1px solid var(--line-strong);
+      color: var(--muted);
+    }
 
     .program-papers {
       list-style: none;
@@ -291,10 +303,12 @@
     <p class="section-intro"><strong>Dates</strong> July 15–16, 2026<br /><strong>Venue</strong> Seoul AI Hub, 3F</p>
 
     <h2 class="day-heading"><span>Day 1</span><span class="day-date">— July 15</span></h2>
+    <p class="day-note">Morning session (9:20–12:00) is invitation only.</p>
     <ol class="program-list">
       <li class="program-item">
         <div class="program-time">9:20–9:30</div>
         <div class="program-body">
+          <span class="badge badge-invite">Invitation Only</span>
           <p class="program-title">Opening Remarks</p>
           <p class="program-meta">Yoonjin Yoon · KAIST</p>
         </div>
@@ -303,6 +317,7 @@
         <div class="program-time">9:30–10:10</div>
         <div class="program-body">
           <span class="badge badge-keynote">Keynote</span>
+          <span class="badge badge-invite">Invitation Only</span>
           <p class="program-title">AI of Cities, Cities of AI: Building the Next Generation of Urban Intelligence</p>
           <p class="program-meta">Yoonjin Yoon · KAIST</p>
         </div>
@@ -310,6 +325,7 @@
       <li class="program-item">
         <div class="program-time">10:20–10:40</div>
         <div class="program-body">
+          <span class="badge badge-invite">Invitation Only</span>
           <p class="program-title">GS E&amp;C Introduction</p>
           <p class="program-meta">GS E&amp;C</p>
         </div>
@@ -318,6 +334,7 @@
         <div class="program-time">10:40–12:00</div>
         <div class="program-body">
           <span class="badge badge-session">Session 1 · CAUS</span>
+          <span class="badge badge-invite">Invitation Only</span>
           <p class="program-meta">Chair: Yoonjin Yoon (KAIST)</p>
           <ul class="program-papers">
             <li><strong>Socially Consistent Multi-Robot Navigation and Control</strong><span>Matthew Sato · Stanford University</span></li>
