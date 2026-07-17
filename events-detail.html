@@ -413,7 +413,7 @@
                     throw new Error(`Failed to load data: ${res.status} ${res.statusText}`);
                 }
                 const data = await res.json();
-                return data;
+                return (data || []).filter(item => !item.hidden);
             } catch (error) {
                 console.error('Error loading eventsData.json:', error);
                 throw error;

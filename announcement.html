@@ -949,7 +949,7 @@
                 loadInternationalData(),
                 loadPressData()
             ]).then(function (results) {
-                var events = Array.isArray(results[0]) ? results[0] : [];
+                var events = (Array.isArray(results[0]) ? results[0] : []).filter(function (item) { return !item.hidden; });
                 var meetings = Array.isArray(results[1]) ? results[1] : [];
                 var publications = Array.isArray(results[2]) ? results[2] : [];
                 var national = Array.isArray(results[3]) ? results[3] : [];
