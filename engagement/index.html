@@ -201,6 +201,40 @@
       100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
     }
 
+    /* ── Upcoming empty state ── */
+    .upcoming-empty {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 24px;
+      background: linear-gradient(135deg, #ffffff 0%, #f8faff 100%);
+      border: 1px dashed #bfdbfe;
+      border-radius: 14px;
+    }
+    .upcoming-empty-icon {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: #eff6ff;
+      color: #2563eb;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .upcoming-empty-title {
+      margin: 0 0 4px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .upcoming-empty-text {
+      margin: 0;
+      font-size: 0.82rem;
+      line-height: 1.6;
+      color: #64748b;
+    }
+
     /* ── Footer spacing ── */
     .conf-footer-spacer { height: 80px; }
   </style>
@@ -225,23 +259,12 @@
         <!-- 2026 -->
         <div class="past-year-group fade-up fade-up-d3">
           <div class="past-year-label">2026</div>
-          <div class="past-event-list">
-
-            <a href="conference2026.html" class="past-event-item">
-              <div class="past-event-dot upcoming"></div>
-              <div class="past-event-body">
-                <div class="past-event-name">2026 International Conference on Urban AI</div>
-                <div class="past-event-info">JUL 15-16, 2026 &nbsp;·&nbsp; Seoul, Korea</div>
-              </div>
-              <div class="past-event-right">
-                <span class="event-dday" id="dday-conference2026">–</span>
-                <span class="past-event-tag tag-conference">Conference</span>
-                <span class="past-event-arrow">→</span>
-              </div>
-            </a>
-
-            <!-- ── Add upcoming events here ── -->
-
+          <div class="upcoming-empty">
+            <div class="upcoming-empty-icon" aria-hidden="true">✦</div>
+            <div>
+              <p class="upcoming-empty-title">New events are on the way.</p>
+              <p class="upcoming-empty-text">Upcoming conferences, workshops, and forum programs will be announced here.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -254,8 +277,39 @@
         <h2 class="section-title fade-up fade-up-d1">Past Events</h2>
         <p class="section-sub fade-up fade-up-d2">A record of previously held symposiums, workshops, and engagements.</p>
 
-        <!-- 2025 -->
+        <!-- 2026 -->
         <div class="past-year-group fade-up fade-up-d3">
+          <div class="past-year-label">2026</div>
+          <div class="past-event-list">
+
+            <a href="conference2026.html" class="past-event-item">
+              <div class="past-event-dot"></div>
+              <div class="past-event-body">
+                <div class="past-event-name">2026 International Conference on Urban AI</div>
+                <div class="past-event-info">Jul 15–16, 2026 &nbsp;·&nbsp; Seoul, Korea</div>
+              </div>
+              <div class="past-event-right">
+                <span class="past-event-tag tag-conference">Conference</span>
+                <span class="past-event-arrow">→</span>
+              </div>
+            </a>
+
+            <div class="past-event-item no-link">
+              <div class="past-event-dot"></div>
+              <div class="past-event-body">
+                <div class="past-event-name">KCC 2026 도시 인공지능 (Urban AI) 워크숍</div>
+                <div class="past-event-info">Jun 25, 2026 &nbsp;·&nbsp; 제주국제컨벤션센터 (ICC 제주)</div>
+              </div>
+              <div class="past-event-right">
+                <span class="past-event-tag tag-workshop">Workshop</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 2025 -->
+        <div class="past-year-group fade-up fade-up-d4">
           <div class="past-year-label">2025</div>
           <div class="past-event-list">
 
@@ -308,6 +362,18 @@
         <div class="past-year-group fade-up fade-up-d3">
           <div class="past-year-label">2026</div>
           <div class="past-event-list">
+
+            <a href="https://sites.google.com/view/fuscc/kaist-ise-x-kuai-symposium?authuser=0" class="past-event-item" target="_blank" rel="noopener noreferrer">
+              <div class="past-event-dot"></div>
+              <div class="past-event-body">
+                <div class="past-event-name">KAIST ISE x KAIST Urban AI Symposium</div>
+                <div class="past-event-info">KUAIF #30 &nbsp;·&nbsp; July 9, 2026 &nbsp;·&nbsp; Prof. Hiroyasu Tsukamoto (UIUC &amp; KAIST), Prof. Yoonjin Yoon (KAIST), Prof. Jinkyoo Park (KAIST), Prof. Mykel Kochenderfer (Stanford University), Prof. Jiachen Li (UC)</div>
+              </div>
+              <div class="past-event-right">
+                <span class="past-event-tag tag-symposium">Symposium</span>
+                <span class="past-event-arrow">→</span>
+              </div>
+            </a>
 
             <div class="past-event-item no-link">
               <div class="past-event-dot"></div>
@@ -663,32 +729,6 @@
 
   <script src="../partials/navbar.js"></script>
   <script>
-    // ── D-Day counter ──────────────────────────────────────────────
-    function computeDDay(targetDateStr) {
-      const today = new Date();
-      today.setHours(0, 0, 0, 0);
-      const target = new Date(targetDateStr);
-      target.setHours(0, 0, 0, 0);
-      const diff = Math.round((target - today) / (1000 * 60 * 60 * 24));
-      if (diff > 0)  return "D-" + diff;
-      if (diff === 0) return "D-Day";
-      return "Ended";
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      // Update D-Day badges — set targetDate to the actual event date when known
-      const ddayMap = {
-        "dday-conference2026": "2026-07-15",   // placeholder — update when date is confirmed
-      };
-      Object.entries(ddayMap).forEach(([id, date]) => {
-        const el = document.getElementById(id);
-        if (!el) return;
-        const label = computeDDay(date);
-        el.textContent = label;
-        if (label === "Ended") el.classList.add("past");
-      });
-    });
-
     // ── Fade-up on scroll ──────────────────────────────────────────
     document.addEventListener("DOMContentLoaded", () => {
       const observer = new IntersectionObserver(
