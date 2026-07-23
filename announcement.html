@@ -425,7 +425,7 @@
 
     <script>
         function loadEventsData() {
-            const url = "../data/eventsData.json";
+            const url = "./data/eventsData.json";
             return fetch(url, { cache: "no-store" })
                 .then(function (res) {
                     if (!res.ok) throw new Error("Failed to load eventsData.json");
@@ -438,7 +438,7 @@
         }
 
         function loadPressData() {
-            const url = "../data/pressData.json";
+            const url = "./data/pressData.json";
             return fetch(url, { cache: "no-store" })
                 .then(function (res) {
                     if (!res.ok) throw new Error("Failed to load pressData.json");
@@ -451,7 +451,7 @@
         }
 
         function loadPublicationsData() {
-            const url = "../data/publicationsData.json";
+            const url = "./data/publicationsData.json";
             return fetch(url, { cache: "no-store" })
                 .then(function (res) {
                     if (!res.ok) throw new Error("Failed to load publicationsData.json");
@@ -464,7 +464,7 @@
         }
 
         function loadNationalData() {
-            const url = "../data/nationalData.json";
+            const url = "./data/nationalData.json";
             return fetch(url, { cache: "no-store" })
                 .then(function (res) {
                     if (!res.ok) throw new Error("Failed to load nationalData.json");
@@ -477,7 +477,7 @@
         }
 
         function loadInternationalData() {
-            const url = "../data/internationalData.json";
+            const url = "./data/internationalData.json";
             return fetch(url, { cache: "no-store" })
                 .then(function (res) {
                     if (!res.ok) throw new Error("Failed to load internationalData.json");
@@ -490,7 +490,7 @@
         }
 
         function loadMeetingsData() {
-            const url = "../data/researchData.json";
+            const url = "./data/researchData.json";
             return fetch(url, { cache: "no-store" })
                 .then(function (res) {
                     if (!res.ok) throw new Error("Failed to load meetingsData.json");
