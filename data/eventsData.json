@@ -1,5 +1,69 @@
 ﻿[
   {
+  "id": "20260715-urban-ai-conference",
+  "title": "2026 International Conference on Urban AI",
+  "category": "conference",
+  "start": "2026-07-15",
+  "end": "2026-07-16",
+  "place": "Seoul AI Hub (3F), Seoul, Korea",
+  "participants": "",
+  "keyword": [
+    "Urban AI",
+    "Conference",
+    "Seoul"
+  ],
+  "desc": "The 2026 International Conference on Urban AI brought together researchers and practitioners to exchange research and practical perspectives on artificial intelligence for cities and real-world urban systems.",
+  "photos": [
+    "assets/images/events/conf1.JPG",
+    "assets/images/events/conf2.JPG"
+  ],
+  "links": [],
+  "time": ""
+  },  
+  {
+  "id": "20260709-kuaif30",
+  "number": "KUAIF #30",
+  "title": "KAIST ISE × KAIST Urban AI Symposium",
+  "category": "KAIST Urban AI Forum",
+  "start": "2026-07-09",
+  "end": "2026-07-09",
+  "place": "KAIST",
+  "participants": "Prof. Hiroyasu Tsukamoto (UIUC & KAIST), Prof. Yoonjin Yoon (KAIST), Prof. Jinkyoo Park (KAIST), Prof. Mykel Kochenderfer (Stanford University), Prof. Jiachen Li (UC)",
+  "keyword": [
+    "Urban AI",
+    "Symposium",
+    "Decision AI"
+  ],
+  "desc": "A joint symposium organized by KAIST ISE and KAIST Urban AI, bringing together researchers working on decision-making, learning, control, safety, and intelligent systems in real-world environments.",
+  "photos": [
+    "assets/images/events/sym1.JPG",
+    "assets/images/events/sym2.JPG"
+  ],
+  "links": [],
+  "time": ""
+  },
+  {
+  "id": "20260625-kcc-urban-ai",
+  "title": "KCC 2026 도시 인공지능 (Urban AI) 워크숍",
+  "category": "workshop",
+  "start": "2026-06-25",
+  "end": "2026-06-25",
+  "place": "제주국제컨벤션센터 (ICC 제주)",
+  "participants": "",
+  "keyword": [
+    "Urban AI",
+    "KCC 2026",
+    "workshop"
+  ],
+  "desc": "KAIST Urban AI organized the Urban AI Workshop at KCC 2026, featuring research presentations and discussion on artificial intelligence, urban data, mobility, infrastructure, and data-driven urban systems.",
+  "photos": [
+    "assets/images/events/kcc1.JPG",
+    "assets/images/events/kcc2.JPG"
+  ],
+  "links": [],
+  "time": ""
+  },
+  {
     "id": "postdoc-hiring",
     "title": "Postdoctoral Researchers — Now Hiring",
     "category": "Hiring",
@@ -801,7 +865,7 @@
     "place": "",
     "participants": "Taeyoung Yun, Yujin Shin, Inhyuck Song, and Jinkyoo Park",
     "keyword": [
-      "Workshop",
+      "workshop",
       "TSL 2025"
     ],
     "desc": "Workshop presentation at TSL 2025 Workshop.",
@@ -835,7 +899,7 @@
     "place": "",
     "participants": "Waquar Kaleem, 이도영, Changhyun Kwon, Anirudh Subramanyam",
     "keyword": [
-      "Workshop",
+      "workshop",
       "NeurIPS"
     ],
     "desc": "Workshop presentation at the 2025 NeurIPS Workshop on Differentiable Learning of Combinatorial Algorithms.",
