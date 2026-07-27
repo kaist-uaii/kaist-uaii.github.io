@@ -6,23 +6,36 @@
   "start": "2026-07-15",
   "end": "2026-07-16",
   "place": "Seoul AI Hub (3F), Seoul, Korea",
-  "participants": "",
   "keyword": [
     "Urban AI",
     "Conference",
-    "Seoul"
+    "Stanford University",
+    "MIT",
+    "LS Electric",
+    "GS E&C",
+    "International Collaboration"
   ],
-  "desc": "The 2026 International Conference on Urban AI brought together researchers and practitioners to exchange research and practical perspectives on artificial intelligence for cities and real-world urban systems.",
+  "desc": "Prof. Kincho Law, Professor of Civil and Environmental Engineering at Stanford University, visited KAIST Urban AI and served as Chair of the Day 2 General Session.\n\nThe 2026 International Conference on Urban AI brought together researchers and practitioners to exchange research findings and practical perspectives on artificial intelligence for cities and real-world urban systems.",
   "photos": [
-    "assets/images/events/conf1.JPG",
-    "assets/images/events/conf2.JPG"
+    "assets/images/events/GSXKAIST_Conf1_202607.jpg",
+    "assets/images/events/GSXKAIST_Conf2_202607.jpg",
+    "assets/images/events/GSXKAIST_Conf3_202607.jpg",
+    "assets/images/events/GSXKAIST_Conf4_202607.jpg",
+    "assets/images/events/GSXKAIST_Conf5_202607.jpg",
+    "assets/images/events/GSXKAIST_Conf6_202607.jpg",
+    "assets/images/events/GSXKAIST_Conf7_202607.jpg",
+    "assets/images/events/GSXKAIST_Conf8_202607.jpg",
+    "assets/images/events/GSXKAIST_Conf9_202607.jpg",
+    "assets/images/events/GSXKAIST_Conf10_202607.jpg",
+    "assets/images/events/GSXKAIST_Conf11_202607.jpg",
+    "assets/images/events/GSXKAIST_Conf12_202607.jpg",
+    "assets/images/events/GSXKAIST_Kincho_202607.JPG"
   ],
   "links": [],
   "time": ""
   },  
   {
-  "id": "20260709-kuaif30",
-  "number": "KUAIF #30",
+  "id": "20260709-kuaif-symposium",
   "title": "KAIST ISE × KAIST Urban AI Symposium",
   "category": "KAIST Urban AI Forum",
   "start": "2026-07-09",
@@ -37,7 +50,11 @@
   "desc": "A joint symposium organized by KAIST ISE and KAIST Urban AI, bringing together researchers working on decision-making, learning, control, safety, and intelligent systems in real-world environments.",
   "photos": [
     "assets/images/events/sym1.JPG",
-    "assets/images/events/sym2.JPG"
+    "assets/images/events/sym2.JPG",
+    "assets/images/events/Sym1.jpeg",
+    "assets/images/events/Sym2.jpeg",
+    "assets/images/events/Sym3.jpeg",
+    "assets/images/events/Sym4.jpeg"
   ],
   "links": [],
   "time": ""
