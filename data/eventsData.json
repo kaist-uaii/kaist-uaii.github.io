@@ -35,6 +35,32 @@
   "time": ""
   },  
   {
+  "id": "20260713-mark-hansen",
+  "title": "Prof. Mark Hansen Visit — Urban Air Mobility Research Advisory & International Collaboration",
+  "category": "international collaboration",
+  "start": "2026-07-13",
+  "end": "2026-07-16",
+  "place": "KAIST, Korea Transport Institute (KOTI), Seoul, Incheon",
+  "participants": "Prof. Mark Hansen (UC Berkeley), KAIST Urban AI, GS E&C, Korea Transport Institute (KOTI)",
+  "keyword": [
+    "Urban Air Mobility",
+    "UAM",
+    "UC Berkeley",
+    "Airport Access",
+    "Research Advisory",
+    "International Collaboration"
+  ],
+  "desc": "Prof. Mark Hansen (UC Berkeley) visited KAIST Urban AI to provide research advisory on Urban Air Mobility (UAM) and participate in a series of academic exchange activities. During the visit, he delivered invited seminars, advised GS E&C on future UAM business strategies and airport accessibility, participated in the International Conference on Urban AI, and presented his research at K-UAM Confex 2026. The visit strengthened international collaboration on UAM demand modeling, airport accessibility, multimodal transportation, and AI-driven urban mobility.",
+  "photos": [
+    "assets/images/events/hansen2_202607.jpeg",
+    "assets/images/events/hansen5_202607.jpeg",
+    "assets/images/events/hansen3_202607.jpeg",
+    "assets/images/events/hansen4_202607.jpeg"
+  ],
+  "links": [],
+  "time": ""
+  },
+  {
   "id": "20260709-kuaif-symposium",
   "title": "KAIST ISE × KAIST Urban AI Symposium",
   "category": "KAIST Urban AI Forum",
@@ -938,8 +964,7 @@
     ],
     "desc": "",
     "photos": [
-      "assets/images/events/caus260212_1.jpg",
-      "assets/images/events/caus260212_2.jpg"
+      "assets/images/events/caus260212.jpg"
     ],
     "links": [],
     "time": ""
