@@ -711,7 +711,7 @@
                     html += '<div class="flex flex-wrap gap-2 mt-3">';
                     ev.photos.forEach(function (src) {
                         if (src && !src.startsWith("../")) src = "../" + src;
-                        html += '<div class="h-24 rounded-lg overflow-hidden shrink-0" style="background:#f1f5f9;">' +
+                        html += '<div class="w-24 h-24 rounded-lg overflow-hidden shrink-0" style="background:#f1f5f9;">' +
                             '<a href="' + src + '" target="_blank" rel="noopener" onclick="event.stopPropagation()">' +
                             '<img src="' + src + '" alt="" class="w-full h-full object-cover" style="cursor:zoom-in;" ' +
                             'onerror="this.closest(\'.h-20\').style.display=\'none\'">' +
