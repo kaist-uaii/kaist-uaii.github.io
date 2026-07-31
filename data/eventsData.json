@@ -1,5 +1,23 @@
 ﻿[
   {
+  "id": "20260729-caus-regular-meeting",
+  "title": "CAUS Monthly Meeting",
+  "category": "meeting",
+  "start": "2026-07-29",
+  "end": "2026-07-29",
+  "place": "Online(zoom)",
+  "keyword": [
+    "CAUS",
+    "Meeintg"
+  ],
+  "desc": "The July CAUS Meeting covered recent activities, upcoming plans, the R&D direction for the third project year, and a project presentation on the SENSORIA x VIGILANT Demo Project.",
+  "photos": [
+    "assets/images/events/Monthly_2607.png"
+  ],
+  "links": [],
+  "time": ""
+  },  
+  {
   "id": "20260715-urban-ai-conference",
   "title": "2026 International Conference on Urban AI",
   "category": "conference",
