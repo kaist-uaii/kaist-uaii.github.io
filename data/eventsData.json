@@ -1,4 +1,28 @@
 ﻿[
+    {
+    "id": "20260803-brain-pool-seminar",
+    "title": "Brain Pool Seminar — Contraction Theory & Conformal Inference",
+    "category": "seminar",
+    "start": "2026-08-03",
+    "end": "2026-08-05",
+    "place": "KAIST",
+    "participants": "Prof. Hiroyasu Tsukamoto (University of Illinois Urbana-Champaign)",
+    "keyword": [
+      "Brain Pool Seminar",
+      "Contraction Theory",
+      "Conformal Inference",
+      "Robust Control",
+      "Formal Guarantee",
+      "Nonlinear Systems"
+    ],
+    "desc": "KAIST Urban AI hosted a three-day Brain Pool Seminar led by Prof. Hiroyasu Tsukamoto from August 3–5, 2026. The seminar explored contraction theory and incremental stability, finite-sample uncertainty guarantees through conformal inference, and their integration with robust nonlinear control. Across three sessions, participants discussed contraction metrics, exchangeability and conformal quantiles, robust contraction bounds, nonlinear feedback control, and data-driven formal guarantees for learning-based dynamical systems.",
+    "photos": [
+      "assets/images/events/Lecture_Series1_260803.jpg",
+      "assets/images/events/Lecture_Series2_260803.jpg"
+    ],
+    "links": [],
+    "time": "10:30 am - 12:00 pm"
+  },
   {
   "id": "20260729-caus-regular-meeting",
   "title": "CAUS Monthly Meeting",
