@@ -1,5 +1,29 @@
 ﻿[
   {
+    "id": "20260915-caus-3rd-year-kickoff",
+    "title": "CAUS 3rd-Year Kick-Off Meeting",
+    "category": "meeting",
+    "start": "2026-09-15",
+    "end": "2026-09-15",
+    "place": "KAIST",
+    "keyword": [
+    "CAUS",
+    "Kick-Off",
+    "GS E&C",
+    "KAIST"
+    ],
+    "participants": "22 participants, including GS E&C practitioners and KAIST researchers",
+    "desc": "The 3rd-Year Kick-Off Meeting for the GS E&C–KAIST Future City AI R&D Project was held to align on the project's overall direction, review achievements from Years 1–2, and share the Year 3 research plan and collaboration framework.\n\nAgenda:\n1. Project Overview — Project period, development budget, background and objectives, and overall R&D framework\n2. Summary of Key Achievements and Continuity from Years 1–2 — KRA-level achievements and linkage between Year 1 and Year 2 research\n3. Year 3 Research Plan — Research structure, linkage with Year 2, priorities, and introduction of Year 3 research teams\n4. Research Introduction by Prof. Il-Chul Moon — Year 3 R&D plan, data catalog, components, and related research details\n5. Collaboration Framework — Regular meetings, research deliverable management, and key communication channels",
+    "photos": [
+      "assets/images/events/caus_kickoff(1)_260915.jpg",
+      "assets/images/events/caus_kickoff(2)_260915.jpg",
+      "assets/images/events/caus_kickoff(3)_260915.jpg",
+      "assets/images/events/caus_kickoff(4)_260915.jpg"
+    ],
+    "links": [],
+    "time": "5:00 pm - 7:00 pm KST"
+  },
+  {
     "id": "20260826-yixin-zhang-seminar",
     "title": "Planning 15-Minute Living Circles for Green Mobility: Evidence from Mobile Phone Data",
     "category": "seminar",
