@@ -1,5 +1,31 @@
 ﻿[
   {
+    "id": "20261015-mahmoud-abdelrahman-seminar",
+    "title": "From Physics to Physical AI: The Evolution of Urban Digital Twins",
+    "category": "seminar",
+    "start": "2026-10-15",
+    "end": "2026-10-15",
+    "place": "KAIST",
+    "participants": "Dr. Mahmoud M. Abdelrahman (KAIST)",
+    "keyword": [
+      "Urban Digital Twins",
+      "Physical AI",
+      "Human Comfort",
+      "Spatial Learning",
+      "Urban World Models",
+      "Physics-Informed AI"
+    ],
+    "desc": "KAIST Urban AI Institute hosted an invited seminar by Dr. Mahmoud M. Abdelrahman (KAIST) on October 15, 2026. The seminar traced the evolution of urban digital twins from physics-based modeling to data-driven AI and approaches that combine physics and AI, highlighting the challenges of capturing human experience and generalizing models beyond case-specific calibration.\n\nDr. Abdelrahman introduced research on personalized comfort modeling using human feedback, graph-based spatial learning for buildings, urban world models, and physics-informed prediction of pedestrian wind comfort with uncertainty estimation. The seminar concluded with a discussion of opportunities for joint research on urban world models and Physical AI for future cities.",
+    "photos": [
+      "assets/images/events/seminar_mahmoud_abdelrahman_20261015_01.jpg",
+      "assets/images/events/seminar_mahmoud_abdelrahman_20261015_02.jpg",
+      "assets/images/events/seminar_mahmoud_abdelrahman_20261015_03.jpg"
+    ],
+    "links": [],
+    "speaker": "Dr. Mahmoud M. Abdelrahman",
+    "time": ""
+  },
+  {
     "id": "20260915-caus-3rd-year-kickoff",
     "title": "CAUS 3rd-Year Kick-Off Meeting",
     "category": "meeting",
